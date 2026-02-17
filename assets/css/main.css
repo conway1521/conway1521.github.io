@@ -350,14 +350,6 @@ main {
     color: var(--text-tertiary);
 }
 
-/* Interests */
-.hero-interests {
-    font-size: 17px;
-    line-height: 1.75;
-    color: var(--text-primary);
-    margin-top: 16px;
-}
-
 /* Social links */
 .social-links {
     display: flex;
