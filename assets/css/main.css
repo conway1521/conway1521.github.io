@@ -327,6 +327,25 @@ main {
     color: var(--text-tertiary);
 }
 
+/* Interests */
+.interests {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.interest-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: var(--research-light);
+    color: var(--research);
+    border: 1px solid var(--research-medium);
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
 /* Social links */
 .social-links {
     display: flex;
@@ -1189,6 +1208,10 @@ footer {
 
     .affiliations {
         align-items: center;
+    }
+
+    .interests {
+        justify-content: center;
     }
 
     .social-links {
