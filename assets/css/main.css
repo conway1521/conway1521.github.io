@@ -271,8 +271,20 @@ main {
 
 .logo-row {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
+}
+
+.logo-row a {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.logo-row a:hover {
+    background: var(--bg-tertiary);
 }
 
 .logo-img {
@@ -283,7 +295,7 @@ main {
     transition: opacity 0.2s, filter 0.2s;
 }
 
-.logo-img:hover {
+.logo-row a:hover .logo-img {
     opacity: 0.7;
 }
 
@@ -330,20 +342,19 @@ main {
 /* Interests */
 .interests {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+    justify-content: center;
 }
 
 .interest-tag {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
-    padding: 5px 12px;
-    border-radius: 6px;
-    background: var(--research-light);
-    color: var(--research);
-    border: 1px solid var(--research-medium);
-    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--bg-tertiary);
+    color: var(--text-tertiary);
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Social links */
@@ -1208,10 +1219,6 @@ footer {
 
     .affiliations {
         align-items: center;
-    }
-
-    .interests {
-        justify-content: center;
     }
 
     .social-links {
