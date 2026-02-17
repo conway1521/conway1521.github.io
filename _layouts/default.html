@@ -27,7 +27,7 @@
 <body>
     {% include nav.html %}
     
-    <main class="{% if page.layout == 'home' %}main-home{% else %}main-page{% endif %}">
+    <main class="{% if page.url == '/' %}main-home{% else %}main-page{% endif %}">
         {{ content }}
     </main>
     
