@@ -1,0 +1,30 @@
+# Site settings
+title: Alessandro Conway
+description: Economist and data scientist building tools to understand workforce dynamics and regional economic development.
+url: "https://conway1521.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: Alessandro Conway
+  email: # your email
+  linkedin: https://www.linkedin.com/in/alessandro-conway/
+  github: https://github.com/conway1521
+  scholar: # your Google Scholar URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Collections (if you want blog posts later)
+# collections:
+#   posts:
+#     output: true
+#     permalink: /blog/:slug/
