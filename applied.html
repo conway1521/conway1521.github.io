@@ -6,6 +6,10 @@ title: Applied
 <header class="page-header">
     <h1>Applied</h1>
     <p class="page-intro">Interactive tools and analyses that bring my research to life. These projects combine rigorous methodology with accessible interfaces to help practitioners and policymakers explore data and test ideas.</p>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
 </header>
 
 <section class="section" id="ned-dashboard">
@@ -60,7 +64,30 @@ title: Applied
                 <h3 class="applied-card-title" style="margin-bottom: 0;">Labour Market Digital Twin</h3>
                 <span class="tool-status dev">Planned</span>
             </div>
-            <p class="applied-card-description">Will allow users to analyse how labour markets interact with training providers, adjacent workforces, migration, to visualise steady-state dynamics and how shocks propagate in this system. This tool unifies <i>micro-to-macro</i> concepts with granular workforce data to train a realistic and comprehensive model of local and state labour markets. Interactive Jupyter notebook available soon.</p>
+            <p class="applied-card-description">Will allow users to analyse how labour markets interact with training providers, adjacent workforces, migration, to visualise steady-state dynamics and how shocks propagate in this system. This tool combines <i>micro-to-macro</i> concepts with granular workforce data to train a realistic and comprehensive model of local and state labour markets. Interactive Jupyter notebook available soon.</p>
+            <div class="applied-card-meta">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Digital Twin</span>
+                <span class="project-tag">Policy Forecasting</span>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section class="section" id="skills">
+    <article class="applied-card">
+        <div class="applied-card-image">Screenshot placeholder</div>
+        <div class="applied-card-content">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <h3 class="applied-card-title" style="margin-bottom: 0;">Skills-based Labour Market</h3>
+                <span class="tool-status dev">Planned</span>
+            </div>
+            <p class="applied-card-description">Will allow users to view labour markets as combinations of skill blueprints feeding the roles that then meet demand. Rather than modelling labour as a homogeneous input, we reformulate the production function as:</p>
+            <div class="math-block" style="background: var(--bg-secondary, #f8f8f8); border-radius: 8px; padding: 16px 20px; margin: 12px 0; font-size: 0.95rem; line-height: 1.8;">
+                <p style="margin: 0;">$$Y = A \cdot R^{\alpha} \cdot K^{\beta}$$</p>
+                <p style="margin: 8px 0 0 0;">where \( R = f(S) \) is a skills composite and \( S = \left(\sum_{i=1}^{n} \gamma_i \, s_i^{\,\rho}\right)^{1/\rho} \) aggregates individual skills \( s_i \) with elasticity of substitution governed by \( \rho \).</p>
+            </div>
+            <p class="applied-card-description">This alternative view of the economy as agglomerations of skills connects with credential-based learning and skills training to show opportunities for upskilling and for adjacent workforces to be tapped to fill gaps, particularly in Manufacturing, to analyse paradigm shifts like the advent of AI on how roles evolve, and to see what skills are more impervious so that workers can build their own resilience. Interactive Jupyter notebook available soon.</p>
             <div class="applied-card-meta">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Digital Twin</span>
