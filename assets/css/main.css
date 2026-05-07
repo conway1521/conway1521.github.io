@@ -1358,3 +1358,342 @@ footer {
     width: 14px;
     height: 14px;
 }
+
+/* ========================================
+   SCOPE STATS (Work — current role)
+   Range-of-work, not impact metrics
+   ======================================== */
+.scope-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding-top: 24px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+.scope-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.scope-item strong {
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.scope-item span {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+    .scope-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ========================================
+   FRAMEWORK PANEL (shared substrate visual)
+   ======================================== */
+.framework-panel {
+    margin-bottom: 56px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-secondary);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.framework-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+}
+
+.framework-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.framework-lede {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 680px;
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) 2fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.substrate {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.substrate-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    display: block;
+    margin-bottom: 14px;
+}
+
+.substrate ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.substrate li {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    padding-left: 16px;
+    position: relative;
+}
+
+.substrate li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--work);
+}
+
+.chains {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chain-summary {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.chain-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.chain-tag.tech {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.chain-tag.labs {
+    background: var(--work-light);
+    color: var(--work);
+    border: 1px solid var(--work);
+}
+
+.chain-summary p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+    .framework-panel { padding: 24px; }
+    .framework-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   PRODUCT CHAINS (RI Tech / RI Labs)
+   ======================================== */
+.chain-section {
+    margin-bottom: 56px;
+}
+
+.chain-header {
+    margin-bottom: 28px;
+}
+
+.chain-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.chain-label.tech {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.chain-label.labs {
+    background: var(--work-light);
+    color: var(--work);
+    border: 1px solid var(--work);
+}
+
+.chain-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.chain-tagline {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+}
+
+.chain-tier {
+    margin-top: 28px;
+}
+
+.tier-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+}
+
+.chain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+}
+
+.chain-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--bg-primary);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.4s;
+}
+
+.chain-card:hover {
+    border-color: var(--text-tertiary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.chain-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.chain-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    line-height: 1.35;
+    flex: 1;
+}
+
+.chain-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Status pills — match RI hub palette */
+.status-pill {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.2;
+}
+
+.status-pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-pill.live {
+    background: var(--published-light);
+    color: var(--published);
+}
+
+.status-pill.active {
+    background: var(--work-light);
+    color: var(--work);
+}
+
+.status-pill.dev {
+    background: var(--progress-light);
+    color: var(--progress);
+}
+
+.status-pill.planned {
+    background: var(--bg-tertiary);
+    color: var(--text-tertiary);
+}
+
+.chain-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-link);
+    text-decoration: none;
+}
+
+.chain-cta:hover {
+    text-decoration: underline;
+}
+
+.chain-cta svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 1.5;
+}
