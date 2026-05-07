@@ -1434,6 +1434,62 @@ footer {
     align-items: stretch;
 }
 
+.datasets-strip {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.datasets-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 14px;
+}
+
+.datasets-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px 20px;
+}
+
+.datasets-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    padding-left: 14px;
+    position: relative;
+}
+
+.datasets-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--work);
+}
+
+.datasets-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.datasets-list li span {
+    display: block;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 400;
+    margin-top: 1px;
+}
+
 .substrate {
     background: var(--bg-primary);
     border: 1px solid var(--border);
