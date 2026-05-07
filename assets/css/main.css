@@ -416,11 +416,10 @@ main {
 }
 
 .section-title {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-tertiary);
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
 }
 
 .section-link {
@@ -462,8 +461,7 @@ main {
 .card-badge {
     font-size: 11px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: -0.005em;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -519,10 +517,9 @@ main {
 }
 
 .role-company {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.005em;
     color: var(--work);
     margin-bottom: 8px;
 }
@@ -871,8 +868,7 @@ main {
 .paper-badge {
     font-size: 11px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: -0.005em;
     padding: 5px 10px;
     border-radius: 5px;
 }
@@ -1150,11 +1146,10 @@ footer {
 }
 
 .footer-column h4 {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-tertiary);
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
     margin-bottom: 16px;
 }
 
@@ -1301,8 +1296,7 @@ footer {
     font-weight: 600;
     padding: 4px 10px;
     border-radius: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.005em;
 }
 
 .pub-badge.report {
@@ -1360,7 +1354,7 @@ footer {
 }
 
 /* ========================================
-   SCOPE STATS (Work — current role)
+   SCOPE STATS (Work, current role)
    Range-of-work, not impact metrics
    ======================================== */
 .scope-row {
@@ -1411,11 +1405,10 @@ footer {
 }
 
 .framework-eyebrow {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-tertiary);
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
@@ -1450,11 +1443,10 @@ footer {
 }
 
 .substrate-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-tertiary);
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
     display: block;
     margin-bottom: 14px;
 }
@@ -1501,10 +1493,9 @@ footer {
 
 .chain-tag {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.005em;
     padding: 4px 10px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -1545,10 +1536,9 @@ footer {
 
 .chain-label {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.005em;
     padding: 4px 10px;
     border-radius: 5px;
     margin-bottom: 12px;
@@ -1584,11 +1574,10 @@ footer {
 }
 
 .tier-label {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-tertiary);
+    letter-spacing: -0.005em;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
@@ -1634,12 +1623,11 @@ footer {
     line-height: 1.6;
 }
 
-/* Status pills — match RI hub palette */
+/* Status pills, match RI hub palette */
 .status-pill {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: -0.005em;
     padding: 3px 9px;
     border-radius: 12px;
     flex-shrink: 0;
@@ -1696,4 +1684,52 @@ footer {
     width: 14px;
     height: 14px;
     stroke-width: 1.5;
+}
+
+/* ========================================
+   CHAIN TABS (RI Tech / RI Labs toggle)
+   ======================================== */
+.chain-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+    font-family: inherit;
+    letter-spacing: -0.01em;
+}
+
+.tab-btn:hover {
+    color: var(--text-secondary);
+}
+
+.tab-btn.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--work);
+}
+
+.tab-btn:focus-visible {
+    outline: 2px solid var(--accent-link);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
 }
