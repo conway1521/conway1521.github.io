@@ -619,14 +619,24 @@ main {
 
 .project-image {
     height: 160px;
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-tertiary);
-    font-size: 12px;
     transition: background 0.4s ease;
     overflow: hidden;
+}
+
+.project-image.placeholder-radius {
+    background: linear-gradient(135deg, var(--work-light) 0%, var(--work) 140%);
+}
+
+.project-image.placeholder-research {
+    background: linear-gradient(135deg, var(--research-light) 0%, var(--research) 140%);
+}
+
+.project-image.placeholder-applied {
+    background: linear-gradient(135deg, var(--accent-link-light) 0%, var(--accent-link) 140%);
 }
 
 .project-image img {
@@ -1024,14 +1034,24 @@ main {
 
 .applied-card-image {
     height: 240px;
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-tertiary);
-    font-size: 12px;
     transition: background 0.4s ease;
     overflow: hidden;
+}
+
+.applied-card-image.placeholder-applied {
+    background: linear-gradient(135deg, var(--accent-link-light) 0%, var(--accent-link) 140%);
+}
+
+.applied-card-image.placeholder-research {
+    background: linear-gradient(135deg, var(--research-light) 0%, var(--research) 140%);
+}
+
+.applied-card-image.placeholder-radius {
+    background: linear-gradient(135deg, var(--work-light) 0%, var(--work) 140%);
 }
 
 .applied-card-image img {
@@ -1119,6 +1139,45 @@ main {
 .honour-year {
     color: var(--text-tertiary);
     margin-left: 4px;
+}
+
+/* ========================================
+   AFFILIATIONS LIST (About page)
+   ======================================== */
+
+.affiliations-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px 24px;
+}
+
+.affiliations-list li {
+    padding: 14px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: background 0.4s ease, border-color 0.2s ease;
+}
+
+.affiliations-list li:hover {
+    border-color: var(--text-tertiary);
+}
+
+.affiliations-list li strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.005em;
+}
+
+.affiliations-list li span {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
 }
 
 /* ========================================
@@ -1645,11 +1704,6 @@ footer {
     background: currentColor;
 }
 
-.status-pill.live {
-    background: var(--published-light);
-    color: var(--published);
-}
-
 .status-pill.active {
     background: var(--work-light);
     color: var(--work);
@@ -1658,11 +1712,6 @@ footer {
 .status-pill.dev {
     background: var(--progress-light);
     color: var(--progress);
-}
-
-.status-pill.planned {
-    background: var(--bg-tertiary);
-    color: var(--text-tertiary);
 }
 
 .chain-cta {
