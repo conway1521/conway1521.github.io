@@ -257,7 +257,7 @@ main { max-width: 900px; margin: 0 auto; padding: 120px 32px 80px; }
 
 /* APPLIED PAGE */
 .applied-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 32px; background: var(--bg-primary); transition: background 0.4s ease, border-color 0.4s ease; }
-.applied-card-image { height: 240px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); display: flex; align-items: center; justify-content: center; transition: background 0.4s ease; overflow: hidden; }
+.applied-card-image { height: 160px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); display: flex; align-items: center; justify-content: center; transition: background 0.4s ease; overflow: hidden; }
 .applied-card-image.placeholder-applied { background: linear-gradient(135deg, var(--accent-link-light) 0%, var(--accent-link) 140%); }
 .applied-card-image.placeholder-research { background: linear-gradient(135deg, var(--research-light) 0%, var(--research) 140%); }
 .applied-card-image.placeholder-radius { background: linear-gradient(135deg, var(--work-light) 0%, var(--work) 140%); }
