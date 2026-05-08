@@ -395,21 +395,3 @@ footer { border-top: 1px solid var(--border); padding: 48px 24px; background: va
 .tab-btn:focus-visible { outline: 2px solid var(--accent-link); outline-offset: 2px; border-radius: 4px; }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
-
-/* WORKSTREAM GRAPH (homepage) */
-.graph-section { margin-bottom: 56px; }
-.graph-section .graph-intro { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-top: 4px; max-width: 560px; }
-#workstream-graph { width: 100%; height: 340px; border: 1px solid var(--border); border-radius: 14px; background: var(--bg-secondary); margin: 16px 0 12px 0; overflow: hidden; position: relative; transition: background 0.4s ease, border-color 0.4s ease; }
-#workstream-graph svg { width: 100%; height: 100%; display: block; cursor: grab; }
-#workstream-graph svg:active { cursor: grabbing; }
-.graph-link { stroke: var(--text-tertiary); stroke-opacity: 0.35; stroke-width: 1; transition: stroke-opacity 0.2s; }
-.graph-link.dim { stroke-opacity: 0.08; }
-.graph-link.lit { stroke-opacity: 0.7; }
-.graph-node circle { cursor: pointer; transition: r 0.2s, stroke-width 0.2s; stroke: var(--bg-secondary); stroke-width: 1.5; }
-.graph-node:hover circle { stroke: var(--text-primary); stroke-width: 2; }
-.graph-node text { fill: var(--text-secondary); font-family: inherit; font-size: 11px; font-weight: 500; pointer-events: none; user-select: none; text-anchor: middle; transition: fill 0.2s, opacity 0.2s; }
-.graph-node.dim text { opacity: 0.3; }
-.graph-node.dim circle { opacity: 0.3; }
-.graph-legend { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 12px; color: var(--text-tertiary); margin-top: 8px; }
-.graph-legend-item { display: inline-flex; align-items: center; gap: 6px; }
-.graph-legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
