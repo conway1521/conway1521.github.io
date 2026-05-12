@@ -17,7 +17,15 @@ title: Work
         </div>
         <span class="role-status">Current</span>
     </div>
-    <p class="role-description">RI runs two product chains on a single analytical substrate. <strong>RI Technologies</strong> is client-facing: cleaning, standardising, and forecasting employer HR data (turnover, fill rates, vacancy, demand at fine-grained occupational level), so health systems and other employers can plan workforce capacity. <strong>RI Labs</strong> is policy-facing: scoring job opportunity, mapping skill proximity between occupations, and feeding forward-looking market signals into transition pathways for state policymakers, training providers, and economists. Both chains share the same occupational spine (demand signals, supply data, skill similarity, credential gating, and forecasting), applied at different ends of the labour market.</p>
+    <div class="role-description">
+        <p>At Radius I run the data department end to end. My responsibilities span three disciplines:</p>
+        <ul class="role-bullets">
+            <li><strong>Economics.</strong> Regional economic analysis and labour market forecasting at the core, designed and grounded in macroeconomic theory. The methods produce both explanations and policy levers.</li>
+            <li><strong>Engineering and architecture.</strong> A compliant, layered data intelligence layer that reconciles federal, commercial, and academic sources into unique-in-the-field combinations that actually guide practitioners.</li>
+            <li><strong>Data science.</strong> Modelling workforce and labour-market dynamics: tenure survival, demand forecasting, occupational similarity, and skill clustering.</li>
+        </ul>
+        <p>Three outputs on a shared spine: <strong>RI Technologies</strong> for client-based employer forecasting and workforce planning, <strong>RI Labs</strong> for public-policy labour-market innovation, and the data substrate itself as a product.</p>
+    </div>
 
     <div class="scope-row">
         <div class="scope-item"><strong>All US geographies</strong><span>MSA, county, state, federal</span></div>
@@ -59,6 +67,7 @@ title: Work
     <div class="chain-tabs" role="tablist">
         <button class="tab-btn active" data-target="ri-tech-pane" role="tab" aria-selected="true">RI Technologies</button>
         <button class="tab-btn" data-target="ri-labs-pane" role="tab" aria-selected="false">RI Labs</button>
+        <button class="tab-btn" data-target="data-pane" role="tab" aria-selected="false">Data</button>
     </div>
 
     <div class="tab-pane active" id="ri-tech-pane" role="tabpanel">
@@ -85,12 +94,6 @@ title: Work
             </div>
         </div>
 
-        <div class="chain-tier">
-            <h3 class="tier-label">Data warehouse</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Training provider inventory</h4><span class="status-pill active">Active</span></div><p>National database of healthcare training providers: IPEDS completions, RAPIDS apprenticeships, and CareerOneStop programs, enriched via Claude-based extraction and Google Places verification. Geocoded, deduplicated, and credential-standardised.</p></article>
-            </div>
-        </div>
     </div>
 
     <div class="tab-pane" id="ri-labs-pane" role="tabpanel">
@@ -118,19 +121,53 @@ title: Work
         </div>
 
         <div class="chain-tier">
-            <h3 class="tier-label">Data warehouses</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Workforce database</h4><span class="status-pill active">Active</span></div><p>The canonical occupational data backbone, joining fifteen-plus federal, commercial, and academic sources (BLS, Census, O*NET, IPEDS, CareerOneStop, RAPIDS, Lightcast, JobsEQ, FRED, USASpending, MIT Living Wage, and others) into a single queryable warehouse with CIP-to-SOC, O*NET-to-SOC, and NAICS-to-SOC crosswalks.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Signals database</h4><span class="status-pill active">Active</span></div><p>Twelve signal types from BLS, FRED, USASpending, WARN, O*NET vintages, ACS, Beige Book, and curated entries. Gold/silver tier firing logic rolls signals up to per-occupation, per-state market flags.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
             <h3 class="tier-label">Playbooks</h3>
             <div class="chain-grid">
                 <article class="chain-card"><div class="chain-card-head"><h4>Assess demand by job type</h4><span class="status-pill active">Active</span></div><p>End-to-end recipe for sizing demand for a given occupation in a given state, with growth and replacement decomposition.</p></article>
                 <article class="chain-card"><div class="chain-card-head"><h4>Supply-demand · net talent flows · job clusters · training supply · reporting vacancies</h4><span class="status-pill dev">In development</span></div><p>Repeatable playbooks combining workforce, signals, and skill data into purpose-built analyses for state agencies, philanthropy, and training providers.</p></article>
             </div>
+        </div>
+    </div>
+
+    <div class="tab-pane" id="data-pane" role="tabpanel">
+        <div class="chain-header">
+            <h2 class="chain-title">Data substrate</h2>
+            <p class="chain-tagline">A unique data substrate covering every occupation across the US at every depth of geography. Federal, commercial, and academic sources reconciled into unique-in-the-field combinations that actually guide practitioners.</p>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Architecture</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Layered data model</h4><span class="status-pill active">Active</span></div><p>Raw, cache, reference, and lake tiers, with a central catalog registry that makes every dataset discoverable and versioned.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Compliant tenant isolation</h4><span class="status-pill active">Active</span></div><p>Row-level security so every client sees only their own data while the shared reference and lake layers stay common.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Engineering</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Federal ingestion</h4><span class="status-pill active">Active</span></div><p>Pipelines for federal labour, education, and economic statistics, refreshed on their native cadences.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Commercial and academic integration</h4><span class="status-pill active">Active</span></div><p>Job postings, training provider feeds, and research datasets brought into the same shape as the federal sources.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Reconciliation layer</h4><span class="status-pill active">Active</span></div><p>Crosswalks and identity resolution that turn fifteen-plus disjoint sources into one queryable spine.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Public datasets</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Workforce database</h4><span class="status-pill active">Active</span></div><p>The canonical occupational data backbone, joining fifteen-plus federal, commercial, and academic sources into a single queryable warehouse with full crosswalk coverage between occupations, industries, education, and credentials.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Signals database</h4><span class="status-pill active">Active</span></div><p>Twelve signal types covering labour-market, fiscal, and macroeconomic feeds. Gold and silver tier firing logic rolls signals up to per-occupation, per-state market flags.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>JOI scores</h4><span class="status-pill active">Active</span></div><p>Job opportunity index by occupation and geography, produced from the five-pillar scoring framework.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Supply and demand ratios</h4><span class="status-pill active">Active</span></div><p>Occupational tightness at every depth of geography.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Migration corridors</h4><span class="status-pill dev">In development</span></div><p>Worker flows between metros and states, layered onto the occupational backbone.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Industry health</h4><span class="status-pill active">Active</span></div><p>Sectoral employment, wages, and concentration indicators.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Training provider inventory</h4><span class="status-pill active">Active</span></div><p>National database of training providers reconciled across eight sources, enriched via Claude-based extraction and Google Places verification. Currently scoped to healthcare, designed to extend to all ~900 occupations in the economy.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Reference taxonomies</h3>
+            <p class="tier-description">The substrate carries occupations, industries, education and credentials, and geography at the full range of granularity, so analyses can compare and chain across datasets at the most detailed level all the way up to the most general.</p>
         </div>
     </div>
 

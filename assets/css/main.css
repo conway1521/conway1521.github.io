@@ -179,6 +179,12 @@ main { max-width: 900px; margin: 0 auto; padding: 120px 32px 80px; }
 .role-status { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--work); background: var(--bg-primary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); flex-shrink: 0; transition: background 0.4s ease, border-color 0.4s ease; }
 .role-status::before { content: ''; width: 6px; height: 6px; background: var(--work); border-radius: 50%; }
 .role-description { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+.role-description > p { margin-bottom: 12px; }
+.role-description > p:last-child { margin-bottom: 0; }
+.role-bullets { list-style: none; padding: 0; margin: 0 0 14px 0; display: flex; flex-direction: column; gap: 10px; }
+.role-bullets li { position: relative; padding-left: 20px; line-height: 1.65; }
+.role-bullets li::before { content: ''; position: absolute; left: 4px; top: 9px; width: 6px; height: 6px; background: var(--work); border-radius: 50%; }
+.role-bullets strong { color: var(--text-primary); font-weight: 600; }
 .role-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .highlight { text-align: center; padding: 20px 16px; background: var(--bg-primary); border-radius: 10px; border: 1px solid var(--border); transition: background 0.4s ease, border-color 0.4s ease; }
 .highlight-number { font-size: 26px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; letter-spacing: -0.02em; }
@@ -370,6 +376,7 @@ footer { border-top: 1px solid var(--border); padding: 48px 24px; background: va
 .chain-tagline { font-size: 15px; color: var(--text-secondary); line-height: 1.65; max-width: 680px; }
 .chain-tier { margin-top: 28px; }
 .tier-label { font-size: 13px; font-weight: 600; letter-spacing: -0.005em; color: var(--text-secondary); margin-bottom: 12px; }
+.tier-description { font-size: 14px; color: var(--text-secondary); line-height: 1.65; max-width: 760px; }
 .chain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
 .chain-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg-primary); transition: border-color 0.2s, box-shadow 0.2s, background 0.4s; }
 .chain-card:hover { border-color: var(--text-tertiary); box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
