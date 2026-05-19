@@ -178,7 +178,7 @@ main { max-width: 900px; margin: 0 auto; padding: 120px 32px 80px; }
 .role-period { font-size: 14px; color: var(--text-tertiary); }
 .role-status { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--work); background: var(--bg-primary); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); flex-shrink: 0; transition: background 0.4s ease, border-color 0.4s ease; }
 .role-status::before { content: ''; width: 6px; height: 6px; background: var(--work); border-radius: 50%; }
-.role-description { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+.role-description { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 .role-description > p { margin-bottom: 12px; }
 .role-description > p:last-child { margin-bottom: 0; }
 .role-bullets { list-style: none; padding: 0; margin: 0 0 14px 0; display: flex; flex-direction: column; gap: 10px; }
@@ -345,7 +345,8 @@ footer { border-top: 1px solid var(--border); padding: 48px 24px; background: va
 .scope-item { display: flex; flex-direction: column; gap: 4px; }
 .scope-item strong { font-size: 15px; color: var(--text-primary); font-weight: 600; letter-spacing: -0.01em; }
 .scope-item span { font-size: 12px; color: var(--text-tertiary); line-height: 1.45; }
-@media (max-width: 720px) { .scope-row { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+.scope-row.tab-stats { grid-template-columns: repeat(2, 1fr); margin-top: 16px; padding-top: 18px; gap: 20px; }
+@media (max-width: 720px) { .scope-row { grid-template-columns: repeat(2, 1fr); gap: 16px; } .scope-row.tab-stats { grid-template-columns: 1fr; gap: 12px; } }
 
 /* FRAMEWORK PANEL */
 .framework-panel { margin-bottom: 56px; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg-secondary); transition: background 0.4s ease, border-color 0.4s ease; }
