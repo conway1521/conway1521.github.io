@@ -379,6 +379,10 @@ footer { border-top: 1px solid var(--border); padding: 48px 24px; background: va
 .chain-tier { margin-top: 28px; }
 .tier-label { font-size: 13px; font-weight: 600; letter-spacing: -0.005em; color: var(--text-secondary); margin-bottom: 12px; }
 .tier-description { font-size: 14px; color: var(--text-secondary); line-height: 1.65; max-width: 760px; }
+.data-includes { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: var(--text-secondary); line-height: 1.65; max-width: 760px; }
+.data-includes li { position: relative; padding-left: 20px; }
+.data-includes li::before { content: ''; position: absolute; left: 4px; top: 9px; width: 6px; height: 6px; background: var(--work); border-radius: 50%; }
+.data-includes strong { color: var(--text-primary); font-weight: 600; }
 .chain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
 .chain-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: var(--bg-primary); transition: border-color 0.2s, box-shadow 0.2s, background 0.4s; }
 .chain-card:hover { border-color: var(--text-tertiary); box-shadow: 0 2px 8px rgba(0,0,0,0.03); }

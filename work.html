@@ -21,9 +21,9 @@ title: Work
         <p>I built Radius's data department and run it end to end, across four disciplines:</p>
         <ul class="role-bullets">
             <li><strong>Economics.</strong> Regional economic analysis and labour market forecasting at the core, designed and grounded in macroeconomic theory. The methods produce both explanations and policy levers.</li>
-            <li><strong>Engineering and architecture.</strong> A compliant, layered data intelligence layer with Supabase-backed tenant isolation, that reconciles federal, commercial, and academic sources into unique-in-the-field combinations that actually guide practitioners.</li>
+            <li><strong>Engineering and architecture.</strong> A compliant, layered data intelligence layer with Supabase-backed tenant isolation, that reconciles federal, commercial, employer HR, and academic sources into unique-in-the-field combinations that cover every side of the labour market.</li>
             <li><strong>Data science.</strong> Modelling workforce and labour market dynamics: tenure survival, demand forecasting, occupational similarity, skill clustering, AI substitution exposure, and task-skill production functions.</li>
-            <li><strong>Product engineering.</strong> The software and AI surfaces on top of the data work: client-facing forecasting pipelines, a Lake Browser, a concept-routing dataset finder, and an analyst copilot for natural-language exploration. Turns the lake into decisions stakeholders can actually act on.</li>
+            <li><strong>Product engineering.</strong> Client-facing pipelines, and an AI agent companion in development to accompany users through the analysis.</li>
         </ul>
         <p><strong>RI Technologies</strong> handles client-based employer forecasting and workforce planning. <strong>RI Labs</strong> covers labour market analysis and policy innovation. The data substrate itself stands as a product.</p>
     </div>
@@ -42,7 +42,7 @@ title: Work
             <p class="chain-tagline">Client-facing pipelines that ingest, clean, standardise, and analyse employer HR data, then project forward at fine-grained occupational level.</p>
             <div class="scope-row tab-stats">
                 <div class="scope-item"><strong>3 products</strong><span>forecasts and scenario modelling</span></div>
-                <div class="scope-item"><strong>3 plugins</strong><span>diagnostic suites for orientation</span></div>
+                <div class="scope-item"><strong>5 plugins</strong><span>diagnostics, training, and staffing intelligence</span></div>
             </div>
         </div>
 
@@ -61,6 +61,8 @@ title: Work
                 <article class="chain-card"><div class="chain-card-head"><h4>Workforce diagnostics</h4><span class="status-pill active">Active</span></div><p>Tenure bucketing, seasonality, and concentration metrics that orient analysts before running anything else.</p></article>
                 <article class="chain-card"><div class="chain-card-head"><h4>Fill-rate diagnostics</h4><span class="status-pill active">Active</span></div><p>Staffing gaps, dimension breakdowns, outliers, critical-item flagging, and high-performer benchmarking.</p></article>
                 <article class="chain-card"><div class="chain-card-head"><h4>Vacancy diagnostics</h4><span class="status-pill active">Active</span></div><p>Open requisitions versus headcount, flagged by job, department, facility, and geography.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Training inventory</h4><span class="status-pill active">Active</span></div><p>National directory of training providers feeding the occupations a client hires for. Surfaces who is producing graduates in the client's region and what credentials they confer.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Temporary staffing inventory</h4><span class="status-pill dev">In development</span></div><p>National directory of staffing and contingent-workforce agencies that fill gaps when the credential pipeline alone cannot.</p></article>
             </div>
         </div>
 
@@ -127,59 +129,20 @@ title: Work
             <div class="chain-grid">
                 <article class="chain-card"><div class="chain-card-head"><h4>Federal ingestion</h4><span class="status-pill active">Active</span></div><p>Pipelines for federal labour, education, and economic statistics, refreshed on their native cadences.</p></article>
                 <article class="chain-card"><div class="chain-card-head"><h4>Commercial and academic integration</h4><span class="status-pill active">Active</span></div><p>Job postings, training provider feeds, and research datasets brought into the same shape as the federal sources.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Tenant contribution pipeline</h4><span class="status-pill active">Active</span></div><p>Anonymised HRIS, ATS, and finance feeds from RI Technologies clients, standardised against the canonical taxonomy (termination reasons, employment status, requisition status) and joined into the lake under peer-suppression rules.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Anonymisation and standardisation</h4><span class="status-pill active">Active</span></div><p>HRIS, ATS, and finance feeds from RI Technologies clients anonymised under k-anonymity rules and standardised against the canonical taxonomy (termination reasons, employment status, requisition status). Turns raw client data into peer benchmarks and workforce dynamics.</p></article>
                 <article class="chain-card"><div class="chain-card-head"><h4>Reconciliation layer</h4><span class="status-pill active">Active</span></div><p>Crosswalks and identity resolution that turn dozens of disjoint sources into one queryable spine.</p></article>
             </div>
         </div>
 
         <div class="chain-tier">
-            <h3 class="tier-label">Employer benchmark panel</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Anonymised employer panel</h4><span class="status-pill active">Active</span></div><p>HR data contributed by RI Technologies clients flows in, is standardised, and is aggregated under peer-suppression rules: k-anonymity, minimum two employers per benchmark cell, per-metric confidence tiers. The panel grows with every client connection, making the lake a living layer rather than a snapshot.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Workforce and demand cuts</h4><span class="status-pill active">Active</span></div><p>Supply-side metrics (turnover, retention, hiring, vacancy, time-to-fill, contingent share, net growth) alongside demand-side metrics (job postings, skill demand, credential demand from Lightcast and JobsEQ), aggregated into sector and occupation benchmark views across two vintages.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Sector and geographic cohorts</h4><span class="status-pill active">Active</span></div><p>NC healthcare baseline: 110 employers via the HTA Annual Survey, plus four HRIS health systems being loaded. Charlotte-MSA multi-sector cohort spans roughly 38 employers across financial services, manufacturing, energy, healthcare, and other verticals.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Workforce and labour market</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Workforce database</h4><span class="status-pill active">Active</span></div><p>Canonical occupational backbone joining federal, commercial, and academic sources, with full crosswalks across occupations, industries, education, and credentials.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Signals database</h4><span class="status-pill active">Active</span></div><p>15 signal types from labour market, fiscal, and macroeconomic feeds, rolled up to per-occupation, per-state market flags.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Opportunity index scores</h4><span class="status-pill active">Active</span></div><p>Job opportunity index by occupation and geography, produced from the five-pillar scoring framework.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Supply and demand ratios</h4><span class="status-pill active">Active</span></div><p>Occupational tightness at every depth of geography.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Migration corridors</h4><span class="status-pill active">Active</span></div><p>Worker flows between metros and states with age-band breakdowns, layered onto the occupational backbone. Around 944,000 corridor rows across 501 occupations and 51 jurisdictions, drawn from 19 ACS PUMS vintages. Powers cohort-based supply modelling.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Industry health</h4><span class="status-pill active">Active</span></div><p>Sectoral employment, wages, and concentration indicators across all 50 states plus DC.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Federal investment</h4><span class="status-pill active">Active</span></div><p>USASpending awards classified across eleven program tiers covering workforce, education, research, infrastructure, economic development, and safety-net spending.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>County and metro series</h4><span class="status-pill active">Active</span></div><p>LAUS unemployment, BLS CES employment by industry, and ACS demographic detail at sub-state grain.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>AI exposure datasets</h4><span class="status-pill active">Active</span></div><p>Pluggable adapters for AI-substitution exposure: AEI task-level metrics, Felten and team occupation scores, Webb patent-based exposure, Srinivasan generative-AI exposure, and SML automation indices. Methodology-agnostic baseline for downstream resilience analysis.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Skills DNA engine outputs</h4><span class="status-pill active">Active</span></div><p>Three engine tables (skill exposure, role resilience, task atlas) totalling around 1.3M rows. Calibrated task-skill-AI relationships derived from the nested-CES production framework, feeding the Skills Blueprint product on the RI Labs side.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Workforce supply, credentials, and outcomes</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Training provider inventory</h4><span class="status-pill active">Active</span></div><p>National directory reconciled across eight sources, geocoded and credential-standardised. Currently healthcare, designed for all ~900 occupations.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Temporary staffing inventory</h4><span class="status-pill dev">In development</span></div><p>National directory of staffing and contingent-workforce agencies, mirroring the training provider inventory: the supply pathway that fills employer gaps when the credential pipeline alone cannot.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Postsecondary completions and earnings</h4><span class="status-pill active">Active</span></div><p>IPEDS completions by institution, CIP, and award level, joined to College Scorecard programme-level earnings outcomes.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Registered apprenticeships</h4><span class="status-pill active">Active</span></div><p>RAPIDS programme registry and related training instruction provider network across all 50 states.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Credential rosters</h4><span class="status-pill active">Active</span></div><p>NABCEP solar (~7,000 individual credential holders), NCEES engineering licensure, and CareerOneStop certifications and licenses.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>WIOA participant outcomes</h4><span class="status-pill active">Active</span></div><p>DOL ETA performance records aggregated by state, programme, and training SOC: Q2 and Q4 employment rates, credential attainment, and pre and post earnings.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Sector and policy intelligence</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Sector intelligence</h4><span class="status-pill active">Active</span></div><p>175 indicators and ~233,000 observations across four anchor sectors (healthcare, manufacturing, energy, construction), in six standardised buckets: policy, utilisation, infrastructure, market structure, financial health, and benchmarks.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Levers evidence base</h4><span class="status-pill active">Active</span></div><p>Structured registry of workforce-policy and programme-intervention findings: effect sizes, identification strategies, sample sizes, and evidence tiers, ready to ground simulator outputs in published research.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Reference taxonomies</h3>
-            <p class="tier-description">The substrate carries occupations, industries, education and credentials, and geography at the full range of granularity, so analyses can compare and chain across datasets at the most detailed level all the way up to the most general. Includes ESCO and Lightcast Open Skills as overlays on the SOC backbone (around 225,000 occupation-skill relations) for skill-level analysis.</p>
+            <h3 class="tier-label">This includes</h3>
+            <ul class="data-includes">
+                <li><strong>Employer benchmark panel.</strong> Workforce metrics (turnover, vacancy, hiring, time-to-fill, contingent share) and demand cuts (postings, skills, credentials), across an NC healthcare cohort (110 employers via the HTA Annual Survey plus four HRIS health systems being loaded) and a Charlotte-MSA multi-sector cohort spanning roughly 38 employers across financial services, manufacturing, energy, healthcare, and other verticals.</li>
+                <li><strong>Workforce and labour market data.</strong> Workforce database; 15 forward-looking signal types; Job Opportunity Index scores; supply-and-demand ratios; migration corridors with around 944,000 corridor rows from 19 ACS PUMS vintages; industry health; federal investment from USASpending; county and metro series (LAUS, BLS CES, ACS); AI-substitution exposure datasets (AEI, Felten, Webb, Srinivasan, SML); and Skills DNA engine outputs across ~1.3M rows.</li>
+                <li><strong>Workforce supply, credentials, and outcomes.</strong> Training provider inventory (reconciled across eight sources), temporary staffing inventory in development, IPEDS completions joined to College Scorecard outcomes, RAPIDS apprenticeships, credential rosters (NABCEP, NCEES, CareerOneStop), and WIOA participant outcomes from DOL ETA.</li>
+                <li><strong>Sector and policy intelligence.</strong> 175 indicators and ~233,000 observations across healthcare, manufacturing, energy, and construction in six standardised buckets (policy, utilisation, infrastructure, market structure, financial health, benchmarks), plus a structured registry of policy-intervention findings (the levers evidence base).</li>
+                <li><strong>Reference taxonomies.</strong> SOC, NAICS, CIP, with ESCO and Lightcast Open Skills as overlays on the SOC backbone (around 225,000 occupation-skill relations).</li>
+            </ul>
         </div>
     </div>
 
