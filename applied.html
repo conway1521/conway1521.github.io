@@ -21,36 +21,10 @@ title: Applied
                 <span class="status-pill active">Live · updated continuously</span>
             </div>
             <p class="applied-card-description">Authoritative wealth-inequality data is scattered across mutually incompatible sources: the World Inequality Database (WID), the ECB's Household Finance and Consumption Survey (HFCS), the Luxembourg Wealth Study (LWS), the US Survey of Consumer Finances (SCF) and the Fed's Distributional Financial Accounts (DFA). Each uses a different unit, methodology and licence, so assembling a comparable cross-country panel is a research project in itself. The Open Inequality Atlas closes that gap: it harmonises these series into a <strong>single, versioned, openly licensed panel</strong> of household net-wealth inequality, currently 10,783 observations across 213 countries (1800-2025), with every row tagged by source priority and comparability tier.</p>
-            <p class="applied-card-description"><strong>Why it helps researchers.</strong> The dataset is one <code>pd.merge()</code> away from any panel: ISO-3 keys, long format, CC BY 4.0 data and an MIT-licensed reproducible pipeline. A companion <em>Moments Atlas</em> ships the exact calibration targets heterogeneous-agent and HANK macro models need: top-1%, top-10% and bottom-50% shares plus mean/median wealth for 53 countries. Because each observation carries a <code>comparability_tier</code> (A = harmonised survey, B = mixed methodology) and a <code>top_tail_flag</code> (survey-only vs admin-enhanced), researchers can filter by data quality in a single line and run robustness checks without hand-curated exclusions. It is built to be cited and to update continuously as upstream sources release new vintages.</p>
-            <div class="applied-card-meta">
-                <span class="project-tag">WID · HFCS · LWS · SCF · DFA</span>
-                <span class="project-tag">Python pipeline</span>
-                <span class="project-tag">Open data (CC BY 4.0)</span>
-                <span class="project-tag">Macro calibration</span>
-            </div>
-            <div style="background: var(--bg-secondary, #f8f8f8); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin-bottom: 20px;">
-                <p style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 10px;">Open questions for future work, beyond what WID has answered</p>
-                <ul style="margin: 0; padding-left: 18px; color: var(--text-secondary); font-size: 14px; line-height: 1.7;">
-                    <li><strong>Survey vs. administrative divergence.</strong> How far do survey-based wealth Ginis (HFCS/LWS/SCF) disagree with tax/admin-enhanced ones (WID/DFA) for the same country-year, and does the size of that gap itself signal top-tail under-coverage? WID does not benchmark the two regimes side by side within one panel; the Atlas makes it a one-line comparison.</li>
-                    <li><strong>Convergence or divergence?</strong> Are national wealth Ginis converging or diverging globally since 1990 (β- and σ-convergence), and which countries drive the trend? WID publishes levels and top shares but not a systematic convergence analysis of wealth concentration.</li>
-                    <li><strong>Where do macro models break?</strong> Using the Moments Atlas as calibration targets, where do standard HANK / heterogeneous-agent models systematically fail to reproduce observed concentration across countries, and what does that reveal about missing mechanisms (bequests, housing, portfolio heterogeneity)?</li>
-                    <li><strong>The neglected bottom tail.</strong> WID's distributional work is top-tail-focused. How does the share of households with <em>negative</em> net wealth trend over time and across countries, and how sensitive are headline Ginis to how negative net worth is treated (zero-out vs. retained)?</li>
-                    <li><strong>Wealth-income decoupling.</strong> Where and when do wealth Gini and income Gini move in opposite directions, and which institutional events (housing booms, pension reform, asset-price cycles) explain the decoupling?</li>
-                    <li><strong>Nowcasting the lag.</strong> Official wealth distributions arrive with multi-year lags. Can house-price and asset-price indices nowcast wealth Ginis ahead of the next survey/admin vintage?</li>
-                </ul>
-            </div>
             <div class="applied-card-links">
                 <a href="https://conway1521.github.io/open-inequality-atlas/" class="applied-card-link" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     Launch the Atlas
-                </a>
-                <a href="https://github.com/conway1521/wealth_ineq" class="applied-card-link" style="background: transparent; color: var(--accent-link);" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Data &amp; pipeline
-                </a>
-                <a href="https://github.com/conway1521/wealth_ineq/blob/main/docs/methods.md" class="applied-card-link" style="background: transparent; color: var(--accent-link);" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Methodology
                 </a>
             </div>
         </div>
