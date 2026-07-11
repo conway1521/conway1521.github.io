@@ -1,0 +1,223 @@
+---
+layout: default
+title: Portfolio
+---
+
+<header class="page-header">
+    <h1>Portfolio</h1>
+    <p class="page-intro">A small set of selected works I want to show in depth, rather than list. Everything else lives on <a href="{{ '/work' | relative_url }}">Work</a> as a lighter record. Right now the portfolio is anchored by Radius Intelligence, the platform I built and run.</p>
+</header>
+
+<!-- ============================================================= -->
+<!-- RADIUS INTELLIGENCE                                            -->
+<!-- ============================================================= -->
+<section class="current-role" id="radius">
+    <div class="role-header">
+        <div>
+            <div class="role-company">Radius Intelligence (RI)</div>
+            <h2 class="role-title">Labour market intelligence, end to end</h2>
+            <div class="role-period">May 2025 - Present · San Francisco · Head of data science and engineering</div>
+        </div>
+        <span class="role-status">Current</span>
+    </div>
+    <div class="role-description">
+        <p>Radius is a two-tier labour market intelligence platform that bridges labour supply and demand through an intelligent data layer, computational engines, and analytical lenses. I built and run the data department end to end, taking the ecosystem framing from my dissertation into practice.</p>
+        <p><strong>RI Technologies</strong> handles client-side employer workforce planning: HRIS standardisation, vacancy and fill-rate diagnostics, turnover and demand forecasting with scenario modelling, and prescriptive guidance through training and staffing inventories. An AI analyst agent, Eclipse, runs across the workflow.</p>
+        <p><strong>RI Labs</strong> handles labour market and policy analysis for regional stakeholders: occupation scoring on demand, mobility, growth, automation durability, and job quality; skill-based transition pathways; forward-looking market signals across every US state and occupation; and synthesis reports on regional conditions, sector health, and supply-demand imbalances.</p>
+        <p>Both run on a compliant multi-tenant Supabase data layer that reconciles federal statistics, commercial sources, training outcomes, employer HRIS, federal spending, and academic data across every US occupation and geography, standardised through a SOC pipeline of regex, embedding matching, and LLM fallback, with transformer fine-tuning for occupational and skills intelligence. Underpinned by flow-based labour market economics: stock-flow decomposition, search and matching frictions, cohort projection, micro-to-macro. Explicit econometrics over black-box ML.</p>
+    </div>
+</section>
+
+<!-- Scope strip -->
+<section class="section" id="radius-scope">
+    <div class="scope-row">
+        <div class="scope-item"><strong>~114 employers</strong><span>RI Tech HRIS panel and survey cohort</span></div>
+        <div class="scope-item"><strong>10-state cohort</strong><span>RI Labs, NC as production proving ground</span></div>
+        <div class="scope-item"><strong>220 datasets</strong><span>across 12 domains, ~8.9M records</span></div>
+        <div class="scope-item"><strong>~187K LOC</strong><span>Python, SQL, and 201 migrations</span></div>
+    </div>
+</section>
+
+<section class="chain-section" id="radius-chains">
+    <div class="chain-tabs" role="tablist">
+        <button class="tab-btn active" data-target="ri-tech-pane" role="tab" aria-selected="true">RI Technologies</button>
+        <button class="tab-btn" data-target="ri-labs-pane" role="tab" aria-selected="false">RI Labs</button>
+        <button class="tab-btn" data-target="data-pane" role="tab" aria-selected="false">Data</button>
+        <button class="tab-btn" data-target="ai-pane" role="tab" aria-selected="false">AI and tooling</button>
+    </div>
+
+    <!-- ========================= RI TECH ========================= -->
+    <div class="tab-pane active" id="ri-tech-pane" role="tabpanel">
+        <div class="chain-header">
+            <h2 class="chain-title">Employer forecasting and workforce planning</h2>
+            <p class="chain-tagline">Client-facing pipelines that ingest, clean, standardise, and analyse employer HR data, then project forward at fine-grained occupational level. A nine-stage calcs pipeline runs the workflow, from discovery through report assembly to the frontend.</p>
+            <div class="scope-row tab-stats">
+                <div class="scope-item"><strong>3 products</strong><span>forecasts and scenario modelling</span></div>
+                <div class="scope-item"><strong>5 plugins</strong><span>diagnostics, training, and staffing intelligence</span></div>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Products</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Turnover projection</h4><span class="status-pill active">Active</span></div><p>Monthly forecast with confidence bands, seasonal patterns, Kaplan-Meier survival, cohort retention, and risk decomposition. Method auto-selects by data depth: linear, ARIMA/ETS, or SARIMA.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Demand forecast</h4><span class="status-pill active">Active</span></div><p>Requisition-pipeline forecasting with fill velocity, time-to-fill, and replacement-versus-expansion decomposition. Vacancy triangulation cross-checks pooled employer rates against true time-to-close from req lifecycle data.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Scenario modelling and talent risk</h4><span class="status-pill dev">In development</span></div><p>Longer-range workforce scenarios, real-time pipeline health, and integrated talent-risk indicators built on risk x headcount x addressable-share ranking.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Plugins</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Workforce diagnostics</h4><span class="status-pill active">Active</span></div><p>Tenure bucketing, seasonality, and concentration metrics that orient analysts before running anything else. Runs first as a data-quality gate.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Fill-rate diagnostics</h4><span class="status-pill active">Active</span></div><p>Staffing gaps, dimension breakdowns, outliers, critical-item flagging, and high-performer benchmarking.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Vacancy diagnostics</h4><span class="status-pill active">Active</span></div><p>Open requisitions versus headcount, flagged by job, department, facility, and geography.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Training inventory</h4><span class="status-pill active">Active</span></div><p>National directory of training providers feeding the occupations a client hires for. Surfaces who is producing graduates in the client's region and what credentials they confer.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Temporary staffing inventory</h4><span class="status-pill dev">In development</span></div><p>National directory of staffing and contingent-workforce agencies that fill gaps when the credential pipeline alone cannot. Registry of 6,687 firms seeded; observation panel being loaded.</p></article>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================= RI LABS ========================= -->
+    <div class="tab-pane" id="ri-labs-pane" role="tabpanel">
+        <div class="chain-header">
+            <h2 class="chain-title">Labour market analysis and policy innovation</h2>
+            <p class="chain-tagline">Macro and meso analytics for state policymakers and economists, covering every occupation across the US at every depth of geography. Two engines feed a set of analytical lenses, which feed synthesis surfaces.</p>
+            <div class="scope-row tab-stats">
+                <div class="scope-item"><strong>2 engines</strong><span>supply and demand flow modelling</span></div>
+                <div class="scope-item"><strong>6 lenses</strong><span>scoring, similarity, signals, resilience</span></div>
+                <div class="scope-item"><strong>4 surfaces</strong><span>state and studio dashboards</span></div>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Engines</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Workforce flow engine (PWFE)</h4><span class="status-pill active">Active</span></div><p>Cohort-based supply modelling at state and occupation level, decomposing year-over-year workforce stock into graduates, exits, and net migration. First end-to-end run: NC registered-nurse supply 109,652 in 2024 to 138,494 by 2033, on 19 ACS PUMS vintages across 501 occupations and 51 jurisdictions.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Demand engine (PWDE)</h4><span class="status-pill active">Active</span></div><p>Demand-side triangulation across three non-reconciled layers, where divergence is the signal: pooled employer requisition rates, structural anchors from BLS projections and OEWS, and population-anchored forward-need scenarios with aging adjustment. Live v0.8 across 18 healthcare occupations in NC.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Lenses</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Opportunity scoring (JOI)</h4><span class="status-pill active">Active</span></div><p>Five-pillar Job Opportunity Index across 250-plus occupations: demand, mobility, growth, automation durability, and job quality. NC production run scored 227 occupations, range 0.30 to 0.72, with 98-plus percent rank stability under perturbation.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Skill-similarity mapping (SPI)</h4><span class="status-pill active">Active</span></div><p>798,000 occupation-pair similarities derived from O*NET skills, knowledge, and work activities. Backs transition pathways and the adjacent-workforce playbooks.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Signals</h4><span class="status-pill active">Active</span></div><p>Forward-looking market signals across 50 states, 11 to 15 signal types over two layers, from wage location quotients and retirement pressure to skill drift, AI exposure, WARN notices, and Beige Book sentiment.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Skills DNA</h4><span class="status-pill dev">In development</span></div><p>Reframes the labour market at the task level, with skills as the production input and AI as substituting capital. A three-level nested CES production function, fully calibrated rather than estimated. Engine v1 built, product phases pending. Companion paper in progress.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Supply-demand ratio</h4><span class="status-pill active">Active</span></div><p>Training completions against projected openings via a CIP-SOC crosswalk, with quality flags, feeding the Economy and Outcomes studios.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Levers</h4><span class="status-pill active">Active</span></div><p>A structured evidence base of policy interventions: 96 actionable healthcare levers mapped through controlled vocabularies, on a curated corpus of research findings with explicit evidence tiers and retained null results.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Synthesis surfaces</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>State of the State</h4><span class="status-pill active">Active</span></div><p>Per-occupation transition pathways: reachable destinations filtered by skill similarity, wage premiums, credential gates, and forward-looking signals.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Economy Studio</h4><span class="status-pill active">Active</span></div><p>Seven-tab state dashboard across macro indicators, labour market, supply-demand balance, investments, wage inequality, and national benchmarks. Live v1.0.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Outcomes Studio</h4><span class="status-pill active">Active</span></div><p>Training effectiveness: exam pass rates by institution, WIOA outcomes by local board, and credential-pipeline supply-demand. Live v1.0.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Atlas</h4><span class="status-pill dev">In development</span></div><p>A scenario terminal composing the engines, lenses, and levers. First milestone is a read-only headless config API, driven by Eclipse.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Playbooks</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Job clusters</h4><span class="status-pill active">Active</span></div><p>Occupations as micro-economies: demand is for output, not inputs, and substitution absorbs 10 to 25 percent of raw shortage gaps.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Supply flow projection</h4><span class="status-pill active">Active</span></div><p>Open the black box: a bathtub model where 70 to 80 percent of HRIS terminations are transfers, changing projections by an order of magnitude.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Talent flows</h4><span class="status-pill active">Active</span></div><p>Adjacent-workforce mapping via similarity tiers, sizing the retraining bridge between occupations.</p></article>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================= DATA ========================= -->
+    <div class="tab-pane" id="data-pane" role="tabpanel">
+        <div class="chain-header">
+            <h2 class="chain-title">Data intelligence layer</h2>
+            <p class="chain-tagline">The substrate underneath both product chains: federal, commercial, and academic sources alongside anonymised employer contributions that become peer benchmarks. A living layer that grows every time a new client connects.</p>
+            <div class="scope-row tab-stats">
+                <div class="scope-item"><strong>220 datasets</strong><span>across 12 domains, ~8.9M records</span></div>
+                <div class="scope-item"><strong>64 sources</strong><span>~1.21M contributors, federal to employer</span></div>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Architecture</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Layered data model</h4><span class="status-pill active">Active</span></div><p>Raw, cache, reference, and lake tiers, with a central catalog registry that makes every dataset discoverable and versioned. Every row tagged on six axes: readiness, lifecycle, geo grain, time grain, temporal type, and an answers-concepts vocabulary.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Compliant tenant isolation</h4><span class="status-pill active">Active</span></div><p>Row-level security so every client sees only their own data while the shared reference and lake layers stay common. Only opaque mappings and learnings flow to the shared layer.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Engineering</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Federal ingestion</h4><span class="status-pill active">Active</span></div><p>Pipelines for federal labour, education, and economic statistics, refreshed on their native cadences.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Commercial and academic integration</h4><span class="status-pill active">Active</span></div><p>Job postings, training provider feeds, and research datasets brought into the same shape as the federal sources.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Anonymisation and standardisation</h4><span class="status-pill active">Active</span></div><p>HRIS, ATS, and finance feeds anonymised under k-anonymity rules and standardised against the canonical taxonomy. Turns raw client data into peer benchmarks and workforce dynamics.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Reconciliation layer</h4><span class="status-pill active">Active</span></div><p>Crosswalks and identity resolution that turn dozens of disjoint sources into one queryable spine, with automated drift prevention at PR time and daily.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">This includes</h3>
+            <ul class="data-includes">
+                <li><strong>Employer benchmark panel.</strong> Workforce metrics (turnover, vacancy, hiring, time-to-fill, contingent share) and demand cuts (postings, skills, credentials), across an NC healthcare cohort and a Charlotte-MSA multi-sector cohort, at SOC and O*NET 8-digit grain under k-anonymous benchmark views.</li>
+                <li><strong>Workforce and labour market data.</strong> 15 forward-looking signal types; Job Opportunity Index scores; supply-and-demand ratios; interstate migration corridors (78,000-plus rows); industry health; federal investment; county and metro series; AI-substitution exposure datasets; and Skills DNA engine outputs across more than 900,000 task-atlas rows.</li>
+                <li><strong>Workforce supply, credentials, and outcomes.</strong> Training provider inventory (43,000 entities reconciled to 15,000 providers across eight sources), temporary staffing inventory, IPEDS completions joined to College Scorecard outcomes, RAPIDS apprenticeships, credential rosters, and WIOA participant outcomes.</li>
+                <li><strong>Sector and policy intelligence.</strong> 175 indicators and roughly 233,000 observations across healthcare, manufacturing, energy, and construction in six standardised buckets, plus a structured registry of policy-intervention findings.</li>
+                <li><strong>Reference taxonomies.</strong> SOC, NAICS, CIP, with ESCO and Lightcast Open Skills as overlays on the SOC backbone.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========================= AI AND TOOLING ========================= -->
+    <div class="tab-pane" id="ai-pane" role="tabpanel">
+        <div class="chain-header">
+            <h2 class="chain-title">AI surfaces and resolution tooling</h2>
+            <p class="chain-tagline">The intelligence that sits between the raw data and the user: the resolvers that map messy employer titles onto the federal spine, and the two AI surfaces that navigate and compute over everything.</p>
+            <div class="scope-row tab-stats">
+                <div class="scope-item"><strong>2 AI surfaces</strong><span>navigation and synthesis</span></div>
+                <div class="scope-item"><strong>2 resolvers</strong><span>title and occupation taxonomy</span></div>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">AI surfaces</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Eclipse</h4><span class="status-pill dev">In development</span></div><p>The analyst copilot: agentic synthesis and computation over the lake and methodology, driven by natural language, with every claim traced to source. Drives Atlas for scenario modelling.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Librarian</h4><span class="status-pill active">Active</span></div><p>The retrieval layer for the lake: dataset navigation and routing, no computation. The front door to Lighthouse.</p></article>
+            </div>
+        </div>
+
+        <div class="chain-tier">
+            <h3 class="tier-label">Resolution tooling</h3>
+            <div class="chain-grid">
+                <article class="chain-card"><div class="chain-card-head"><h4>Classifier</h4><span class="status-pill active">Active</span></div><p>The title-resolution orchestrator: a cascade from cache and high-precision keywords through O*NET substring matching and embeddings to JAAT, a purpose-trained ML layer, and RadBERT, a fine-tuned JobBERT-v2, with an LLM fall-through.</p></article>
+                <article class="chain-card"><div class="chain-card-head"><h4>Occupation taxonomy</h4><span class="status-pill active">Active</span></div><p>Two-sided taxonomy anchored to the federal spine: any title to federal occupation, plus employer-side canonical title, level, and grade. 3,939 roles across 1,016 codes, built by facet-aware clustering of 57,000-plus alternate titles.</p></article>
+            </div>
+        </div>
+    </div>
+
+    <a class="chain-cta" href="https://ri-labs.com" target="_blank">
+        Learn more at ri-labs.com
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+</section>
+
+<!-- Flagship case study -->
+<section class="section" id="radius-case">
+    <h2 class="section-title">Flagship case study</h2>
+    <div class="project-grid">
+        <article class="project-card">
+            <div class="project-image placeholder-radius"></div>
+            <div class="project-content">
+                <div class="project-meta"><span class="project-tag">Healthcare analytics</span><span class="project-tag">Simulation</span><span class="project-tag">Python</span></div>
+                <h3 class="project-title">NC nursing workforce simulation</h3>
+                <p class="project-description">A comprehensive simulation projecting nursing supply across all 100 North Carolina counties through 2035. Integrates licensure data, employer HRIS records from key health systems, granular training-pipeline data from every provider in the state, and adjacent populations to estimate facility-level shortages, geographic distributions, and talent mismatches. The workforce flow engine's first end-to-end run took RN supply from 109,652 in 2024 to a projected 138,494 by 2033.</p>
+                <p class="project-outcome">Informing state workforce policy and training investments</p>
+                <div class="project-links"><a href="https://ri-labs.com" class="project-link" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Radius</a></div>
+            </div>
+        </article>
+    </div>
+</section>
