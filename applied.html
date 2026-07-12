@@ -3,115 +3,52 @@ layout: default
 title: Applied
 ---
 
-<header class="page-header">
-    <h1>Applied</h1>
-    <p class="page-intro">Interactive tools and analyses that bring my research to life. These projects combine rigorous methodology with accessible interfaces to help practitioners and policymakers explore data and test ideas.</p>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
-</header>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
 
-<section class="section" id="inequality-atlas">
-    <article class="applied-card">
-        <div class="applied-card-image placeholder-applied"></div>
-        <div class="applied-card-content">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
-                <h3 class="applied-card-title" style="margin-bottom: 0;">Open Inequality Atlas: Wealth</h3>
-                <span class="status-pill active">Live · updated continuously</span>
-            </div>
-            <p class="applied-card-description">Authoritative wealth-inequality data is scattered across mutually incompatible sources: the World Inequality Database (WID), the ECB's Household Finance and Consumption Survey (HFCS), the Luxembourg Wealth Study (LWS), the US Survey of Consumer Finances (SCF) and the Fed's Distributional Financial Accounts (DFA). Each uses a different unit, methodology and licence, so assembling a comparable cross-country panel is a research project in itself. The Open Inequality Atlas closes that gap: it harmonises these series into a <strong>single, versioned, openly licensed panel</strong> of household net-wealth inequality, currently 10,783 observations across 213 countries (1800-2025), with every row tagged by source priority and comparability tier.</p>
-            <div class="applied-card-links">
-                <a href="https://conway1521.github.io/open-inequality-atlas/" class="applied-card-link" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    Launch the Atlas
-                </a>
-            </div>
-        </div>
-    </article>
-</section>
+<div class="wrap">
 
-<section class="section" id="ned-dashboard">
-    <article class="applied-card">
-        <div class="applied-card-image placeholder-applied"></div>
-        <div class="applied-card-content">
-            <h3 class="applied-card-title">NED Dashboard: California regional analysis</h3>
-            <p class="applied-card-description">An interactive dashboard exploring regional economic development indicators across California. Developing new theoretical foundations from economic development practitioners' (mayors, community colleges, workforce boards, employers, and others) field-derived insights, this tool translates those perspectives into quantitative analysis. The dashboard synthesises data from multiple sources to provide a comprehensive and granular view of inclusive development dynamics.</p>
-            <div class="applied-card-meta">
-                <span class="project-tag">Dash</span>
-                <span class="project-tag">Plotly</span>
-                <span class="project-tag">Regional economics</span>
-            </div>
-            <div class="applied-card-links">
-                <a href="https://ned-dashboard.onrender.com" class="applied-card-link" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    Launch Dashboard (takes 1min to load)
-                </a>
-                <a href="{{ '/research' | relative_url }}#phd" class="applied-card-link" style="background: transparent; color: var(--accent-link);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    Related research
-                </a>
-            </div>
-        </div>
-    </article>
-</section>
+  <header class="masthead">
+    <span class="eyebrow">Applied</span>
+    <h1 class="display">Tools that bring the research to life</h1>
+    <p class="lede">Interactive tools and analyses that pair rigorous methodology with accessible interfaces, so practitioners and policymakers can explore data and test ideas.</p>
+  </header>
 
-<section class="section" id="wellbeing">
-    <article class="applied-card">
-        <div class="applied-card-image placeholder-applied"></div>
-        <div class="applied-card-content">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <h3 class="applied-card-title" style="margin-bottom: 0;">Wellbeing and macroeconomics explorer</h3>
-                <span class="status-pill dev">In development</span>
-            </div>
-            <p class="applied-card-description">Will allow users to visualise how social psychology parameters affect economic outcomes during shocks and how modern macroeconomics misses key quality of life dynamics. Interactive Jupyter notebook available soon.</p>
-            <div class="applied-card-meta">
-                <span class="project-tag">Julia</span>
-                <span class="project-tag">Macro modelling</span>
-                <span class="project-tag">Inequalities</span>
-            </div>
-        </div>
-    </article>
-</section>
+  <section class="sec">
+    <h2 class="sec__h">Live</h2>
+    <div class="entry">
+      <div class="entry__head"><span class="entry__title">Open Inequality Atlas: wealth</span><span class="entry__meta">Live &middot; updated continuously</span></div>
+      <p class="entry__body">Authoritative wealth-inequality data is scattered across mutually incompatible sources: WID, the ECB's HFCS, the Luxembourg Wealth Study, the US SCF, and the Fed's Distributional Financial Accounts. Each uses a different unit, methodology, and licence, so a comparable cross-country panel is a research project in itself. The Atlas closes that gap into a single, versioned, openly licensed panel of household net-wealth inequality, 10,783 observations across 213 countries (1800&ndash;2025), every row tagged by source priority and comparability tier.</p>
+      <div class="entry__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
+    </div>
+    <div class="entry">
+      <div class="entry__head"><span class="entry__title">NED dashboard: California regional analysis</span><span class="entry__meta">Live</span></div>
+      <p class="entry__body">An interactive dashboard exploring regional economic-development indicators across California. It builds new theoretical foundations from practitioners' field-derived insight, mayors, community colleges, workforce boards, employers, and translates those perspectives into quantitative analysis, synthesising many sources into a granular view of inclusive-development dynamics.</p>
+      <div class="entry__links"><a href="https://ned-dashboard.onrender.com" target="_blank">Launch dashboard (takes a minute to load)</a> <a href="{{ '/research' | relative_url }}#phd">Related research</a></div>
+    </div>
+  </section>
 
+  <section class="sec">
+    <h2 class="sec__h">In development</h2>
+    <div class="entry">
+      <div class="entry__head"><span class="entry__title">Labour market digital twin</span><span class="entry__meta">In development</span></div>
+      <p class="entry__body">Analyses how labour markets interact with training providers, adjacent workforces, and migration, visualising steady-state dynamics and how shocks propagate. Combines micro-to-macro reasoning with granular workforce data to train a realistic model of local and state labour markets.</p>
+    </div>
+    <div class="entry">
+      <div class="entry__head"><span class="entry__title">Skills-based labour market</span><span class="entry__meta">In development</span></div>
+      <p class="entry__body">Views labour markets as combinations of skill blueprints feeding the roles that meet demand. Rather than treating labour as a homogeneous input, the production function is reformulated as:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$Y = A \cdot R^{\alpha} \cdot K^{\beta}$$</p>
+        <p style="margin:8px 0 0;">where \( R = f(S) \) is a skills composite and \( S = \left(\sum_{i=1}^{n} \gamma_i \, s_i^{\,\rho}\right)^{1/\rho} \) aggregates individual skills \( s_i \) with elasticity of substitution governed by \( \rho \).</p>
+      </div>
+      <p class="entry__body">This view connects credential-based learning and training to opportunities for upskilling and for tapping adjacent workforces to fill gaps, and lets us analyse shifts like AI on how roles evolve and which skills are more resilient.</p>
+    </div>
+    <div class="entry">
+      <div class="entry__head"><span class="entry__title">Wellbeing and macroeconomics explorer</span><span class="entry__meta">In development</span></div>
+      <p class="entry__body">Visualises how social-psychology parameters affect economic outcomes during shocks, and where modern macroeconomics misses quality-of-life dynamics.</p>
+    </div>
+  </section>
 
-<section class="section" id="twin">
-    <article class="applied-card">
-        <div class="applied-card-image placeholder-applied"></div>
-        <div class="applied-card-content">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <h3 class="applied-card-title" style="margin-bottom: 0;">Labour market digital twin</h3>
-                <span class="status-pill dev">In development</span>
-            </div>
-            <p class="applied-card-description">Will allow users to analyse how labour markets interact with training providers, adjacent workforces, migration, to visualise steady-state dynamics and how shocks propagate in this system. This tool combines <i>micro-to-macro</i> concepts with granular workforce data to train a realistic and comprehensive model of local and state labour markets. Interactive Jupyter notebook available soon.</p>
-            <div class="applied-card-meta">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Digital twin</span>
-                <span class="project-tag">Policy forecasting</span>
-            </div>
-        </div>
-    </article>
-</section>
-
-<section class="section" id="skills">
-    <article class="applied-card">
-        <div class="applied-card-image placeholder-applied"></div>
-        <div class="applied-card-content">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <h3 class="applied-card-title" style="margin-bottom: 0;">Skills-based labour market</h3>
-                <span class="status-pill dev">In development</span>
-            </div>
-            <p class="applied-card-description">Will allow users to view labour markets as combinations of skill blueprints feeding the roles that then meet demand. Rather than modelling labour as a homogeneous input, we reformulate the production function as:</p>
-            <div class="math-block" style="background: var(--bg-secondary, #f8f8f8); border-radius: 8px; padding: 16px 20px; margin: 12px 0; font-size: 0.95rem; line-height: 1.8;">
-                <p style="margin: 0;">$$Y = A \cdot R^{\alpha} \cdot K^{\beta}$$</p>
-                <p style="margin: 8px 0 0 0;">where \( R = f(S) \) is a skills composite and \( S = \left(\sum_{i=1}^{n} \gamma_i \, s_i^{\,\rho}\right)^{1/\rho} \) aggregates individual skills \( s_i \) with elasticity of substitution governed by \( \rho \).</p>
-            </div>
-            <p class="applied-card-description">This alternative view of the economy as agglomerations of skills connects with credential-based learning and skills training to show opportunities for upskilling and for adjacent workforces to be tapped to fill gaps, particularly in Manufacturing, to analyse paradigm shifts like the advent of AI on how roles evolve, and to see what skills are more impervious so that workers can build their own resilience. Interactive Jupyter notebook available soon.</p>
-            <div class="applied-card-meta">
-                <span class="project-tag">Labour economics</span>
-                <span class="project-tag">Credential-based education</span>
-                <span class="project-tag">Up/re-skilling</span>
-            </div>
-        </div>
-    </article>
-</section>
+</div>

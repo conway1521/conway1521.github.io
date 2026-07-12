@@ -1,11 +1,11 @@
-<nav class="ink-nav">
-    <a href="{{ '/' | relative_url }}" class="ink-nav__home">Alessandro Conway</a>
-    <div class="ink-nav__links">
-        <a href="{{ '/research' | relative_url }}" {% if page.url contains '/research' %}class="is-active"{% endif %}>Research</a>
-        <a href="{{ '/work' | relative_url }}" {% if page.url contains '/work' %}class="is-active"{% endif %}>Work</a>
-        <a href="{{ '/portfolio' | relative_url }}" {% if page.url contains '/portfolio' %}class="is-active"{% endif %}>Portfolio</a>
-        <a href="{{ '/applied' | relative_url }}" {% if page.url contains '/applied' %}class="is-active"{% endif %}>Applied</a>
-        <a href="{{ '/writing' | relative_url }}" {% if page.url contains '/writing' %}class="is-active"{% endif %}>Writing</a>
-        <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}class="is-active"{% endif %}>About</a>
+<nav class="nav">
+    <a href="{{ '/' | relative_url }}" class="nav__home">Alessandro Conway</a>
+    <div class="nav__links">
+        <a href="{{ '/research' | relative_url }}" {% if page.url contains '/research' %}aria-current="page"{% endif %}>Research</a>
+        <a href="{{ '/work' | relative_url }}" {% if page.url contains '/work' %}aria-current="page"{% endif %}>Work</a>
+        <a href="{{ '/portfolio' | relative_url }}" {% if page.url contains '/portfolio' %}aria-current="page"{% endif %}>Portfolio</a>
+        <a href="{{ '/applied' | relative_url }}" {% if page.url contains '/applied' %}aria-current="page"{% endif %}>Applied</a>
+        <a href="{{ '/writing' | relative_url }}" {% if page.url contains '/writing' %}aria-current="page"{% endif %}>Writing</a>
+        <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a>
     </div>
 </nav>

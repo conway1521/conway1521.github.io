@@ -75,13 +75,13 @@
     out.innerHTML =
       '<div class="resolve-out">' +
         '<div class="resolve-out__l">' +
-          '<div class="t-label" style="margin-bottom:6px;">Employer-facing canonical</div>' +
+          '<div class="resolve-out__lbl">Employer-facing canonical</div>' +
           '<div class="resolve-out__val">' + esc(r[1]) + '</div>' +
           (spec ? '<div class="resolve-out__sub">' + esc(spec) + '</div>' : '') +
           (lvl ? '<div class="resolve-out__sub">' + esc(lvl) + '</div>' : '') +
         '</div>' +
         '<div class="resolve-out__r">' +
-          '<div class="t-label" style="margin-bottom:6px;">SOC-6 federal code</div>' +
+          '<div class="resolve-out__lbl">SOC-6 federal code</div>' +
           '<div class="resolve-out__val" style="letter-spacing:0.02em;">' + esc(r[4]) + '</div>' +
           '<div class="resolve-out__sub">' + esc(r[5]) + '</div>' +
         '</div>' +
