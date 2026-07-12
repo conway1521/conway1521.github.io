@@ -5,7 +5,7 @@ title: Work
 
 <header class="page-header">
     <h1>Work</h1>
-    <p class="page-intro">I built and run <strong>Radius Intelligence (RI)</strong>'s data department: a platform that reconciles federal statistics, commercial postings, training and credential records, fiscal signals, and anonymised employer data from clients into one view across every US occupation and geography. The labour market from every side: who supplies workers, who employs them, who certifies them, and who staffs the gaps. The dataset grows every time a new client connects.</p>
+    <p class="page-intro">A working record of what I do and have done. The pieces I want to show in depth live in the <a href="{{ '/portfolio' | relative_url }}">Portfolio</a>; everything here is the lighter list. Happy to talk through any of it.</p>
 </header>
 
 <section class="current-role" id="current">
@@ -18,196 +18,8 @@ title: Work
         <span class="role-status">Current</span>
     </div>
     <div class="role-description">
-        <p><strong>RI Technologies</strong> handles client-side employer workforce planning: HRIS standardisation, vacancy and fill-rate diagnostics, turnover and demand forecasting with scenario modelling, and prescriptive guidance through training and staffing inventories. An AI analyst agent runs across the workflow.</p>
-        <p><strong>RI Labs</strong> handles labour market and policy analysis: occupation scoring on demand, mobility, growth, automation durability, and job quality; skill-based transition pathways; market signals from 15 evidence types across every US state and occupation; synthesis reports on regional conditions, sector health, and supply-demand imbalances.</p>
-        <p>Both run on a compliant multi-tenant Supabase data layer that reconciles federal statistics, commercial sources, training outcomes, employer HRIS, federal spending, and academic data across every US occupation and geography, standardised through a SOC pipeline of regex, embedding matching, and LLM fallback, with transformer fine-tuning for occupational and skills intelligence.</p>
-        <p>Underpinned by flow-based labour market economics: stock-flow decomposition, search and matching frictions, cohort projection, micro-to-macro. Explicit econometrics (survival analysis, ARIMA/SARIMA, network econometrics) over black-box ML. Building toward a full digital twin of the US labour market: employer benchmarks, training outcomes, migration, retirement pressure, skills evolution, AI substitution exposure.</p>
-    </div>
-</section>
-
-<section class="chain-section" id="chains">
-    <div class="chain-tabs" role="tablist">
-        <button class="tab-btn active" data-target="ri-tech-pane" role="tab" aria-selected="true">RI Technologies</button>
-        <button class="tab-btn" data-target="ri-labs-pane" role="tab" aria-selected="false">RI Labs</button>
-        <button class="tab-btn" data-target="data-pane" role="tab" aria-selected="false">Data</button>
-    </div>
-
-    <div class="tab-pane active" id="ri-tech-pane" role="tabpanel">
-        <div class="chain-header">
-            <h2 class="chain-title">Employer forecasting and workforce planning</h2>
-            <p class="chain-tagline">Client-facing pipelines that ingest, clean, standardise, and analyse employer HR data, then project forward at fine-grained occupational level.</p>
-            <div class="scope-row tab-stats">
-                <div class="scope-item"><strong>3 products</strong><span>forecasts and scenario modelling</span></div>
-                <div class="scope-item"><strong>5 plugins</strong><span>diagnostics, training, and staffing intelligence</span></div>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Products</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Turnover projection</h4><span class="status-pill active">Active</span></div><p>Monthly forecast with confidence bands, seasonal patterns, Kaplan-Meier survival, cohort retention, and risk decomposition.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Demand forecast</h4><span class="status-pill active">Active</span></div><p>Requisition-pipeline forecasting with fill velocity, time-to-fill, and replacement-versus-expansion decomposition.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Scenario modelling and talent risk</h4><span class="status-pill dev">In development</span></div><p>Longer-range workforce scenarios, real-time pipeline health, and integrated talent-risk indicators.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Plugins</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Workforce diagnostics</h4><span class="status-pill active">Active</span></div><p>Tenure bucketing, seasonality, and concentration metrics that orient analysts before running anything else.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Fill-rate diagnostics</h4><span class="status-pill active">Active</span></div><p>Staffing gaps, dimension breakdowns, outliers, critical-item flagging, and high-performer benchmarking.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Vacancy diagnostics</h4><span class="status-pill active">Active</span></div><p>Open requisitions versus headcount, flagged by job, department, facility, and geography.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Training inventory</h4><span class="status-pill active">Active</span></div><p>National directory of training providers feeding the occupations a client hires for. Surfaces who is producing graduates in the client's region and what credentials they confer.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Temporary staffing inventory</h4><span class="status-pill dev">In development</span></div><p>National directory of staffing and contingent-workforce agencies that fill gaps when the credential pipeline alone cannot.</p></article>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="tab-pane" id="ri-labs-pane" role="tabpanel">
-        <div class="chain-header">
-            <h2 class="chain-title">Labour market analysis and policy innovation</h2>
-            <p class="chain-tagline">Macro and meso analytics for state policymakers and economists, covering every occupation across the US at every depth of geography. Scoring opportunity, mapping skill transitions, and reading forward-looking signals.</p>
-            <div class="scope-row tab-stats">
-                <div class="scope-item"><strong>4 products</strong><span>state-level analyses and decision tools</span></div>
-                <div class="scope-item"><strong>3 plugins</strong><span>scoring and mapping methodology</span></div>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Products</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Transition pathways</h4><span class="status-pill active">Active</span></div><p>For each occupation, reachable destinations filtered by credential gates, wage premiums, and forward-looking market signals.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Workforce flow engine</h4><span class="status-pill active">Active</span></div><p>Cohort-based supply modelling at state and occupation level, decomposing year-over-year workforce stock into hires, separations, and net migration. Built on the migration corridors, the training pipeline, age-based retirements, and adjacent worker pools.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>State economy dashboards</h4><span class="status-pill dev">In development</span></div><p>Per-state view across macro indicators, competitiveness, industry rollups, retirement risk, wage inequality, supply-demand balance, and cross-state benchmarks.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Skills Blueprint</h4><span class="status-pill dev">In development</span></div><p>Reframes the labour market at the task level, with skills as the production input and AI as substituting capital. Four components on one calibrated engine: Skills Clusters, Skills DNA, Tasks Atlas, and a scenario simulator with credential and training overlay. Persona views for workforce boards, training providers, and policymakers.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Plugins</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Opportunity scoring</h4><span class="status-pill active">Active</span></div><p>Five-pillar score across 250-plus occupations: demand, mobility, growth, automation durability, and job quality.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Skill-similarity mapping</h4><span class="status-pill active">Active</span></div><p>Cosine-similarity matrix between every occupation pair, derived from skills, knowledge, and work activities.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Migration flows</h4><span class="status-pill active">Active</span></div><p>Net talent flows between states and metros, layered onto the same occupational backbone.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Playbooks</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Occupational demand sizing</h4><span class="status-pill active">Active</span></div><p>End-to-end recipe for sizing demand for a given occupation in a given state, decomposed into growth and replacement.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Repeatable playbooks</h4><span class="status-pill dev">In development</span></div><p>Supply-demand, talent flows, job clusters, training supply, and vacancy reporting for state agencies, philanthropy, and training providers.</p></article>
-            </div>
-        </div>
-    </div>
-
-    <div class="tab-pane" id="data-pane" role="tabpanel">
-        <div class="chain-header">
-            <h2 class="chain-title">Data intelligence layer</h2>
-            <p class="chain-tagline">The substrate underneath both product chains: federal, commercial, and academic sources alongside anonymised employer contributions that become peer benchmarks. A living layer that grows every time a new client connects.</p>
-            <div class="scope-row tab-stats">
-                <div class="scope-item"><strong>149 datasets</strong><span>across 12 domains, ~7.5M observations</span></div>
-                <div class="scope-item"><strong>~174,000 contributors</strong><span>federal, commercial, academic, and employer-contributed</span></div>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Architecture</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Layered data model</h4><span class="status-pill active">Active</span></div><p>Raw, cache, reference, and lake tiers, with a central catalog registry that makes every dataset discoverable and versioned.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Compliant tenant isolation</h4><span class="status-pill active">Active</span></div><p>Row-level security so every client sees only their own data while the shared reference and lake layers stay common.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">Engineering</h3>
-            <div class="chain-grid">
-                <article class="chain-card"><div class="chain-card-head"><h4>Federal ingestion</h4><span class="status-pill active">Active</span></div><p>Pipelines for federal labour, education, and economic statistics, refreshed on their native cadences.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Commercial and academic integration</h4><span class="status-pill active">Active</span></div><p>Job postings, training provider feeds, and research datasets brought into the same shape as the federal sources.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Anonymisation and standardisation</h4><span class="status-pill active">Active</span></div><p>HRIS, ATS, and finance feeds from RI Technologies clients anonymised under k-anonymity rules and standardised against the canonical taxonomy (termination reasons, employment status, requisition status). Turns raw client data into peer benchmarks and workforce dynamics.</p></article>
-                <article class="chain-card"><div class="chain-card-head"><h4>Reconciliation layer</h4><span class="status-pill active">Active</span></div><p>Crosswalks and identity resolution that turn dozens of disjoint sources into one queryable spine.</p></article>
-            </div>
-        </div>
-
-        <div class="chain-tier">
-            <h3 class="tier-label">This includes</h3>
-            <ul class="data-includes">
-                <li><strong>Employer benchmark panel.</strong> Workforce metrics (turnover, vacancy, hiring, time-to-fill, contingent share) and demand cuts (postings, skills, credentials), across an NC healthcare cohort (110 employers via the HTA Annual Survey plus four HRIS health systems being loaded) and a Charlotte-MSA multi-sector cohort spanning roughly 38 employers across financial services, manufacturing, energy, healthcare, and other verticals.</li>
-                <li><strong>Workforce and labour market data.</strong> Workforce database; 15 forward-looking signal types; Job Opportunity Index scores; supply-and-demand ratios; migration corridors with around 944,000 corridor rows from 19 ACS PUMS vintages; industry health; federal investment from USASpending; county and metro series (LAUS, BLS CES, ACS); AI-substitution exposure datasets (AEI, Felten, Webb, Srinivasan, SML); and Skills DNA engine outputs across ~1.3M rows.</li>
-                <li><strong>Workforce supply, credentials, and outcomes.</strong> Training provider inventory (reconciled across eight sources), temporary staffing inventory in development, IPEDS completions joined to College Scorecard outcomes, RAPIDS apprenticeships, credential rosters (NABCEP, NCEES, CareerOneStop), and WIOA participant outcomes from DOL ETA.</li>
-                <li><strong>Sector and policy intelligence.</strong> 175 indicators and ~233,000 observations across healthcare, manufacturing, energy, and construction in six standardised buckets (policy, utilisation, infrastructure, market structure, financial health, benchmarks), plus a structured registry of policy-intervention findings (the levers evidence base).</li>
-                <li><strong>Reference taxonomies.</strong> SOC, NAICS, CIP, with ESCO and Lightcast Open Skills as overlays on the SOC backbone (around 225,000 occupation-skill relations).</li>
-            </ul>
-        </div>
-    </div>
-
-    <a class="chain-cta" href="https://ri-labs.com" target="_blank">
-        Learn more at ri-labs.com
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    </a>
-</section>
-
-<section class="section" id="projects">
-    <h2 class="section-title">Featured projects</h2>
-
-    <div class="project-grid">
-        <article class="project-card">
-            <div class="project-image placeholder-radius"></div>
-            <div class="project-content">
-                <div class="project-meta"><span class="project-tag">Healthcare analytics</span><span class="project-tag">Simulation</span><span class="project-tag">Python</span></div>
-                <h3 class="project-title">NC nursing workforce simulation</h3>
-                <p class="project-description">A comprehensive simulation projecting nursing supply across all 100 North Carolina counties through 2035. Integrates licensure data, employer HRIS records from key health systems, granular training pipeline data from all providers in the state, and adjacent populations to estimate facility-level shortages, geographic distributions, and talent mismatches.</p>
-                <p class="project-outcome">Informing state workforce policy and training investments</p>
-                <div class="project-links"><a href="https://ri-labs.com" class="project-link" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Radius</a></div>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="project-image placeholder-purple"></div>
-            <div class="project-content">
-                <div class="project-meta"><span class="project-tag">Green workforce</span><span class="project-tag">ML</span><span class="project-tag">Policy</span></div>
-                <h3 class="project-title">CREST: green workforce readiness dashboard</h3>
-                <p class="project-description">A national dashboard ranking every US county by climate risk and economic resilience. Combines county-level economic and climate data with regional interviews to produce risk-and-readiness tiers, each with targeted recommendations for quality green jobs.</p>
-                <p class="project-outcome">Featured in national press release, anchoring high-profile climate initiative</p>
-                <div class="project-links">
-                    <a href="https://info.jff.org/assessing-regional-readiness-for-action" class="project-link" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Dashboard</a>
-                    <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" class="project-link" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Report</a>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="project-image placeholder-purple"></div>
-            <div class="project-content">
-                <div class="project-meta"><span class="project-tag">Workforce strategy</span><span class="project-tag">Labour market analysis</span><span class="project-tag">Job quality</span></div>
-                <h3 class="project-title">Tech careers workforce development programme</h3>
-                <p class="project-description">Sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals. Six target occupations identified through demand mapping and job-quality scoring. Now the basis of national enrolment and placement.</p>
-                <p class="project-outcome">500,000 individuals being enrolled and placed in six targeted occupations nationwide</p>
-                <div class="project-links"><a href="https://www.jff.org/idea/verizon-case-study/" class="project-link" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Report</a></div>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- Selected publications -->
-<section class="section">
-    <h2 class="section-title">Selected publications</h2>
-
-    <div class="publications-grid">
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/ai-black-learners.jpg' | relative_url }}" alt="AI for Black Learners" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">May 2025</span></div><h3 class="pub-card-title">Unlocking the promise of AI for Black learners and workers (JFF)</h3><p class="pub-card-summary">Survey of 2,754 Americans examining how Black workers perceive and use AI, and what's needed to ensure AI accelerates rather than widens opportunity gaps.</p><a href="https://www.jff.org/idea/unlocking-the-promise-of-ai-for-black-learners-and-workers/" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/small-business-ai.jpg' | relative_url }}" alt="Small Business AI" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">Feb 2025</span></div><h3 class="pub-card-title">Talent strategies supporting small business AI adoption (JFF)</h3><p class="pub-card-summary">Research with 72 small business leaders on workforce implications of AI adoption, with recommendations for talent development practices.</p><a href="https://info.jff.org/hubfs/Google%20AI%20Toolkits/Talent%20Strategies%20Supporting%20Small%20Business%20AI%20Adoption_VF.pdf" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/worker-voice.jpg' | relative_url }}" alt="Four Pillars of Worker Voice" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge tool">Tool</span><span class="pub-date">Dec 2024</span></div><h3 class="pub-card-title">The four pillars of worker voice (JFF)</h3><p class="pub-card-summary">Strategic playbook for employers to integrate worker expertise into business strategy through meaningful engagement, not surface-level feedback.</p><a href="https://www.jff.org/idea/four-pillars-worker-voice/" target="_blank" class="pub-card-link">View playbook<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/unequal-opportunities.jpg' | relative_url }}" alt="Unequal Opportunities" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">Jul 2024</span></div><h3 class="pub-card-title">Unequal opportunities: examining quality and diversity in green jobs (JFF)</h3><p class="pub-card-summary">Analysis of disparities in green job quality and workforce demographics, showing underrepresentation of women and Black workers in the best positions.</p><a href="https://www.jff.org/idea/climate-resilient-employees-sustainable-tomorrow-crest/unequal-opportunities-examining-quality-and-diversity-in-green-jobs/" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/regional-solutions.jpg' | relative_url }}" alt="Regional Solutions" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge tool">Guide</span><span class="pub-date">Feb 2024</span></div><h3 class="pub-card-title">Regional solutions for growing quality green jobs (JFF)</h3><p class="pub-card-summary">Interactive data tool categorising US regions by climate and economic resilience, with tailored recommendations for regional leaders.</p><a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" class="pub-card-link">Explore guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/ai-driven-economy.jpg' | relative_url }}" alt="AI-Driven Economy" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Article</span><span class="pub-date">Mar 2024</span></div><h3 class="pub-card-title">How employers can prepare workers for an AI-driven economy (JFF)</h3><p class="pub-card-summary">Four strategies for employers to cultivate foundational human skills that remain essential as AI automates technical tasks.</p><a href="https://www.jff.org/how-employers-can-prepare-workers-for-an-ai-driven-economy/" target="_blank" class="pub-card-link">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
-
-        <article class="pub-card"><img src="{{ '/assets/images/pubs/investing-inclusion.jpg' | relative_url }}" alt="Investing in Inclusion" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge webinar">Webinar</span><span class="pub-date">Jan 2023</span></div><h3 class="pub-card-title">Investing in inclusion and impact across the learner journey (JFF)</h3><p class="pub-card-summary">California regional leaders discuss how K-16 Collaborative investments are closing equity gaps and centring student voice in pathway design.</p><a href="https://www.jff.org/idea/investing-inclusion-impact-across-learner-journey/" target="_blank" class="pub-card-link">Watch webinar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+        <p>I built and run RI's data department: a two-tier labour market intelligence platform that reconciles federal statistics, commercial postings, training and credential records, fiscal signals, and anonymised employer data into one view across every US occupation and geography. RI Technologies handles client-side employer forecasting and workforce planning; RI Labs handles labour market and policy analysis; both run on a compliant multi-tenant data layer of 220 datasets and roughly 8.9M records that grows every time a new client connects.</p>
+        <p><a class="inline-link" href="{{ '/portfolio' | relative_url }}#radius">See the full breakdown in the Portfolio, the products, engines, lenses, data layer, and AI surfaces.</a></p>
     </div>
 </section>
 
@@ -241,6 +53,42 @@ title: Work
         <p class="past-role-description">Under Eric Heyer and Mathieu Plane, constructed a novel multilingual fiscal policy database for calculating fiscal multipliers using an alternative methodology. The database spans five wealthy countries, with legislative documents gathered and interpreted across four languages.</p>
         <div class="past-role-tags"><span class="past-role-tag">Excel</span><span class="past-role-tag">Fiscal multipliers</span><span class="past-role-tag">Multilingual research</span></div>
     </article>
+</section>
+
+<!-- Selected past projects: compact list, deep versions can move to Portfolio -->
+<section class="section" id="past-projects">
+    <h2 class="section-title">Selected past projects</h2>
+    <ul class="project-list">
+        <li>
+            <div class="project-list-head"><h3>CREST: green workforce readiness dashboard</h3><span class="project-list-tag">JFF</span></div>
+            <p>A national dashboard ranking every US county by climate risk and economic resilience, producing risk-and-readiness tiers with targeted recommendations. Featured in a national press release anchoring a high-profile climate initiative.</p>
+            <div class="project-list-links"><a href="https://info.jff.org/assessing-regional-readiness-for-action" target="_blank">Dashboard</a> · <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank">Report</a></div>
+        </li>
+        <li>
+            <div class="project-list-head"><h3>Tech careers workforce development programme</h3><span class="project-list-tag">JFF</span></div>
+            <p>Sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals. Six target occupations identified through demand mapping and job-quality scoring, now the basis of national enrolment and placement.</p>
+            <div class="project-list-links"><a href="https://www.jff.org/idea/verizon-case-study/" target="_blank">Case study</a></div>
+        </li>
+    </ul>
+</section>
+
+<!-- Selected publications -->
+<section class="section">
+    <h2 class="section-title">Selected publications</h2>
+
+    <div class="publications-grid">
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/ai-black-learners.jpg' | relative_url }}" alt="AI for Black Learners" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">May 2025</span></div><h3 class="pub-card-title">Unlocking the promise of AI for Black learners and workers (JFF)</h3><p class="pub-card-summary">Survey of 2,754 Americans examining how Black workers perceive and use AI, and what's needed to ensure AI accelerates rather than widens opportunity gaps.</p><a href="https://www.jff.org/idea/unlocking-the-promise-of-ai-for-black-learners-and-workers/" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/small-business-ai.jpg' | relative_url }}" alt="Small Business AI" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">Feb 2025</span></div><h3 class="pub-card-title">Talent strategies supporting small business AI adoption (JFF)</h3><p class="pub-card-summary">Research with 72 small business leaders on workforce implications of AI adoption, with recommendations for talent development practices.</p><a href="https://info.jff.org/hubfs/Google%20AI%20Toolkits/Talent%20Strategies%20Supporting%20Small%20Business%20AI%20Adoption_VF.pdf" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/worker-voice.jpg' | relative_url }}" alt="Four Pillars of Worker Voice" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge tool">Tool</span><span class="pub-date">Dec 2024</span></div><h3 class="pub-card-title">The four pillars of worker voice (JFF)</h3><p class="pub-card-summary">Strategic playbook for employers to integrate worker expertise into business strategy through meaningful engagement, not surface-level feedback.</p><a href="https://www.jff.org/idea/four-pillars-worker-voice/" target="_blank" class="pub-card-link">View playbook<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/unequal-opportunities.jpg' | relative_url }}" alt="Unequal Opportunities" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Report</span><span class="pub-date">Jul 2024</span></div><h3 class="pub-card-title">Unequal opportunities: examining quality and diversity in green jobs (JFF)</h3><p class="pub-card-summary">Analysis of disparities in green job quality and workforce demographics, showing underrepresentation of women and Black workers in the best positions.</p><a href="https://www.jff.org/idea/climate-resilient-employees-sustainable-tomorrow-crest/unequal-opportunities-examining-quality-and-diversity-in-green-jobs/" target="_blank" class="pub-card-link">Read report<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/regional-solutions.jpg' | relative_url }}" alt="Regional Solutions" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge tool">Guide</span><span class="pub-date">Feb 2024</span></div><h3 class="pub-card-title">Regional solutions for growing quality green jobs (JFF)</h3><p class="pub-card-summary">Interactive data tool categorising US regions by climate and economic resilience, with tailored recommendations for regional leaders.</p><a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" class="pub-card-link">Explore guide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+
+        <article class="pub-card"><img src="{{ '/assets/images/pubs/ai-driven-economy.jpg' | relative_url }}" alt="AI-Driven Economy" class="pub-card-image"><div class="pub-card-content"><div class="pub-card-header"><span class="pub-badge report">Article</span><span class="pub-date">Mar 2024</span></div><h3 class="pub-card-title">How employers can prepare workers for an AI-driven economy (JFF)</h3><p class="pub-card-summary">Four strategies for employers to cultivate foundational human skills that remain essential as AI automates technical tasks.</p><a href="https://www.jff.org/how-employers-can-prepare-workers-for-an-ai-driven-economy/" target="_blank" class="pub-card-link">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></article>
+    </div>
 </section>
 
 <section class="section">
