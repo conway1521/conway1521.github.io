@@ -93,7 +93,7 @@
       var hit = resolve(input.value);
       if (hit === undefined) { out.innerHTML = ''; return; }
       if (hit === null) {
-        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to LLM adjudication, flagged, never guessed.</div>';
+        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to LLM adjudication and human review.</div>';
         return;
       }
       var r = hit.row;
@@ -163,7 +163,7 @@
       btn.textContent = step >= 6 ? 'Run again' : (step === 0 ? 'Run the pipeline' : 'Running…');
     }
     function tick() {
-      if (step >= 6) { running = false; render(); return; }
+      if (step >= 6) { running = false; render(); var io = $('illustrative'); if (io) io.classList.add('is-shown'); return; }
       step += 1; render();
       timer = setTimeout(tick, 650);
     }
@@ -406,17 +406,107 @@
     });
   }
 
+  /* ---------- employer facility map (illustrative outputs) ---------- */
+  var FACILITIES = [
+    ['Phoenix Central', 'Acute-care hospital', 63, 20, 2840, 41, 33, 128, '4.3%'],
+    ['Mesa East', 'Surgical center', 74, 40, 640, 9, 11, 44, '6.8%'],
+    ['Tucson South', 'Clinic network', 55, 78, 1120, 18, 15, 61, '5.2%'],
+    ['Flagstaff North', 'Rural hospital', 44, 24, 380, 6, 7, 33, '8.1%']
+  ];
+  var TRAINING = [
+    ['Maricopa Community Colleges', 'Nursing (ADN)', '29-1141', '1,240/yr', '71% in-state'],
+    ['Northern Arizona University', 'Nursing (BSN)', '29-1141', '540/yr', '63% in-state'],
+    ['Pima Community College', 'Medical Assisting', '31-9092', '410/yr', '82% in-state'],
+    ['Gateway Community College', 'Surgical Technology', '29-2055', '120/yr', '77% in-state'],
+    ['Chandler-Gilbert CC', 'Radiography', '29-2034', '90/yr', '68% in-state']
+  ];
+  var STAFFING = [
+    ['Aya Healthcare', 'Travel RN', '29-1141', '~9k placements/yr'],
+    ['Medical Solutions', 'Nursing, allied', '29-1141', '~6k placements/yr'],
+    ['Cross Country', 'Multi-specialty', '29-2061', '~5k placements/yr'],
+    ['Trusted Health', 'RN, per diem', '29-1141', '~3k placements/yr'],
+    ['CrossMed', 'Allied health', '29-2055', '~2k placements/yr']
+  ];
+  var TITLE_METRICS = [
+    ['Registered Nurse', '29-1141', '5.1%', '47d', '39d', '4.4%'],
+    ['Licensed Practical Nurse', '29-2061', '6.3%', '41d', '35d', '5.0%'],
+    ['Surgical Technologist', '29-2055', '8.4%', '62d', '71d', '6.1%'],
+    ['Nurse Aide', '31-1131', '7.2%', '22d', '18d', '6.8%']
+  ];
+  function initFacility() {
+    var map = $('fac-map'), panel = $('fac-panel');
+    if (!map || !panel) return;
+    var defaultPanel = panel.innerHTML;
+    FACILITIES.forEach(function (f, i) {
+      var dot = document.createElement('div');
+      dot.className = 'fac-dot';
+      dot.style.left = f[2] + '%'; dot.style.top = f[3] + '%';
+      map.appendChild(dot);
+      function show() {
+        Array.prototype.forEach.call(map.querySelectorAll('.fac-dot'), function (d) { d.classList.remove('is-on'); });
+        dot.classList.add('is-on');
+        panel.innerHTML =
+          '<div class="fac-panel__name">' + esc(f[0]) + '</div>' +
+          '<div class="fac-panel__type">' + esc(f[1]) + '</div>' +
+          '<div class="fac-panel__grid">' +
+            '<span>Headcount</span><strong>' + f[4].toLocaleString() + '</strong>' +
+            '<span>Hires / mo</span><strong>' + f[5] + '</strong>' +
+            '<span>Terminations / mo</span><strong>' + f[6] + '</strong>' +
+            '<span>Open requisitions</span><strong>' + f[7] + '</strong>' +
+            '<span>Vacancy rate</span><strong>' + f[8] + '</strong>' +
+          '</div>';
+      }
+      dot.addEventListener('mouseenter', show);
+      dot.addEventListener('click', show);
+    });
+    var supplyBtn = $('fac-supply');
+    if (supplyBtn) {
+      var on = false;
+      supplyBtn.addEventListener('click', function () {
+        on = !on;
+        map.classList.toggle('show-supply', on);
+        var inv = $('fac-inventory');
+        if (inv) inv.style.display = on ? '' : 'none';
+        supplyBtn.classList.toggle('is-active', on);
+        supplyBtn.textContent = on ? 'Hide local supply' : 'Show local supply';
+      });
+      // supply dots (training + staffing), hidden until toggled
+      [[30, 30, 'train'], [82, 34, 'train'], [60, 62, 'staff'], [48, 46, 'staff'], [70, 20, 'train']].forEach(function (s) {
+        var d = document.createElement('div');
+        d.className = 'fac-supdot fac-supdot--' + s[2];
+        d.style.left = s[0] + '%'; d.style.top = s[1] + '%';
+        map.appendChild(d);
+      });
+    }
+    var invT = $('inv-training'), invS = $('inv-staffing'), mt = $('metrics-body');
+    function invRows(arr) {
+      return arr.map(function (t) {
+        return '<div class="inv-row"><span class="inv-row__name">' + esc(t[0]) + '</span>' +
+          '<span class="inv-row__meta">' + esc(t[1]) + ' · ' + esc(t[2]) + '</span>' +
+          '<span class="inv-row__n">' + esc(t[3]) + (t[4] ? ' · ' + esc(t[4]) : '') + '</span></div>';
+      }).join('');
+    }
+    if (invT) invT.innerHTML = invRows(TRAINING);
+    if (invS) invS.innerHTML = invRows(STAFFING);
+    if (mt) mt.innerHTML = TITLE_METRICS.map(function (m) {
+      return '<div class="metrics-row"><span>' + esc(m[0]) + ' <span class="rmuted">' + esc(m[1]) + '</span></span>' +
+        '<span class="r">' + esc(m[2]) + '</span><span class="r">' + esc(m[3]) + '</span>' +
+        '<span class="r">' + esc(m[4]) + '</span><span class="r rmuted">' + esc(m[5]) + '</span></div>';
+    }).join('');
+  }
+
   function init() {
     initLakeDots();
     initResolve();
     initSampleTabs();
     initConsole();
+    initFacility();
     initJoi();
     initLevers();
     initObs();
     initFlow();
     initDivergence();
-    initHoverDim('cascade', '.casc-row', 'cascade-note');
+    initHoverDim('resolution', '.res-row', 'resolution-note');
     initHoverDim('layers', '.layer-row', null);
     initHoverDim('lake', '.matrix-row', 'lake-note');
     initHoverDim('blueprint', '.bp-row', 'bp-note');
