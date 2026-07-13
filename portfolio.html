@@ -5,47 +5,68 @@ title: Portfolio
 
 <div class="wrap">
 
-  <header class="masthead">
-    <span class="eyebrow">Portfolio</span>
-    <h1 class="display">Four problems, in depth</h1>
-    <p class="lede">A small, deliberate set. Each is a stack of hard data problems, and each stage pulls on several disciplines at once, machine learning, economics, engineering, product. I lead with the problem and how it was solved, not a feature tour. Structure is shown; magnitudes are illustrative, synthetic, or withheld.</p>
-  </header>
-
-  <section class="sec" style="margin-top:44px;">
-    <h2 class="sec__h">The work</h2>
-
-    <div class="index-item">
-      <div class="index-item__title">The occupation resolver</div>
-      <p class="index-item__def">Any messy employer job title resolved to a federal occupation code and a recruiter-legible canonical name, with certainty spent cheapest first.</p>
-      <p class="index-item__meta">A ten-stage cascade in front of three model layers: an open-source embedding baseline, a fine-tuned in-domain encoder, and a local LLM for the long tail. No ground truth to start from, so the training set is generated and reviewed at scale. Nothing passes below its confidence floor; the unmatched are flagged, never guessed.</p>
-      <p class="index-item__credit">Machine learning &middot; LLM systems &middot; information retrieval &middot; data engineering</p>
-      <a class="index-item__link" href="{{ '/portfolio/occupation-resolver' | relative_url }}">Open the entry &rarr;</a>
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow">Alessandro Conway &middot; Portfolio</span>
+      <span class="eyebrow">Eight problems, in depth</span>
     </div>
+    <h1 class="display">The work, led by the problems it solves</h1>
+    <p class="lede">Each piece below is a stack of hard data problems, and each stage draws on several disciplines at once: economics, machine learning, engineering, product. I designed and built every one of them end to end: the models, the pipelines, the economics, and the product around them. Every entry follows the same spine, the problem, how it was solved, one live figure, and what is real versus synthetic.</p>
+  </div>
+  <div class="standfirst">Built at Radius, a workforce-intelligence platform &middot; magnitudes illustrative, synthetic, or withheld &middot; every number walks back to its source</div>
 
-    <div class="index-item">
-      <div class="index-item__title">The employer digital twin</div>
-      <p class="index-item__def">One employer's raw HR export, taken from upload to forecast: standardise, extract a canonical panel, explore with seasonality, then project and cost the scenario levers.</p>
-      <p class="index-item__meta">An end-to-end product where each pipeline stage prints what it produced. Survival models and cohort accounting on the analytics side, a benchmark panel built under k-anonymity, and a scenario layer that puts a defensible number and a confidence band on each intervention.</p>
-      <p class="index-item__credit">Data science &middot; engineering &middot; applied econometrics &middot; product</p>
-      <span class="index-item__soon">Entry in progress</span>
-    </div>
+  <div class="secnum" style="margin-top:0;">
+    <span class="secnum__n">01</span>
+    <h2 class="secnum__h">The index</h2>
+  </div>
 
-    <div class="index-item">
-      <div class="index-item__title">The labour market digital twin</div>
-      <p class="index-item__def">A state's workforce as a conserved system: five inflows feed the stock, three outflows drain it, demand is built four ways, and the gap is what the model solves for.</p>
-      <p class="index-item__meta">Cohort accounting over 501 occupations and 51 jurisdictions on nineteen vintages of migration microdata, with an opportunity index, forward-looking signals, and evidence-graded policy levers on top. The accounting identity must hold, so every term is measured honestly, raw 19% termination becomes a true 4.29% exit once transfers are removed.</p>
-      <p class="index-item__credit">Economics &middot; policy &middot; data science &middot; engineering</p>
-      <span class="index-item__soon">Entry in progress</span>
-    </div>
+  <div class="idx">
+    <a class="idx__row" href="{{ '/portfolio/occupation-resolver' | relative_url }}">
+      <span><span class="idx__name">The occupation resolver</span><span class="idx__def" style="display:block;">Any messy employer job title, resolved to a federal occupation code with certainty spent cheapest first.</span></span>
+      <span class="idx__figures">Live resolver &middot; the ten-stage cascade &middot; three model layers</span>
+      <span class="idx__disc">Machine learning &middot; LLM systems &middot; data engineering</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/employer-twin' | relative_url }}">
+      <span><span class="idx__name">The employer digital twin</span><span class="idx__def" style="display:block;">One employer's raw HR export taken from upload to forecast, every phase printing what it produced.</span></span>
+      <span class="idx__figures">The console, end to end &middot; the accounting correction</span>
+      <span class="idx__disc">Data science &middot; engineering &middot; econometrics &middot; product</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/labour-market-twin' | relative_url }}">
+      <span><span class="idx__name">The labour market digital twin</span><span class="idx__def" style="display:block;">A state's workforce as a conserved system: flows in, flows out, demand built four ways, the gap as output.</span></span>
+      <span class="idx__figures">The flow model &middot; the divergence</span>
+      <span class="idx__disc">Economics &middot; policy &middot; data science</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/opportunity-levers' | relative_url }}">
+      <span><span class="idx__name">Opportunity, and what moves it</span><span class="idx__def" style="display:block;">Every occupation scored on five visible pillars; policy levers attached only with evidence and a confidence band.</span></span>
+      <span class="idx__figures">The index &middot; levers with intervals &middot; the observatories</span>
+      <span class="idx__disc">Policy &middot; economics</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/workforce-blueprints' | relative_url }}">
+      <span><span class="idx__name">Workforce blueprints</span><span class="idx__def" style="display:block;">How many workers a new facility needs, in what mix, derived when no single source can see it.</span></span>
+      <span class="idx__figures">The recipe per 100 &middot; the derivation table</span>
+      <span class="idx__disc">Economics &middot; data science</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/skills-framework' | relative_url }}">
+      <span><span class="idx__name">The task-based labour market</span><span class="idx__def" style="display:block;">A calibrated production function that reads AI exposure at the task level, an instrument rather than another estimate.</span></span>
+      <span class="idx__figures">The nested framework &middot; parameter provenance</span>
+      <span class="idx__disc">Economics &middot; machine learning</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/market-signals' | relative_url }}">
+      <span><span class="idx__name">Market signals</span><span class="idx__def" style="display:block;">Forward-looking evidence on every state and occupation, with tiered confidence and legible composition.</span></span>
+      <span class="idx__figures">The evidence types &middot; two flags</span>
+      <span class="idx__disc">Economics &middot; data science</span>
+    </a>
+    <a class="idx__row" href="{{ '/portfolio/data-substrate' | relative_url }}">
+      <span><span class="idx__name">The data substrate</span><span class="idx__def" style="display:block;">220 datasets reconciled onto one occupational spine, with standardisation treated as a first-class product.</span></span>
+      <span class="idx__figures">The lake, one dot per dataset &middot; the provenance spine</span>
+      <span class="idx__disc">Data engineering &middot; data science</span>
+    </a>
+  </div>
+  <div class="idx__foot">
+    <span>Eight entries &middot; one problem each</span>
+    <span>Each entry: plain problem &rarr; how it works &rarr; one live figure &rarr; what's real</span>
+  </div>
 
-    <div class="index-item">
-      <div class="index-item__title">The data and standardization substrate</div>
-      <p class="index-item__def">The lake everything stands on: 220 datasets across twelve domains, reconciled onto one occupational spine, with standardisation treated as a first-class product.</p>
-      <p class="index-item__meta">Federal, commercial, and academic sources joined with anonymised employer contributions, every dataset tagged for readiness, grain, and provenance, and kept honest by automated drift checks. The engineering the rest of the portfolio stands on.</p>
-      <p class="index-item__credit">Data engineering &middot; data science</p>
-      <span class="index-item__soon">Entry in progress</span>
-    </div>
-
-  </section>
+  {% include reach.html %}
 
 </div>
