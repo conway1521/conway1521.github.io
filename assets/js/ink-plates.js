@@ -220,10 +220,23 @@
 
   /* ---------- policy levers (select a lever) ---------- */
   var LEVERS = [
-    ['Expand program capacity', 'Enrollment cap lifted at matched CIP programs', 14, 6, 24, [12, 4, 6]],
-    ['Last-mile stipend', 'Completion stipend for final-term students', 9, 4, 15, [8, 5, 3]],
-    ['Licensure compact', 'Recognise out-of-state licenses on arrival', 7, 2, 13, [6, 2, 3]],
-    ['Employer training credit', 'Tax credit per incumbent upskilled', 5, -1, 12, [9, 1, 4]]
+    ['Expand program capacity', 'Enrollment cap lifted at matched CIP programs', 14, 6, 24, [12, 4, 6], [
+      ['Randomised trial', 'community-college enrollment cap lift, 3 states', '+13% completions'],
+      ['Difference-in-differences', 'nursing program expansion, multi-year panel', '+16%'],
+      ['Observational', 'CTE capacity and completion, national', '+9%']
+    ]],
+    ['Last-mile stipend', 'Completion stipend for final-term students', 9, 4, 15, [8, 5, 3], [
+      ['Randomised trial', 'final-term completion stipend, single state', '+11%'],
+      ['Quasi-experimental', 'emergency aid disbursement, community colleges', '+7%']
+    ]],
+    ['Licensure compact', 'Recognise out-of-state licenses on arrival', 7, 2, 13, [6, 2, 3], [
+      ['Difference-in-differences', 'interstate licensure compact adoption', '+8% inflow'],
+      ['Observational', 'license portability and cross-state mobility', '+5%']
+    ]],
+    ['Employer training credit', 'Tax credit per incumbent upskilled', 5, -1, 12, [9, 1, 4], [
+      ['Quasi-experimental', 'employer training tax credit, state rollout', '+6% upskilled'],
+      ['Observational', 'incumbent-worker training subsidies, national', '+4%']
+    ]]
   ];
   function initLevers() {
     var tabsEl = $('lever-tabs'), bodyEl = $('lever-body');
@@ -250,7 +263,14 @@
             '<div style="width:' + Math.round(obs / ev[0] * 100) + '%; background:var(--light);"></div></div>' +
           '<div class="lev-evidence__row"><span><strong>' + ev[1] + '</strong> <span style="color:var(--faint);">causal</span></span>' +
             '<span><strong>' + ev[2] + '</strong> <span style="color:var(--faint);">quasi-exp.</span></span>' +
-            '<span><strong>' + obs + '</strong> <span style="color:var(--faint);">observational</span></span></div></div>';
+            '<span><strong>' + obs + '</strong> <span style="color:var(--faint);">observational</span></span></div></div>' +
+        '<div class="lev-prov"><div class="lev-prov__head">Representative findings behind the estimate</div>' +
+          (d[6] || []).map(function (s) {
+            return '<div class="lev-prov__row"><span class="lev-prov__design">' + esc(s[0]) + '</span>' +
+              '<span class="lev-prov__setting">' + esc(s[1]) + '</span>' +
+              '<span class="lev-prov__effect">' + esc(s[2]) + '</span></div>';
+          }).join('') +
+          '<div class="lev-prov__foot">Illustrative of the mapping. Each lever draws on a curated corpus of about 1,200 findings, tagged by design and setting, null results kept.</div></div>';
       Array.prototype.forEach.call(tabsEl.querySelectorAll('.lev-tab'), function (t) {
         t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
       });
@@ -260,9 +280,27 @@
 
   /* ---------- observatories (select a studio) ---------- */
   var OBS = [
-    ['Economy Studio', 'Gaps, growth and total positions by sector and region', ['gap index by occupation', 'requisition seasonality', 'sector growth decomposition']],
-    ['Skills Studio', 'The skill space: clusters, adjacencies, transition ladders', ['cluster map', 'adjacency scores', 'credential-only ladders']],
-    ['Migration Flows Studio', 'Who arrives, who leaves, by occupation and origin', ['net flows by state pair', 'occupation mix of arrivals', 'retention after 1 year']]
+    ['Economy & labour market', 'Gaps, growth, wages, and total positions by sector and region', [
+      ['Occupation gap index', 'Supply minus demand by occupation and county, ranked', '501 occupations'],
+      ['Requisition seasonality', 'Monthly hiring rhythm, deseasonalised for a clean trend', '36-month window'],
+      ['Sector growth decomposition', 'Shift-share splitting national trend from local advantage', '20 sectors'],
+      ['Wage pressure map', 'Pay anomalies against the regional norm for a role', 'state x SOC grain'],
+      ['Total-positions trend', 'Filled plus open, projected with a confidence band', '8-quarter horizon']
+    ]],
+    ['Skills', 'The skill space: clusters, adjacencies, drift, and transition ladders', [
+      ['Skill cluster map', 'Occupations grouped by proximity in the skill space', '798k occupation pairs'],
+      ['Adjacency ladders', 'Credential-only moves that raise wages, one step at a time', 'tiered by distance'],
+      ['Emerging vs declining skills', 'Skill profiles drifting across taxonomy vintages', '19 vintages'],
+      ['Transition feasibility', 'Reachable roles from any origin, with the bridge cost', 'per occupation'],
+      ['AI task exposure', 'Substitution exposure measured at the task level', 'calibrated framework']
+    ]],
+    ['Migration flows', 'Who arrives, who leaves, and who stays, by occupation and origin', [
+      ['Net flows by state pair', 'Arrivals minus departures across every jurisdiction pair', '51 jurisdictions'],
+      ['Occupation mix of arrivals', 'What roles move in, resolved to federal codes', 'ACS PUMS, 19 vintages'],
+      ['One-year retention', 'Share of arrivals still in-state after twelve months', 'cohort-tracked'],
+      ['Corridor strength', 'The strongest origin-to-destination links for a role', 'top corridors'],
+      ['Wage pull', 'The origin-to-destination wage gap driving the move', 'origin vs destination']
+    ]]
   ];
   function initObs() {
     var tabsEl = $('obs-tabs'), panelEl = $('obs-panel');
@@ -275,7 +313,11 @@
       var d = OBS[sel];
       panelEl.innerHTML = '<div class="obs-panel__name">' + esc(d[0]) + '</div>' +
         '<div class="obs-panel__desc">' + esc(d[1]) + '</div>' +
-        d[2].map(function (v) { return '<div class="obs-panel__view">' + esc(v) + '</div>'; }).join('');
+        d[2].map(function (v) {
+          return '<div class="obs-view"><div class="obs-view__top"><span class="obs-view__name">' + esc(v[0]) +
+            '</span><span class="obs-view__stat">' + esc(v[2]) + '</span></div>' +
+            '<div class="obs-view__desc">' + esc(v[1]) + '</div></div>';
+        }).join('');
       Array.prototype.forEach.call(tabsEl.querySelectorAll('.obs-tab'), function (t) {
         t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
       });
@@ -427,16 +469,53 @@
     ['Trusted Health', 'RN, per diem', '29-1141', '~3k placements/yr'],
     ['CrossMed', 'Allied health', '29-2055', '~2k placements/yr']
   ];
-  var TITLE_METRICS = [
+  // org-wide default, then one metrics set per facility (index-aligned to FACILITIES)
+  var ORG_METRICS = [
     ['Registered Nurse', '29-1141', '5.1%', '47d', '39d', '4.4%'],
     ['Licensed Practical Nurse', '29-2061', '6.3%', '41d', '35d', '5.0%'],
     ['Surgical Technologist', '29-2055', '8.4%', '62d', '71d', '6.1%'],
     ['Nurse Aide', '31-1131', '7.2%', '22d', '18d', '6.8%']
   ];
+  var FAC_METRICS = [
+    [ // Phoenix Central, acute-care hospital
+      ['Registered Nurse', '29-1141', '5.4%', '49d', '41d', '4.4%'],
+      ['Licensed Practical Nurse', '29-2061', '6.1%', '40d', '34d', '5.0%'],
+      ['Surgical Technologist', '29-2055', '8.9%', '66d', '74d', '6.1%'],
+      ['Nurse Aide', '31-1131', '7.0%', '21d', '17d', '6.8%']
+    ],
+    [ // Mesa East, surgical center
+      ['Surgical Technologist', '29-2055', '9.6%', '71d', '80d', '6.1%'],
+      ['Registered Nurse', '29-1141', '4.8%', '44d', '37d', '4.4%'],
+      ['Sterile Processing Tech', '31-9093', '7.7%', '38d', '29d', '5.5%'],
+      ['Nurse Aide', '31-1131', '5.9%', '19d', '15d', '6.8%']
+    ],
+    [ // Tucson South, clinic network
+      ['Medical Assistant', '31-9092', '6.8%', '24d', '19d', '5.9%'],
+      ['Licensed Practical Nurse', '29-2061', '5.7%', '36d', '30d', '5.0%'],
+      ['Registered Nurse', '29-1141', '4.1%', '39d', '33d', '4.4%'],
+      ['Phlebotomist', '31-9097', '4.9%', '20d', '14d', '4.2%']
+    ],
+    [ // Flagstaff North, rural hospital
+      ['Registered Nurse', '29-1141', '9.2%', '78d', '66d', '4.4%'],
+      ['Nurse Aide', '31-1131', '8.4%', '31d', '27d', '6.8%'],
+      ['Licensed Practical Nurse', '29-2061', '7.9%', '58d', '49d', '5.0%'],
+      ['Respiratory Therapist', '29-1126', '11.3%', '86d', '73d', '7.4%']
+    ]
+  ];
   function initFacility() {
     var map = $('fac-map'), panel = $('fac-panel');
     if (!map || !panel) return;
-    var defaultPanel = panel.innerHTML;
+    var mt = $('metrics-body'), scope = $('metrics-scope');
+    function renderMetrics(rows, label) {
+      if (scope) scope.textContent = label;
+      if (!mt) return;
+      mt.innerHTML = rows.map(function (m) {
+        return '<div class="metrics-row"><span>' + esc(m[0]) + ' <span class="rmuted">' + esc(m[1]) + '</span></span>' +
+          '<span class="r">' + esc(m[2]) + '</span><span class="r">' + esc(m[3]) + '</span>' +
+          '<span class="r">' + esc(m[4]) + '</span><span class="r rmuted">' + esc(m[5]) + '</span></div>';
+      }).join('');
+    }
+    renderMetrics(ORG_METRICS, 'organization-wide');
     FACILITIES.forEach(function (f, i) {
       var dot = document.createElement('div');
       dot.className = 'fac-dot';
@@ -455,6 +534,7 @@
             '<span>Open requisitions</span><strong>' + f[7] + '</strong>' +
             '<span>Vacancy rate</span><strong>' + f[8] + '</strong>' +
           '</div>';
+        renderMetrics(FAC_METRICS[i], f[0]);
       }
       dot.addEventListener('mouseenter', show);
       dot.addEventListener('click', show);
@@ -478,7 +558,7 @@
         map.appendChild(d);
       });
     }
-    var invT = $('inv-training'), invS = $('inv-staffing'), mt = $('metrics-body');
+    var invT = $('inv-training'), invS = $('inv-staffing');
     function invRows(arr) {
       return arr.map(function (t) {
         return '<div class="inv-row"><span class="inv-row__name">' + esc(t[0]) + '</span>' +
@@ -488,11 +568,6 @@
     }
     if (invT) invT.innerHTML = invRows(TRAINING);
     if (invS) invS.innerHTML = invRows(STAFFING);
-    if (mt) mt.innerHTML = TITLE_METRICS.map(function (m) {
-      return '<div class="metrics-row"><span>' + esc(m[0]) + ' <span class="rmuted">' + esc(m[1]) + '</span></span>' +
-        '<span class="r">' + esc(m[2]) + '</span><span class="r">' + esc(m[3]) + '</span>' +
-        '<span class="r">' + esc(m[4]) + '</span><span class="r rmuted">' + esc(m[5]) + '</span></div>';
-    }).join('');
   }
 
   /* ---------- job clusters: the adjacent population (hover a node) ----------
@@ -619,6 +694,96 @@
     });
   }
 
+  /* ---------- ramp composition (hover a stage) ----------
+     The occupation mix shifts across a facility's life. Each stage is a
+     stacked bar; the segments are job-family shares at that moment. */
+  var RAMP_FAMILIES = ['Construction', 'Processing techs', 'Engineering', 'Maintenance', 'Management & other'];
+  var RAMP_STAGES = [
+    ['Construction', [70, 4, 12, 6, 8], 'Site build-out. The crew is almost all construction trades; the operating workforce barely exists yet.'],
+    ['Tool install', [14, 20, 34, 20, 12], 'Equipment moves in. Engineering peaks while maintenance and process techs ramp to receive and qualify the tools.'],
+    ['Early ramp', [4, 40, 24, 18, 14], 'Production starts. Process technicians dominate; engineering shifts from install to yield.'],
+    ['Steady state', [0, 32, 25, 16, 27], 'The recipe the blueprint describes. Composition settles into its operating mix.'],
+    ['Wind-down', [0, 28, 18, 26, 28], 'Volume tapers. Maintenance share rises as the plant is kept running lean.']
+  ];
+  function initRamp() {
+    var host = $('ramp'), legend = $('ramp-legend'), note = $('ramp-note');
+    if (!host) return;
+    var defaultNote = note ? note.getAttribute('data-default') : null;
+    host.innerHTML = RAMP_STAGES.map(function (s, i) {
+      var segs = s[1].map(function (w, k) {
+        return '<span class="ramp-seg ramp-seg--' + k + '" style="width:' + w + '%;" title="' + esc(RAMP_FAMILIES[k]) + ' ' + w + '%"></span>';
+      }).join('');
+      return '<div class="ramp-row" data-i="' + i + '"><span class="ramp-row__name">' + esc(s[0]) +
+        '</span><div class="ramp-bar">' + segs + '</div></div>';
+    }).join('');
+    if (legend) legend.innerHTML = RAMP_FAMILIES.map(function (f, k) {
+      return '<span class="ramp-legend__item"><span class="ramp-seg ramp-seg--' + k + ' ramp-legend__swatch"></span>' + esc(f) + '</span>';
+    }).join('');
+    var rows = host.querySelectorAll('.ramp-row');
+    Array.prototype.forEach.call(rows, function (row) {
+      var i = parseInt(row.getAttribute('data-i'), 10);
+      row.addEventListener('mouseenter', function () {
+        Array.prototype.forEach.call(rows, function (r) { if (r !== row) r.classList.add('is-dim'); });
+        if (note) {
+          var s = RAMP_STAGES[i];
+          var mix = RAMP_FAMILIES.map(function (f, k) { return s[1][k] ? f + ' ' + s[1][k] : null; })
+            .filter(Boolean).join(' &middot; ');
+          note.innerHTML = '<strong>' + esc(s[0]) + '.</strong> ' + esc(s[2]) + ' <span class="rmuted">' + mix + '</span>';
+        }
+      });
+      row.addEventListener('mouseleave', function () {
+        Array.prototype.forEach.call(rows, function (r) { r.classList.remove('is-dim'); });
+        if (note && defaultNote != null) note.innerHTML = defaultNote;
+      });
+    });
+  }
+
+  /* ---------- qualitative to quantitative (switch an example) ----------
+     Prose from a source on the left, the structured signals it yields on
+     the right, on the same state-by-occupation grain as the statistics. */
+  var EXTRACT = [
+    ['Regional economic commentary', '“Manufacturers across the district reported continued difficulty filling skilled maintenance and technician roles, with several noting wage increases to retain staff. Healthcare contacts described sustained shortages of nurses, while hiring for administrative positions had slowed.”', [
+      ['Industrial Machinery Mechanics', '49-9041', 'tightening', 'moderate', 'tier 2, needs a second source', 'skilled maintenance hard to fill, wages raised to retain'],
+      ['Registered Nurses', '29-1141', 'tightening', 'elevated', 'tier 2', 'sustained shortages reported'],
+      ['Office & Administrative', '43-0000', 'easing', 'mild', 'tier 3, single mention', 'administrative hiring slowed']
+    ]],
+    ['Trade press release', '“The company confirmed its new advanced-packaging facility will begin tool installation next quarter, with technician hiring to follow in the second half of the year.”', [
+      ['Semiconductor Processing Techs', '51-9141', 'rising demand', 'timing: H2', 'tier 1, named and dated', 'technician hiring to follow tool install'],
+      ['Electrical & Electronics Engineers', '17-2070', 'rising demand', 'timing: next quarter', 'tier 1', 'tool installation begins']
+    ]],
+    ['Layoff notice', '“Notice of a planned reduction affecting 240 employees at a regional distribution center, effective in 60 days, citing automation of order-fulfilment operations.”', [
+      ['Laborers & Material Movers', '53-7060', 'loosening', 'sharp', 'tier 1, mandated filing', '240 positions, 60-day notice'],
+      ['First-Line Supervisors', '53-1040', 'loosening', 'moderate', 'tier 2', 'proportional to affected floor staff']
+    ]]
+  ];
+  function initExtract() {
+    var tabsEl = $('xtract-tabs'), proseEl = $('xtract-prose'), fieldsEl = $('xtract-fields');
+    if (!tabsEl || !proseEl || !fieldsEl) return;
+    var sel = 0;
+    function render() {
+      tabsEl.innerHTML = EXTRACT.map(function (d, i) {
+        return '<button class="obs-tab' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(d[0]) + '</button>';
+      }).join('');
+      var d = EXTRACT[sel];
+      proseEl.innerHTML = '<div class="xtract-src">Source: ' + esc(d[0]) + '</div><div class="xtract-quote">' + esc(d[1]) + '</div>';
+      fieldsEl.innerHTML = d[2].map(function (s) {
+        return '<div class="xtract-sig">' +
+          '<div class="xtract-sig__occ">' + esc(s[0]) + ' <span class="rmuted">' + esc(s[1]) + '</span></div>' +
+          '<div class="xtract-sig__grid">' +
+            '<span>direction</span><strong>' + esc(s[2]) + '</strong>' +
+            '<span>magnitude</span><strong>' + esc(s[3]) + '</strong>' +
+            '<span>confidence</span><strong>' + esc(s[4]) + '</strong>' +
+          '</div>' +
+          '<div class="xtract-sig__basis">from: ' + esc(s[5]) + '</div>' +
+        '</div>';
+      }).join('');
+      Array.prototype.forEach.call(tabsEl.querySelectorAll('.obs-tab'), function (t) {
+        t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
+      });
+    }
+    render();
+  }
+
   function init() {
     initLakeDots();
     initResolve();
@@ -631,6 +796,8 @@
     initFlow();
     initClusters();
     initHierarchy();
+    initRamp();
+    initExtract();
     initDivergence();
     initHoverDim('resolution', '.res-row', 'resolution-note');
     initHoverDim('layers', '.layer-row', null);
