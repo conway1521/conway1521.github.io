@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Official statistics arrive quarters late; decisions cannot wait for them. Leading evidence exists: postings, layoff notices, wage anomalies, federal awards, even the tone of regional economic reports. But it is noisy, uneven, and easy to over-read. The discipline is not in collecting more of it; it is in grading how much confidence each piece deserves and composing it so the logic stays readable.</p>
+      <p>Official statistics arrive quarters late. Decisions cannot wait for them. Leading evidence exists: postings, layoff notices, wage anomalies, federal awards, even the tone of regional economic reports. But it is noisy, uneven, and easy to over-read. The discipline is not in collecting more of it. It is in grading how much confidence each piece deserves and composing it so the logic stays readable.</p>
     </div>
   </div>
 
@@ -41,7 +41,7 @@ ink_js: true
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Tiered confidence</h3>
-        <p>Strong sources fire alone; weaker ones only count when two agree in the same direction; unconfirmed signals are kept and labelled rather than dropped, because a flagged rumour that later confirms is itself information.</p>
+        <p>Strong sources fire alone. Weaker ones only count when two agree in the same direction. Unconfirmed signals are kept and labelled rather than dropped, because a flagged rumour that later confirms is itself information.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
@@ -64,19 +64,19 @@ ink_js: true
       <span class="plate__hint">hover a type &middot; ten of fifteen shown</span>
     </div>
     <p class="plate__purpose">Each type carries its source and what it is allowed to claim.</p>
-    <div id="signals" data-default="Each signal type lands on the same state-by-occupation grain. Strong sources fire alone; weaker ones need agreement.">
+    <div id="signals" data-default="Each signal type lands on the same state-by-occupation grain. Strong sources fire alone. Weaker ones need agreement.">
       <div class="sig-row" data-note="Wage anomaly &middot; pay far from the regional norm for an occupation is unmet demand showing in the price."><span class="sig-row__num">01</span><span class="sig-row__name">Wage anomaly</span><span class="sig-row__src">occupational wage statistics, location quotients</span></div>
       <div class="sig-row" data-note="Employment shift &middot; growth decomposed into what the sector explains and what the place adds."><span class="sig-row__num">02</span><span class="sig-row__name">Employment shift</span><span class="sig-row__src">payroll series, shift-share decomposition</span></div>
-      <div class="sig-row" data-note="Retirement pressure &middot; age structure by occupation; a wave visible years before it breaks."><span class="sig-row__num">03</span><span class="sig-row__name">Retirement pressure</span><span class="sig-row__src">census microdata age structure</span></div>
+      <div class="sig-row" data-note="Retirement pressure &middot; age structure by occupation. A wave visible years before it breaks."><span class="sig-row__num">03</span><span class="sig-row__name">Retirement pressure</span><span class="sig-row__src">census microdata age structure</span></div>
       <div class="sig-row" data-note="Skill drift &middot; how an occupation's skill profile is changing across taxonomy vintages."><span class="sig-row__num">04</span><span class="sig-row__name">Skill drift</span><span class="sig-row__src">occupational skill profiles, across vintages</span></div>
       <div class="sig-row" data-note="AI exposure &middot; task-level substitution exposure, from the calibrated framework."><span class="sig-row__num">05</span><span class="sig-row__name">AI exposure</span><span class="sig-row__src">task-level exposure measures</span></div>
-      <div class="sig-row" data-note="Layoff notices &middot; mandated advance notices; the hardest of the leading indicators."><span class="sig-row__num">06</span><span class="sig-row__name">Layoff notices</span><span class="sig-row__src">state advance-notice filings</span></div>
+      <div class="sig-row" data-note="Layoff notices &middot; mandated advance notices. The hardest of the leading indicators."><span class="sig-row__num">06</span><span class="sig-row__name">Layoff notices</span><span class="sig-row__src">state advance-notice filings</span></div>
       <div class="sig-row" data-note="Federal investment &middot; awards and spending flowing to a place and sector before hiring follows."><span class="sig-row__num">07</span><span class="sig-row__name">Federal investment</span><span class="sig-row__src">federal spending records</span></div>
       <div class="sig-row" data-note="Posting intensity &middot; openings pressure by occupation, standardised through the resolver."><span class="sig-row__num">08</span><span class="sig-row__name">Posting intensity</span><span class="sig-row__src">job postings, deduplicated</span></div>
       <div class="sig-row" data-note="Licensure volume &middot; new credential holders entering a regulated occupation."><span class="sig-row__num">09</span><span class="sig-row__name">Licensure volume</span><span class="sig-row__src">credential and licensure rosters</span></div>
       <div class="sig-row" data-note="Regional sentiment &middot; the tone of regional economic commentary, extracted under a constrained schema."><span class="sig-row__num">10</span><span class="sig-row__name">Regional sentiment</span><span class="sig-row__src">regional economic reports, LLM-extracted</span></div>
     </div>
-    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. Strong sources fire alone; weaker ones need agreement.</div>
+    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. Strong sources fire alone. Weaker ones need agreement.</div>
   </div>
 
   <!-- the two flags -->
@@ -97,13 +97,12 @@ ink_js: true
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>
-      <h2 class="secnum__h">What's real</h2>
+      <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The system runs live across all fifty states, roughly 87,000 signal observations over a larger base of source rows, refreshed on each source's native cadence, and feeds the opportunity index, the state dashboards, and the labour market twin. The signal types and confidence rules shown are the production rules; the example notes are illustrative.</p>
+      <p>The system runs live across all fifty states, roughly 87,000 signal observations over a larger base of source rows, refreshed on each source's native cadence, and feeds the opportunity index, the state dashboards, and the labour market twin. The signal types and confidence rules shown are the production rules. The example notes are illustrative.</p>
     </div>
     <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
-    {% include reach.html %}
   </div>
 
 </div>

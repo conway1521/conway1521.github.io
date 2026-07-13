@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The task-based labour market
-description: "A calibrated production function that reads AI exposure at the task level. Every parameter sourced; robustness across exposure measures built in."
+description: "A calibrated production function that reads AI exposure at the task level. Every parameter sourced. Robustness across exposure measures built in."
 permalink: /portfolio/skills-framework/
 ---
 
@@ -15,7 +15,7 @@ permalink: /portfolio/skills-framework/
     <h1 class="display">The task-based labour market</h1>
     <p class="lede">A calibrated production function that reads AI exposure at the task level: what happens to the skill mix when an AI capability lands, measured as an instrument rather than argued as an estimate.</p>
   </div>
-  <div class="standfirst">Economics &middot; machine learning. Engine built, outputs cached at scale; companion paper in progress.</div>
+  <div class="standfirst">Economics &middot; machine learning. Engine built, outputs cached at scale. Companion paper in progress.</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
@@ -35,7 +35,7 @@ permalink: /portfolio/skills-framework/
     <div class="stages">
       <div class="grid2__item">
         <h3><span class="n">01</span>The economy as tasks</h3>
-        <p>Three nested levels: an industry combines tasks in stable expenditure shares; each task is produced from capital and labour with a task-specific substitution elasticity; the labour input is itself a bundle of skills. Automation-resistant tasks and exposed tasks differ in one parameter, not in kind.</p>
+        <p>Three nested levels: an industry combines tasks in stable expenditure shares. Each task is produced from capital and labour with a task-specific substitution elasticity. The labour input is itself a bundle of skills. Automation-resistant tasks and exposed tasks differ in one parameter, not in kind.</p>
         <div class="disc">Economics</div>
       </div>
       <div class="grid2__item">
@@ -62,7 +62,7 @@ permalink: /portfolio/skills-framework/
       <span class="plate__title">The framework</span>
       <span class="plate__hint">three levels, two outputs</span>
     </div>
-    <p class="plate__purpose">Cobb-Douglas over tasks; capital against labour within each task; skills within labour. The two engine outputs follow directly.</p>
+    <p class="plate__purpose">Cobb-Douglas over tasks. Capital against labour within each task. Skills within labour. The two engine outputs follow directly.</p>
     <div class="eq-block" style="border-top:none;">
       <div class="eq-block__label">Industry combines tasks</div>
       <div class="eq-block__eq">Y = A &middot; &Pi;<sub>i</sub> T<sub>i</sub><sup>&beta;<sub>i</sub></sup></div>
@@ -71,17 +71,17 @@ permalink: /portfolio/skills-framework/
     <div class="eq-block">
       <div class="eq-block__label">Each task combines capital and labour</div>
       <div class="eq-block__eq">T<sub>i</sub> = B<sub>i</sub> &middot; [ &delta;<sub>i</sub> K<sub>i</sub><sup>&rho;<sub>i</sub></sup> + (1&minus;&delta;<sub>i</sub>) L<sub>i</sub><sup>&rho;<sub>i</sub></sup> ]<sup>1/&rho;<sub>i</sub></sup></div>
-      <div class="eq-block__read">The substitution elasticity &sigma;<sub>i</sub> = 1/(1&minus;&rho;<sub>i</sub>) is task-specific: near zero, capital and labour are complements and the task resists automation; large, they substitute and the task is exposed.</div>
+      <div class="eq-block__read">The substitution elasticity &sigma;<sub>i</sub> = 1/(1&minus;&rho;<sub>i</sub>) is task-specific: near zero, capital and labour are complements and the task resists automation. Large, they substitute and the task is exposed.</div>
     </div>
     <div class="eq-block">
       <div class="eq-block__label">Labour is a bundle of skills</div>
-      <div class="eq-block__eq">L<sub>i</sub> = CES( S<sub>1</sub> &hellip; S<sub>K</sub> ; &gamma;<sub>i,k</sub>, &sigma;<sub>j,k</sub> )</div>
-      <div class="eq-block__read">Skill shares &gamma;<sub>i,k</sub> are task-specific; pairwise elasticities &sigma;<sub>j,k</sub> say which skills substitute within a task and which cannot.</div>
+      <div class="eq-block__eq">L<sub>i</sub> = CES( S<sub>1</sub> &hellip; S<sub>K</sub> . &gamma;<sub>i,k</sub>, &sigma;<sub>j,k</sub> )</div>
+      <div class="eq-block__read">Skill shares &gamma;<sub>i,k</sub> are task-specific. Pairwise elasticities &sigma;<sub>j,k</sub> say which skills substitute within a task and which cannot.</div>
     </div>
     <div class="eq-block">
       <div class="eq-block__label">The outputs</div>
       <div class="eq-block__eq">&theta;<sub>k</sub> = &Sigma;<sub>i</sub> &beta;<sub>i</sub> (1&minus;&delta;<sub>i</sub>) &gamma;<sub>i,k</sub> &nbsp;&nbsp;&nbsp; &part;&theta;<sub>k</sub>/&part;&delta;<sub>i</sub> = &minus;&beta;<sub>i</sub> &gamma;<sub>i,k</sub></div>
-      <div class="eq-block__read">&theta;<sub>k</sub> is skill k's weight in aggregate output; its derivative is skill k's exposure to a marginal increase in task i's capital intensity. Every surface and every figure reads from these two.</div>
+      <div class="eq-block__read">&theta;<sub>k</sub> is skill k's weight in aggregate output. Its derivative is skill k's exposure to a marginal increase in task i's capital intensity. Every surface and every figure reads from these two.</div>
     </div>
     <div class="plate__caption">Not a structural model: no elasticities estimated, no equilibrium solved, no causal claims about wages or employment. A measurement instrument with disclosed parameters.</div>
   </div>
@@ -92,7 +92,7 @@ permalink: /portfolio/skills-framework/
       <span class="plate__title">Where every parameter comes from</span>
       <span class="plate__hint">the provenance</span>
     </div>
-    <p class="plate__purpose">None of the parameters are estimated structurally; each is traceable to a published source.</p>
+    <p class="plate__purpose">None of the parameters are estimated structurally. Each is traceable to a published source.</p>
     <div class="spine">
       <div><div class="spine__label">&beta;<sub>i</sub> &middot; industry task shares</div><div class="spine__body">National staffing matrices &times; task importance profiles, weighted by industry output.</div></div>
       <div><div class="spine__label">&delta;<sub>i</sub>, &sigma;<sub>i</sub> &middot; capital share and substitutability</div><div class="spine__body">Pluggable AI-exposure adapters: several published task-level measures behind one contract, with a blended option.</div></div>
@@ -105,13 +105,12 @@ permalink: /portfolio/skills-framework/
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>
-      <h2 class="secnum__h">What's real</h2>
+      <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The engine is built and its outputs are cached at scale: skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, each carrying its adapter and calibration vintage. The framework doubles as a research instrument: a <a href="{{ '/research' | relative_url }}#working-papers">companion paper</a> on measuring labour-market resilience and AI exposure is in progress. The equations above are the production system; worked magnitudes are deliberately not shown here.</p>
+      <p>The engine is built and its outputs are cached at scale: skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, each carrying its adapter and calibration vintage. The framework doubles as a research instrument: a <a href="{{ '/research' | relative_url }}#working-papers">companion paper</a> on measuring labour-market resilience and AI exposure is in progress. The equations above are the production system. Worked magnitudes are deliberately not shown here.</p>
     </div>
     <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
-    {% include reach.html %}
   </div>
 
 </div>
