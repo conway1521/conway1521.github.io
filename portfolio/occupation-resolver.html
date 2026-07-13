@@ -1,6 +1,7 @@
 ---
 layout: default
 title: The occupation resolver
+description: "Any messy employer job title resolved to a federal occupation code: a ten-stage cascade, three model layers, honest evaluation, and a live demo."
 permalink: /portfolio/occupation-resolver/
 ink_js: true
 ---
@@ -100,15 +101,35 @@ ink_js: true
     <div class="plate__note" id="cascade-note">The bar is what remains unresolved after each stage. Certainty is spent cheapest first; nothing falls through silently.</div>
   </div>
 
+  <!-- evaluation, including the failures -->
+  <div class="plate" style="max-width:640px;">
+    <div class="plate__head">
+      <span class="plate__title">Measured, honestly</span>
+      <span class="plate__hint">including the negative results</span>
+    </div>
+    <p class="plate__purpose">Evaluated on held-out employer titles at fine occupational grain. The negative results are what shipped the architecture.</p>
+    <div class="correction-row" style="border-top:none;"><span style="font-size:13px; color:var(--muted);">Purpose-built posting classifier</span><span style="font-size:13px;"><strong>93.8%</strong> coverage &middot; <strong>72.1%</strong> top-1 on covered</span></div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">In-domain encoder, on the residual</span><span style="font-size:13px;"><strong>30.6%</strong> coverage &middot; <strong>81.6%</strong> precision on covered</span></div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Role resolver, zero-shot centroid</span><span style="font-size:13px;"><strong>92%</strong> coverage on 68,351 labelled rows</span></div>
+    <div style="border-top:1px solid var(--ink); margin-top:14px; padding-top:12px;">
+      <div style="font-size:13px; font-weight:600; margin-bottom:4px;">Classification beats retrieval</div>
+      <div style="font-size:12.5px; color:var(--muted); line-height:1.55; margin-bottom:12px;">On the hard set, a classifier reached 45.5% top-3 against a 40.4% ceiling for oracle retrieval. Retrieval is corpus-bound; no better index could close the gap.</div>
+      <div style="font-size:13px; font-weight:600; margin-bottom:4px;">More capacity hurt</div>
+      <div style="font-size:12.5px; color:var(--muted); line-height:1.55;">At roughly 17k training examples, a frozen-encoder probe (45.5%) beat LoRA (42.4%) beat full fine-tuning (32.3%), monotonically. Data, not parameters, was the remaining lever, so the architecture keeps the encoder frozen and spends effort on labels.</div>
+    </div>
+    <div class="plate__caption">Layers are evaluated where they run: the classifier on the full stream, the encoder only on the residual that reaches it. Publishing what failed is part of the method.</div>
+  </div>
+
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>
       <h2 class="secnum__h">What's real</h2>
     </div>
     <div class="prose">
-      <p>The resolver above matches against a small synthetic sample. In production the same input runs the three model layers with the ten-stage cascade in front, over employer HRIS panels and public postings, with inference kept under tenant isolation. Every code a title becomes is traceable to the stage that produced it, and titles with no confident match are flagged for review rather than forced.</p>
+      <p>The resolver above matches against a small synthetic sample. In production the same input runs the three model layers with the ten-stage cascade in front, over employer HRIS panels and public postings, with inference kept under tenant isolation. The evaluation numbers are from real held-out runs. Every code a title becomes is traceable to the stage that produced it, and titles with no confident match are flagged for review rather than forced.</p>
     </div>
     <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
+    {% include reach.html %}
   </div>
 
 </div>
