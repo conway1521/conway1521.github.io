@@ -3,6 +3,11 @@ layout: default
 title: Research
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
 <div class="wrap">
 
   <header class="masthead">
@@ -67,6 +72,33 @@ title: Research
       <p class="entry__body">Reframes the labour market at the task level: tasks are where supply meets demand, with capital, AI included, substituting for labour. A nested CES production function spans industry output, task composition, and the skills that make up labour, read both top-down and bottom-up. Every parameter is calibrated to accepted sources rather than re-estimated. The paper operationalises what the literature agrees on rather than contesting it.</p>
       <div class="entry__links"><a href="{{ '/portfolio/skills-framework' | relative_url }}">The production system it specifies</a></div>
     </div>
+  </section>
+
+  <section class="sec" id="agenda">
+    <h2 class="sec__h">Research agenda &middot; works in progress</h2>
+    <p class="lede" style="font-size:15px; margin:2px 0 18px; max-width:680px;">Short, self-contained pieces from my own research agenda, developed independently and not owned by any employer. Each is a hook and a model rather than a finished paper. Click any one to open its motivation, its formalisation, and where it stands.</p>
+    <div class="agenda">
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Measuring labour market resilience and AI exposure</div>
+          <div class="agenda-card__meta">task-skill framework &middot; companion to the Skills work &middot; in progress</div>
+          <p class="agenda-card__abstract">Tasks are where labour supply meets demand, and where capital, AI included, substitutes for labour. A nested CES production function spans industry output, task composition, and skills, calibrated to accepted sources rather than re-estimated.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Most exposure measures score occupations directly. This reframes the market one level down, at the task, so that an occupation's exposure is built up from the tasks it performs and the skills those tasks require. The point is not to contest the literature but to operationalise what it already agrees on, with every parameter sourced.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$Y = A \cdot R^{\alpha} \cdot K^{\beta}$$</p>
+            <p style="margin:8px 0 0;">where the labour composite \( R = f(S) \) reads through a skills aggregator \( S = \left(\sum_{i=1}^{n} \gamma_i \, s_i^{\,\rho}\right)^{1/\rho} \), with the elasticity of substitution between skills governed by \( \rho \), and \( K \) carrying the AI-substitution channel.</p>
+          </div>
+          <div class="agenda-card__sub">Where it stands</div>
+          <p>The production system is specified and running as an instrument. The paper writes up the calibration and the resilience results.</p>
+          <div class="agenda-card__links"><a href="{{ '/portfolio/skills-framework' | relative_url }}">The production system it specifies</a></div>
+        </div>
+      </details>
+    </div>
+    <p style="font-size:13px; color:var(--faint); margin-top:16px; max-width:680px;">Prototype of the format. Seven more agenda pieces to come, each as one of these cards.</p>
   </section>
 
   <section class="sec">
