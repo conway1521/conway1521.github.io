@@ -1,7 +1,7 @@
 ---
 layout: default
 title: The occupation resolver
-description: "Any messy employer job title resolved to a federal occupation code: a ten-stage cascade, three model layers, honest evaluation, and a live demo."
+description: "Any messy employer job title resolved to a federal occupation code: a ten-stage cascade, three model layers, held-out evaluation, and a live demo."
 permalink: /portfolio/occupation-resolver/
 ink_js: true
 ---
@@ -16,7 +16,7 @@ ink_js: true
     <h1 class="display">The occupation resolver</h1>
     <p class="lede">Any messy employer job title, resolved to a federal occupation code and a recruiter-legible canonical name, with certainty spent cheapest first and the unmatched flagged, never guessed.</p>
   </div>
-  <div class="standfirst">Machine learning &middot; LLM systems &middot; information retrieval &middot; data engineering &mdash; in production on employer HRIS panels and public postings, under tenant isolation</div>
+  <div class="standfirst">Machine learning &middot; LLM systems &middot; information retrieval &middot; data engineering &middot; in production on employer HRIS panels and public postings, under tenant isolation</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Employers name the same job a hundred ways: "AmbFloat LPN / II", "RN/Care Manager", "Sr. Scrum Master (Remote, LOCALS)". Nothing downstream works, no benchmark, no forecast, no career transition, until those titles collapse onto one federal spine. And there is no ground truth to check against: no labelled set says which code is correct. Getting this stage right, cheaply and honestly, is what makes everything after it possible.</p>
+      <p>Employers name the same job a hundred ways: "AmbFloat LPN / II", "RN/Care Manager", "Sr. Scrum Master (Remote, LOCALS)". Nothing downstream works, no benchmark, no forecast, no career transition, until those titles collapse onto one federal spine. And there is no ground truth to check against: no labelled set says which code is correct. Getting this stage right, cheaply and reliably, is what makes everything after it possible.</p>
     </div>
   </div>
 
@@ -87,16 +87,16 @@ ink_js: true
     </div>
     <p class="plate__purpose">A messy title falls through ten stages; the bar is what is still unresolved after each. Certainty is spent cheapest first, and nothing falls through silently.</p>
     <div id="cascade" data-default="The bar is what remains unresolved after each stage. Certainty is spent cheapest first; nothing falls through silently.">
-      <div class="casc-row" data-note="Noise strip &mdash; shift tags, req IDs, and location suffixes removed before anything is judged."><span class="casc-row__num">01</span><span class="casc-row__name">Noise strip</span><div><div class="casc-row__bar" style="width:100%;"></div></div><span class="casc-row__floor"></span></div>
-      <div class="casc-row" data-note="Learnings cache &mdash; 17,500+ confirmed mappings. What has been resolved before is never re-resolved."><span class="casc-row__num">02</span><span class="casc-row__name">Learnings cache</span><div><div class="casc-row__bar" style="width:78%;"></div></div><span class="casc-row__floor">exact</span></div>
-      <div class="casc-row" data-note="Keyword rules &mdash; 200+ high-precision patterns. Cheap certainty first."><span class="casc-row__num">03</span><span class="casc-row__name">Keyword rules</span><div><div class="casc-row__bar" style="width:64%;"></div></div><span class="casc-row__floor">exact</span></div>
-      <div class="casc-row" data-note="Alternate-title match &mdash; 33,170 federal alternate titles, substring match."><span class="casc-row__num">04</span><span class="casc-row__name">Alternate titles</span><div><div class="casc-row__bar" style="width:46%;"></div></div><span class="casc-row__floor">exact</span></div>
-      <div class="casc-row" data-note="Family mapper &mdash; occupational-family routing for the ambiguous middle."><span class="casc-row__num">05</span><span class="casc-row__name">Family mapper</span><div><div class="casc-row__bar" style="width:38%;"></div></div><span class="casc-row__floor"></span></div>
-      <div class="casc-row" data-note="Embedding &mdash; sentence-transformer cosine similarity."><span class="casc-row__num">06</span><span class="casc-row__name">Embedding</span><div><div class="casc-row__bar" style="width:30%;"></div></div><span class="casc-row__floor">floor 0.72</span></div>
-      <div class="casc-row" data-note="Trained classifier &mdash; purpose-built on national posting data."><span class="casc-row__num">07</span><span class="casc-row__name">Trained classifier</span><div><div class="casc-row__bar" style="width:18%;"></div></div><span class="casc-row__floor">floor 0.94</span></div>
-      <div class="casc-row" data-note="In-domain encoder &mdash; fine-tuned on employer-title pairs, catches the residual."><span class="casc-row__num">08</span><span class="casc-row__name">In-domain encoder</span><div><div class="casc-row__bar" style="width:9%;"></div></div><span class="casc-row__floor">floor 0.30</span></div>
-      <div class="casc-row" data-note="LLM adjudication &mdash; the hard residual only. Every decision traced."><span class="casc-row__num">09</span><span class="casc-row__name">LLM adjudication</span><div><div class="casc-row__bar" style="width:4%;"></div></div><span class="casc-row__floor">traced</span></div>
-      <div class="casc-row" data-note="Unmatched &mdash; flagged and kept. Never guessed."><span class="casc-row__num">10</span><span class="casc-row__name">Unmatched</span><div><div class="casc-row__bar" style="width:1%;"></div></div><span class="casc-row__floor">honest</span></div>
+      <div class="casc-row" data-note="Noise strip &middot; shift tags, req IDs, and location suffixes removed before anything is judged."><span class="casc-row__num">01</span><span class="casc-row__name">Noise strip</span><div><div class="casc-row__bar" style="width:100%;"></div></div><span class="casc-row__floor"></span></div>
+      <div class="casc-row" data-note="Learnings cache &middot; 17,500+ confirmed mappings. What has been resolved before is never re-resolved."><span class="casc-row__num">02</span><span class="casc-row__name">Learnings cache</span><div><div class="casc-row__bar" style="width:78%;"></div></div><span class="casc-row__floor">exact</span></div>
+      <div class="casc-row" data-note="Keyword rules &middot; 200+ high-precision patterns. Cheap certainty first."><span class="casc-row__num">03</span><span class="casc-row__name">Keyword rules</span><div><div class="casc-row__bar" style="width:64%;"></div></div><span class="casc-row__floor">exact</span></div>
+      <div class="casc-row" data-note="Alternate-title match &middot; 33,170 federal alternate titles, substring match."><span class="casc-row__num">04</span><span class="casc-row__name">Alternate titles</span><div><div class="casc-row__bar" style="width:46%;"></div></div><span class="casc-row__floor">exact</span></div>
+      <div class="casc-row" data-note="Family mapper &middot; occupational-family routing for the ambiguous middle."><span class="casc-row__num">05</span><span class="casc-row__name">Family mapper</span><div><div class="casc-row__bar" style="width:38%;"></div></div><span class="casc-row__floor"></span></div>
+      <div class="casc-row" data-note="Embedding &middot; sentence-transformer cosine similarity."><span class="casc-row__num">06</span><span class="casc-row__name">Embedding</span><div><div class="casc-row__bar" style="width:30%;"></div></div><span class="casc-row__floor">floor 0.72</span></div>
+      <div class="casc-row" data-note="Trained classifier &middot; purpose-built on national posting data."><span class="casc-row__num">07</span><span class="casc-row__name">Trained classifier</span><div><div class="casc-row__bar" style="width:18%;"></div></div><span class="casc-row__floor">floor 0.94</span></div>
+      <div class="casc-row" data-note="In-domain encoder &middot; fine-tuned on employer-title pairs, catches the residual."><span class="casc-row__num">08</span><span class="casc-row__name">In-domain encoder</span><div><div class="casc-row__bar" style="width:9%;"></div></div><span class="casc-row__floor">floor 0.30</span></div>
+      <div class="casc-row" data-note="LLM adjudication &middot; the hard residual only. Every decision traced."><span class="casc-row__num">09</span><span class="casc-row__name">LLM adjudication</span><div><div class="casc-row__bar" style="width:4%;"></div></div><span class="casc-row__floor">traced</span></div>
+      <div class="casc-row" data-note="Unmatched &middot; flagged and kept. Never guessed."><span class="casc-row__num">10</span><span class="casc-row__name">Unmatched</span><div><div class="casc-row__bar" style="width:1%;"></div></div><span class="casc-row__floor">kept</span></div>
     </div>
     <div class="plate__note" id="cascade-note">The bar is what remains unresolved after each stage. Certainty is spent cheapest first; nothing falls through silently.</div>
   </div>
@@ -104,20 +104,21 @@ ink_js: true
   <!-- evaluation, including the failures -->
   <div class="plate" style="max-width:640px;">
     <div class="plate__head">
-      <span class="plate__title">Measured, honestly</span>
-      <span class="plate__hint">including the negative results</span>
+      <span class="plate__title">Evaluation</span>
+      <span class="plate__hint">held out, failures included</span>
     </div>
-    <p class="plate__purpose">Evaluated on held-out employer titles at fine occupational grain. The negative results are what shipped the architecture.</p>
+    <p class="plate__purpose">Held-out employer titles, fine occupational grain. The failed experiments set the final design.</p>
     <div class="correction-row" style="border-top:none;"><span style="font-size:13px; color:var(--muted);">Purpose-built posting classifier</span><span style="font-size:13px;"><strong>93.8%</strong> coverage &middot; <strong>72.1%</strong> top-1 on covered</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">In-domain encoder, on the residual</span><span style="font-size:13px;"><strong>30.6%</strong> coverage &middot; <strong>81.6%</strong> precision on covered</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Role resolver, zero-shot centroid</span><span style="font-size:13px;"><strong>92%</strong> coverage on 68,351 labelled rows</span></div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Role clustering vs federal sub-splits</span><span style="font-size:13px;"><strong>0.09-0.10</strong> merge error &middot; alternatives 0.38 / 0.85</span></div>
     <div style="border-top:1px solid var(--ink); margin-top:14px; padding-top:12px;">
       <div style="font-size:13px; font-weight:600; margin-bottom:4px;">Classification beats retrieval</div>
       <div style="font-size:12.5px; color:var(--muted); line-height:1.55; margin-bottom:12px;">On the hard set, a classifier reached 45.5% top-3 against a 40.4% ceiling for oracle retrieval. Retrieval is corpus-bound; no better index could close the gap.</div>
       <div style="font-size:13px; font-weight:600; margin-bottom:4px;">More capacity hurt</div>
       <div style="font-size:12.5px; color:var(--muted); line-height:1.55;">At roughly 17k training examples, a frozen-encoder probe (45.5%) beat LoRA (42.4%) beat full fine-tuning (32.3%), monotonically. Data, not parameters, was the remaining lever, so the architecture keeps the encoder frozen and spends effort on labels.</div>
     </div>
-    <div class="plate__caption">Layers are evaluated where they run: the classifier on the full stream, the encoder only on the residual that reaches it. Publishing what failed is part of the method.</div>
+    <div class="plate__caption">Layers are evaluated where they run: the classifier on the full stream, the encoder only on the residual that reaches it.</div>
   </div>
 
   <div class="col">
