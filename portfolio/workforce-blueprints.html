@@ -16,7 +16,7 @@ ink_js: true
     <h1 class="display">Workforce blueprints</h1>
     <p class="lede">How many workers a new facility needs, in what mix, and when, derived when no single source can see it. The worked case: semiconductor fabs, where nine facility types each carry their own recipe and their own ramp.</p>
   </div>
-  <div class="standfirst">Economics &middot; data science &mdash; the fourth demand layer of the labour market twin</div>
+  <div class="standfirst">Economics &middot; data science &middot; the fourth demand layer of the labour market twin</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
@@ -65,27 +65,62 @@ ink_js: true
     </div>
     <p class="plate__purpose">Ten job families make the recipe, measured from public staffing patterns and type-tuned block totals.</p>
     <div id="blueprint" data-default="Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations; hatched marks the block unique to the sector.">
-      <div class="bp-row" data-note="Processing &mdash; 16 per 100. Semiconductor Processing Technicians 16.00 (320 in a 2,000-person fab). The block unique to the sector."><span class="bp-row__name">Processing</span><div><div class="bp-row__bar bp-row__bar--hatch" style="width:64%;"></div></div><span class="bp-row__per">16</span></div>
-      <div class="bp-row" data-note="Engineering &mdash; 25 per 100. Industrial 7.62 (152) &middot; Computer Hardware 6.20 (124) &middot; Electronics 4.37 (87) &middot; Electrical 2.44 (49) &middot; Mechanical 2.00 (40)."><span class="bp-row__name">Engineering</span><div><div class="bp-row__bar" style="width:100%;"></div></div><span class="bp-row__per">25</span></div>
-      <div class="bp-row" data-note="Software &mdash; 11 per 100. Software Developers 6.69 (134) &middot; QA Analysts 0.72 (14)."><span class="bp-row__name">Software</span><div><div class="bp-row__bar" style="width:44%;"></div></div><span class="bp-row__per">11</span></div>
-      <div class="bp-row" data-note="Engineering technicians &mdash; 8 per 100. EE Technologists 3.91 (78) &middot; IE Technologists 2.16 (43)."><span class="bp-row__name">Eng. technicians</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
-      <div class="bp-row" data-note="Maintenance &mdash; 8 per 100. Industrial Machinery Mechanics 3.88 (78) &middot; Maintenance &amp; Repair 2.51 (50)."><span class="bp-row__name">Maintenance</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
-      <div class="bp-row" data-note="Management &mdash; 8 per 100. Architectural &amp; Eng. Managers 1.58 (32) &middot; General &amp; Operations 1.32 (26) &middot; Industrial Production 1.13 (23)."><span class="bp-row__name">Management</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
-      <div class="bp-row" data-note="Other production &mdash; 8 per 100. Inspectors &amp; Testers 2.34 (47) &middot; First-Line Supervisors 1.44 (29)."><span class="bp-row__name">Other production</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
-      <div class="bp-row" data-note="Business operations &mdash; 6 per 100. Project Management Specialists 1.15 (23) &middot; Accountants 0.91 (18)."><span class="bp-row__name">Business ops</span><div><div class="bp-row__bar" style="width:24%;"></div></div><span class="bp-row__per">6</span></div>
-      <div class="bp-row" data-note="Admin &amp; logistics &mdash; 5 per 100. Shipping &amp; Receiving 1.26 (25) &middot; Production Planning 0.98 (20)."><span class="bp-row__name">Admin &amp; logistics</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
-      <div class="bp-row" data-note="All else &mdash; 5 per 100. Sales Representatives 1.72 (34), and the long tail."><span class="bp-row__name">All else</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
+      <div class="bp-row" data-note="Processing &middot; 16 per 100. Semiconductor Processing Technicians 16.00 (320 in a 2,000-person fab). The block unique to the sector."><span class="bp-row__name">Processing</span><div><div class="bp-row__bar bp-row__bar--hatch" style="width:64%;"></div></div><span class="bp-row__per">16</span></div>
+      <div class="bp-row" data-note="Engineering &middot; 25 per 100. Industrial 7.62 (152) &middot; Computer Hardware 6.20 (124) &middot; Electronics 4.37 (87) &middot; Electrical 2.44 (49) &middot; Mechanical 2.00 (40)."><span class="bp-row__name">Engineering</span><div><div class="bp-row__bar" style="width:100%;"></div></div><span class="bp-row__per">25</span></div>
+      <div class="bp-row" data-note="Software &middot; 11 per 100. Software Developers 6.69 (134) &middot; QA Analysts 0.72 (14)."><span class="bp-row__name">Software</span><div><div class="bp-row__bar" style="width:44%;"></div></div><span class="bp-row__per">11</span></div>
+      <div class="bp-row" data-note="Engineering technicians &middot; 8 per 100. EE Technologists 3.91 (78) &middot; IE Technologists 2.16 (43)."><span class="bp-row__name">Eng. technicians</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
+      <div class="bp-row" data-note="Maintenance &middot; 8 per 100. Industrial Machinery Mechanics 3.88 (78) &middot; Maintenance &amp; Repair 2.51 (50)."><span class="bp-row__name">Maintenance</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
+      <div class="bp-row" data-note="Management &middot; 8 per 100. Architectural &amp; Eng. Managers 1.58 (32) &middot; General &amp; Operations 1.32 (26) &middot; Industrial Production 1.13 (23)."><span class="bp-row__name">Management</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
+      <div class="bp-row" data-note="Other production &middot; 8 per 100. Inspectors &amp; Testers 2.34 (47) &middot; First-Line Supervisors 1.44 (29)."><span class="bp-row__name">Other production</span><div><div class="bp-row__bar" style="width:32%;"></div></div><span class="bp-row__per">8</span></div>
+      <div class="bp-row" data-note="Business operations &middot; 6 per 100. Project Management Specialists 1.15 (23) &middot; Accountants 0.91 (18)."><span class="bp-row__name">Business ops</span><div><div class="bp-row__bar" style="width:24%;"></div></div><span class="bp-row__per">6</span></div>
+      <div class="bp-row" data-note="Admin &amp; logistics &middot; 5 per 100. Shipping &amp; Receiving 1.26 (25) &middot; Production Planning 0.98 (20)."><span class="bp-row__name">Admin &amp; logistics</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
+      <div class="bp-row" data-note="All else &middot; 5 per 100. Sales Representatives 1.72 (34), and the long tail."><span class="bp-row__name">All else</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
     </div>
     <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations; hatched marks the block unique to the sector.</div>
+  </div>
+
+
+  <!-- coverage -->
+  <div class="plate" style="max-width:640px;">
+    <div class="plate__head">
+      <span class="plate__title">What each source can see</span>
+      <span class="plate__hint">hover a source</span>
+    </div>
+    <p class="plate__purpose">No single source sees the blueprint. Each covers some axes and is blind on others; the union, with abstentions respected, is what makes the recipe defensible.</p>
+    <div class="cov-head"><span></span><span>Mix</span><span>Scale</span><span>Timing</span><span>Frontier</span><span>Place</span></div>
+    <div id="coverage" data-default="Filled covers the axis; hatched is partial; empty is blind. Filings abstain from the mix axis by design.">
+      <div class="cov-row" data-note="Staffing matrices: the composition backbone. Deep on mix, dated on the frontier, silent on timing.">
+        <span class="cov-row__name">Staffing matrices</span>
+        <span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
+      </div>
+      <div class="cov-row" data-note="Job postings: live demand, frontier roles, and location, but biased toward churn; mix only partially, through the resolver.">
+        <span class="cov-row__name">Job postings</span>
+        <span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span>
+      </div>
+      <div class="cov-row" data-note="Financial filings: scale and timing with legal weight. They abstain from mix by design; they set how many workers, not what share.">
+        <span class="cov-row__name">Financial filings</span>
+        <span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
+      </div>
+      <div class="cov-row" data-note="Trade announcements: the frontier and the calendar, site by site; scale only as claimed.">
+        <span class="cov-row__name">Trade announcements</span>
+        <span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span>
+      </div>
+    </div>
+    <div class="cov-legend">
+      <span><span class="cov-cell cov-cell--full"></span> covers</span>
+      <span><span class="cov-cell cov-cell--part"></span> partial</span>
+      <span><span class="cov-cell cov-cell--blind"></span> blind</span>
+    </div>
+    <div class="plate__note" id="cov-note">Filled covers the axis; hatched is partial; empty is blind. Filings abstain from the mix axis by design.</div>
   </div>
 
   <!-- derivation table -->
   <div class="plate" style="max-width:760px;">
     <div class="plate__head">
       <span class="plate__title">The derivation</span>
-      <span class="plate__hint">every number walks back</span>
+      <span class="plate__hint">the full audit trail</span>
     </div>
-    <p class="plate__purpose">Per-100 equals the occupation's share of its block times the block total; headcount is per-100 scaled to a 2,000-person facility. The audit trail is the point.</p>
+    <p class="plate__purpose">Per-100 equals the occupation's share of its block times the block total; headcount is per-100 scaled to a 2,000-person facility.</p>
     <div class="deriv-head"><span>SOC</span><span>Occupation</span><span>Block</span><span class="r">Share %</span><span class="r">Block</span><span class="r">Per 100</span><span class="r">At 2,000</span></div>
     <div class="deriv-row"><span>51-9141</span><span>Semiconductor Processing Technicians</span><span>Processing</span><span class="r">100.0</span><span class="r">16</span><span class="r">16.00</span><span class="r">320</span></div>
     <div class="deriv-row"><span>17-2112</span><span>Industrial Engineers</span><span>Engineering</span><span class="r">30.5</span><span class="r">25</span><span class="r">7.62</span><span class="r">152</span></div>
@@ -96,6 +131,26 @@ ink_js: true
     <div class="deriv-row"><span>49-9041</span><span>Industrial Machinery Mechanics</span><span>Maintenance</span><span class="r">48.4</span><span class="r">8</span><span class="r">3.88</span><span class="r">78</span></div>
     <div class="deriv-row"><span>49-9071</span><span>Maintenance &amp; Repair, General</span><span>Maintenance</span><span class="r">31.4</span><span class="r">8</span><span class="r">2.51</span><span class="r">50</span></div>
     <div class="plate__caption">Derived from public staffing patterns with type-tuned block totals; facility scale illustrative. Eight of forty-plus rows shown.</div>
+  </div>
+
+
+  <!-- type weights -->
+  <div class="plate" style="max-width:560px;">
+    <div class="plate__head">
+      <span class="plate__title">Nine types, two that dominate</span>
+      <span class="plate__hint">weight in the tracked build-out</span>
+    </div>
+    <p class="plate__purpose">Each facility type carries its own recipe and its own ramp. The recipe above is the leading-edge one.</p>
+    <div>
+      <div class="fw-row"><span class="fw-row__name">Analog</span><div class="fw-track"><span class="fw-dot" style="left:92%;"></span></div><span class="fw-val">41.5</span></div>
+      <div class="fw-row"><span class="fw-row__name" style="font-weight:600;">Leading-edge logic</span><div class="fw-track"><span class="fw-dot" style="left:90.2%;"></span></div><span class="fw-val">40.7</span></div>
+      <div class="fw-row"><span class="fw-row__name">Memory</span><div class="fw-track"><span class="fw-dot" style="left:14.9%;"></span></div><span class="fw-val">6.7</span></div>
+      <div class="fw-row"><span class="fw-row__name">Compound</span><div class="fw-track"><span class="fw-dot" style="left:6.7%;"></span></div><span class="fw-val">3.0</span></div>
+      <div class="fw-row"><span class="fw-row__name">Advanced packaging</span><div class="fw-track"><span class="fw-dot" style="left:6.4%;"></span></div><span class="fw-val">2.9</span></div>
+      <div class="fw-row"><span class="fw-row__name">Mature node</span><div class="fw-track"><span class="fw-dot" style="left:6.2%;"></span></div><span class="fw-val">2.8</span></div>
+      <div class="fw-row"><span class="fw-row__name">MEMS / photonics</span><div class="fw-track"><span class="fw-dot" style="left:5.3%;"></span></div><span class="fw-val">2.4</span></div>
+    </div>
+    <div class="plate__caption">Normalised weights across the tracked build-out pipeline; seven of the nine identified types shown.</div>
   </div>
 
   <div class="col">
