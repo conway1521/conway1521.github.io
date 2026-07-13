@@ -129,6 +129,20 @@ ink_js: true
     <div class="plate__caption">70 to 80% of recorded terminations are internal transfers. Correcting one term changes the projection by an order of magnitude.</div>
   </div>
 
+  <!-- employment hierarchy -->
+  <div class="plate" style="max-width:680px;">
+    <div class="plate__head">
+      <span class="plate__title">The employment hierarchy</span>
+      <span class="plate__hint">hover a level</span>
+    </div>
+    <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The twin reconstructs it into levels with headcount and spans of control, so turnover can be read by layer and the internal ladder made visible.</p>
+    <div class="hier-scroll">
+      <div class="hier-canvas" id="hier-canvas"></div>
+    </div>
+    <div class="plate__note" id="hier-note" data-default="Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.">Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.</div>
+    <div class="plate__caption">Illustrative, synthetic. Reconstructed from manager-employee links in the HRIS. Spans of control feed the peer benchmark and locate where turnover concentrates.</div>
+  </div>
+
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>

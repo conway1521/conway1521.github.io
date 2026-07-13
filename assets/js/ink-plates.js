@@ -495,6 +495,130 @@
     }).join('');
   }
 
+  /* ---------- job clusters: the adjacent population (hover a node) ----------
+     One target occupation at the centre. Around it, the occupations one
+     retraining step away, sized by pool and weighted by transition distance. */
+  var CLUSTER_CENTER = ['Registered Nurse', '29-1141'];
+  var CLUSTER_SATS = [
+    ['lpn', 'Licensed Practical Nurse', '29-2061', 'near', 320, '~11,400 in region', 'Bridge: LPN-to-RN, 12 to 18 months. Wage +34%. The shortest ladder in, with many bridge programs and strong in-state retention.'],
+    ['aide', 'Nurse Aide', '31-1131', 'far', 320, '~26,800 in region', 'Bridge: full ADN, two years. Wage +118%. The largest pool by far, and the longest, most attrition-prone path.'],
+    ['surg', 'Surgical Technologist', '29-2055', 'mid', 320, '~2,100 in region', 'Bridge: ADN with credit transfer. Wage +41%. Clinical overlap shortens the didactic requirement.'],
+    ['para', 'Paramedic', '29-2043', 'mid', 320, '~3,400 in region', 'Bridge: accelerated ADN. Wage +52%. Acute-care experience transfers; scheduling is the main barrier.'],
+    ['resp', 'Respiratory Therapist', '29-1126', 'near', 320, '~1,900 in region', 'Bridge: RN completion. Wage +9%. Adjacent scope but a small pool and modest wage gain limit the pull.'],
+    ['ma', 'Medical Assistant', '31-9092', 'far', 320, '~8,700 in region', 'Bridge: full ADN, two years. Wage +96%. Large pool with ambulatory experience, but a long clinical ladder.']
+  ];
+  var CLUSTER_POS = [[110, 70], [320, 44], [530, 70], [530, 250], [320, 276], [110, 250]];
+  var CLUSTER_W = { near: 2.4, mid: 1.6, far: 1.0 };
+  function initClusters() {
+    var canvas = $('cluster-canvas'), note = $('cluster-note');
+    if (!canvas) return;
+    var defaultNote = note ? note.getAttribute('data-default') : null;
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '640'); svg.setAttribute('height', '320');
+    svg.style.cssText = 'position:absolute; left:0; top:0; pointer-events:none;';
+    var edges = CLUSTER_SATS.map(function (s, i) {
+      var p = CLUSTER_POS[i];
+      var line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('x1', 320); line.setAttribute('y1', 160);
+      line.setAttribute('x2', p[0]); line.setAttribute('y2', p[1]);
+      line.setAttribute('stroke', '#131313');
+      line.setAttribute('stroke-width', CLUSTER_W[s[3]]);
+      line.setAttribute('opacity', '0.55');
+      if (s[3] === 'far') line.setAttribute('stroke-dasharray', '3 4');
+      else if (s[3] === 'mid') line.setAttribute('stroke-dasharray', '8 4');
+      svg.appendChild(line);
+      return line;
+    });
+    canvas.appendChild(svg);
+    var center = document.createElement('div');
+    center.className = 'clu-node clu-node--center';
+    center.style.left = '320px'; center.style.top = '160px';
+    center.innerHTML = '<div class="clu-node__label">' + esc(CLUSTER_CENTER[0]) + '</div>' +
+      '<div class="clu-node__meta">' + esc(CLUSTER_CENTER[1]) + ' &middot; target</div>';
+    canvas.appendChild(center);
+    var sats = CLUSTER_SATS.map(function (s, i) {
+      var p = CLUSTER_POS[i];
+      var div = document.createElement('div');
+      div.className = 'clu-node';
+      div.style.left = p[0] + 'px'; div.style.top = p[1] + 'px';
+      div.innerHTML = '<div class="clu-node__label">' + esc(s[1]) + '</div>' +
+        '<div class="clu-node__meta">' + esc(s[5]) + '</div>';
+      canvas.appendChild(div);
+      return div;
+    });
+    function focus(i) {
+      sats.forEach(function (d, j) { d.classList.toggle('is-dim', i !== null && j !== i); });
+      edges.forEach(function (e, j) {
+        var on = i === null || j === i;
+        e.setAttribute('opacity', on ? (i === null ? '0.55' : '1') : '0.15');
+      });
+      if (note) note.innerHTML = i === null ? defaultNote : esc(CLUSTER_SATS[i][6]);
+    }
+    sats.forEach(function (d, i) {
+      d.addEventListener('mouseenter', function () { focus(i); });
+      d.addEventListener('mouseleave', function () { focus(null); });
+    });
+    center.addEventListener('mouseenter', function () {
+      sats.forEach(function (d) { d.classList.remove('is-dim'); });
+      edges.forEach(function (e) { e.setAttribute('opacity', '1'); });
+      if (note) note.innerHTML = 'Registered Nurse, the target. The six occupations around it are the reachable pool, near steps in solid, mid dashed, far dotted. Adjacency comes from 798k occupation-pair similarities, tiered by retraining distance.';
+    });
+    center.addEventListener('mouseleave', function () { focus(null); });
+  }
+
+  /* ---------- employment hierarchy (hover a level) ----------
+     The reporting tree reconstructed from manager IDs in the HRIS. */
+  var HIER = [
+    ['exec', 'Nurse executive & directors', '14', 44, 'span 1 : 9', 'Fourteen executives and directors, reconstructed from reporting lines in the raw export. The top of the clinical org.'],
+    ['mgr', 'Nurse managers', '128', 126, 'span 1 : 11', 'One manager per unit. Turnover at this level is the strongest leading signal of frontline attrition below it.'],
+    ['lead', 'Charge nurses & leads', '412', 208, 'span 1 : 6', 'Working leads, counted in staffing yet carrying a span. The layer most often mislabelled in raw exports.'],
+    ['rn', 'Staff RNs & LPNs', '4,180', 290, 'frontline', 'The bulk of the panel. Vacancy and time-to-fill are tracked here by unit and facility.'],
+    ['aide', 'Nurse aides & support', '1,360', 344, 'frontline', 'Support roles feeding the RN ladder, the internal pipeline the adjacency model draws on.']
+  ];
+  function initHierarchy() {
+    var canvas = $('hier-canvas'), note = $('hier-note');
+    if (!canvas) return;
+    var defaultNote = note ? note.getAttribute('data-default') : null;
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '620'); svg.setAttribute('height', '372');
+    svg.style.cssText = 'position:absolute; left:0; top:0; pointer-events:none;';
+    var edges = [];
+    for (var i = 0; i < HIER.length - 1; i++) {
+      var line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('x1', 310); line.setAttribute('y1', HIER[i][3] + 13);
+      line.setAttribute('x2', 310); line.setAttribute('y2', HIER[i + 1][3] - 13);
+      line.setAttribute('stroke', '#131313');
+      line.setAttribute('stroke-width', 1.2 + i * 0.7);
+      line.setAttribute('opacity', '0.5');
+      svg.appendChild(line);
+      edges.push(line);
+    }
+    canvas.appendChild(svg);
+    var nodes = HIER.map(function (h) {
+      var div = document.createElement('div');
+      div.className = 'hier-node' + (h[0] === 'exec' ? ' hier-node--exec' : '');
+      div.style.left = '310px'; div.style.top = h[3] + 'px';
+      div.innerHTML = '<span class="hier-node__role">' + esc(h[1]) + '</span>' +
+        '<span class="hier-node__n">' + esc(h[2]) + ' &middot; ' + esc(h[4]) + '</span>';
+      canvas.appendChild(div);
+      return div;
+    });
+    function focus(i) {
+      nodes.forEach(function (d, j) { d.classList.toggle('is-dim', i !== null && j !== i); });
+      edges.forEach(function (e, j) {
+        var on = i === null || j === i || j === i - 1;
+        e.setAttribute('opacity', on ? (i === null ? '0.5' : '0.9') : '0.15');
+      });
+      if (note) note.innerHTML = i === null ? defaultNote : esc(HIER[i][5]);
+    }
+    nodes.forEach(function (d, i) {
+      d.addEventListener('mouseenter', function () { focus(i); });
+      d.addEventListener('mouseleave', function () { focus(null); });
+    });
+  }
+
   function init() {
     initLakeDots();
     initResolve();
@@ -505,6 +629,8 @@
     initLevers();
     initObs();
     initFlow();
+    initClusters();
+    initHierarchy();
     initDivergence();
     initHoverDim('resolution', '.res-row', 'resolution-note');
     initHoverDim('layers', '.layer-row', null);
