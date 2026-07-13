@@ -1,0 +1,107 @@
+---
+layout: default
+title: Market signals
+permalink: /portfolio/market-signals/
+ink_js: true
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/portfolio' | relative_url }}">Portfolio</a></span>
+      <span class="eyebrow">Live across 50 states</span>
+    </div>
+    <h1 class="display">Market signals</h1>
+    <p class="lede">Forward-looking evidence on every state and occupation, gathered from fifteen distinct sources, held to tiered confidence rules, and composed into two flags whose logic anyone can read.</p>
+  </div>
+  <div class="standfirst">Economics &middot; data science &mdash; roughly 87,000 live signal observations feeding every downstream surface</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The problem</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Official statistics arrive quarters late; decisions cannot wait for them. Leading evidence exists, postings, layoff notices, wage anomalies, federal awards, even the tone of regional economic reports, but it is noisy, uneven, and easy to over-read. The discipline is not in collecting more of it; it is in being honest about how much confidence each piece deserves, and in composing it so the logic stays legible.</p>
+    </div>
+  </div>
+
+  <div style="max-width:940px; margin:0 auto;">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">How it works</h2>
+    </div>
+    <div class="stages">
+      <div class="grid2__item">
+        <h3><span class="n">01</span>Fifteen evidence types, one grain</h3>
+        <p>Every signal, quantitative or qualitative, lands on the same state-by-occupation grain, so a wage anomaly, a retirement wave, and a sentiment shift can be read against each other rather than in separate reports.</p>
+        <div class="disc">Data science &middot; engineering</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">02</span>Tiered confidence</h3>
+        <p>Strong sources fire alone; weaker ones only count when two agree in the same direction; unconfirmed signals are kept and labelled rather than dropped, because a flagged rumour that later confirms is itself information.</p>
+        <div class="disc">Economics &middot; data science</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">03</span>Two flags, legible composition</h3>
+        <p>Everything rolls up to two flags, market stress and rising market, each an explicit OR over named signals. No weighting soup: a reader can always answer "why is this flag up" by naming the signal that raised it.</p>
+        <div class="disc">Economics</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">04</span>Language as a data source</h3>
+        <p>Qualitative sources, regional economic commentary, trade press, are read by an LLM under a constrained extraction schema, turning prose into the same signal grain as the statistics, at negligible cost per release.</p>
+        <div class="disc">LLM systems &middot; data science</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- the evidence types -->
+  <div class="plate" style="max-width:660px;">
+    <div class="plate__head">
+      <span class="plate__title">The evidence</span>
+      <span class="plate__hint">hover a type &middot; ten of fifteen shown</span>
+    </div>
+    <p class="plate__purpose">Each type carries its source and what it is allowed to claim.</p>
+    <div id="signals" data-default="Each signal type lands on the same state-by-occupation grain. Strong sources fire alone; weaker ones need agreement.">
+      <div class="sig-row" data-note="Wage anomaly &mdash; where pay for an occupation sits far from its regional norm, demand is speaking."><span class="sig-row__num">01</span><span class="sig-row__name">Wage anomaly</span><span class="sig-row__src">occupational wage statistics, location quotients</span></div>
+      <div class="sig-row" data-note="Employment shift &mdash; growth decomposed into what the sector explains and what the place adds."><span class="sig-row__num">02</span><span class="sig-row__name">Employment shift</span><span class="sig-row__src">payroll series, shift-share decomposition</span></div>
+      <div class="sig-row" data-note="Retirement pressure &mdash; age structure by occupation; a wave visible years before it breaks."><span class="sig-row__num">03</span><span class="sig-row__name">Retirement pressure</span><span class="sig-row__src">census microdata age structure</span></div>
+      <div class="sig-row" data-note="Skill drift &mdash; how an occupation's skill profile is changing across taxonomy vintages."><span class="sig-row__num">04</span><span class="sig-row__name">Skill drift</span><span class="sig-row__src">occupational skill profiles, across vintages</span></div>
+      <div class="sig-row" data-note="AI exposure &mdash; task-level substitution exposure, from the calibrated framework."><span class="sig-row__num">05</span><span class="sig-row__name">AI exposure</span><span class="sig-row__src">task-level exposure measures</span></div>
+      <div class="sig-row" data-note="Layoff notices &mdash; mandated advance notices; the hardest of the leading indicators."><span class="sig-row__num">06</span><span class="sig-row__name">Layoff notices</span><span class="sig-row__src">state advance-notice filings</span></div>
+      <div class="sig-row" data-note="Federal investment &mdash; awards and spending flowing to a place and sector before hiring follows."><span class="sig-row__num">07</span><span class="sig-row__name">Federal investment</span><span class="sig-row__src">federal spending records</span></div>
+      <div class="sig-row" data-note="Posting intensity &mdash; openings pressure by occupation, standardised through the resolver."><span class="sig-row__num">08</span><span class="sig-row__name">Posting intensity</span><span class="sig-row__src">job postings, deduplicated</span></div>
+      <div class="sig-row" data-note="Licensure volume &mdash; new credential holders entering a regulated occupation."><span class="sig-row__num">09</span><span class="sig-row__name">Licensure volume</span><span class="sig-row__src">credential and licensure rosters</span></div>
+      <div class="sig-row" data-note="Regional sentiment &mdash; the tone of regional economic commentary, extracted under a constrained schema."><span class="sig-row__num">10</span><span class="sig-row__name">Regional sentiment</span><span class="sig-row__src">regional economic reports, LLM-extracted</span></div>
+    </div>
+    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. Strong sources fire alone; weaker ones need agreement.</div>
+  </div>
+
+  <!-- the two flags -->
+  <div class="plate" style="max-width:560px;">
+    <div class="plate__head">
+      <span class="plate__title">The two flags</span>
+      <span class="plate__hint">composition, spelled out</span>
+    </div>
+    <p class="plate__purpose">The rollup is an OR over named signals, so the answer to "why is this flag up" is always a signal you can point to.</p>
+    <div class="identity" style="font-size:17px; padding-bottom:10px;">market stress = retirement wave &or; skill decline &or; sector contraction</div>
+    <div class="identity" style="font-size:17px; padding-top:0;">rising market = growth cluster &or; skill emergence &or; AI tailwind &or; sector tailwind</div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Strong evidence</span><span style="font-size:13px;">fires alone</span></div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Weaker evidence</span><span style="font-size:13px;">needs two, agreeing in direction</span></div>
+    <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Unconfirmed</span><span style="font-size:13px;">kept, and labelled unconfirmed</span></div>
+    <div class="plate__caption">No weights, no scores hidden in the rollup. Composition is the method.</div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">What's real</h2>
+    </div>
+    <div class="prose">
+      <p>The system runs live across all fifty states, roughly 87,000 signal observations over a larger base of source rows, refreshed on each source's native cadence, and feeds the opportunity index, the state dashboards, and the labour market twin. The signal types and confidence rules shown are the production rules; the example notes are illustrative.</p>
+    </div>
+    <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
+  </div>
+
+</div>
