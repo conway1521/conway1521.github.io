@@ -397,6 +397,24 @@ button { font-family: inherit; }
 .fw-dot { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); transform: translate(-50%, -50%); }
 .fw-val { font-size: 12px; color: var(--faint); text-align: right; }
 
+/* research agenda: expandable cards */
+.agenda { margin-top: 4px; }
+.agenda-card { border-top: 1px solid var(--rule); }
+.agenda-card:last-child { border-bottom: 1px solid var(--rule); }
+.agenda-card > summary { list-style: none; cursor: pointer; padding: 18px 30px 18px 0; display: block; position: relative; }
+.agenda-card > summary::-webkit-details-marker { display: none; }
+.agenda-card > summary::after { content: '+'; position: absolute; right: 2px; top: 17px; font-size: 18px; color: var(--faint); transition: color 0.15s; }
+.agenda-card[open] > summary::after { content: '\2212'; }
+.agenda-card > summary:hover::after { color: var(--ink); }
+.agenda-card__title { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.agenda-card__meta { font-size: 12px; color: var(--faint); margin-top: 3px; }
+.agenda-card__abstract { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-top: 8px; max-width: 660px; }
+.agenda-card__body { padding: 2px 0 24px; max-width: 680px; }
+.agenda-card__body > p { font-size: 13.5px; line-height: 1.65; color: var(--ink); margin: 0 0 12px; }
+.agenda-card__sub { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin: 18px 0 6px; }
+.agenda-card__links { margin-top: 12px; font-size: 13px; }
+.agenda-card__links a { margin-right: 16px; }
+
 /* metrics scope label (facility map) */
 .metrics-scope { float: right; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); font-weight: 400; }
 
