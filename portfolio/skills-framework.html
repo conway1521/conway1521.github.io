@@ -15,7 +15,7 @@ permalink: /portfolio/skills-framework/
     <h1 class="display">The task-based labour market</h1>
     <p class="lede">A calibrated production function that reads AI exposure at the task level: what happens to the skill mix when an AI capability lands, measured as an instrument rather than argued as an estimate.</p>
   </div>
-  <div class="standfirst">Economics &middot; machine learning &mdash; engine built, outputs cached at scale; companion paper in progress</div>
+  <div class="standfirst">Economics &middot; machine learning &middot; engine built, outputs cached at scale; companion paper in progress</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
@@ -23,7 +23,7 @@ permalink: /portfolio/skills-framework/
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Seven significant measures of AI exposure now exist, and they disagree, the pre-LLM measures correlate negatively with the post-LLM ones. Meanwhile claims about AI's effect on wages and employment outrun anyone's ability to measure them. What the debate needs is not another estimate but an instrument: a framework whose every parameter is disclosed, sourced, and swappable, so that when results differ you can see exactly which assumption made them differ.</p>
+      <p>Seven significant measures of AI exposure now exist, and they disagree: the pre-LLM measures correlate negatively with the post-LLM ones. Meanwhile claims about AI's effect on wages and employment outrun anyone's ability to measure them. What the debate needs is not another estimate but an instrument: a framework whose every parameter is disclosed, sourced, and swappable, so that when results differ you can see exactly which assumption made them differ.</p>
     </div>
   </div>
 
@@ -94,10 +94,10 @@ permalink: /portfolio/skills-framework/
     </div>
     <p class="plate__purpose">None of the parameters are estimated structurally; each is traceable to a published source.</p>
     <div class="spine">
-      <div><div class="spine__label">&beta;<sub>i</sub> &mdash; industry task shares</div><div class="spine__body">National staffing matrices &times; task importance profiles, weighted by industry output.</div></div>
-      <div><div class="spine__label">&delta;<sub>i</sub>, &sigma;<sub>i</sub> &mdash; capital share and substitutability</div><div class="spine__body">Pluggable AI-exposure adapters: several published task-level measures behind one contract, with a blended option.</div></div>
-      <div><div class="spine__label">&gamma;<sub>i,k</sub> &mdash; skill shares within a task</div><div class="spine__body">Task-to-skill importance matrices, with an embedding fallback where no direct mapping exists.</div></div>
-      <div><div class="spine__label">&sigma;<sub>j,k</sub> &mdash; skill-to-skill substitutability</div><div class="spine__body">Occupation-pair skill proximity, a monotone transform of cosine similarity over skills, knowledge, and work activities.</div></div>
+      <div><div class="spine__label">&beta;<sub>i</sub> &middot; industry task shares</div><div class="spine__body">National staffing matrices &times; task importance profiles, weighted by industry output.</div></div>
+      <div><div class="spine__label">&delta;<sub>i</sub>, &sigma;<sub>i</sub> &middot; capital share and substitutability</div><div class="spine__body">Pluggable AI-exposure adapters: several published task-level measures behind one contract, with a blended option.</div></div>
+      <div><div class="spine__label">&gamma;<sub>i,k</sub> &middot; skill shares within a task</div><div class="spine__body">Task-to-skill importance matrices, with an embedding fallback where no direct mapping exists.</div></div>
+      <div><div class="spine__label">&sigma;<sub>j,k</sub> &middot; skill-to-skill substitutability</div><div class="spine__body">Occupation-pair skill proximity, a monotone transform of cosine similarity over skills, knowledge, and work activities.</div></div>
     </div>
     <div class="plate__caption">Every engine output carries its adapter and calibration vintage as columns. No anonymous numbers.</div>
   </div>
@@ -108,7 +108,7 @@ permalink: /portfolio/skills-framework/
       <h2 class="secnum__h">What's real</h2>
     </div>
     <div class="prose">
-      <p>The engine is built and its outputs are cached at scale, skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, with the adapter and vintage recorded on every row. The framework doubles as a research instrument: a <a href="{{ '/research' | relative_url }}#working-papers">companion paper</a> on measuring labour-market resilience and AI exposure is in progress. The equations above are the production system; worked magnitudes are deliberately not shown here.</p>
+      <p>The engine is built and its outputs are cached at scale: skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, each carrying its adapter and calibration vintage. The framework doubles as a research instrument: a <a href="{{ '/research' | relative_url }}#working-papers">companion paper</a> on measuring labour-market resilience and AI exposure is in progress. The equations above are the production system; worked magnitudes are deliberately not shown here.</p>
     </div>
     <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
     {% include reach.html %}

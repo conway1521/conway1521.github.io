@@ -85,12 +85,12 @@
       var hit = resolve(input.value);
       if (hit === undefined) { out.innerHTML = ''; return; }
       if (hit === null) {
-        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to layer 03, LLM adjudication — flagged, never guessed.</div>';
+        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to layer 03, LLM adjudication: flagged, never guessed.</div>';
         return;
       }
       var r = hit.row;
       var tierNote = 'Resolved by ' + TIER_NAMES[hit.tier] +
-        (hit.tier === 0 ? ' — cheap certainty first' : (hit.tier === 1 ? ' — in-domain pairs carried it' : ' — the long tail, adjudicated'));
+        (hit.tier === 0 ? ': cheap certainty first' : (hit.tier === 1 ? ': in-domain pairs carried it' : ': the long tail, adjudicated'));
       out.innerHTML =
         '<div class="resolve-out">' +
           '<div class="resolve-out__l"><div class="resolve-out__lbl">Employer-facing canonical</div>' +
@@ -287,10 +287,10 @@
     ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Empirical age-specific exit rates, not a flat assumption.'],
     ['demand', 460, 104, 140, 104, 'Demand', 'demand', 'Four layers, deliberately never averaged. Divergence between them is information.'],
     ['req', 650, 44, 160, 40, 'Requisitions', 'L1', 'Pooled employer requisition rates and hire slopes, with confidence tiers.'],
-    ['struct', 650, 96, 160, 40, 'Structural', 'L2', 'Statistical projections and wage trend; the statistical system’s expectation.'],
+    ['struct', 650, 96, 160, 40, 'Structural', 'L2', 'Statistical projections and wage trend; what the statistical system expects.'],
     ['fwd', 650, 148, 160, 40, 'Forward need', 'L3', 'Population-anchored scenarios with aging intensity adjustment.'],
     ['blue', 650, 200, 160, 40, 'Blueprints', 'L4', 'Ideal composition per facility archetype and ramp state, triangulated from public sources.'],
-    ['gap', 315, 4, 200, 42, 'Supply–demand gap', 'output', 'Demand minus available supply. What the engine solves for; substitution absorbs 10–25% of raw gaps.']
+    ['gap', 315, 4, 200, 42, 'Supply-demand gap', 'output', 'Demand minus available supply. What the engine solves for; substitution absorbs 10 to 25% of raw gaps.']
   ];
   var FLOW_ARROWS = [
     ['hires', 'stock', 160, 34, 250, 124, 'h'], ['train', 'stock', 160, 90, 250, 142, 'h'], ['migin', 'stock', 160, 146, 250, 158, 'h'], ['adj', 'stock', 160, 202, 250, 174, 'h'], ['inact', 'stock', 160, 258, 250, 190, 'h'],
@@ -411,6 +411,7 @@
     initHoverDim('lake', '.matrix-row', 'lake-note');
     initHoverDim('blueprint', '.bp-row', 'bp-note');
     initHoverDim('signals', '.sig-row', 'sig-note');
+    initHoverDim('coverage', '.cov-row', 'cov-note');
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
