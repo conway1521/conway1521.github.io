@@ -1,13 +1,38 @@
 /* ============================================================
-   Ink plates — interaction grammar for the portfolio figures.
-   One interactive moment per plate. Three verbs: hover, click, select.
-   Logic and values lifted from the Visual Language Study by plate id.
+   Figure interactions. One interactive moment per figure;
+   three verbs only: hover to inspect, click to expand,
+   select to refocus. Values lifted from the design reference.
    ============================================================ */
 (function () {
   'use strict';
 
-  /* ---- shared sample data (plates 10A, 10C) ----
-     row = [as delivered, canonical base, specialty, level, SOC-6, SOC title] */
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- generic hover-to-inspect: focus stays lit, rest recede ---------- */
+  function initHoverDim(containerId, rowSelector, noteId) {
+    var container = $(containerId);
+    if (!container) return;
+    var rows = Array.prototype.slice.call(container.querySelectorAll(rowSelector));
+    var note = noteId ? $(noteId) : null;
+    var defaultNote = container.getAttribute('data-default');
+    rows.forEach(function (row) {
+      row.addEventListener('mouseenter', function () {
+        rows.forEach(function (r) { if (r !== row) r.classList.add('is-dim'); });
+        if (note && row.getAttribute('data-note')) note.innerHTML = row.getAttribute('data-note');
+      });
+      row.addEventListener('mouseleave', function () {
+        rows.forEach(function (r) { r.classList.remove('is-dim'); });
+        if (note && defaultNote != null) note.innerHTML = defaultNote;
+      });
+    });
+  }
+
+  /* ---------- resolve a title (three tiers, substring demo) ---------- */
   var SAMPLE_HRIS = [
     ['AmbFloat LPN / II', 'LPN', '', 'staff · II', '29-2061', 'Licensed Practical and Licensed Vocational Nurses'],
     ['DevOps Engineer, Software Engineer III, Enterprise Risk Finance Technology', 'Software Engineer', 'DevOps', 'staff · III', '15-1252', 'Software Developers'],
@@ -26,18 +51,11 @@
   ];
   var TIER_NAMES = ['01 · open-source baseline', '02 · fine-tuned model', '03 · LLM adjudication'];
 
-  function esc(s) {
-    return String(s).replace(/[&<>"]/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
-    });
-  }
-
-  /* ---- 10A resolve a title (substring match, three tiers) ---- */
   function resolve(input) {
     var ALL = SAMPLE_HRIS.concat(SAMPLE_POST);
     var q = (input || '').toLowerCase().trim();
     if (!q) return undefined;
-    var hit = null, r, i;
+    var hit = null, i;
     for (i = 0; i < ALL.length; i++) {
       var o = ALL[i][0].toLowerCase();
       if (o.indexOf(q) !== -1 || q.indexOf(o) !== -1) { hit = { row: ALL[i], tier: 0 }; break; }
@@ -57,44 +75,36 @@
         }
       }
     }
-    return hit; // object, or null when nothing matched
-  }
-
-  function renderResolve(out, hit) {
-    if (hit === undefined) { out.innerHTML = ''; return; }
-    if (hit === null) {
-      out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">' +
-        'No confident match in the demo sample. A real input of this shape routes to layer 03, LLM adjudication — flagged, never guessed.</div>';
-      return;
-    }
-    var r = hit.row;
-    var spec = r[2] ? 'Specialty: ' + r[2] : '';
-    var lvl = r[3] ? 'Level: ' + r[3] : '';
-    var tierNote = 'Resolved by ' + TIER_NAMES[hit.tier] +
-      (hit.tier === 0 ? ' — cheap certainty first' : (hit.tier === 1 ? ' — in-domain pairs carried it' : ' — the long tail, adjudicated'));
-    out.innerHTML =
-      '<div class="resolve-out">' +
-        '<div class="resolve-out__l">' +
-          '<div class="resolve-out__lbl">Employer-facing canonical</div>' +
-          '<div class="resolve-out__val">' + esc(r[1]) + '</div>' +
-          (spec ? '<div class="resolve-out__sub">' + esc(spec) + '</div>' : '') +
-          (lvl ? '<div class="resolve-out__sub">' + esc(lvl) + '</div>' : '') +
-        '</div>' +
-        '<div class="resolve-out__r">' +
-          '<div class="resolve-out__lbl">SOC-6 federal code</div>' +
-          '<div class="resolve-out__val" style="letter-spacing:0.02em;">' + esc(r[4]) + '</div>' +
-          '<div class="resolve-out__sub">' + esc(r[5]) + '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div style="border-top:1px solid var(--ink); padding-top:10px; margin-top:0; font-size:12.5px; color:var(--muted);">' + esc(tierNote) + '</div>';
+    return hit;
   }
 
   function initResolve() {
-    var input = document.getElementById('resolve-input');
-    var btn = document.getElementById('resolve-btn');
-    var out = document.getElementById('resolve-output');
+    var input = $('resolve-input'), btn = $('resolve-btn'), out = $('resolve-output');
     if (!input || !out) return;
-    var go = function () { renderResolve(out, resolve(input.value)); };
+    var go = function () {
+      var hit = resolve(input.value);
+      if (hit === undefined) { out.innerHTML = ''; return; }
+      if (hit === null) {
+        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to layer 03, LLM adjudication — flagged, never guessed.</div>';
+        return;
+      }
+      var r = hit.row;
+      var tierNote = 'Resolved by ' + TIER_NAMES[hit.tier] +
+        (hit.tier === 0 ? ' — cheap certainty first' : (hit.tier === 1 ? ' — in-domain pairs carried it' : ' — the long tail, adjudicated'));
+      out.innerHTML =
+        '<div class="resolve-out">' +
+          '<div class="resolve-out__l"><div class="resolve-out__lbl">Employer-facing canonical</div>' +
+            '<div class="resolve-out__val">' + esc(r[1]) + '</div>' +
+            (r[2] ? '<div class="resolve-out__sub">Specialty: ' + esc(r[2]) + '</div>' : '') +
+            (r[3] ? '<div class="resolve-out__sub">Level: ' + esc(r[3]) + '</div>' : '') +
+          '</div>' +
+          '<div class="resolve-out__r"><div class="resolve-out__lbl">SOC-6 federal code</div>' +
+            '<div class="resolve-out__val" style="letter-spacing:0.02em;">' + esc(r[4]) + '</div>' +
+            '<div class="resolve-out__sub">' + esc(r[5]) + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="border-top:1px solid var(--ink); padding-top:10px; font-size:12.5px; color:var(--muted);">' + esc(tierNote) + '</div>';
+    };
     if (btn) btn.addEventListener('click', go);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
     Array.prototype.forEach.call(document.querySelectorAll('.resolve-example'), function (chip) {
@@ -102,25 +112,7 @@
     });
   }
 
-  /* ---- hover-to-inspect: focus stays lit, the rest recede (8B, 10B) ---- */
-  function initHoverDim(containerId, rowSelector, noteId, defaultNote) {
-    var container = document.getElementById(containerId);
-    if (!container) return;
-    var rows = Array.prototype.slice.call(container.querySelectorAll(rowSelector));
-    var note = noteId ? document.getElementById(noteId) : null;
-    rows.forEach(function (row) {
-      row.addEventListener('mouseenter', function () {
-        rows.forEach(function (r) { if (r !== row) r.classList.add('is-dim'); });
-        if (note && row.getAttribute('data-note')) note.innerHTML = row.getAttribute('data-note');
-      });
-      row.addEventListener('mouseleave', function () {
-        rows.forEach(function (r) { r.classList.remove('is-dim'); });
-        if (note && defaultNote != null) note.innerHTML = defaultNote;
-      });
-    });
-  }
-
-  /* ---- select-to-refocus: sample source tabs (10C) ---- */
+  /* ---------- sample source tabs ---------- */
   function initSampleTabs() {
     var tabs = document.querySelectorAll('.sample-tab');
     if (!tabs.length) return;
@@ -129,25 +121,298 @@
         Array.prototype.forEach.call(tabs, function (t) { t.classList.remove('is-active'); });
         tab.classList.add('is-active');
         var src = tab.getAttribute('data-src');
-        var hris = document.getElementById('sample-hris');
-        var post = document.getElementById('sample-post');
+        var hris = $('sample-hris'), post = $('sample-post');
         if (hris) hris.style.display = src === 'hris' ? '' : 'none';
         if (post) post.style.display = src === 'post' ? '' : 'none';
       });
     });
   }
 
-  function init() {
-    initResolve();
-    var casc = document.getElementById('cascade');
-    initHoverDim('cascade', '.casc-row', 'cascade-note', casc ? casc.getAttribute('data-default') : null);
-    initHoverDim('layers', '.layer-row', null, null);
-    initSampleTabs();
+  /* ---------- the console, end to end (staged reveal) ---------- */
+  var CON = [
+    ['$ radius ingest --employer acme_health --file hris_export_q2.csv', ['4,182 rows · 14 columns · 3 facilities detected']],
+    ['> resolving titles, facilities, locations…', ['titles → canonical: 4,182 → 212 titles → 48 occupations (SOC-6)', 'facilities → 3 canonical sites · geocoded (lat/lon)', 'flags: 61 rows ambiguous → review queue']],
+    ['> canonical extract ready ✓', ['employer twin written: acme_health.parquet', '48 occupation cells × 3 facilities × 26 periods']],
+    ['> exploratory analysis', ['vacancy rate 4.3% overall · 7.1% Equipment Tech (Fab AZ)', 'headcount / hires / terms by occupation × facility', 'seasonality: Q4 requisition spike (+31%), stable terms trend']],
+    ['> mapping facilities', ['3 sites plotted · nearest training providers within 50 mi attached']],
+    ['> demand & turnover projections', ['total positions +9.2% over 8 quarters · retirements 6.8% of techs', 'scenario levers armed: wage +5% · shift pattern · training capacity']]
+  ];
+  function initConsole() {
+    var out = $('console-out'), btn = $('console-btn'), phases = $('console-phases');
+    if (!out || !btn) return;
+    out.innerHTML = CON.map(function (d) {
+      return '<div class="con-line"><div class="con-line__cmd">' + esc(d[0]) + '</div>' +
+        d[1].map(function (o) { return '<div class="con-line__out">' + esc(o) + '</div>'; }).join('') + '</div>';
+    }).join('');
+    var lines = out.querySelectorAll('.con-line');
+    var chips = phases ? phases.querySelectorAll('.con-phase') : [];
+    var step = 0, timer = null, running = false;
+    function render() {
+      Array.prototype.forEach.call(lines, function (l, i) { l.classList.toggle('is-on', step > i); });
+      Array.prototype.forEach.call(chips, function (c, i) { c.classList.toggle('is-on', step > i); });
+      btn.textContent = step >= 6 ? 'Run again' : (step === 0 ? 'Run the pipeline' : 'Running…');
+    }
+    function tick() {
+      if (step >= 6) { running = false; render(); return; }
+      step += 1; render();
+      timer = setTimeout(tick, 650);
+    }
+    btn.addEventListener('click', function () {
+      if (running) return;
+      if (timer) clearTimeout(timer);
+      running = true; step = 0; render();
+      timer = setTimeout(tick, 350);
+    });
+    render();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  /* ---------- Job Opportunity Index (click an occupation) ---------- */
+  var JOI_OCCS = [
+    ['Equipment Technician', [82, 74, 66, 88, 71], 76],
+    ['Industrial Maintenance', [76, 81, 72, 70, 64], 73],
+    ['Surgical Technologist', [68, 62, 84, 58, 77], 70],
+    ['Wind Turbine Technician', [88, 58, 61, 74, 69], 70],
+    ['CNC Machinist', [64, 70, 58, 66, 62], 64]
+  ];
+  var JOI_PILLARS = ['Demand', 'Wage', 'Access', 'Transition', 'Resilience'];
+  var JOI_DESC = [
+    'Openings per worker, growth of total positions, requisition persistence.',
+    'Median wage vs regional benchmark; wage growth over 5 years.',
+    'Shortest credential path in; training capacity within commuting range.',
+    'How many higher-wage occupations are one adjacency step away.',
+    'Automation exposure and cyclical sensitivity, inverted.'
+  ];
+  function initJoi() {
+    var rowsEl = $('joi-rows'), detEl = $('joi-detail');
+    if (!rowsEl || !detEl) return;
+    var sel = 0;
+    function render() {
+      rowsEl.innerHTML = JOI_OCCS.map(function (o, i) {
+        return '<div class="joi-row' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' +
+          '<span class="joi-row__name">' + esc(o[0]) + '</span>' +
+          '<span class="joi-row__idx">' + o[2] + '</span></div>';
+      }).join('');
+      var o = JOI_OCCS[sel];
+      detEl.innerHTML =
+        '<div class="joi__selhead"><span class="joi__selname">' + esc(o[0]) + '</span><span class="joi__selidx">' + o[2] + '</span></div>' +
+        JOI_PILLARS.map(function (p, i) {
+          var v = o[1][i];
+          return '<div class="joi-pillar"><div class="joi-pillar__head"><span class="joi-pillar__name">' + p + '</span><span class="joi-pillar__v">' + v + '</span></div>' +
+            '<div class="joi-pillar__track"><div class="joi-pillar__bar' + (v >= 75 ? '' : ' is-low') + '" style="width:' + v + '%;"></div></div>' +
+            '<div class="joi-pillar__desc">' + JOI_DESC[i] + '</div></div>';
+        }).join('');
+      Array.prototype.forEach.call(rowsEl.querySelectorAll('.joi-row'), function (r) {
+        r.addEventListener('click', function () { sel = parseInt(r.getAttribute('data-i'), 10); render(); });
+      });
+    }
+    render();
   }
+
+  /* ---------- policy levers (select a lever) ---------- */
+  var LEVERS = [
+    ['Expand program capacity', 'Enrollment cap lifted at matched CIP programs', 14, 6, 24, [12, 4, 6]],
+    ['Last-mile stipend', 'Completion stipend for final-term students', 9, 4, 15, [8, 5, 3]],
+    ['Licensure compact', 'Recognise out-of-state licenses on arrival', 7, 2, 13, [6, 2, 3]],
+    ['Employer training credit', 'Tax credit per incumbent upskilled', 5, -1, 12, [9, 1, 4]]
+  ];
+  function initLevers() {
+    var tabsEl = $('lever-tabs'), bodyEl = $('lever-body');
+    if (!tabsEl || !bodyEl) return;
+    var sel = 0, SCALE = 30;
+    function render() {
+      tabsEl.innerHTML = LEVERS.map(function (d, i) {
+        return '<button class="lev-tab' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(d[0]) + '</button>';
+      }).join('');
+      var d = LEVERS[sel];
+      var mid = d[2], lo = d[3], hi = d[4], ev = d[5];
+      var obs = ev[0] - ev[1] - ev[2];
+      bodyEl.innerHTML =
+        '<div style="font-size:12.5px; color:var(--muted); margin-bottom:14px;">' + esc(d[1]) + '</div>' +
+        '<div class="lev-band-area"><div class="lev-band-zero"></div>' +
+          '<div class="lev-band" style="left:' + (50 + lo / SCALE * 50) + '%; width:' + ((hi - lo) / SCALE * 50) + '%;"></div>' +
+          '<div class="lev-mid" style="left:' + (50 + mid / SCALE * 50) + '%;"></div></div>' +
+        '<div class="lev-scale"><span>baseline</span><span>' + (lo > 0 ? '+' : '') + lo + '% … <strong style="color:var(--ink);">+' + mid + '%</strong> … +' + hi + '%</span></div>' +
+        '<div style="border-top:1px solid var(--rule); margin-top:12px; padding-top:10px; font-size:12px; color:var(--muted); line-height:1.5;">The hatched band is the 90% interval; the solid line the central estimate. Uncertainty is part of the answer.</div>' +
+        '<div class="lev-evidence"><div class="lev-evidence__head"><span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint);">Evidence base</span><span style="font-size:15px; font-weight:600;">' + ev[0] + ' studies</span></div>' +
+          '<div class="lev-evidence__bar">' +
+            '<div style="width:' + Math.round(ev[1] / ev[0] * 100) + '%; background:var(--ink);"></div>' +
+            '<div style="width:' + Math.round(ev[2] / ev[0] * 100) + '%; background:var(--hatch); border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);"></div>' +
+            '<div style="width:' + Math.round(obs / ev[0] * 100) + '%; background:var(--light);"></div></div>' +
+          '<div class="lev-evidence__row"><span><strong>' + ev[1] + '</strong> <span style="color:var(--faint);">causal</span></span>' +
+            '<span><strong>' + ev[2] + '</strong> <span style="color:var(--faint);">quasi-exp.</span></span>' +
+            '<span><strong>' + obs + '</strong> <span style="color:var(--faint);">observational</span></span></div></div>';
+      Array.prototype.forEach.call(tabsEl.querySelectorAll('.lev-tab'), function (t) {
+        t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
+      });
+    }
+    render();
+  }
+
+  /* ---------- observatories (select a studio) ---------- */
+  var OBS = [
+    ['Economy Studio', 'Gaps, growth and total positions by sector and region', ['gap index by occupation', 'requisition seasonality', 'sector growth decomposition']],
+    ['Skills Studio', 'The skill space: clusters, adjacencies, transition ladders', ['cluster map', 'adjacency scores', 'credential-only ladders']],
+    ['Migration Flows Studio', 'Who arrives, who leaves, by occupation and origin', ['net flows by state pair', 'occupation mix of arrivals', 'retention after 1 year']]
+  ];
+  function initObs() {
+    var tabsEl = $('obs-tabs'), panelEl = $('obs-panel');
+    if (!tabsEl || !panelEl) return;
+    var sel = 0;
+    function render() {
+      tabsEl.innerHTML = OBS.map(function (d, i) {
+        return '<button class="obs-tab' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(d[0]) + '</button>';
+      }).join('');
+      var d = OBS[sel];
+      panelEl.innerHTML = '<div class="obs-panel__name">' + esc(d[0]) + '</div>' +
+        '<div class="obs-panel__desc">' + esc(d[1]) + '</div>' +
+        d[2].map(function (v) { return '<div class="obs-panel__view">' + esc(v) + '</div>'; }).join('');
+      Array.prototype.forEach.call(tabsEl.querySelectorAll('.obs-tab'), function (t) {
+        t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
+      });
+    }
+    render();
+  }
+
+  /* ---------- the flow model (hover a node) ----------
+     One occupation, one region. Nodes and arrows from the reference. */
+  var FLOW_NODES = [
+    ['hires', 10, 12, 150, 44, 'Hires', 'inflow', 'Gross hires into the occupation, from the employer HRIS panel.'],
+    ['train', 10, 68, 150, 44, 'Training pipeline', 'inflow', 'CIP- and RAPIDS-matched completers, weighted by in-state hire probability. Graduate trends carry the projection.'],
+    ['migin', 10, 124, 150, 44, 'Migration in', 'inflow', 'Bilateral flows from ACS PUMS, 19 vintages, chained SOC harmonization with uncertainty flags.'],
+    ['adj', 10, 180, 150, 44, 'Adjacent population', 'inflow', 'Skill-adjacent workers via 798k occupation-pair similarities; tiered by retraining distance.'],
+    ['inact', 10, 236, 150, 44, 'Eligible inactive', 'inflow', 'Experienced inactive workers with a modelled activation probability.'],
+    ['stock', 250, 104, 150, 104, 'Occupation stock', 'stock', 'Cohort accounting over 501 occupations and 51 jurisdictions. Every projection must satisfy the identity.'],
+    ['term', 180, 330, 140, 44, 'True exits', 'outflow', 'Terminations decomposed; transfers removed. Raw 19% becomes a true 4.29%.'],
+    ['migout', 340, 330, 140, 44, 'Migration out', 'outflow', 'Workers leaving the region, same ACS grain as inflows.'],
+    ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Empirical age-specific exit rates, not a flat assumption.'],
+    ['demand', 460, 104, 140, 104, 'Demand', 'demand', 'Four layers, deliberately never averaged. Divergence between them is information.'],
+    ['req', 650, 44, 160, 40, 'Requisitions', 'L1', 'Pooled employer requisition rates and hire slopes, with confidence tiers.'],
+    ['struct', 650, 96, 160, 40, 'Structural', 'L2', 'Statistical projections and wage trend; the statistical system’s expectation.'],
+    ['fwd', 650, 148, 160, 40, 'Forward need', 'L3', 'Population-anchored scenarios with aging intensity adjustment.'],
+    ['blue', 650, 200, 160, 40, 'Blueprints', 'L4', 'Ideal composition per facility archetype and ramp state, triangulated from public sources.'],
+    ['gap', 315, 4, 200, 42, 'Supply–demand gap', 'output', 'Demand minus available supply. What the engine solves for; substitution absorbs 10–25% of raw gaps.']
+  ];
+  var FLOW_ARROWS = [
+    ['hires', 'stock', 160, 34, 250, 124, 'h'], ['train', 'stock', 160, 90, 250, 142, 'h'], ['migin', 'stock', 160, 146, 250, 158, 'h'], ['adj', 'stock', 160, 202, 250, 174, 'h'], ['inact', 'stock', 160, 258, 250, 190, 'h'],
+    ['stock', 'term', 285, 208, 250, 330, 'v'], ['stock', 'migout', 325, 208, 410, 330, 'v'], ['stock', 'retire', 365, 208, 560, 330, 'v'],
+    ['req', 'demand', 650, 64, 600, 132, 'h'], ['struct', 'demand', 650, 116, 600, 150, 'h'], ['fwd', 'demand', 650, 168, 600, 166, 'h'], ['blue', 'demand', 650, 220, 600, 184, 'h'],
+    ['stock', 'gap', 325, 104, 380, 46, 'v'], ['demand', 'gap', 530, 104, 455, 46, 'v']
+  ];
+  function initFlow() {
+    var canvas = $('flow-canvas');
+    if (!canvas) return;
+    var noteName = $('flow-note-name'), noteBlurb = $('flow-note-blurb');
+    var defName = noteName ? noteName.textContent : '';
+    var defBlurb = noteBlurb ? noteBlurb.textContent : '';
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '820'); svg.setAttribute('height', '390');
+    svg.style.cssText = 'position:absolute; left:0; top:0; overflow:visible; pointer-events:none;';
+    svg.innerHTML = '<defs>' +
+      '<marker id="fm-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#B9B9B4"></path></marker>' +
+      '<marker id="fm-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#131313"></path></marker></defs>';
+    var paths = FLOW_ARROWS.map(function (a) {
+      var sx = a[2], sy = a[3], ex = a[4], ey = a[5];
+      var d = a[6] === 'h'
+        ? 'M' + sx + ' ' + sy + ' C ' + (sx + ex) / 2 + ' ' + sy + ', ' + (sx + ex) / 2 + ' ' + ey + ', ' + ex + ' ' + ey
+        : 'M' + sx + ' ' + sy + ' C ' + sx + ' ' + (sy + ey) / 2 + ', ' + ex + ' ' + (sy + ey) / 2 + ', ' + ex + ' ' + ey;
+      var p = document.createElementNS(svgNS, 'path');
+      p.setAttribute('d', d); p.setAttribute('fill', 'none');
+      p.setAttribute('stroke', '#B9B9B4'); p.setAttribute('stroke-width', '1.1');
+      p.setAttribute('marker-end', 'url(#fm-a)');
+      svg.appendChild(p);
+      return { el: p, from: a[0], to: a[1] };
+    });
+    canvas.appendChild(svg);
+    var nodeEls = FLOW_NODES.map(function (n) {
+      var div = document.createElement('div');
+      var mod = n[6] === 'stock' ? ' flow-node--stock' : (n[6] === 'demand' ? ' flow-node--demand' : (/^L\d$/.test(n[6]) ? ' flow-node--layer' : (n[6] === 'output' ? ' flow-node--output' : '')));
+      div.className = 'flow-node' + mod;
+      div.style.cssText = 'left:' + n[1] + 'px; top:' + n[2] + 'px; width:' + n[3] + 'px; height:' + n[4] + 'px;';
+      div.innerHTML = '<div class="flow-node__label">' + esc(n[5]) + '</div><div class="flow-node__kind">' + esc(n[6]) + '</div>';
+      canvas.appendChild(div);
+      return { el: div, id: n[0], label: n[5], blurb: n[7] };
+    });
+    function focus(id) {
+      nodeEls.forEach(function (n) { n.el.style.opacity = (id && n.id !== id) ? '0.25' : '1'; });
+      paths.forEach(function (p) {
+        var on = id && (p.from === id || p.to === id);
+        p.el.setAttribute('stroke', on ? '#131313' : '#B9B9B4');
+        p.el.setAttribute('stroke-width', on ? '1.8' : '1.1');
+        p.el.setAttribute('marker-end', on ? 'url(#fm-b)' : 'url(#fm-a)');
+      });
+      var n = null;
+      if (id) nodeEls.forEach(function (x) { if (x.id === id) n = x; });
+      if (noteName) noteName.textContent = n ? n.label : defName;
+      if (noteBlurb) noteBlurb.textContent = n ? n.blurb : defBlurb;
+    }
+    nodeEls.forEach(function (n) {
+      n.el.addEventListener('mouseenter', function () { focus(n.id); });
+      n.el.addEventListener('mouseleave', function () { focus(null); });
+    });
+  }
+
+  /* ---------- divergence lines (hover the legend) ---------- */
+  function initDivergence() {
+    var fig = $('div-lines'), legend = $('div-legend');
+    if (!fig || !legend) return;
+    var note = $('div-note');
+    var defaultNote = legend.getAttribute('data-default');
+    var paths = fig.querySelectorAll('path[data-i]');
+    var rows = legend.querySelectorAll('.div-legend-row');
+    Array.prototype.forEach.call(rows, function (row) {
+      var idx = row.getAttribute('data-i');
+      row.addEventListener('mouseenter', function () {
+        Array.prototype.forEach.call(rows, function (r) { if (r !== row) r.classList.add('is-dim'); });
+        Array.prototype.forEach.call(paths, function (p) {
+          var on = p.getAttribute('data-i') === idx;
+          p.style.opacity = on ? '1' : '0.25';
+          p.setAttribute('stroke-width', on ? '2.4' : '1.3');
+        });
+        if (note && row.getAttribute('data-note')) note.innerHTML = row.getAttribute('data-note');
+      });
+      row.addEventListener('mouseleave', function () {
+        Array.prototype.forEach.call(rows, function (r) { r.classList.remove('is-dim'); });
+        Array.prototype.forEach.call(paths, function (p) { p.style.opacity = '1'; p.setAttribute('stroke-width', '1.3'); });
+        if (note && defaultNote != null) note.innerHTML = defaultNote;
+      });
+    });
+  }
+
+  /* ---------- the lake: one dot per dataset, filled = live ---------- */
+  function initLakeDots() {
+    var lake = $('lake');
+    if (!lake) return;
+    Array.prototype.forEach.call(lake.querySelectorAll('.matrix-row'), function (row) {
+      var count = parseInt(row.getAttribute('data-count'), 10) || 0;
+      var filled = parseInt(row.getAttribute('data-filled'), 10) || 0;
+      var holder = row.querySelector('.matrix-row__dots');
+      if (!holder) return;
+      var html = '';
+      for (var i = 0; i < count; i++) {
+        html += '<span class="mdot' + (i < filled ? '' : ' mdot--hollow') + '"></span>';
+      }
+      holder.innerHTML = html;
+    });
+  }
+
+  function init() {
+    initLakeDots();
+    initResolve();
+    initSampleTabs();
+    initConsole();
+    initJoi();
+    initLevers();
+    initObs();
+    initFlow();
+    initDivergence();
+    initHoverDim('cascade', '.casc-row', 'cascade-note');
+    initHoverDim('layers', '.layer-row', null);
+    initHoverDim('lake', '.matrix-row', 'lake-note');
+    initHoverDim('blueprint', '.bp-row', 'bp-note');
+    initHoverDim('signals', '.sig-row', 'sig-note');
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
