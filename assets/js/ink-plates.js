@@ -723,7 +723,8 @@
   function initRampStream() {
     var svgEl = $('ramp-svg'), chipsEl = $('ramp-chips'), legEl = $('ramp-legend'), note = $('ramp-note');
     if (!svgEl || !chipsEl) return;
-    var streamType = 0, streamHover = null;
+    var streamType = 0, streamHover = null, streamSel = null;
+    function curFocus() { return streamHover != null ? streamHover : streamSel; }
     function smoothLine(pts) {
       var d = 'M ' + pts[0][0] + ' ' + pts[0][1];
       for (var i = 1; i < pts.length; i++) {
@@ -747,17 +748,23 @@
       });
     }
     function noteHTML(sd) {
-      if (streamHover != null) return '<strong>' + esc(sd[streamHover][0]) + '.</strong> ' + esc(sd[streamHover][2]) + ' <span class="rmuted">' + esc(sd[streamHover][3]) + '</span>';
-      return '<strong>' + esc(FAB_TYPES[streamType][0]) + '.</strong> ' + esc(FAB_TYPES[streamType][2]) + ' Hover a band for the occupations inside it.';
+      var f = curFocus();
+      if (f != null) {
+        var tail = (streamHover == null && streamSel === f) ? ' <span class="rmuted">Selected, click again to clear.</span>' : '';
+        return '<strong>' + esc(sd[f][0]) + '.</strong> ' + esc(sd[f][2]) + ' <span class="rmuted">' + esc(sd[f][3]) + '</span>' + tail;
+      }
+      return '<strong>' + esc(FAB_TYPES[streamType][0]) + '.</strong> ' + esc(FAB_TYPES[streamType][2]) + ' Hover a band to preview it, click to lock the job.';
     }
     function applyHover(sd) {
+      var f = curFocus();
       Array.prototype.forEach.call(svgEl.querySelectorAll('path[data-bi]'), function (p) {
         var bi = parseInt(p.getAttribute('data-bi'), 10);
-        p.setAttribute('fill-opacity', (streamHover != null && streamHover !== bi) ? '0.18' : '1');
+        p.setAttribute('fill-opacity', (f != null && f !== bi) ? '0.18' : '1');
       });
       Array.prototype.forEach.call(legEl.querySelectorAll('.ramp-leg__item'), function (it) {
         var bi = parseInt(it.getAttribute('data-bi'), 10);
-        it.style.opacity = (streamHover != null && streamHover !== bi) ? '0.4' : '1';
+        it.style.opacity = (f != null && f !== bi) ? '0.4' : '1';
+        it.classList.toggle('is-sel', streamSel === bi);
       });
       if (note) note.innerHTML = noteHTML(sd);
     }
@@ -778,7 +785,7 @@
         }
         var fill = bi === STREAM_HATCH ? 'url(#rampHatch)' : STREAM_INKS[bi];
         var stroke = bi === STREAM_HATCH ? '#131313' : 'none';
-        return '<path d="' + bandPath(topPts, botPts) + '" fill="' + fill + '" fill-opacity="1" stroke="' + stroke + '" stroke-width="0.75" data-bi="' + bi + '" style="cursor:default; transition:fill-opacity .15s;"></path>';
+        return '<path d="' + bandPath(topPts, botPts) + '" fill="' + fill + '" fill-opacity="1" stroke="' + stroke + '" stroke-width="0.75" data-bi="' + bi + '" style="cursor:pointer; transition:fill-opacity .15s;"></path>';
       }).join('');
       svgEl.innerHTML =
         '<defs><pattern id="rampHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
@@ -803,13 +810,16 @@
       });
       var over = function (bi) { return function () { streamHover = bi; applyHover(sd); }; };
       var out = function () { streamHover = null; applyHover(sd); };
+      var pick = function (bi) { return function () { streamSel = (streamSel === bi) ? null : bi; applyHover(sd); }; };
       Array.prototype.forEach.call(svgEl.querySelectorAll('path[data-bi]'), function (p) {
         var bi = parseInt(p.getAttribute('data-bi'), 10);
         p.addEventListener('mouseenter', over(bi)); p.addEventListener('mouseleave', out);
+        p.addEventListener('click', pick(bi));
       });
       Array.prototype.forEach.call(legEl.querySelectorAll('.ramp-leg__item'), function (it) {
         var bi = parseInt(it.getAttribute('data-bi'), 10);
         it.addEventListener('mouseenter', over(bi)); it.addEventListener('mouseleave', out);
+        it.addEventListener('click', pick(bi));
       });
       applyHover(sd);
     }
