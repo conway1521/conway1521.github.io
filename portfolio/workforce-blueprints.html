@@ -79,16 +79,20 @@ ink_js: true
     <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations. Hatched marks the block unique to the sector.</div>
   </div>
 
-  <!-- the ramp composition -->
-  <div class="plate" style="max-width:640px;">
+  <!-- the ramp streamgraph -->
+  <div class="plate" style="max-width:760px;">
     <div class="plate__head">
       <span class="plate__title">The ramp</span>
-      <span class="plate__hint">hover a stage</span>
+      <span class="plate__hint">select a type, hover a band</span>
     </div>
-    <p class="plate__purpose">The steady-state recipe is only one moment. Composition is a trajectory: each stage of a facility's life leans on a different mix of workers, which is what tells a region where and when hiring will be hardest.</p>
-    <div id="ramp"></div>
+    <p class="plate__purpose">Workforce composition of one facility as it moves through its life. Band thickness is workers per line, and the whole stack grows as the facility fills. Nine facility types were identified, each with its own recipe and its own ramp.</p>
+    <div class="ramp-chips__label">Facility type &middot; nine identified</div>
+    <div class="ramp-chips" id="ramp-chips"></div>
+    <div id="ramp-stream">
+      <svg id="ramp-svg" viewBox="0 0 520 300" style="width:100%; height:auto; display:block;"></svg>
+    </div>
     <div class="ramp-legend" id="ramp-legend"></div>
-    <div class="plate__note" id="ramp-note" data-default="Each bar is one stage of the facility's life. The segments are job-family shares at that moment. Construction dominates the build, engineering the tool install, process technicians the operating years.">Each bar is one stage of the facility's life. The segments are job-family shares at that moment. Construction dominates the build, engineering the tool install, process technicians the operating years.</div>
+    <div class="plate__note" id="ramp-note" data-default="Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp, and hover a band for the occupations inside it.">Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp, and hover a band for the occupations inside it.</div>
   </div>
 
 
