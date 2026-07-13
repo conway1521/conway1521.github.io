@@ -73,6 +73,20 @@ ink_js: true
     </div>
   </div>
 
+  <!-- job clusters: the adjacent population -->
+  <div class="plate" style="max-width:720px;">
+    <div class="plate__head">
+      <span class="plate__title">The adjacent population</span>
+      <span class="plate__hint">hover an occupation</span>
+    </div>
+    <p class="plate__purpose">Supply into an occupation is not only the people already in it. It is everyone one retraining step away. For a target occupation the twin spells out that reachable pool: which occupations are skill-adjacent, how large each pool is, and what bridge it takes to cross.</p>
+    <div class="clu-scroll">
+      <div class="clu-canvas" id="cluster-canvas"></div>
+    </div>
+    <div class="plate__note" id="cluster-note" data-default="Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.">Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.</div>
+    <div class="plate__caption">Adjacency from 798k occupation-pair similarities, tiered by retraining distance. The reachable pool is what the model feeds into the adjacent-population inflow, discounted by the credential and wage distance of each bridge.</div>
+  </div>
+
   <!-- the divergence -->
   <div class="plate" style="max-width:560px;">
     <div class="plate__head">
