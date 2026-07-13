@@ -694,48 +694,126 @@
     });
   }
 
-  /* ---------- ramp composition (hover a stage) ----------
-     The occupation mix shifts across a facility's life. Each stage is a
-     stacked bar; the segments are job-family shares at that moment. */
-  var RAMP_FAMILIES = ['Construction', 'Processing techs', 'Engineering', 'Maintenance', 'Management & other'];
-  var RAMP_STAGES = [
-    ['Construction', [70, 4, 12, 6, 8], 'Site build-out. The crew is almost all construction trades; the operating workforce barely exists yet.'],
-    ['Tool install', [14, 20, 34, 20, 12], 'Equipment moves in. Engineering peaks while maintenance and process techs ramp to receive and qualify the tools.'],
-    ['Early ramp', [4, 40, 24, 18, 14], 'Production starts. Process technicians dominate; engineering shifts from install to yield.'],
-    ['Steady state', [0, 32, 25, 16, 27], 'The recipe the blueprint describes. Composition settles into its operating mix.'],
-    ['Wind-down', [0, 28, 18, 26, 28], 'Volume tapers. Maintenance share rises as the plant is kept running lean.']
+  /* ---------- the ramp, as a streamgraph (select a type, hover a band) ----------
+     Reproduces plate 14A: workforce composition of one facility across its
+     life, six job-family bands stacked and centred, reshaped per facility
+     type. Data and geometry lifted from the study. */
+  var STREAM_BASE = [
+    ['Facilities & utilities', [26, 20, 12, 10], 'Leads the build, then recedes. Construction-adjacent trades front-load.', 'Facilities techs · utilities operators · construction trades'],
+    ['Process & integration eng.', [20, 30, 18, 10], 'Peaks during ramp as tools are installed and qualified.', 'Process engineers · integration engineers · yield engineers'],
+    ['Equipment technician', [10, 34, 40, 30], 'Rises through ramp and holds, the backbone of a running fab.', 'Equipment techs · maintenance techs · calibration techs'],
+    ['Manufacturing operator', [4, 26, 78, 60], 'Near-absent at build, dominant at full volume. The defining block.', 'Process operators · fab technicians · material handlers'],
+    ['Quality & metrology', [6, 14, 24, 18], 'Scales with volume as yield management starts to bite.', 'Quality engineers · metrology techs · inspectors'],
+    ['Management & admin', [12, 16, 20, 16], 'Roughly flat, overhead that does not ramp with production.', 'Production managers · planners · admin & business ops']
   ];
-  function initRamp() {
-    var host = $('ramp'), legend = $('ramp-legend'), note = $('ramp-note');
-    if (!host) return;
-    var defaultNote = note ? note.getAttribute('data-default') : null;
-    host.innerHTML = RAMP_STAGES.map(function (s, i) {
-      var segs = s[1].map(function (w, k) {
-        return '<span class="ramp-seg ramp-seg--' + k + '" style="width:' + w + '%;" title="' + esc(RAMP_FAMILIES[k]) + ' ' + w + '%"></span>';
-      }).join('');
-      return '<div class="ramp-row" data-i="' + i + '"><span class="ramp-row__name">' + esc(s[0]) +
-        '</span><div class="ramp-bar">' + segs + '</div></div>';
-    }).join('');
-    if (legend) legend.innerHTML = RAMP_FAMILIES.map(function (f, k) {
-      return '<span class="ramp-legend__item"><span class="ramp-seg ramp-seg--' + k + ' ramp-legend__swatch"></span>' + esc(f) + '</span>';
-    }).join('');
-    var rows = host.querySelectorAll('.ramp-row');
-    Array.prototype.forEach.call(rows, function (row) {
-      var i = parseInt(row.getAttribute('data-i'), 10);
-      row.addEventListener('mouseenter', function () {
-        Array.prototype.forEach.call(rows, function (r) { if (r !== row) r.classList.add('is-dim'); });
-        if (note) {
-          var s = RAMP_STAGES[i];
-          var mix = RAMP_FAMILIES.map(function (f, k) { return s[1][k] ? f + ' ' + s[1][k] : null; })
-            .filter(Boolean).join(' &middot; ');
-          note.innerHTML = '<strong>' + esc(s[0]) + '.</strong> ' + esc(s[2]) + ' <span class="rmuted">' + mix + '</span>';
+  var FAB_TYPES = [
+    ['Leading-edge logic', [1, 1, 1, 1, 1, 1], 'The reference recipe: heavy process integration, a deep operator base at volume.'],
+    ['Mature-node logic', [0.9, 0.8, 1.0, 1.15, 0.9, 1.0], 'Fewer integration engineers, a proportionally larger operator base.'],
+    ['Memory (DRAM / NAND)', [0.85, 0.7, 1.1, 1.3, 0.85, 0.9], 'The most operator- and equipment-heavy: high-volume, repetitive process.'],
+    ['Analog / mixed-signal', [0.95, 1.1, 1.0, 0.9, 1.0, 1.0], 'Design-adjacent, a richer engineering share than volume logic.'],
+    ['Compound (GaN / SiC)', [1.0, 1.25, 1.05, 0.8, 1.05, 0.95], 'Process-integration heavy, materials science leans on engineers.'],
+    ['Advanced packaging (ATP)', [1.0, 0.75, 1.15, 1.2, 0.9, 1.0], 'Assembly and test: operator- and technician-led, lighter on process eng.'],
+    ['MEMS & sensors', [1.0, 1.15, 1.0, 0.85, 1.15, 1.0], 'Quality- and engineering-weighted, tolerances drive metrology up.'],
+    ['Photonics', [1.0, 1.2, 1.0, 0.8, 1.1, 1.0], 'Integration- and metrology-heavy, small precise lines.'],
+    ['R&D / pilot line', [0.9, 1.4, 0.9, 0.4, 1.1, 1.15], 'Engineers dominate, operators barely present, it never reaches volume.']
+  ];
+  var STREAM_INKS = ['#C7C6C1', '#A6A5A0', '#84837E', '#131313', '#66655F', '#D3D2CD'];
+  var STREAM_HATCH = 3;
+  var STREAM_X = [46, 190, 334, 476];
+  function initRampStream() {
+    var svgEl = $('ramp-svg'), chipsEl = $('ramp-chips'), legEl = $('ramp-legend'), note = $('ramp-note');
+    if (!svgEl || !chipsEl) return;
+    var streamType = 0, streamHover = null;
+    function smoothLine(pts) {
+      var d = 'M ' + pts[0][0] + ' ' + pts[0][1];
+      for (var i = 1; i < pts.length; i++) {
+        var mx = (pts[i - 1][0] + pts[i][0]) / 2;
+        d += ' C ' + mx + ' ' + pts[i - 1][1] + ', ' + mx + ' ' + pts[i][1] + ', ' + pts[i][0] + ' ' + pts[i][1];
+      }
+      return d;
+    }
+    function bandPath(topPts, botPts) {
+      var d = smoothLine(topPts) + ' L ' + botPts[botPts.length - 1][0] + ' ' + botPts[botPts.length - 1][1];
+      var rev = botPts.slice().reverse();
+      for (var i = 1; i < rev.length; i++) {
+        var mx = (rev[i - 1][0] + rev[i][0]) / 2;
+        d += ' C ' + mx + ' ' + rev[i - 1][1] + ', ' + mx + ' ' + rev[i][1] + ', ' + rev[i][0] + ' ' + rev[i][1];
+      }
+      return d + ' Z';
+    }
+    function defs() {
+      return STREAM_BASE.map(function (d, bi) {
+        return [d[0], d[1].map(function (v) { return Math.round(v * FAB_TYPES[streamType][1][bi]); }), d[2], d[3]];
+      });
+    }
+    function noteHTML(sd) {
+      if (streamHover != null) return '<strong>' + esc(sd[streamHover][0]) + '.</strong> ' + esc(sd[streamHover][2]) + ' <span class="rmuted">' + esc(sd[streamHover][3]) + '</span>';
+      return '<strong>' + esc(FAB_TYPES[streamType][0]) + '.</strong> ' + esc(FAB_TYPES[streamType][2]) + ' Hover a band for the occupations inside it.';
+    }
+    function applyHover(sd) {
+      Array.prototype.forEach.call(svgEl.querySelectorAll('path[data-bi]'), function (p) {
+        var bi = parseInt(p.getAttribute('data-bi'), 10);
+        p.setAttribute('fill-opacity', (streamHover != null && streamHover !== bi) ? '0.18' : '1');
+      });
+      Array.prototype.forEach.call(legEl.querySelectorAll('.ramp-leg__item'), function (it) {
+        var bi = parseInt(it.getAttribute('data-bi'), 10);
+        it.style.opacity = (streamHover != null && streamHover !== bi) ? '0.4' : '1';
+      });
+      if (note) note.innerHTML = noteHTML(sd);
+    }
+    function render() {
+      var sd = defs();
+      var phaseTotals = [0, 1, 2, 3].map(function (i) { return sd.reduce(function (s, d) { return s + d[1][i]; }, 0); });
+      var sMax = Math.max.apply(null, phaseTotals);
+      var sH = 250, sTop = 26, sSc = sH / sMax;
+      var sBase = [0, 1, 2, 3].map(function (i) { return sTop + sH / 2 + phaseTotals[i] * sSc / 2; });
+      var cum = [0, 0, 0, 0];
+      var paths = sd.map(function (dd, bi) {
+        var topPts = [], botPts = [];
+        for (var i = 0; i < 4; i++) {
+          var bottom = sBase[i] - cum[i] * sSc;
+          var topY = bottom - dd[1][i] * sSc;
+          botPts.push([STREAM_X[i], bottom]); topPts.push([STREAM_X[i], topY]);
+          cum[i] += dd[1][i];
         }
+        var fill = bi === STREAM_HATCH ? 'url(#rampHatch)' : STREAM_INKS[bi];
+        var stroke = bi === STREAM_HATCH ? '#131313' : 'none';
+        return '<path d="' + bandPath(topPts, botPts) + '" fill="' + fill + '" fill-opacity="1" stroke="' + stroke + '" stroke-width="0.75" data-bi="' + bi + '" style="cursor:default; transition:fill-opacity .15s;"></path>';
+      }).join('');
+      svgEl.innerHTML =
+        '<defs><pattern id="rampHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
+          '<rect width="6" height="6" fill="#FAFAF7"></rect><line x1="0" y1="0" x2="0" y2="6" stroke="#131313" stroke-width="3"></line></pattern></defs>' +
+        paths +
+        '<line x1="46" y1="288" x2="476" y2="288" stroke="#E7E7E3" stroke-width="1"></line>' +
+        '<text x="46" y="299" font-size="11" fill="#8B8B86" text-anchor="middle">Planned</text>' +
+        '<text x="190" y="299" font-size="11" fill="#8B8B86" text-anchor="middle">Ramp</text>' +
+        '<text x="334" y="299" font-size="11" fill="#8B8B86" text-anchor="middle">Steady</text>' +
+        '<text x="476" y="299" font-size="11" fill="#8B8B86" text-anchor="middle">Wind-down</text>';
+      chipsEl.innerHTML = FAB_TYPES.map(function (t, i) {
+        return '<button class="ramp-chip' + (i === streamType ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(t[0]) + '</button>';
+      }).join('');
+      if (legEl) legEl.innerHTML = sd.map(function (dd, bi) {
+        var sw = bi === STREAM_HATCH
+          ? 'background:repeating-linear-gradient(45deg,#131313 0 2px,transparent 2px 4px); border:1px solid #131313;'
+          : 'background:' + STREAM_INKS[bi] + ';';
+        return '<div class="ramp-leg__item" data-bi="' + bi + '"><span class="ramp-leg__sw" style="' + sw + '"></span><span>' + esc(dd[0]) + '</span></div>';
+      }).join('');
+      Array.prototype.forEach.call(chipsEl.querySelectorAll('.ramp-chip'), function (c) {
+        c.addEventListener('click', function () { streamType = parseInt(c.getAttribute('data-i'), 10); streamHover = null; render(); });
       });
-      row.addEventListener('mouseleave', function () {
-        Array.prototype.forEach.call(rows, function (r) { r.classList.remove('is-dim'); });
-        if (note && defaultNote != null) note.innerHTML = defaultNote;
+      var over = function (bi) { return function () { streamHover = bi; applyHover(sd); }; };
+      var out = function () { streamHover = null; applyHover(sd); };
+      Array.prototype.forEach.call(svgEl.querySelectorAll('path[data-bi]'), function (p) {
+        var bi = parseInt(p.getAttribute('data-bi'), 10);
+        p.addEventListener('mouseenter', over(bi)); p.addEventListener('mouseleave', out);
       });
-    });
+      Array.prototype.forEach.call(legEl.querySelectorAll('.ramp-leg__item'), function (it) {
+        var bi = parseInt(it.getAttribute('data-bi'), 10);
+        it.addEventListener('mouseenter', over(bi)); it.addEventListener('mouseleave', out);
+      });
+      applyHover(sd);
+    }
+    render();
   }
 
   /* ---------- qualitative to quantitative (switch an example) ----------
@@ -796,7 +874,7 @@
     initFlow();
     initClusters();
     initHierarchy();
-    initRamp();
+    initRampStream();
     initExtract();
     initDivergence();
     initHoverDim('resolution', '.res-row', 'resolution-note');
