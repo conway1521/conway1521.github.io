@@ -32,45 +32,49 @@
     });
   }
 
-  /* ---------- resolve a title (three tiers, substring demo) ---------- */
-  var SAMPLE_HRIS = [
-    ['AmbFloat LPN / II', 'LPN', '', 'staff · II', '29-2061', 'Licensed Practical and Licensed Vocational Nurses'],
-    ['DevOps Engineer, Software Engineer III, Enterprise Risk Finance Technology', 'Software Engineer', 'DevOps', 'staff · III', '15-1252', 'Software Developers'],
-    ['Certified Nursing Assistant I, B1D Critical Care 1st Floor', 'Nurse Aide', 'Critical Care', 'staff · I', '31-1131', 'Nursing Assistants'],
-    ['Associate Professor BSN, Nursing', 'RN', '', 'staff', '29-1141', 'Registered Nurses'],
-    ['AI Digital Supply Chain Program Manager', 'Program Manager', 'Supply Chain', 'manager', '11-9072', 'Management Occupations'],
-    ['Certified Medical Assistant, Pediatric Gastro', 'Certified Medical Assistant', 'Pediatrics', 'staff', '31-9092', 'Medical Assistants'],
-    ['Clinical Staff Pharmacist Pharmacy and ED', 'Clinical Pharmacist', '', 'staff', '29-1051', 'Pharmacists'],
-    ['CRNA', 'CRNA', '', 'staff', '29-1151', 'Nurse Anesthetists']
+  /* ---------- federal classification (three tiers, substring demo) ----------
+     row = [original, canonical_title, specialty, level, grade,
+            onet8_code, onet8_title, soc6_code, soc6_title, subfamily, family]
+     Real employer HRIS and public posting titles from the panel. */
+  var SAMPLE = [
+    ['AmbFloat LPN / II', 'LPN', '', 'staff', 'II', '29-2061.00', 'Licensed Practical and Licensed Vocational Nurses', '29-2061', 'Licensed Practical and Licensed Vocational Nurses', 'Licensed Practical and Licensed Vocational Nurses', 'Health Technologists and Technicians'],
+    ['AI Digital Supply Chain Program Manager', 'Program Manager', 'Supply Chain', 'manager', '', '11-9072.00', 'Entertainment and Recreation Managers, Except Gambling', '11-9072', 'Entertainment and Recreation Managers, Except Gambling', 'Entertainment and Recreation Managers', 'Other Management Occupations'],
+    ['DevOps Engineer-Software Engineer III, Enterprise Risk Finance Technology', 'Software Engineer', 'DevOps', 'staff', 'III', '15-1252.00', 'Software Developers', '15-1252', 'Software Developers', 'Software and Web Developers, Programmers, and Testers', 'Computer Occupations'],
+    ['Certified Nursing Assistant I - B1D Critical Care 1st Floor', 'Nurse Aide', 'Critical Care', 'staff', 'I', '31-1131.00', 'Nursing Assistants', '31-1131', 'Nursing Assistants', 'Nursing Assistants, Orderlies, and Psychiatric Aides', 'Nursing Assistants, Orderlies, and Psychiatric Aides'],
+    ['Associate Professor BSN - Nursing', 'RN', '', 'staff', '', '29-1141.00', 'Registered Nurses', '29-1141', 'Registered Nurses', 'Registered Nurses', 'Healthcare Diagnosing or Treating Practitioners'],
+    ['CRNA ( Only)', 'CRNA', '', 'staff', '', '29-1151.00', 'Nurse Anesthetists', '29-1151', 'Nurse Anesthetists', 'Nurse Anesthetists', 'Healthcare Diagnosing or Treating Practitioners'],
+    ['Biomedical Equipment Tech Senior', 'Biomedical Equipment Tech', '', 'senior', '', '49-9062.00', 'Medical Equipment Repairers', '49-9062', 'Medical Equipment Repairers', 'Precision Instrument and Equipment Repairers', 'Other Installation, Maintenance, and Repair Occupations'],
+    ['SVP & Chief Technology Officer', 'Chief Technology Officer', '', 'manager', '', '11-1011.00', 'Chief Executives', '11-1011', 'Chief Executives', 'Chief Executives', 'Top Executives'],
+    ['Senior Industrial Engineer', 'Industrial Engineer', '', 'senior', '', '17-2112.00', 'Industrial Engineers', '17-2112', 'Industrial Engineers', 'Industrial Engineers, Including Health and Safety', 'Engineers'],
+    ['Registered Nurse - Supervisor - Neurosurgical Telemetry - FT Days', 'Charge Nurse', 'Telemetry', 'supervisor', '', '29-1141.00', 'Registered Nurses', '29-1141', 'Registered Nurses', 'Registered Nurses', 'Healthcare Diagnosing or Treating Practitioners'],
+    ['Clinical Staff Pharmacist Pharmacy and ED', 'Clinical Pharmacist', '', 'staff', '', '29-1051.00', 'Pharmacists', '29-1051', 'Pharmacists', 'Pharmacists', 'Healthcare Diagnosing or Treating Practitioners'],
+    ['Sr. Scrum Master - (Remote & Onsite 1 Day a week) - LOCALS ONLY', 'Scrum Master', '', 'senior', 'I', '15-1299.09', 'Information Technology Project Managers', '15-1299', 'Computer Occupations, All Other', 'Miscellaneous Computer Occupations', 'Computer Occupations'],
+    ['Travel Nurse RN - Med/Surg - $1,976 per week in Odessa, TX', 'RN', 'Med Surg', 'staff', '', '29-1141.00', 'Registered Nurses', '29-1141', 'Registered Nurses', 'Registered Nurses', 'Healthcare Diagnosing or Treating Practitioners'],
+    ['CDL Truck Driver - Residential', 'CDL Driver', 'Truck', 'staff', '', '53-3032.00', 'Heavy and Tractor-Trailer Truck Drivers', '53-3032', 'Heavy and Tractor-Trailer Truck Drivers', 'Driver/Sales Workers and Truck Drivers', 'Motor Vehicle Operators'],
+    ['Upper School Mathematics Teacher', 'High School Math Teacher', '', 'staff', '', '25-2031.00', 'Secondary School Teachers, Except Special and Career/Technical Education', '25-2031', 'Secondary School Teachers, Except Special and Career/Technical Education', 'Secondary School Teachers', 'Preschool, Elementary, Middle, Secondary, and Special Education Teachers'],
+    ['Surgical Technologist (FT Days / 10s) KH Soin', 'Surgical Technologist', '', 'staff', '', '29-2055.00', 'Surgical Technologists', '29-2055', 'Surgical Technologists', 'Health Practitioner Support Technologists and Technicians', 'Health Technologists and Technicians']
   ];
-  var SAMPLE_POST = [
-    ['Sr. Scrum Master (Remote, LOCALS)', 'IT Project Manager', '', 'senior', '15-1299', 'Computer Occupations, All Other'],
-    ['Upper School Mathematics Teacher', 'High School Math Teacher', '', 'staff', '25-2031', 'Secondary School Teachers'],
-    ['Marketing Coordinator', 'Marketing Coordinator', '', 'staff', '13-1161', 'Market Research and Marketing Specialists'],
-    ['Travel Nurse RN, Med/Surg', 'RN', 'Med/Surg', 'staff', '29-1141', 'Registered Nurses']
-  ];
-  var TIER_NAMES = ['01 · open-source baseline', '02 · fine-tuned model', '03 · LLM adjudication'];
+  var TIER_NAMES = ['open-source baseline', 'fine-tuned model', 'LLM adjudication'];
 
   function resolve(input) {
-    var ALL = SAMPLE_HRIS.concat(SAMPLE_POST);
     var q = (input || '').toLowerCase().trim();
     if (!q) return undefined;
     var hit = null, i;
-    for (i = 0; i < ALL.length; i++) {
-      var o = ALL[i][0].toLowerCase();
-      if (o.indexOf(q) !== -1 || q.indexOf(o) !== -1) { hit = { row: ALL[i], tier: 0 }; break; }
+    for (i = 0; i < SAMPLE.length; i++) {
+      var o = SAMPLE[i][0].toLowerCase();
+      if (o.indexOf(q) !== -1 || q.indexOf(o) !== -1) { hit = { row: SAMPLE[i], tier: 0 }; break; }
     }
     if (!hit) {
       var toks = q.split(/[^a-z0-9]+/).filter(function (t) { return t.length > 2; });
       if (toks.length) {
-        for (i = 0; i < ALL.length; i++) {
-          var oo = ALL[i][0].toLowerCase(), cc = ALL[i][1].toLowerCase();
-          if (toks.every(function (t) { return oo.indexOf(t) !== -1 || cc.indexOf(t) !== -1; })) { hit = { row: ALL[i], tier: 1 }; break; }
+        for (i = 0; i < SAMPLE.length; i++) {
+          var oo = SAMPLE[i][0].toLowerCase(), cc = SAMPLE[i][1].toLowerCase();
+          if (toks.every(function (t) { return oo.indexOf(t) !== -1 || cc.indexOf(t) !== -1; })) { hit = { row: SAMPLE[i], tier: 1 }; break; }
         }
         if (!hit) {
-          for (i = 0; i < ALL.length; i++) {
-            var c2 = ALL[i][1].toLowerCase();
-            if (toks.some(function (t) { return c2.indexOf(t) !== -1; })) { hit = { row: ALL[i], tier: 2 }; break; }
+          for (i = 0; i < SAMPLE.length; i++) {
+            var c2 = SAMPLE[i][1].toLowerCase();
+            if (toks.some(function (t) { return c2.indexOf(t) !== -1; })) { hit = { row: SAMPLE[i], tier: 2 }; break; }
           }
         }
       }
@@ -81,26 +85,32 @@
   function initResolve() {
     var input = $('resolve-input'), btn = $('resolve-btn'), out = $('resolve-output');
     if (!input || !out) return;
+    function sub(label, val) {
+      return '<div class="resolve-out__sub"><span class="rlbl">' + label + '</span>' +
+        (val ? esc(val) : '<span class="rmuted">not specified</span>') + '</div>';
+    }
     var go = function () {
       var hit = resolve(input.value);
       if (hit === undefined) { out.innerHTML = ''; return; }
       if (hit === null) {
-        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to layer 03, LLM adjudication: flagged, never guessed.</div>';
+        out.innerHTML = '<div style="border-top:1px solid var(--ink); padding-top:12px; font-size:13px; color:var(--muted);">No confident match in the demo sample. A real input of this shape routes to LLM adjudication, flagged, never guessed.</div>';
         return;
       }
       var r = hit.row;
-      var tierNote = 'Resolved by ' + TIER_NAMES[hit.tier] +
-        (hit.tier === 0 ? ': cheap certainty first' : (hit.tier === 1 ? ': in-domain pairs carried it' : ': the long tail, adjudicated'));
+      var tierNote = 'Resolved by the ' + TIER_NAMES[hit.tier] +
+        (hit.tier === 0 ? ', cheap certainty first.' : (hit.tier === 1 ? ', an in-domain pair carried it.' : ', the long tail, adjudicated.'));
       out.innerHTML =
         '<div class="resolve-out">' +
-          '<div class="resolve-out__l"><div class="resolve-out__lbl">Employer-facing canonical</div>' +
+          '<div class="resolve-out__l">' +
+            '<div class="resolve-out__lbl">Employer role</div>' +
             '<div class="resolve-out__val">' + esc(r[1]) + '</div>' +
-            (r[2] ? '<div class="resolve-out__sub">Specialty: ' + esc(r[2]) + '</div>' : '') +
-            (r[3] ? '<div class="resolve-out__sub">Level: ' + esc(r[3]) + '</div>' : '') +
+            sub('Specialty', r[2]) + sub('Level', r[3]) + sub('Grade', r[4]) +
           '</div>' +
-          '<div class="resolve-out__r"><div class="resolve-out__lbl">SOC-6 federal code</div>' +
-            '<div class="resolve-out__val" style="letter-spacing:0.02em;">' + esc(r[4]) + '</div>' +
-            '<div class="resolve-out__sub">' + esc(r[5]) + '</div>' +
+          '<div class="resolve-out__r">' +
+            '<div class="resolve-out__lbl">Federal classification</div>' +
+            '<div class="resolve-out__val">' + esc(r[6]) + ' <span class="rmuted">(' + esc(r[5]) + ')</span></div>' +
+            '<div class="resolve-out__sub"><span class="rlbl">SOC-6</span>' + esc(r[8]) + ' <span class="rmuted">(' + esc(r[7]) + ')</span></div>' +
+            sub('Family', r[10]) + sub('Subfamily', r[9]) +
           '</div>' +
         '</div>' +
         '<div style="border-top:1px solid var(--ink); padding-top:10px; font-size:12.5px; color:var(--muted);">' + esc(tierNote) + '</div>';
