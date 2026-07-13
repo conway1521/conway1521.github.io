@@ -79,6 +79,21 @@ ink_js: true
     <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. Strong sources fire alone. Weaker ones need agreement.</div>
   </div>
 
+  <!-- qualitative to quantitative -->
+  <div class="plate" style="max-width:760px;">
+    <div class="plate__head">
+      <span class="plate__title">From prose to a signal</span>
+      <span class="plate__hint">switch the source</span>
+    </div>
+    <p class="plate__purpose">The hardest sources are written, not tabulated: a regional economic report, a press release, a layoff filing. An LLM reads each under a constrained extraction schema and returns structured signals on the same state-by-occupation grain as the statistics, every one carrying the sentence it came from.</p>
+    <div class="obs-tabs" id="xtract-tabs"></div>
+    <div class="xtract-grid">
+      <div class="xtract-prose" id="xtract-prose"></div>
+      <div class="xtract-fields" id="xtract-fields"></div>
+    </div>
+    <div class="plate__caption">Illustrative extractions. The schema fixes the fields, the occupation resolves to a federal code, and the basis keeps every signal traceable to its source sentence.</div>
+  </div>
+
   <!-- the two flags -->
   <div class="plate" style="max-width:560px;">
     <div class="plate__head">
@@ -91,7 +106,7 @@ ink_js: true
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Strong evidence</span><span style="font-size:13px;">fires alone</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Weaker evidence</span><span style="font-size:13px;">needs two, agreeing in direction</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Unconfirmed</span><span style="font-size:13px;">kept, and labelled unconfirmed</span></div>
-    <div class="plate__caption">No weights, no scores hidden in the rollup.</div>
+    <div class="plate__caption">Each flag records which signals raised it and at what confidence tier.</div>
   </div>
 
   <div class="col">

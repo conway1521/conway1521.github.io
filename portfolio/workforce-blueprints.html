@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Derived from public sources</span>
     </div>
     <h1 class="display">Workforce blueprints</h1>
-    <p class="lede">How many workers a new facility needs, in what mix, and when, derived when no single source can see it. The worked case: semiconductor fabs, where nine facility types each carry their own recipe and their own ramp.</p>
+    <p class="lede">How many workers a new or planned facility needs, in what mix, and when, derived when no single source can see it, and what an ideal composition should be against industry and regulatory standards. The worked case: semiconductor fabs, where nine facility types each carry their own recipe and their own ramp.</p>
   </div>
   <div class="standfirst">Economics &middot; data science. The fourth demand layer of the labour market twin.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>A chip plant is announced and a region needs to know what it means: how many workers, in which occupations, arriving on what schedule. No source answers this. Announcements give investment and a single headline headcount. Staffing statistics describe yesterday's industry mix and miss a leading-edge fab entirely. Filings inform scale and timing but say nothing about composition. The blueprint has to be built from scratch.</p>
+      <p>A new facility is planned and a region needs to know what it means: how many workers, in which occupations, arriving on what schedule. Often there is no facility yet and no HRIS to study, so we know what will be produced but not how it will be staffed. Industry alliances, staffing agencies, and states are left unable to prepare the local workforce, or even to know whether it is already prepared. The same question runs in reverse: what an ideal composition should be, measured against industry and regulatory standards, nurses per bed adjusted for illness and mortality, technicians per tool for a fab. No single source answers either. Announcements give investment and a headline headcount. Staffing statistics describe yesterday's industry mix and miss a leading-edge facility entirely. Filings inform scale and timing but say nothing about composition. The blueprint has to be built.</p>
     </div>
   </div>
 
@@ -79,6 +79,18 @@ ink_js: true
     <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations. Hatched marks the block unique to the sector.</div>
   </div>
 
+  <!-- the ramp composition -->
+  <div class="plate" style="max-width:640px;">
+    <div class="plate__head">
+      <span class="plate__title">The ramp</span>
+      <span class="plate__hint">hover a stage</span>
+    </div>
+    <p class="plate__purpose">The steady-state recipe is only one moment. Composition is a trajectory: each stage of a facility's life leans on a different mix of workers, which is what tells a region where and when hiring will be hardest.</p>
+    <div id="ramp"></div>
+    <div class="ramp-legend" id="ramp-legend"></div>
+    <div class="plate__note" id="ramp-note" data-default="Each bar is one stage of the facility's life. The segments are job-family shares at that moment. Construction dominates the build, engineering the tool install, process technicians the operating years.">Each bar is one stage of the facility's life. The segments are job-family shares at that moment. Construction dominates the build, engineering the tool install, process technicians the operating years.</div>
+  </div>
+
 
   <!-- coverage -->
   <div class="plate" style="max-width:640px;">
@@ -120,17 +132,17 @@ ink_js: true
       <span class="plate__title">The derivation</span>
       <span class="plate__hint">the full audit trail</span>
     </div>
-    <p class="plate__purpose">Per-100 equals the occupation's share of its block times the block total. Headcount is per-100 scaled to a 2,000-person facility.</p>
-    <div class="deriv-head"><span>SOC</span><span>Occupation</span><span>Block</span><span class="r">Share %</span><span class="r">Block</span><span class="r">Per 100</span><span class="r">At 2,000</span></div>
-    <div class="deriv-row"><span>51-9141</span><span>Semiconductor Processing Technicians</span><span>Processing</span><span class="r">100.0</span><span class="r">16</span><span class="r">16.00</span><span class="r">320</span></div>
-    <div class="deriv-row"><span>17-2112</span><span>Industrial Engineers</span><span>Engineering</span><span class="r">30.5</span><span class="r">25</span><span class="r">7.62</span><span class="r">152</span></div>
-    <div class="deriv-row"><span>15-1252</span><span>Software Developers</span><span>Software</span><span class="r">60.9</span><span class="r">11</span><span class="r">6.69</span><span class="r">134</span></div>
-    <div class="deriv-row"><span>17-2061</span><span>Computer Hardware Engineers</span><span>Engineering</span><span class="r">24.8</span><span class="r">25</span><span class="r">6.20</span><span class="r">124</span></div>
-    <div class="deriv-row"><span>17-2072</span><span>Electronics Engineers</span><span>Engineering</span><span class="r">17.5</span><span class="r">25</span><span class="r">4.37</span><span class="r">88</span></div>
-    <div class="deriv-row"><span>17-3023</span><span>EE Technologists &amp; Technicians</span><span>Eng. technicians</span><span class="r">48.8</span><span class="r">8</span><span class="r">3.91</span><span class="r">78</span></div>
-    <div class="deriv-row"><span>49-9041</span><span>Industrial Machinery Mechanics</span><span>Maintenance</span><span class="r">48.4</span><span class="r">8</span><span class="r">3.88</span><span class="r">78</span></div>
-    <div class="deriv-row"><span>49-9071</span><span>Maintenance &amp; Repair, General</span><span>Maintenance</span><span class="r">31.4</span><span class="r">8</span><span class="r">2.51</span><span class="r">50</span></div>
-    <div class="plate__caption">Derived from public staffing patterns with type-tuned block totals. Facility scale illustrative. Eight of forty-plus rows shown.</div>
+    <p class="plate__purpose">The final per-100 share is not read from one source. Each source that can see composition gives its own estimate, and filings abstain by design. The three that can see are triangulated into the number the recipe uses.</p>
+    <div class="deriv-head"><span>Occupation (SOC)</span><span class="r">Staffing</span><span class="r">Postings</span><span class="r">Filings</span><span class="r">Trade</span><span class="r">Final /100</span></div>
+    <div class="deriv-row"><span>Semiconductor Processing Techs <span class="rmuted">51-9141</span></span><span class="r">15.2</span><span class="r">12.8</span><span class="r rmuted">abstains</span><span class="r">17.0</span><span class="r"><strong>16.0</strong></span></div>
+    <div class="deriv-row"><span>Industrial Engineers <span class="rmuted">17-2112</span></span><span class="r">7.1</span><span class="r">8.4</span><span class="r rmuted">abstains</span><span class="r">7.6</span><span class="r"><strong>7.6</strong></span></div>
+    <div class="deriv-row"><span>Software Developers <span class="rmuted">15-1252</span></span><span class="r">5.9</span><span class="r">8.1</span><span class="r rmuted">abstains</span><span class="r">6.4</span><span class="r"><strong>6.7</strong></span></div>
+    <div class="deriv-row"><span>Computer Hardware Engineers <span class="rmuted">17-2061</span></span><span class="r">6.4</span><span class="r">5.5</span><span class="r rmuted">abstains</span><span class="r">6.6</span><span class="r"><strong>6.2</strong></span></div>
+    <div class="deriv-row"><span>Electronics Engineers <span class="rmuted">17-2072</span></span><span class="r">4.1</span><span class="r">4.9</span><span class="r rmuted">abstains</span><span class="r">4.2</span><span class="r"><strong>4.4</strong></span></div>
+    <div class="deriv-row"><span>EE Technologists &amp; Technicians <span class="rmuted">17-3023</span></span><span class="r">4.0</span><span class="r">3.6</span><span class="r rmuted">abstains</span><span class="r">3.9</span><span class="r"><strong>3.9</strong></span></div>
+    <div class="deriv-row"><span>Industrial Machinery Mechanics <span class="rmuted">49-9041</span></span><span class="r">4.2</span><span class="r">3.1</span><span class="r rmuted">abstains</span><span class="r">3.8</span><span class="r"><strong>3.9</strong></span></div>
+    <div class="deriv-row"><span>Maintenance &amp; Repair, General <span class="rmuted">49-9071</span></span><span class="r">2.7</span><span class="r">2.2</span><span class="r rmuted">abstains</span><span class="r">2.5</span><span class="r"><strong>2.5</strong></span></div>
+    <div class="plate__caption">Each cell is that source's read on the occupation's share of the recipe. Filings abstain from composition. Staffing, postings, and trade announcements triangulate into the final. Eight of forty-plus rows shown.</div>
   </div>
 
 
