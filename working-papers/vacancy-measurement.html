@@ -1,0 +1,74 @@
+---
+layout: default
+title: What does a vacancy measure?
+permalink: /working-papers/vacancy-measurement/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">What does a vacancy measure?</h1>
+    <p class="lede">Open jobs sound like one number, but they are three different objects: what employers tell a government survey, what job boards advertise, and what an employer's applicant tracking system records. For the same employers and occupations these disagree by two to three times. This reconciles them.</p>
+  </div>
+  <div class="standfirst">Labour economics &middot; measurement &middot; data engineering. A replicable successor to a discontinued time-to-fill series.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>The survey (JOLTS) is a snapshot of positions an employer is actively recruiting for. A job posting is an advertisement, where one posting can stand for many openings or none. A requisition in an applicant tracking system is an administrative ledger, with open dates, holds, cancellations, and evergreen records. These measure different things, so their two-to-three-times disagreement is not error. The paper does the reconciliation from the ledger up, using requisition lifecycle records from an employer panel, and it fills a real hole: the best vacancy-duration series the field had, the DHI-Dice time-to-fill measure, is discontinued.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The approach</h2>
+    </div>
+    <div class="prose">
+      <p>Three moves. First, a concept map from every requisition state (open, on hold, filled, cancelled, evergreen) to its survey and posting counterpart, with a column for whether each state is counted in the survey and visible in postings. Second, time-to-fill measured with Kaplan-Meier curves that keep still-open requisitions as censored rather than dropping them, which is the bias the paper warns against. Third, a decomposition of the two-to-three-times gap into named parts: multi-hire requisitions, evergreen requisitions, holds, requisitions not actively recruited, and postings with no requisition behind them.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">The durations land on a published anchor.</div>
+        <div class="finding__body">Time-to-close is about 47 days for registered nurses and 39 days for nursing assistants, and the assistant figure matches the published non-executive time-to-fill benchmark to the day. Matching an external number the model was not fit to is the credibility anchor for everything else.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">A stale-inventory diagnostic surfaces zombie requisitions.</div>
+        <div class="finding__body">The ratio of the average age of still-open requisitions to the age at close is a new statistic. Respiratory therapists run at about 4.8 times, which reveals a stock of requisitions that stay open without being actively worked, invisible to any snapshot measure.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">03</span>
+        <div class="finding__head">The gap decomposes into countable parts.</div>
+        <div class="finding__body">The two-to-three-times difference between the ledger and the survey is not a mystery. Multi-hire, evergreen, on-hold, and not-actively-recruited requisitions account for most of it, with an explicit residual rather than a silent one.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The duration work extends from medians to full survival curves by occupation, with the censoring handled correctly so open requisitions inform the estimate instead of biasing it. The gap decomposition is completed to bounded shares for every panel occupation, which lets a user of any one data source translate it into the others. Taken together this is a fresh, reproducible time-to-fill framework built on an administrative ledger, the kind of measure the discontinued series used to provide.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

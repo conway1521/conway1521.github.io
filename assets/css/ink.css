@@ -87,7 +87,7 @@ button { font-family: inherit; }
 
 /* ---------- ruled entry lists (research, work, about, writing) ---------- */
 .sec { margin-top: 64px; }
-.sec__h { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); border-top: 2px solid var(--ink); padding-top: 12px; margin-bottom: 6px; }
+.sec__h { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
 .entry { border-top: 1px solid var(--rule); padding: 22px 0; }
 .entry:first-of-type { border-top: none; }
 .entry__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
@@ -115,7 +115,7 @@ button { font-family: inherit; }
 .hero__intro { margin-top: 26px; max-width: none; }
 .hero__name { font-size: 44px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.03; }
 .hero__tagline { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 18px 0 0; max-width: 600px; }
-.affil { margin-top: 28px; border-top: 2px solid var(--ink); max-width: 620px; }
+.affil { margin-top: 24px; max-width: 620px; }
 .affil > div { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
 .affil .role { font-weight: 600; }
 .affil .at { color: var(--faint); }
@@ -124,7 +124,7 @@ button { font-family: inherit; }
 /* ============================================================
    PORTFOLIO INDEX - the ruled table, per the reference
    ============================================================ */
-.idx { border-top: 2px solid var(--ink); }
+.idx { }
 .idx__row { display: grid; grid-template-columns: 1.6fr 1.4fr 0.9fr; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
 .idx__row:hover { opacity: 1; }
 .idx__row:hover .idx__name { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
@@ -428,10 +428,12 @@ button { font-family: inherit; }
 .agenda--nested .agenda-card__title { font-size: 14.5px; }
 
 /* working-paper findings and results table */
-.finding { padding: 12px 0; border-top: 1px solid var(--rule); }
+.finding { display: grid; grid-template-columns: 26px 1fr; gap: 0 16px; padding: 16px 0; border-top: 1px solid var(--rule); }
 .finding:last-child { border-bottom: 1px solid var(--rule); }
-.finding__head { font-size: 14px; font-weight: 600; line-height: 1.4; }
-.finding__body { font-size: 13px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+.finding__n { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.finding__head { font-size: 15px; font-weight: 600; line-height: 1.4; }
+.finding__body { font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 6px; grid-column: 2; }
+.finding__body table { grid-column: 2; }
 .rtable { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0 4px; }
 .rtable th, .rtable td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
 .rtable th:first-child, .rtable td:first-child { text-align: left; font-variant-numeric: normal; }

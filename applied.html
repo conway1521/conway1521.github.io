@@ -55,7 +55,7 @@ title: Applied
           <div class="agenda-card__sub">The model</div>
           <div class="math-block">
             <p style="margin:0;">$$Y = A \cdot R^{\alpha} \, K^{\beta}, \qquad R = \left(\sum_{k} \gamma_k \, s_k^{\,\rho}\right)^{1/\rho}$$</p>
-            <p style="margin:8px 0 0;">In levels the identity is theory-free arithmetic. The task shares \( \beta_i \), skill shares \( \gamma_{ik} \), and automatable shares \( \delta_i \) are read straight from the data; the CES curvature and augmentation \( A \) enter only for counterfactuals.</p>
+            <p style="margin:8px 0 0;">In levels the identity is theory-free arithmetic. The task shares \( \beta_i \), skill shares \( \gamma_{ik} \), and automatable shares \( \delta_i \) are read straight from the data. The CES curvature and augmentation \( A \) enter only for counterfactuals.</p>
           </div>
           <div class="agenda-card__links"><a href="{{ '/working-papers/skills-dna' | relative_url }}">Read the full working paper &rarr;</a> <a href="{{ '/portfolio/skills-framework' | relative_url }}">The production system</a></div>
         </div>
@@ -65,7 +65,7 @@ title: Applied
         <summary>
           <div class="agenda-card__title">The workforce flow engine</div>
           <div class="agenda-card__meta">occupational flow parameters &middot; in progress</div>
-          <p class="agenda-card__abstract">Every occupation in every state has a metabolism: who enters, who exits, who moves, and a background rate of churn. This measures those rates from Census microdata, so policy can act on why a workforce is changing, not only how much.</p>
+          <p class="agenda-card__abstract">Every occupation in every state has a metabolism: who enters, who exits, who moves, and a background rate of churn. Standard forecasts give the totals. This measures the rates underneath them from Census microdata, so policy can act on the causes of a workforce change.</p>
         </summary>
         <div class="agenda-card__body">
           <div class="agenda-card__sub">The idea</div>
@@ -73,9 +73,71 @@ title: Applied
           <div class="agenda-card__sub">The model</div>
           <div class="math-block">
             <p style="margin:0;">$$\text{Stock}_{t+1} = \text{Stock}_{t} + \text{Entrants} + \text{In-migrants} - \text{Exits} - \text{Out-migrants} + \text{Residual churn}$$</p>
-            <p style="margin:8px 0 0;">A cohort-component identity on ACS repeated cross-sections. Migration is observed directly; entry and exit are estimated from age-band dynamics and validated against external records.</p>
+            <p style="margin:8px 0 0;">A cohort-component identity on ACS repeated cross-sections. Migration is observed directly. Entry and exit are estimated from age-band dynamics and validated against external records.</p>
           </div>
           <div class="agenda-card__links"><a href="{{ '/working-papers/flows-engine' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Does the choice of AI-exposure measure matter?</div>
+          <div class="agenda-card__meta">common task framework, AI exposure &middot; in progress</div>
+          <p class="agenda-card__abstract">At least six measures score how exposed each occupation is to AI, and studies pick one without justifying it. If they disagree, the ranking of at-risk jobs is a property of the instrument. This holds everything constant except the measure.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Each measure is a swappable adapter over one shared occupation and skill vocabulary, so the identical downstream computation can run under each and report exactly where, and how much, the choice changes the answer.</p>
+          <div class="agenda-card__sub">The approach</div>
+          <p>Hold the engine fixed, swap the exposure adapter, and measure agreement: rank correlations, the share of employment whose exposed-or-not classification flips, and whether the disagreement lands in the policy-relevant middle.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/exposure-measures' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">What does a vacancy measure?</div>
+          <div class="agenda-card__meta">labour market measurement &middot; in progress</div>
+          <p class="agenda-card__abstract">Open jobs sound like one number but are three objects: what employers tell a survey, what job boards advertise, and what an applicant tracking system records. For the same employers they disagree by two to three times. This reconciles them.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Using requisition lifecycle records from an employer panel, document what an applicant-tracking ledger actually contains, compute true time-to-fill by occupation, and decompose the two-to-three-times gap into named parts.</p>
+          <div class="agenda-card__sub">The approach</div>
+          <p>A concept map from each requisition state to its survey and posting counterpart, Kaplan-Meier durations that keep still-open requisitions instead of dropping them, and a stale-inventory diagnostic that surfaces requisitions left open without being worked.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/vacancy-measurement' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Shortage arithmetic</div>
+          <div class="agenda-card__meta">occupational gaps, substitution &middot; in progress</div>
+          <p class="agenda-card__abstract">Headline shortages subtract the supply of one occupation from the demand for that same occupation. But demand is for output, and employers substitute across near occupations. Ignoring that margin overstates shortages by 15 to 20 percent.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Take any headline gap, find the substitution-feasible adjacent occupations by skill similarity, bound how much each adjacency tier can absorb, and count only workers who clear skill, availability, licensing, and wage screens. Republish the gap as a range.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\text{gap}_{\text{corrected}} = \text{gap}_{\text{raw}} - \sum_{\text{tiers}} \min\!\big(\text{absorbable share} \times \text{adjacent slack},\ \text{tier capacity}\big)$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/shortage-arithmetic' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Reading the Beige Book with LLMs</div>
+          <div class="agenda-card__meta">text as data, labour sentiment &middot; in progress</div>
+          <p class="agenda-card__abstract">The twelve Federal Reserve districts publish qualitative labour-market reports eight times a year. An LLM extracts structured sentiment from each release for about thirteen cents, so forty years of text can be processed for the price of lunch.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Extract a fixed schema per district, labour tightness, wage pressure, sector mentions, and confidence, across the full archive, release it as a public dataset, and validate it against hand-coded samples, the older dictionary indices, and hard district data.</p>
+          <div class="agenda-card__sub">The approach</div>
+          <p>The cost is part of the argument. At thirteen cents a release the economics of text-as-data pipelines change, which is what makes the full historical run, and the public series it produces, feasible at all.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/beige-book' | relative_url }}">Read the full working paper &rarr;</a></div>
         </div>
       </details>
 
@@ -94,7 +156,6 @@ title: Applied
       </details>
 
     </div>
-    <p style="font-size:13px; color:var(--faint); margin-top:16px; max-width:680px;">More agenda pieces to come, each as one of these cards.</p>
   </section>
 
 </div>
