@@ -81,6 +81,23 @@ title: Applied
 
       <details class="agenda-card">
         <summary>
+          <div class="agenda-card__title">Do skills predict moves?</div>
+          <div class="agenda-card__meta">occupational mobility &middot; in progress</div>
+          <p class="agenda-card__abstract">Skill-similarity scores are used as if they were evidence that workers move. They are a hypothesis about feasibility. This tests whether workers actually move in proportion to similarity, once size, wages, and geography are held constant.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Estimate a gravity model of occupational flows and read off the elasticity of moves to skill similarity, then check whether the tier thresholds the field uses match where observed flows actually break.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\ln \text{flow}_{i \to j} = \eta \, \ln \text{sim}_{ij} + \beta_1 \ln \tfrac{w_j}{w_i} + \beta_2 \ln E_i + \beta_3 \ln E_j + \gamma \, \text{licensed}_j + \varepsilon_{ij}$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/skills-and-moves' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
           <div class="agenda-card__title">Fiscal policy's distributional impact on consumption</div>
           <div class="agenda-card__meta">with Paul Hubert and Fergus Cumming &middot; in progress</div>
           <p class="agenda-card__abstract">Identifies the channels through which fiscal policy reaches consumption across households of varying credit constraints, building on Hubert and Cumming (2021) to connect asset liquidity with a fiscal-policy dataset.</p>
@@ -116,10 +133,6 @@ title: Applied
       <a class="wp-item" href="{{ '/working-papers/shortage-arithmetic' | relative_url }}">
         <span class="wp-item__title">Shortage arithmetic</span>
         <span class="wp-item__desc">Substitution across near occupations deflates headline gaps by 15 to 20 percent.</span>
-      </a>
-      <a class="wp-item" href="{{ '/working-papers/skills-and-moves' | relative_url }}">
-        <span class="wp-item__title">Do skills predict moves?</span>
-        <span class="wp-item__desc">A gravity test of whether skill similarity predicts the moves workers actually make.</span>
       </a>
       <a class="wp-item" href="{{ '/working-papers/facility-demand' | relative_url }}">
         <span class="wp-item__title">Workforce demand from a press release</span>
