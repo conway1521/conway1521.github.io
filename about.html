@@ -10,9 +10,9 @@ title: About
     <h1 class="display">Why regional policy fails, and what comes next</h1>
   </header>
 
-  <div class="about-photo" aria-hidden="true"><div class="about-photo__img" style="background-image:url('{{ '/assets/images/about-sf.jpg' | relative_url }}');"></div></div>
-
-  <div class="prose prose--lead" style="margin-top:32px;">
+  <div class="about-intro">
+    <div class="about-bg" aria-hidden="true" style="background-image:url('{{ '/assets/images/about-sf.jpg' | relative_url }}');"></div>
+    <div class="prose prose--lead">
     <p>Regional development policy is not working. Despite decades of investment, inequality persists and the communities most in need are often left further behind. My work asks why, and builds what comes next.</p>
     <p>The problem does not seem to be effort or funding. It is that we have treated economic development as a collection of isolated interventions when regional economies are ecosystems. Labour markets, housing, transport, education, employer needs, and social networks all interact. Policies that ignore these connections do not just underperform. They often make things worse.</p>
     <p>My PhD at Universit&eacute; Paris 8 formalises this insight into a framework, examining how place-based conditions, human and social capital, and economic activity interact across EU regions. The goal is not only academic: it is to understand why well-intentioned policies fail, so we can design ones that do not.</p>
@@ -20,8 +20,20 @@ title: About
     <p>Previously I led workforce and economic insights at Jobs for the Future, developing a national green-workforce readiness dashboard, advising a 500,000-person placement initiative, and analysing how AI is transforming jobs. My master's thesis at Sciences Po (Fulbright scholar) integrated social psychology into macroeconomic models, published in the University of Oxford Social Macroeconomics series.</p>
   </div>
 
+    </div>
+  </div>
+
   <div class="inline-links" style="margin-top:28px;">
     <a href="{{ '/assets/papers/alessandro-conway-cv.pdf' | relative_url }}" target="_blank">Download my CV</a>
+  </div>
+
+  <div class="prose" style="margin-top:24px; max-width:600px;">
+    <p>Away from the desk, I play and build guitars, mix songs, and make olive oil. It is the same instinct as the work: take something apart, learn how it fits together, and make it a little better.</p>
+  </div>
+  <div class="pgrid">
+    <figure class="pgrid__item"><img src="{{ '/assets/images/personal-1.jpg' | relative_url }}" alt="Building guitars" onerror="this.closest('figure').style.display='none'"><figcaption>Building guitars</figcaption></figure>
+    <figure class="pgrid__item"><img src="{{ '/assets/images/personal-2.jpg' | relative_url }}" alt="Mixing songs" onerror="this.closest('figure').style.display='none'"><figcaption>Mixing songs</figcaption></figure>
+    <figure class="pgrid__item"><img src="{{ '/assets/images/personal-3.jpg' | relative_url }}" alt="Making olive oil" onerror="this.closest('figure').style.display='none'"><figcaption>Making olive oil</figcaption></figure>
   </div>
 
   <section class="sec">
@@ -52,6 +64,16 @@ title: About
   </section>
 
   <section class="sec">
+    <h2 class="sec__h">Inspirations</h2>
+    <p class="prose" style="color:var(--muted); margin-top:0; max-width:600px;">Things and moments that keep the ideas moving.</p>
+    <div class="inspo" id="inspo" hidden>
+      <button class="inspo__nav inspo__nav--prev" type="button" aria-label="Previous">&larr;</button>
+      <div class="inspo__track" id="inspo-track"></div>
+      <button class="inspo__nav inspo__nav--next" type="button" aria-label="Next">&rarr;</button>
+    </div>
+  </section>
+
+  <section class="sec">
     <h2 class="sec__h">Contact</h2>
     <p class="prose" style="color:var(--muted); margin-top:0;">Best reached by LinkedIn or email.</p>
     <div class="inline-links">
@@ -63,3 +85,49 @@ title: About
   </section>
 
 </div>
+
+<script>
+(function () {
+  var track = document.getElementById('inspo-track');
+  var box = document.getElementById('inspo');
+  if (!track || !box) return;
+  var base = "{{ '/assets/images/' | relative_url }}";
+  var MAX = 20, pending = MAX, shown = 0;
+  function decide() {
+    if (pending > 0) return;
+    if (shown === 0) { box.parentNode.style.display = 'none'; return; }
+    [].slice.call(track.children)
+      .sort(function (a, b) { return (+a.dataset.n) - (+b.dataset.n); })
+      .forEach(function (el) { track.appendChild(el); });
+    box.hidden = false;
+    var prev = box.querySelector('.inspo__nav--prev');
+    var next = box.querySelector('.inspo__nav--next');
+    if (shown <= 1) { prev.style.display = 'none'; next.style.display = 'none'; return; }
+    function step(dir) {
+      var first = track.querySelector('img');
+      if (!first) return;
+      var d = (first.getBoundingClientRect().width + 12) * dir;
+      if (dir > 0 && track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) track.scrollTo({ left: 0 });
+      else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: track.scrollWidth });
+      else track.scrollBy({ left: d });
+    }
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var timer = setInterval(function () { step(1); }, 4500);
+    box.addEventListener('mouseenter', function () { clearInterval(timer); });
+    box.addEventListener('mouseleave', function () { timer = setInterval(function () { step(1); }, 4500); });
+  }
+  for (var i = 1; i <= MAX; i++) {
+    (function (n) {
+      var img = new Image();
+      img.alt = 'Inspiration ' + n;
+      img.dataset.n = n;
+      img.onload = function () { shown++; track.appendChild(img); pending--; decide(); };
+      img.onerror = function () { pending--; decide(); };
+      img.src = base + 'inspo-' + n + '.jpg';
+    })(i);
+  }
+})();
+</script>
