@@ -1,0 +1,227 @@
+<!doctype html>
+<!--
+  Alessandro Conway - CV
+  Single self-contained file. Edit the text below; styling is in <style>.
+  Export a PDF: open in Chrome, Cmd/Ctrl-P, "Save as PDF", paper Letter,
+  margins Default (or None), scale 100%, background graphics on.
+  Renders in Helvetica to match the original exactly.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alessandro Conway — CV</title>
+<style>
+  @page { size: letter; margin: 0.4in 0.5in; }
+
+  :root {
+    --text:  #1a1a1a;
+    --muted: #6b6b6b;
+    --light: #a3a3a3;
+    --rule:  #d4d4d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  body { font-size: 9pt; line-height: 1.4; }
+
+  /* ---------- header: name + role left, contact right ---------- */
+  table.header { width: 100%; border-collapse: collapse; }
+  table.header td { vertical-align: top; padding: 0; }
+  h1.name { font-size: 22pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .role { font-size: 11pt; font-weight: 400; color: var(--muted); margin-top: 5pt; }
+  td.contact { text-align: right; font-size: 8.5pt; color: var(--muted); line-height: 1.6; width: 36%; }
+  td.contact a { color: var(--muted); text-decoration: none; }
+
+  hr.rule { border: none; border-top: 0.75pt solid var(--rule); margin: 11pt 0 13pt; }
+
+  /* ---------- body: two columns with a spine ---------- */
+  table.body { width: 100%; border-collapse: collapse; }
+  table.body td.left  { width: 64%; vertical-align: top; padding-right: 12pt; }
+  table.body td.right { width: 36%; vertical-align: top; padding-left: 15pt; border-left: 0.75pt solid var(--rule); }
+
+  h2.section {
+    font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--light); margin-bottom: 8pt;
+  }
+  section { margin-bottom: 13pt; }
+  section:last-child { margin-bottom: 0; }
+
+  /* statement */
+  .blurb { font-size: 8.5pt; color: var(--text); line-height: 1.5; }
+  .blurb + .blurb { margin-top: 5pt; }
+  .blurb b { font-weight: 700; }
+
+  /* experience */
+  .role-entry { margin-bottom: 13pt; }
+  .role-entry:last-child { margin-bottom: 0; }
+  .role-line .org { font-size: 11pt; font-weight: 700; letter-spacing: -0.005em; }
+  .role-line .title { font-size: 9pt; font-weight: 400; color: var(--muted); }
+  .role-when { display: block; font-size: 8pt; color: var(--light); margin: 6pt 0 7pt; }
+  .role-progression { margin: 5pt 0 7pt; }
+  .role-progression .prog { display: flex; justify-content: space-between; align-items: baseline; margin-top: 3pt; }
+  .role-progression .prog__title { font-size: 9pt; color: var(--muted); }
+  .role-progression .prog__when { font-size: 8pt; color: var(--light); white-space: nowrap; }
+  .role-desc { font-size: 9pt; color: var(--text); line-height: 1.5; }
+  .role-note { font-size: 9pt; font-style: italic; color: var(--text); line-height: 1.5; margin-top: 7pt; }
+
+  ul.bullets { list-style: none; margin: 7pt 0 0; }
+  ul.bullets li {
+    position: relative; padding-left: 9pt; margin-bottom: 3pt;
+    font-size: 8.5pt; line-height: 1.42; color: var(--text);
+  }
+  ul.bullets li:last-child { margin-bottom: 0; }
+  ul.bullets li::before {
+    content: "\00B7"; position: absolute; left: 0; top: -1.5pt;
+    font-size: 11pt; font-weight: 700; line-height: 1;
+  }
+  ul.bullets li i { font-style: italic; }
+
+  /* education */
+  .edu-entry { margin-bottom: 11pt; }
+  .edu-entry:last-child { margin-bottom: 0; }
+  .edu-school { font-size: 8.5pt; font-weight: 700; }
+  .edu-degree { font-size: 8.5pt; color: var(--muted); margin-top: 1pt; }
+  .edu-when { font-size: 8pt; color: var(--light); margin-top: 1pt; }
+  .edu-note { font-size: 8.5pt; color: var(--text); line-height: 1.5; margin-top: 6pt; }
+  .edu-note b { font-weight: 700; }
+  .edu-note i { font-style: italic; }
+
+  /* right-column text blocks */
+  .tag-row { font-size: 8.5pt; color: var(--text); line-height: 1.5; }
+  .tag-row .when { display: block; font-size: 8pt; color: var(--light); margin-top: 5pt; }
+</style>
+</head>
+<body>
+
+<table class="header">
+  <tr>
+    <td>
+      <h1 class="name">Alessandro Conway</h1>
+      <div class="role">Economist / building integrated labor market intelligence</div>
+    </td>
+    <td class="contact">
+      conway1521.github.io<br>
+      alessandroconway@gmail.com<br>
+      linkedin.com/in/alessandro-conway<br>
+      github.com/conway1521<br>
+    </td>
+  </tr>
+</table>
+
+<hr class="rule">
+
+<table class="body">
+  <tr>
+    <td class="left">
+
+      <section>
+        <h2 class="section">Statement</h2>
+        <p class="blurb">I work across academic research, policy, and data engineering on labor markets, regional development, and economic ecosystems.</p>
+        <p class="blurb"><b>Interests</b>: future of work, local and regional economic development, and wellbeing.</p>
+      </section>
+
+      <section>
+        <h2 class="section">Experience</h2>
+
+        <div class="role-entry">
+          <div class="role-line"><span class="org">Radius Intelligence</span> <span class="title">/ Head of data science and engineering</span></div>
+          <span class="role-when">May 2025–Present</span>
+          <p class="role-desc">Built from scratch and now run RI's data department end to end. Key outputs:</p>
+          <ul class="bullets">
+            <li><i>RI Technologies</i>, an integrated workforce planning system spanning exploration, analytics, forecasting, and diagnostic suites, with companion training and staffing inventories, pulled together into a digital twin of the employer's workforce.</li>
+            <li><i>RI Labs</i>, a labor market intelligence suite built on opportunity scoring, supply-demand gap identification, market signals, and similarity clustering, covering every US occupation and state.</li>
+            <li>Research agenda spanning a skills-task production function modeling AI's effect on labor markets, and migration flow estimation across jobs and geography.</li>
+          </ul>
+          <p class="role-desc" style="margin-top:7pt;">To run these, developed:</p>
+          <ul class="bullets">
+            <li>Compliant multi-tenant intelligent data layer reconciling federal, commercial, employer, and academic sources (220 datasets, 8.9M records) across every US occupation and geography, with a RAG retrieval system over it.</li>
+            <li>Occupation-resolution engine mapping any messy job title to a federal occupation code, through: regex matching, embeddings, three fine-tuned transformer models, with an LLM fallback.</li>
+          </ul>
+          <p class="role-note">Currently building an AI companion and a digital twin of the US labor market, grounded in flow-based economics and econometrics.</p>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-line"><span class="org">Jobs for the Future</span></div>
+          <div class="role-progression">
+            <div class="prog"><span class="prog__title">Senior Manager</span><span class="prog__when">Apr 2024–Apr 2025</span></div>
+            <div class="prog"><span class="prog__title">Program Manager</span><span class="prog__when">Jan 2022–Apr 2024</span></div>
+          </div>
+          <ul class="bullets">
+            <li>Built a US Regional Green Workforce Readiness Dashboard, featured in JFF's national press launch.</li>
+            <li>Led a US AI job-displacement study on in-demand, resilient, and at-risk skills.</li>
+            <li>Built an occupational segregation tool guiding JFF's green workforce strategy.</li>
+            <li>Guided Verizon's initiative to place 500,000 under-represented individuals into quality careers, managing a team of 3 and securing six-figure expansion funding.</li>
+            <li>Led JFF to sign the Global Solutions Initiative <i>Call for Action</i>, elevating the work to G20 and G7 audiences.</li>
+          </ul>
+        </div>
+
+        <div class="role-entry">
+          <div class="role-line"><span class="org">OFCE (Sciences Po)</span> <span class="title">/ Research Assistant</span></div>
+          <span class="role-when">May 2021–Jan 2022</span>
+          <ul class="bullets">
+            <li>Built a multilingual fiscal policy budget database to estimate fiscal multipliers.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </td>
+
+    <td class="right">
+
+      <section>
+        <h2 class="section">Education</h2>
+        <div class="edu-entry">
+          <div class="edu-school">Université Paris 8</div>
+          <div class="edu-degree">PhD in Economics</div>
+          <div class="edu-when">2024–Present</div>
+          <div class="edu-note"><i>Essays on resilient economic development, an empirical ecosystem approach.</i> Empirical line includes network econometrics and SEM. Supervisors: Thibault Darcillon and Matteo Cavallaro (Paris 8), Francesco Saraceno (Sciences Po/OFCE).</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-school">Sciences Po</div>
+          <div class="edu-degree">MPhil in Economics</div>
+          <div class="edu-when">2018–2020</div>
+          <div class="edu-note"><b>Fulbright Scholar</b> Thesis supervised by Xavier Ragot (OFCE); published in Oxford's <i>Social Macroeconomics</i>.</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-school">University of Pittsburgh, Honors College</div>
+          <div class="edu-degree">BPhil, Economics and International Studies</div>
+          <div class="edu-when">2013–2017</div>
+          <div class="edu-note"><i>Summa cum laude</i>. Brackenridge Fellow.</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section">Teaching</h2>
+        <p class="tag-row">Sciences Po School of Public Affairs. INSEAD. Northwestern University.<span class="when">Jun 2020–Present</span></p>
+      </section>
+
+      <section>
+        <h2 class="section">Stack</h2>
+        <p class="tag-row">Python (pandas, NumPy, statsmodels, scikit-learn, statsforecast; matplotlib, Plotly, Plotly Dash). SQL (Postgres, dbt). R, Julia, MATLAB, Dynare, STATA. Supabase. LaTeX. Git.</p>
+      </section>
+
+      <section>
+        <h2 class="section">Writing</h2>
+        <p class="tag-row">Substack on labor markets and the future of work. Author of JFF research and public-facing dashboards.</p>
+      </section>
+
+      <section>
+        <h2 class="section">AI</h2>
+        <p class="tag-row">Daily user for code, analysis, and drafting. Verify everything.</p>
+      </section>
+
+      <section>
+        <h2 class="section">Languages</h2>
+        <p class="tag-row">Native: Italian, French, English, Spanish. Conversational: German.</p>
+      </section>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
