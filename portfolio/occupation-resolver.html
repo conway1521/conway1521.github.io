@@ -118,6 +118,23 @@ ink_js: true
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Tools used</h2>
+    </div>
+    <div class="tools">
+      <div class="tool-row"><span class="tool-row__name">Python</span><span class="tool-row__use">The pipeline, the ten-stage cascade, and stage orchestration.</span></div>
+      <div class="tool-row"><span class="tool-row__name">sentence-transformers (all-MiniLM)</span><span class="tool-row__use">The open-source embedding baseline that clears the well-behaved majority.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Hugging Face</span><span class="tool-row__use">The fine-tuned in-domain encoder, trained on labelled employer-title pairs.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Ollama, Qwen</span><span class="tool-row__use">Local, tenant-isolated LLM adjudication for the long tail, with JSON-constrained output.</span></div>
+      <div class="tool-row"><span class="tool-row__name">scikit-learn</span><span class="tool-row__use">The trained classifier calibrated on national posting data.</span></div>
+      <div class="tool-row"><span class="tool-row__name">pgvector</span><span class="tool-row__use">Nearest-neighbour search over embeddings inside Postgres.</span></div>
+      <div class="tool-row"><span class="tool-row__name">fuzzywuzzy, Levenshtein</span><span class="tool-row__use">Substring and alternate-title matching in the cheap stages.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Supabase, Postgres</span><span class="tool-row__use">The learnings cache of confirmed mappings, never re-resolved.</span></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
