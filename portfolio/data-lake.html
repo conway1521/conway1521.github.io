@@ -96,27 +96,19 @@ ink_js: true
   </div>
 
   <!-- the librarian -->
-  <div class="plate" style="max-width:560px;">
+  <div class="plate" style="max-width:580px;">
     <div class="plate__head">
       <span class="plate__title">The Librarian</span>
-      <span class="plate__hint">assemble, then ask</span>
+      <span class="plate__hint">ask in plain language</span>
     </div>
-    <p class="plate__purpose">A retrieval system over the whole lake. The sources are joined on the crosswalk and queryable in plain language. A retrieval step finds the relevant datasets and definitions, and the answer is composed with every clause traced back to the source that produced it.</p>
-    <div class="lib-controls"><button id="lib-btn" class="ink-btn">Assemble</button><span class="lib-step" id="lib-step">Step 0 / 4</span></div>
-    <div id="lib-tiers">
-      <div class="lib-tier" data-s="1"><span class="lib-tier__name">Federal</span><span class="lib-tier__detail">BLS &middot; ACS &middot; IPEDS &middot; QCEW &middot; O*NET &middot; RAPIDS</span></div>
-      <div class="lib-tier" data-s="2"><span class="lib-tier__name">Commercial</span><span class="lib-tier__detail">Job postings &middot; staffing feeds &middot; firmographics</span></div>
-      <div class="lib-tier" data-s="3"><span class="lib-tier__name">Academic and employer</span><span class="lib-tier__detail">Research panels &middot; contributed HRIS under tenant isolation</span></div>
+    <p class="plate__purpose">A natural-language surface over the lake. Ask in plain words and it extracts the concepts and geography against a controlled vocabulary, then routes to the datasets that answer, with live row counts. Deliberately a fake RAG: no embeddings and no generated answers, so a query can only ever point at datasets that exist. The catalog metadata is the index. Computation hands off to a separate analyst agent.</p>
+    <div class="lib-log" id="lib-log"></div>
+    <div class="lib-sugg" id="lib-sugg"></div>
+    <div class="lib-ask">
+      <input id="lib-input" class="ink-input" placeholder="Ask about demand, turnover, wages, gaps, levers..." autocomplete="off">
+      <button id="lib-btn" class="ink-btn">Ask</button>
     </div>
-    <div class="lib-ask" id="lib-ask">
-      <div class="lib-ask__label">Ask the librarian</div>
-      <div class="lib-qs" id="lib-qs"></div>
-      <div class="lib-q" id="lib-q"></div>
-      <div class="lib-src" id="lib-src"></div>
-      <div class="lib-a" id="lib-a"></div>
-    </div>
-    <div class="plate__note" id="lib-note">Sources sit apart, each in its own grain and vocabulary.</div>
-    <div class="plate__caption">Illustrative. The retrieval runs over the catalog and the Radius Canon. The join is the crosswalk that lets the sources speak to each other.</div>
+    <div class="plate__caption">Deterministic routing over a 50-value concept vocabulary and 220 datasets, with zero model calls per query. The same routing decision is a visible concept match, not an opaque similarity score.</div>
   </div>
 
   <div class="col">

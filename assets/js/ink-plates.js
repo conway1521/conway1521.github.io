@@ -872,64 +872,104 @@
     render();
   }
 
-  /* ---------- the librarian: assemble the sources, then ask (staged) ---------- */
-  var LIB_NOTES = [
-    'Sources sit apart, each in its own grain and vocabulary.',
-    'Federal series: the statistical backbone, harmonized to occupation codes and geography.',
-    'Commercial feeds: the timeliness the federal system lacks.',
-    'Academic and employer data: depth and ground truth.',
-    'Joined on the crosswalk and queryable in plain language. The standardizer is what lets the sources speak to each other.'
+  /* ---------- the librarian: deterministic plain-language routing over the catalog ---------- */
+  var LIB_KW = [
+    ['turnover', 'turnover'], ['attrition', 'turnover'], ['churn', 'turnover'],
+    ['retention', 'retention'], ['retain', 'retention'],
+    ['demand', 'demand'], ['hiring', 'hiring'], ['openings', 'demand'],
+    ['vacancy', 'vacancy'], ['vacancies', 'vacancy'],
+    ['supply', 'supply'], ['graduate', 'supply'], ['pipeline', 'supply'], ['completions', 'supply'],
+    ['gap', 'gap'], ['shortage', 'gap'],
+    ['exposure', 'aiexposure'], ['exposed', 'aiexposure'], ['automation', 'aiexposure'], ['automate', 'aiexposure'], [' ai ', 'aiexposure'],
+    ['wage', 'wages'], ['pay', 'wages'], ['salary', 'wages'], ['salaries', 'wages'],
+    ['intervention', 'intervention_effects'], ['lever', 'intervention_effects'], ['what works', 'intervention_effects'],
+    ['forecast', 'forecast'], ['project', 'forecast'],
+    ['training', 'training'], ['apprentic', 'training'], ['credential', 'credentials'],
+    ['mobility', 'mobility'], ['migrat', 'mobility'],
+    ['retire', 'retirement_risk'],
+    ['benchmark', 'peer_benchmark'], ['peer', 'peer_benchmark']
   ];
-  var LIB_Q = [
-    ['Which occupations have the widest supply and demand gap in Arizona?',
-      ['QCEW employment', 'Employer requisitions', 'Facility blueprints'],
-      'Equipment Technicians and Manufacturing Operators, both in ramp-phase fabs. Every clause traces back to the dataset that produced it.'],
-    ['How many registered nurses graduate within fifty miles of Phoenix?',
-      ['IPEDS completions', 'RAPIDS programs', 'Training inventory'],
-      'About 1,900 a year across four programs, mapped to the nurse occupation through the crosswalk.'],
-    ["What is this employer's true termination rate once transfers are removed?",
-      ['Contributed HRIS', 'Termination vocabulary', 'The Radius Canon'],
-      '4.29 percent, down from a raw 19 percent once internal transfers are separated from real exits.']
+  var LIB_GEO = [
+    ['north carolina', 'North Carolina'], ['charlotte', 'North Carolina'], ['raleigh', 'North Carolina'], [' nc ', 'North Carolina'],
+    ['arizona', 'Arizona'], ['phoenix', 'Arizona'], [' az ', 'Arizona'],
+    ['texas', 'Texas'], [' tx ', 'Texas'],
+    ['california', 'California'],
+    ['new york', 'New York'], ['florida', 'Florida']
   ];
-  function initLibrarian() {
-    var btn = $('lib-btn');
-    if (!btn) return;
-    var stepEl = $('lib-step'), note = $('lib-note'), ask = $('lib-ask'), qs = $('lib-qs');
-    var tiers = Array.prototype.slice.call(document.querySelectorAll('#lib-tiers .lib-tier'));
-    var step = 0, timer = null, running = false, sel = 0, wired = false;
-    function render() {
-      tiers.forEach(function (t) { t.classList.toggle('is-on', step >= parseInt(t.getAttribute('data-s'), 10)); });
-      if (ask) ask.classList.toggle('is-on', step >= 4);
-      if (stepEl) stepEl.textContent = 'Step ' + Math.min(step, 4) + ' / 4';
-      if (note) note.textContent = LIB_NOTES[Math.min(step, 4)];
-      btn.textContent = step >= 4 ? 'Rebuild' : (step === 0 ? 'Assemble' : 'Assembling');
+  var LIB_TOPICS = [
+    { concepts: ['turnover', 'retention', 'retirement_risk'],
+      datasets: [['Employer separations panel', '41,203 rows', 'live'], ['Occupational employment (QCEW)', '8,910 rows', 'live'], ['Retention benchmarks', '2,140 rows', 'derived']],
+      followups: ['Break out by facility type', 'Compare against the state benchmark', 'Same for LPNs'] },
+    { concepts: ['demand', 'supply', 'gap', 'vacancy', 'hiring'],
+      datasets: [['Job postings, deduplicated', '12,760 rows', 'live'], ['Completions and RAPIDS programs', '3,308 rows', 'live'], ['Facility blueprints, ramp phase', '214 rows', 'gated']],
+      followups: ['Add adjacent occupations', 'Widen to the metro', 'Forecast the gap eight quarters out'] },
+    { concepts: ['aiexposure', 'wages', 'forecast'],
+      datasets: [['Task and skill exposure', '17,266 rows', 'derived'], ['Occupational wages (OEWS)', '6,590 rows', 'live'], ['Employment change by occupation', '1,022 rows', 'live']],
+      followups: ['Restrict to healthcare', 'Switch to the usage-based measure', 'Rank by wage growth'] },
+    { concepts: ['intervention_effects'],
+      datasets: [['Intervention evidence library', '7 datasets', 'sampled'], ['Effect sizes by lever', '148 rows', 'derived']],
+      followups: ['Filter to wage levers', 'Only randomized evidence', 'Rank by effect size'] }
+  ];
+  var LIB_SUGGEST = [
+    'Nursing turnover in North Carolina',
+    'Supply and demand gap for equipment technicians in Arizona',
+    'Which occupations are most exposed to AI, and where are wages moving?',
+    'What interventions actually reduced turnover, and by how much?'
+  ];
+  function libRoute(q) {
+    var s = ' ' + q.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ') + ' ';
+    var concepts = [];
+    LIB_KW.forEach(function (kw) { if (s.indexOf(kw[0]) !== -1 && concepts.indexOf(kw[1]) === -1) concepts.push(kw[1]); });
+    var geo = 'national';
+    for (var i = 0; i < LIB_GEO.length; i++) { if (s.indexOf(LIB_GEO[i][0]) !== -1) { geo = LIB_GEO[i][1]; break; } }
+    var best = null, bestScore = 0;
+    LIB_TOPICS.forEach(function (t) {
+      var score = 0;
+      concepts.forEach(function (c) { if (t.concepts.indexOf(c) !== -1) score += 1; });
+      if (score > bestScore) { bestScore = score; best = t; }
+    });
+    return { concepts: concepts, geo: geo, topic: best };
+  }
+  function libResponseHTML(r) {
+    if (!r.topic) {
+      return '<div class="lib-lib"><div class="lib-lib__who">Librarian</div>' +
+        '<div class="lib-none">No concept matched the controlled vocabulary, so nothing is routed rather than guessed. The catalog answers questions about demand, supply, gaps, hiring, turnover, retention, wages, AI exposure, training, mobility, and intervention effects. Try one of those.</div></div>';
     }
-    function renderQ() {
-      if (!qs) return;
-      qs.innerHTML = LIB_Q.map(function (q, i) {
-        return '<button class="lib-qchip' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(q[0]) + '</button>';
-      }).join('');
-      var q = LIB_Q[sel];
-      $('lib-q').textContent = q[0];
-      $('lib-src').innerHTML = '<span class="lib-src__k">retrieved</span>' +
-        q[1].map(function (s) { return '<span class="lib-src__chip">' + esc(s) + '</span>'; }).join('');
-      $('lib-a').textContent = q[2];
-      Array.prototype.forEach.call(qs.querySelectorAll('.lib-qchip'), function (c) {
-        c.addEventListener('click', function () { sel = parseInt(c.getAttribute('data-i'), 10); renderQ(); });
+    var concepts = r.concepts.map(function (c) { return '<span class="lib-chip">' + esc(c.replace(/_/g, ' ')) + '</span>'; }).join('');
+    var dsRows = r.topic.datasets.map(function (d) {
+      return '<div class="lib-ds"><span class="lib-ds__n">' + esc(d[0]) + '</span>' +
+        '<span class="lib-ds__m">' + esc(d[1]) + '<span class="lib-ds__r">' + esc(d[2]) + '</span></span></div>';
+    }).join('');
+    var fu = r.topic.followups.map(function (f) { return '<span class="lib-fu__c">' + esc(f) + '</span>'; }).join('');
+    return '<div class="lib-lib"><div class="lib-lib__who">Librarian &middot; routed, no model call</div>' +
+      '<div class="lib-row"><span class="lib-row__k">Concepts</span>' + concepts + '</div>' +
+      '<div class="lib-row"><span class="lib-row__k">Geography</span><span class="lib-chip lib-chip--geo">' + esc(r.geo) + '</span></div>' +
+      '<div class="lib-row"><span class="lib-row__k">Routed to</span></div>' + dsRows +
+      '<div class="lib-fu">' + fu + '</div>' +
+      '<div class="lib-hand">Routing only. The counts are live from the catalog, not an analysis. Computation hands off to Eclipse, the analyst agent.</div></div>';
+  }
+  function initLibrarian() {
+    var log = $('lib-log'), input = $('lib-input'), btn = $('lib-btn'), sugg = $('lib-sugg');
+    if (!log || !input || !btn) return;
+    function ask(q) {
+      q = (q || '').trim();
+      if (!q) return;
+      var turn = document.createElement('div');
+      turn.className = 'lib-turn';
+      turn.innerHTML = '<div class="lib-you"><div class="lib-you__b">' + esc(q) + '</div></div>' + libResponseHTML(libRoute(q));
+      log.appendChild(turn);
+      log.scrollTop = log.scrollHeight;
+      input.value = '';
+    }
+    if (sugg) {
+      sugg.innerHTML = LIB_SUGGEST.map(function (q) { return '<button class="lib-sugg__c">' + esc(q) + '</button>'; }).join('');
+      Array.prototype.forEach.call(sugg.querySelectorAll('.lib-sugg__c'), function (c) {
+        c.addEventListener('click', function () { ask(c.textContent); });
       });
     }
-    function tick() {
-      if (step >= 4) { running = false; render(); if (!wired) { wired = true; renderQ(); } return; }
-      step += 1; render();
-      timer = setTimeout(tick, 640);
-    }
-    btn.addEventListener('click', function () {
-      if (running) return;
-      if (timer) clearTimeout(timer);
-      running = true; wired = false; step = 0; render();
-      timer = setTimeout(tick, 360);
-    });
-    render();
+    btn.addEventListener('click', function () { ask(input.value); });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); ask(input.value); } });
+    ask(LIB_SUGGEST[0]);
   }
 
   function init() {
