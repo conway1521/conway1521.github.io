@@ -53,22 +53,27 @@ permalink: /working-papers/skills-dna/
     </div>
     <div>
       <div class="finding">
+        <span class="finding__n">01</span>
         <div class="finding__head">Every task in America has a price.</div>
         <div class="finding__body">The whole structure sits on the published BLS wage bill of $10.70T, reconciled across 820 occupations, 247 industries, 17,266 tasks, and 76 skill elements. Per-occupation means verify against known values (registered nurses $101k, chief executives $276k). Conservation is exact by construction, and every residual is an explicit bucket. The single most valuable task is general managers reviewing performance data, at $31.5B a year.</div>
       </div>
       <div class="finding">
+        <span class="finding__n">02</span>
         <div class="finding__head">Every ability has a price.</div>
         <div class="finding__body">Getting information is a $188B skill, communicating with peers $183B, decision-making $178B, working with computers $168B, and active listening $164B a year.</div>
       </div>
       <div class="finding">
+        <span class="finding__n">03</span>
         <div class="finding__head">Augmentation now outweighs automation.</div>
         <div class="finding__body">At the latest exposure release, $1.40T of task value matches observed AI usage, with a dollar-weighted augmentation share of 44.5 percent against 36.3 percent automation. Usage is not a random draw of task dollars, so this is a measured share rather than a forecast.</div>
       </div>
       <div class="finding">
+        <span class="finding__n">04</span>
         <div class="finding__head">The exposure measures barely agree, in dollars.</div>
-        <div class="finding__body">Across the $6.59T covered by all three adapters, capability-based measures correlate 0.73 with each other but near zero with observed usage. Of $1.32T that could be flagged as most exposed, all three agree on just $23B. The consensus is two orders of magnitude smaller than the wage bill, which is the case for using several measures rather than one.</div>
+        <div class="finding__body">Across the $6.59T covered by all three adapters, capability-based measures correlate 0.73 with each other but near zero with observed usage. Of $1.32T that could be flagged as most exposed, all three agree on just $23B. The consensus is two orders of magnitude smaller than the wage bill, which is why the instrument carries several measures instead of one.</div>
       </div>
       <div class="finding">
+        <span class="finding__n">05</span>
         <div class="finding__head">The measures load on different margins at different horizons.</div>
         <div class="finding__body">Usage-based measures predict where healthcare employment adjusted in the ChatGPT era. A capability-based pre-LLM measure predicts wage growth over the longer window. The employment result passes a pre-ChatGPT placebo cleanly, and the exposure rankings are invariant across 27 calibration settings (minimum correlation 0.9995).</div>
         <table class="rtable">
@@ -90,7 +95,7 @@ permalink: /working-papers/skills-dna/
       <h2 class="secnum__h">What is next</h2>
     </div>
     <div class="prose">
-      <p>The highest-value upgrade is within-occupation skill differentiation, which lets the nested structure beat a flat index in validation. After that come the state and metro grain that workforce boards need, the credential traversal that links an exposed skill to the nearby programs teaching its replacement, and a second sector beyond healthcare. The paper is a measurement instrument with an open-source engine, a versioned data snapshot with a DOI, and a replication notebook, roughly 30 pages, released to SSRN with the interactive artifact.</p>
+      <p>The upgrade that matters most is within-occupation skill differentiation. Today a task's skills are read from its occupation's average profile, which ties the engine to a flat index in validation. Differentiating skills within an occupation is what lets the nested structure predict better than a single number, and it is the clearest test of whether the added machinery earns its place. After that the grain moves from national to state and metro, where workforce boards actually operate, and the credential traversal closes the loop from an exposed skill to the nearby programs that teach its replacement. A second sector beyond healthcare then tests whether the validation result holds outside it.</p>
     </div>
     <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
   </div>
