@@ -872,6 +872,66 @@
     render();
   }
 
+  /* ---------- the librarian: assemble the sources, then ask (staged) ---------- */
+  var LIB_NOTES = [
+    'Sources sit apart, each in its own grain and vocabulary.',
+    'Federal series: the statistical backbone, harmonized to occupation codes and geography.',
+    'Commercial feeds: the timeliness the federal system lacks.',
+    'Academic and employer data: depth and ground truth.',
+    'Joined on the crosswalk and queryable in plain language. The standardizer is what lets the sources speak to each other.'
+  ];
+  var LIB_Q = [
+    ['Which occupations have the widest supply and demand gap in Arizona?',
+      ['QCEW employment', 'Employer requisitions', 'Facility blueprints'],
+      'Equipment Technicians and Manufacturing Operators, both in ramp-phase fabs. Every clause traces back to the dataset that produced it.'],
+    ['How many registered nurses graduate within fifty miles of Phoenix?',
+      ['IPEDS completions', 'RAPIDS programs', 'Training inventory'],
+      'About 1,900 a year across four programs, mapped to the nurse occupation through the crosswalk.'],
+    ["What is this employer's true termination rate once transfers are removed?",
+      ['Contributed HRIS', 'Termination vocabulary', 'The Radius Canon'],
+      '4.29 percent, down from a raw 19 percent once internal transfers are separated from real exits.']
+  ];
+  function initLibrarian() {
+    var btn = $('lib-btn');
+    if (!btn) return;
+    var stepEl = $('lib-step'), note = $('lib-note'), ask = $('lib-ask'), qs = $('lib-qs');
+    var tiers = Array.prototype.slice.call(document.querySelectorAll('#lib-tiers .lib-tier'));
+    var step = 0, timer = null, running = false, sel = 0, wired = false;
+    function render() {
+      tiers.forEach(function (t) { t.classList.toggle('is-on', step >= parseInt(t.getAttribute('data-s'), 10)); });
+      if (ask) ask.classList.toggle('is-on', step >= 4);
+      if (stepEl) stepEl.textContent = 'Step ' + Math.min(step, 4) + ' / 4';
+      if (note) note.textContent = LIB_NOTES[Math.min(step, 4)];
+      btn.textContent = step >= 4 ? 'Rebuild' : (step === 0 ? 'Assemble' : 'Assembling');
+    }
+    function renderQ() {
+      if (!qs) return;
+      qs.innerHTML = LIB_Q.map(function (q, i) {
+        return '<button class="lib-qchip' + (i === sel ? ' is-sel' : '') + '" data-i="' + i + '">' + esc(q[0]) + '</button>';
+      }).join('');
+      var q = LIB_Q[sel];
+      $('lib-q').textContent = q[0];
+      $('lib-src').innerHTML = '<span class="lib-src__k">retrieved</span>' +
+        q[1].map(function (s) { return '<span class="lib-src__chip">' + esc(s) + '</span>'; }).join('');
+      $('lib-a').textContent = q[2];
+      Array.prototype.forEach.call(qs.querySelectorAll('.lib-qchip'), function (c) {
+        c.addEventListener('click', function () { sel = parseInt(c.getAttribute('data-i'), 10); renderQ(); });
+      });
+    }
+    function tick() {
+      if (step >= 4) { running = false; render(); if (!wired) { wired = true; renderQ(); } return; }
+      step += 1; render();
+      timer = setTimeout(tick, 640);
+    }
+    btn.addEventListener('click', function () {
+      if (running) return;
+      if (timer) clearTimeout(timer);
+      running = true; wired = false; step = 0; render();
+      timer = setTimeout(tick, 360);
+    });
+    render();
+  }
+
   function init() {
     initLakeDots();
     initResolve();
@@ -885,6 +945,7 @@
     initClusters();
     initHierarchy();
     initRampStream();
+    initLibrarian();
     initExtract();
     initDivergence();
     initHoverDim('resolution', '.res-row', 'resolution-note');

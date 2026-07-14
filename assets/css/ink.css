@@ -218,6 +218,25 @@ button { font-family: inherit; }
 .rlbl { color: var(--faint); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 8px; }
 .rmuted { color: var(--faint); }
 
+/* the librarian: assemble the sources, then ask in plain language */
+.lib-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+.lib-step { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.lib-tier { border-top: 1px solid var(--rule); padding: 11px 0; opacity: 0.15; transition: opacity 0.5s; }
+.lib-tier.is-on { opacity: 1; }
+.lib-tier__name { font-size: 13.5px; font-weight: 600; }
+.lib-tier__detail { display: block; font-size: 11.5px; color: var(--faint); margin-top: 3px; }
+.lib-ask { border-top: 1px solid var(--ink); margin-top: 10px; padding-top: 14px; opacity: 0.15; transition: opacity 0.5s; }
+.lib-ask.is-on { opacity: 1; }
+.lib-ask__label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+.lib-qs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.lib-qchip { padding: 7px 10px; font-size: 12px; border: 1px solid var(--rule); background: var(--paper); color: var(--muted); cursor: pointer; text-align: left; line-height: 1.35; }
+.lib-qchip.is-sel { border-color: var(--ink); color: var(--ink); }
+.lib-q { border: 1px solid var(--ink); padding: 9px 12px; font-size: 12.5px; }
+.lib-src { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.lib-src__k { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); align-self: center; margin-right: 2px; }
+.lib-src__chip { font-size: 10.5px; color: var(--muted); border: 1px solid var(--rule); padding: 3px 8px; }
+.lib-a { font-size: 12.5px; line-height: 1.6; margin-top: 11px; }
+
 /* resolved-at-scale scroll table */
 .restab { max-height: 462px; overflow-y: auto; border: 1px solid var(--ink); margin-top: 4px; }
 .restab__row { padding: 12px 16px; border-top: 1px solid var(--rule); }
