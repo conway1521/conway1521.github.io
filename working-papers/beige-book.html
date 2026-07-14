@@ -1,0 +1,69 @@
+---
+layout: default
+title: Reading the Beige Book with LLMs
+permalink: /working-papers/beige-book/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Reading the Beige Book with LLMs</h1>
+    <p class="lede">Eight times a year the twelve Federal Reserve districts publish qualitative reports full of labour-market detail. Economists have mined them with dictionaries and hand-coding for decades. An LLM extracts structured labour sentiment from each release for about thirteen cents, so forty years of text can be processed for the price of lunch.</p>
+  </div>
+  <div class="standfirst">Economics &middot; LLM systems &middot; data engineering. A short methods note with a public dataset attached.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>The Beige Book is a rich account of hiring difficulty, wage pressure, and labour availability, district by district. Dictionaries miss context and hand-coding does not scale, so the text has never been turned into a clean, continuous labour-market series. An LLM reads each district report under a fixed extraction schema and returns structured signals, cheaply enough to run the entire modern archive. The cost is part of the point: at thirteen cents a release, the economics of turning text into data change.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The approach</h2>
+    </div>
+    <div class="prose">
+      <p>Freeze the schema (labour tightness direction, wage pressure, sector mentions, and a confidence field) and document the exact prompt, since replicability is the whole selling point. Run it across the full archive, one row per release and district, and publish that file as the deliverable. Validate three ways: internal reliability by rerunning samples and cross-checking a second model, a human-coded benchmark on a stratified subsample, and external validity against hard district data like unemployment and job openings.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">The pipeline runs, and it is cheap.</div>
+        <div class="finding__body">Extraction costs about thirteen cents a release, which puts the full historical backfill in the range of a modest one-time run. The output is a release-by-district panel of labour sentiment, and that dataset is the contribution as much as the analysis around it.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">The validation is what earns the citation.</div>
+        <div class="finding__body">The Beige Book has an existing literature of dictionary-based indices to benchmark against, so a clean, replicable, LLM-based version with a public dataset and a documented prompt is exactly what the text-as-data genre rewards.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The core work is validation and release: complete the historical backfill, hand-code a stratified sample and report agreement, and check prompt stability across paraphrases and a second model. The test that would make the index useful is whether it turns before the hard data, so the district tightness series is lined up against unemployment and job openings around past downturns to see if the words lead the numbers. The dataset, the extraction code, and the prompts ship together as a replication pack.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

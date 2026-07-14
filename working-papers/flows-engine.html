@@ -53,20 +53,25 @@ permalink: /working-papers/flows-engine/
     </div>
     <div>
       <div class="finding">
+        <span class="finding__n">01</span>
         <div class="finding__head">Occupations have distinct lifecycles.</div>
-        <div class="finding__body">Six occupations across nine ACS vintages (2015 to 2024, no 2020), 1.67 million records, all 80 replicate weights. Teachers retire about five years before nurses. Software absorbs career-switchers well into their thirties. Aides run on churn rather than retirement.</div>
+        <div class="finding__body">Across six occupations and nine ACS vintages (2015 to 2024, no 2020), 1.67 million records with all 80 replicate weights, the shapes separate cleanly. Teachers retire about five years before nurses. Software absorbs career-switchers well into their thirties. Aides run on churn rather than retirement.</div>
       </div>
       <div class="finding">
-        <div class="finding__head">The fingerprints repeat.</div>
-        <div class="finding__body">National lifecycle schedules hold across the pandemic, with exit schedules correlating up to 0.75 before and after. State migration fingerprints persist through COVID at about 0.6. The fine state-by-age grain is noise-dominated in the raw data, which is what the shrinkage layer is built for.</div>
+        <span class="finding__n">02</span>
+        <div class="finding__head">The fingerprints repeat, so they are behavior and not noise.</div>
+        <div class="finding__body">National lifecycle schedules hold across the pandemic, with exit schedules correlating up to 0.75 before and after. State migration fingerprints persist through COVID at about 0.6. The fine state-by-age grain is noise-dominated in the raw data, which is what the shrinkage layer is built to handle.</div>
       </div>
       <div class="finding">
-        <div class="finding__head">Four independent anchors pass.</div>
+        <span class="finding__n">03</span>
+        <div class="finding__head">Four independent records agree with the estimates.</div>
         <div class="finding__body">OEWS employment stocks, IRS county-to-county migration (Spearman 0.41 to 0.79), BLS exit levels (about a two-to-one net-to-gross scaling), and NCSBN nurse licenses (a national ratio of 1.56, stable across states).</div>
       </div>
       <div class="finding">
-        <div class="finding__head">Tech hubs retain as well as attract.</div>
-        <div class="finding__body">An empirical Bayes shrinkage layer with a two-threshold rule flags a disciplined 5 to 8 percent of cells as genuinely abnormal. The first presentable finding: young software developers in California, Washington, and Colorado are about half as likely to leave as the national norm.</div>
+        <span class="finding__n">04</span>
+        <div class="finding__head">Tech hubs hold their workers as much as they draw them in.</div>
+
+        <div class="finding__body">A shrinkage layer with a two-threshold rule flags a disciplined 5 to 8 percent of cells as genuinely abnormal. Young software developers in California, Washington, and Colorado are about half as likely to leave as the national norm, so a hub's advantage runs through retention as much as inflow.</div>
       </div>
     </div>
   </div>
@@ -77,7 +82,7 @@ permalink: /working-papers/flows-engine/
       <h2 class="secnum__h">What is next</h2>
     </div>
     <div class="prose">
-      <p>The exit and migration dimensions are built and validated. Next is the entry family anchored to IPEDS completions, which closes the full identity and unlocks the stability test on the residual itself. After that come a compact set of exhibits, an interactive artifact, and a fix for the 2019 occupation-coding break that the validation surfaced. The working paper is method, data, the six-occupation parameter surface, the validation battery, one descriptive exhibit, and a limitations and extensions section, roughly 25 to 30 pages for SSRN alongside the interactive artifact.</p>
+      <p>The exit and migration dimensions are measured. The step that closes the identity is the entry family, estimated from the young age bands and anchored to graduation and licensure counts. With entry in place, the churn residual can be tested for stability directly, which is what turns it from a leftover into a parameter you can act on. From there the surface widens from six occupations toward the full set, and from states toward metros where the samples hold. The parameter surface then answers a concrete policy question that the field keeps asking without an instrument: what does nurse license portability actually do to migration, at which ages, using unlicensed occupations as the control.</p>
     </div>
     <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
   </div>
