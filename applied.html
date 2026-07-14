@@ -39,8 +39,8 @@ title: Applied
   </section>
 
   <section class="sec" id="in-development">
-    <h2 class="sec__h">In development &middot; works in progress</h2>
-    <p class="lede" style="font-size:15px; margin:2px 0 18px; max-width:680px;">Each is the beginning of a research paper or part of a broader research agenda, emerging from my work in labour markets and inclusive, resilient economic development. Click any one to open its idea and its model, and follow through to the full working paper.</p>
+    <h2 class="sec__h">In development</h2>
+    <p class="lede" style="font-size:15px; margin:2px 0 18px; max-width:680px;">Each is the beginning of a research paper or part of a broader research agenda, emerging from my work in labour markets and inclusive, resilient economic development. Many are open questions I have been working on over time, feel free to reach out to collaborate. Click any one to open its idea and its model, and follow through to the full working paper.</p>
     <div class="agenda">
 
       <details class="agenda-card">
@@ -138,6 +138,85 @@ title: Applied
           <div class="agenda-card__sub">The approach</div>
           <p>The cost is part of the argument. At thirteen cents a release the economics of text-as-data pipelines change, which is what makes the full historical run, and the public series it produces, feasible at all.</p>
           <div class="agenda-card__links"><a href="{{ '/working-papers/beige-book' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Occupational coding at the 8-digit frontier</div>
+          <div class="agenda-card__meta">occupational coding, machine learning &middot; in progress</div>
+          <p class="agenda-card__abstract">Mapping messy job titles to occupation codes is near-solved at 6 digits and hard at 8, where wage and mobility differences live. A systematic comparison shows the two defaults, retrieval and fine-tuning, are both wrong.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Hold the evaluation fixed and compare like for like: an oracle retrieval ceiling, a frozen encoder with a linear probe, LoRA, full fine-tuning, and the production cascade, on one hard set.</p>
+          <div class="agenda-card__sub">The finding</div>
+          <p>An oracle retrieval system tops out at 40.4 percent while a trained classifier reaches 45.5 percent, and adding trainable capacity only overfits, 45.5 then 42.4 then 32.3. Freeze and probe, and invest in labels.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/occupation-coding' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">A role taxonomy anchored to the federal codes</div>
+          <div class="agenda-card__meta">occupational taxonomy &middot; in progress</div>
+          <p class="agenda-card__abstract">The official taxonomy is too coarse and private ones float free of it. This builds the middle layer both miss: a role taxonomy that nests strictly inside the federal codes, so it inherits their task, skill, and wage infrastructure.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>3,939 roles across 1,016 codes, built by clustering alternate titles once facets like level and shift are stripped away, with one rule: a distinction is a role only when it stays inside an 8-digit boundary and is meaningful within it.</p>
+          <div class="agenda-card__sub">The finding</div>
+          <p>Scored against the official 8-digit splits, the clustering reaches merge error 0.091 to 0.104 against 0.38 and 0.85 for the alternatives, and a zero-training resolver covers 92 percent of 68,351 labelled titles.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/role-taxonomy' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Do skills predict moves?</div>
+          <div class="agenda-card__meta">occupational mobility &middot; in progress</div>
+          <p class="agenda-card__abstract">Skill-similarity scores are used as if they were evidence that workers move. They are a hypothesis about feasibility. This tests whether workers actually move in proportion to similarity, once size, wages, and geography are held constant.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Estimate a gravity model of occupational flows and read off the elasticity of moves to skill similarity, then check whether the tier thresholds the field uses match where observed flows actually break.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\ln \text{flow}_{i \to j} = \eta \, \ln \text{sim}_{ij} + \beta_1 \ln \tfrac{w_j}{w_i} + \beta_2 \ln E_i + \beta_3 \ln E_j + \gamma \, \text{licensed}_j + \varepsilon_{ij}$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/skills-and-moves' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Workforce demand from a press release</div>
+          <div class="agenda-card__meta">facility-level demand &middot; in progress</div>
+          <p class="agenda-card__abstract">When a plant or hospital is announced, everyone needs the number nobody has: how many workers, in which occupations, on what schedule. This turns a headline job count into an occupational hiring profile over time.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>A staffing template gives the occupational mix for a facility class, a ramp curve spreads it across construction, tool install, and production, and every estimate is corroborated against independent data.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\mathbb{E}\big[\text{emp}(o, t)\big] = \text{announced scale} \times \text{template}(o \mid \text{class}) \times \text{ramp}(t \mid \text{phase})$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/facility-demand' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">From employer panels to regional workforce stocks</div>
+          <div class="agenda-card__meta">small-area estimation, privacy &middot; in progress</div>
+          <p class="agenda-card__abstract">Public statistics say how many work in an occupation in a region. Employer data holds the microstructure they miss, for a non-random sliver. This fuses the two to reconstruct a region's full workforce, with privacy built in.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Reconstruct a region's workforce by fusing a rich but unrepresentative employer panel with complete public benchmarks, generating synthetic workers for the segments the panel does not cover.</p>
+          <div class="agenda-card__sub">The method</div>
+          <p>Standardise the panel onto public vocabularies, measure where it departs from the public margins, reweight what can be reweighted, synthesise the rest from calibrated conditional distributions, and validate on holdout, with every published object aggregate or synthetic.</p>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/panel-synthesis' | relative_url }}">Read the full working paper &rarr;</a></div>
         </div>
       </details>
 
