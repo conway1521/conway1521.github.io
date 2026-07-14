@@ -12,7 +12,7 @@ permalink: /working-papers/occupation-coding/
       <span class="eyebrow">In progress</span>
     </div>
     <h1 class="display">Occupational coding at the 8-digit frontier</h1>
-    <p class="lede">Every labour dataset built from job titles has to map messy strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task, and mobility differences actually live, it is much harder, and the method you pick changes the answer.</p>
+    <p class="lede">Every labor dataset built from job titles has to map messy strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task, and mobility differences actually live, it is much harder, and the method you pick changes the answer.</p>
   </div>
   <div class="standfirst">Machine learning &middot; measurement. A benchmark study with a public evaluation harness.</div>
 
@@ -22,7 +22,7 @@ permalink: /working-papers/occupation-coding/
       <h2 class="secnum__h">The idea</h2>
     </div>
     <div class="prose prose--lg">
-      <p>The 8-digit code is where an acute-care nurse is separated from a clinical nurse specialist, and that is exactly the grain a wage or mobility study needs. Two families of method compete for it: retrieval, which searches a corpus of known titles for the closest match, and classification, which learns a decision boundary from labelled examples. Teams reach for retrieval and for fine-tuned models by default. A systematic comparison on a hard evaluation set shows both defaults are wrong.</p>
+      <p>The 8-digit code is where an acute-care nurse is separated from a clinical nurse specialist, and that is exactly the grain a wage or mobility study needs. Two families of method compete for it: retrieval, which searches a corpus of known titles for the closest match, and classification, which learns a decision boundary from labeled examples. Teams reach for retrieval and for fine-tuned models by default. A systematic comparison on a hard evaluation set shows both defaults are wrong.</p>
     </div>
   </div>
 
@@ -50,7 +50,7 @@ permalink: /working-papers/occupation-coding/
       <div class="finding">
         <span class="finding__n">02</span>
         <div class="finding__head">More trainable parameters overfit at real data scales.</div>
-        <div class="finding__body">At about 17,000 labelled examples, a frozen encoder with a linear probe reaches 45.5 percent, LoRA fine-tuning 42.4 percent, and full fine-tuning 32.3 percent. Performance falls monotonically as trainable capacity rises. The practical instruction is to freeze and probe, and to spend on labels rather than parameters.</div>
+        <div class="finding__body">At about 17,000 labeled examples, a frozen encoder with a linear probe reaches 45.5 percent, LoRA fine-tuning 42.4 percent, and full fine-tuning 32.3 percent. Performance falls monotonically as trainable capacity rises. The practical instruction is to freeze and probe, and to spend on labels rather than parameters.</div>
       </div>
       <div class="finding">
         <span class="finding__n">03</span>
