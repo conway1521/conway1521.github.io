@@ -118,7 +118,7 @@
     if (btn) btn.addEventListener('click', go);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
     Array.prototype.forEach.call(document.querySelectorAll('.resolve-example'), function (chip) {
-      chip.addEventListener('click', function () { input.value = chip.textContent.trim(); go(); });
+      chip.addEventListener('click', function () { input.value = chip.textContent.trim(); out.innerHTML = ''; input.focus(); });
     });
   }
 
