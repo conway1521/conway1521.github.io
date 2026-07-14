@@ -81,6 +81,23 @@ title: Applied
 
       <details class="agenda-card">
         <summary>
+          <div class="agenda-card__title">Where occupations move</div>
+          <div class="agenda-card__meta">interstate migration by occupation &middot; in progress</div>
+          <p class="agenda-card__abstract">We know a lot about the interstate migration of people and little about migration by occupation. Yet occupation is where migration policy bites: nurse licensure compacts, engineer reciprocity, remote-work eligibility. This maps it across 501 occupations and twenty years of census microdata.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Bilateral state-to-state migration flows by occupation, over 501 codes, 51 jurisdictions, and nineteen vintages of census microdata. An atlas of which occupations move and where, and the wage elasticities of who moves for money. The wide complement to the workforce flow engine.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\mathbb{E}\big[\text{flow}_{o \to d}^{\,k}\big] = \exp\!\Big(\eta_k \ln \tfrac{w_d}{w_o} + \beta \ln \text{dist}_{od} + \phi_o + \psi_d\Big)$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/occupation-migration' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
           <div class="agenda-card__title">Do skills predict moves?</div>
           <div class="agenda-card__meta">occupational mobility &middot; in progress</div>
           <p class="agenda-card__abstract">Skill-similarity scores are used as if they were evidence that workers move. They are a hypothesis about feasibility. This tests whether workers actually move in proportion to similarity, once size, wages, and geography are held constant.</p>
