@@ -79,6 +79,518 @@ ink_js: true
     <div class="plate__caption">Real employer and posting titles, resolved. The demo matches against a sample of the panel. In production the same input runs the ten-stage cascade and three model layers in front.</div>
   </div>
 
+  <!-- resolved, at scale -->
+  <div class="plate" style="max-width:660px;">
+    <div class="plate__head">
+      <span class="plate__title">A hundred, resolved</span>
+      <span class="plate__hint">scroll &middot; employer and posting titles</span>
+    </div>
+    <p class="plate__purpose">A sample of real inputs run through the resolver. Each messy title is shown with the canonical role it collapses to and the federal occupation underneath.</p>
+    <div class="restab">
+      <div class="restab__row">
+        <div class="restab__in">NonEE) Accounts Payable Associate<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Accounts Payable Associate &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Billing and Posting Clerks (43-3021.00) &middot; SOC 43-3021 &middot; Financial Clerks</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Marketing Coordinator<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Marketing Coordinator &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Market Research Analysts and Marketing Specialists (13-1161.00) &middot; SOC 13-1161 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">AI Digital Supply Chain Program Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Program Manager &middot; Supply Chain &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Entertainment and Recreation Managers, Except Gambling (11-9072.00) &middot; SOC 11-9072 &middot; Other Management Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Upper School Mathematics Teacher<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>High School Math Teacher &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Secondary School Teachers, Except Special and Career/Technical Education (25-2031.00) &middot; SOC 25-2031 &middot; Preschool, Elementary, Middle, Secondary, and Special Education Teachers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Accounting Supervisor<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Accountant &middot; Accounting Manager &middot; supervisor</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Accountants and Auditors (13-2011.00) &middot; SOC 13-2011 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Recruitment business development VP<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Business Development Executive &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Chief Executives (11-1011.00) &middot; SOC 11-1011 &middot; Top Executives</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">AmbFloat LPN / II<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>LPN &middot; staff &middot; II</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Licensed Practical and Licensed Vocational Nurses (29-2061.00) &middot; SOC 29-2061 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Part Time Sales Supervisor<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Sales Supervisor &middot; supervisor</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Sales Managers (11-2022.00) &middot; SOC 11-2022 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Associate Customer Service Representative<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Customer Service Representative &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Customer Service Representatives (43-4051.00) &middot; SOC 43-4051 &middot; Information and Record Clerks</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Staff Quality Assurance Engineer<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Software Test Engineer &middot; Quality &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Software Quality Assurance Analysts and Testers (15-1253.00) &middot; SOC 15-1253 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Associate Professor BSN - Nursing<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Staffing Recruiter<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Recruiter &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Human Resources Specialists (13-1071.00) &middot; SOC 13-1071 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Biomedical Equipment Tech Senior<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Biomedical Equipment Tech &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Equipment Repairers (49-9062.00) &middot; SOC 49-9062 &middot; Other Installation, Maintenance, and Repair Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">2024 - 2025 Physical Education Teacher BENNETT ES<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Teacher &middot; Physical Education &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Secondary School Teachers, Except Special and Career/Technical Education (25-2031.00) &middot; SOC 25-2031 &middot; Preschool, Elementary, Middle, Secondary, and Special Education Teachers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Project Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Travel Nurse RN - Med/Surg - $1,976 per week in Odessa, TX<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; Med Surg &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">CRNA ( Only)<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>CRNA &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nurse Anesthetists (29-1151.00) &middot; SOC 29-1151 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Event Coordinator, Transportation Partner Experience<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Events Manager &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Meeting, Convention, and Event Planners (13-1121.00) &middot; SOC 13-1121 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Care Manager ( )<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Case Manager Supervisor &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Social Workers, All Other (21-1029.00) &middot; SOC 21-1029 &middot; Counselors, Social Workers, and Other Community and Social Service Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">CERTIFIED NURSING ASSISTANT - TEMPLETON OF CARY<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Nurse Aide &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Case Manager RN - NE ( Only)<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; Case Manager &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">RN, Registered Nurse - PACU/Recovery<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; PACU &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Medical Assistant<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Certified Medical Assistant &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Senior Accountant, Healthcare 85K-90K<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Accountant &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Accountants and Auditors (13-2011.00) &middot; SOC 13-2011 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Medical Assistant - Bilingual preferred<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Bilingual Medical Assistant &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Direct Marketing Specialist<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Marketing Associate &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Market Research Analysts and Marketing Specialists (13-1161.00) &middot; SOC 13-1161 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Medical Assistant - LPN - Adult PC Miller Street<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Certified Medical Assistant &middot; LPN &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Senior Systems Engineering Manager | SE<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Systems Engineering Manager &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Computer and Information Systems Managers (11-3021.00) &middot; SOC 11-3021 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Medical Assistant - Pediatric Gastro<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Certified Medical Assistant &middot; Pediatrics &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Regional Sales Director, East<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Regional Sales Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Sales Managers (11-2022.00) &middot; SOC 11-2022 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Medical Assistant NH Float Pool - Local Resource Team<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Certified Registered Medical Assistant &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Senior Corporate Counsel - U.S. Bancorp Impact Finance<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Corporate Counsel &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Lawyers (23-1011.00) &middot; SOC 23-1011 &middot; Lawyers, Judges, and Related Workers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Nursing Assistant I - B1D Critical Care 1st Floor<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Nurse Aide &middot; Critical Care &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">UX Designer - Visual Design &amp; Prototyping<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Digital Designer &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Web and Digital Interface Designers (15-1255.00) &middot; SOC 15-1255 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Nursing Assistant I - Progressive Care<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Nurse Aide &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Benefits &amp; Compensation Manager<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Compensation Manager &middot; Benefits &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Compensation and Benefits Managers (11-3111.00) &middot; SOC 11-3111 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Registered Medical Assistant - Orthopedic Services - FT<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Certified Registered Medical Assistant &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Sr. Scrum Master - (Remote &amp; Onsite 1 Day a week) - LOCALS ONLY<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Scrum Master &middot; senior &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Information Technology Project Managers (15-1299.09) &middot; SOC 15-1299 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified/Registered Medical Assistant - Oncology - Pediatric - FT<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Medical Assistant &middot; Oncology &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Complex Care RN - Bilingual<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Clerical Supervisor I - Family Medicine<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Clinical Supervisor Family Medicine &middot; supervisor &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Family Medicine Physicians (29-1215.00) &middot; SOC 29-1215 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Registered Nurse 1 Psychiatric, Secure Treatment and Rehabilitaion Center, Oakview, Marcy, (NY HELPS), P24717<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Clinical Lab Assistant I - Core Lab - FT<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Clinical Lab Assistant &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical and Clinical Laboratory Technicians (29-2012.00) &middot; SOC 29-2012 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Healthcare Agency Housekeeper - $18.50/hr<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Housekeeper &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Maids and Housekeeping Cleaners (37-2012.00) &middot; SOC 37-2012 &middot; Building Cleaning and Pest Control Workers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Clinical Lab Assistant l - PRN - Nights<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Clinical Lab Assistant &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical and Clinical Laboratory Technicians (29-2012.00) &middot; SOC 29-2012 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Guidewire Software Engineer - Mid Level<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Software Engineer &middot; Mid Level &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Software Developers (15-1252.00) &middot; SOC 15-1252 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Clinical Staff Pharmacist Pharmacy and ED<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Clinical Pharmacist &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Pharmacists (29-1051.00) &middot; SOC 29-1051 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">General Manager (Bilingual)<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>General Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>General and Operations Managers (11-1021.00) &middot; SOC 11-1021 &middot; Top Executives</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Commercial Real Estate Lending Operations Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Operations Manager &middot; Commercial Real Estate &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Transportation, Storage, and Distribution Managers (11-3071.00) &middot; SOC 11-3071 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Certified Nursing Assistant (CNA)-Weekend Warrior<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Nurse Aide &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Customer Tax Associate<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Tax Associate &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Tax Preparers (13-2082.00) &middot; SOC 13-2082 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Junior Network Administrator<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Network Administrator &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Network and Computer Systems Administrators (15-1244.00) &middot; SOC 15-1244 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Data Privacy IT Business Analyst II<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Business Analyst &middot; staff &middot; II</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">CDL Truck Driver - Residential<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>CDL Driver &middot; Truck &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Heavy and Tractor-Trailer Truck Drivers (53-3032.00) &middot; SOC 53-3032 &middot; Motor Vehicle Operators</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">DevOps Engineer-Software Engineer III, Enterprise Risk Finance Technology<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Software Engineer &middot; DevOps &middot; staff &middot; III</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Software Developers (15-1252.00) &middot; SOC 15-1252 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">CRNA Locum Tenens in Savannah, GA<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>CRNA &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nurse Anesthetists (29-1151.00) &middot; SOC 29-1151 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Digitial Marketing Manager II<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Digital Marketing Manager &middot; manager &middot; II</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Marketing Managers (11-2021.00) &middot; SOC 11-2021 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Industrial Engineer - Project Manager<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Director Neonatal Nurse Practitioner<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Neonatal Nurse Practitioner &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nurse Practitioners (29-1171.00) &middot; SOC 29-1171 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Product Manager (Construction or Building Materials exp. req.)<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Product Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Marketing Managers (11-2021.00) &middot; SOC 11-2021 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Early Career Senior Learning and Development Consultant<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Learning and Development Specialist &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Training and Development Specialists (13-1151.00) &middot; SOC 13-1151 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Associate Director of Nursing<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Director Of Nursing &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical and Health Services Managers (11-9111.00) &middot; SOC 11-9111 &middot; Other Management Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Engineering Excellence Program Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Program Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Entertainment and Recreation Managers, Except Gambling (11-9072.00) &middot; SOC 11-9072 &middot; Other Management Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Oracle ERP Cloud Functional Architect Level 2 (734409)<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Functional Architect Manager &middot; Cloud &middot; staff &middot; II</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Architects, Except Landscape and Naval (17-1011.00) &middot; SOC 17-1011 &middot; Architects, Surveyors, and Cartographers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">External Audit Manager - Technology and Media - US<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Audit Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Accountants and Auditors (13-2011.00) &middot; SOC 13-2011 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Sage X3 Software Developer<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Software Developer &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Software Developers (15-1252.00) &middot; SOC 15-1252 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Fraud &amp; Claims Operations Manager Business Assurance<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Operations Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Transportation, Storage, and Distribution Managers (11-3071.00) &middot; SOC 11-3071 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Social worker - Hospital Setting - 10K Sign on bonus + Relocation Assistance<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Medical Social Worker &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Healthcare Social Workers (21-1022.00) &middot; SOC 21-1022 &middot; Counselors, Social Workers, and Other Community and Social Service Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Global Product Manager 3 (Req. #001122)<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Product Manager &middot; manager &middot; III</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Marketing Managers (11-2021.00) &middot; SOC 11-2021 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Full Time Patient Care Tech - OR<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Patient Care Associate &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">HC1 - LPN 1<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>LPN &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Licensed Practical and Licensed Vocational Nurses (29-2061.00) &middot; SOC 29-2061 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Surgical Technologist (FT Days / 10&#x27;s) KH Soin<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Surgical Technologist &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Surgical Technologists (29-2055.00) &middot; SOC 29-2055 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Histology Tech Senior<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Histology Technician &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical and Clinical Laboratory Technicians (29-2012.00) &middot; SOC 29-2012 &middot; Health Technologists and Technicians</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">VP, Operational Excellence<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Chief Executive Officer &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Chief Executives (11-1011.00) &middot; SOC 11-1011 &middot; Top Executives</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Information Services Lead Product Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Product Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Marketing Managers (11-2021.00) &middot; SOC 11-2021 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Computer/Information Systems Manager - Team Lead<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Computer and Information Systems Managers (11-3021.00) &middot; SOC 11-3021 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Audit Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Audit Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Accountants and Auditors (13-2011.00) &middot; SOC 13-2011 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Warehouse Materials Coordinator (Intermediate)<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Materials Planner &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Industrial Production Managers (11-3051.00) &middot; SOC 11-3051 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Compliance Officer<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Compliance Officer &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Compliance Officers (13-1041.00) &middot; SOC 13-1041 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Project Manager- Structural Engineering<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Data Engineer<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Data Center Engineer &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Computer Occupations, All Other (15-1299.00) &middot; SOC 15-1299 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Med Surg Cardiology, Patient Care Tech - PT<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Nurse Aide &middot; Med Surg &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Nursing Assistants (31-1131.00) &middot; SOC 31-1131 &middot; Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Environmental Services Technician - Atrium Cleveland (Full Time) 3rd Shift<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Environmental Services Technician &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Janitors and Cleaners, Except Maids and Housekeeping Cleaners (37-2011.00) &middot; SOC 37-2011 &middot; Building Cleaning and Pest Control Workers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Registrar - Dry Ridge Family Medicine<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Family Medicine Physician &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Family Medicine Physicians (29-1215.00) &middot; SOC 29-1215 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead J2EE Software Engineer<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Software Engineer &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Software Developers (15-1252.00) &middot; SOC 15-1252 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Small Project HVAC Estimator- Service<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>HVAC Service Technician &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Heating, Air Conditioning, and Refrigeration Mechanics and Installers (49-9021.00) &middot; SOC 49-9021 &middot; Other Installation, Maintenance, and Repair Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Project Manager (contract)<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Technical Data Analyst<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Data Analyst &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Computer Occupations, All Other (15-1299.00) &middot; SOC 15-1299 &middot; Computer Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Sourcing Consultant<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Sourcing Specialist &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Purchasing Agents, Except Wholesale, Retail, and Farm Products (13-1023.00) &middot; SOC 13-1023 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Territory Manager, Nashville, TN<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Territory Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Sales Managers (11-2022.00) &middot; SOC 11-2022 &middot; Advertising, Marketing, Promotions, Public Relations, and Sales Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Lead Wealth Underwriter<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Underwriter &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Insurance Underwriters (13-2053.00) &middot; SOC 13-2053 &middot; Financial Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Talent Acquisition Recruiter<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Talent Acquisition Specialist &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Human Resources Specialists (13-1071.00) &middot; SOC 13-1071 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Magnet Project Manager<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Controller -Hybrid - 3 days in office<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Controller &middot; staff &middot; III</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Treasurers and Controllers (11-3031.01) &middot; SOC 11-3031 &middot; Operations Specialties Managers</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Manager - Family Medicine - OH Charlotte<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Family Medicine Physician &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Family Medicine Physicians (29-1215.00) &middot; SOC 29-1215 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">RN Resource 1152 - Springfield - Emergency Room - PRN/Varied<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>RN &middot; Emergency Department &middot; staff</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Registered Nurses (29-1141.00) &middot; SOC 29-1141 &middot; Healthcare Diagnosing or Treating Practitioners</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Medical Assistant Lead ( Only)<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Medical Assistant &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Medical Assistants (31-9092.00) &middot; SOC 31-9092 &middot; Other Healthcare Support Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">VP, Revenue Enablement<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Chief Executive Officer &middot; manager</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Chief Executives (11-1011.00) &middot; SOC 11-1011 &middot; Top Executives</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Nuclear Maintenance Technician I or Nuclear Maintenance Technician II<span class="restab__src">employer</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Maintenance Technician &middot; staff &middot; I</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Maintenance and Repair Workers, General (49-9071.00) &middot; SOC 49-9071 &middot; Other Installation, Maintenance, and Repair Occupations</div>
+      </div>
+      <div class="restab__row">
+        <div class="restab__in">Sr. Project Manager, DC Power<span class="restab__src">posting</span></div>
+        <div class="restab__line"><span class="restab__k">Canonical</span>Project Manager &middot; senior</div>
+        <div class="restab__line"><span class="restab__k">Federal</span>Project Management Specialists (13-1082.00) &middot; SOC 13-1082 &middot; Business Operations Specialists</div>
+      </div>
+    </div>
+    <div class="plate__caption">Fifty employer HRIS titles and fifty public posting titles, interleaved. The same cascade runs the full 550,000-posting and 26-employer panels behind this.</div>
+  </div>
+
   <!-- resolution stages -->
   <div class="plate" style="max-width:640px;">
     <div class="plate__head">
