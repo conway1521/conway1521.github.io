@@ -1,7 +1,7 @@
 ---
 layout: default
-title: The employer digital twin
-description: "One employer's raw HR export taken from upload to forecast, every phase printing what it produced. A live console run and an auditable pipeline."
+title: Employer digital twin
+description: "Employer raw HR exports taken interactively from upload to forecast through a live console run."
 permalink: /portfolio/employer-twin/
 ink_js: true
 ---
@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Illustrative &middot; synthetic data</span>
     </div>
     <h1 class="display">The employer digital twin</h1>
-    <p class="lede">One employer's raw HR export, taken from upload to forecast: standardize, extract a canonical panel, explore with seasonality, map, then project and cost the scenario levers. Every phase prints what it produced.</p>
+    <p class="lede">Taking an employer's HRIS data from upload to forecasting and scenarios: standardization, extraction to a canonical panel, exploration with seasonality, mapping, then projection and cost the scenario levers.</p>
   </div>
   <div class="standfirst">Data science &middot; engineering &middot; applied econometrics &middot; product. In production on employer panels, under tenant isolation.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>An employer wants three answers: is our turnover bad, what is coming, and what should we do about it. Their HR export answers none of them: hundreds of column variants, freetext titles, termination codes that differ by system, and transfers recorded as if people had quit. Worse, any answer has to survive a sceptical CFO: it must be comparable to peers and auditable back to the raw rows.</p>
+      <p>An employer wants to answer questions like: is our turnover bad, what is coming, and what should we do about it. However, their HR export answers none of them: hundreds of column variants, freetext titles, termination codes that differ by system, and transfers recorded as if people had quit. In order to convince CFOs adn the boardroom, answers must be both comparable to peers, integrated with other datasets, and auditable back to the raw rows.</p>
     </div>
   </div>
 
@@ -36,22 +36,22 @@ ink_js: true
     <div class="stages">
       <div class="grid2__item">
         <h3><span class="n">01</span>Ingest anything</h3>
-        <p>Headcount, requisitions, hires, terminations, and contingent workers arrive in whatever shape the employer's system exports. Columns map by fuzzy match with confidence scores. Formats, types, and outliers are cleaned and flagged, not silently fixed.</p>
+        <p>Headcount, requisitions, hires, terminations, and contingent workers arrive in whatever shape the employer's system exports (which can differ for the same employer over time). Columns map by fuzzy match with confidence scores. Formats, types, and outliers are cleaned and flagged.</p>
         <div class="disc">Data engineering &middot; product</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Standardize to a canonical panel</h3>
-        <p>Titles resolve to federal occupation codes through the <a href="{{ '/portfolio/occupation-resolver' | relative_url }}">occupation resolver</a>, termination reasons and requisition statuses map to controlled vocabularies, facilities geocode. Transfers are separated from real exits: that single correction moves a raw 19% termination rate to a true 4.29% and changes every projection built on it.</p>
+        <p>Titles resolve to federal occupation codes through the <a href="{{ '/portfolio/occupation-resolver' | relative_url }}">occupation resolver</a>, termination reasons and requisition statuses map to controlled vocabularies, facilities geocode. Transfers are separated from real exits, with canonical reasons attributed. Clean separations of contingent and full time employers.</p>
         <div class="disc">Data science &middot; economics</div>
       </div>
       <div class="grid2__item">
-        <h3><span class="n">03</span>Measure under floors</h3>
-        <p>Survival curves and cohort retention for who stays and who leaves. Seasonal decomposition to separate recurring patterns from real trends. Peer benchmarks built under k-anonymity with suppression floors, so a small cell is withheld rather than shown noisy.</p>
+        <h3><span class="n">03</span>Status quo analysis</h3>
+        <p>Survival curves and cohort retention for who stays and who leaves, seasonal decomposition to separate recurring patterns from real trends. Comparison to anonymous peer benchmarks for contextualisation.</p>
         <div class="disc">Econometrics &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">04</span>Project, then intervene</h3>
-        <p>The forecasting method is chosen by data depth, never by default, and every projection carries its confidence band. Market conditions are decomposed from employer-specific effects, and each candidate intervention arrives with a literature-derived range and a realistic capture ceiling.</p>
+        <p>Forecasting methods are chosen by data depth, and every projection carries its confidence band. Market conditions are decomposed from employer-specific effects, and each candidate intervention has a literature-derived range.</p>
         <div class="disc">Econometrics &middot; economics &middot; product</div>
       </div>
     </div>
@@ -63,7 +63,7 @@ ink_js: true
       <span class="plate__title">The console, end to end</span>
       <span class="plate__hint">run it</span>
     </div>
-    <p class="plate__purpose">One employer's data, upload to scenario. Each phase prints what it produced.</p>
+    <p class="plate__purpose">Singular employer's data, upload to scenario.</p>
     <div class="con-phases" id="console-phases">
       <span class="con-phase">Upload</span>
       <span class="con-phase">Standardize</span>
@@ -83,7 +83,7 @@ ink_js: true
       <span class="plate__title">Illustrative outputs</span>
       <span class="plate__hint">run the pipeline above</span>
     </div>
-    <p class="plate__purpose">A few pieces of the dashboard the run produces, for a four-site Arizona employer. Hover a facility to read its panel, and the role table at the bottom refocuses to that site. Toggle the local supply layer to bring in the training and staffing inventories.</p>
+    <p class="plate__purpose">A few pieces of the dashboard that the code produces, for an illustrative four-site Arizona employer. Hover a facility to read its panel, and the role table at the bottom refocuses to that site. Toggle the local supply layer to bring in the training and staffing inventories.</p>
     <div class="fac-layout">
       <div>
         <div class="fac-map" id="fac-map">
@@ -113,7 +113,7 @@ ink_js: true
       <div class="metrics-row metrics-row--head"><span>Role (SOC-6)</span><span class="r">Vacancy</span><span class="r">Time to fill</span><span class="r">Median req age</span><span class="r">Peer p50</span></div>
       <div id="metrics-body"></div>
     </div>
-    <div class="plate__caption">Illustrative, synthetic. Peer p50 is the anonymized median vacancy across comparable employers in the benchmark panel. Training and staffing figures come from the two national inventories.</div>
+    <div class="plate__caption">Illustrative, synthetic. Peer p50 is the anonymized median vacancy across comparable employers in the benchmark panel. Training and staffing figures come from the two national inventories I created.</div>
   </div>
 
   <!-- the accounting identity -->
@@ -122,11 +122,10 @@ ink_js: true
       <span class="plate__title">The accounting identity</span>
       <span class="plate__hint">stocks and flows</span>
     </div>
-    <p class="plate__purpose">Supply is a bathtub. Every projection has to satisfy the identity, so every term has to be measured.</p>
+    <p class="plate__purpose">Supply is understood as a bathtub where every projection has to satisfy the identity, so every term has to be measured.</p>
     <div class="identity">stock<sub>t+1</sub> = stock<sub>t</sub> + entrants &minus; exits<br><span class="soft">+ inflow &minus; outflow</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Raw HRIS termination rate</span><span class="struck" style="font-size:15px;">19.0%</span></div>
     <div class="correction-row"><span style="font-size:13px;">True exit rate, transfers removed</span><span style="font-size:15px; font-weight:600;">4.29%</span></div>
-    <div class="plate__caption">70 to 80% of recorded terminations are internal transfers. Correcting one term changes the projection by an order of magnitude.</div>
   </div>
 
   <!-- employment hierarchy -->
@@ -135,12 +134,12 @@ ink_js: true
       <span class="plate__title">The employment hierarchy</span>
       <span class="plate__hint">hover a level</span>
     </div>
-    <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The twin reconstructs it into levels with headcount and spans of control, so turnover can be read by layer and the internal ladder made visible.</p>
+    <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The digital twin can reconstruct this into levels with headcount and lvels of control, so turnover can also be read by layer and the internal ladder.</p>
     <div class="hier-scroll">
       <div class="hier-canvas" id="hier-canvas"></div>
     </div>
-    <div class="plate__note" id="hier-note" data-default="Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.">Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.</div>
-    <div class="plate__caption">Illustrative, synthetic. Reconstructed from manager-employee links in the HRIS. Spans of control feed the peer benchmark and locate where turnover concentrates.</div>
+    <div class="plate__note" id="hier-note" data-default="Five levels reconstructed from reporting relationships. Hover a level for its headcount, span, and what it signals.">Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.</div>
+    <div class="plate__caption">Illustrative, synthetic.</div>
   </div>
 
   <div class="col">
@@ -166,7 +165,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The pipeline runs in production on employer panels: the same stages the console shows, over real headcount, requisition, hire, and termination data, behind row-level security. The run above is synthetic so it can be shown at all. Real runs, and the peer benchmarks they feed, stay under tenant isolation. Every figure a report shows is traceable to the pipeline stage and the raw rows that produced it. Where outputs can be checked against published benchmarks they are: modeled time-to-close for high-volume clinical roles matches the national benchmark for comparable positions to the day.</p>
+      <p>The pipeline runs in production on employer panels: the same stages the console shows, over real headcount, requisition, hire, and termination data, behind row-level security (the run above is fully synthetic to share it). Outputs are intended to be checked against published benchmarks, such as modeled time-to-close for high-volume clinical roles matches the national benchmark for comparable positions to the day.</p>
     </div>
     <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
   </div>
