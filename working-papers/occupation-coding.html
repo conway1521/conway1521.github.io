@@ -1,0 +1,74 @@
+---
+layout: default
+title: Occupational coding at the 8-digit frontier
+permalink: /working-papers/occupation-coding/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Occupational coding at the 8-digit frontier</h1>
+    <p class="lede">Every labour dataset built from job titles has to map messy strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task, and mobility differences actually live, it is much harder, and the method you pick changes the answer.</p>
+  </div>
+  <div class="standfirst">Machine learning &middot; measurement. A benchmark study with a public evaluation harness.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>The 8-digit code is where an acute-care nurse is separated from a clinical nurse specialist, and that is exactly the grain a wage or mobility study needs. Two families of method compete for it: retrieval, which searches a corpus of known titles for the closest match, and classification, which learns a decision boundary from labelled examples. Teams reach for retrieval and for fine-tuned models by default. A systematic comparison on a hard evaluation set shows both defaults are wrong.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The bakeoff</h2>
+    </div>
+    <div class="prose">
+      <p>Hold the evaluation fixed and compare like for like: an oracle retrieval ceiling, which always surfaces the true code if it is anywhere in the candidate set, a frozen encoder with a linear probe, LoRA fine-tuning, full fine-tuning, and the production cascade. The same hard set, the same splits, the same metric. The oracle matters because it is the best any retrieval system could ever do, so it turns a comparison into a bound.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">Retrieval has a ceiling that classification clears.</div>
+        <div class="finding__body">The oracle retrieval system tops out at 40.4 percent on the hard set, while a trained classifier reaches 45.5 percent top-3. Retrieval is bounded by whether the corpus holds a phrasing close to the input. A classifier learns the boundary whether or not the phrasing was ever seen.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">More trainable parameters overfit at real data scales.</div>
+        <div class="finding__body">At about 17,000 labelled examples, a frozen encoder with a linear probe reaches 45.5 percent, LoRA fine-tuning 42.4 percent, and full fine-tuning 32.3 percent. Performance falls monotonically as trainable capacity rises. The practical instruction is to freeze and probe, and to spend on labels rather than parameters.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">03</span>
+        <div class="finding__head">The production answer is a cascade.</div>
+        <div class="finding__body">Cheap high-precision matching resolves the easy majority, and a frozen-and-probed classifier carries the residual that retrieval leaves behind. That residual is where the accuracy is won or lost, which is why the choice of method there matters so much. The system in production runs exactly this shape, in the <a href="{{ '/portfolio/occupation-resolver' | relative_url }}">occupation resolver</a>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The result becomes a benchmark other teams can use. That means one clean re-run with fixed splits, three seeds, and bootstrap confidence intervals, so every number carries an interval. It means measuring corpus coverage directly, which turns the 40.4 percent ceiling from an observation into an explanation by separating what retrieval cannot reach from what it merely ranks wrong. And it means releasing the evaluation harness, so anyone building an occupational coder can run it against the same hard set and see where they stand.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

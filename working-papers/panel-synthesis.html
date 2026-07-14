@@ -1,0 +1,60 @@
+---
+layout: default
+title: From employer panels to regional workforce stocks
+permalink: /working-papers/panel-synthesis/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">From employer panels to regional workforce stocks</h1>
+    <p class="lede">Official statistics say how many people work in an occupation in a region. They do not say the microstructure a planner needs: the tenure distribution, the age curve, who is a transfer risk against a retirement risk, the level mix. Employer data has exactly that, for a non-random sliver of the market. This fuses the two.</p>
+  </div>
+  <div class="standfirst">Data science &middot; applied statistics. A privacy-preserving synthesis-and-benchmark method.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Public sources are complete but coarse. Employer HR data is rich but unrepresentative, covering whoever happens to be in the panel. The question is whether a rich-but-partial panel can be fused with coarse-but-complete public benchmarks to reconstruct a region's full workforce, generating synthetic workers to fill the segments the panel does not cover. Done honestly, this is a standard small-area-estimation problem with an explicit synthesis step that nobody has published for employer data.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The method</h2>
+    </div>
+    <div class="prose">
+      <p>Five steps. Standardise the panel onto public vocabularies so panel and benchmarks speak one language. Measure exactly where the panel departs from the public margins, which is a useful map on its own. Reweight what can be reweighted toward those margins. Synthesise what cannot, by drawing synthetic worker records for uncovered segments from panel-estimated conditional distributions calibrated to the public totals, borrowing from the nearest covered occupation where a segment is missing entirely. Validate on holdout. Every synthetic record carries provenance flags, and anonymity floors are built in, so every published object is aggregate or synthetic and never a real worker.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">What it settles</h2>
+    </div>
+    <div class="prose">
+      <p>The claim is careful, and it is not that the reconstruction equals ground truth. It is that the reconstruction reproduces every public margin it was not fit to, and adds microstructure no public source carries, with stated uncertainty. That is a respectable and testable claim, and the holdout tests are what verify it. The privacy machinery is part of the contribution, since it is the same agenda that public statistical agencies are actively funding: producing official-quality statistics from private data without exposing it.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The new build is the reweighting and synthesis engine, then two validations that decide whether it works. A margin holdout fits to some public margins and tests against the ones held back, so the reconstruction has to predict numbers it never saw. A leave-one-employer-out test removes one panel employer, synthesises its cell from everything else, and compares the synthetic tenure and age distributions against the real ones. That overlay is the figure the paper stands or falls on, and reporting it whichever way it lands is the honest version of the method.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

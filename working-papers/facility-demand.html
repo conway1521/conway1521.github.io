@@ -1,0 +1,78 @@
+---
+layout: default
+title: Workforce demand from a press release
+permalink: /working-papers/facility-demand/
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Workforce demand from a press release</h1>
+    <p class="lede">When a fab, a battery plant, or a hospital expansion is announced, everyone needs the number nobody has: how many workers, in which occupations, arriving on what schedule. The announcement says four thousand jobs. A workforce board needs the occupational mix and the quarter-by-quarter ramp.</p>
+  </div>
+  <div class="standfirst">Economics &middot; data science. A replicable estimator with out-of-sample validation.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>The gap between a press release and an actionable staffing profile is where regional workforce planning currently fails, and after the recent wave of industrial announcements it fails at scale. Nobody has published a method that turns a headline job number into an occupational hiring profile over time. This builds one from public sources and tests it against facilities that have already finished ramping.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The method</h2>
+    </div>
+    <div class="prose">
+      <p>Three parts. A staffing template gives the occupational mix for a facility class, assembled from industry staffing matrices and sector workforce data. A ramp curve spreads employment across construction, tool installation, and production on a characteristic schedule, so a dated announcement implies a specific quarterly profile. Expected employment for an occupation in a quarter is the product:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$\mathbb{E}\big[\text{emp}(o, t)\big] = \text{announced scale} \times \text{template}(o \mid \text{class}) \times \text{ramp}(t \mid \text{phase})$$</p>
+      </div>
+      <p>Every estimate is then corroborated against independent sources, announced totals, county employment movements, and layoff filings for the negative case, and reported with its corroboration status attached rather than as a bare point.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">The method produces a quarterly occupational profile.</div>
+        <div class="finding__body">Demonstrated on the Arizona semiconductor buildout, it turns a single announcement into technicians, engineers, and facilities staff by quarter, with the feeder occupations that supply each one drawn from local employment data. The production version is the <a href="{{ '/portfolio/workforce-blueprints' | relative_url }}">workforce blueprints</a>.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">Every estimate carries its corroboration.</div>
+        <div class="finding__body">Because the method reports where each number is confirmed by independent data and where it is not, a planner can see which parts of the profile to trust and which to treat as provisional, instead of receiving one unqualified figure.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The real test is out-of-sample. Assemble ten to fifteen facilities from past buildouts that have finished ramping, recover their realized employment from public county-industry data, and score the method against them on two things: the total at maturity and the timing, quarters to half and to full staffing. The baseline it has to beat is the naive announced-jobs number, and scoring announcement inflation itself, claimed against realized, is a useful result on its own. A hospital or battery-plant case alongside the fabs tests whether the method is general or only holds for semiconductors.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>
