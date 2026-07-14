@@ -1,0 +1,98 @@
+---
+layout: default
+title: The Skills DNA of the economy
+permalink: /working-papers/skills-dna/
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">The Skills DNA of the economy</h1>
+    <p class="lede">Roles, tasks, and skills are three equivalent decompositions of the same output. Price every task and every skill, and AI exposure becomes a question of dollars. A calibrated measurement instrument for the task-based labour market.</p>
+  </div>
+  <div class="standfirst">Economics &middot; machine learning &middot; data engineering. A measurement instrument with an open-source engine and a versioned data snapshot.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Think of every industry as a cookbook and its output as the finished meals. A role is a chef assigned a bundle of recipe steps. A task is a single step. A skill is what lets a person perform a step. Government data tells us how many chefs of each kind there are and what they are paid, which steps each performs, and which abilities each step demands.</p>
+      <p>Push the pay down through those links and nothing is created or destroyed. The same national total appears as industry output, as occupational pay, as the value of tasks, and as the value of skills. Roles, tasks, and skills are three coordinate systems for one object. AI enters as a new appliance that can perform some of the steps. Because every step now carries a price, "which steps can the appliance do" becomes "how many dollars are in play," then "which abilities lose their market," then "which workers are affected and what should they learn next."</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The model</h2>
+    </div>
+    <div class="prose">
+      <p>The dollar shares the identity measures in levels are exactly the calibration a production function needs. A task's expenditure share within an industry is the Cobb-Douglas weight \( \beta_i \). A skill's dollar share of a task's labour is \( \gamma_{ik} \). A task's automatable share maps to \( \delta_i \). Output reads through a nested aggregator of labour and capital:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$Y = A \cdot R^{\alpha} \, K^{\beta}, \qquad R = \left(\sum_{k} \gamma_k \, s_k^{\,\rho}\right)^{1/\rho}$$</p>
+      </div>
+      <p>In levels the identity is theory-free arithmetic that conservation makes exact. Theory enters only for counterfactuals: the CES curvature, the skill-to-skill substitutability \( \sigma_{jk} \) built from skill proximity, and the augmentation term \( A \). The structure is an accounting layer that cannot be argued with, and a simulation layer whose every assumption is named, sourced, and swappable. The <a href="{{ '/portfolio/skills-framework' | relative_url }}">production system it specifies</a> is the running engine behind these numbers.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <div class="finding__head">Every task in America has a price.</div>
+        <div class="finding__body">The whole structure sits on the published BLS wage bill of $10.70T, reconciled across 820 occupations, 247 industries, 17,266 tasks, and 76 skill elements. Per-occupation means verify against known values (registered nurses $101k, chief executives $276k). Conservation is exact by construction, and every residual is an explicit bucket. The single most valuable task is general managers reviewing performance data, at $31.5B a year.</div>
+      </div>
+      <div class="finding">
+        <div class="finding__head">Every ability has a price.</div>
+        <div class="finding__body">Getting information is a $188B skill, communicating with peers $183B, decision-making $178B, working with computers $168B, and active listening $164B a year.</div>
+      </div>
+      <div class="finding">
+        <div class="finding__head">Augmentation now outweighs automation.</div>
+        <div class="finding__body">At the latest exposure release, $1.40T of task value matches observed AI usage, with a dollar-weighted augmentation share of 44.5 percent against 36.3 percent automation. Usage is not a random draw of task dollars, so this is a measured share rather than a forecast.</div>
+      </div>
+      <div class="finding">
+        <div class="finding__head">The exposure measures barely agree, in dollars.</div>
+        <div class="finding__body">Across the $6.59T covered by all three adapters, capability-based measures correlate 0.73 with each other but near zero with observed usage. Of $1.32T that could be flagged as most exposed, all three agree on just $23B. The consensus is two orders of magnitude smaller than the wage bill, which is the case for using several measures rather than one.</div>
+      </div>
+      <div class="finding">
+        <div class="finding__head">The measures load on different margins at different horizons.</div>
+        <div class="finding__body">Usage-based measures predict where healthcare employment adjusted in the ChatGPT era. A capability-based pre-LLM measure predicts wage growth over the longer window. The employment result passes a pre-ChatGPT placebo cleanly, and the exposure rankings are invariant across 27 calibration settings (minimum correlation 0.9995).</div>
+        <table class="rtable">
+          <thead><tr><th>Outcome and window</th><th>Skills DNA</th><th>Srinivasan</th><th>Felten</th></tr></thead>
+          <tbody>
+            <tr><td>Employment, 2022 to 2024</td><td class="hl">+0.245</td><td>+0.269</td><td>+0.077</td></tr>
+            <tr><td>Wage, 2022 to 2025</td><td>+0.064</td><td>+0.121</td><td class="hl">+0.309</td></tr>
+            <tr><td>Employment, 2019 to 2021 (placebo)</td><td>-0.012</td><td>-0.067</td><td>-0.027</td></tr>
+          </tbody>
+        </table>
+        <div class="finding__body" style="margin-top:6px;">Spearman rank correlations, healthcare, n = 76. The five percent critical value is about 0.23.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The highest-value upgrade is within-occupation skill differentiation, which lets the nested structure beat a flat index in validation. After that come the state and metro grain that workforce boards need, the credential traversal that links an exposed skill to the nearby programs teaching its replacement, and a second sector beyond healthcare. The paper is a measurement instrument with an open-source engine, a versioned data snapshot with a DOI, and a replication notebook, roughly 30 pages, released to SSRN with the interactive artifact.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>
