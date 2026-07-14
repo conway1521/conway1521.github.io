@@ -88,7 +88,7 @@ button { font-family: inherit; }
 /* ---------- ruled entry lists (research, work, about, writing) ---------- */
 .sec { margin-top: 64px; }
 .sec__h { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
-.entry { border-top: 1px solid var(--rule); padding: 22px 0; }
+.entry { border-top: 1px solid var(--rule); padding: 22px 0; max-width: 760px; }
 .entry:first-of-type { border-top: none; }
 .entry__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .entry__title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
@@ -110,7 +110,7 @@ button { font-family: inherit; }
 .hero__headshot { width: 210px; height: 210px; object-fit: cover; display: block; border-radius: 50%; }
 .hero__logos { display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: nowrap; }
 .hero__logos a { display: inline-flex; }
-.hero__logos img { height: 30px; width: auto; filter: grayscale(1); opacity: 0.62; transition: opacity 0.15s; }
+.hero__logos img { height: 24px; width: auto; filter: grayscale(1); opacity: 0.62; transition: opacity 0.15s; }
 .hero__logos a:hover img { opacity: 1; }
 .hero__intro { margin-top: 26px; max-width: none; }
 .hero__name { font-size: 44px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.03; }
