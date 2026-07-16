@@ -1,0 +1,118 @@
+---
+layout: default
+title: About
+---
+
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">About</span>
+    <h1 class="display">Why regional policy fails, and what comes next</h1>
+  </header>
+
+  <div class="prose prose--lead" style="margin-top:32px;">
+    <p>Regional development policy is not working. Despite decades of investment, inequality persists and the communities most in need are often left further behind. My work asks why, and builds what comes next.</p>
+    <p>The problem does not seem to be effort or funding. It is that we have treated economic development as a collection of isolated interventions when regional economies are ecosystems. Labor markets, housing, transport, education, employer needs, and social networks all interact. Policies that ignore these connections do not just underperform. They often make things worse.</p>
+    <p>My PhD at Universit&eacute; Paris 8 formalizes this insight into a framework, examining how place-based conditions, human and social capital, and economic activity interact across EU regions. The goal is not only academic: it is to understand why well-intentioned policies fail, so we can design ones that do not.</p>
+    <p>At Radius Intelligence I put this thinking into practice, the ecosystem framing built end to end and operational. As Head of Data Science and Engineering I run the department across economics, engineering, and data science. This includes employer forecasting and workforce planning on one side, policy and labor market analysis on the other, and the building and curation of an extensive data lake centered around sector-specificities that stands as a product in its own right, covering every US occupation at every depth of geography.</p>
+    <p>Previously I led workforce and economic insights at Jobs for the Future, developing a national green-workforce readiness dashboard, advising a 500,000-person placement initiative, and analyzing how AI is transforming jobs. My master's thesis at Sciences Po (Fulbright scholar) integrated social psychology into macroeconomic models, and was published in the University of Oxford Social Macroeconomics series.</p>
+  </div>
+
+  <div class="inline-links" style="margin-top:28px;">
+    <a href="{{ '/assets/papers/alessandro-conway-cv.pdf' | relative_url }}" target="_blank">Download my CV</a>
+  </div>
+
+  <div class="prose" style="margin-top:24px; max-width:600px;">
+    <p>Outside of work, I play and build guitars, mix songs, and make olive oil. Here are some inspirations of mine:</p>
+  </div>
+  <div class="inspo" id="inspo" hidden>
+    <button class="inspo__nav inspo__nav--prev" type="button" aria-label="Previous">&larr;</button>
+    <div class="inspo__track" id="inspo-track"></div>
+    <button class="inspo__nav inspo__nav--next" type="button" aria-label="Next">&rarr;</button>
+  </div>
+
+  <section class="sec">
+    <h2 class="sec__h">Education</h2>
+    <div class="entry"><div class="entry__head"><span class="entry__title">PhD in economics</span><span class="entry__meta">2024-present</span></div><div class="entry__org">Universit&eacute; Paris 8</div><p class="entry__body">Dissertation on inclusive economic development using an ecosystem approach. Supervised by Thibault Darcillon and Matteo Cavallaro (Paris 8), Francesco Saraceno (Sciences Po/OFCE).</p></div>
+    <div class="entry"><div class="entry__head"><span class="entry__title">MPhil in economics</span><span class="entry__meta">2018-2020</span></div><div class="entry__org">Sciences Po &middot; Paris</div><p class="entry__body">Fulbright scholar. Thesis on integrating social psychology into macroeconomic models, supervised by Xavier Ragot (OFCE), published in the University of Oxford Social Macroeconomics series.</p></div>
+    <div class="entry"><div class="entry__head"><span class="entry__title">BPhil in economics; international and area studies</span><span class="entry__meta">2013-2017</span></div><div class="entry__org">University of Pittsburgh &middot; Honors College</div><p class="entry__body">Double major. Brackenridge fellow, 2015-2016.</p></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec__h">Networks and affiliations</h2>
+    <h3 class="subgroup__h">Research collaborators</h3>
+    <div class="deflist">
+      <div><strong>Banque de France &middot; Stanford</strong><span>Ongoing collaboration with Paul Hubert and Fergus Cumming on the distributional impact of fiscal policy on consumption.</span></div>
+      <div><strong>Sciences Po &middot; OFCE</strong><span>Continuing affiliation through teaching and supervisor relationships with Francesco Saraceno.</span></div>
+      <div><strong>University of Oxford</strong><span>Social Macroeconomics Working Paper Series, where my master's thesis was published.</span></div>
+    </div>
+    <h3 class="subgroup__h">Policy collectives</h3>
+    <div class="deflist">
+      <div><strong>Global Solutions Initiative</strong><span>G20 and G7 think-tank collaborative on multidimensional wellbeing and economic policy reform.</span></div>
+    </div>
+    <h3 class="subgroup__h">Alumni and teaching communities</h3>
+    <div class="deflist">
+      <div><strong>Sciences Po</strong><span>Alumni of the Doctoral School and continuing collaboration on teaching Master's program classes on european integration and the economics of the EU.</span></div>
+      <div><strong>Fulbright Program</strong><span>Alumnus of the 2018-2019 cohort, France.</span></div>
+      <div><strong>INSEAD &middot; Northwestern University</strong><span>Teaching affiliations through external grading and exchange-program instruction.</span></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec__h">Contact</h2>
+    <p class="prose" style="color:var(--muted); margin-top:0;">Best reached by LinkedIn or email.</p>
+    <div class="inline-links">
+      <a href="https://www.linkedin.com/in/alessandro-conway/" target="_blank">LinkedIn</a>
+      <a href="mailto:alessandroconway@gmail.com">Email</a>
+      <a href="https://github.com/conway1521" target="_blank">GitHub</a>
+      <a href="https://alessandroconway.substack.com" target="_blank">Substack</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var track = document.getElementById('inspo-track');
+  var box = document.getElementById('inspo');
+  if (!track || !box) return;
+  var base = "{{ '/assets/images/' | relative_url }}";
+  var MAX = 20, pending = MAX, shown = 0;
+  function decide() {
+    if (pending > 0) return;
+    if (shown === 0) return;
+    [].slice.call(track.children)
+      .sort(function (a, b) { return (+a.dataset.n) - (+b.dataset.n); })
+      .forEach(function (el) { track.appendChild(el); });
+    box.hidden = false;
+    var prev = box.querySelector('.inspo__nav--prev');
+    var next = box.querySelector('.inspo__nav--next');
+    if (shown <= 1) { prev.style.display = 'none'; next.style.display = 'none'; return; }
+    function step(dir) {
+      var first = track.querySelector('img');
+      if (!first) return;
+      var d = (first.getBoundingClientRect().width + 12) * dir;
+      if (dir > 0 && track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) track.scrollTo({ left: 0 });
+      else if (dir < 0 && track.scrollLeft <= 4) track.scrollTo({ left: track.scrollWidth });
+      else track.scrollBy({ left: d });
+    }
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var timer = setInterval(function () { step(1); }, 4500);
+    box.addEventListener('mouseenter', function () { clearInterval(timer); });
+    box.addEventListener('mouseleave', function () { timer = setInterval(function () { step(1); }, 4500); });
+  }
+  for (var i = 1; i <= MAX; i++) {
+    (function (n) {
+      var img = new Image();
+      img.alt = 'Inspiration ' + n;
+      img.dataset.n = n;
+      img.onload = function () { shown++; track.appendChild(img); pending--; decide(); };
+      img.onerror = function () { pending--; decide(); };
+      img.src = base + 'inspo-' + n + '.jpg';
+    })(i);
+  }
+})();
+</script>

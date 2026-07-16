@@ -1,0 +1,74 @@
+---
+layout: default
+title: A role taxonomy anchored to the federal codes
+permalink: /working-papers/role-taxonomy/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">A role taxonomy anchored to the federal codes</h1>
+    <p class="lede">The official occupation taxonomy is too coarse for modern labor data: one nurse code covers an ICU night nurse and a school nurse. Private taxonomies solve the granularity by floating free of the government codes. This builds the middle layer both sides miss, a role taxonomy that nests strictly inside the federal codes.</p>
+  </div>
+  <div class="standfirst">Machine learning &middot; measurement &middot; data engineering. A releasable taxonomy and resolver built on public data.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Private taxonomies cluster job titles into thousands of granular occupations, which is useful, but they float free of the government codes. That means they cannot inherit the federal task, skill, and wage infrastructure, they drift as the vendor re-clusters, and nobody outside the vendor can validate them. The alternative is a role layer that sits strictly inside the federal codes: 3,939 roles across 1,016 codes, built by clustering 57,543 alternate titles once the noise around them is stripped away.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The method</h2>
+    </div>
+    <div class="prose">
+      <p>The discipline is one rule. A distinction is a role only when it stays inside an 8-digit boundary and is meaningful within it. Anything that is really a level, a shift, a staffing arrangement, or a specialty modifier is a facet, stored separately rather than promoted to a new occupation. Titles are stripped of their facets, embedded, and clustered recursively with an abstention margin. The validation uses ground truth nobody else uses: the official 8-digit splits are themselves known-correct partitions, so the clustering can be scored against them directly.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">Nesting buys inheritance.</div>
+        <div class="finding__body">Because every role sits inside a federal code, it inherits the task, skill, and wage infrastructure attached to that code, stays stable across rebuilds, and can be checked by anyone. That is the property a floated taxonomy gives up for its granularity.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">The clustering reproduces known splits.</div>
+        <div class="finding__body">Scored against the official 8-digit splits, merge error is 0.091 to 0.104, decisively ahead of the alternative clustering methods at 0.38 and 0.85. The taxonomy recovers partitions the government already considers correct, which is the strongest evidence available that the rest of its distinctions are sound.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">03</span>
+        <div class="finding__head">A zero-training resolver assigns roles.</div>
+        <div class="finding__body">A centroid resolver with margin abstention covers 92 percent of tens of thousands of labeled titles with no training at all, and abstains rather than guessing on the rest.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The claim that roles carry economic content a title alone does not needs a direct test: how much of the wage variation within a single federal code is explained once workers are split into roles. Even a modest gain settles it. Alongside that, a stratified audit of role assignments measures agreement, and a like-for-like table against the floated taxonomies sets out the trade in the open. Because the inputs are public, the taxonomy and the resolver ship as a public artifact, which is the point: a granular occupation layer anyone can inherit and check.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

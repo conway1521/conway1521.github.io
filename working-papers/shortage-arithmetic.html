@@ -1,0 +1,78 @@
+---
+layout: default
+title: Shortage arithmetic
+permalink: /working-papers/shortage-arithmetic/
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Shortage arithmetic</h1>
+    <p class="lede">Headline occupational shortages subtract the supply of one occupation from the demand for that same occupation. But demand is for output, and employers substitute across near occupations. Ignoring that margin overstates shortages, and the correction is large.</p>
+  </div>
+  <div class="standfirst">Economics &middot; workforce policy. A transparent accounting correction any workforce board can apply.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>A shortage headline such as "the state will be short 23,641 nurses by 2033" is demand for nurses minus supply of nurses. But a hospital short of nurses shifts tasks to licensed practical nurses, assistants, paramedics in new roles, and telehealth. Every occupation sits inside a cluster of near-substitutes, and leaving that margin out systematically overstates the gap. This formalizes the substitution correction into something a workforce board can apply and criticize, using skill similarity to identify who can plausibly move.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The model</h2>
+    </div>
+    <div class="prose">
+      <p>Deliberately arithmetic rather than equilibrium modeling. Take a raw gap and subtract, tier by tier of skill adjacency, the workers who can actually fill it:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$\text{gap}_{\text{corrected}} = \text{gap}_{\text{raw}} - \sum_{\text{tiers}} \min\!\big(\text{absorbable share} \times \text{adjacent slack},\ \text{tier capacity}\big)$$</p>
+      </div>
+      <p>Adjacency comes from occupation-pair skill similarity, tiered by retraining distance. A worker only counts if they clear four screens: adjacency (close enough in skills), availability (slack in the adjacent occupation), permissibility (licensing and scope of practice), and willingness (the wage moves the right way). The correction produces a range rather than a new point estimate.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">Substitution absorbs 10 to 25 percent of raw gaps.</div>
+        <div class="finding__body">Worked through for the nurse case, the substitution margin deflates the headline shortage by 15 to 20 percent. A gap reported as a hard number is really a range, and the range sits well below the headline.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">Licensing is what makes a shortage real.</div>
+        <div class="finding__body">In an unlicensed trade, most adjacent occupations sit in the closest tier and substitution absorbs a lot. In licensed occupations, scope-of-practice rules block the substitution that skills alone would allow. So the overstatement is smallest exactly where policy attention and public money are highest.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The correction generalizes from the worked cases to a full set of occupations, so the distribution of overstatement can be read off directly and the licensing pattern tested rather than asserted. The absorption shares are bounded from the mobility literature and then stress-tested by varying the adjacency thresholds, which shows how much of the answer rests on judgement and how much on the data. The deliverable is a correction simple enough for a workforce board to run on its own shortage numbers, with the licensing overlay carried as a graded blocker per occupation.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

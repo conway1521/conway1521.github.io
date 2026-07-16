@@ -1,0 +1,149 @@
+---
+layout: default
+title: The labor market digital twin
+description: "A state's workforce as a conserved system: cohort accounting over 501 occupations, demand built four ways, and the gap as the output."
+permalink: /portfolio/labor-market-twin/
+ink_js: true
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/portfolio' | relative_url }}">Portfolio</a></span>
+      <span class="eyebrow">Illustrative &middot; magnitudes withheld</span>
+    </div>
+    <h1 class="display">The labor market digital twin</h1>
+    <p class="lede">A state's workforce as a conserved system: five inflows feed the stock, three outflows drain it, demand is built four ways, and the gap is what the model solves for.</p>
+  </div>
+  <div class="standfirst">Economics &middot; policy &middot; data science &middot; engineering. First end-to-end run projects a state nursing workforce to 2033 and is informing state policy.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The problem</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>States plan their workforce with statistics that lag by years and live in silos: employment here, graduations there, migration somewhere else, none of them in the same accounting frame. Projections arrive as black boxes, a number with no visible mechanics. The alternative is to model the market the way an economist would audit it: as stocks and flows that must balance, with every term measured, sourced, and carrying its uncertainty.</p>
+    </div>
+  </div>
+
+  <div style="max-width:940px; margin:0 auto;">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">How it works</h2>
+    </div>
+    <div class="stages">
+      <div class="grid2__item">
+        <h3><span class="n">01</span>Supply as conserved flows</h3>
+        <p>Cohort accounting over 501 occupations and 51 jurisdictions: graduates in from the training pipeline, migration in and out from nineteen vintages of census microdata, exits and retirements from empirical age-specific rates. The identity must hold, so nothing can be fudged.</p>
+        <div class="disc">Economics &middot; data science</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">02</span>Demand built four ways, never averaged</h3>
+        <p>Requisition signals, structural projections, population-anchored forward need, and facility blueprints: four estimates of the same demand, kept apart on purpose. Where they agree, act. Where they diverge, investigate. Divergence is information, not error.</p>
+        <div class="disc">Economics &middot; data science</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">03</span>Sourced terms, flagged gaps</h3>
+        <p>Transfers are removed from exits before anything is projected. Thin cells fall back to national rates and say so. Harmonizing two decades of occupational codes carries uncertainty flags rather than silent joins.</p>
+        <div class="disc">Data science &middot; engineering</div>
+      </div>
+      <div class="grid2__item">
+        <h3><span class="n">04</span>From projection to decision</h3>
+        <p>On top of the engine: transition pathways gated by credential requirements and wage premiums, forward-looking market signals, and evidence-graded policy levers, so a projected gap comes with the moves that could close it.</p>
+        <div class="disc">Policy &middot; economics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- live figure: the flow model -->
+  <div class="plate" style="max-width:880px;">
+    <div class="plate__head">
+      <span class="plate__title">The model</span>
+      <span class="plate__hint">hover a node</span>
+    </div>
+    <p class="plate__purpose">One occupation, one region. Five inflows feed the stock. Three outflows drain it. Demand is built four ways. The gap is the output.</p>
+    <div class="flow-scroll">
+      <div class="flow-canvas" id="flow-canvas"></div>
+    </div>
+    <div class="flow-note">
+      <span class="flow-note__name" id="flow-note-name">The whole model</span>
+      <span class="flow-note__blurb" id="flow-note-blurb">Hover any node. Supply flows through the stock. Demand is built four ways. The gap is the output.</span>
+    </div>
+  </div>
+
+  <!-- job clusters: the adjacent population -->
+  <div class="plate" style="max-width:720px;">
+    <div class="plate__head">
+      <span class="plate__title">The adjacent population</span>
+      <span class="plate__hint">hover an occupation</span>
+    </div>
+    <p class="plate__purpose">Supply into an occupation is not only the people already in it. It is everyone one retraining step away. For a target occupation the twin spells out that reachable pool: which occupations are skill-adjacent, how large each pool is, and what bridge it takes to cross.</p>
+    <div class="clu-scroll">
+      <div class="clu-canvas" id="cluster-canvas"></div>
+    </div>
+    <div class="plate__note" id="cluster-note" data-default="Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.">Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.</div>
+    <div class="plate__caption">Adjacency from 798k occupation-pair similarities, tiered by retraining distance. The reachable pool is what the model feeds into the adjacent-population inflow, discounted by the credential and wage distance of each bridge.</div>
+  </div>
+
+  <!-- the divergence -->
+  <div class="plate" style="max-width:560px;">
+    <div class="plate__head">
+      <span class="plate__title">Demand, from four angles</span>
+      <span class="plate__hint">hover an angle</span>
+    </div>
+    <p class="plate__purpose">Demand is estimated four separate ways, each catching a different signal at a different horizon. They are never averaged. Where the four agree, that is confidence. Where they diverge, that is a read on which horizon is moving.</p>
+    <svg id="div-lines" viewBox="0 0 440 120" style="width:100%; height:auto; display:block;">
+      <line x1="20" y1="110" x2="420" y2="110" stroke="#E7E7E3" stroke-width="1"></line>
+      <path data-i="0" d="M20 84 C 70 66, 100 96, 150 74 C 210 48, 250 92, 310 70 C 360 54, 395 80, 420 72" fill="none" stroke="#131313" stroke-width="1.3"></path>
+      <path data-i="1" d="M20 96 C 120 88, 240 72, 420 50" fill="none" stroke="#131313" stroke-width="1.3" stroke-dasharray="7 4"></path>
+      <path data-i="2" d="M20 98 C 120 86, 240 58, 420 28" fill="none" stroke="#131313" stroke-width="1.3" stroke-dasharray="2 4"></path>
+      <path data-i="3" d="M20 97 C 120 90, 240 74, 420 54" fill="none" stroke="#131313" stroke-width="1.3" stroke-dasharray="14 4"></path>
+    </svg>
+    <div id="div-legend" data-default="Four estimates of the same demand, deliberately not reconciled. Where they agree, act. Where they diverge, investigate." style="margin-top:8px;">
+      <div class="div-legend-row" data-i="0" data-note="Requisition signal &middot; open requisitions and budgeted positions, spiky and seasonal. The immediate signal of what employers are hiring now.">
+        <span class="div-legend-row__swatch" style="background:#131313;"></span><span class="div-legend-row__name">Requisition signal</span>
+      </div>
+      <div class="div-legend-row" data-i="1" data-note="Structural growth &middot; total positions, filled headcount plus open requisitions, projected forward. The structural trend.">
+        <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 7px,transparent 7px 11px);"></span><span class="div-legend-row__name">Structural growth</span>
+      </div>
+      <div class="div-legend-row" data-i="2" data-note="Forward need &middot; population-anchored scenarios with aging intensity. What the region will require, steepest of all.">
+        <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 2px,transparent 2px 6px);"></span><span class="div-legend-row__name">Forward need</span>
+      </div>
+      <div class="div-legend-row" data-i="3" data-note="Blueprint &middot; ideal composition per facility archetype and ramp state, triangulated from public sources.">
+        <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 14px,transparent 14px 18px);"></span><span class="div-legend-row__name">Blueprint</span>
+      </div>
+    </div>
+    <div class="plate__note" id="div-note">Four estimates of the same demand, kept apart on purpose. Where they agree, act. Where they diverge, look closer.</div>
+    <div class="plate__caption plate__caption--soft">Short-horizon demand from requisition dynamics with ARIMA and SARIMA. Longer horizons from structural projections and population-anchored need. Gradient boosting is in testing as a cross-check.</div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Tools used</h2>
+    </div>
+    <div class="tools">
+      <div class="tool-row"><span class="tool-row__name">Python, pandas, numpy, scipy</span><span class="tool-row__use">Cohort accounting over 501 occupations and 51 jurisdictions.</span></div>
+      <div class="tool-row"><span class="tool-row__name">statsmodels</span><span class="tool-row__use">ARIMA and SARIMA demand projection at short horizons.</span></div>
+      <div class="tool-row"><span class="tool-row__name">scikit-learn</span><span class="tool-row__use">Gradient boosting, in testing as a demand cross-check.</span></div>
+      <div class="tool-row"><span class="tool-row__name">ACS PUMS microdata</span><span class="tool-row__use">Bilateral migration flows across 19 census vintages.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Kaplan-Meier, cohort methods</span><span class="tool-row__use">Exits, retirements, and retention.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Supabase, Postgres</span><span class="tool-row__use">The workforce panel and engine outputs.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Dash, Plotly</span><span class="tool-row__use">The state dashboards over the engine.</span></div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">Final state</h2>
+    </div>
+    <div class="prose">
+      <p>The structure is the production system: the same flows, identities, and demand layers run over real census microdata, training-pipeline records, and employer panels. The first end-to-end run projects one state's nursing workforce through 2033 across all of its counties, and is informing state workforce policy and training investment. Where the engine can be checked against the federal system it is: employer-survey forward demand for the pilot occupation lands within 7% of the federal projection. The curves and magnitudes shown here are illustrative. The real runs carry their sources and uncertainty with them.</p>
+    </div>
+    <a href="{{ '/portfolio' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
+  </div>
+
+</div>

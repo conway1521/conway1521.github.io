@@ -1,0 +1,70 @@
+---
+layout: default
+title: Does the choice of AI-exposure measure matter?
+permalink: /working-papers/exposure-measures/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Does the choice of AI-exposure measure matter?</h1>
+    <p class="lede">At least six serious measures score how exposed each occupation is to AI, and most studies pick one without justifying it. If the measures disagree, every claim about which jobs are at risk is partly an artifact of that choice. This holds everything constant except the measure and quantifies where the choice bites.</p>
+  </div>
+  <div class="standfirst">Economics &middot; machine learning. A common-task-framework note on measurement, fully public data.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Felten's AIOE, Webb's patent measure, Brynjolfsson's SML, Eloundou's GPT rubric, and two usage-based measures all claim to score occupational exposure to AI, and they are built on different primitives. When a paper or a policy shop reports that a given share of jobs is exposed, that number carries the measure that produced it. If the measures agree, the choice is harmless. If they disagree, the ranking of at-risk occupations reflects the instrument as much as the labor market.</p>
+      <p>The Skills DNA engine wires each measure as a swappable adapter over one shared occupation and skill vocabulary. That makes a clean experiment possible: run the identical downstream computation under each measure and report exactly where, and how much, the answer changes.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The approach</h2>
+    </div>
+    <div class="prose">
+      <p>Hold the engine fixed and swap only the exposure adapter. For every pair of measures, compute rank agreement at the occupation and skill level, and the share of total employment whose exposed-or-not classification flips across measures. Separate agreement at the extremes from agreement in the middle. Then run a single adoption scenario under each measure to show whether the choice propagates through a structural model or only reorders a list. Harmonizing measures that use different occupation vintages is itself a source of discretion, so every harmonization choice is documented as part of the result.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">The measures agree at the ends and split in the middle.</div>
+        <div class="finding__body">Telemarketers read as exposed and roofers do not, whichever measure you use. The disagreement concentrates in the middle of the distribution, which is exactly where policy targeting happens, so the choice matters most for the occupations decisions actually turn on.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">Capability and usage measures are close to unrelated.</div>
+        <div class="finding__body">In the dollar version of this comparison, capability-based measures correlate with each other but near zero with observed usage. They are not noisy versions of one construct, which is the case for reporting several measures rather than committing to one.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The sharpest test is predictive: line each measure up against where wages and employment actually moved after 2022 and see which one tracks the data, framed as short-run association rather than proof of the true measure. Then push a single adoption shock through the structural engine under each measure to show the spread in role-resilience rankings, so a reader can see the choice move real outcomes downstream, beyond simply reordering a leaderboard. The practical output is guidance: which measure suits which question, and report-multiple-measures as the default.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

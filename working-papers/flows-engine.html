@@ -1,0 +1,90 @@
+---
+layout: default
+title: The workforce flow engine
+permalink: /working-papers/flows-engine/
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">The workforce flow engine</h1>
+    <p class="lede">Decomposing occupational workforce stocks into behavioral flow parameters, entry, exit, interstate migration, and residual churn, at the grain of state by occupation by age band by year, with honest uncertainty.</p>
+  </div>
+  <div class="standfirst">Labor economics &middot; formal demography &middot; data engineering. A standalone dissertation paper and a queryable parameter database.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>Every occupation in every state has a metabolism. People flow in as new graduates and movers, flow out as retirees, leavers, and people moving away, with a background rate of churn underneath. Nobody publishes those metabolic rates. Standard workforce forecasts answer how many. They do not answer why, which is what policy can actually act on.</p>
+      <p>This engine decomposes occupational workforce stocks into their underlying flow components, using Census ACS microdata. The residual that remains once the observable flows are accounted for is not treated as model error. It is a behavioral parameter: the stable background rate of turnover for that occupation in that state. A state that knows its nurse stock will fall by twelve percent has a problem statement. A state that knows the fall is driven by out-migration concentrated in the 35 to 44 age band, while entry and retirement track national norms, has an intervention design. The engine is built for the state agencies and funders who design those interventions.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The model</h2>
+    </div>
+    <div class="prose">
+      <p>For an occupation in a state between year \( t \) and \( t+1 \), the stock satisfies a cohort-component accounting identity adapted from formal demography:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$\text{Stock}_{t+1} = \text{Stock}_{t} + \text{Entrants} + \text{In-migrants} - \text{Exits} - \text{Out-migrants} + \text{Residual churn}$$</p>
+      </div>
+      <p>Migration is observed directly from the one-year-ago state of residence in the ACS. Entry is estimated from the young age bands and validated against graduation and licensure counts. Exit is estimated from the decline of the upper age bands across vintages. Because the ACS is a repeated cross-section rather than a true panel, occupation switching and re-entry are not separately identified, so both fold into the churn residual, which is measured with design-based standard errors and netted for mortality. In levels the identity is theory-free arithmetic, and every parameter it produces carries an honest error bar.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">Findings</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">Occupations have distinct lifecycles.</div>
+        <div class="finding__body">Across six occupations and nine ACS vintages (2015 to 2024, no 2020), 1.67 million records with all 80 replicate weights, the shapes separate cleanly. Teachers retire about five years before nurses. Software absorbs career-switchers well into their thirties. Aides run on churn rather than retirement.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">The fingerprints repeat, so they are behavior and not noise.</div>
+        <div class="finding__body">National lifecycle schedules hold across the pandemic, with exit schedules correlating up to 0.75 before and after. State migration fingerprints persist through COVID at about 0.6. The fine state-by-age grain is noise-dominated in the raw data, which is what the shrinkage layer is built to handle.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">03</span>
+        <div class="finding__head">Four independent records agree with the estimates.</div>
+        <div class="finding__body">OEWS employment stocks, IRS county-to-county migration (Spearman 0.41 to 0.79), BLS exit levels (about a two-to-one net-to-gross scaling), and NCSBN nurse licenses (a national ratio of 1.56, stable across states).</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">04</span>
+        <div class="finding__head">Tech hubs hold their workers as much as they draw them in.</div>
+
+        <div class="finding__body">A shrinkage layer with a two-threshold rule flags a disciplined 5 to 8 percent of cells as genuinely abnormal. Young software developers in California, Washington, and Colorado are about half as likely to leave as the national norm, so a hub's advantage runs through retention as much as inflow.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The exit and migration dimensions are measured. The step that closes the identity is the entry family, estimated from the young age bands and anchored to graduation and licensure counts. With entry in place, the churn residual can be tested for stability directly, which is what turns it from a leftover into a parameter you can act on. From there the surface widens from six occupations toward the full set, and from states toward metros where the samples hold. The parameter surface then answers a concrete policy question that the field keeps asking without an instrument: what does nurse license portability actually do to migration, at which ages, using unlicensed occupations as the control.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

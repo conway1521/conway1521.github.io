@@ -1,0 +1,169 @@
+---
+layout: default
+title: Applied
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">Applied</span>
+    <h1 class="display">Applications from my work and research</h1>
+    <p class="lede">Interactive tools and working papers that pair rigorous methodology with accessible interfaces, so practitioners and policymakers can explore the data and test the ideas.</p>
+  </header>
+
+  <section class="sec">
+    <h2 class="sec__h">Live</h2>
+    <div class="agenda">
+      <div class="agenda-card agenda-card--static">
+        <div class="agenda-card__title">Open Inequality Atlas: wealth</div>
+        <p class="agenda-card__abstract">Authoritative wealth-inequality data is scattered across mutually incompatible sources: WID, the ECB's HFCS, the Luxembourg Wealth Study, the US SCF, and the Fed's Distributional Financial Accounts. Each uses a different unit, methodology, and license, so a comparable cross-country panel is a research project in itself. The Atlas closes that gap into a single, versioned, openly licensed panel of household net-wealth inequality: 10,783 observations across 213 countries from 1800 to 2025, every row tagged by source priority and comparability tier.</p>
+        <div class="agenda-card__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
+      </div>
+      <div class="agenda-card agenda-card--static">
+        <div class="agenda-card__title">NED dashboard: California regional analysis</div>
+        <p class="agenda-card__abstract">An interactive dashboard exploring regional economic-development indicators across California. It builds theoretical foundations from practitioners' field-derived insight, mayors, community colleges, workforce boards, employers, and translates those perspectives into quantitative analysis, synthesizing many sources into a granular view of inclusive-development dynamics.</p>
+        <div class="agenda-card__links"><a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">Launch dashboard (takes a minute to load)</a></div>
+      </div>
+      <div class="agenda-card agenda-card--static">
+        <div class="agenda-card__title">Wellbeing and macroeconomics explorer</div>
+        <p class="agenda-card__abstract">Makes the SAGE approach from the Oxford working paper interactive: how social-psychology parameters shape economic outcomes during shocks, and where modern macroeconomics misses quality-of-life dynamics.</p>
+        <p class="agenda-card__abstract">To be shared to QuantEcon, the open-source project for quantitative economics, computational lectures and tools in Python and Julia founded by Thomas Sargent and John Stachurski and used widely in teaching and research.</p>
+        <div class="agenda-card__links"><a href="https://conway1521.github.io/sage_macro/" target="_blank" rel="noopener">Launch the explorer</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="in-development">
+    <h2 class="sec__h">In development</h2>
+    <p class="lede" style="font-size:15px; margin:2px 0 18px; max-width:680px;">Each is the beginning of a research paper or part of a broader research agenda, emerging from my work in labor markets and inclusive, resilient economic development. Many are open questions I have been working on over time, feel free to reach out to collaborate. Click any one to open its idea and its model, and follow through to the full working paper.</p>
+    <div class="agenda">
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">The Skills DNA of the economy</div>
+          <div class="agenda-card__meta">task-based labor market, calibrated AI exposure &middot; in progress</div>
+          <p class="agenda-card__abstract">Roles, tasks, and skills are three equivalent decompositions of the same output. Price every task and every skill, and AI exposure becomes a question of dollars: which steps an appliance can do, which abilities lose their market, and who is affected.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Push occupational pay down through the tasks each role performs and the skills each task demands. Nothing is created or destroyed, so the same national total appears as industry output, occupational pay, the value of tasks, and the value of skills. AI enters as an appliance that can perform some priced steps, which turns exposure into a measurable flow of dollars.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$Y = A \cdot R^{\alpha} \, K^{\beta}, \qquad R = \left(\sum_{k} \gamma_k \, s_k^{\,\rho}\right)^{1/\rho}$$</p>
+            <p style="margin:8px 0 0;">In levels the identity is theory-free arithmetic. The task shares \( \beta_i \), skill shares \( \gamma_{ik} \), and automatable shares \( \delta_i \) are read straight from the data. The CES curvature and augmentation \( A \) enter only for counterfactuals.</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/skills-dna' | relative_url }}">Read the full working paper &rarr;</a> <a href="{{ '/portfolio/skills-framework' | relative_url }}">The production system</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">The workforce flow engine</div>
+          <div class="agenda-card__meta">occupational flow parameters &middot; in progress</div>
+          <p class="agenda-card__abstract">Every occupation in every state has a metabolism: who enters, who exits, who moves, and a background rate of churn. Standard forecasts give the totals. This measures the rates underneath them from Census microdata, so policy can act on the causes of a workforce change.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Standard forecasts answer how many. This decomposes an occupation's stock into entry, exit, migration, and residual churn at state by occupation by age band by year. The churn residual is kept as a behavioral parameter, so a state can tell a retention problem from a pipeline problem.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\text{Stock}_{t+1} = \text{Stock}_{t} + \text{Entrants} + \text{In-migrants} - \text{Exits} - \text{Out-migrants} + \text{Residual churn}$$</p>
+            <p style="margin:8px 0 0;">A cohort-component identity on ACS repeated cross-sections. Migration is observed directly. Entry and exit are estimated from age-band dynamics and validated against external records.</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/flows-engine' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Where occupations move</div>
+          <div class="agenda-card__meta">interstate migration by occupation &middot; in progress</div>
+          <p class="agenda-card__abstract">We know a lot about the interstate migration of people and little about migration by occupation. Yet occupation is where migration policy bites: nurse licensure compacts, engineer reciprocity, remote-work eligibility. This maps it across 501 occupations and twenty years of census microdata.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Bilateral state-to-state migration flows by occupation, over 501 codes, 51 jurisdictions, and nineteen vintages of census microdata. An atlas of which occupations move and where, and the wage elasticities of who moves for money. The wide complement to the workforce flow engine.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\mathbb{E}\big[\text{flow}_{o \to d}^{\,k}\big] = \exp\!\Big(\eta_k \ln \tfrac{w_d}{w_o} + \beta \ln \text{dist}_{od} + \phi_o + \psi_d\Big)$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/occupation-migration' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Do skills predict moves?</div>
+          <div class="agenda-card__meta">occupational mobility &middot; in progress</div>
+          <p class="agenda-card__abstract">Skill-similarity scores are used as if they were evidence that workers move. They are a hypothesis about feasibility. This tests whether workers actually move in proportion to similarity, once size, wages, and geography are held constant.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Estimate a gravity model of occupational flows and read off the elasticity of moves to skill similarity, then check whether the tier thresholds the field uses match where observed flows actually break.</p>
+          <div class="agenda-card__sub">The model</div>
+          <div class="math-block">
+            <p style="margin:0;">$$\ln \text{flow}_{i \to j} = \eta \, \ln \text{sim}_{ij} + \beta_1 \ln \tfrac{w_j}{w_i} + \beta_2 \ln E_i + \beta_3 \ln E_j + \gamma \, \text{licensed}_j + \varepsilon_{ij}$$</p>
+          </div>
+          <div class="agenda-card__links"><a href="{{ '/working-papers/skills-and-moves' | relative_url }}">Read the full working paper &rarr;</a></div>
+        </div>
+      </details>
+
+      <details class="agenda-card">
+        <summary>
+          <div class="agenda-card__title">Fiscal policy's distributional impact on consumption</div>
+          <div class="agenda-card__meta">with Paul Hubert and Fergus Cumming &middot; in progress</div>
+          <p class="agenda-card__abstract">Identifies the channels through which fiscal policy reaches consumption across households of varying credit constraints, building on Hubert and Cumming (2021) to connect asset liquidity with a fiscal-policy dataset.</p>
+        </summary>
+        <div class="agenda-card__body">
+          <div class="agenda-card__sub">The idea</div>
+          <p>Asks how a fiscal shock reaches consumption differently depending on households' credit constraints and asset liquidity. It pairs a narrative identification of shocks with agent heterogeneity, so a fiscal shock's effect can be measured where it actually lands rather than on average.</p>
+          <div class="agenda-card__sub">Where it stands</div>
+          <p>In progress, with Paul Hubert and Fergus Cumming.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="wp-stack">
+      <div class="wp-stack__head">More working papers, earlier stage</div>
+      <a class="wp-item" href="{{ '/working-papers/occupation-coding' | relative_url }}">
+        <span class="wp-item__title">Occupational coding at the 8-digit frontier</span>
+        <span class="wp-item__desc">Retrieval has a ceiling classification clears, and more trainable capacity only overfits.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/role-taxonomy' | relative_url }}">
+        <span class="wp-item__title">A role taxonomy anchored to the federal codes</span>
+        <span class="wp-item__desc">3,939 roles nested inside the federal codes, validated against the official 8-digit splits.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/exposure-measures' | relative_url }}">
+        <span class="wp-item__title">Does the choice of AI-exposure measure matter?</span>
+        <span class="wp-item__desc">Six measures, held constant except the measure, agree at the tails and split in the middle.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/vacancy-measurement' | relative_url }}">
+        <span class="wp-item__title">What does a vacancy measure?</span>
+        <span class="wp-item__desc">Three measurement objects reconciled, with a new stale-inventory diagnostic.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/shortage-arithmetic' | relative_url }}">
+        <span class="wp-item__title">Shortage arithmetic</span>
+        <span class="wp-item__desc">Substitution across near occupations deflates headline gaps by 15 to 20 percent.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/facility-demand' | relative_url }}">
+        <span class="wp-item__title">Workforce demand from a press release</span>
+        <span class="wp-item__desc">An announced job count turned into a quarterly occupational hiring profile.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/beige-book' | relative_url }}">
+        <span class="wp-item__title">Reading the Beige Book with LLMs</span>
+        <span class="wp-item__desc">Structured labor sentiment from forty years of Fed reports, at thirteen cents a release.</span>
+      </a>
+      <a class="wp-item" href="{{ '/working-papers/panel-synthesis' | relative_url }}">
+        <span class="wp-item__title">From employer panels to regional workforce stocks</span>
+        <span class="wp-item__desc">Fusing an employer panel with public benchmarks to reconstruct a region's workforce.</span>
+      </a>
+    </div>
+  </section>
+
+</div>

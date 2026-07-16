@@ -1,0 +1,84 @@
+---
+layout: default
+title: Where occupations move
+permalink: /working-papers/occupation-migration/
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/applied' | relative_url }}#in-development">Working papers</a></span>
+      <span class="eyebrow">In progress</span>
+    </div>
+    <h1 class="display">Where occupations move</h1>
+    <p class="lede">We know a lot about the interstate migration of people and very little about migration by occupation. Yet occupation is where migration policy bites: nurse licensure compacts, engineer reciprocity, teacher pension portability, remote-work eligibility. This maps it across 501 occupations and twenty years of census microdata.</p>
+  </div>
+  <div class="standfirst">Economics &middot; data science. A descriptive atlas and a distribution of wage elasticities, on public microdata.</div>
+
+  <div class="col">
+    <div class="secnum" style="margin-top:0;">
+      <span class="secnum__n">01</span>
+      <h2 class="secnum__h">The idea</h2>
+    </div>
+    <div class="prose prose--lg">
+      <p>The migration literature treats occupation coarsely or not at all, and the licensing-and-migration literature treats one occupation at a time. Neither says, across the whole labor market, which occupations move and which stay put. This builds bilateral state-to-state migration flows by occupation from nineteen vintages of census microdata, 2005 to 2024 with the 2020 gap, over 501 harmonized occupation codes and 51 jurisdictions, and carries honest uncertainty flags where the older occupation coding is shaky.</p>
+      <p>It is the wide complement to the <a href="{{ '/working-papers/flows-engine' | relative_url }}">workforce flow engine</a>, which goes deep on a handful of occupations at age-band grain. Together they are one program: the engine measures a few metabolisms closely, this measures the whole map.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">02</span>
+      <h2 class="secnum__h">The model</h2>
+    </div>
+    <div class="prose">
+      <p>A gravity model of migration flows, estimated for each occupation with a method that keeps the many origin-destination pairs where no one moves rather than dropping them:</p>
+      <div class="math-block">
+        <p style="margin:0;">$$\mathbb{E}\big[\text{flow}_{o \to d}^{\,k}\big] = \exp\!\Big(\eta_k \ln \tfrac{w_d}{w_o} + \beta \ln \text{dist}_{od} + \phi_o + \psi_d\Big)$$</p>
+      </div>
+      <p>The headline is \( \eta_k \), the elasticity of occupation \( k \)'s migration to the origin-to-destination wage gap, with origin and destination effects absorbing everything about the places themselves. A second stage regresses those elasticities on occupation characteristics, which is where the policy result lives.</p>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">03</span>
+      <h2 class="secnum__h">What it settles</h2>
+    </div>
+    <div>
+      <div class="finding">
+        <span class="finding__n">01</span>
+        <div class="finding__head">Which occupations move, and which are anchored.</div>
+        <div class="finding__body">The atlas ranks migration rates across all 501 occupations. Travel-intensive and early-career occupations move most, licensed and place-bound ones least, and the corridor maps show where each goes. The remote-work era shows up as a clean break for computer occupations.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">02</span>
+        <div class="finding__head">Whether the migration decline is behavior or composition.</div>
+        <div class="finding__body">US migration has fallen for decades and nobody has cleanly separated the causes. A shift-share of the decline into within-occupation rate changes against a compositional shift toward low-mobility occupations answers it directly, which no aggregate series can.</div>
+      </div>
+      <div class="finding">
+        <span class="finding__n">03</span>
+        <div class="finding__head">What makes a workforce move for money.</div>
+        <div class="finding__body">The distribution of wage elasticities across occupations, set against licensing, education, and remote-feasibility. The headline is that licensing dampens the response: a license keeps workers in place even when the wage gap says move. That is the result compacts and reciprocity are meant to act on.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="secnum">
+      <span class="secnum__n">04</span>
+      <h2 class="secnum__h">What is next</h2>
+    </div>
+    <div class="prose">
+      <p>The panel and the flows are built. The estimation layer is the work: the gravity models with origin and destination effects, and the shift-share that splits the migration decline. If the cell sizes hold up, a licensing event study reads the Nurse Licensure Compact as a staggered treatment on nurse in-migration, and is dropped cleanly if it is underpowered rather than stretched. The occupation-coding method that stitches twenty years of shifting codes into one panel ships as a companion data note, since anyone else building on this microdata needs it.</p>
+    </div>
+    <a href="{{ '/applied' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
+  </div>
+
+</div>

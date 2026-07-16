@@ -1,0 +1,119 @@
+---
+layout: default
+title: Extra problems I solved
+description: "Smaller pieces from the same workforce platform, each a distinct data problem with its figure. Illustrative, synthetic data."
+permalink: /portfolio/extra-problems/
+---
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead__row">
+      <span class="eyebrow"><a href="{{ '/portfolio' | relative_url }}">Portfolio</a></span>
+      <span class="eyebrow">Illustrative &middot; synthetic data</span>
+    </div>
+    <h1 class="display">Extra problems I solved</h1>
+    <p class="lede">Smaller pieces from the same platform. Each is a distinct data problem: the problem, the figure it produces, how it is solved, and the stack behind it. Figures are illustrative and synthetic.</p>
+  </div>
+
+  <!-- 01 peer benchmark -->
+  <div class="xp">
+    <h3 class="xp__title">Is our turnover bad, and against whom?</h3>
+    <div class="xp__disc">The peer benchmark</div>
+    <p class="xp__p"><strong>The problem.</strong> An employer's turnover number means nothing on its own. It only becomes a signal against comparable employers, at the occupation level, and that comparison is impossible while everyone names the same job differently.</p>
+    <div class="xp__fig">
+      <div class="pb-row"><span class="pb-row__name">Registered Nurse</span><div class="pb-track"><div class="pb-range" style="left:35%; width:27%;"></div><div class="pb-med" style="left:44%;"></div><div class="pb-dot" style="left:51%;"></div></div><span class="pb-val">5.1%</span></div>
+      <div class="pb-row"><span class="pb-row__name">Surgical Technologist</span><div class="pb-track"><div class="pb-range" style="left:50%; width:35%;"></div><div class="pb-med" style="left:61%;"></div><div class="pb-dot" style="left:84%;"></div></div><span class="pb-val">8.4%</span></div>
+      <div class="pb-row"><span class="pb-row__name">Nurse Aide</span><div class="pb-track"><div class="pb-range" style="left:55%; width:35%;"></div><div class="pb-med" style="left:68%;"></div><div class="pb-dot" style="left:72%;"></div></div><span class="pb-val">7.2%</span></div>
+      <div class="pb-row"><span class="pb-row__name">Medical Assistant</span><div class="pb-track"><div class="pb-range" style="left:40%; width:35%;"></div><div class="pb-med" style="left:59%;"></div><div class="pb-dot" style="left:49%;"></div></div><span class="pb-val">4.9%</span></div>
+      <div class="pb-legend"><span><b></b> this employer</span><span><i></i> peer range</span><span>| peer median</span></div>
+    </div>
+    <p class="xp__p"><strong>The solve.</strong> Because every title resolves to a federal code, an employer sits against comparable employers at the same occupation. The bar is the peer range, the tick is the median, the dot is this firm. Surgical Technologist is the outlier worth a conversation. Medical Assistant is better than peers. Benchmarks are built under k-anonymity, so a thin cell is withheld rather than shown noisy.</p>
+    <div class="xp__stack"><strong>Stack</strong> Python &middot; the occupation resolver &middot; Supabase with k-anonymity floors</div>
+  </div>
+
+  <!-- 02 where to hire from -->
+  <div class="xp">
+    <h3 class="xp__title">Supply is abstract until it is a list of places to call</h3>
+    <div class="xp__disc">Where to hire from</div>
+    <p class="xp__p"><strong>The problem.</strong> A vacancy is only actionable if you know who nearby actually produces that worker. "Nurses are scarce" is a headline. "These four programs graduate 1,900 a year within an hour" is a plan.</p>
+    <div class="xp__fig">
+      <div>
+        <div class="hf-row"><span class="hf-row__name">Maricopa Community Colleges</span><span class="hf-row__meta">Nursing (ADN) &middot; 29-1141</span><span class="hf-row__n">1,240/yr &middot; 12 mi</span></div>
+        <div class="hf-row"><span class="hf-row__name">Gateway Community College</span><span class="hf-row__meta">Surgical Technology &middot; 29-2055</span><span class="hf-row__n">120/yr &middot; 8 mi</span></div>
+        <div class="hf-row"><span class="hf-row__name">Pima Community College</span><span class="hf-row__meta">Medical Assisting &middot; 31-9092</span><span class="hf-row__n">410/yr &middot; 40 mi</span></div>
+        <div class="hf-row"><span class="hf-row__name">Aya Healthcare (agency)</span><span class="hf-row__meta">Travel RN &middot; 29-1141</span><span class="hf-row__n">~9k placements/yr</span></div>
+      </div>
+    </div>
+    <p class="xp__p"><strong>The solve.</strong> Supply is materialized as places you can reach: 35,000 training providers mapped by occupation pipeline and 8,000 staffing agencies mapped by federal code, each carrying a program, a volume, a distance, and a contact. A vacancy points to the specific feeders that fill it.</p>
+    <div class="xp__stack"><strong>Stack</strong> Python &middot; geocoding &middot; the occupation resolver &middot; Supabase</div>
+  </div>
+
+  <!-- 03 career transitions -->
+  <div class="xp">
+    <h3 class="xp__title">Which moves from a job are actually worth backing?</h3>
+    <div class="xp__disc">Career transitions</div>
+    <p class="xp__p"><strong>The problem.</strong> Career advice is full of moves that sound plausible and fail in practice: a license wall, a wage cut, no local training. A worker or a workforce board needs the moves that clear all of those at once.</p>
+    <div class="xp__fig">
+      <div class="xp__cap" style="margin:0 0 6px;">From Nurse Aide</div>
+      <div class="tr-row"><span class="tr-mark tr-mark--yes"></span><div><div class="tr-name">Licensed Practical Nurse</div><div class="tr-note">bridge program, 12 to 18 months, served locally</div></div><span class="tr-delta">+34%</span></div>
+      <div class="tr-row"><span class="tr-mark tr-mark--yes"></span><div><div class="tr-name">Medical Assistant</div><div class="tr-note">short credential, high local capacity</div></div><span class="tr-delta">+18%</span></div>
+      <div class="tr-row"><span class="tr-mark tr-mark--yes"></span><div><div class="tr-name">Phlebotomist</div><div class="tr-note">certificate, weeks not years</div></div><span class="tr-delta">+9%</span></div>
+      <div class="tr-row"><span class="tr-mark tr-mark--no"></span><div><div class="tr-name">Registered Nurse</div><div class="tr-note">degree-gated, two years, high wage but blocked short-term</div></div><span class="tr-delta">+118%</span></div>
+    </div>
+    <p class="xp__p"><strong>The solve.</strong> From any occupation, the model surfaces moves that raise the wage, need a credential or less, and already have a training pipeline nearby. Filled steps are recommendable now. Hollow steps are degree-gated and flagged as such, so nobody is sent down a two-year path dressed up as a lateral move.</p>
+    <div class="xp__stack"><strong>Stack</strong> Python &middot; skill-proximity index &middot; credential and licensing gates &middot; OEWS wages</div>
+  </div>
+
+  <!-- 04 occupation composition -->
+  <div class="xp">
+    <h3 class="xp__title">What is an occupation actually made of?</h3>
+    <div class="xp__disc">The composition</div>
+    <p class="xp__p"><strong>The problem.</strong> To compare or reskill occupations you need to open them up. A job title is opaque. The skills and activities underneath it, weighted by how much they define the role, are what let you measure distance and exposure.</p>
+    <div class="xp__fig">
+      <div class="xp__cap" style="margin:0 0 8px;">Registered Nurse, by learned weight</div>
+      <div class="comp-row"><span class="comp-row__name">Assisting and caring for others</span><div class="comp-bar comp-fill" style="width:93%;"></div><span class="comp-val">.93</span></div>
+      <div class="comp-row"><span class="comp-row__name">Making decisions and solving problems</span><div class="comp-bar comp-fill" style="width:85%;"></div><span class="comp-val">.85</span></div>
+      <div class="comp-row"><span class="comp-row__name">Documenting and recording information</span><div class="comp-bar comp-soft" style="width:70%;"></div><span class="comp-val">.70</span></div>
+      <div class="comp-row"><span class="comp-row__name">Getting information</span><div class="comp-bar comp-soft" style="width:68%;"></div><span class="comp-val">.68</span></div>
+      <div class="comp-row"><span class="comp-row__name">Coordinating the work of others</span><div class="comp-bar comp-soft" style="width:55%;"></div><span class="comp-val">.55</span></div>
+    </div>
+    <p class="xp__p"><strong>The solve.</strong> Each occupation is decomposed into its skills and work activities by learned weight. A filled bar is a defining component, the thing that makes the job what it is. A soft bar is contributing. Distance, overlap, and AI exposure are all read off this composition rather than off the title.</p>
+    <div class="xp__stack"><strong>Stack</strong> Python &middot; O*NET task, skill, and activity profiles &middot; the task-based engine</div>
+  </div>
+
+  <!-- 05 the skill space -->
+  <div class="xp">
+    <h3 class="xp__title">Occupations are not a list, they are a space</h3>
+    <div class="xp__disc">The skill space</div>
+    <p class="xp__p"><strong>The problem.</strong> A flat list of occupations hides the thing that matters most for mobility and shortage: which jobs are close to which. Closeness is not a taxonomy label, it is shared composition, and it has to be measured.</p>
+    <div class="xp__fig">
+      <svg viewBox="0 0 420 210" style="width:100%; height:auto; display:block; max-width:520px;">
+        <ellipse cx="88" cy="90" rx="46" ry="54" fill="none" stroke="#CFCEC9" stroke-width="1" stroke-dasharray="4 4"></ellipse>
+        <ellipse cx="318" cy="72" rx="46" ry="34" fill="none" stroke="#CFCEC9" stroke-width="1" stroke-dasharray="4 4"></ellipse>
+        <ellipse cx="206" cy="164" rx="54" ry="26" fill="none" stroke="#CFCEC9" stroke-width="1" stroke-dasharray="4 4"></ellipse>
+        <circle cx="72" cy="62" r="3.5" fill="#131313"></circle>
+        <circle cx="100" cy="92" r="3.5" fill="#131313"></circle>
+        <circle cx="63" cy="108" r="3.5" fill="#131313"></circle>
+        <circle cx="112" cy="72" r="3.5" fill="#131313"></circle>
+        <circle cx="86" cy="122" r="3.5" fill="#131313"></circle>
+        <circle cx="300" cy="56" r="3.5" fill="#131313"></circle>
+        <circle cx="332" cy="82" r="3.5" fill="#131313"></circle>
+        <circle cx="290" cy="90" r="3.5" fill="#131313"></circle>
+        <circle cx="344" cy="58" r="3.5" fill="#131313"></circle>
+        <circle cx="188" cy="152" r="3.5" fill="#131313"></circle>
+        <circle cx="222" cy="170" r="3.5" fill="#131313"></circle>
+        <circle cx="168" cy="166" r="3.5" fill="#131313"></circle>
+        <circle cx="240" cy="152" r="3.5" fill="#131313"></circle>
+        <text x="88" y="162" font-family="system-ui" font-size="11" fill="#8B8B86" text-anchor="middle">Clinical</text>
+        <text x="318" y="118" font-family="system-ui" font-size="11" fill="#8B8B86" text-anchor="middle">Technical</text>
+        <text x="206" y="200" font-family="system-ui" font-size="11" fill="#8B8B86" text-anchor="middle">Support</text>
+      </svg>
+    </div>
+    <p class="xp__p"><strong>The solve.</strong> 798,000 occupation-pair similarities place every job in one space, where distance is shared composition. The clusters are emergent rather than assigned, and the same geometry feeds transitions, shortage substitution, and the adjacent-population supply. It is one object read many ways.</p>
+    <div class="xp__stack"><strong>Stack</strong> Python &middot; sentence-transformer embeddings &middot; skill-proximity index &middot; Supabase with pgvector</div>
+  </div>
+
+  <a href="{{ '/portfolio' | relative_url }}" class="backlink" style="display:inline-block; margin-top:48px;">&larr; Back to the portfolio</a>
+
+</div>
