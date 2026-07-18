@@ -1,5 +1,5 @@
 <nav class="nav">
-    <a href="{{ '/' | relative_url }}" class="nav__home">Alessandro Conway</a>
+    <a href="{{ '/' | relative_url }}" class="nav__home" aria-label="Alessandro Conway, home"><img src="{{ '/assets/images/olive-mark.png' | relative_url }}" alt="Alessandro Conway" width="33" height="32"></a>
     <div class="nav__links">
         <a href="{{ '/research' | relative_url }}" {% if page.url contains '/research' %}aria-current="page"{% endif %}>Research</a>
         <a href="{{ '/work' | relative_url }}" {% if page.url contains '/work' %}aria-current="page"{% endif %}>Work</a>
