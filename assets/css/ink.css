@@ -45,8 +45,9 @@ button { font-family: inherit; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 56px 120px; }
 
 /* ---------- navigation ---------- */
-.nav { max-width: 1080px; margin: 0 auto; padding: 28px 56px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; }
-.nav__home { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; }
+.nav { max-width: 1080px; margin: 0 auto; padding: 28px 56px 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.nav__home { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; display: flex; align-items: center; }
+.nav__home img { height: 32px; width: auto; display: block; }
 .nav__links { display: flex; gap: 24px; flex-wrap: wrap; }
 .nav__links a { font-size: 13px; color: var(--faint); text-decoration: none; }
 .nav__links a:hover { color: var(--ink); opacity: 1; }
