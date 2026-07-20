@@ -642,3 +642,63 @@ button { font-family: inherit; }
   .lev-prov__row { grid-template-columns: 1fr auto; }
   .lev-prov__setting { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* status glyphs: published / working paper / in progress */
+.glyph { font-size: 12px; line-height: 1; }
+
+/* homepage: where to start */
+.doors { max-width: 720px; }
+.door { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.door__for { font-weight: 600; flex: 0 0 148px; }
+.door__what { color: var(--muted); flex: 1; line-height: 1.5; }
+.door > a { white-space: nowrap; font-size: 13.5px; }
+@media (max-width: 620px) {
+  .door { flex-wrap: wrap; gap: 4px 10px; }
+  .door__for { flex: 0 0 auto; }
+  .door__what { flex: 1 1 100%; order: 3; }
+}
+
+/* research: program map */
+.rmap { max-width: 660px; margin: 0 auto; }
+.rmap-chip { display: block; width: -moz-max-content; width: max-content; max-width: 100%; margin: 0 auto; border: 1px solid var(--ink); padding: 8px 15px; font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--paper); }
+.rmap-chip:hover { background: var(--ink); color: var(--paper); }
+.rmap-thesis { width: -moz-max-content; width: max-content; max-width: 100%; margin: 0 auto; border: 2px solid var(--ink); padding: 11px 22px; text-align: center; }
+.rmap-thesis__t { font-size: 15.5px; font-weight: 700; letter-spacing: -0.01em; }
+.rmap-thesis__s { font-size: 11.5px; color: var(--faint); margin-top: 3px; }
+.rmap-conn { display: block; width: 100%; height: 24px; }
+.rmap-conn path { stroke: var(--ink); stroke-width: 1; fill: none; }
+.rmap-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.rmap-box { border: 1px solid var(--ink); padding: 11px 14px 4px; }
+.rmap-box__h { font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
+.rmap-node { display: flex; gap: 9px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; line-height: 1.4; }
+.rmap-node:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 620px) {
+  .rmap-cols { grid-template-columns: 1fr; gap: 0; }
+  .rmap-box + .rmap-box { border-top: none; }
+  .rmap-conn--split, .rmap-conn--merge { display: none; }
+  .rmap-thesis { margin-bottom: 18px; }
+  .rmap-cols { margin-bottom: 18px; }
+}
+
+/* research: open questions */
+.claim-row { display: flex; align-items: baseline; gap: 13px; padding: 13px 2px; border-top: 1px solid var(--rule); text-decoration: none; }
+.claim-row:last-of-type { border-bottom: 1px solid var(--rule); }
+.claim-row__g { flex: 0 0 16px; color: var(--ink); }
+.claim-row__t { flex: 1; font-size: 14.5px; font-weight: 600; color: var(--ink); line-height: 1.45; }
+.claim-row:hover .claim-row__t { text-decoration: underline; text-underline-offset: 3px; }
+.claim-row__src { font-size: 12px; color: var(--faint); white-space: nowrap; }
+@media (max-width: 560px) { .claim-row__src { display: none; } }
+
+/* applied: pipeline */
+.pipe { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); }
+.pipe-stage { padding: 11px 13px 13px; border-left: 1px solid var(--rule); }
+.pipe-stage:first-child { border-left: none; }
+.pipe-stage__h { display: flex; gap: 8px; align-items: baseline; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 4px; }
+.pipe-stage__n { color: var(--light); font-variant-numeric: tabular-nums; }
+.pipe-chip { display: block; border: 1px solid var(--ink); padding: 6px 9px; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--paper); line-height: 1.35; }
+.pipe-chip:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 680px) {
+  .pipe { grid-template-columns: 1fr; }
+  .pipe-stage { border-left: none; }
+  .pipe-stage + .pipe-stage { border-top: 1px solid var(--rule); }
+}
