@@ -535,7 +535,7 @@ button { font-family: inherit; }
 .finding__n { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; padding-top: 2px; }
 .finding__head { font-size: 15px; font-weight: 600; line-height: 1.4; }
 .finding__body { font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 6px; grid-column: 2; }
-.finding__body table { grid-column: 2; }
+.finding__body table, .finding > table { grid-column: 2; align-self: start; max-width: 100%; }
 .rtable { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0 4px; }
 .rtable th, .rtable td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
 .rtable th:first-child, .rtable td:first-child { text-align: left; font-variant-numeric: normal; }
@@ -668,14 +668,20 @@ button { font-family: inherit; }
 .rmap-conn { display: block; width: 100%; height: 24px; }
 .rmap-conn path { stroke: var(--ink); stroke-width: 1; fill: none; }
 .rmap-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.rmap-cols--3 { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.rmap-part { display: block; border: 1px solid var(--ink); padding: 12px 13px; text-decoration: none; background: var(--paper); }
+.rmap-part:hover { background: var(--ink); }
+.rmap-part:hover .rmap-part__t, .rmap-part:hover .rmap-part__s { color: var(--paper); }
+.rmap-part__t { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.rmap-part__s { font-size: 11.5px; color: var(--muted); line-height: 1.45; margin-top: 4px; }
 .rmap-box { border: 1px solid var(--ink); padding: 11px 14px 4px; }
 .rmap-box__h { font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
 .rmap-node { display: flex; gap: 9px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; line-height: 1.4; }
 .rmap-node:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 620px) {
-  .rmap-cols { grid-template-columns: 1fr; gap: 0; }
+  .rmap-cols, .rmap-cols--3 { grid-template-columns: 1fr; gap: 0; }
   .rmap-box + .rmap-box { border-top: none; }
-  .rmap-conn--split, .rmap-conn--merge { display: none; }
+  .rmap-conn--split, .rmap-conn--split3, .rmap-conn--merge { display: none; }
   .rmap-thesis { margin-bottom: 18px; }
   .rmap-cols { margin-bottom: 18px; }
 }
