@@ -2,6 +2,7 @@
 layout: default
 title: Research
 permalink: /research/
+ink_js: true
 ---
 
 <div class="wrap">
@@ -12,7 +13,43 @@ permalink: /research/
     <p class="lede">Labor economics and regional economic development, with an emphasis on resilience, quality of life, and the systemic factors that shape inclusive growth.</p>
   </header>
 
-  <section class="sec">
+  <!-- program map -->
+  <div class="plate" style="max-width:660px; margin:56px auto 8px;">
+    <div class="plate__head">
+      <span class="plate__title">Program</span>
+      <span class="plate__hint">one thesis, two strands</span>
+    </div>
+    <p class="plate__purpose">Everything here runs on one idea: economies behave as ecosystems, and policy fails when it treats them as separate parts. The dissertation formalizes the idea over place. The applied strand measures it in labor markets. The platform runs it in production.</p>
+    <div id="rmap" class="rmap" data-default="Hover any node for where it stands. Click through to the work.">
+      <a class="rmap-chip" href="#publications" data-note="Published in the University of Oxford Social Macroeconomics series. The starting point: wellbeing and social structure written into a macroeconomic model."><span class="glyph">&#9679;</span>&nbsp; Wellbeing and macroeconomics</a>
+      <svg class="rmap-conn" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 L50,24" vector-effect="non-scaling-stroke"/></svg>
+      <div class="rmap-thesis">
+        <div class="rmap-thesis__t">Economies as ecosystems</div>
+        <div class="rmap-thesis__s">the claim everything below tests</div>
+      </div>
+      <svg class="rmap-conn rmap-conn--split" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><path d="M50,0 L50,12 M25,12 L75,12 M25,12 L25,24 M75,12 L75,24" vector-effect="non-scaling-stroke"/></svg>
+      <div class="rmap-cols">
+        <div class="rmap-box">
+          <div class="rmap-box__h">Dissertation &middot; place</div>
+          <a class="rmap-node" href="#dissertation" data-note="Paper 1, draft forthcoming. The empirical anchor: whether EU regions cluster along economic, social, and place-based conditions."><span class="glyph">&#9680;</span>EU regions sort into coherent types</a>
+          <a class="rmap-node" href="#dissertation" data-note="Paper 2, in progress. A modular model of how a local shock travels the economic, social, and place-based channels that connect a region to the system."><span class="glyph">&#9675;</span>Shocks travel the connections</a>
+          <a class="rmap-node" href="#dissertation" data-note="Paper 3, in progress. Cohesion spending evaluated through the framework: direct effects separated from spillovers, and the conditions that make it work."><span class="glyph">&#9675;</span>Cohesion policy depends on conditions</a>
+        </div>
+        <div class="rmap-box">
+          <div class="rmap-box__h">Applied &middot; labor</div>
+          <a class="rmap-node" href="{{ '/working-papers/skills-dna' | relative_url }}" data-note="Skills DNA, working paper. The national wage bill decomposed by role, task, and skill, with AI exposure priced in dollars."><span class="glyph">&#9680;</span>Tasks and skills carry prices</a>
+          <a class="rmap-node" href="{{ '/working-papers/flows-engine' | relative_url }}" data-note="Workforce flow engine, working paper. Entry, exit, migration, and churn measured from census microdata."><span class="glyph">&#9680;</span>Workforce stocks are flows</a>
+          <a class="rmap-node" href="{{ '/working-papers/occupation-migration' | relative_url }}" data-note="Where occupations move, working paper. Bilateral state-to-state migration across 501 occupations and twenty years."><span class="glyph">&#9680;</span>Migration bites at the occupation</a>
+        </div>
+      </div>
+      <svg class="rmap-conn rmap-conn--merge" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><path d="M25,0 L25,12 M75,0 L75,12 M25,12 L75,12 M50,12 L50,24" vector-effect="non-scaling-stroke"/></svg>
+      <a class="rmap-chip" href="{{ '/portfolio' | relative_url }}" data-note="The Radius platform: the same framing built end to end, from a data lake to digital twins of employers and labor markets.">Platform in production &rarr;</a>
+    </div>
+    <div class="plate__note" id="rmap-note">Hover any node for where it stands. Click through to the work.</div>
+    <div class="plate__caption"><span class="glyph">&#9679;</span> published &nbsp;&middot;&nbsp; <span class="glyph">&#9680;</span> working paper &nbsp;&middot;&nbsp; <span class="glyph">&#9675;</span> in progress</div>
+  </div>
+
+  <section class="sec" id="dissertation">
     <h2 class="sec__h">PhD dissertation</h2>
     <div class="entry">
       <div class="entry__head">
@@ -69,7 +106,44 @@ permalink: /research/
     </div>
   </section>
 
-  <section class="sec">
+  <!-- open questions -->
+  <div class="plate" style="max-width:760px; margin:80px auto;">
+    <div class="plate__head">
+      <span class="plate__title">Open questions</span>
+      <span class="plate__hint">hover a claim</span>
+    </div>
+    <p class="plate__purpose">Claims from the applied strand that I am working to prove or break, each with a working paper behind it. Hovering one shows what would change my mind.</p>
+    <div id="claims" data-default="Every claim here is falsifiable on purpose. Hover one for the evidence that would overturn it.">
+      <a class="claim-row" href="{{ '/working-papers/skills-dna' | relative_url }}" data-note="Changes my mind: a flat exposure index that keeps beating the nested structure out of sample, or a second task source that breaks the decomposition.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">Roles, tasks, and skills are three prices of one output</span><span class="claim-row__src">Skills DNA</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/exposure-measures' | relative_url }}" data-note="Changes my mind: dollar-weighted agreement rising sharply across new releases of the major measures.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">The AI exposure measures barely agree</span><span class="claim-row__src">Exposure measures</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/shortage-arithmetic' | relative_url }}" data-note="Changes my mind: worked cases where the substitution margin absorbs nothing once licensing is graded in.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">Headline shortages overstate the gap</span><span class="claim-row__src">Shortage arithmetic</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/flows-engine' | relative_url }}" data-note="Changes my mind: entry and exit estimates failing validation against external records.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">A workforce is a system of measurable flows</span><span class="claim-row__src">Flow engine</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/occupation-migration' | relative_url }}" data-note="Changes my mind: licensing showing no dampening of flows once origin and destination effects are absorbed.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">Occupation is where migration policy bites</span><span class="claim-row__src">Occupational migration</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/skills-and-moves' | relative_url }}" data-note="Changes my mind: observed flows breaking somewhere other than the similarity tiers, which is half the point of asking.">
+        <span class="claim-row__g glyph">&#9675;</span><span class="claim-row__t">Workers move along skill similarity</span><span class="claim-row__src">Skills and moves</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/vacancy-measurement' | relative_url }}" data-note="Changes my mind: the three series moving together so tightly that the distinction stops mattering.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">A vacancy count mixes three different objects</span><span class="claim-row__src">Vacancy measurement</span>
+      </a>
+      <a class="claim-row" href="{{ '/working-papers/beige-book' | relative_url }}" data-note="Changes my mind: extracted sentiment adding nothing over the hard series it should lead.">
+        <span class="claim-row__g glyph">&#9680;</span><span class="claim-row__t">Forty years of Fed prose carry measurable labor signals</span><span class="claim-row__src">Beige Book</span>
+      </a>
+    </div>
+    <div class="plate__note" id="claims-note">Every claim here is falsifiable on purpose. Hover one for the evidence that would overturn it.</div>
+    <div class="plate__caption">The full set, with methods and findings, lives under <a href="{{ '/applied' | relative_url }}#in-development">applications</a>.</div>
+  </div>
+
+  <section class="sec" id="publications">
     <h2 class="sec__h">Publications</h2>
     <div class="entry">
       <div class="entry__head">
