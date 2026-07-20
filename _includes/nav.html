@@ -2,9 +2,9 @@
     <a href="{{ '/' | relative_url }}" class="nav__home" aria-label="Alessandro Conway, home"><img src="{{ '/assets/images/olive-mark.png' | relative_url }}" alt="Alessandro Conway" width="33" height="32"></a>
     <div class="nav__links">
         <a href="{{ '/research' | relative_url }}" {% if page.url contains '/research' %}aria-current="page"{% endif %}>Research</a>
-        <a href="{{ '/work' | relative_url }}" {% if page.url contains '/work' %}aria-current="page"{% endif %}>Work</a>
+        <a href="{{ '/work' | relative_url }}" {% if page.url == '/work/' %}aria-current="page"{% endif %}>Experience</a>
         <a href="{{ '/portfolio' | relative_url }}" {% if page.url contains '/portfolio' %}aria-current="page"{% endif %}>Portfolio</a>
-        <a href="{{ '/applied' | relative_url }}" {% if page.url contains '/applied' %}aria-current="page"{% endif %}>Applied</a>
+        <a href="{{ '/applied' | relative_url }}" {% if page.url contains '/applied' or page.url contains '/working-papers' %}aria-current="page"{% endif %}>Applications</a>
         <a href="{{ '/writing' | relative_url }}" {% if page.url contains '/writing' %}aria-current="page"{% endif %}>Writing</a>
         <a href="{{ '/about' | relative_url }}" {% if page.url contains '/about' %}aria-current="page"{% endif %}>About</a>
     </div>
