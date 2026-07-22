@@ -61,7 +61,7 @@ ink_js: true
   <div class="plate" style="max-width:720px;">
     <div class="plate__head">
       <span class="plate__title">Console, end to end</span>
-      <span class="plate__hint">run it</span>
+      <span class="plate__hint">click to run</span>
     </div>
     <p class="plate__purpose">Singular employer's data, upload to scenario.</p>
     <div class="con-phases" id="console-phases">
@@ -72,7 +72,10 @@ ink_js: true
       <span class="con-phase">Map</span>
       <span class="con-phase">Forecast &amp; scenario</span>
     </div>
-    <button id="console-btn" class="ink-btn" style="margin-bottom:16px;">Run the pipeline</button>
+    <div class="run-cta">
+      <button id="console-btn" class="ink-btn">Run the pipeline</button>
+      <span class="run-cta__hint"><span aria-hidden="true">&larr;</span> click to see it run on a synthetic employer</span>
+    </div>
     <div class="con-out" id="console-out"></div>
     <div class="plate__caption">Upload &rarr; standardize &rarr; canonical extract &rarr; exploratory analysis with seasonality &rarr; map &rarr; forecast and scenario levers. Illustrative, synthetic run.</div>
   </div>
