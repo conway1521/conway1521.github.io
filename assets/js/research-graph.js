@@ -43,7 +43,7 @@
     fiscal: {
       x: 128, y: 392, k: 'wip', l: ['Fiscal policy and', 'consumption'], lx: -15, ly: 2, a: 'end',
       title: 'Fiscal policy’s distributional impact on consumption',
-      meta: 'In development, with Paul Hubert and Fergus Cumming',
+      meta: 'In progress, with Paul Hubert and Fergus Cumming',
       short: 'Identifies the channels through which fiscal policy reaches consumption across households of varying credit constraints, building on Hubert and Cumming (2021) to connect asset liquidity with a fiscal policy dataset.',
       plain: 'An average multiplier tells you what a fiscal shock did to the country and almost nothing about who it reached, and the households whose consumption responds most are exactly the ones that a specification estimated on the aggregate averages away. Whether a pound of stimulus is spent or saved depends on whether the household receiving it can borrow, and on whether its assets can be turned into cash this month, so the same policy reaches some households and barely reaches others, and an aggregate multiplier hides which.',
       abs: 'Fiscal multipliers estimated on aggregate data mask substantial heterogeneity in the household response. This paper pairs a narrative identification of fiscal shocks, built from a two-decade series of UK legislative measures, with household-level heterogeneity in credit constraints and asset liquidity, extending Hubert and Cumming (2021). The consumption response is estimated conditionally on liquidity position rather than in aggregate, which identifies the margin along which fiscal transmission actually operates and gives a basis for targeting. Joint work with Paul Hubert of the Banque de France and OFCE and Fergus Cumming of the Bank of England.',
@@ -75,7 +75,7 @@
     p3: {
       x: 254, y: 296, k: 'wip', l: ['Pricing the', 'ladder'], lx: 0, ly: 28, a: 'middle',
       title: 'Pricing Europe’s regional ladder in wellbeing terms',
-      meta: 'In development, third dissertation paper',
+      meta: 'In progress, third dissertation paper',
       short: 'Asks what life on each rung of the regional ladder is worth to a household, and how much of the gap between rungs is money rather than the social fabric that the income accounts do not capture.',
       plain: 'The second paper measured the ladder and this one prices it, which is the step that turns a description into something a finance ministry can argue about. Households in the model save against income risk and draw wellbeing both from consumption and from the social fabric around them, living under their own tier’s conditions inside their own country’s tax and transfer system, so comparing tiers gives a gap that can be split into how much is income, how much is exposure to risk, and how much is everything the income accounts miss. The same numbers price the slide, meaning the expected cost of the pandemic-era transitions the second paper observed, and they show how much of the ladder national transfers already flatten.',
       abs: 'This paper attaches a welfare price to the regional tiers identified in the preceding paper. A calibrated heterogeneous-agent model, carrying the wellbeing arguments developed in the SAGE framework, places households under their tier’s measured conditions within their own country’s tax and transfer system, saving against idiosyncratic income risk and drawing utility from consumption and from social capital. Welfare differences across tiers are reported in consumption-equivalent and in wellbeing units and decomposed into income level, income risk, and the social component. Applying the transition matrix from the second paper prices the expected welfare cost of observed pandemic-era downward moves, and comparing pre-tax and post-transfer outcomes measures how far national fiscal systems already compress the ladder. The model values measured positions and does not claim to explain how regions arrived at them.',
@@ -97,7 +97,7 @@
     panel: {
       x: 452, y: 302, k: 'wip', l: ['Panels to', 'regional stocks'], lx: 0, ly: -22, a: 'middle',
       title: 'From employer panels to regional stocks',
-      meta: 'In development',
+      meta: 'In progress',
       short: 'Takes an employer’s panel together with public benchmarks and reconstructs workforce stocks for the regions where official statistics go thin.',
       plain: 'Official statistics get less reliable the smaller the geography, which is exactly the geography that regional policy operates on, while private employer panels carry a great deal of detail about those same places and no way of knowing how representative any of it is. Putting the two together, with the public benchmarks anchoring the panel rather than the panel being trusted on its own, is what makes the ecosystem framing measurable at the level where somebody actually has to make a decision.',
       abs: 'Official statistics report occupational employment counts by region but not the microstructure a workforce planner needs, meaning the tenure distribution, the age curve, the level mix, and the distinction between transfer risk and retirement risk. Employer HR data carries exactly that structure for a non-random subset of the market. This paper treats the reconstruction as a small-area estimation problem with an explicit synthesis step: the panel is standardized onto public vocabularies, its departure from the public margins is measured directly and reported as a result in its own right, reweighting is applied where the margins permit it, and synthetic worker records are drawn for uncovered segments from panel-estimated conditional distributions calibrated to public totals. Validation proceeds by holding out segments the panel does cover and testing whether the synthesis reconstructs them. Every synthetic record carries provenance flags and anonymity floors are built in, so every published object is aggregate or synthetic and never a real worker.',
@@ -107,7 +107,7 @@
     facility: {
       x: 438, y: 398, k: 'wip', l: ['Facility hiring', 'profiles'], lx: -15, ly: 2, a: 'end',
       title: 'Workforce demand from a press release',
-      meta: 'In development',
+      meta: 'In progress',
       short: 'Turns an announced job count into a quarterly occupational hiring profile, so a region can tell what a new facility actually means for it.',
       plain: 'A new plant is announced with a headline headcount and a ribbon cutting, and the region then has to work out how many workers in which occupations arriving on what schedule, which the announcement does not say and which staffing statistics answer only for the mix that facilities of that type had yesterday. For a leading-edge facility that mix is wrong in ways that matter, so the profile has to be built rather than looked up, and it has to be built before the facility exists, which is the only moment at which anyone can still prepare.',
       abs: 'When a fab, a battery plant or a hospital expansion is announced, workforce boards need the occupational mix and the quarter-by-quarter ramp that the announced headcount implies, and no source publishes either. The estimator has three parts: a staffing template giving the occupational mix for a facility class, assembled from industry staffing matrices and sector workforce data; a ramp curve spreading employment across construction, tool installation and production on a characteristic schedule; and the product of the two against announced scale, which turns a dated announcement into a specific quarterly profile by occupation. Validation is out of sample against ten to fifteen completed buildouts whose realized employment is recovered from public county-industry data, scored on total employment at maturity and on timing, with the naive announced-jobs figure as the baseline to beat. Scoring announcement inflation itself, claimed against realized, is a useful result independently of the estimator.',
@@ -117,7 +117,7 @@
     coding: {
       x: 606, y: 128, k: 'wip', l: ['Occupational', 'coding'], lx: 0, ly: -24, a: 'middle',
       title: 'Occupational coding at the 8-digit frontier',
-      meta: 'In development, public evaluation harness',
+      meta: 'In progress, public evaluation harness',
       short: 'Finds where title retrieval stops working and classification has to take over, which is the measurement result that everything else in the labor strand rests on.',
       plain: 'Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy, so there is no benchmark, no forecast and no comparison across employers until the collapsing is solved. Matching a title against a list of official titles gets you most of the way and then stops, and where it stops is not where people assume, so this establishes where the ceiling is and what has to replace the method once you are past it.',
       abs: 'Every labor dataset built from job titles must map unstructured strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task and mobility differences actually live, it is considerably harder, and the choice of method changes the resulting distribution. This paper benchmarks retrieval-based and classification-based approaches against the official 8-digit taxonomy, characterizing the ceiling on retrieval rather than asserting it, and evaluating classification on the residual where retrieval fails. The evaluation harness is public, which makes the comparison reproducible and the ceiling contestable.',
@@ -127,7 +127,7 @@
     taxonomy: {
       x: 708, y: 176, k: 'wip', l: ['Role', 'taxonomy'], lx: 17, ly: -8, a: 'start',
       title: 'A role taxonomy anchored to the federal codes',
-      meta: 'In development, 3,939 roles, releasable as a public artifact',
+      meta: 'In progress, 3,939 roles, releasable as a public artifact',
       short: '3,939 roles nested inside the federal occupation codes and checked against the official 8-digit taxonomy.',
       plain: 'The official codes are too coarse for what employers actually hire for, since one nurse code covers an ICU night nurse and a school nurse, while raw job titles are too fine to compare across employers. Private taxonomies solve the granularity by floating free of the government codes, which buys detail at the cost of ever reconciling with public statistics again. A role layer nested strictly inside the codes is the middle both sides miss, and it lets an employer’s own vocabulary join to public data without either side being distorted to fit the other.',
       abs: 'This paper constructs a role taxonomy of 3,939 roles as a strict refinement of the federal occupation codes, so that every role maps up to exactly one code and aggregation to published statistics remains exact. The discipline is a single rule: a distinction counts as a role only when it stays inside an 8-digit boundary and is meaningful within it, while anything that is really a level, a shift, a staffing arrangement or a specialty modifier is stored as a facet rather than promoted to a new occupation. Titles are stripped of facets, embedded, and clustered recursively with an abstention margin. Validation uses ground truth nobody else uses, since the official 8-digit splits are themselves known-correct partitions against which the clustering can be scored directly. The economic test is how much within-code wage variation is explained once workers are split into roles, where even a modest gain settles the question. Because the inputs are public, the taxonomy and its resolver ship as a public artifact.',
@@ -148,7 +148,7 @@
     exposure: {
       x: 888, y: 190, k: 'wip', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
       title: 'Does the choice of AI-exposure measure matter?',
-      meta: 'In development, common task framework, fully public data',
+      meta: 'In progress, common task framework, fully public data',
       short: 'Six measures held constant except for the measure itself, which agree at the extremes and disagree in the middle, and the middle is where every interesting policy question sits.',
       plain: 'At least six serious measures score how exposed each occupation is to AI, and most studies pick one without ever justifying the choice. If those measures disagree with each other, then every claim about which jobs are at risk is partly an artifact of which measure the author happened to reach for, and no reader can tell how much. Holding everything else fixed and varying only the measure shows how much of a published finding is the world and how much is the instrument.',
       abs: 'At least six serious measures score occupational exposure to AI, and studies routinely select one without justification. If the measures disagree, conclusions about which occupations are at risk are partly artifacts of that selection. This paper holds population, occupational base and specification constant and varies only the measure, quantifying where the choice binds. Comparison is on dollar-weighted agreement rather than rank correlation, since rank agreement at the tails conceals disagreement in the middle of the distribution, which is where policy questions are actually posed. The measures converge at the extremes and diverge substantially in the interior.',
@@ -158,7 +158,7 @@
     moves: {
       x: 864, y: 344, k: 'wip', l: ['Do skills', 'predict moves'], lx: 17, ly: 2, a: 'start',
       title: 'Do skills predict moves?',
-      meta: 'In development, gravity model on public microdata',
+      meta: 'In progress, gravity model on public microdata',
       short: 'Skill-similarity scores are used as though they were evidence that workers move, when what they are is a hypothesis about feasibility, and this tests whether workers actually move in proportion to similarity once size, wages and geography are held constant.',
       plain: 'A whole industry now advises workers and workforce boards using similarity scores, telling a machinist that industrial maintenance is 98.5 percent similar and therefore a few months of retraining away. But similarity is a claim that a move is feasible, which is a different thing from a claim that anyone makes it, and if the scores are wrong then the advice built on them sends people toward jobs they will not get and sends public money after them. Checking is cheap, the data is public, and nobody appears to have done it at scale.',
       abs: 'Skill-similarity scores derived from occupational skill, knowledge and activity profiles are widely used as though a high score were evidence of realized mobility, when the score is a hypothesis about feasibility. This paper estimates a gravity model of observed occupational flows on public microdata and reads off the elasticity of moves to skill similarity, holding occupation size, wage differentials and geography constant, with licensing at the destination entered directly. It then tests whether the similarity thresholds the field uses to define transition tiers correspond to where observed flows actually break.',
@@ -169,7 +169,7 @@
     migration: {
       x: 744, y: 400, k: 'wip', act: true, l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
       title: 'Where occupations move',
-      meta: 'In development, 501 occupations, twenty years of census microdata',
+      meta: 'In progress, 501 occupations, twenty years of census microdata',
       short: 'We know a great deal about the interstate migration of people and very little about migration by occupation, yet occupation is where migration policy actually bites, through nurse licensure compacts, engineer reciprocity, teacher pension portability and remote-work eligibility.',
       plain: 'Migration policy is written at the level of the occupation and studied at the level of the person, which means the instruments that policymakers actually control are the ones nobody has measured. This maps bilateral state-to-state migration across 501 occupations, 51 jurisdictions and nineteen vintages of census microdata, producing an atlas of which occupations move and where they go, together with the wage elasticities of who moves for money. It is the wide complement to the workforce flow engine, which goes deep on a single state instead.',
       abs: 'Interstate migration is well documented at the level of the individual and largely unmeasured at the level of the occupation, despite occupation being the unit on which migration policy operates, through licensure compacts, reciprocity agreements, pension portability and remote-work eligibility. This paper constructs bilateral state-to-state migration flows by occupation across 501 codes, 51 jurisdictions and nineteen vintages of census microdata, and estimates a Poisson pseudo-maximum-likelihood gravity specification in which origin and destination fixed effects absorb level differences so that wage and distance terms are identified off bilateral variation. The output is a descriptive atlas of occupational mobility together with a distribution of wage elasticities, and the licensing coefficient gives a direct estimate of how much occupational regulation dampens flows.',
@@ -180,10 +180,10 @@
     flows: {
       x: 622, y: 344, k: 'wip', act: true, l: ['Workforce', 'flow engine'], lx: -17, ly: 2, a: 'end',
       title: 'Workforce flow engine',
-      meta: 'In development, dissertation paper and queryable parameter database',
+      meta: 'In progress, exit and migration measured, entry in estimation',
       short: 'Every occupation in every state has rates at which people enter it, leave it, and move between states, with a background rate of turnover underneath all three, and standard forecasts give the totals while this measures the rates that produce them.',
       plain: 'A state that knows its nurse stock will fall by twelve percent has a problem statement, and a state that knows the fall is driven by out-migration concentrated in the 35 to 44 age band while entry and retirement track national norms has an intervention design. Standard forecasts answer how many, which is the question a state can do least with, because a shortfall caused by people leaving needs a completely different response from one caused by nobody arriving. Decomposing the stock into entry, exit, migration and residual churn lets a state tell a retention problem from a pipeline problem before it spends anything.',
-      abs: 'Occupational workforce stocks are decomposed into behavioral flow parameters, entry, exit, interstate migration and residual churn, at the grain of state by occupation by age band by year, with design-based uncertainty throughout. The identity is a cohort-component accounting relation adapted from formal demography and applied to ACS repeated cross-sections. Migration is observed directly from one-year-ago state of residence, entry is estimated from the young age bands and validated against graduation and licensure counts, and exit is estimated from the decline of upper age bands across vintages. Because the ACS is a repeated cross-section rather than a true panel, occupation switching and re-entry are not separately identified and both fold into the churn residual, which is retained as a behavioral parameter rather than discarded as error, measured with replicate-weight standard errors and netted for mortality. Across six occupations and nine vintages, 1.67 million records with all 80 replicate weights, occupational lifecycles separate cleanly and national exit schedules correlate up to 0.75 across the pandemic break, with state migration fingerprints persisting at about 0.6.',
+      abs: 'Occupational workforce stocks are decomposed into behavioral flow parameters, entry, exit, interstate migration and residual churn, at the grain of state by occupation by age band by year, with design-based uncertainty throughout. Exit and migration are estimated, entry is in progress, and until the identity closes the churn residual cannot be tested for stability. The identity is a cohort-component accounting relation adapted from formal demography and applied to ACS repeated cross-sections. Migration is observed directly from one-year-ago state of residence, entry is estimated from the young age bands and validated against graduation and licensure counts, and exit is estimated from the decline of upper age bands across vintages. Because the ACS is a repeated cross-section rather than a true panel, occupation switching and re-entry are not separately identified and both fold into the churn residual, which is retained as a behavioral parameter rather than discarded as error, measured with replicate-weight standard errors and netted for mortality. Across six occupations and nine vintages, 1.67 million records with all 80 replicate weights, occupational lifecycles separate cleanly and national exit schedules correlate up to 0.75 across the pandemic break, with state migration fingerprints persisting at about 0.6.',
       math: ['Stockₜ₊₁ = Stockₜ + Entrants + In-migrants − Exits − Out-migrants + Residual churn'],
       links: [['Read more', '/working-papers/flows-engine/']]
     },
@@ -191,7 +191,7 @@
     shortage: {
       x: 604, y: 470, k: 'wip', l: ['Shortage', 'arithmetic'], lx: -17, ly: 2, a: 'end',
       title: 'Shortage arithmetic',
-      meta: 'In development, a correction any workforce board can apply',
+      meta: 'In progress, a correction any workforce board can apply',
       short: 'Substitution across neighbouring occupations reduces estimated shortage gaps by 15 to 20 percent.',
       plain: 'Headline shortage figures subtract the supply of one occupation from the demand for that same occupation, as though every unfilled role had to be filled by somebody already trained for exactly it. But employers are buying output rather than credentials, and a good deal of any gap is absorbed by workers moving in from nearby occupations. Ignoring that margin overstates the shortage, the correction turns out to be large, and grading licensing back in on top of it produces a number a workforce board can actually act on.',
       abs: 'Occupational shortage estimates subtract the supply of an occupation from the demand for that same occupation, which implicitly assumes zero substitution. Because demand is for output rather than for credentials, employers substitute across near occupations, and ignoring that margin overstates the shortage materially. This paper recomputes the gap by subtracting, tier by tier of skill adjacency, the workers who can actually fill it, weighting each tier by observed transition rates and then re-restricting by licensing barriers at the destination. The correction reduces estimated gaps by 15 to 20 percent. The approach is arithmetic rather than equilibrium modelling, and any workforce board can apply and audit it.',
@@ -202,7 +202,7 @@
     vacancy: {
       x: 726, y: 522, k: 'wip', l: ['Vacancy', 'measurement'], lx: 0, ly: 28, a: 'middle',
       title: 'What does a vacancy measure?',
-      meta: 'In development, successor to a discontinued time-to-fill series',
+      meta: 'In progress, successor to a discontinued time-to-fill series',
       short: 'One word covers three different objects, a stock of open roles, a flow of new postings, and an intention to hire, and separating them turns a headline series into something you can reason about.',
       plain: 'Open jobs sound like one number but they are three different things: what employers tell a government survey, what job boards advertise, and what an employer’s applicant tracking system records. For the same employers and the same occupations these disagree by two to three times, so two sources can both be right and still contradict each other, and the gap between them is itself information about what employers are doing that gets thrown away every time the three are collapsed into one figure.',
       abs: 'Vacancy counts from establishment surveys, job boards and applicant tracking systems disagree by factors of two to three for the same employers and occupations, because they measure different objects on different clocks. This paper reconciles them in three moves. First, a concept map from every requisition state, open, on hold, filled, cancelled and evergreen, to its survey and posting counterpart, with explicit columns for whether each state is counted in the survey and visible in postings. Second, time-to-fill measured with Kaplan-Meier curves that retain still-open requisitions as censored rather than dropping them, which is the selection bias the literature warns about and the practice routinely commits. Third, a decomposition of the two-to-three-times gap into named components including multi-hire requisitions and evergreen postings. The result is a replicable successor to a discontinued public time-to-fill series.',
@@ -212,7 +212,7 @@
     beige: {
       x: 852, y: 470, k: 'wip', act: true, l: ['Beige Book', 'signals'], lx: 17, ly: 2, a: 'start',
       title: 'Reading the Beige Book with LLMs',
-      meta: 'In development, methods note with a public dataset attached',
+      meta: 'In progress, methods note with a public dataset attached',
       short: 'Forty years of Federal Reserve prose carries labor signals that no hard series records, and extracting them onto the same grain as the statistics makes them testable against the series they should lead.',
       plain: 'Eight times a year the twelve Federal Reserve districts publish qualitative reports full of labor-market detail, gathered precisely because the hard statistics arrive too late to be useful, and economists have mined them with dictionaries and hand-coding for decades. An LLM extracts structured labor sentiment from each release for about thirteen cents, which means the full forty-year archive can be processed for a few hundred dollars, and once it is on the same district-by-quarter grain as the official series it can be tested rather than merely quoted.',
       abs: 'The Federal Reserve Beige Book carries district-level qualitative labor-market reporting eight times a year, collected because hard statistics arrive with a lag, and it has historically been analyzed with keyword dictionaries or hand-coding. This note applies structured LLM extraction across the full forty-year archive at roughly thirteen cents per release, producing labor-market sentiment on the same district-by-quarter grain as the official series, with every extracted signal carrying the sentence it came from. The evaluation asks whether the extracted series carries information beyond the hard series it should lead, and a finding that it adds nothing is reported as such. The resulting dataset is released publicly.',
@@ -343,16 +343,29 @@
     nodeEls[id] = g;
   });
 
-  /* the active rule is sized from the rendered label, so it runs after layout */
-  rules.forEach(function (r) {
-    var b;
-    try { b = r.t.getBBox(); } catch (e) { return; }
-    if (!b || !b.width) return;
-    r.g.insertBefore(el('line', {
-      x1: b.x, y1: b.y + b.height + 3.5, x2: b.x + b.width, y2: b.y + b.height + 3.5,
-      class: 'rg-rule'
-    }), r.t.nextSibling);
-  });
+  /* the active rule is sized from the rendered label, so it runs after layout.
+     If the graph is hidden at load, retry once the viewport allows it. */
+  function drawRules() {
+    var pending = 0;
+    rules.forEach(function (r) {
+      if (r.g.querySelector('.rg-rule')) return;
+      var b;
+      try { b = r.t.getBBox(); } catch (e) { pending++; return; }
+      if (!b || !b.width) { pending++; return; }
+      r.g.insertBefore(el('line', {
+        x1: b.x, y1: b.y + b.height + 3.5,
+        x2: b.x + b.width, y2: b.y + b.height + 3.5,
+        class: 'rg-rule'
+      }), r.t.nextSibling);
+    });
+    return pending === 0;
+  }
+  if (!drawRules()) {
+    var retry = function () {
+      if (drawRules()) window.removeEventListener('resize', retry);
+    };
+    window.addEventListener('resize', retry);
+  }
 
   function light(id) {
     graph.classList.add('is-dimmed');
@@ -373,7 +386,7 @@
   }
 
   function unlight() {
-    if (selected) return;
+    if (selected) { light(selected); return; }
     graph.classList.remove('is-dimmed');
     Object.keys(nodeEls).forEach(function (k) { nodeEls[k].classList.remove('is-lit'); });
     edgeEls.forEach(function (e) { e.el.classList.remove('is-lit'); });
@@ -390,7 +403,7 @@
     light(id);
 
     var nbrs = adj[id].map(function (k) {
-      return '<a href="#" data-goto="' + k + '">' + esc(N[k].l.join(' ')) + '</a>';
+      return '<button type="button" class="rg-goto" data-goto="' + k + '">' + esc(N[k].l.join(' ')) + '</button>';
     }).join(' &nbsp;&middot;&nbsp; ');
 
     var links = n.links.map(function (l) {
@@ -414,9 +427,9 @@
       '<details class="rg-more">' +
         '<summary>More info</summary>' +
         '<div class="rg-more__body">' +
-          '<div class="rg-tabs" role="tablist">' +
-            '<button type="button" class="rg-tab is-on" data-tab="plain" role="tab">In plain terms</button>' +
-            '<button type="button" class="rg-tab" data-tab="abs" role="tab">Abstract</button>' +
+          '<div class="rg-tabs">' +
+            '<button type="button" class="rg-tab is-on" data-tab="plain" aria-pressed="true">In plain terms</button>' +
+            '<button type="button" class="rg-tab" data-tab="abs" aria-pressed="false">Abstract</button>' +
           '</div>' +
           '<p class="rg-abs" data-pane="plain">' + esc(n.plain) + '</p>' +
           '<div class="rg-abs is-hidden" data-pane="abs"><p>' + esc(n.abs) + '</p>' + math + '</div>' +
@@ -427,19 +440,22 @@
 
     detail.hidden = false;
     detail.classList.add('is-open');
+    detail.setAttribute('tabindex', '-1');
+    detail.focus({ preventScroll: true });
+    detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     detail.querySelector('[data-close]').addEventListener('click', close);
     detail.querySelectorAll('[data-goto]').forEach(function (a) {
-      a.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        open(a.getAttribute('data-goto'));
-      });
+      a.addEventListener('click', function () { open(a.getAttribute('data-goto')); });
     });
     var tabs = detail.querySelectorAll('.rg-tab');
     tabs.forEach(function (b) {
       b.addEventListener('click', function () {
         var want = b.getAttribute('data-tab');
-        tabs.forEach(function (o) { o.classList.toggle('is-on', o === b); });
+        tabs.forEach(function (o) {
+          o.classList.toggle('is-on', o === b);
+          o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+        });
         detail.querySelectorAll('[data-pane]').forEach(function (p) {
           p.classList.toggle('is-hidden', p.getAttribute('data-pane') !== want);
         });
@@ -448,12 +464,14 @@
   }
 
   function close() {
+    var last = selected;
     selected = null;
     graph.classList.remove('is-focused');
     Object.keys(nodeEls).forEach(function (k) { nodeEls[k].classList.remove('is-selected'); });
     detail.classList.remove('is-open');
     detail.hidden = true;
     unlight();
+    if (last && nodeEls[last]) nodeEls[last].focus();
   }
 
   document.addEventListener('keydown', function (ev) {

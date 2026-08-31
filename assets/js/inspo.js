@@ -2,7 +2,7 @@
   var track = document.getElementById('inspo-track');
   var box = document.getElementById('inspo');
   if (!track || !box) return;
-  var base = document.getElementById('inspo').getAttribute('data-base');
+  var base = box.getAttribute('data-base') || '';
   var MAX = 16, pending = MAX, shown = 0;
   function decide() {
     if (pending > 0) return;
