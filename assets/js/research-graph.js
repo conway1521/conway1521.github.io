@@ -135,7 +135,7 @@
     },
 
     skillsdna: {
-      x: 792, y: 252, k: 'wp', l: ['Skills DNA', 'of the economy'], lx: 0, ly: 30, a: 'middle',
+      x: 792, y: 252, k: 'wp', act: true, l: ['Skills DNA', 'of the economy'], lx: 0, ly: 30, a: 'middle',
       title: 'Skills DNA of the economy',
       meta: 'Working paper, at draft, open-source engine and versioned data snapshot',
       short: 'Roles, tasks and skills are three equivalent decompositions of the same output, so pricing every task and every skill turns AI exposure into a question of dollars, meaning which steps an application can do, which abilities lose their market, and who is affected.',
@@ -167,7 +167,7 @@
     },
 
     migration: {
-      x: 744, y: 400, k: 'wip', l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
+      x: 744, y: 400, k: 'wip', act: true, l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
       title: 'Where occupations move',
       meta: 'In development, 501 occupations, twenty years of census microdata',
       short: 'We know a great deal about the interstate migration of people and very little about migration by occupation, yet occupation is where migration policy actually bites, through nurse licensure compacts, engineer reciprocity, teacher pension portability and remote-work eligibility.',
@@ -178,7 +178,7 @@
     },
 
     flows: {
-      x: 622, y: 344, k: 'wip', l: ['Workforce', 'flow engine'], lx: -17, ly: 2, a: 'end',
+      x: 622, y: 344, k: 'wip', act: true, l: ['Workforce', 'flow engine'], lx: -17, ly: 2, a: 'end',
       title: 'Workforce flow engine',
       meta: 'In development, dissertation paper and queryable parameter database',
       short: 'Every occupation in every state has rates at which people enter it, leave it, and move between states, with a background rate of turnover underneath all three, and standard forecasts give the totals while this measures the rates that produce them.',
@@ -210,7 +210,7 @@
     },
 
     beige: {
-      x: 852, y: 470, k: 'wip', l: ['Beige Book', 'signals'], lx: 17, ly: 2, a: 'start',
+      x: 852, y: 470, k: 'wip', act: true, l: ['Beige Book', 'signals'], lx: 17, ly: 2, a: 'start',
       title: 'Reading the Beige Book with LLMs',
       meta: 'In development, methods note with a public dataset attached',
       short: 'Forty years of Federal Reserve prose carries labor signals that no hard series records, and extracting them onto the same grain as the statistics makes them testable against the series they should lead.',
@@ -260,7 +260,7 @@
   var note = document.getElementById('rg-note');
   var detail = document.getElementById('rg-detail');
   var defaultNote = note ? note.innerHTML : '';
-  var edgeEls = [], nodeEls = {}, adj = {};
+  var edgeEls = [], nodeEls = {}, adj = {}, rules = [];
   var selected = null;
 
   function url(h) {
@@ -325,7 +325,9 @@
       ts.textContent = line;
       t.appendChild(ts);
     });
+    if (n.act) t.setAttribute('class', 'rg-label rg-label--act');
     g.appendChild(t);
+    if (n.act) rules.push({ g: g, t: t });
     g.appendChild(el('circle', { cx: n.x, cy: n.y, r: Math.max(R[n.k] + 10, 17), class: 'rg-hit' }));
 
     g.addEventListener('mouseenter', function () { light(id); });
@@ -339,6 +341,17 @@
 
     gNodes.appendChild(g);
     nodeEls[id] = g;
+  });
+
+  /* the active rule is sized from the rendered label, so it runs after layout */
+  rules.forEach(function (r) {
+    var b;
+    try { b = r.t.getBBox(); } catch (e) { return; }
+    if (!b || !b.width) return;
+    r.g.insertBefore(el('line', {
+      x1: b.x, y1: b.y + b.height + 3.5, x2: b.x + b.width, y2: b.y + b.height + 3.5,
+      class: 'rg-rule'
+    }), r.t.nextSibling);
   });
 
   function light(id) {

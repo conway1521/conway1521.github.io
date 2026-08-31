@@ -884,3 +884,10 @@ button { font-family: inherit; }
 .plate--page { border-top: none; padding-top: 0; margin: 0; }
 
 .inspo-intro { font-size: 13.5px; color: var(--muted); margin: var(--space-section) 0 12px; max-width: var(--measure-text); }
+
+/* four papers are the current focus: the status mark is unchanged, the
+   label is promoted to full ink and ruled underneath */
+.rg-label--act { fill: var(--ink); font-weight: 600; }
+.rg-rule { stroke: var(--ink); stroke-width: 1; }
+.rgraph.is-dimmed .rg-node:not(.is-lit) .rg-rule { opacity: 0.13; }
+.legend-act { border-bottom: 1px solid var(--ink); }
