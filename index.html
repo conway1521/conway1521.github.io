@@ -37,7 +37,6 @@ title: null
   <section id="about" class="anchor">
     <div class="sechead">
       <span class="sechead__h">About</span>
-      <span class="sechead__n">Who I am and what I have built</span>
     </div>
 
     <div class="prose prose--lg">
@@ -49,7 +48,13 @@ title: null
 
       <p>Before Radius I led workforce and economic insights at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I built a national green-workforce readiness dashboard, advised a 500,000-person placement initiative, and ran an analysis of how AI is transforming jobs across the US labor market. Before that I researched the distributional effects of fiscal policy at OFCE and the Banque de France, work that continues as a co-authored paper. My master's thesis at Sciences Po was published in the University of Oxford Social Macroeconomics working paper series, and the model is available in <a href="https://quantecon.org" target="_blank" rel="noopener">QuantEcon</a>.</p>
 
-      <p>Outside work I build and play guitars, mix songs, and make olive oil.</p>
+      <p>Outside work I build and play guitars, mix songs, and make olive oil. Some things I keep coming back to:</p>
+    </div>
+
+    <div class="inspo" id="inspo" data-base="{{ '/assets/images/' | relative_url }}" hidden>
+      <button class="inspo__nav inspo__nav--prev" type="button" aria-label="Previous">&larr;</button>
+      <div class="inspo__track" id="inspo-track"></div>
+      <button class="inspo__nav inspo__nav--next" type="button" aria-label="Next">&rarr;</button>
     </div>
   </section>
 
@@ -58,7 +63,6 @@ title: null
   <section id="work" class="anchor">
     <div class="sechead">
       <span class="sechead__h">Work</span>
-      <span class="sechead__n">Roles, systems, research, publications</span>
     </div>
 
     <h3 class="blockhead">Roles</h3>
@@ -104,8 +108,7 @@ title: null
 
     <h3 class="blockhead">Systems I have built</h3>
 
-    <h4 class="subgroup__h">Live, and open to anyone</h4>
-    <p class="groupnote">Three things I have built that anyone can go and use right now, without asking me for anything.</p>
+    <h4 class="subgroup__h">Live</h4>
     <div class="works">
 
       <details class="work">
@@ -144,7 +147,7 @@ title: null
     </div>
 
     <h4 class="subgroup__h">The Radius platform</h4>
-    <p class="groupnote">The two digital twins are the ones to start with, the employer's and the state's, and the rest are the smaller problems I had to solve to get the twins working, each one making a longer chain possible. The code and the underlying data stay private, so what these describe is the problem, the approach, and where it landed, and every figure on the detail pages is built on synthetic data for illustration.</p>
+    <p class="groupnote">The employer digital twin and the labor market digital twin are the ones to start with, and the rest are the smaller problems I had to solve to get those two running, each one making a longer chain possible. The code and the underlying data stay private, so what these describe is the problem, the approach, and where it landed, and every figure on the detail pages is built on synthetic data for illustration.</p>
     <div class="works">
 
       <details class="work">
@@ -175,7 +178,7 @@ title: null
           <p class="work__s">Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy, so there is no benchmark, no forecast, and no comparison across employers.</p>
         </summary>
         <div class="work__body">
-          <p>The resolver fixes this once, for any title, through a ten-stage pipeline over three model layers, which is why the twins can exist at all.</p>
+          <p>The resolver fixes this once, for any title, through a ten-stage pipeline over three model layers, and both digital twins depend on it.</p>
           <div class="work__links"><a href="{{ '/portfolio/occupation-resolver' | relative_url }}">Read more</a></div>
         </div>
       </details>
@@ -410,3 +413,4 @@ title: null
 </div>
 
 <script src="{{ '/assets/js/research-graph.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/inspo.js' | relative_url }}"></script>
