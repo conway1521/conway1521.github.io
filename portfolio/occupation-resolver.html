@@ -10,7 +10,7 @@ ink_js: true
 
   <div class="masthead">
     <div class="masthead__row">
-      <span class="eyebrow"><a href="{{ '/#work' | relative_url }}">Portfolio</a></span>
+      <span class="eyebrow"><a href="{{ '/#systems' | relative_url }}">Systems and tools</a></span>
       <span class="eyebrow">Illustrative &middot; synthetic data</span>
     </div>
     <h1 class="display">Occupation resolver</h1>
@@ -66,14 +66,14 @@ ink_js: true
     <p class="plate__purpose">One messy title, resolved both ways at once. On the left, a clean employer role with its specialty, level, and grade. On the right, the federal occupation at O*NET 8-digit and SOC-6, with its family and subfamily.</p>
     <div class="resolve-row">
       <input id="resolve-input" class="ink-input" placeholder="Pick an example, then press Resolve" autocomplete="off">
-      <button id="resolve-btn" class="ink-btn">Resolve</button>
+      <button type="button" id="resolve-btn" class="ink-btn">Resolve</button>
     </div>
     <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:20px;">
       <span style="font-size:12px; color:var(--faint);">Examples</span>
-      <button class="ink-chip resolve-example">Travel Nurse RN - Med/Surg - $1,976 per week in Odessa, TX</button>
-      <button class="ink-chip resolve-example">AmbFloat LPN / II</button>
-      <button class="ink-chip resolve-example">DevOps Engineer-Software Engineer III, Enterprise Risk Finance Technology</button>
-      <button class="ink-chip resolve-example">Upper School Mathematics Teacher</button>
+      <button type="button" class="ink-chip resolve-example">Travel Nurse RN - Med/Surg - $1,976 per week in Odessa, TX</button>
+      <button type="button" class="ink-chip resolve-example">AmbFloat LPN / II</button>
+      <button type="button" class="ink-chip resolve-example">DevOps Engineer-Software Engineer III, Enterprise Risk Finance Technology</button>
+      <button type="button" class="ink-chip resolve-example">Upper School Mathematics Teacher</button>
     </div>
     <div id="resolve-output"></div>
     <div class="plate__caption">Real employer and posting titles, resolved. The demo matches against a sample of the panel. In production the same input runs the ten-stage cascade and three model layers in front.</div>
@@ -87,8 +87,8 @@ ink_js: true
     </div>
     <p class="plate__purpose">Two scrubbed samples run through the resolver. Each messy input is shown with the canonical role it collapses to and the federal occupation it lands on. Switch between the contributed employer panel and public postings.</p>
     <div class="sample-tabs">
-      <button class="sample-tab is-active" data-src="hris">Employer HRIS</button>
-      <button class="sample-tab" data-src="post">LinkedIn postings</button>
+      <button type="button" class="sample-tab is-active" data-src="hris">Employer HRIS</button>
+      <button type="button" class="sample-tab" data-src="post">LinkedIn postings</button>
     </div>
   <div id="sample-hris">
     <div class="rtab2-wrap"><table class="rtab2">
@@ -216,7 +216,7 @@ ink_js: true
     <div class="prose">
       <p>The resolver above matches against a small synthetic sample. In production the same input runs the three model layers with the ten-stage cascade in front, over employer HRIS panels and public postings, with inference kept under tenant isolation. The evaluation numbers are from real held-out runs. Every code a title becomes is traceable to the stage that produced it, and titles with no confident match are sent to review.</p>
     </div>
-    <a href="{{ '/#work' | relative_url }}" class="backlink">&larr; Back to the portfolio</a>
+    <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
     <a href="{{ '/portfolio/employer-twin' | relative_url }}" class="backlink" style="margin-left:28px;">What this makes possible: employer digital twin &rarr;</a>
   </div>
 
