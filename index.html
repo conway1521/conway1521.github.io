@@ -41,13 +41,11 @@ title: null
     </div>
 
     <div class="prose prose--lg">
-      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end: economics, models, pipelines, and product. The platform reconciles federal statistics, commercial postings, training and credential records, fiscal signals, and private employer data into one view across every US occupation and geography, on a compliant multi-tenant layer of 220 datasets and millions of records that grows every time a new client connects.</p>
-
-      <p>Two digital twins sit on top of it. One takes an employer's raw HR export through to forecasts and scenarios, and the other models a state's workforce as stocks and flows that have to balance, with every number auditable back to the raw rows. Client-side employer forecasting and workforce planning on one side, public labor market and policy analysis on the other.</p>
+      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end: economics, models, pipelines, and product. The platform reconciles federal statistics, commercial postings, training and credential records, fiscal signals, and private employer data into one view across every US occupation and geography, on a compliant multi-tenant layer of 220 datasets and millions of records that grows every time a new client connects, and the two digital twins below sit on top of it, one that takes an employer's raw HR export through to forecasts and scenarios and one that models a state's workforce as stocks and flows that have to balance.</p>
 
       <p>My research runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately. My PhD at Universit&eacute; Paris 8 formalizes that over place and tests it on EU regional data, where regions sort into a four-tier ladder and the pandemic shock moved them down that ladder four times as often as up. An applied strand measures the same idea in labor markets, decomposing the national wage bill by role, task, and skill so that AI exposure becomes a question of dollars rather than index units.</p>
 
-      <p>I built the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a> because assembling a comparable cross-country panel of household net-wealth inequality is a research project in itself and nobody had published the result, and it now holds 10,783 observations across 213 countries from 1800 to 2025 under an open license. I built the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a> on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground, turned into something measurable.</p>
+      <p>Two of the things I have built are live and open to anyone: the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a>, a versioned openly licensed panel of household net-wealth inequality that now holds 10,783 observations across 213 countries, and the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a>, an assessment of economic development across California's regions built on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground.</p>
 
       <p>Before Radius I led workforce and economic insights at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I built a national green-workforce readiness dashboard, advised a 500,000-person placement initiative, and ran an analysis of how AI is transforming jobs across the US labor market. Before that I researched the distributional effects of fiscal policy at OFCE and the Banque de France, work that continues as a co-authored paper. My master's thesis at Sciences Po was published in the University of Oxford Social Macroeconomics working paper series, and the model is available in <a href="https://quantecon.org" target="_blank" rel="noopener">QuantEcon</a>.</p>
 
@@ -105,8 +103,48 @@ title: null
     <!-- ---------------- built ---------------- -->
 
     <h3 class="sec__h" style="margin:56px 0 8px;">Systems I have built</h3>
-    <p class="lede" style="font-size:14px; margin-bottom:14px;">The two digital twins are the ones to start with, the employer's and the state's, and the rest are the smaller problems I had to solve to get the twins working, each one making a longer chain possible. The code and the underlying data at Radius stay private, so what these describe is the problem, the approach, and where it landed, and every figure on the detail pages is built on synthetic data for illustration.</p>
 
+    <h4 class="subgroup__h" style="margin:26px 0 6px;">Live, and open to anyone</h4>
+    <p class="lede" style="font-size:13.5px; margin-bottom:12px;">Three things I have built that anyone can go and use right now, without asking me for anything.</p>
+    <div class="works">
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
+          <p class="work__s">Wealth inequality data is scattered across mutually incompatible sources, each using a different unit, methodology, and license, so a comparable cross-country panel is a research project before it is an input to one.</p>
+        </summary>
+        <div class="work__body">
+          <p>The Atlas closes that gap into a single versioned openly licensed panel of household net-wealth inequality, currently 10,783 observations across 213 countries from 1800 to 2025, with every row tagged by source priority and comparability tier so a user can decide how much reconciliation they are willing to accept rather than inheriting mine.</p>
+          <div class="work__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">NED dashboard, California regional analysis</span><span class="work__tag">Economics, policy, live</span></div>
+          <p class="work__s">An interactive assessment of economic development across California's regions, on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground.</p>
+        </summary>
+        <div class="work__body">
+          <p>Rather than beginning from the indicators that happen to be collected, it begins from what regional actors say determines whether a household can get on and stay on, and then asks which of those things can be measured well enough to compare regions against each other. It is the three-pillar framework from my dissertation running on a real place.</p>
+          <div class="work__links"><a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">Launch the dashboard</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Wellbeing and macroeconomics explorer</span><span class="work__tag">Macroeconomics, live, QuantEcon</span></div>
+          <p class="work__s">Turns the SAGE model from my Oxford paper into something you can move the parameters on, so you can watch how the social psychology terms change what happens to a household during a shock.</p>
+        </summary>
+        <div class="work__body">
+          <p>The model is available in QuantEcon, the open source project for quantitative economics, computational lectures and tools in Python and Julia founded by Thomas Sargent and John Stachurski and used widely in teaching and research.</p>
+          <div class="work__links"><a href="https://conway1521.github.io/sage-bewley/" target="_blank" rel="noopener">Launch the explorer</a></div>
+        </div>
+      </details>
+
+    </div>
+
+    <h4 class="subgroup__h" style="margin:26px 0 6px;">The Radius platform</h4>
+    <p class="lede" style="font-size:13.5px; margin-bottom:12px;">The two digital twins are the ones to start with, the employer's and the state's, and the rest are the smaller problems I had to solve to get the twins working, each one making a longer chain possible. The code and the underlying data stay private, so what these describe is the problem, the approach, and where it landed, and every figure on the detail pages is built on synthetic data for illustration.</p>
     <div class="works">
 
       <details class="work">
@@ -155,61 +193,6 @@ title: null
 
       <details class="work">
         <summary>
-          <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
-          <p class="work__s">Wealth inequality data is scattered across mutually incompatible sources, each using a different unit, methodology, and license, so a comparable cross-country panel is a research project before it is an input to one.</p>
-        </summary>
-        <div class="work__body">
-          <p>The Atlas closes that gap into a single versioned openly licensed panel of household net-wealth inequality, currently 10,783 observations across 213 countries from 1800 to 2025, with every row tagged by source priority and comparability tier so a user can decide how much reconciliation they are willing to accept rather than inheriting mine.</p>
-          <div class="work__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
-        </div>
-      </details>
-
-      <details class="work">
-        <summary>
-          <div class="work__head"><span class="work__t">NED dashboard, California regional analysis</span><span class="work__tag">Economics, policy, live</span></div>
-          <p class="work__s">An interactive assessment of economic development across California's regions, on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground.</p>
-        </summary>
-        <div class="work__body">
-          <p>Rather than beginning from the indicators that happen to be collected, it begins from what regional actors say determines whether a household can get on and stay on, and then asks which of those things can be measured well enough to compare regions against each other. It is the three-pillar framework from my dissertation running on a real place.</p>
-          <div class="work__links"><a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">Launch the dashboard</a></div>
-        </div>
-      </details>
-
-      <details class="work">
-        <summary>
-          <div class="work__head"><span class="work__t">Wellbeing and macroeconomics explorer</span><span class="work__tag">Macroeconomics, live, QuantEcon</span></div>
-          <p class="work__s">Turns the SAGE model from my Oxford paper into something you can move the parameters on, so you can watch how the social psychology terms change what happens to a household during a shock.</p>
-        </summary>
-        <div class="work__body">
-          <p>The model is available in QuantEcon, the open source project for quantitative economics, computational lectures and tools in Python and Julia founded by Thomas Sargent and John Stachurski and used widely in teaching and research.</p>
-          <div class="work__links"><a href="https://conway1521.github.io/sage-bewley/" target="_blank" rel="noopener">Launch the explorer</a></div>
-        </div>
-      </details>
-
-      <details class="work">
-        <summary>
-          <div class="work__head"><span class="work__t">CREST, green workforce readiness dashboard</span><span class="work__tag">Jobs for the Future</span></div>
-          <p class="work__s">A national dashboard ranking every US county by climate risk and economic resilience into risk-and-readiness tiers, each with targeted recommendations.</p>
-        </summary>
-        <div class="work__body">
-          <p>It anchored a high-profile climate initiative and was featured in a national press release, and it remains the piece of my work that has been used by the most people who have never heard of me.</p>
-          <div class="work__links"><a href="https://info.jff.org/assessing-regional-readiness-for-action" target="_blank" rel="noopener">Dashboard</a> <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" rel="noopener">Report</a></div>
-        </div>
-      </details>
-
-      <details class="work">
-        <summary>
-          <div class="work__head"><span class="work__t">Tech careers workforce development program</span><span class="work__tag">Jobs for the Future</span></div>
-          <p class="work__s">The sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals.</p>
-        </summary>
-        <div class="work__body">
-          <p>Six target occupations were identified through demand mapping and job-quality scoring, and those six are now the basis of national enrolment and placement.</p>
-          <div class="work__links"><a href="https://www.jff.org/idea/verizon-case-study/" target="_blank" rel="noopener">Case study</a></div>
-        </div>
-      </details>
-
-      <details class="work">
-        <summary>
           <div class="work__head"><span class="work__t">Workforce blueprints</span><span class="work__tag">Economics, data science</span></div>
           <p class="work__s">A new facility is planned and a region needs to know what it means, meaning how many workers, in which occupations, on what schedule.</p>
         </summary>
@@ -249,6 +232,33 @@ title: null
         <div class="work__body">
           <p>This grades fifteen kinds of leading evidence, among them postings, layoff notices, and wage anomalies, by how much confidence each one deserves, and composes them into two flags whose logic stays readable to the person acting on them.</p>
           <div class="work__links"><a href="{{ '/portfolio/market-signals' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+    </div>
+
+    <h4 class="subgroup__h" style="margin:26px 0 6px;">Earlier work</h4>
+    <div class="works">
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">CREST, green workforce readiness dashboard</span><span class="work__tag">Jobs for the Future</span></div>
+          <p class="work__s">A national dashboard ranking every US county by climate risk and economic resilience into risk-and-readiness tiers, each with targeted recommendations.</p>
+        </summary>
+        <div class="work__body">
+          <p>It anchored a high-profile climate initiative and was featured in a national press release, and it remains the piece of my work that has been used by the most people who have never heard of me.</p>
+          <div class="work__links"><a href="https://info.jff.org/assessing-regional-readiness-for-action" target="_blank" rel="noopener">Dashboard</a> <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" rel="noopener">Report</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Tech careers workforce development program</span><span class="work__tag">Jobs for the Future</span></div>
+          <p class="work__s">The sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals.</p>
+        </summary>
+        <div class="work__body">
+          <p>Six target occupations were identified through demand mapping and job-quality scoring, and those six are now the basis of national enrolment and placement.</p>
+          <div class="work__links"><a href="https://www.jff.org/idea/verizon-case-study/" target="_blank" rel="noopener">Case study</a></div>
         </div>
       </details>
 

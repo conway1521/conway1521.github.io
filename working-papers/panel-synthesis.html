@@ -12,7 +12,7 @@ permalink: /working-papers/panel-synthesis/
       <span class="eyebrow">In progress</span>
     </div>
     <h1 class="display">From employer panels to regional workforce stocks</h1>
-    <p class="lede">Official statistics say how many people work in an occupation in a region. They do not say the microstructure a planner needs: the tenure distribution, the age curve, who is a transfer risk against a retirement risk, the level mix. Employer data has exactly that, for a non-random sliver of the market. This fuses the two.</p>
+    <p class="lede">Official statistics say how many people work in an occupation in a region. They do not say the microstructure a planner needs: the tenure distribution, the age curve, who is a transfer risk against a retirement risk, the level mix. Employer data has exactly that, for a non-random sliver of the market, and this fuses the two together.</p>
   </div>
   <div class="standfirst">Data science &middot; applied statistics. A privacy-preserving synthesis-and-benchmark method.</div>
 
@@ -22,7 +22,7 @@ permalink: /working-papers/panel-synthesis/
       <h2 class="secnum__h">The idea</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Public sources are complete but coarse. Employer HR data is rich but unrepresentative, covering whoever happens to be in the panel. The question is whether a rich-but-partial panel can be fused with coarse-but-complete public benchmarks to reconstruct a region's full workforce, generating synthetic workers to fill the segments the panel does not cover. Done honestly, this is a standard small-area-estimation problem with an explicit synthesis step that nobody has published for employer data.</p>
+      <p>Public sources are complete but coarse, while employer HR data is rich but unrepresentative, covering whoever happens to be in the panel. The question is whether a rich-but-partial panel can be fused with coarse-but-complete public benchmarks to reconstruct a region's full workforce, generating synthetic workers to fill the segments the panel does not cover. Done honestly, this is a standard small-area-estimation problem with an explicit synthesis step that nobody has published for employer data.</p>
     </div>
   </div>
 
@@ -32,7 +32,7 @@ permalink: /working-papers/panel-synthesis/
       <h2 class="secnum__h">The method</h2>
     </div>
     <div class="prose">
-      <p>Five steps. Standardize the panel onto public vocabularies so panel and benchmarks speak one language. Measure exactly where the panel departs from the public margins, which is a useful map on its own. Reweight what can be reweighted toward those margins. Synthesize what cannot, by drawing synthetic worker records for uncovered segments from panel-estimated conditional distributions calibrated to the public totals, borrowing from the nearest covered occupation where a segment is missing entirely. Validate on holdout. Every synthetic record carries provenance flags, and anonymity floors are built in, so every published object is aggregate or synthetic and never a real worker.</p>
+      <p>The method runs in five steps. Standardize the panel onto public vocabularies so panel and benchmarks speak one language. Measure exactly where the panel departs from the public margins, which is a useful map on its own. Reweight what can be reweighted toward those margins. Synthesize what cannot, by drawing synthetic worker records for uncovered segments from panel-estimated conditional distributions calibrated to the public totals, borrowing from the nearest covered occupation where a segment is missing entirely. Validate on holdout, by hiding segments the panel does cover and checking whether the synthesis reconstructs them. Every synthetic record carries provenance flags, and anonymity floors are built in, so every published object is aggregate or synthetic and never a real worker.</p>
     </div>
   </div>
 
