@@ -130,7 +130,7 @@ button { font-family: inherit; }
 .entry__org { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
 .entry__body { font-size: 14px; line-height: 1.6; color: var(--muted); margin-top: 10px; max-width: var(--measure-text); }
 .entry__links { margin-top: 12px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; }
-.subgroup__h { font-size: 14px; font-weight: 600; margin: var(--space-tight) 0 6px; }
+.subgroup__h { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: var(--space-tight) 0 8px; }
 .deflist { border-top: 1px solid var(--rule); }
 .deflist > div { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
 .deflist strong { font-size: 13.5px; font-weight: 600; }
@@ -869,7 +869,18 @@ button { font-family: inherit; }
 .hero__affil strong { color: var(--ink); font-weight: 600; }
 
 /* block heading inside a section, replaces per-element inline margins */
-.blockhead { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: var(--space-block) 0 8px; }
-.blockhead:first-of-type { margin-top: 0; }
+.blockhead { border-top: 1px solid var(--ink); padding-top: 13px; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); margin: var(--space-block) 0 var(--space-tight); max-width: var(--measure-list); }
 .groupnote { font-size: 13.5px; line-height: 1.6; color: var(--muted); margin: 0 0 12px; max-width: var(--measure-text); }
-.plate--page { margin: var(--space-section) 0 0; }
+
+/* a level-3 group inside a block: indented against a hairline so the
+   nesting is visible without another heading weight */
+.nest { padding-left: 22px; border-left: 1px solid var(--rule); margin-top: 4px; }
+.nest > .subgroup__h:first-child { margin-top: 0; }
+.nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 22px); }
+@media (max-width: 620px) { .nest { padding-left: 13px; } }
+
+/* the research figure sits inside a block, so the block heading carries
+   the rule and the plate does not repeat it */
+.plate--page { border-top: none; padding-top: 0; margin: 0; }
+
+.inspo-intro { font-size: 13.5px; color: var(--muted); margin: var(--space-section) 0 12px; max-width: var(--measure-text); }

@@ -98,9 +98,75 @@ title: null
       </div>
     </div>
 
+    <!-- ---------------- research graph ---------------- -->
+
+    <h3 class="blockhead">Research</h3>
+
+    <div class="plate plate--page">
+      <div class="plate__head">
+        <span class="plate__title">Twenty pieces of work</span>
+        <span class="plate__hint">hover to trace &middot; click to open</span>
+      </div>
+      <p class="plate__purpose">All of this runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately, and the papers are laid out here by what each one needs from the others, so a line between two of them means the work at one end is an input to the work at the other.</p>
+
+      <div class="rgraph" id="rgraph" data-base="{{ '/' | relative_url }}">
+        <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Graph of research works and the dependencies between them">
+          <g id="rg-clusters"></g>
+          <g id="rg-edges"></g>
+          <g id="rg-nodes"></g>
+        </svg>
+      </div>
+
+      <div class="rg-list" id="rg-list"></div>
+
+      <div class="plate__note" id="rg-note">The master's thesis at the bottom left is the earliest piece of work here and the only one that has been published, and the third dissertation paper, two clusters above it, still runs on the household model that thesis set out.</div>
+
+      <div class="rg-detail" id="rg-detail" hidden></div>
+
+      <div class="plate__caption">
+        <span class="glyph">&#9673;</span> published &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9679;</span> working paper &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9671;</span> live tool &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9675;</span> in development
+      </div>
+    </div>
+
+    <div class="nest">
+      <h4 class="subgroup__h">Selected works</h4>
+      <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">Skills DNA of the economy: pricing tasks, skills, and AI exposure in dollars</span>
+        <span class="pub-row__w">Working paper, at draft</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/skills-dna' | relative_url }}">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Regional economic development as ecosystem: empirical evidence from EU regions</span>
+        <span class="pub-row__w">Working paper, dissertation</span>
+        <span class="pub-row__l"><a href="#work">In the graph</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Wellbeing and macroeconomics: a SAGE approach</span>
+        <span class="pub-row__w">Univ. of Oxford, Social Macroeconomics</span>
+        <span class="pub-row__l"><a href="https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Workforce flow engine: entry, exit, migration, and churn from census microdata</span>
+        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/flows-engine' | relative_url }}">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Where occupations move: bilateral migration across 501 occupations</span>
+        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/occupation-migration' | relative_url }}">Read</a></span>
+      </div>
+    </div>
+    </div>
+
     <!-- ---------------- built ---------------- -->
 
-    <h3 class="blockhead">Systems I have built</h3>
+    <h3 class="blockhead">Systems and tools</h3>
+
+    <div class="nest">
 
     <h4 class="subgroup__h">Live</h4>
     <div class="works">
@@ -260,65 +326,6 @@ title: null
       </details>
 
     </div>
-
-    <!-- ---------------- research graph ---------------- -->
-
-    <div class="plate plate--page">
-      <div class="plate__head">
-        <span class="plate__title">Research</span>
-        <span class="plate__hint">hover to trace &middot; click to open</span>
-      </div>
-      <p class="plate__purpose">All of this runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately, and the papers are laid out here by what each one needs from the others, so a line between two of them means the work at one end is an input to the work at the other.</p>
-
-      <div class="rgraph" id="rgraph" data-base="{{ '/' | relative_url }}">
-        <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Graph of research works and the dependencies between them">
-          <g id="rg-clusters"></g>
-          <g id="rg-edges"></g>
-          <g id="rg-nodes"></g>
-        </svg>
-      </div>
-
-      <div class="rg-list" id="rg-list"></div>
-
-      <div class="plate__note" id="rg-note">The master's thesis at the bottom left is the earliest piece of work here and the only one that has been published, and the third dissertation paper, two clusters above it, still runs on the household model that thesis set out.</div>
-
-      <div class="rg-detail" id="rg-detail" hidden></div>
-
-      <div class="plate__caption">
-        <span class="glyph">&#9673;</span> published &nbsp;&middot;&nbsp;
-        <span class="glyph">&#9679;</span> working paper &nbsp;&middot;&nbsp;
-        <span class="glyph">&#9671;</span> live tool &nbsp;&middot;&nbsp;
-        <span class="glyph">&#9675;</span> in development
-      </div>
-    </div>
-
-    <h3 class="blockhead">Selected works</h3>
-    <div class="pubs">
-      <div class="pub-row">
-        <span class="pub-row__t">Skills DNA of the economy: pricing tasks, skills, and AI exposure in dollars</span>
-        <span class="pub-row__w">Working paper, at draft</span>
-        <span class="pub-row__l"><a href="{{ '/working-papers/skills-dna' | relative_url }}">Read</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">Regional economic development as ecosystem: empirical evidence from EU regions</span>
-        <span class="pub-row__w">Working paper, dissertation</span>
-        <span class="pub-row__l"><a href="#work">In the graph</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">Wellbeing and macroeconomics: a SAGE approach</span>
-        <span class="pub-row__w">Univ. of Oxford, Social Macroeconomics</span>
-        <span class="pub-row__l"><a href="https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach" target="_blank" rel="noopener">Read</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">Workforce flow engine: entry, exit, migration, and churn from census microdata</span>
-        <span class="pub-row__w">Working paper</span>
-        <span class="pub-row__l"><a href="{{ '/working-papers/flows-engine' | relative_url }}">Read</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">Where occupations move: bilateral migration across 501 occupations</span>
-        <span class="pub-row__w">Working paper</span>
-        <span class="pub-row__l"><a href="{{ '/working-papers/occupation-migration' | relative_url }}">Read</a></span>
-      </div>
     </div>
 
     <!-- ---------------- publications ---------------- -->
@@ -403,6 +410,8 @@ title: null
       <a href="https://alessandroconway.substack.com" target="_blank">Substack</a>
     </div>
   </section>
+
+  <p class="inspo-intro">Here are some inspirations of mine.</p>
 
   <div class="inspo" id="inspo" data-base="{{ '/assets/images/' | relative_url }}" hidden>
     <button class="inspo__nav inspo__nav--prev" type="button" aria-label="Previous">&larr;</button>
