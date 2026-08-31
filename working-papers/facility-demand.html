@@ -17,7 +17,7 @@ permalink: /working-papers/facility-demand/
       <span class="eyebrow">In progress</span>
     </div>
     <h1 class="display">Workforce demand from a press release</h1>
-    <p class="lede">When a fab, a battery plant, or a hospital expansion is announced, everyone needs the number nobody has: how many workers, in which occupations, arriving on what schedule. The announcement says four thousand jobs. A workforce board needs the occupational mix and the quarter-by-quarter ramp.</p>
+    <p class="lede">When a fab, a battery plant, or a hospital expansion is announced, everyone needs the number nobody has: how many workers, in which occupations, arriving on what schedule. The announcement says four thousand jobs, while a workforce board needs the occupational mix and the quarter-by-quarter ramp underneath that headline.</p>
   </div>
   <div class="standfirst">Economics &middot; data science. A replicable estimator with out-of-sample validation.</div>
 
@@ -37,7 +37,7 @@ permalink: /working-papers/facility-demand/
       <h2 class="secnum__h">The method</h2>
     </div>
     <div class="prose">
-      <p>Three parts. A staffing template gives the occupational mix for a facility class, assembled from industry staffing matrices and sector workforce data. A ramp curve spreads employment across construction, tool installation, and production on a characteristic schedule, so a dated announcement implies a specific quarterly profile. Expected employment for an occupation in a quarter is the product:</p>
+      <p>The method has three parts. A staffing template gives the occupational mix for a facility class, assembled from industry staffing matrices and sector workforce data. A ramp curve spreads employment across construction, tool installation, and production on a characteristic schedule, so a dated announcement implies a specific quarterly profile. Expected employment for an occupation in a quarter is the product:</p>
       <div class="math-block">
         <p style="margin:0;">$$\mathbb{E}\big[\text{emp}(o, t)\big] = \text{announced scale} \times \text{template}(o \mid \text{class}) \times \text{ramp}(t \mid \text{phase})$$</p>
       </div>
@@ -70,7 +70,7 @@ permalink: /working-papers/facility-demand/
       <h2 class="secnum__h">What is next</h2>
     </div>
     <div class="prose">
-      <p>The real test is out-of-sample. Assemble ten to fifteen facilities from past buildouts that have finished ramping, recover their realized employment from public county-industry data, and score the method against them on two things: the total at maturity and the timing, quarters to half and to full staffing. The baseline it has to beat is the naive announced-jobs number, and scoring announcement inflation itself, claimed against realized, is a useful result on its own. A hospital or battery-plant case alongside the fabs tests whether the method is general or only holds for semiconductors.</p>
+      <p>The real test is out of sample, which means assembling ten to fifteen facilities from past buildouts that have finished ramping, recovering their realized employment from public county-industry data, and scoring the method against them on two things: the total at maturity and the timing, quarters to half and to full staffing. The baseline it has to beat is the naive announced-jobs number, and scoring announcement inflation itself, claimed against realized, is a useful result on its own. A hospital or battery-plant case alongside the fabs tests whether the method is general or only holds for semiconductors.</p>
     </div>
     <a href="{{ '/#work' | relative_url }}#in-development" class="backlink">&larr; Back to applications</a>
   </div>
