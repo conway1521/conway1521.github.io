@@ -16,13 +16,11 @@ title: null
     </div>
 
     <h1 class="hero__name">Alessandro Conway</h1>
-    <p class="hero__tagline">Economist working across industry, academic research, and applications on labor markets, regional development, and economic ecosystems.</p>
+    <p class="hero__tagline">I study how labor markets function and fail, and I build the systems that measure them.</p>
 
-    <div class="affil">
-      <div><span class="role">Head of data science and engineering</span> <span class="at">at</span> Radius Intelligence</div>
-      <div><span class="role">PhD candidate in economics</span> <span class="at">at</span> Universit&eacute; Paris 8</div>
-      <div><span class="role">MPhil in economics</span> <span class="at">at</span> Sciences Po, Fulbright scholar</div>
-    </div>
+    <p class="hero__affil">
+      <strong>Head of data science and engineering</strong> at Radius Intelligence, <strong>PhD candidate in economics</strong> at Universit&eacute; Paris 8, and <strong>MPhil in economics</strong> from Sciences Po, where I was a Fulbright scholar.
+    </p>
 
     <div class="hero__social">
       <a href="{{ '/assets/papers/alessandro-conway-cv.pdf' | relative_url }}" target="_blank">CV</a>
@@ -32,77 +30,373 @@ title: null
       <a href="https://scholar.google.com/citations?hl=en&user=PkytFnMAAAAJ" target="_blank">Scholar</a>
       <a href="https://alessandroconway.substack.com" target="_blank">Substack</a>
     </div>
-
-    <div class="prose prose--lg hero__intro">
-      <p>I study how labor markets function and fail, with a focus on workforce dynamics and regional economic development. At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end: economics, models, pipelines, and product, taking the ecosystem framing from my dissertation into practice.</p>
-      <p>My PhD develops a framework that treats regional economies as ecosystems, where economic, social, and place-based factors interact in ways traditional models miss. Interests include the future of work, regional economic development, and wellbeing.</p>
-    </div>
   </header>
 
-  <section class="sec" style="margin-top:56px;">
-    <h2 class="sec__h">Where to start</h2>
-    <div class="doors">
-      <div class="door">
-        <span class="door__for">For the economics</span>
-        <span class="door__what">dissertation and current research</span>
-        <a href="{{ '/research' | relative_url }}">Research &rarr;</a>
-      </div>
-      <div class="door">
-        <span class="door__for">For data work</span>
-        <span class="door__what">examples of problems I have solved end to end</span>
-        <a href="{{ '/portfolio' | relative_url }}">Portfolio &rarr;</a>
-      </div>
-      <div class="door">
-        <span class="door__for">For policy</span>
-        <span class="door__what">a state's workforce as a system: flows, gaps, and levers</span>
-        <a href="{{ '/portfolio/labor-market-twin' | relative_url }}">Labor market twin &rarr;</a>
-      </div>
+  <!-- ============================ about ============================ -->
+
+  <section id="about" class="anchor">
+    <div class="sechead">
+      <span class="sechead__h">About</span>
+      <span class="sechead__n">Who I am and what I have built</span>
+    </div>
+
+    <div class="prose prose--lg">
+      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end: economics, models, pipelines, and product. The platform reconciles federal statistics, commercial postings, training and credential records, fiscal signals, and private employer data into one view across every US occupation and geography, on a compliant multi-tenant layer of 220 datasets and millions of records that grows every time a new client connects.</p>
+
+      <p>Two digital twins sit on top of it. One takes an employer's raw HR export through to forecasts and scenarios, and the other models a state's workforce as stocks and flows that have to balance, with every number auditable back to the raw rows. Client-side employer forecasting and workforce planning on one side, public labor market and policy analysis on the other.</p>
+
+      <p>My research runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately. My PhD at Universit&eacute; Paris 8 formalizes that over place and tests it on EU regional data, where regions sort into a four-tier ladder and the pandemic shock moved them down that ladder four times as often as up. An applied strand measures the same idea in labor markets, decomposing the national wage bill by role, task, and skill so that AI exposure becomes a question of dollars rather than index units.</p>
+
+      <p>I built the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a> because assembling a comparable cross-country panel of household net-wealth inequality is a research project in itself and nobody had published the result, and it now holds 10,783 observations across 213 countries from 1800 to 2025 under an open license. I built the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a> on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground, turned into something measurable.</p>
+
+      <p>Before Radius I led workforce and economic insights at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I built a national green-workforce readiness dashboard, advised a 500,000-person placement initiative, and ran an analysis of how AI is transforming jobs across the US labor market. Before that I researched the distributional effects of fiscal policy at OFCE and the Banque de France, work that continues as a co-authored paper. My master's thesis at Sciences Po was published in the University of Oxford Social Macroeconomics working paper series, and the model is available in <a href="https://quantecon.org" target="_blank" rel="noopener">QuantEcon</a>.</p>
+
+      <p>Outside work I build and play guitars, mix songs, and make olive oil.</p>
     </div>
   </section>
 
-  <section class="sec">
-    <h2 class="sec__h">Selected work</h2>
-    <div class="entry">
-      <div class="entry__head">
-        <span class="entry__title"><a href="{{ '/portfolio/employer-twin' | relative_url }}" style="text-decoration:none;">Employer digital twin</a></span>
-        <span class="entry__meta">data science &middot; econometrics &middot; product</span>
-      </div>
-      <p class="entry__body">An employer wants to know: is our turnover bad, what is coming, what should we do about it. The twin takes their raw HR export from upload to forecast and scenarios, every number auditable back to the raw rows.</p>
-    </div>
-    <div class="entry">
-      <div class="entry__head">
-        <span class="entry__title"><a href="{{ '/portfolio/labor-market-twin' | relative_url }}" style="text-decoration:none;">Labor market digital twin</a></span>
-        <span class="entry__meta">economics &middot; policy</span>
-      </div>
-      <p class="entry__body">States plan their workforce with statistics that lag by years and projections that arrive as black boxes. The twin models the market as stocks and flows that must balance: who enters, who leaves, demand built four ways, and the gap left over.</p>
-    </div>
-    <div class="entry">
-      <div class="entry__head">
-        <span class="entry__title"><a href="{{ '/portfolio/occupation-resolver' | relative_url }}" style="text-decoration:none;">Occupation resolver</a></span>
-        <span class="entry__meta">machine learning &middot; LLM systems</span>
-      </div>
-      <p class="entry__body">Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy. The resolver fixes this once, for any title, which is why the twins can exist.</p>
-    </div>
-    <div class="entry">
-      <div class="entry__head">
-        <span class="entry__title"><a href="{{ '/portfolio/skills-framework' | relative_url }}" style="text-decoration:none;">Task-based labor market</a></span>
-        <span class="entry__meta">economics &middot; machine learning</span>
-      </div>
-      <p class="entry__body">The main measures of AI exposure disagree with each other. This is an instrument rather than another estimate: a calibrated production function where every parameter is disclosed, sourced, and swappable, paired with a research paper in progress.</p>
-    </div>
-    <div class="entry__links" style="margin-top:16px;"><a href="{{ '/portfolio' | relative_url }}">All entries &rarr;</a></div>
-  </section>
+  <!-- ============================ work ============================ -->
 
-  <section class="sec">
-    <h2 class="sec__h">Featured research</h2>
-    <div class="entry">
-      <div class="entry__head">
-        <span class="entry__title">Regional economic development as ecosystem</span>
-        <span class="entry__meta">Dissertation &middot; working papers</span>
+  <section id="work" class="anchor">
+    <div class="sechead">
+      <span class="sechead__h">Work</span>
+      <span class="sechead__n">Roles, systems, research, publications</span>
+    </div>
+
+    <h3 class="sec__h" style="margin-bottom:8px;">Roles</h3>
+    <div class="roles">
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">Head of data science and engineering</div>
+          <div class="role-row__o"><a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a>, San Francisco</div>
+        </div>
+        <div class="role-row__d">May 2025 &ndash; present</div>
       </div>
-      <p class="entry__body">A framework treating regional economies as integrated ecosystems of place-based conditions, human and social capital, and economic activity, tested on EU regional data. Regions sort into a four-tier ladder, and the pandemic shock moved them down it four times as often as up.</p>
-      <div class="entry__links"><a href="{{ '/research' | relative_url }}">All research</a></div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">Senior manager</div>
+          <div class="role-row__o"><a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, San Francisco</div>
+        </div>
+        <div class="role-row__d">Apr 2024 &ndash; Apr 2025</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">Program manager, inclusive regional economic development</div>
+          <div class="role-row__o"><a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, San Francisco</div>
+        </div>
+        <div class="role-row__d">Jan 2022 &ndash; Apr 2024</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">Research assistant, then research intern</div>
+          <div class="role-row__o">OFCE and Banque de France, Paris</div>
+        </div>
+        <div class="role-row__d">2019, 2021 &ndash; 2022</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">Graduate teaching assistant and external grader</div>
+          <div class="role-row__o">Sciences Po School of Public Affairs, INSEAD, Northwestern exchange</div>
+        </div>
+        <div class="role-row__d">2020 &ndash; present</div>
+      </div>
+    </div>
+
+    <!-- ---------------- built ---------------- -->
+
+    <h3 class="sec__h" style="margin:56px 0 8px;">Systems I have built</h3>
+    <p class="lede" style="font-size:14px; margin-bottom:14px;">The two digital twins are the ones to start with, the employer's and the state's, and the rest are the smaller problems I had to solve to get the twins working, each one making a longer chain possible. The code and the underlying data at Radius stay private, so what these describe is the problem, the approach, and where it landed, and every figure on the detail pages is built on synthetic data for illustration.</p>
+
+    <div class="works">
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Employer digital twin</span><span class="work__tag">Data science, econometrics, product</span></div>
+          <p class="work__s">An employer wants to know whether their turnover is bad, what is coming, and what to do about it, and their raw HR export answers none of that on its own.</p>
+        </summary>
+        <div class="work__body">
+          <p>The twin takes that export from upload to forecast and scenarios, with every number auditable back to the raw rows, which is what makes it usable in a room where somebody is going to be asked to defend it.</p>
+          <div class="work__links"><a href="{{ '/portfolio/employer-twin' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Labor market digital twin</span><span class="work__tag">Economics, policy, data science</span></div>
+          <p class="work__s">States plan their workforce with statistics that lag by years and projections that arrive as black boxes, neither of which can be interrogated when the number turns out to be wrong.</p>
+        </summary>
+        <div class="work__body">
+          <p>The twin models the market as stocks and flows that must balance, meaning who enters, who leaves, demand built four separate ways, and the gap left over once the four are reconciled against each other.</p>
+          <div class="work__links"><a href="{{ '/portfolio/labor-market-twin' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Occupation resolver</span><span class="work__tag">Machine learning, LLM systems, data engineering</span></div>
+          <p class="work__s">Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy, so there is no benchmark, no forecast, and no comparison across employers.</p>
+        </summary>
+        <div class="work__body">
+          <p>The resolver fixes this once, for any title, through a ten-stage pipeline over three model layers, which is why the twins can exist at all.</p>
+          <div class="work__links"><a href="{{ '/portfolio/occupation-resolver' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Data lake</span><span class="work__tag">Data engineering, data science</span></div>
+          <p class="work__s">Connecting datasets across the labor market takes a crosswalk onto the federal taxonomy, and the sources disagree on unit, grain, vintage, and license.</p>
+        </summary>
+        <div class="work__body">
+          <p>The lake reconciles 220 of them so that any one can be joined to any other, with a canon that fixes the disagreements once and a librarian layer that answers questions about what is in there.</p>
+          <div class="work__links"><a href="{{ '/portfolio/data-lake' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
+          <p class="work__s">Wealth inequality data is scattered across mutually incompatible sources, each using a different unit, methodology, and license, so a comparable cross-country panel is a research project before it is an input to one.</p>
+        </summary>
+        <div class="work__body">
+          <p>The Atlas closes that gap into a single versioned openly licensed panel of household net-wealth inequality, currently 10,783 observations across 213 countries from 1800 to 2025, with every row tagged by source priority and comparability tier so a user can decide how much reconciliation they are willing to accept rather than inheriting mine.</p>
+          <div class="work__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">NED dashboard, California regional analysis</span><span class="work__tag">Economics, policy, live</span></div>
+          <p class="work__s">An interactive assessment of economic development across California's regions, on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground.</p>
+        </summary>
+        <div class="work__body">
+          <p>Rather than beginning from the indicators that happen to be collected, it begins from what regional actors say determines whether a household can get on and stay on, and then asks which of those things can be measured well enough to compare regions against each other. It is the three-pillar framework from my dissertation running on a real place.</p>
+          <div class="work__links"><a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">Launch the dashboard</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Wellbeing and macroeconomics explorer</span><span class="work__tag">Macroeconomics, live, QuantEcon</span></div>
+          <p class="work__s">Turns the SAGE model from my Oxford paper into something you can move the parameters on, so you can watch how the social psychology terms change what happens to a household during a shock.</p>
+        </summary>
+        <div class="work__body">
+          <p>The model is available in QuantEcon, the open source project for quantitative economics, computational lectures and tools in Python and Julia founded by Thomas Sargent and John Stachurski and used widely in teaching and research.</p>
+          <div class="work__links"><a href="https://conway1521.github.io/sage-bewley/" target="_blank" rel="noopener">Launch the explorer</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">CREST, green workforce readiness dashboard</span><span class="work__tag">Jobs for the Future</span></div>
+          <p class="work__s">A national dashboard ranking every US county by climate risk and economic resilience into risk-and-readiness tiers, each with targeted recommendations.</p>
+        </summary>
+        <div class="work__body">
+          <p>It anchored a high-profile climate initiative and was featured in a national press release, and it remains the piece of my work that has been used by the most people who have never heard of me.</p>
+          <div class="work__links"><a href="https://info.jff.org/assessing-regional-readiness-for-action" target="_blank" rel="noopener">Dashboard</a> <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" rel="noopener">Report</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Tech careers workforce development program</span><span class="work__tag">Jobs for the Future</span></div>
+          <p class="work__s">The sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals.</p>
+        </summary>
+        <div class="work__body">
+          <p>Six target occupations were identified through demand mapping and job-quality scoring, and those six are now the basis of national enrolment and placement.</p>
+          <div class="work__links"><a href="https://www.jff.org/idea/verizon-case-study/" target="_blank" rel="noopener">Case study</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Workforce blueprints</span><span class="work__tag">Economics, data science</span></div>
+          <p class="work__s">A new facility is planned and a region needs to know what it means, meaning how many workers, in which occupations, on what schedule.</p>
+        </summary>
+        <div class="work__body">
+          <p>Announcements give a headline headcount and staffing statistics describe yesterday's mix, so the blueprint has to be built rather than looked up.</p>
+          <div class="work__links"><a href="{{ '/portfolio/workforce-blueprints' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Occupational opportunity scoring</span><span class="work__tag">Policy, economics</span></div>
+          <p class="work__s">A workforce board has one real question, which is which occupations to back and what would actually move them.</p>
+        </summary>
+        <div class="work__body">
+          <p>This scores every occupation on five visible pillars and attaches levers only where the evidence supports them, always with a confidence band and never as a bare point, because a point estimate handed to a board becomes a target within a week.</p>
+          <div class="work__links"><a href="{{ '/portfolio/opportunity-levers' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Task-based labor market</span><span class="work__tag">Economics, machine learning</span></div>
+          <p class="work__s">The main measures of AI exposure disagree with each other, and claims about AI's effect on jobs have outrun anyone's ability to measure them.</p>
+        </summary>
+        <div class="work__body">
+          <p>This is an instrument rather than another estimate, a calibrated production function in which every parameter is disclosed, sourced, and swappable, paired with a research paper in progress.</p>
+          <div class="work__links"><a href="{{ '/portfolio/skills-framework' | relative_url }}">Read more</a> <a href="{{ '/working-papers/skills-dna' | relative_url }}">The paper</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
+          <div class="work__head"><span class="work__t">Market signals</span><span class="work__tag">Economics, data science</span></div>
+          <p class="work__s">Official statistics arrive quarters late and decisions cannot wait for them.</p>
+        </summary>
+        <div class="work__body">
+          <p>This grades fifteen kinds of leading evidence, among them postings, layoff notices, and wage anomalies, by how much confidence each one deserves, and composes them into two flags whose logic stays readable to the person acting on them.</p>
+          <div class="work__links"><a href="{{ '/portfolio/market-signals' | relative_url }}">Read more</a></div>
+        </div>
+      </details>
+
+    </div>
+
+    <!-- ---------------- research graph ---------------- -->
+
+    <div class="plate" style="margin:80px 0 0;">
+      <div class="plate__head">
+        <span class="plate__title">Research</span>
+        <span class="plate__hint">hover to trace &middot; click to open</span>
+      </div>
+      <p class="plate__purpose">All of this runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately, and the papers are laid out here by what each one needs from the others, so a line between two of them means the work at one end is an input to the work at the other.</p>
+
+      <div class="rgraph" id="rgraph" data-base="{{ '/' | relative_url }}">
+        <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Graph of research works and the dependencies between them">
+          <g id="rg-clusters"></g>
+          <g id="rg-edges"></g>
+          <g id="rg-nodes"></g>
+        </svg>
+      </div>
+
+      <div class="rg-list" id="rg-list"></div>
+
+      <div class="plate__note" id="rg-note">The master's thesis at the bottom left is the earliest piece of work here and the only one that has been published, and the third dissertation paper, two clusters above it, still runs on the household model that thesis set out.</div>
+
+      <div class="rg-detail" id="rg-detail" hidden></div>
+
+      <div class="plate__caption">
+        <span class="glyph">&#9673;</span> published &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9679;</span> working paper &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9671;</span> live tool &nbsp;&middot;&nbsp;
+        <span class="glyph">&#9675;</span> in development
+      </div>
+    </div>
+
+    <h3 class="sec__h" style="margin:56px 0 8px;">Selected works</h3>
+    <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">Skills DNA of the economy: pricing tasks, skills, and AI exposure in dollars</span>
+        <span class="pub-row__w">Working paper, at draft</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/skills-dna' | relative_url }}">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Regional economic development as ecosystem: empirical evidence from EU regions</span>
+        <span class="pub-row__w">Working paper, dissertation</span>
+        <span class="pub-row__l"><a href="#work">In the graph</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Wellbeing and macroeconomics: a SAGE approach</span>
+        <span class="pub-row__w">Univ. of Oxford, Social Macroeconomics</span>
+        <span class="pub-row__l"><a href="https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Workforce flow engine: entry, exit, migration, and churn from census microdata</span>
+        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/flows-engine' | relative_url }}">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Where occupations move: bilateral migration across 501 occupations</span>
+        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__l"><a href="{{ '/working-papers/occupation-migration' | relative_url }}">Read</a></span>
+      </div>
+    </div>
+
+    <!-- ---------------- publications ---------------- -->
+
+    <h3 class="sec__h" style="margin:56px 0 8px;">Publications and essays</h3>
+    <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">Unlocking the promise of AI for Black learners and workers</span>
+        <span class="pub-row__w">JFF, May 2025</span>
+        <span class="pub-row__l"><a href="https://www.jff.org/idea/unlocking-the-promise-of-ai-for-black-learners-and-workers/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Talent strategies supporting small business AI adoption</span>
+        <span class="pub-row__w">JFF, Feb 2025</span>
+        <span class="pub-row__l"><a href="https://info.jff.org/hubfs/Google%20AI%20Toolkits/Talent%20Strategies%20Supporting%20Small%20Business%20AI%20Adoption_VF.pdf" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">The four pillars of worker voice</span>
+        <span class="pub-row__w">JFF, Dec 2024</span>
+        <span class="pub-row__l"><a href="https://www.jff.org/idea/four-pillars-worker-voice/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Unequal opportunities: quality and diversity in green jobs</span>
+        <span class="pub-row__w">JFF, Jul 2024</span>
+        <span class="pub-row__l"><a href="https://www.jff.org/idea/climate-resilient-employees-sustainable-tomorrow-crest/unequal-opportunities-examining-quality-and-diversity-in-green-jobs/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">How employers can prepare workers for an AI-driven economy</span>
+        <span class="pub-row__w">JFF, Mar 2024</span>
+        <span class="pub-row__l"><a href="https://www.jff.org/how-employers-can-prepare-workers-for-an-ai-driven-economy/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Regional solutions for growing quality green jobs</span>
+        <span class="pub-row__w">JFF, Feb 2024</span>
+        <span class="pub-row__l"><a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" rel="noopener">Explore</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Investing in inclusion and impact across the learner journey</span>
+        <span class="pub-row__w">JFF, Jan 2023</span>
+        <span class="pub-row__l"><a href="https://www.jff.org/idea/investing-inclusion-impact-across-learner-journey/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">From observation to action: multidimensional wellbeing in economic models</span>
+        <span class="pub-row__w">Global Solutions Initiative</span>
+        <span class="pub-row__l"><a href="https://www.global-solutions-initiative.org/article/from-observation-to-action-the-empirical-case-for-including-multidimensional-wellbeing-in-economic-models/" target="_blank" rel="noopener">Read</a></span>
+      </div>
+    </div>
+
+    <!-- ---------------- education ---------------- -->
+
+    <h3 class="sec__h" style="margin:56px 0 8px;">Education</h3>
+    <div class="roles">
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">PhD in economics</div>
+          <div class="role-row__o">Universit&eacute; Paris 8. Dissertation on inclusive economic development using an ecosystem approach, supervised by Thibault Darcillon and Matteo Cavallaro at Paris 8 and Francesco Saraceno at Sciences Po and OFCE.</div>
+        </div>
+        <div class="role-row__d">2024 &ndash; present</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">MPhil in economics</div>
+          <div class="role-row__o">Sciences Po, Paris. Fulbright scholar. Thesis supervised by Xavier Ragot at OFCE and published in the University of Oxford Social Macroeconomics series.</div>
+        </div>
+        <div class="role-row__d">2018 &ndash; 2020</div>
+      </div>
+      <div class="role-row">
+        <div>
+          <div class="role-row__t">BPhil in economics, international and area studies</div>
+          <div class="role-row__o">University of Pittsburgh Honors College. Double major, Brackenridge fellow.</div>
+        </div>
+        <div class="role-row__d">2013 &ndash; 2017</div>
+      </div>
+    </div>
+
+    <h3 class="sec__h" style="margin:56px 0 8px;">Contact</h3>
+    <p class="prose" style="color:var(--muted); margin-top:0; font-size:14px;">Best reached by email or LinkedIn, and I am happy to talk through any of the above.</p>
+    <div class="inline-links">
+      <a href="mailto:alessandro.conway@gmail.com">alessandro.conway@gmail.com</a>
+      <a href="https://www.linkedin.com/in/alessandro-conway/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/conway1521" target="_blank">GitHub</a>
+      <a href="https://alessandroconway.substack.com" target="_blank">Substack</a>
     </div>
   </section>
 
 </div>
+
+<script src="{{ '/assets/js/research-graph.js' | relative_url }}"></script>

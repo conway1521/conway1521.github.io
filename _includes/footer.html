@@ -1,10 +1,10 @@
 <footer class="foot">
     <span>&copy; {{ 'now' | date: "%Y" }} Alessandro Conway &middot; updated {{ 'now' | date: "%B %Y" | downcase }}</span>
     <div class="foot__links">
-        <a href="{{ '/portfolio' | relative_url }}">Portfolio</a>
-        <a href="{{ '/research' | relative_url }}">Research</a>
+        <a href="mailto:{{ site.author.email }}">Email</a>
         <a href="{{ site.author.linkedin }}" target="_blank">LinkedIn</a>
         <a href="{{ site.author.github }}" target="_blank">GitHub</a>
-        <a href="https://alessandroconway.substack.com" target="_blank">Substack</a> 
+        <a href="{{ site.author.scholar }}" target="_blank">Scholar</a>
+        <a href="https://alessandroconway.substack.com" target="_blank">Substack</a>
     </div>
 </footer>
