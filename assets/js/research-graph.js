@@ -115,23 +115,23 @@
     },
 
     coding: {
-      x: 606, y: 128, k: 'wp', l: ['Occupational', 'coding'], lx: 0, ly: -24, a: 'middle',
+      x: 606, y: 128, k: 'wip', l: ['Occupational', 'coding'], lx: 0, ly: -24, a: 'middle',
       title: 'Occupational coding at the 8-digit frontier',
-      meta: 'Working paper, public evaluation harness',
+      meta: 'In development, public evaluation harness',
       short: 'Finds where title retrieval stops working and classification has to take over, which is the measurement result that everything else in the labor strand rests on.',
       plain: 'Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy, so there is no benchmark, no forecast and no comparison across employers until the collapsing is solved. Matching a title against a list of official titles gets you most of the way and then stops, and where it stops is not where people assume, so this establishes where the ceiling is and what has to replace the method once you are past it.',
       abs: 'Every labor dataset built from job titles must map unstructured strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task and mobility differences actually live, it is considerably harder, and the choice of method changes the resulting distribution. This paper benchmarks retrieval-based and classification-based approaches against the official 8-digit taxonomy, characterizing the ceiling on retrieval rather than asserting it, and evaluating classification on the residual where retrieval fails. The evaluation harness is public, which makes the comparison reproducible and the ceiling contestable.',
-      links: [['Working paper', '/working-papers/occupation-coding/']]
+      links: [['Read more', '/working-papers/occupation-coding/']]
     },
 
     taxonomy: {
-      x: 708, y: 176, k: 'wp', l: ['Role', 'taxonomy'], lx: 17, ly: -8, a: 'start',
+      x: 708, y: 176, k: 'wip', l: ['Role', 'taxonomy'], lx: 17, ly: -8, a: 'start',
       title: 'A role taxonomy anchored to the federal codes',
-      meta: 'Working paper, 3,939 roles, releasable as a public artifact',
+      meta: 'In development, 3,939 roles, releasable as a public artifact',
       short: '3,939 roles nested inside the federal occupation codes and checked against the official 8-digit taxonomy.',
       plain: 'The official codes are too coarse for what employers actually hire for, since one nurse code covers an ICU night nurse and a school nurse, while raw job titles are too fine to compare across employers. Private taxonomies solve the granularity by floating free of the government codes, which buys detail at the cost of ever reconciling with public statistics again. A role layer nested strictly inside the codes is the middle both sides miss, and it lets an employer’s own vocabulary join to public data without either side being distorted to fit the other.',
       abs: 'This paper constructs a role taxonomy of 3,939 roles as a strict refinement of the federal occupation codes, so that every role maps up to exactly one code and aggregation to published statistics remains exact. The discipline is a single rule: a distinction counts as a role only when it stays inside an 8-digit boundary and is meaningful within it, while anything that is really a level, a shift, a staffing arrangement or a specialty modifier is stored as a facet rather than promoted to a new occupation. Titles are stripped of facets, embedded, and clustered recursively with an abstention margin. Validation uses ground truth nobody else uses, since the official 8-digit splits are themselves known-correct partitions against which the clustering can be scored directly. The economic test is how much within-code wage variation is explained once workers are split into roles, where even a modest gain settles the question. Because the inputs are public, the taxonomy and its resolver ship as a public artifact.',
-      links: [['Working paper', '/working-papers/role-taxonomy/']]
+      links: [['Read more', '/working-papers/role-taxonomy/']]
     },
 
     skillsdna: {
@@ -146,13 +146,13 @@
     },
 
     exposure: {
-      x: 888, y: 190, k: 'wp', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
+      x: 888, y: 190, k: 'wip', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
       title: 'Does the choice of AI-exposure measure matter?',
-      meta: 'Working paper, common task framework, fully public data',
+      meta: 'In development, common task framework, fully public data',
       short: 'Six measures held constant except for the measure itself, which agree at the extremes and disagree in the middle, and the middle is where every interesting policy question sits.',
       plain: 'At least six serious measures score how exposed each occupation is to AI, and most studies pick one without ever justifying the choice. If those measures disagree with each other, then every claim about which jobs are at risk is partly an artifact of which measure the author happened to reach for, and no reader can tell how much. Holding everything else fixed and varying only the measure shows how much of a published finding is the world and how much is the instrument.',
       abs: 'At least six serious measures score occupational exposure to AI, and studies routinely select one without justification. If the measures disagree, conclusions about which occupations are at risk are partly artifacts of that selection. This paper holds population, occupational base and specification constant and varies only the measure, quantifying where the choice binds. Comparison is on dollar-weighted agreement rather than rank correlation, since rank agreement at the tails conceals disagreement in the middle of the distribution, which is where policy questions are actually posed. The measures converge at the extremes and diverge substantially in the interior.',
-      links: [['Working paper', '/working-papers/exposure-measures/']]
+      links: [['Read more', '/working-papers/exposure-measures/']]
     },
 
     moves: {
@@ -167,36 +167,36 @@
     },
 
     migration: {
-      x: 744, y: 400, k: 'wp', l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
+      x: 744, y: 400, k: 'wip', l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
       title: 'Where occupations move',
-      meta: 'Working paper, 501 occupations, twenty years of census microdata',
+      meta: 'In development, 501 occupations, twenty years of census microdata',
       short: 'We know a great deal about the interstate migration of people and very little about migration by occupation, yet occupation is where migration policy actually bites, through nurse licensure compacts, engineer reciprocity, teacher pension portability and remote-work eligibility.',
       plain: 'Migration policy is written at the level of the occupation and studied at the level of the person, which means the instruments that policymakers actually control are the ones nobody has measured. This maps bilateral state-to-state migration across 501 occupations, 51 jurisdictions and nineteen vintages of census microdata, producing an atlas of which occupations move and where they go, together with the wage elasticities of who moves for money. It is the wide complement to the workforce flow engine, which goes deep on a single state instead.',
       abs: 'Interstate migration is well documented at the level of the individual and largely unmeasured at the level of the occupation, despite occupation being the unit on which migration policy operates, through licensure compacts, reciprocity agreements, pension portability and remote-work eligibility. This paper constructs bilateral state-to-state migration flows by occupation across 501 codes, 51 jurisdictions and nineteen vintages of census microdata, and estimates a Poisson pseudo-maximum-likelihood gravity specification in which origin and destination fixed effects absorb level differences so that wage and distance terms are identified off bilateral variation. The output is a descriptive atlas of occupational mobility together with a distribution of wage elasticities, and the licensing coefficient gives a direct estimate of how much occupational regulation dampens flows.',
       math: ['E[ flowₒ→d^k ] = exp( ηₖ ln(w_d/wₒ) + β ln distₒd + φₒ + ψ_d )'],
-      links: [['Working paper', '/working-papers/occupation-migration/']]
+      links: [['Read more', '/working-papers/occupation-migration/']]
     },
 
     flows: {
-      x: 622, y: 344, k: 'wp', l: ['Workforce', 'flow engine'], lx: -17, ly: 2, a: 'end',
+      x: 622, y: 344, k: 'wip', l: ['Workforce', 'flow engine'], lx: -17, ly: 2, a: 'end',
       title: 'Workforce flow engine',
-      meta: 'Working paper, dissertation paper and queryable parameter database',
+      meta: 'In development, dissertation paper and queryable parameter database',
       short: 'Every occupation in every state has rates at which people enter it, leave it, and move between states, with a background rate of turnover underneath all three, and standard forecasts give the totals while this measures the rates that produce them.',
       plain: 'A state that knows its nurse stock will fall by twelve percent has a problem statement, and a state that knows the fall is driven by out-migration concentrated in the 35 to 44 age band while entry and retirement track national norms has an intervention design. Standard forecasts answer how many, which is the question a state can do least with, because a shortfall caused by people leaving needs a completely different response from one caused by nobody arriving. Decomposing the stock into entry, exit, migration and residual churn lets a state tell a retention problem from a pipeline problem before it spends anything.',
       abs: 'Occupational workforce stocks are decomposed into behavioral flow parameters, entry, exit, interstate migration and residual churn, at the grain of state by occupation by age band by year, with design-based uncertainty throughout. The identity is a cohort-component accounting relation adapted from formal demography and applied to ACS repeated cross-sections. Migration is observed directly from one-year-ago state of residence, entry is estimated from the young age bands and validated against graduation and licensure counts, and exit is estimated from the decline of upper age bands across vintages. Because the ACS is a repeated cross-section rather than a true panel, occupation switching and re-entry are not separately identified and both fold into the churn residual, which is retained as a behavioral parameter rather than discarded as error, measured with replicate-weight standard errors and netted for mortality. Across six occupations and nine vintages, 1.67 million records with all 80 replicate weights, occupational lifecycles separate cleanly and national exit schedules correlate up to 0.75 across the pandemic break, with state migration fingerprints persisting at about 0.6.',
       math: ['Stockₜ₊₁ = Stockₜ + Entrants + In-migrants − Exits − Out-migrants + Residual churn'],
-      links: [['Working paper', '/working-papers/flows-engine/']]
+      links: [['Read more', '/working-papers/flows-engine/']]
     },
 
     shortage: {
-      x: 604, y: 470, k: 'wp', l: ['Shortage', 'arithmetic'], lx: -17, ly: 2, a: 'end',
+      x: 604, y: 470, k: 'wip', l: ['Shortage', 'arithmetic'], lx: -17, ly: 2, a: 'end',
       title: 'Shortage arithmetic',
-      meta: 'Working paper, a correction any workforce board can apply',
+      meta: 'In development, a correction any workforce board can apply',
       short: 'Substitution across neighbouring occupations reduces estimated shortage gaps by 15 to 20 percent.',
       plain: 'Headline shortage figures subtract the supply of one occupation from the demand for that same occupation, as though every unfilled role had to be filled by somebody already trained for exactly it. But employers are buying output rather than credentials, and a good deal of any gap is absorbed by workers moving in from nearby occupations. Ignoring that margin overstates the shortage, the correction turns out to be large, and grading licensing back in on top of it produces a number a workforce board can actually act on.',
       abs: 'Occupational shortage estimates subtract the supply of an occupation from the demand for that same occupation, which implicitly assumes zero substitution. Because demand is for output rather than for credentials, employers substitute across near occupations, and ignoring that margin overstates the shortage materially. This paper recomputes the gap by subtracting, tier by tier of skill adjacency, the workers who can actually fill it, weighting each tier by observed transition rates and then re-restricting by licensing barriers at the destination. The correction reduces estimated gaps by 15 to 20 percent. The approach is arithmetic rather than equilibrium modelling, and any workforce board can apply and audit it.',
       math: ['gap_corrected = gap_raw − Σ_tiers min( absorbable share × adjacent slack, tier capacity )'],
-      links: [['Working paper', '/working-papers/shortage-arithmetic/']]
+      links: [['Read more', '/working-papers/shortage-arithmetic/']]
     },
 
     vacancy: {
