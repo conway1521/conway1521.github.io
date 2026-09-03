@@ -41,7 +41,7 @@ ink_js: true
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Tiered confidence</h3>
-        <p>Strong sources fire alone. Weaker ones only count when two agree in the same direction. Unconfirmed signals are kept and labeled rather than dropped, because a flagged rumor that later confirms is itself information.</p>
+        <p>A strong source is allowed to fire on its own. Weaker ones only count when two agree in the same direction. Unconfirmed signals are kept and labeled rather than dropped, because a flagged rumor that later confirms is itself information.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
@@ -61,7 +61,7 @@ ink_js: true
   <div class="plate" style="max-width:660px;">
     <div class="plate__head">
       <span class="plate__title">Evidence</span>
-      <span class="plate__hint">hover a type &middot; ten of fifteen shown</span>
+      <span class="plate__hint">ten of fifteen shown</span>
     </div>
     <p class="plate__purpose">Each type carries its source and what it is allowed to claim.</p>
     <div id="signals" data-default="Each signal type lands on the same state-by-occupation grain. Strong sources fire on their own, while weaker ones only count when they agree with each other.">
@@ -76,7 +76,7 @@ ink_js: true
       <div class="sig-row" data-note="Licensure volume &middot; new credential holders entering a regulated occupation."><span class="sig-row__num">09</span><span class="sig-row__name">Licensure volume</span><span class="sig-row__src">credential and licensure rosters</span></div>
       <div class="sig-row" data-note="Regional sentiment &middot; the tone of regional economic commentary, extracted under a constrained schema."><span class="sig-row__num">10</span><span class="sig-row__name">Regional sentiment</span><span class="sig-row__src">regional economic reports, LLM-extracted</span></div>
     </div>
-    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. Strong sources fire alone. Weaker ones need agreement.</div>
+    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. A strong source is allowed to fire on its own. Weaker ones need agreement.</div>
   </div>
 
   <!-- qualitative to quantitative -->
@@ -85,7 +85,7 @@ ink_js: true
       <span class="plate__title">From prose to a signal</span>
       <span class="plate__hint">switch the source</span>
     </div>
-    <p class="plate__purpose">The hardest sources are written, not tabulated: a regional economic report, a press release, a layoff filing. An LLM reads each under a constrained extraction schema and returns structured signals on the same state-by-occupation grain as the statistics, every one carrying the sentence it came from.</p>
+    <p class="plate__purpose">The hardest sources are written rather than tabulated, and they include a regional economic report, a press release and a layoff filing. An LLM reads each under a constrained extraction schema and returns structured signals on the same state-by-occupation grain as the statistics, every one carrying the sentence it came from.</p>
     <div class="obs-tabs" id="xtract-tabs"></div>
     <div class="xtract-grid">
       <div class="xtract-prose" id="xtract-prose"></div>

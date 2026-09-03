@@ -1,6 +1,6 @@
 /* ============================================================
    Figure interactions. One interactive moment per figure;
-   three verbs only: hover to inspect, click to expand,
+   hover to inspect, click to expand,
    select to refocus. Values lifted from the design reference.
    ============================================================ */
 (function () {
@@ -336,7 +336,7 @@
     ['stock', 250, 104, 150, 104, 'Occupation stock', 'stock', 'Cohort accounting over 501 occupations and 51 jurisdictions. Every projection must satisfy the identity.'],
     ['term', 180, 330, 140, 44, 'True exits', 'outflow', 'Terminations decomposed; transfers removed. Raw 19% becomes a true 4.29%.'],
     ['migout', 340, 330, 140, 44, 'Migration out', 'outflow', 'Workers leaving the region, same ACS grain as inflows.'],
-    ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Empirical age-specific exit rates, not a flat assumption.'],
+    ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Exit rates are empirical and age-specific rather than a flat assumption.'],
     ['demand', 460, 104, 140, 104, 'Demand', 'demand', 'Four layers, deliberately never averaged. Divergence between them is information.'],
     ['req', 650, 44, 160, 40, 'Requisitions', 'L1', 'Pooled employer requisition rates and hire slopes, with confidence tiers.'],
     ['struct', 650, 96, 160, 40, 'Structural', 'L2', 'Statistical projections and wage trend; what the statistical system expects.'],
@@ -753,7 +753,7 @@
         var tail = (streamHover == null && streamSel === f) ? ' <span class="rmuted">Selected, click again to clear.</span>' : '';
         return '<strong>' + esc(sd[f][0]) + '.</strong> ' + esc(sd[f][2]) + ' <span class="rmuted">' + esc(sd[f][3]) + '</span>' + tail;
       }
-      return '<strong>' + esc(FAB_TYPES[streamType][0]) + '.</strong> ' + esc(FAB_TYPES[streamType][2]) + ' Hover a band to preview it, click to lock the job.';
+      return '<strong>' + esc(FAB_TYPES[streamType][0]) + '.</strong> ' + esc(FAB_TYPES[streamType][2]) + ' Click a band to lock the job it covers.';
     }
     function applyHover(sd) {
       var f = curFocus();
@@ -946,7 +946,7 @@
       '<div class="lib-row"><span class="lib-row__k">Geography</span><span class="lib-chip lib-chip--geo">' + esc(r.geo) + '</span></div>' +
       '<div class="lib-row"><span class="lib-row__k">Routed to</span></div>' + dsRows +
       '<div class="lib-fu">' + fu + '</div>' +
-      '<div class="lib-hand">Routing only. The counts are live from the catalog, not an analysis. Computation hands off to Eclipse, the analyst agent.</div></div>';
+      '<div class="lib-hand">This layer only routes, and the counts come live from the catalog rather than from an analysis, since computation hands off to Eclipse, the analyst agent.</div></div>';
   }
   function initLibrarian() {
     var log = $('lib-log'), input = $('lib-input'), btn = $('lib-btn'), sugg = $('lib-sugg');

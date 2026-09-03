@@ -61,10 +61,10 @@ ink_js: true
   <div class="plate" style="max-width:640px;">
     <div class="plate__head">
       <span class="plate__title">Lake</span>
-      <span class="plate__hint">one dot per dataset &middot; hover a domain</span>
+      <span class="plate__hint">one dot per dataset</span>
     </div>
     <p class="plate__purpose">220 datasets across twelve domains: the full inventory, by domain and readiness.</p>
-    <div id="lake" data-default="One dot per dataset. Filled is live. Hollow is gated, scaffold, or planned. Hover a domain.">
+    <div id="lake" data-default="One dot per dataset. Filled is live. Hollow is gated, scaffold, or planned.">
       <div class="matrix-row" data-count="73" data-filled="50" data-note="Derived products &middot; 73 datasets. Scores, similarities, signals, and engine outputs built on the layers below."><span class="matrix-row__name">Derived products</span><div class="matrix-row__dots"></div><span class="matrix-row__count">73</span></div>
       <div class="matrix-row" data-count="30" data-filled="21" data-note="Labor market &middot; 30 datasets. Employment, openings, separations, projections, postings."><span class="matrix-row__name">Labor market</span><div class="matrix-row__dots"></div><span class="matrix-row__count">30</span></div>
       <div class="matrix-row" data-count="30" data-filled="21" data-note="Employer &middot; 30 datasets. HRIS, requisition, and contingent-workforce panels, anonymized and benchmarked."><span class="matrix-row__name">Employer</span><div class="matrix-row__dots"></div><span class="matrix-row__count">30</span></div>
@@ -76,7 +76,7 @@ ink_js: true
       <div class="matrix-row" data-count="5" data-filled="3" data-note="Sector intelligence &middot; 5 datasets. Policy, utilization, infrastructure, and financial-health indicators by sector."><span class="matrix-row__name">Sector intelligence</span><div class="matrix-row__dots"></div><span class="matrix-row__count">5</span></div>
       <div class="matrix-row" data-count="1" data-filled="1" data-note="HR standardization &middot; the canonical-title layer that lets employer data join the crosswalk."><span class="matrix-row__name">HR standardization</span><div class="matrix-row__dots"></div><span class="matrix-row__count">1</span></div>
     </div>
-    <div class="plate__note" id="lake-note">One dot per dataset. Filled is live, and hollow is gated, scaffold, or planned. Hover a domain.</div>
+    <div class="plate__note" id="lake-note">One dot per dataset. Filled is live, and hollow is gated, scaffold, or planned.</div>
     <div class="matrix-stats">220 datasets &middot; dozens of providers &middot; over a million contributors &middot; millions of records</div>
   </div>
 
@@ -108,7 +108,7 @@ ink_js: true
       <input id="lib-input" class="ink-input" placeholder="Ask about demand, turnover, wages, gaps, levers..." autocomplete="off">
       <button type="button" id="lib-btn" class="ink-btn">Ask</button>
     </div>
-    <div class="plate__caption">Deterministic routing over a 50-value concept vocabulary and 220 datasets, with zero model calls per query. The same routing decision is a visible concept match, not an opaque similarity score.</div>
+    <div class="plate__caption">Deterministic routing over a 50-value concept vocabulary and 220 datasets, with zero model calls per query. The same routing decision is a visible concept match, so you can read why a dataset was selected rather than being handed an opaque similarity score.</div>
   </div>
 
   <div class="col">
