@@ -37,6 +37,15 @@
       links: [['Launch the Atlas', 'https://conway1521.github.io/open-inequality-atlas/']]
     },
 
+    antic: {
+      x: 232, y: 428, k: 'wp', l: ['Fiscal', 'anticipation'], lx: 17, ly: 2, a: 'start',
+      title: 'The anticipation content of fiscal policy: UK tax measures, 1945\u20132019',
+      meta: 'Working paper, under revision for submission',
+      plain: 'When a tax change is announced and when it takes effect are different dates, and the gap between them has roughly quadrupled since the middle of the last century, so a British tax change today mostly arrives having been visible for months. That matters because the standard way of measuring the effect of tax policy treats a change as news on the day it takes effect, which was a fair approximation when most changes did arrive that way and is not one now. The gap is also not random: it depends on which tax is being changed, on where the Budget falls in the calendar, and, at the margin, on whether an election is coming, since tax rises are about four times more likely than cuts to take effect on the far side of a vote.',
+      abs: 'Narrative tax shocks are dated by implementation, and the resulting series are pooled across decades. Using 2,252 UK tax measures announced between 1945 and 2019, this paper shows that the interval between announcement and implementation has changed enough that such a series mixes two economically different objects. The share of the tax impulse announced more than 120 days before taking effect rises from 0.18 in 1945 to 1979 to 0.70 since 2000, and the unanticipated component of the quarterly impulse falls roughly fivefold. Computing the same quantity from the century-long dataset of Cloyne, H\u00fcrtgen and Dimsdale, on their coding and their threshold, reproduces the series and extends it back to 0.02 in 1920 to 1944. Within the same Budget, National Insurance changes are 39 percentage points more likely than excise duties to arrive with long notice, and the fiscal-year calendar produces long notice only when the Budget falls late in the year. The rise dates to the early 1990s and the move to a unified autumn Budget, a reform of the Budget process justified by parliamentary scrutiny and predictability and never assessed for macroeconomic consequence. Crises do not visibly shorten the interval.',
+      links: [['Download the paper', '/assets/papers/fiscal-anticipation.pdf']]
+    },
+
     fiscal: {
       x: 128, y: 392, k: 'wip', l: ['Fiscal policy and', 'consumption'], lx: -15, ly: 2, a: 'end',
       title: 'Fiscal policy’s distributional impact on consumption',
@@ -201,7 +210,7 @@
   };
 
   var E = [
-    ['sage', 'sagetool'], ['sage', 'p3'], ['atlas', 'fiscal'], ['atlas', 'p3'],
+    ['sage', 'sagetool'], ['sage', 'p3'], ['atlas', 'fiscal'], ['atlas', 'p3'], ['antic', 'fiscal'],
     ['p1', 'p2'], ['p2', 'p3'], ['p1', 'ned'], ['p2', 'panel'],
     ['coding', 'taxonomy'], ['taxonomy', 'skillsdna'], ['skillsdna', 'exposure'],
     ['skillsdna', 'moves'], ['moves', 'migration'], ['flows', 'migration'],
