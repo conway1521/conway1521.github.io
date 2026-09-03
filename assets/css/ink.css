@@ -734,8 +734,16 @@ button { font-family: inherit; }
    nesting is visible without another heading weight */
 .nest { padding-left: 22px; border-left: 1px solid var(--rule); margin-top: 4px; }
 .nest > .subgroup__h:first-child { margin-top: 0; }
-.nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 22px); }
-@media (max-width: 620px) { .nest { padding-left: 13px; } }
+/* Inside a nest the subgroup heading hangs to the left of everything that
+   belongs under it, so where one group ends and the next begins is legible
+   without adding another rule. */
+.nest > .groupnote, .nest > .works, .nest > .pubs { margin-left: 20px; }
+.nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 42px); }
+@media (max-width: 620px) {
+  .nest { padding-left: 13px; }
+  .nest > .groupnote, .nest > .works, .nest > .pubs { margin-left: 10px; }
+  .nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 23px); }
+}
 
 /* the research figure sits inside a block, so the block heading carries
    the rule and the plate does not repeat it */
