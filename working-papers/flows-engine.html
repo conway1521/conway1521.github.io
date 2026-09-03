@@ -1,49 +1,42 @@
 ---
 layout: default
-title: Workforce flow engine
+title: Where workers come from
 permalink: /working-papers/flows-engine/
-description: "Decomposing occupational workforce stocks into behavioral flow parameters, entry, exit, interstate migration, and residual churn, at the grain of state by occupation by..."
+description: "An account of how people enter and leave every occupation in the United States, and the measurement result that determines which survey instrument can build one."
 ---
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
 
 <div class="wrap">
 
   <div class="masthead">
     <div class="masthead__row">
       <span class="eyebrow"><a href="{{ '/#research' | relative_url }}">Research</a></span>
-      <span class="eyebrow">In progress</span>
+      <span class="eyebrow">Working paper</span>
     </div>
-    <h1 class="display">Workforce flow engine</h1>
-    <p class="lede">Decomposing occupational workforce stocks into behavioral flow parameters, entry, exit, interstate migration, and residual churn, at the grain of state by occupation by age band by year, with design-based standard errors throughout. Exit and migration are measured, entry is in estimation, and the churn residual becomes a usable parameter once the identity closes.</p>
+    <h1 class="display">Where workers come from</h1>
+    <p class="lede">Workforce policy is organized around training, on the understanding that an occupation short of people is an occupation short of graduates. This builds a full account of how people actually enter and leave every occupation in the United States, and finds that arrivals from education are the smallest of the inflows by a wide margin.</p>
   </div>
-  <div class="standfirst">Labor economics &middot; formal demography &middot; data engineering. A standalone dissertation paper and a queryable parameter database.</div>
+  <div class="standfirst">Working paper &middot; public microdata &middot; every number regenerates from a clean checkout.</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
       <span class="secnum__n">01</span>
-      <h2 class="secnum__h">The idea</h2>
+      <h2 class="secnum__h">The premise</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Every occupation in every state has rates at which people enter it, leave it, and move between states, with a background rate of turnover underneath all three. People enter as new graduates and movers and leave as retirees, career changers, and people moving away. Nobody publishes those rates, and standard workforce forecasts answer how many without answering why, which is the part policy can actually act on.</p>
-      <p>This engine decomposes occupational workforce stocks into their underlying flow components, using Census ACS microdata. The residual that remains once the observable flows are accounted for is not treated as model error. It is a behavioral parameter: the stable background rate of turnover for that occupation in that state. A state that knows its nurse stock will fall by twelve percent has a problem statement. A state that knows the fall is driven by out-migration concentrated in the 35 to 44 age band, while entry and retirement track national norms, has an intervention design. The engine is built for the state agencies and funders who design those interventions.</p>
+      <p>Employment statistics report stocks precisely and frequently, and say nothing about the flows that produced them, so an occupation that is stable in headcount and an occupation that replaces a fifth of its people every year are recorded identically. The flows have been studied, and the literature that studies them has not met the literature that studies shortages. Neither has produced an account a workforce planner could open and read off, for a named occupation, how many people arrived from training, how many arrived from another occupation, how many left for another occupation and how many left work altogether.</p>
+      <p>This paper builds that account for 230 occupations, annually from 2009 to 2025, disaggregated by age band, with a standard error on every figure computed from the 160 replicate weights the Census Bureau publishes for the survey. The account balances exactly rather than approximately, because every person is counted once on each side of the identity from a single source, and nothing in it is imputed or calibrated to an external total.</p>
     </div>
   </div>
 
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">02</span>
-      <h2 class="secnum__h">The model</h2>
+      <h2 class="secnum__h">The instrument</h2>
     </div>
     <div class="prose">
-      <p>For an occupation in a state between year \( t \) and \( t+1 \), the stock satisfies a cohort-component accounting identity adapted from formal demography:</p>
-      <div class="math-block">
-        <p style="margin:0;">$$\text{Stock}_{t+1} = \text{Stock}_{t} + \text{Entrants} + \text{In-migrants} - \text{Exits} - \text{Out-migrants} + \text{Residual churn}$$</p>
-      </div>
-      <p>Migration is observed directly from the one-year-ago state of residence in the ACS. Entry is estimated from the young age bands and validated against graduation and licensure counts. Exit is estimated from the decline of the upper age bands across vintages. Because the ACS is a repeated cross-section rather than a true panel, occupation switching and re-entry are not separately identified, so both fold into the churn residual, which is measured with design-based standard errors and netted for mortality. In levels the identity is theory-free arithmetic, and every parameter it produces carries an error bar.</p>
+      <p>The obvious way to build the account does not work, and establishing that has to come first. Occupational mobility is normally measured by following a person across two interviews and comparing the occupation recorded on each. The Current Population Survey assigns occupation codes from written descriptions of what a person does, and two independent codings of the same unchanged job disagree in 48.1 percent of cases at the detailed level and in 31.8 percent across only twenty-three major groups.</p>
+      <p>That figure is measured on 114,491 people whose occupation the survey itself records as unchanged and who worked all fifty-two weeks of the reference year, with the person link validated against state of residence and sex, which disagree in 0.00 percent of cases, and against education, which disagrees in 12.6. A linked measure of annual mobility built on that foundation returns 50.0 percent, which is below the disagreement between two codings of a period during which nothing could have changed, so real movement sits invisible beneath the noise.</p>
+      <p>The March supplement avoids the problem for a specific reason. It asks in a single interview what a person does now and what they did last year, so both codes are assigned at one sitting from one respondent's description, their errors are correlated, and the correlation cancels when the difference between them is taken. The instrument that relies on recall is the one that works, and the disagreements themselves show why: they follow boundaries in the classification, elementary against secondary teachers, supervisors against the staff they supervise, generic against specific managerial categories, rather than the paths along which careers run.</p>
     </div>
   </div>
 
@@ -55,24 +48,23 @@ description: "Decomposing occupational workforce stocks into behavioral flow par
     <div>
       <div class="finding">
         <span class="finding__n">01</span>
-        <div class="finding__head">Occupations have distinct lifecycles.</div>
-        <div class="finding__body">Across six occupations and nine ACS vintages (2015 to 2024, no 2020), 1.67 million records with all 80 replicate weights, the shapes separate cleanly. Teachers retire about five years before nurses. Software absorbs career-switchers well into their thirties. Aides run on churn rather than retirement.</div>
+        <div class="finding__head">Occupations are refilled from other occupations, at four to twelve times the rate they are refilled from education.</div>
+        <div class="finding__body">This holds for 98 percent of occupations. Aggregated across the whole matrix, arrivals from another occupation run 4.29 times arrivals from outside employment at the detailed level, 2.89 at minor group and 1.55 across the twenty-three major groups, where the classification cannot confuse a nurse with a physical therapist and the surviving flow is movement between broad occupational families.</div>
       </div>
       <div class="finding">
         <span class="finding__n">02</span>
-        <div class="finding__head">The fingerprints repeat, so they are behavior and not noise.</div>
-        <div class="finding__body">National lifecycle schedules hold across the pandemic, with exit schedules correlating up to 0.75 before and after. State migration fingerprints persist through COVID at about 0.6. The fine state-by-age grain is noise-dominated in the raw data, which is what the shrinkage layer is built to handle.</div>
+        <div class="finding__head">Those arrivals occur at every age, so they are career movement rather than training under another name.</div>
+        <div class="finding__body">The obvious objection is that arrivals recorded as coming from another occupation are graduates who held a job while studying. If so they would concentrate among the young. For registered nurses the rate runs 3.1, 2.2, 3.4, 1.3 and 2.8 per hundred across the age bands from twenty-five upwards, which is flat, and only 42 to 55 percent of lateral arrivals land in the two youngest bands against roughly a third of the workforce being that age.</div>
       </div>
       <div class="finding">
         <span class="finding__n">03</span>
-        <div class="finding__head">Four independent records agree with the estimates.</div>
-        <div class="finding__body">OEWS employment stocks, IRS county-to-county migration (Spearman 0.41 to 0.79), BLS exit levels (about a two-to-one net-to-gross scaling), and NCSBN nurse licenses (a national ratio of 1.56, stable across states).</div>
+        <div class="finding__head">Most movement between occupations cancels.</div>
+        <div class="finding__body">Splitting the transition matrix into a symmetric part and a directional one separates two-way traffic from net reallocation, and symmetric misclassification cannot manufacture direction. Only 36.4 percent of gross lateral movement carries direction at the detailed level, 22.1 at minor group and 14.5 at major group. An occupation's stock is churned by movements several times larger than the change in its size, so a policy that raises arrivals works against departures of comparable magnitude.</div>
       </div>
       <div class="finding">
         <span class="finding__n">04</span>
-        <div class="finding__head">Tech hubs hold their workers as much as they draw them in.</div>
-
-        <div class="finding__body">A shrinkage layer with a two-threshold rule flags a disciplined 5 to 8 percent of cells as genuinely abnormal. Young software developers in California, Washington, and Colorado are about half as likely to leave as the national norm, so a hub's advantage runs through retention as much as inflow.</div>
+        <div class="finding__head">The nursing shortage sits next to nursing rather than inside it.</div>
+        <div class="finding__body">Registered nurses have the lowest total departure rate of the large health and education occupations, at 9.4 per hundred a year. Nursing and home health aides lose 22.7, and the difference is concentrated in movement to other occupations rather than in departure from work.</div>
       </div>
     </div>
   </div>
@@ -83,8 +75,9 @@ description: "Decomposing occupational workforce stocks into behavioral flow par
       <h2 class="secnum__h">What is next</h2>
     </div>
     <div class="prose">
-      <p>The exit and migration dimensions are measured. The step that closes the identity is the entry family, estimated from the young age bands and anchored to graduation and licensure counts. With entry in place, the churn residual can be tested for stability directly, which is what turns it from a leftover into a parameter you can act on. From there the surface widens from six occupations toward the full set, and from states toward metros where the samples hold. The parameter surface then answers a concrete policy question that the field keeps asking without an instrument: what does nurse license portability actually do to migration, at which ages, using unlicensed occupations as the control.</p>
+      <p>What follows for policy is a question about the size of the lever rather than a recommendation. Training capacity acts on the smallest of an occupation's inflows, and the largest inflow is governed by whatever determines who can move into an occupation from another one: credential requirements, licensure, and the transferability of skills between adjacent occupations. Which of those binds, and for which occupations, is the question the account was built to make askable. A companion paper takes the same account to the geography, asking whether these patterns differ between states and measuring the interstate movement of workers by occupation.</p>
     </div>
+    <p><a href="{{ '/assets/papers/flows-engine.pdf' | relative_url }}" target="_blank" rel="noopener">Read the working paper (PDF)</a></p>
     <a href="{{ '/#research' | relative_url }}" class="backlink">&larr; Back to research</a>
   </div>
 
