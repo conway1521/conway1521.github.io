@@ -41,7 +41,7 @@ ink_js: true
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Demand built four ways, never averaged</h3>
-        <p>Requisition signals, structural projections, population-anchored forward need, and facility blueprints: four estimates of the same demand, kept apart on purpose. Where they agree, act. Where they diverge, investigate. Divergence is information, not error.</p>
+        <p>Requisition signals, structural projections, population-anchored forward need, and facility blueprints: four estimates of the same demand, kept apart on purpose. Where the four agree you can act on them, and where they diverge that divergence tells you which layer is missing something rather than indicating that one of them is broken.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
@@ -61,7 +61,6 @@ ink_js: true
   <div class="plate" style="max-width:880px;">
     <div class="plate__head">
       <span class="plate__title">Model</span>
-      <span class="plate__hint">hover a node</span>
     </div>
     <p class="plate__purpose">For one occupation in one region, five inflows feed the stock and three outflows drain it, demand is built four separate ways, and the gap between them is the output.</p>
     <div class="flow-scroll">
@@ -69,7 +68,7 @@ ink_js: true
     </div>
     <div class="flow-note">
       <span class="flow-note__name" id="flow-note-name">The whole model</span>
-      <span class="flow-note__blurb" id="flow-note-blurb">Hover any node. Supply flows through the stock. Demand is built four ways. The gap is the output.</span>
+      <span class="flow-note__blurb" id="flow-note-blurb">Supply flows through the stock, demand is built four separate ways, and the gap between them is the output.</span>
     </div>
   </div>
 
@@ -77,13 +76,12 @@ ink_js: true
   <div class="plate" style="max-width:720px;">
     <div class="plate__head">
       <span class="plate__title">Adjacent population</span>
-      <span class="plate__hint">hover an occupation</span>
     </div>
     <p class="plate__purpose">Supply into an occupation is not only the people already in it. It is everyone one retraining step away. For a target occupation the twin spells out that reachable pool: which occupations are skill-adjacent, how large each pool is, and what bridge it takes to cross.</p>
     <div class="clu-scroll">
       <div class="clu-canvas" id="cluster-canvas"></div>
     </div>
-    <div class="plate__note" id="cluster-note" data-default="Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.">Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted. Hover an occupation for its pool, its bridge, and the wage change.</div>
+    <div class="plate__note" id="cluster-note" data-default="Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted.">Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted.</div>
     <div class="plate__caption">Adjacency from 798k occupation-pair similarities, tiered by retraining distance. The reachable pool is what the model feeds into the adjacent-population inflow, discounted by the credential and wage distance of each bridge.</div>
   </div>
 
@@ -91,7 +89,6 @@ ink_js: true
   <div class="plate" style="max-width:560px;">
     <div class="plate__head">
       <span class="plate__title">Demand, from four angles</span>
-      <span class="plate__hint">hover an angle</span>
     </div>
     <p class="plate__purpose">Demand is estimated four separate ways, each catching a different signal at a different horizon. They are never averaged, because where the four agree that agreement is itself the confidence, and where they diverge the divergence is a read on which horizon is moving.</p>
     <svg id="div-lines" viewBox="0 0 440 120" style="width:100%; height:auto; display:block;">
@@ -115,8 +112,8 @@ ink_js: true
         <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 14px,transparent 14px 18px);"></span><span class="div-legend-row__name">Blueprint</span>
       </div>
     </div>
-    <div class="plate__note" id="div-note">Four estimates of the same demand, kept apart on purpose. Where they agree, act. Where they diverge, look closer.</div>
-    <div class="plate__caption plate__caption--soft">Short-horizon demand from requisition dynamics with ARIMA and SARIMA. Longer horizons from structural projections and population-anchored need. Gradient boosting is in testing as a cross-check.</div>
+    <div class="plate__note" id="div-note">Four estimates of the same demand, kept apart on purpose. Where the four agree you can act on them, and where they diverge it is worth looking at which layer is missing something.</div>
+    <div class="plate__caption plate__caption--soft">Short horizons are forecast from requisition dynamics with ARIMA and SARIMA, longer horizons come from structural projections and population-anchored need, and gradient boosting is in testing as a cross-check.</div>
   </div>
 
   <div class="col">

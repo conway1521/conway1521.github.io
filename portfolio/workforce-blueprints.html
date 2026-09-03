@@ -16,7 +16,7 @@ ink_js: true
     <h1 class="display">Workforce blueprints</h1>
     <p class="lede">A facility is planned, and the region needs to know how many workers, in which occupations, on what schedule, before the facility exists. No single source answers this, so the blueprint is derived from filings, industry and regulatory standards, and comparable sites. The worked case is semiconductor fabs: nine facility types, each with its own recipe and ramp.</p>
   </div>
-  <div class="standfirst">Economics &middot; data science. The fourth demand layer of the labor market twin.</div>
+  <div class="standfirst">Economics &middot; data science. This is the fourth demand layer of the labor market twin.</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
@@ -61,11 +61,11 @@ ink_js: true
   <div class="plate" style="max-width:620px;">
     <div class="plate__head">
       <span class="plate__title">Blueprint</span>
-      <span class="plate__hint">hover a family &middot; leading-edge logic</span>
+      <span class="plate__hint">leading-edge logic</span>
     </div>
     <p class="plate__purpose">Ten job families make the recipe, measured from public staffing patterns and type-tuned block totals.</p>
     <div class="plate__eg">Example: semiconductor industry</div>
-    <div id="blueprint" data-default="Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations. Hatched marks the block unique to the sector.">
+    <div id="blueprint" data-default="Each bar is a job family's share of the recipe, per 100 workers. Hatched marks the block unique to the sector.">
       <div class="bp-row" data-note="Processing &middot; 16 per 100. Semiconductor Processing Technicians 16.00 (320 in a 2,000-person fab). The block unique to the sector."><span class="bp-row__name">Processing</span><div><div class="bp-row__bar bp-row__bar--hatch" style="width:64%;"></div></div><span class="bp-row__per">16</span></div>
       <div class="bp-row" data-note="Engineering &middot; 25 per 100. Industrial 7.62 (152) &middot; Computer Hardware 6.20 (124) &middot; Electronics 4.37 (87) &middot; Electrical 2.44 (49) &middot; Mechanical 2.00 (40)."><span class="bp-row__name">Engineering</span><div><div class="bp-row__bar" style="width:100%;"></div></div><span class="bp-row__per">25</span></div>
       <div class="bp-row" data-note="Software &middot; 11 per 100. Software Developers 6.69 (134) &middot; QA Analysts 0.72 (14)."><span class="bp-row__name">Software</span><div><div class="bp-row__bar" style="width:44%;"></div></div><span class="bp-row__per">11</span></div>
@@ -77,7 +77,7 @@ ink_js: true
       <div class="bp-row" data-note="Admin &amp; logistics &middot; 5 per 100. Shipping &amp; Receiving 1.26 (25) &middot; Production Planning 0.98 (20)."><span class="bp-row__name">Admin &amp; logistics</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
       <div class="bp-row" data-note="All else &middot; 5 per 100. Sales Representatives 1.72 (34), and the long tail."><span class="bp-row__name">All else</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
     </div>
-    <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hover a family for its occupations. Hatched marks the block unique to the sector.</div>
+    <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hatched marks the block unique to the sector.</div>
   </div>
 
   <!-- the ramp streamgraph -->
@@ -93,7 +93,7 @@ ink_js: true
       <svg id="ramp-svg" viewBox="0 0 520 300" style="width:100%; height:auto; display:block;"></svg>
     </div>
     <div class="ramp-legend" id="ramp-legend"></div>
-    <div class="plate__note" id="ramp-note" data-default="Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp, and hover a band for the occupations inside it.">Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp, and hover a band for the occupations inside it.</div>
+    <div class="plate__note" id="ramp-note" data-default="Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp.">Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp.</div>
   </div>
 
 
@@ -101,11 +101,10 @@ ink_js: true
   <div class="plate" style="max-width:640px;">
     <div class="plate__head">
       <span class="plate__title">What each source can see</span>
-      <span class="plate__hint">hover a source</span>
     </div>
     <p class="plate__purpose">No single source sees the whole blueprint, since each one covers some axes and is blind on others, so it is the union of them, with every abstention respected, that makes the recipe defensible.</p>
     <div class="cov-head"><span></span><span>Mix</span><span>Scale</span><span>Timing</span><span>Frontier</span><span>Place</span></div>
-    <div id="coverage" data-default="Filled covers the axis. Hatched is partial. Empty is blind. Filings abstain from the mix axis by design.">
+    <div id="coverage" data-default="Filled covers the axis. Hatched is partial. Empty is blind. Filings carry nothing on the mix axis, by design.">
       <div class="cov-row" data-note="Staffing matrices: the composition backbone. Deep on mix, dated on the frontier, silent on timing.">
         <span class="cov-row__name">Staffing matrices</span>
         <span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
@@ -114,7 +113,7 @@ ink_js: true
         <span class="cov-row__name">Job postings</span>
         <span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span>
       </div>
-      <div class="cov-row" data-note="Financial filings: scale and timing with legal weight. They abstain from mix by design. They set how many workers, not what share.">
+      <div class="cov-row" data-note="Financial filings: scale and timing with legal weight. They abstain from mix by design. They set how many workers rather than what share.">
         <span class="cov-row__name">Financial filings</span>
         <span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
       </div>
@@ -128,7 +127,7 @@ ink_js: true
       <span><span class="cov-cell cov-cell--part"></span> partial</span>
       <span><span class="cov-cell cov-cell--blind"></span> blind</span>
     </div>
-    <div class="plate__note" id="cov-note">Filled covers the axis. Hatched is partial. Empty is blind. Filings abstain from the mix axis by design.</div>
+    <div class="plate__note" id="cov-note">Filled covers the axis. Hatched is partial. Empty is blind. Filings carry nothing on the mix axis, by design.</div>
   </div>
 
   <!-- derivation table -->
@@ -147,7 +146,7 @@ ink_js: true
     <div class="deriv-row"><span>EE Technologists &amp; Technicians <span class="rmuted">17-3023</span></span><span class="r">4.0</span><span class="r">3.6</span><span class="r rmuted">abstains</span><span class="r">3.9</span><span class="r"><strong>3.9</strong></span></div>
     <div class="deriv-row"><span>Industrial Machinery Mechanics <span class="rmuted">49-9041</span></span><span class="r">4.2</span><span class="r">3.1</span><span class="r rmuted">abstains</span><span class="r">3.8</span><span class="r"><strong>3.9</strong></span></div>
     <div class="deriv-row"><span>Maintenance &amp; Repair, General <span class="rmuted">49-9071</span></span><span class="r">2.7</span><span class="r">2.2</span><span class="r rmuted">abstains</span><span class="r">2.5</span><span class="r"><strong>2.5</strong></span></div>
-    <div class="plate__caption">Each cell is that source's read on the occupation's share of the recipe. Filings abstain from composition. Staffing, postings, and trade announcements triangulate into the final. Eight of forty-plus rows shown.</div>
+    <div class="plate__caption">Each cell is that source's read on the occupation's share of the recipe. Filings carry no information about composition. Staffing, postings, and trade announcements triangulate into the final. Eight of more than forty rows are shown.</div>
   </div>
 
 

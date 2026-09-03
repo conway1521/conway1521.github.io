@@ -86,7 +86,7 @@ ink_js: true
       <span class="plate__title">Illustrative outputs</span>
       <span class="plate__hint">run the pipeline above</span>
     </div>
-    <p class="plate__purpose">A few pieces of the dashboard that the code produces, for an illustrative four-site Arizona employer. Hover a facility to read its panel, and the role table at the bottom refocuses to that site. Toggle the local supply layer to bring in the training and staffing inventories.</p>
+    <p class="plate__purpose">A few pieces of the dashboard that the code produces, for an illustrative four-site Arizona employer. Selecting a facility refocuses the role table at the bottom to that site. Toggle the local supply layer to bring in the training and staffing inventories.</p>
     <div class="fac-layout">
       <div>
         <div class="fac-map" id="fac-map">
@@ -95,7 +95,7 @@ ink_js: true
         </div>
         <button type="button" id="fac-supply" class="sample-tab" style="margin-top:12px;">Show local supply</button>
       </div>
-      <div class="fac-panel" id="fac-panel"><div class="fac-panel__hint">Hover a facility for its headcount, hires, terminations, open requisitions, and vacancy rate.</div></div>
+      <div class="fac-panel" id="fac-panel"><div class="fac-panel__hint">A facility's headcount, hires, terminations, open requisitions and vacancy rate appear here.</div></div>
     </div>
 
     <div id="fac-inventory" style="display:none;">
@@ -135,13 +135,12 @@ ink_js: true
   <div class="plate" style="max-width:680px;">
     <div class="plate__head">
       <span class="plate__title">Employment hierarchy</span>
-      <span class="plate__hint">hover a level</span>
     </div>
     <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The digital twin can reconstruct this into levels with headcount and spans of control, so turnover can also be read by layer and the internal ladder.</p>
     <div class="hier-scroll">
       <div class="hier-canvas" id="hier-canvas"></div>
     </div>
-    <div class="plate__note" id="hier-note" data-default="Five levels reconstructed from reporting relationships. Hover a level for its headcount, span, and what it signals.">Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it. Hover a level for its headcount, span, and what it signals.</div>
+    <div class="plate__note" id="hier-note" data-default="Five levels reconstructed from reporting relationships.">Five levels reconstructed from reporting relationships, executive at the top, frontline at the base. The edge widens with the fan-out below it.</div>
     <div class="plate__caption">Illustrative, synthetic.</div>
   </div>
 
