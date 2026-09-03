@@ -1,0 +1,43 @@
+# Site settings
+title: Alessandro Conway
+description: I study how labor markets function and fail, and I build the systems that measure them.
+url: "https://conway1521.github.io"
+baseurl: ""
+logo: /assets/images/headshot.jpg
+
+# Author
+author:
+  name: Alessandro Conway
+  email: alessandro.conway@gmail.com
+  linkedin: https://www.linkedin.com/in/alessandro-conway/
+  github: https://github.com/conway1521
+  scholar: https://scholar.google.com/citations?hl=en&user=PkytFnMAAAAJ
+
+# Social profiles (used by jekyll-seo-tag for structured data)
+social:
+  links:
+    - https://www.linkedin.com/in/alessandro-conway/
+    - https://github.com/conway1521
+    - https://scholar.google.com/citations?hl=en&user=PkytFnMAAAAJ
+    - https://alessandroconway.substack.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Collections (if you want blog posts later)
+# collections:
+#   posts:
+#     output: true
+#     permalink: /blog/:slug/

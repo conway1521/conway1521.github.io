@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 380" role="img" aria-label="Radius Intelligence">
+    <title>Radius Intelligence</title>
+    <defs>
+        <style>
+            .badge { fill: #0d1f17; }
+            .mono { fill: #ffffff; }
+            .word { fill: #0d1f17; }
+            text { font-family: ui-sans-serif, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 800; letter-spacing: -0.04em; }
+            .mono-text { font-size: 138px; }
+            .word-text { font-size: 142px; }
+        </style>
+    </defs>
+
+    <!-- Circular badge -->
+    <circle class="badge" cx="190" cy="195" r="160"/>
+    <!-- "Ri" monogram inside badge -->
+    <text class="mono mono-text" x="190" y="244" text-anchor="middle">Ri</text>
+    <!-- Satellite dot -->
+    <circle class="badge" cx="362" cy="62" r="22"/>
+
+    <!-- Stacked wordmark -->
+    <text class="word word-text" x="430" y="180">Radius</text>
+    <text class="word word-text" x="430" y="335">Intelligence</text>
+
+    <!-- Sparkle/star marker after "Intelligence" -->
+    <g class="badge" transform="translate(1210, 235)">
+        <path d="M 0 -28 L 6 -6 L 28 0 L 6 6 L 0 28 L -6 6 L -28 0 L -6 -6 Z"/>
+    </g>
+</svg>
