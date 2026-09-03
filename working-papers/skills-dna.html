@@ -1,91 +1,74 @@
 ---
 layout: default
-title: Skills DNA of the economy
+title: AI exposure at three levels
 permalink: /working-papers/skills-dna/
-description: "Roles, tasks, and skills are three equivalent decompositions of the same output."
+description: "Exposure to AI is measured at three different levels of the same labor market, and the measures are compared as though they described one object."
 ---
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}]});"></script>
 
 <div class="wrap">
 
   <div class="masthead">
     <div class="masthead__row">
       <span class="eyebrow"><a href="{{ '/#research' | relative_url }}">Research</a></span>
-      <span class="eyebrow">In progress</span>
+      <span class="eyebrow">Working paper</span>
     </div>
-    <h1 class="display">Skills DNA of the economy</h1>
-    <p class="lede">Roles, tasks, and skills are three equivalent decompositions of the same output. Price every task and every skill, and AI exposure becomes a question of dollars. A calibrated measurement instrument for the task-based labor market.</p>
+    <h1 class="display">AI exposure at three levels</h1>
+    <p class="lede">Exposure to generative AI is measured at three different levels of the same labor market, and the measures are then compared as though they described one object. This paper puts them on a common footing, validates the step that carries a task measure down to skills, and reports what the underlying data will bear.</p>
   </div>
-  <div class="standfirst">Economics &middot; machine learning &middot; data engineering. A measurement instrument with an open-source engine and a versioned data snapshot.</div>
+  <div class="standfirst">Working paper &middot; fully public data &middot; every number regenerates from a clean checkout.</div>
 
   <div class="col">
     <div class="secnum" style="margin-top:0;">
       <span class="secnum__n">01</span>
-      <h2 class="secnum__h">The idea</h2>
+      <h2 class="secnum__h">The premise</h2>
     </div>
     <div class="prose prose--lg">
-      <p>An industry produces its output through roles, each role performs a set of tasks, and each task demands a set of skills. Government data records how many workers hold each role and what they are paid, which tasks each role performs, and which abilities each task demands.</p>
-      <p>Push the pay down through those links and nothing is created or destroyed. The same national total appears as industry output, as occupational pay, as the value of tasks, and as the value of skills. Roles, tasks, and skills are three coordinate systems for one object. AI enters as a new appliance that can perform some of the steps. Because every step now carries a price, "which steps can the appliance do" becomes "how many dollars are in play," then "which abilities lose their market," then "which workers are affected and what should they learn next."</p>
+      <p>A firm produces output, that output is produced by activities being carried out, and those activities are carried out by combinations of human capability. Occupations, tasks and skills are three descriptions of one process, so a technology entering production has to be traceable through all three. The premise is common ground rather than a claim of this paper, running from Autor, Levy and Murnane through Acemoglu and Autor, and developed most recently by Freund and Mann into a general equilibrium model in which occupations bundle tasks and automating one task raises the weight on those that remain.</p>
+      <p>What that literature consumes, and does not examine, are the exposure measures themselves. Felten, Raj and Seamans score the fifty-two abilities of O*NET. Eloundou and co-authors score its task statements. Srinivasan, Chen and Zakerinia score occupations. Each is used at whatever level an application requires, and the aggregation or disaggregation that carries it there has not previously been validated. This paper establishes what each one measures, whether it survives being moved between levels, and what the data underneath will support.</p>
     </div>
   </div>
 
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">02</span>
-      <h2 class="secnum__h">The model</h2>
+      <h2 class="secnum__h">Why the levels are not interchangeable</h2>
     </div>
     <div class="prose">
-      <p>The dollar shares the identity measures in levels are exactly the calibration a production function needs. A task's expenditure share within an industry is the Cobb-Douglas weight \( \beta_i \). A skill's dollar share of a task's labor is \( \gamma_{ik} \). A task's automatable share maps to \( \delta_i \). Output reads through a nested aggregator of labor and capital:</p>
-      <div class="math-block">
-        <p style="margin:0;">$$Y = A \cdot R^{\alpha} \, K^{\beta}, \qquad R = \left(\sum_{k} \gamma_k \, s_k^{\,\rho}\right)^{1/\rho}$$</p>
-      </div>
-      <p>In levels the identity is theory-free arithmetic that conservation makes exact. Theory enters only for counterfactuals: the CES curvature, the skill-to-skill substitutability \( \sigma_{jk} \) built from skill proximity, and the augmentation term \( A \). The structure is an accounting layer that cannot be argued with, and a simulation layer whose every assumption is named, sourced, and swappable. The <a href="{{ '/portfolio/skills-framework' | relative_url }}">production system it specifies</a> is the running engine behind these numbers.</p>
+      <p>The three layers perform three different functions, and none of them can perform the others. The wage bill is a budget that everything must sum to, which disciplines a description without testing it, because quantities constructed as shares of a total return that total whatever values the shares take. Tasks are where the technology has actually been observed, since every measure of generative AI was built by judging a capability against a description of work. Skills are the only level at which a claim can fail, being fewer in number than the occupations whose wages are observed.</p>
+      <p>That last point is arithmetic rather than theory, and it has an uncomfortable corollary. There are 18,796 task statements against 829 occupations with observed wages, so a set of task values always fits and can never be contradicted. There are 161 descriptors, and after grouping 25, so a set of skill values is over-determined and can be wrong. Whether a quantity in this literature is testable therefore depends on how many task statements O*NET's analysts happened to write, which is a property of a survey instrument rather than of an economy.</p>
     </div>
   </div>
 
   <div class="col">
     <div class="secnum">
       <span class="secnum__n">03</span>
-      <h2 class="secnum__h">Findings</h2>
+      <h2 class="secnum__h">What the paper establishes</h2>
     </div>
     <div>
       <div class="finding">
         <span class="finding__n">01</span>
-        <div class="finding__head">Every task in America has a price.</div>
-        <div class="finding__body">The whole structure sits on the published BLS wage bill of $10.70T, reconciled across 820 occupations, 247 industries, 17,266 tasks, and 76 skill elements. Per-occupation means verify against known values (registered nurses $101k, chief executives $276k). Conservation is exact by construction, and every residual is an explicit bucket. The single most valuable task is general managers reviewing performance data, at $31.5B a year.</div>
+        <div class="finding__head">The step from tasks to skills can be validated, and it holds.</div>
+        <div class="finding__body">Every skill-level result in this literature depends on carrying a task measure down to skills, and the step has not been tested because testing it needs an independent measurement at the destination. That measurement exists. Felten and co-authors measure ability exposure directly; propagating the Eloundou task ratings through the O*NET activity crosswalk reaches the same quantity by a route sharing no data with theirs. Across the fifty-two abilities the two correlate 0.533 by Pearson and 0.632 by Spearman, against a ceiling of 0.591 set by how well Eloundou's own human and machine raters agree with each other. The propagation recovers as much signal as the source contains and adds little in transit.</div>
       </div>
       <div class="finding">
         <span class="finding__n">02</span>
-        <div class="finding__head">Every ability has a price.</div>
-        <div class="finding__body">Getting information is a $188B skill, communicating with peers $183B, decision-making $178B, working with computers $168B, and active listening $164B a year.</div>
+        <div class="finding__head">The capability measures are close to a single construct.</div>
+        <div class="finding__body">The Srinivasan automation score correlates 0.833 with Eloundou exposure aggregated to occupations. Two measures built by different teams from different sources agreeing that closely are best read as measuring the same object, which supplies an explanation for the mutual agreement among capability-based scores that has generally been interpreted as corroboration.</div>
       </div>
       <div class="finding">
         <span class="finding__n">03</span>
-        <div class="finding__head">Augmentation now outweighs automation.</div>
-        <div class="finding__body">At the latest exposure release, $1.40T of task value matches observed AI usage, with a dollar-weighted augmentation share of 44.5 percent against 36.3 percent automation. Usage is not a random draw of task dollars, so this is a measured share rather than a forecast.</div>
+        <div class="finding__head">Augmentation is a second dimension, and it loads on different skills.</div>
+        <div class="finding__body">Augmentation correlates 0.459 with Eloundou exposure and 0.442 with its own paired automation score, so it is not the quantity the capability measures capture. Inverting both onto the twenty-five skill groups separates them on ten of the twenty-five, a separation that survives five hundred bootstrap resamples and whose profile correlates 0.920 with a ten-component specification. Physical, psychomotor and sensory abilities, work output and technical skills sit on the augmenting side; foundational literacy and numeracy, business and management, complex problem solving, mental processes and systems skills sit on the automating side. Reading, writing, arithmetic and analysis are where the technology substitutes, and hands, senses and the making of things are where it assists.</div>
       </div>
       <div class="finding">
         <span class="finding__n">04</span>
-        <div class="finding__head">The exposure measures barely agree, in dollars.</div>
-        <div class="finding__body">Across the $6.59T covered by all three adapters, capability-based measures correlate 0.73 with each other but near zero with observed usage. Of $1.32T that could be flagged as most exposed, all three agree on just $23B. The consensus is two orders of magnitude smaller than the wage bill, which is why the instrument carries several measures instead of one.</div>
+        <div class="finding__head">The before-and-after design cannot answer the question.</div>
+        <div class="finding__body">Applied to a balanced panel of 693 occupations from 2012 to 2025, no skill group moved by more than 1.51 times its own year-to-year volatility after 2022, and the observed period sits inside the range that relabelling ordinary years produces. The more consequential result is that every deviation from the pre-2020 path begins in 2020 or 2021. On wages the residual runs at -0.005 in 2020 and worsens to -0.025 by 2025; on employment the series takes a -0.040 excursion in 2020 and stays positive from 2021. Large language models arrived in late 2022, after both breaks. The pandemic sits between the pre-period and the treatment period and moves these series by more than the effect being sought, which is a property of the design rather than of this implementation.</div>
       </div>
       <div class="finding">
         <span class="finding__n">05</span>
-        <div class="finding__head">The measures load on different margins at different horizons.</div>
-        <div class="finding__body">Usage-based measures predict where healthcare employment adjusted in the ChatGPT era. A capability-based pre-LLM measure predicts wage growth over the longer window. The employment result passes a pre-ChatGPT placebo cleanly, and the exposure rankings are invariant across 27 calibration settings (minimum correlation 0.9995).</div>
-        <table class="rtable">
-          <thead><tr><th>Outcome and window</th><th>Skills DNA</th><th>Srinivasan</th><th>Felten</th></tr></thead>
-          <tbody>
-            <tr><td>Employment, 2022 to 2024</td><td class="hl">+0.245</td><td>+0.269</td><td>+0.077</td></tr>
-            <tr><td>Wage, 2022 to 2025</td><td>+0.064</td><td>+0.121</td><td class="hl">+0.309</td></tr>
-            <tr><td>Employment, 2019 to 2021 (placebo)</td><td>-0.012</td><td>-0.067</td><td>-0.027</td></tr>
-          </tbody>
-        </table>
-        <div class="finding__body" style="margin-top:6px;">Spearman rank correlations, healthcare, n = 76. The five percent critical value is about 0.23.</div>
+        <div class="finding__head">The instrument constrains what can be concluded.</div>
+        <div class="finding__body">O*NET importance ratings compress towards uniformity whenever they are converted into shares. In the median occupation the most important task rates 1.41 times the least important, and valuing tasks by that share produces values correlating 0.997 on ranks with dividing an occupation's wage bill by its number of tasks. Descriptors are collinear enough that all 161 predict held-out occupational wages worse than a single measure of required preparation. Comparing any two periods returns between five and nine of twenty-five groups apparently changing course when nothing has happened, so conventional inference overstates significance by a wide margin. O*NET is used anyway, here and elsewhere, because it is free, covers the whole economy, and is the common vocabulary of every measure discussed, whereas the alternatives are restricted individual data that most researchers cannot obtain.</div>
       </div>
     </div>
   </div>
@@ -96,8 +79,9 @@ description: "Roles, tasks, and skills are three equivalent decompositions of th
       <h2 class="secnum__h">What is next</h2>
     </div>
     <div class="prose">
-      <p>The upgrade that matters most is within-occupation skill differentiation. Today a task's skills are read from its occupation's average profile, which ties the engine to a flat index in validation. Differentiating skills within an occupation is what lets the nested structure predict better than a single number, and it is the clearest test of whether the added machinery earns its place. After that the grain moves from national to state and metro, where workforce boards actually operate, and the credential traversal closes the loop from an exposed skill to the nearby programs that teach its replacement. A second sector beyond healthcare then tests whether the validation result holds outside it.</p>
+      <p>The pandemic moved which occupations grew, whereas a technology of this kind should move what happens inside an occupation, and the second is a different object that a comparison across occupations cannot see. The validated propagation reported here is what a within-occupation design would need, and observed-usage data supplies task-level outcomes on the fifth of tasks it covers, where the selection falls on tasks rather than on time. Separately, the separation of augmentation from automation suggests a shock structure that current models do not represent, since automating a task and assisting it have different implications for who gains, and the loadings reported here are what a model incorporating the distinction would require.</p>
     </div>
+    <p><a href="{{ '/assets/papers/skills-dna.pdf' | relative_url }}" target="_blank" rel="noopener">Read the working paper (PDF)</a></p>
     <a href="{{ '/#research' | relative_url }}" class="backlink">&larr; Back to research</a>
   </div>
 
