@@ -40,13 +40,13 @@ title: null
     </div>
 
     <div class="prose prose--lg">
-      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end, covering the economics, the models, the pipelines and the product. The platform reconciles federal statistics, commercial postings, training and credential records, fiscal signals and private employer data into one view across every US occupation and geography, on a compliant multi-tenant layer of 220 datasets that grows every time a new client connects. The employer digital twin and the labor market digital twin are both built on top of it.</p>
+      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end, covering the economics, the models, the pipelines and the product. The two digital twins are the products themselves: one turns an employer&rsquo;s raw HR export into forecasts and scenarios that hold up when somebody has to defend them in a board meeting, and the other stands a whole state labor market up as stocks and flows that have to balance, with demand built four separate ways and the disagreement between them left visible rather than averaged away. Underneath them sits a compliant multi-tenant layer that reconciles federal statistics, commercial postings, training and credential records, fiscal signals and private employer data into one view across every US occupation and geography, on 220 datasets that grow every time a new client connects.</p>
 
-      <p>My research runs on one idea, that economies behave as ecosystems and that policy fails when it treats the parts separately. My PhD at Universit&eacute; Paris 8 formalizes that over place and tests it on European regional data, and an applied strand measures the same idea in labor markets, where the question becomes what tasks and skills are actually worth in dollars.</p>
+      <p>My research is based on the idea that economies behave as ecosystems and that policy fails when it treats the parts separately. My PhD at Universit&eacute; Paris 8 formalizes that over place and tests it on European regional data, and an applied strand measures the same idea in labor markets, where the question becomes what tasks and skills lead to resilient labor market outcomes, and how they change over time.</p>
 
-      <p>Two of the things I have built are open to anyone, the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a>, a versioned openly licensed panel of household net-wealth inequality across 213 countries, and the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a>, an assessment of economic development across California&rsquo;s regions.</p>
+      <p>Two open source tools I have built are: the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a>, which sets what people own beside the pay figure that usually gets quoted and shows that the two disagree about which countries are unequal, and the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a>, an assessment of economic development across California&rsquo;s regions.</p>
 
-      <p>Before Radius I led workforce and economic insights at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I built a national green-workforce readiness dashboard, advised a 500,000-person placement initiative, and ran an analysis of how AI is transforming jobs across the US labor market. Before that I researched the distributional effects of fiscal policy at OFCE and the Banque de France, work that continues as a co-authored paper. My master&rsquo;s thesis at Sciences Po was published in the University of Oxford Social Macroeconomics working paper series, and the model is available in <a href="https://quantecon.org" target="_blank" rel="noopener">QuantEcon</a>.</p>
+      <p>Before Radius I led workforce and economic insights at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I built a national green-workforce readiness dashboard, advised a 500,000-person placement initiative, and ran an analysis of how AI is transforming jobs across the US labor market. Right after my studies, I researched the distributional effects of fiscal policy at OFCE and the Banque de France, work that continues as a co-authored paper. My master&rsquo;s thesis at Sciences Po was published in the University of Oxford Social Macroeconomics working paper series, and the model will soon be available on <a href="https://quantecon.org" target="_blank" rel="noopener">QuantEcon</a>.</p>
 
       <p>Outside work I build and play guitars, mix songs, and make olive oil.</p>
     </div>
@@ -59,7 +59,7 @@ title: null
       <span class="sechead__h">Work</span>
     </div>
 
-    <h3 class="blockhead">Roles</h3>
+    <h3 class="blockhead anchor" id="roles">Roles</h3>
     <div class="roles">
       <div class="role-row">
         <div>
@@ -103,7 +103,7 @@ title: null
     <h3 class="blockhead anchor" id="research">Research</h3>
 
     <div class="plate plate--page">
-      <p class="plate__purpose">The work is laid out by what each piece needs from the others, so a line between two of them means the one at the tail is an input to the one at the head.</p>
+      <p class="plate__purpose">My research agenda is laid out below, with lines showing interconnections I have built over time.</p>
 
       <div class="rgraph" id="rgraph" data-base="{{ '/' | relative_url }}">
         <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Graph of research works and the dependencies between them">
@@ -114,8 +114,6 @@ title: null
       </div>
 
       <div class="rg-list" id="rg-list"></div>
-
-      <div class="plate__note" id="rg-note"></div>
 
       <div class="rg-detail" id="rg-detail" hidden></div>
 
@@ -175,10 +173,10 @@ title: null
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
-          <p class="work__s">Wealth inequality data is scattered across mutually incompatible sources, each using a different unit, methodology, and license, so a comparable cross-country panel is a research project before it is an input to one.</p>
+          <p class="work__s">Inequality is quoted as one number, almost always the income Gini, because that is the one the World Bank publishes most often. It describes a pay slip, and it is not the number that decides whether somebody can buy a house or survive losing a job.</p>
         </summary>
         <div class="work__body">
-          <p>The Atlas closes that gap into a single versioned openly licensed panel of household net-wealth inequality, currently 10,783 observations across 213 countries from 1800 to 2025, with every row tagged by source priority and comparability tier so a user can decide how much reconciliation they are willing to accept rather than inheriting mine.</p>
+          <p>The Atlas puts what people own next to what they are paid and shows that the two rankings disagree, so a country can pay out more evenly than almost anywhere and still own more unevenly than Britain. Wealth is the harder half to assemble, and the series is reconciled from the World Inequality Database, the ECB household survey, the Luxembourg Wealth Study, the US Survey of Consumer Finances and the Federal Reserve&rsquo;s Distributional Financial Accounts, with every row tagged by source priority and comparability tier so a reader can decide how much reconciliation to accept rather than inheriting mine. Income, life expectancy, life satisfaction and poverty sit alongside it, and a US layer goes down to the commuting zone.</p>
           <div class="work__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
         </div>
       </details>
@@ -189,7 +187,7 @@ title: null
           <p class="work__s">An interactive assessment of economic development across California's regions, on indicators that start from what mayors, community colleges, workforce boards, and employers see on the ground.</p>
         </summary>
         <div class="work__body">
-          <p>Rather than beginning from the indicators that happen to be collected, it begins from what regional actors say determines whether a household can get on and stay on, and then asks which of those things can be measured well enough to compare regions against each other. It is the three-pillar framework from my dissertation running on a real place.</p>
+          <p>Rather than beginning from the indicators that happen to be collected, it begins from what regional actors say decides whether a household can get on and stay on, and then asks which of those can be measured well enough to compare regions against each other. It is the three-pillar framework from my dissertation running on a real place.</p>
           <div class="work__links"><a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">Launch the dashboard</a></div>
         </div>
       </details>
@@ -208,7 +206,7 @@ title: null
     </div>
 
     <h4 class="subgroup__h">The Radius platform</h4>
-    <p class="groupnote">The employer digital twin and the labor market digital twin are the ones to start with, and the rest are the smaller problems I had to solve to get those two running. The code and the underlying data stay private, so each page describes the problem, the approach and where it landed, on figures built from synthetic data.</p>
+    <p class="groupnote">The employer digital twin and the labor market digital twin are the main products I built, with the rest being smaller problems I had to solve to get those two running. The code and the underlying data are private, so each page describes the problem, the approach and where it landed, on figures re-built from synthetic data.</p>
     <div class="works">
 
       <details class="work">
@@ -331,7 +329,7 @@ title: null
 
     <!-- ---------------- publications ---------------- -->
 
-    <h3 class="blockhead">Publications and essays</h3>
+    <h3 class="blockhead anchor" id="publications">Publications and essays</h3>
     <div class="pubs">
       <div class="pub-row">
         <span class="pub-row__t">Unlocking the promise of AI for Black learners and workers</span>
@@ -377,7 +375,7 @@ title: null
 
     <!-- ---------------- education ---------------- -->
 
-    <h3 class="blockhead">Education</h3>
+    <h3 class="blockhead anchor" id="education">Education</h3>
     <div class="roles">
       <div class="role-row">
         <div>
@@ -402,7 +400,7 @@ title: null
       </div>
     </div>
 
-    <h3 class="blockhead">Contact</h3>
+    <h3 class="blockhead anchor" id="contact">Contact</h3>
     <p class="groupnote">Best reached by email or LinkedIn, and I am happy to talk through any of the above.</p>
     <div class="inline-links">
       <a href="mailto:alessandro.conway@gmail.com">alessandro.conway@gmail.com</a>
@@ -412,7 +410,7 @@ title: null
     </div>
   </section>
 
-  <p class="inspo-intro">Here are some inspirations of mine.</p>
+  <p class="inspo-intro">Here are some inspirations of mine:</p>
 
   <div class="inspo" id="inspo" data-base="{{ '/assets/images/' | relative_url }}" hidden>
     <button class="inspo__nav inspo__nav--prev" type="button" aria-label="Previous">&larr;</button>
@@ -424,3 +422,4 @@ title: null
 
 <script src="{{ '/assets/js/research-graph.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/inspo.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
