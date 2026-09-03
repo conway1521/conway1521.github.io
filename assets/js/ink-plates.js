@@ -229,7 +229,7 @@
       ['Randomised trial', 'final-term completion stipend, single state', '+11%'],
       ['Quasi-experimental', 'emergency aid disbursement, community colleges', '+7%']
     ]],
-    ['Licensure compact', 'Recognise out-of-state licenses on arrival', 7, 2, 13, [6, 2, 3], [
+    ['Licensure compact', 'Recognize out-of-state licenses on arrival', 7, 2, 13, [6, 2, 3], [
       ['Difference-in-differences', 'interstate licensure compact adoption', '+8% inflow'],
       ['Observational', 'license portability and cross-state mobility', '+5%']
     ]],
@@ -280,7 +280,7 @@
 
   /* ---------- observatories (select a studio) ---------- */
   var OBS = [
-    ['Economy & labour market', 'Gaps, growth, wages, and total positions by sector and region', [
+    ['Economy & labor market', 'Gaps, growth, wages, and total positions by sector and region', [
       ['Occupation gap index', 'Supply minus demand by occupation and county, ranked', '501 occupations'],
       ['Requisition seasonality', 'Monthly hiring rhythm, deseasonalised for a clean trend', '36-month window'],
       ['Sector growth decomposition', 'Shift-share splitting national trend from local advantage', '20 sectors'],
@@ -332,7 +332,7 @@
     ['train', 10, 68, 150, 44, 'Training pipeline', 'inflow', 'CIP- and RAPIDS-matched completers, weighted by in-state hire probability. Graduate trends carry the projection.'],
     ['migin', 10, 124, 150, 44, 'Migration in', 'inflow', 'Bilateral flows from ACS PUMS, 19 vintages, chained SOC harmonization with uncertainty flags.'],
     ['adj', 10, 180, 150, 44, 'Adjacent population', 'inflow', 'Skill-adjacent workers via 798k occupation-pair similarities; tiered by retraining distance.'],
-    ['inact', 10, 236, 150, 44, 'Eligible inactive', 'inflow', 'Experienced inactive workers with a modelled activation probability.'],
+    ['inact', 10, 236, 150, 44, 'Eligible inactive', 'inflow', 'Experienced inactive workers with a modeled activation probability.'],
     ['stock', 250, 104, 150, 104, 'Occupation stock', 'stock', 'Cohort accounting over 501 occupations and 51 jurisdictions. Every projection must satisfy the identity.'],
     ['term', 180, 330, 140, 44, 'True exits', 'outflow', 'Terminations decomposed; transfers removed. Raw 19% becomes a true 4.29%.'],
     ['migout', 340, 330, 140, 44, 'Migration out', 'outflow', 'Workers leaving the region, same ACS grain as inflows.'],
@@ -571,7 +571,7 @@
   }
 
   /* ---------- job clusters: the adjacent population (hover a node) ----------
-     One target occupation at the centre. Around it, the occupations one
+     One target occupation at the center. Around it, the occupations one
      retraining step away, sized by pool and weighted by transition distance. */
   var CLUSTER_CENTER = ['Registered Nurse', '29-1141'];
   var CLUSTER_SATS = [
