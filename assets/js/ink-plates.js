@@ -989,10 +989,6 @@
     initExtract();
     initDivergence();
     initHoverDim('resolution', '.res-row', 'resolution-note');
-    initHoverDim('rmap', '.rmap-node, .rmap-chip', 'rmap-note');
-    initHoverDim('claims', '.claim-row', 'claims-note');
-    initHoverDim('pipeline', '.pipe-chip', 'pipeline-note');
-    initHoverDim('layers', '.layer-row', null);
     initHoverDim('lake', '.matrix-row', 'lake-note');
     initHoverDim('blueprint', '.bp-row', 'bp-note');
     initHoverDim('signals', '.sig-row', 'sig-note');
