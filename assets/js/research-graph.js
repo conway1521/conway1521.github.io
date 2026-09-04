@@ -21,6 +21,7 @@
 
     sagetool: {
       x: 88, y: 552, k: 'tool', l: ['SAGE model', 'explorer'], lx: -17, ly: 2, a: 'end',
+      date: 'May 2021',
       title: 'Wellbeing and macroeconomics explorer',
       plain: 'The paper argues that a household’s social fabric belongs inside the model rather than outside it, and the explorer is where anyone can check whether that argument does any work, by turning the social terms up and down and seeing which results move and which stay where they were. The parameters it exposes are the ones the paper argues over, so the argument can be checked rather than taken on trust.',
       abs: 'An interactive implementation of the SAGE household problem, exposing the preference weights on consumption, income risk, and the social terms as adjustable parameters and solving the model on each change. The tool is distributed through QuantEcon, the open source project for quantitative economics, computational lectures and tools in Python and Julia founded by Thomas Sargent and John Stachurski and used widely in teaching and research, which puts the model in front of an audience that can test it rather than only read about it.',
