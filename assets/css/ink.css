@@ -118,8 +118,6 @@ button { font-family: inherit; }
 .prose--lg p { font-size: 16px; }
 
 /* ---------- ruled entry lists (research, work, about, writing) ---------- */
-.entry { border-top: 1px solid var(--rule); padding: 22px 0; max-width: var(--measure-list); }
-.entry:first-of-type { border-top: none; }
 .subgroup__h { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin: var(--space-tight) 0 8px; }
 .inline-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; margin-top: 4px; }
 
@@ -147,14 +145,11 @@ button { font-family: inherit; }
 .inspo__nav--next { right: -10px; }
 .hero__name { font-size: 44px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.03; }
 .hero__tagline { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 18px 0 0; max-width: var(--measure-text); }
-.affil .role { font-weight: 600; }
-.affil .at { color: var(--faint); }
 .hero__social { margin-top: 22px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 13.5px; }
 
 /* ============================================================
    PORTFOLIO INDEX - the ruled table, per the reference
    ============================================================ */
-.idx { }
 
 /* ============================================================
    PROJECT ENTRY - centered text column, breakout figures
@@ -192,7 +187,6 @@ button { font-family: inherit; }
 .res-row__pct { font-size: 11.5px; text-align: right; color: var(--faint); }
 
 /* model layers */
-.layer-row { border-top: 1px solid var(--rule); padding: 16px 0; transition: opacity 0.15s; cursor: default; }
 
 /* resolve a title */
 .resolve-row { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -398,14 +392,11 @@ button { font-family: inherit; }
 .metrics-row--head { font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); border-top: none; }
 
 /* math block (applied) */
-.math-block { border-left: 1px solid var(--ink); padding: 4px 0 4px 18px; margin: 16px 0; font-size: 14.5px; line-height: 1.8; max-width: 600px; }
 
 /* back link */
 .backlink { display: inline-block; margin-top: 20px; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* reach row (contact action at the end of a page) */
-.reach { border-top: 1px solid var(--ink); margin-top: 40px; padding-top: 12px; display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; font-size: 13px; }
-.reach span { color: var(--faint); }
 
 /* coverage matrix */
 .cov-head, .cov-row { display: grid; grid-template-columns: 170px repeat(5, 1fr); gap: 10px; align-items: center; }
@@ -483,17 +474,6 @@ button { font-family: inherit; }
 .agenda { margin-top: 4px; }
 
 /* working-paper findings and results table */
-.finding { display: grid; grid-template-columns: 26px 1fr; gap: 0 16px; padding: 16px 0; border-top: 1px solid var(--rule); }
-.finding:last-child { border-bottom: 1px solid var(--rule); }
-.finding__n { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; padding-top: 2px; }
-.finding__head { font-size: 15px; font-weight: 600; line-height: 1.4; }
-.finding__body { font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 6px; grid-column: 2; }
-.finding__body table, .finding > table { grid-column: 2; align-self: start; max-width: 100%; }
-.rtable { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0 4px; }
-.rtable th, .rtable td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
-.rtable th:first-child, .rtable td:first-child { text-align: left; font-variant-numeric: normal; }
-.rtable thead th { border-bottom: 1px solid var(--ink); font-weight: 600; color: var(--faint); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; }
-.rtable td.hl { font-weight: 600; }
 
 /* metrics scope label (facility map) */
 .metrics-scope { float: right; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); font-weight: 400; }
@@ -558,7 +538,7 @@ button { font-family: inherit; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .stages, .grid2 { grid-template-columns: 1fr; }
+  .stages { grid-template-columns: 1fr; }
   .joi { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
@@ -597,21 +577,11 @@ button { font-family: inherit; }
 /* homepage: where to start */
 
 /* research: program map */
-.rmap { max-width: 660px; margin: 0 auto; }
-.rmap-chip { display: block; width: -moz-max-content; width: max-content; max-width: 100%; margin: 0 auto; border: 1px solid var(--ink); padding: 8px 15px; font-size: 12.5px; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--paper); }
-.rmap-chip:hover { background: var(--ink); color: var(--paper); }
-.rmap-node { display: flex; gap: 9px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--rule); font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; line-height: 1.4; }
-.rmap-node:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* research: open questions */
-.claim-row { display: flex; align-items: baseline; gap: 13px; padding: 13px 2px; border-top: 1px solid var(--rule); text-decoration: none; }
-.claim-row:last-of-type { border-bottom: 1px solid var(--rule); }
-.claim-row:hover .claim-row__t { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) { .claim-row__src { display: none; } }
 
 /* applied: pipeline */
-.pipe-chip { display: block; border: 1px solid var(--ink); padding: 6px 9px; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--paper); line-height: 1.35; }
-.pipe-chip:hover { background: var(--ink); color: var(--paper); }
 
 /* ============================================================
    Research graph. Four marks: a haloed disc for published work,
@@ -685,7 +655,7 @@ button { font-family: inherit; }
    ============================================================ */
 .anchor { scroll-margin-top: 24px; }
 .sechead { border-top: 2px solid var(--ink); padding-top: 14px; margin: var(--space-section) 0 var(--space-tight); display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; }
-.sechead__h { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+.sechead__h { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin: 0; line-height: 1.2; }
 
 .roles { border-top: 1px solid var(--rule); max-width: var(--measure-list); }
 .role-row { display: grid; grid-template-columns: 1fr 150px; gap: 20px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--rule); }
