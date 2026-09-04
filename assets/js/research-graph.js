@@ -29,13 +29,14 @@
     atlas: {
       x: 262, y: 508, k: 'tool', l: ['Open Inequality', 'Atlas'], lx: 17, ly: 2, a: 'start',
       title: 'Open Inequality Atlas',
-      plain: 'Somebody told you a number about your country, and it was almost certainly the income Gini, because that is the one that gets published. It describes a pay slip. The Atlas puts what people own next to what they are paid, and the two do not agree: a country can pay out more evenly than almost anywhere and still own more unevenly than Britain, with its bottom half taking a quarter of national income while owning less than nothing. Which of the two numbers you happened to hear decided what you believe about where you live, and the one that decides your life is the one nobody quotes.',
+      plain: 'The number people are given about inequality in their country is almost always the income Gini, because that is the one that gets published, and it measures what they are paid rather than what they own. The Atlas sets the two side by side and they disagree: a country can pay out more evenly than almost anywhere and still own more unevenly than Britain, with its bottom half taking a quarter of national income while owning less than nothing. Ownership is what determines whether somebody can buy a house or survive losing a job, so which of the two numbers a reader happens to have seen changes what they believe about where they live.',
       abs: 'Inequality is used as one word for several measurements that do not agree with each other, and the one usually quoted is income concentration, because that is what the World Bank publishes most often. The Atlas separates the measurements, states them on comparable ground and shows where they diverge, across ten series covering wealth, income, poverty, life expectancy and life satisfaction. Wealth is the half that is hardest to harmonize and least often quoted, and the series is assembled from the World Inequality Database, the ECB household survey, the Luxembourg Wealth Study, the US Survey of Consumer Finances and the Federal Reserve\u2019s Distributional Financial Accounts, which differ in unit of observation, imputation method, coverage and license. Reconciliation is explicit rather than silent, since every row carries a source-priority tag and a comparability tier, so a user can restrict the panel to the tier their question needs. A United States layer resolves to the commuting zone, holding credit, debt and delinquency against measures of opportunity. Every claim in the app is graded by the strength the evidence supports, and a chart that cannot be justified at that strength is not shipped.',
       links: [['Launch the Atlas', 'https://conway1521.github.io/open-inequality-atlas/']]
     },
 
     antic: {
       x: 232, y: 428, k: 'wp', l: ['Fiscal', 'anticipation'], lx: 17, ly: 2, a: 'start',
+      date: 'December 2020',
       title: 'The anticipation content of fiscal policy: UK tax measures, 1945\u20132019',
       plain: 'When a tax change is announced and when it takes effect are different dates, and the gap between them has roughly quadrupled since the middle of the last century, so a British tax change today mostly arrives having been visible for months. That matters because the standard way of measuring the effect of tax policy treats a change as news on the day it takes effect, which was a fair approximation when most changes did arrive that way and is not one now. The gap is also not random: it depends on which tax is being changed, on where the Budget falls in the calendar, and, at the margin, on whether an election is coming, since tax rises are about four times more likely than cuts to take effect on the far side of a vote.',
       abs: 'Narrative tax shocks are dated by implementation, and the resulting series are pooled across decades. Using 2,252 UK tax measures announced between 1945 and 2019, this paper shows that the interval between announcement and implementation has changed enough that such a series mixes two economically different objects. The share of the tax impulse announced more than 120 days before taking effect rises from 0.18 in 1945 to 1979 to 0.70 since 2000, and the unanticipated component of the quarterly impulse falls roughly fivefold. Computing the same quantity from the century-long dataset of Cloyne, H\u00fcrtgen and Dimsdale, on their coding and their threshold, reproduces the series and extends it back to 0.02 in 1920 to 1944. Within the same Budget, National Insurance changes are 39 percentage points more likely than excise duties to arrive with long notice, and the fiscal-year calendar produces long notice only when the Budget falls late in the year. The rise dates to the early 1990s and the move to a unified autumn Budget, a reform of the Budget process justified by parliamentary scrutiny and predictability and never assessed for macroeconomic consequence. Crises do not visibly shorten the interval.',
@@ -44,6 +45,7 @@
 
     fiscal: {
       x: 128, y: 392, k: 'wip', l: ['Fiscal policy and', 'consumption'], lx: -15, ly: 2, a: 'end',
+      date: 'May 2023',
       title: 'Fiscal policy’s distributional impact on consumption',
       plain: 'An average multiplier tells you what a fiscal shock did to the country and almost nothing about who it reached, and the households whose consumption responds most are exactly the ones that a specification estimated on the aggregate averages away. Whether a pound of stimulus is spent or saved depends on whether the household receiving it can borrow, and on whether its assets can be turned into cash this month, so the same policy reaches some households and barely reaches others, and an aggregate multiplier hides which.',
       abs: 'Fiscal multipliers estimated on aggregate data mask substantial heterogeneity in the household response. This paper pairs a narrative identification of fiscal shocks, built from a two-decade series of UK legislative measures, with household-level heterogeneity in credit constraints and asset liquidity, extending Hubert and Cumming (2021). The consumption response is estimated conditionally on liquidity position rather than in aggregate, which identifies the margin along which fiscal transmission actually operates and gives a basis for targeting. Joint work with Paul Hubert of the Banque de France and OFCE and Fergus Cumming of the Bank of England.',
@@ -54,6 +56,7 @@
 
     p1: {
       x: 252, y: 148, k: 'wp', l: ['Ecosystem', 'framework'], lx: 0, ly: -24, a: 'middle',
+      date: 'December 2024',
       title: 'A regional economic development ecosystem framework',
       plain: 'Roughly 1.5 trillion euro of European cohesion funding has been spent since 1989, and regional disparities have persisted and in several respects widened, while the gap between what the aggregate indicators report and what people in those regions experience has grown rather than closed. A region can post acceptable output figures while its labor market, its civic life and its sense of opportunity deteriorate. Practitioners in community organizations, community colleges and workforce boards already work as though everything connects, because in their daily experience it plainly does, and the models they are handed to justify their spending do not. This paper formalizes what those practitioners see, and sets out the three pillars that the two papers after it go on to measure and then to price.',
       abs: 'Regional development policy is typically evaluated one domain at a time, which sets aside the interdependencies between domains that the persistence of disparities appears to turn on. This paper organizes regional development around three interacting pillars: place-based conditions as the territorial and institutional foundation, human and social capital as the capabilities and connections that activate it, and economic activity as both the current outcome and the structural basis of future potential. The claim is not that the dimensions are new, nor that their interactions have been ignored, since a substantial body of recent work establishes that institutional quality conditions the returns to investment and that bridging social capital conditions mobility. The contribution is to hold those pairwise results inside one structure, formalized so that components can be introduced individually without respecifying the whole. Modularity is what makes the framework testable at the level of aggregation regional statistics actually reach, and it fixes the measurement targets used in the second paper and the calibration targets used in the third.',
@@ -62,6 +65,7 @@
 
     p2: {
       x: 366, y: 214, k: 'wp', l: ['EU regional', 'ladder'], lx: 17, ly: 2, a: 'start',
+      date: 'September 2025',
       title: 'A shock reveals the structure',
       plain: 'A tightly coupled system looks one-dimensional when nothing is happening to it, and shows its separate parts only under stress, which is why you cannot see the structure of a regional economy until the system is stressed. In calm times the three pillars of the framework do not behave as three separable dimensions at all, and a single factor fits the indicators better than three do. Then the pandemic arrives and the link between the people side and the economic side comes apart while the two links involving place barely move, which is the pattern a coupled system produces and the pattern independent dimensions could not. The four tiers of regions that emerge hold their members very unevenly: the struggling tier kept more than nine in ten of its regions across the shock while the high-performing tier lost nearly half, so the structure is far stickier at the bottom than at the top.',
       abs: 'This paper tests the ecosystem framework of the conceptual companion on European regions at NUTS 2 level. In calm conditions the three pillars do not separate: a single general factor fits the thirty-five indicators better than three factors do, and the pillar composites correlate at 0.85 to 0.89. Under the pandemic the correlation between human and social capital and economic activity falls while the two correlations involving place-based conditions barely move, and dimensions that were genuinely independent would not have correlated so highly beforehand, so the single-factor result and the selective decoupling together identify a coupled system rather than refuting the framework. Between-country differences account for roughly three-quarters to nine-tenths of the total variation, and the decoupling occurs between national systems while within countries the correlation holds steady, which points to divergent national policy responses. Four tiers, struggling, catching-up, stable core and high-performing, are stable across the shock, geographically contiguous and present before it, and they retain their members unequally, with the struggling tier holding more than nine in ten and the high-performing tier losing nearly half. Movement between tiers ran downhill, with downward transitions outnumbering upward ones by more than four to one, a pattern closer to allostasis than to equilibrium, in which a configuration is the most stable setting the conditions allow rather than a good one. Of 224 strong cross-pillar correlations, more than a third fall to near zero once the shared development dimension is partialled out, while 47 direct links survive it, estimated with a partial-correlation network borrowed from psychometrics.',
@@ -85,14 +89,6 @@
     },
 
     /* ---------------- labor markets ---------------- */
-
-    panel: {
-      x: 452, y: 302, k: 'wip', l: ['Panels to', 'regional stocks'], lx: 0, ly: -22, a: 'middle',
-      title: 'From employer panels to regional stocks',
-      plain: 'Official statistics get less reliable the smaller the geography, which is exactly the geography that regional policy operates on, while private employer panels carry a great deal of detail about those same places and no way of knowing how representative any of it is. Putting the two together, with the public benchmarks anchoring the panel rather than the panel being trusted on its own, is what makes the ecosystem framing measurable at the level where somebody actually has to make a decision.',
-      abs: 'Official statistics report occupational employment counts by region but not the microstructure a workforce planner needs, meaning the tenure distribution, the age curve, the level mix, and the distinction between transfer risk and retirement risk. Employer HR data carries exactly that structure for a non-random subset of the market. This paper treats the reconstruction as a small-area estimation problem with an explicit synthesis step: the panel is standardized onto public vocabularies, its departure from the public margins is measured directly and reported as a result in its own right, reweighting is applied where the margins permit it, and synthetic worker records are drawn for uncovered segments from panel-estimated conditional distributions calibrated to public totals. Validation proceeds by holding out segments the panel does cover and testing whether the synthesis reconstructs them. Every synthetic record carries provenance flags and anonymity floors are built in, so every published object is aggregate or synthetic and never a real worker.',
-      links: []
-    },
 
     facility: {
       x: 438, y: 398, k: 'wip', l: ['Facility hiring', 'profiles'], lx: -15, ly: 2, a: 'end',
@@ -120,6 +116,7 @@
 
     skillsdna: {
       x: 792, y: 252, k: 'wp', l: ['AI exposure', 'at three levels'], lx: 0, ly: 30, a: 'middle',
+      date: 'May 2026',
       title: 'AI exposure at three levels',
       plain: 'A labor market can be described three ways at once: by what each occupation is paid, by the tasks each occupation performs, and by the skills those tasks use. The three descriptions have to add up to the same wage bill, and they differ in what they can support. Wages are observed once per occupation, so a description with more tasks than occupations can never be wrong, and a description with fewer skills than occupations can. The teams that have scored how exposed work is to AI each scored one of the three levels, and this paper places each score at the level it was collected, checks whether it survives the trip to the others, and finds the capability measures are largely one measure under three names. Realized wages and employment show nothing through 2025, but every break in those series comes with the pandemic rather than the technology, so the annual data cannot say whether nothing has happened or whether it has not yet reached the stock. The test that can, on the tasks employers ask for in job postings month by month, is specified in the paper and waits on the data.',
       abs: 'Measures of exposure to generative artificial intelligence are collected at three levels of the labor market and compared as though they described one object. This paper writes the labor market as one wage bill at three levels, occupations, tasks and skills, and counts what each can identify: 829 observed wages against an identity, against 17,383 task prices that can never be contradicted, against 25 skill prices that can. Freund and Mann (2026) build the same nesting in general equilibrium and project that the return to social skills rises and the return to analytical skills falls, without testing the projection against realized prices; this paper supplies the empirical counterpart. Each published measure enters at its native layer. Carrying the Eloundou task ratings down to abilities reproduces the Felten ability scores at 0.667 for reading comprehension and 0.546 for language modeling against 0.172 for image recognition, so the propagation discriminates among AI applications correctly. The Srinivasan automation score is the Eloundou construction re-run on a later release, so their 0.833 correlation shows reproducibility, and augmentation is a Herfindahl index over the same classification, explained to 77 percent by a quadratic in automation. Twenty-five named skill groups explain occupational wages at a cross-validated 0.648, the wage coefficients are usable as changes while their levels are not, and inference is the rank of the treated years among placebo designations of the panel\u2019s own transitions. Within occupations a task’s rated exposure predicts the automation share of its observed use, for the machine rating only. The test of the projection has two halves. On a balanced panel of 693 occupations from 2012 to 2025, no skill group moved by more than 1.51 times its own volatility after 2022, and every deviation from the pre-2020 path begins before language models were released, so the stock returns a null it cannot interpret. The flow half, on the task composition of 155 million job postings at monthly resolution, is specified with its groups, pre-period and readings fixed, and is in progress.',
@@ -129,6 +126,7 @@
 
     exposure: {
       x: 888, y: 190, k: 'wip', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
+      date: 'April 2026',
       title: 'Does the choice of AI-exposure measure matter?',
       plain: 'At least six serious measures score how exposed each occupation is to AI, and most studies pick one without ever justifying the choice. If those measures disagree with each other, then every claim about which jobs are at risk is partly an artifact of which measure the author happened to reach for, and no reader can tell how much. Holding everything else fixed and varying only the measure shows how much of a published finding is the world and how much is the instrument.',
       abs: 'At least six serious measures score occupational exposure to AI, and studies routinely select one without justification. If the measures disagree, conclusions about which occupations are at risk are partly artifacts of that selection. This paper holds population, occupational base and specification constant and varies only the measure, quantifying where the choice binds. Comparison is on dollar-weighted agreement rather than rank correlation, since rank agreement at the tails conceals disagreement in the middle of the distribution, which is where policy questions are actually posed. The measures converge at the extremes and diverge substantially in the interior.',
@@ -146,6 +144,7 @@
 
     migration: {
       x: 744, y: 400, k: 'wp', l: ['Occupational', 'migration'], lx: 0, ly: 30, a: 'middle',
+      date: 'February 2026',
       title: 'Where occupations move',
       plain: 'Interstate migration has been measured for people and hardly ever for occupations, although most of the rules that make moving hard attach to the job. This builds state-to-state flows by occupation from 59.8 million census records and measures what share of each occupation a state imports each year. The spread is close to fifteenfold, from tool and die makers to sailors, the arrivals are always younger than the workforce they join, and flows into a state paying ten per cent more run about one per cent higher while distance weighs six times as much. The gravity benchmark is deliberately told nothing about how large each occupation is in each state, so where a state draws far more of an occupation than it predicts the flows are recovering a concentration on their own, and that measure agrees with an independent employer survey.',
       abs: 'This paper constructs bilateral interstate migration flows by occupation from nineteen vintages of American Community Survey microdata, 59.8 million person records across 51 jurisdictions and 475 harmonized occupation codes, and measures the share of each state\'s occupational workforce arriving from another state within the year, with design-based standard errors. External dependence varies close to fifteenfold across occupations and is a young-worker channel in every one of them: arrivals and leavers have the same mean age cell by cell and are seven years younger than the workforce they join. A Poisson pseudo-maximum-likelihood gravity model with origin-year, destination-year, occupation-year and state-pair effects puts the wage elasticity of flows at 0.114 and the distance elasticity at −0.72. The benchmark omits employment by state and occupation, so its residual measures occupational concentration in the migration flow; the concentrations it recovers largely hold their position across two decades and track the location quotient in an independent establishment survey, while three pre-specified wage tests return precise zeros.',
@@ -155,6 +154,7 @@
 
     flows: {
       x: 622, y: 344, k: 'wp', l: ['Where workers', 'come from'], lx: -17, ly: 2, a: 'end',
+      date: 'November 2025',
       title: 'Where workers come from',
       plain: 'States fund nursing school places, teacher preparation and apprenticeships on the understanding that an occupation short of people is an occupation short of graduates, and that diagnosis has never been checked against a full account of where an occupation\u2019s people come from. Building one shows that training is the smallest of the inflows, that occupations are refilled mostly by people arriving from other occupations, and that those arrivals happen at every age rather than only among the young. It also shows that most of the movement cancels, so an occupation is churned by flows several times larger than the change in its size, which is why raising arrivals moves a stock so much less than it appears it should.',
       abs: 'An account of arrivals and departures for 230 occupations, annually from 2009 to 2025 and by age band, built from CPS ASEC microdata with a standard error on every figure from the 160 replicate weights the Census Bureau publishes. The account balances exactly, because every person is counted once on each side from a single source, and nothing is imputed or calibrated to an external total. It rests on a measurement result established first: two independent codings of the same unchanged job disagree in 48.1 percent of cases at the detailed level and 31.8 percent across twenty-three major groups, measured on 114,491 people, so occupational mobility cannot be measured by linking a person across interviews, and the retrospective within-interview design works because its coding errors are correlated and cancel in the difference. On that basis, arrivals from another occupation run four to twelve times arrivals from education, they occur at every age, with lateral arrivals aged thirty-five and over alone outnumbering arrivals from education, and the change in occupation sizes that lateral movement produces is about a tenth of the gross flow, so an occupation is churned by movement an order of magnitude larger than the change in its size.',
@@ -171,16 +171,9 @@
       links: []
     },
 
-    vacancy: {
-      x: 726, y: 522, k: 'wip', l: ['Vacancy', 'measurement'], lx: 0, ly: 28, a: 'middle',
-      title: 'What does a vacancy measure?',
-      plain: 'Open jobs sound like one number but they are three different measurements: what employers tell a government survey, what job boards advertise, and what an employer’s applicant tracking system records. For the same employers and the same occupations these disagree by two to three times, so two sources can both be right and still contradict each other, and the gap between them is itself information about what employers are doing that gets thrown away every time the three are collapsed into one figure.',
-      abs: 'Vacancy counts from establishment surveys, job boards and applicant tracking systems disagree by factors of two to three for the same employers and occupations, because they measure different objects on different clocks. This paper reconciles them in three moves. First, a concept map from every requisition state, open, on hold, filled, canceled and evergreen, to its survey and posting counterpart, with explicit columns for whether each state is counted in the survey and visible in postings. Second, time-to-fill measured with Kaplan-Meier curves that retain still-open requisitions as censored rather than dropping them, which is the selection bias the literature warns about and the practice routinely commits. Third, a decomposition of the two-to-three-times gap into named components including multi-hire requisitions and evergreen postings. The result is a replicable successor to a discontinued public time-to-fill series.',
-      links: []
-    },
-
     beige: {
       x: 852, y: 470, k: 'wip', l: ['Beige Book', 'signals'], lx: 17, ly: 2, a: 'start',
+      date: 'March 2026',
       title: 'Reading the Beige Book with LLMs',
       plain: 'Eight times a year the twelve Federal Reserve districts publish qualitative reports full of labor-market detail, gathered precisely because the hard statistics arrive too late to be useful, and economists have mined them with dictionaries and hand-coding for decades. An LLM extracts structured labor sentiment from each release for about thirteen cents, which means the full forty-year archive can be processed for a few hundred dollars, and once it is on the same district-by-quarter grain as the official series it can be tested rather than merely quoted.',
       abs: 'The Federal Reserve Beige Book carries district-level qualitative labor-market reporting eight times a year, collected because hard statistics arrive with a lag, and it has historically been analyzed with keyword dictionaries or hand-coding. This note applies structured LLM extraction across the full forty-year archive at roughly thirteen cents per release, producing labor-market sentiment on the same district-by-quarter grain as the official series, with every extracted signal carrying the sentence it came from. The evaluation asks whether the extracted series carries information beyond the hard series it should lead, and a finding that it adds nothing is reported as such. The resulting dataset is released publicly.',
@@ -190,11 +183,11 @@
 
   var E = [
     ['sage', 'sagetool'], ['sage', 'p3'], ['atlas', 'fiscal'], ['atlas', 'p3'], ['antic', 'fiscal'],
-    ['p1', 'p2'], ['p2', 'p3'], ['p1', 'ned'], ['p2', 'panel'],
+    ['p1', 'p2'], ['p2', 'p3'], ['p1', 'ned'], 
     ['coding', 'taxonomy'], ['taxonomy', 'skillsdna'], ['skillsdna', 'exposure'],
     ['skillsdna', 'moves'], ['moves', 'migration'], ['flows', 'migration'],
-    ['flows', 'shortage'], ['flows', 'panel'], ['vacancy', 'shortage'],
-    ['beige', 'vacancy'], ['facility', 'shortage'], ['facility', 'ned'],
+    ['flows', 'shortage'], 
+    ['beige', 'shortage'], ['facility', 'shortage'], ['facility', 'ned'],
     ['skillsdna', 'flows']
   ];
 
@@ -347,7 +340,10 @@
 
     detail.innerHTML =
       '<div class="rg-d__top">' +
-        '<div class="rg-d__title">' + esc(n.title) + '</div>' +
+        '<div>' +
+          '<div class="rg-d__title">' + esc(n.title) + '</div>' +
+          (n.date ? '<div class="rg-d__date">' + esc(n.date) + '</div>' : '') +
+        '</div>' +
         '<button class="rg-d__close" type="button" data-close>Close</button>' +
       '</div>' +
       '<div class="rg-tabs">' +
@@ -400,9 +396,9 @@
 
   /* ---------- narrow screens get the same content as a list ---------- */
   var GROUPS = [
-    ['Labor markets', ['skillsdna', 'flows', 'migration', 'shortage', 'exposure', 'taxonomy', 'coding', 'moves', 'vacancy', 'beige', 'panel', 'facility']],
+    ['Labor markets', ['skillsdna', 'flows', 'migration', 'shortage', 'exposure', 'taxonomy', 'coding', 'moves', 'beige', 'facility']],
     ['Regional development', ['p1', 'p2', 'p3', 'ned']],
-    ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'fiscal']]
+    ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'antic', 'fiscal']]
   ];
   var GLYPH = { pub: '◉', wp: '●', tool: '◇', wip: '○' };
   var flist = document.getElementById('rg-list');

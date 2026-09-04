@@ -40,9 +40,7 @@ title: null
     </div>
 
     <div class="prose prose--lg">
-      <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end, covering the economics, the models, the pipelines and the product. The two digital twins are the products themselves: one turns an employer&rsquo;s raw HR export into forecasts and scenarios that hold up when somebody has to defend them in a board meeting, and the other stands a whole state labor market up as stocks and flows that have to balance, with demand built four separate ways and the disagreement between them left visible rather than averaged away. Underneath them sits a compliant multi-tenant layer that reconciles federal statistics, commercial postings, training and credential records, fiscal signals and private employer data into one view across every US occupation and geography, on 220 datasets that grow every time a new client connects.</p>
-
-      <p>My research is based on the idea that economies behave as ecosystems and that policy fails when it treats the parts separately. My PhD at Universit&eacute; Paris 8 formalizes that over place and tests it on European regional data, and an applied strand measures the same idea in labor markets, where the question becomes what tasks and skills lead to resilient labor market outcomes, and how they change over time.</p>
+      <p>AI is reordering what jobs are made of, and the statistics used to track the workforce cannot see it at the level where hiring, training and shortage decisions actually get made. At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I designed and built the data department end to end, an intelligent data layer that reconciles federal statistics, commercial postings, training and credential records, fiscal signals and private employer data across every US occupation and geography. That layer produces two digital twins, one of an employer and one of a state labor market, and between them they read shortages, risks and opportunities down to a named facility, employer, training provider or specialized occupation. Building it meant using AI as an instrument as well as studying it, since the extraction pipelines that turn written sources into structured records are what make that granularity reachable at all. My research runs on the same premise, that economies behave as ecosystems and that policy fails when it treats the parts separately, formalized over place in my PhD at Universit&eacute; Paris 8 and measured in labor markets by an applied strand on tasks and skills.</p>
 
       <p>Two open source tools I have built are: the <a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Open Inequality Atlas</a>, which sets what people own beside the pay figure that usually gets quoted and shows that the two disagree about which countries are unequal, and the <a href="https://ned-dashboard.onrender.com" target="_blank" rel="noopener">NED dashboard</a>, an assessment of economic development across California&rsquo;s regions.</p>
 
@@ -130,17 +128,17 @@ title: null
       <div class="pubs">
       <div class="pub-row">
         <span class="pub-row__t">AI exposure at three levels: a framework for occupation, task and skill measures of the labor market</span>
-        <span class="pub-row__w">Working paper, test in progress</span>
+        <span class="pub-row__w">Working paper, May 2026</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/skills-dna.pdf' | relative_url }}">Download</a></span>
       </div>
       <div class="pub-row">
         <span class="pub-row__t">A regional economic development ecosystem framework: integrating place, people, and economy in European regions</span>
-        <span class="pub-row__w">Working paper, dissertation</span>
+        <span class="pub-row__w">Working paper, December 2024</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/ecosystem-framework.pdf' | relative_url }}">Download</a></span>
       </div>
       <div class="pub-row">
         <span class="pub-row__t">A shock reveals the structure: coupling, typology, and development paths across European regional ecosystems</span>
-        <span class="pub-row__w">Working paper, dissertation</span>
+        <span class="pub-row__w">Working paper, September 2025</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/shock-reveals-structure.pdf' | relative_url }}">Download</a></span>
       </div>
       <div class="pub-row">
@@ -150,17 +148,17 @@ title: null
       </div>
       <div class="pub-row">
         <span class="pub-row__t">The anticipation content of fiscal policy: UK tax measures, 1945&ndash;2019</span>
-        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__w">Working paper, December 2020</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/fiscal-anticipation.pdf' | relative_url }}">Download</a></span>
       </div>
       <div class="pub-row">
         <span class="pub-row__t">Where workers come from: an occupational flow account for the United States</span>
-        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__w">Working paper, November 2025</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/flows-engine.pdf' | relative_url }}">Download</a></span>
       </div>
       <div class="pub-row">
         <span class="pub-row__t">Where occupations move: bilateral migration across 475 occupations</span>
-        <span class="pub-row__w">Working paper</span>
+        <span class="pub-row__w">Working paper, February 2026</span>
         <span class="pub-row__l"><a href="{{ '/assets/papers/occupation-migration.pdf' | relative_url }}">Download</a></span>
       </div>
     </div>
@@ -178,7 +176,7 @@ title: null
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
-          <p class="work__s">Inequality is quoted as one number, almost always the income Gini, because that is the one the World Bank publishes most often. It describes a pay slip, and it is not the number that decides whether somebody can buy a house or survive losing a job.</p>
+          <p class="work__s">Inequality is usually quoted as one number, the income Gini, because that is the one the World Bank publishes most often. That number measures what people are paid, while what they own is what determines whether they can buy a house or survive losing a job.</p>
         </summary>
         <div class="work__body">
           <p>The Atlas puts what people own next to what they are paid and shows that the two rankings disagree, so a country can pay out more evenly than almost anywhere and still own more unevenly than Britain. Wealth is the harder half to assemble, and the series is reconciled from the World Inequality Database, the ECB household survey, the Luxembourg Wealth Study, the US Survey of Consumer Finances and the Federal Reserve&rsquo;s Distributional Financial Accounts, with every row tagged by source priority and comparability tier so a reader can decide how much reconciliation to accept rather than inheriting mine. Income, life expectancy, life satisfaction and poverty sit alongside it, and a US layer goes down to the commuting zone.</p>
@@ -330,6 +328,9 @@ title: null
       </details>
 
     </div>
+
+    <h4 class="subgroup__h">Extra problems</h4>
+    <p class="groupnote">These are smaller pieces from the same platform, and each one sets out a distinct data problem, the figure it produces, and how far it got. <a href="{{ '/portfolio/extra-problems' | relative_url }}">Read them</a>.</p>
     </div>
 
     <!-- ---------------- publications ---------------- -->
