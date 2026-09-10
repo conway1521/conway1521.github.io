@@ -729,8 +729,8 @@ button { font-family: inherit; }
    Hairlines in the right gutter, one per section. The width of each
    line is set from JS as the pointer nears it, so the transition here
    only governs the settle back to rest, never the tracking itself. */
-.toc { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 30; display: flex; flex-direction: column; }
-.toc__i { position: relative; display: block; width: 44px; height: 21px; text-decoration: none; }
+.toc { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 30; display: flex; flex-direction: column; }
+.toc__i { position: relative; display: block; width: 38px; height: 21px; text-decoration: none; }
 .toc__line { position: absolute; right: 0; top: 50%; height: 1px; width: 18px; background: var(--faint); transform: translateY(-50%); }
 .toc.is-settling .toc__line { transition: width 0.24s cubic-bezier(0.4, 0.1, 0.2, 1); }
 .toc__i.is-here .toc__line { background: var(--ink); }

@@ -10,11 +10,11 @@
   var MAX = 38;     /* length directly under the pointer */
   var RANGE = 76;   /* vertical reach of the swell, px */
 
-  var wide = window.matchMedia('(min-width: 1180px)');
+  var wide = window.matchMedia('(min-width: 1120px)');
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
   if (!wide.matches || !fine.matches) return;
 
-  var heads = [].slice.call(document.querySelectorAll('#about, .blockhead[id]'));
+  var heads = [].slice.call(document.querySelectorAll('#about, .blockhead[id], #education, #contact'));
   if (heads.length < 2) return;
 
   var rail = document.createElement('nav');
@@ -22,7 +22,7 @@
   rail.setAttribute('aria-label', 'Sections');
 
   var items = heads.map(function (h) {
-    var label = h.id === 'about' ? 'About' : h.textContent.trim();
+    var label = h.tagName === 'SECTION' ? h.querySelector('.sechead__h').textContent.trim() : h.textContent.trim();
     var a = document.createElement('a');
     a.className = 'toc__i';
     a.href = '#' + h.id;
