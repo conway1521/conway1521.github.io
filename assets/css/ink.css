@@ -725,6 +725,16 @@ button { font-family: inherit; }
 /* four papers are the current focus: the status mark is unchanged, the
    label is promoted to full ink and ruled underneath */
 
+/* ---------- section fold: Systems and tools, Publications ----------
+   Closed by default, since together they are most of the page's
+   length. The marker and hover match .work exactly, one level up. */
+.secfold > summary.blockhead { list-style: none; cursor: pointer; display: block; position: relative; padding-right: 30px; }
+.secfold > summary.blockhead::-webkit-details-marker { display: none; }
+.secfold > summary.blockhead::after { content: '+'; position: absolute; right: 4px; top: 12px; font-size: 20px; font-weight: 400; color: var(--faint); transition: color 0.15s; }
+.secfold[open] > summary.blockhead::after { content: '\2212'; }
+.secfold > summary.blockhead:hover::after { color: var(--ink); }
+.secfold > summary.blockhead:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+
 /* ---------- section rail ----------
    Hairlines in the right gutter, one per section. The width of each
    line is set from JS as the pointer nears it, so the transition here
