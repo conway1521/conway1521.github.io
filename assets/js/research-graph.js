@@ -95,33 +95,6 @@
 
     /* ---------------- labor markets ---------------- */
 
-    facility: {
-      x: 438, y: 398, k: 'wip', l: ['Facility hiring', 'profiles'], lx: -15, ly: 2, a: 'end',
-      date: 'June 2026',
-      title: 'Workforce demand from a press release',
-      plain: 'A new plant is announced with a headline headcount and a ribbon cutting, and the region then has to work out how many workers in which occupations arriving on what schedule, which the announcement does not say and which staffing statistics answer only for the mix that facilities of that type had yesterday. For a leading-edge facility that mix is wrong in ways that matter, so the profile has to be built rather than looked up, and it has to be built before the facility exists, which is the only moment at which anyone can still prepare.',
-      abs: 'When a fab, a battery plant or a hospital expansion is announced, workforce boards need the occupational mix and the quarter-by-quarter ramp that the announced headcount implies, and no source publishes either. The estimator has three parts: a staffing template giving the occupational mix for a facility class, assembled from industry staffing matrices and sector workforce data; a ramp curve spreading employment across construction, tool installation and production on a characteristic schedule; and the product of the two against announced scale, which turns a dated announcement into a specific quarterly profile by occupation. Validation is out of sample against ten to fifteen completed buildouts whose realized employment is recovered from public county-industry data, scored on total employment at maturity and on timing, with the naive announced-jobs figure as the baseline to beat. Scoring announcement inflation itself, claimed against realized, is a useful result independently of the estimator.',
-      links: []
-    },
-
-    coding: {
-      x: 606, y: 128, k: 'wip', l: ['Occupational', 'coding'], lx: 0, ly: -24, a: 'middle',
-      date: 'May 2026',
-      title: 'Occupational coding at the 8-digit frontier',
-      plain: 'Employers name the same job a hundred ways, and nothing downstream works until those titles collapse onto one taxonomy, so there is no benchmark, no forecast and no comparison across employers until the collapsing is solved. Matching a title against a list of official titles gets you most of the way and then stops, and where it stops is not where people assume, so this establishes where the ceiling is and what has to replace the method once you are past it.',
-      abs: 'Every labor dataset built from job titles must map unstructured strings onto an occupation code. At the 6-digit level this is close to solved. At the 8-digit level, where wage, task and mobility differences actually live, it is considerably harder, and the choice of method changes the resulting distribution. This paper benchmarks retrieval-based and classification-based approaches against the official 8-digit taxonomy, characterizing the ceiling on retrieval rather than asserting it, and evaluating classification on the residual where retrieval fails. The evaluation harness is public, which makes the comparison reproducible and the ceiling contestable.',
-      links: []
-    },
-
-    taxonomy: {
-      x: 708, y: 176, k: 'wip', l: ['Role', 'taxonomy'], lx: 17, ly: -8, a: 'start',
-      date: 'May 2026',
-      title: 'A role taxonomy anchored to the federal codes',
-      plain: 'The official codes are too coarse for what employers actually hire for, since one nurse code covers an ICU night nurse and a school nurse, while raw job titles are too fine to compare across employers. Private taxonomies solve the granularity by floating free of the government codes, which buys detail at the cost of ever reconciling with public statistics again. A role layer nested strictly inside the codes is the middle both sides miss, and it lets an employer’s own vocabulary join to public data without either side being distorted to fit the other.',
-      abs: 'This paper constructs a role taxonomy of 3,939 roles as a strict refinement of the federal occupation codes, so that every role maps up to exactly one code and aggregation to published statistics remains exact. The discipline is a single rule: a distinction counts as a role only when it stays inside an 8-digit boundary and is meaningful within it, while anything that is really a level, a shift, a staffing arrangement or a specialty modifier is stored as a facet rather than promoted to a new occupation. Titles are stripped of facets, embedded, and clustered recursively with an abstention margin. Validation uses ground truth nobody else uses, since the official 8-digit splits are themselves known-correct partitions against which the clustering can be scored directly. The economic test is how much within-code wage variation is explained once workers are split into roles, where even a modest gain settles the question. Because the inputs are public, the taxonomy and its resolver ship as a public artifact.',
-      links: []
-    },
-
     skillsdna: {
       x: 792, y: 252, k: 'wp', l: ['AI exposure', 'at three levels'], lx: 0, ly: 30, a: 'middle',
       date: 'May 2026',
@@ -194,10 +167,10 @@
   var E = [
     ['sage', 'sagetool'], ['sage', 'p3'], ['atlas', 'fiscal'], ['atlas', 'p3'], ['antic', 'fiscal'],
     ['p1', 'p2'], ['p2', 'p3'], ['p1', 'ned'], 
-    ['coding', 'taxonomy'], ['taxonomy', 'skillsdna'], ['skillsdna', 'exposure'],
+    ['skillsdna', 'exposure'],
     ['skillsdna', 'moves'], ['moves', 'migration'], ['flows', 'migration'],
     ['flows', 'shortage'], 
-    ['beige', 'shortage'], ['facility', 'shortage'], ['facility', 'ned'],
+    ['beige', 'shortage'], 
     ['skillsdna', 'flows']
   ];
 
@@ -406,7 +379,7 @@
 
   /* ---------- narrow screens get the same content as a list ---------- */
   var GROUPS = [
-    ['Labor markets', ['skillsdna', 'flows', 'migration', 'shortage', 'exposure', 'taxonomy', 'coding', 'moves', 'beige', 'facility']],
+    ['Labor markets', ['skillsdna', 'flows', 'migration', 'shortage', 'exposure', 'moves', 'beige']],
     ['Regional development', ['p1', 'p2', 'p3', 'ned']],
     ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'antic', 'fiscal']]
   ];
