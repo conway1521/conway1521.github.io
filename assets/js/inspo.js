@@ -30,14 +30,30 @@
     box.addEventListener('mouseenter', function () { clearInterval(timer); });
     box.addEventListener('mouseleave', function () { timer = setInterval(function () { step(1); }, 4500); });
   }
-  for (var i = 1; i <= MAX; i++) {
-    (function (n) {
-      var img = new Image();
-      img.alt = 'Inspiration ' + n;
-      img.dataset.n = n;
-      img.onload = function () { shown++; track.appendChild(img); pending--; decide(); };
-      img.onerror = function () { pending--; decide(); };
-      img.src = base + 'inspo-' + n + '.jpg';
-    })(i);
+  function load() {
+    for (var i = 1; i <= MAX; i++) {
+      (function (n) {
+        var img = new Image();
+        img.alt = 'Inspiration ' + n;
+        img.dataset.n = n;
+        img.onload = function () { shown++; track.appendChild(img); pending--; decide(); };
+        img.onerror = function () { pending--; decide(); };
+        img.src = base + 'inspo-' + n + '.jpg';
+      })(i);
+    }
+  }
+
+  /* The strip sits at the foot of a long page and weighs more than the
+     rest of it put together, so nothing is fetched until the reader is
+     within a screen or so of it. The box is hidden until then, so the
+     sentinel is the line introducing it. */
+  var sentinel = box.previousElementSibling || box;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); load(); }
+    }, { rootMargin: '800px 0px' });
+    io.observe(sentinel);
+  } else {
+    load();
   }
 })();
