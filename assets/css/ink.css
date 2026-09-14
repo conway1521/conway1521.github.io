@@ -596,7 +596,7 @@ button { font-family: inherit; }
 .rg-node:focus { outline: none; }
 .rg-hit { fill: transparent; }
 .rg-dot { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; transition: opacity 0.2s; }
-.rg-dot--tool { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+.rg-dot--tool { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
 .rg-dot--wip { fill: var(--paper); stroke: var(--hair); stroke-width: 1.5; }
 .rg-halo { fill: none; stroke: var(--ink); stroke-width: 1.1; transition: opacity 0.2s; }
 .rg-sel { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 2 3; opacity: 0; transition: opacity 0.25s; }

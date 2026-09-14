@@ -383,7 +383,7 @@
     ['Regional development', ['p1', 'p2', 'p3', 'ned']],
     ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'antic', 'fiscal']]
   ];
-  var GLYPH = { pub: '◉', wp: '●', tool: '◇', wip: '○' };
+  var GLYPH = { pub: '◉', wp: '●', tool: '◆', wip: '○' };
   var flist = document.getElementById('rg-list');
   if (flist) {
     GROUPS.forEach(function (grp) {
