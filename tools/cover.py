@@ -122,7 +122,7 @@ def build_cover(paper, series):
     y -= 20
     draw_centred(c, "Working Paper %s" % paper["id"], SERIF_BOLD, 11, y)
     y -= 16
-    version = "Version %s — %s" % (paper["version"], paper["version_date"])
+    version = "Version %s (%s)" % (paper["version"], paper["version_date"])
     draw_centred(c, version, SERIF, 10.5, y)
     y -= 16
     draw_centred(c, series["notice"], SERIF_ITALIC, 10, y)
@@ -133,7 +133,7 @@ def build_cover(paper, series):
     y -= 34
     draw_centred(c, "Abstract", SERIF_BOLD, 11, y)
     y -= 19
-    draw_justified(
+    y = draw_justified(
         c,
         clean(paper["abstract"]),
         SERIF,
@@ -143,6 +143,35 @@ def build_cover(paper, series):
         MARGIN + ABSTRACT_INSET,
         MEASURE - 2 * ABSTRACT_INSET,
     )
+
+    # Keywords and JEL codes, set as a paragraph with a bold lead-in, the way
+    # the papers set them under their own abstracts.
+    y -= 26
+    left = MARGIN + ABSTRACT_INSET
+    width = MEASURE - 2 * ABSTRACT_INSET
+    for label, value in (
+        ("Keywords: ", paper["keywords"]),
+        ("JEL classification: ", paper["jel"]),
+    ):
+        offset = stringWidth(label, SERIF_BOLD, 9.2)
+        c.setFont(SERIF_BOLD, 9.2)
+        c.drawString(left, y, label)
+        c.setFont(SERIF, 9.2)
+
+        # The first line shares its line with the label, so it is short by the
+        # label's width; what does not fit runs full measure underneath.
+        words = clean(value).split()
+        first = []
+        while words and stringWidth(
+            " ".join(first + words[:1]), SERIF, 9.2
+        ) <= width - offset:
+            first.append(words.pop(0))
+        c.drawString(left + offset, y, " ".join(first))
+        y -= 12.4
+        for line in wrap(" ".join(words), SERIF, 9.2, width):
+            c.drawString(left, y, " ".join(line))
+            y -= 12.4
+        y -= 3
 
     # The citation and the rights notice sit on the bottom margin, so their
     # position does not move with the length of the abstract.
@@ -186,6 +215,8 @@ LATEX_COVER = r"""% ------------------------------------------------------------
 \newcommand{\wpversion}{@VERSION@}
 \newcommand{\wpversiondate}{@VERSIONDATE@}
 \newcommand{\wpciteyear}{@CITEYEAR@}
+\newcommand{\wpkeywords}{@KEYWORDS@}
+\newcommand{\wpjel}{@JEL@}
 
 \begin{titlepage}
 \thispagestyle{empty}
@@ -200,7 +231,7 @@ LATEX_COVER = r"""% ------------------------------------------------------------
 \vspace{1.1em}
 \begin{center}
 {\bfseries Working Paper \wpid}\\[0.5em]
-Version \wpversion\ --- \wpversiondate\\[0.5em]
+Version \wpversion\ (\wpversiondate)\\[0.5em]
 \emph{Not peer reviewed. Comments welcome.}
 \end{center}
 \vspace{0.9em}
@@ -208,7 +239,10 @@ Version \wpversion\ --- \wpversiondate\\[0.5em]
 \vspace{2.2em}
 \begin{center}{\bfseries Abstract}\end{center}
 \vspace{0.4em}
-\begin{quote}\small\noindent \paperabstract\end{quote}
+\begin{quote}\small\noindent \paperabstract
+
+\vspace{1.3em}\noindent\textbf{Keywords:} \wpkeywords\\
+\textbf{JEL classification:} \wpjel\end{quote}
 \vfill
 \hrule height 0.4pt
 \vspace{0.9em}
@@ -258,6 +292,8 @@ def emit_latex(paper, inline_abstract=False, pandoc=False):
             "–", "--"
         ),
         "@TITLEFLAT@": paper["title"].replace("–", "--"),
+        "@KEYWORDS@": paper["keywords"],
+        "@JEL@": paper["jel"],
     }
     block = LATEX_COVER
     if inline_abstract:
