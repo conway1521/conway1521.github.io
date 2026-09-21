@@ -45,4 +45,12 @@ the sequence runs in order of first draft. Three numbers are reserved in
 renumbers when they are published.
 
 Citations carry the year in the identifier, which is the year of the first
-draft, not the year of the current version.
+draft, rather than the year of the current version.
+
+`series.json` also holds each paper's keywords and JEL codes, which the
+cover prints under the abstract and which are written into the PDF
+metadata, so they can be pasted straight into an SSRN or MPRA submission.
+Keywords use American spelling, because that is how both services are
+searched, although the papers themselves are written in British spelling.
+Each paper prints the same two lines under its own abstract, so a printed
+copy carries them whether or not it was taken from the cover.
