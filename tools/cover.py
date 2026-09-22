@@ -186,18 +186,21 @@ def build_cover(paper, series):
             paper["version"],
         )
     )
-    rights = "© %s %d. All rights reserved." % (
-        series["author"],
-        series["copyright_year"],
-    )
+    rights = series["rights_line"]
 
+    # The rights line can run to two lines now that it names a licence, so
+    # the citation above it is placed relative to however tall it turns out.
     citation_lines = wrap(clean(citation), SERIF, 8.6, MEASURE)
-    bottom = MARGIN + 12 + 11.6 + 6 + len(citation_lines) * 11.6
+    rights_lines = wrap(clean(rights), SERIF, 8.6, MEASURE)
+    rights_top = MARGIN + 12 + (len(rights_lines) - 1) * 11.6
+    bottom = rights_top + 11.6 + 6 + len(citation_lines) * 11.6
     rule(c, bottom + 8, grey=0.6)
-    y = bottom
-    draw_justified(c, clean(citation), SERIF, 8.6, 11.6, y, MARGIN, MEASURE)
+    draw_justified(c, clean(citation), SERIF, 8.6, 11.6, bottom, MARGIN, MEASURE)
     c.setFont(SERIF, 8.6)
-    c.drawString(MARGIN, MARGIN + 12, rights)
+    y = rights_top
+    for line in rights_lines:
+        c.drawString(MARGIN, y, " ".join(line))
+        y -= 11.6
 
     c.showPage()
     c.save()
@@ -248,7 +251,8 @@ Version \wpversion\ (\wpversiondate)\\[0.5em]
 \vspace{0.9em}
 {\footnotesize\noindent Suggested citation: Conway, Alessandro (\wpciteyear).
 ``@TITLEFLAT@.'' Working Paper \wpid, Version \wpversion.\\[1em]
-\copyright\ Alessandro Conway 2026. All rights reserved.\par}
+\copyright\ Alessandro Conway 2026. Licensed under Creative Commons
+Attribution 4.0 International (CC BY 4.0).\par}
 \end{titlepage}
 """
 
