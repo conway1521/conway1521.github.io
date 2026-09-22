@@ -1,0 +1,105 @@
+{
+  "series": {
+    "prefix": "AC-WP",
+    "author": "Alessandro Conway",
+    "copyright_year": 2026,
+    "notice": "Not peer reviewed. Comments welcome.",
+    "reserved": {
+      "AC-WP-2026-01": "Do skills predict moves? A gravity test of skill similarity against observed occupational transitions (first draft January 2026, estimation not yet run)",
+      "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (first draft March 2026, adjacency terms not yet measured)",
+      "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (first draft June 2026, comparison not yet run)"
+    }
+  },
+  "papers": [
+    {
+      "slug": "fiscal-anticipation",
+      "id": "AC-WP-2021-01",
+      "version": "2.0",
+      "version_date": "revised September 2026",
+      "cite_year": 2021,
+      "title": "The Anticipation Content of Fiscal Policy: UK Tax Measures, 1945–2019",
+      "title_lines": [
+        "The Anticipation Content of Fiscal Policy:",
+        "UK Tax Measures, 1945–2019"
+      ],
+      "keywords": "narrative tax shocks, fiscal foresight, tax policy making, announcement effects, fiscal multipliers",
+      "jel": "D84, E62, E65, H20, H30",
+      "source_repo": "fiscalUK",
+      "source_pdf": "paper/fiscaluk-paper1.pdf",
+      "source_tex": "paper/fiscaluk-paper1.tex",
+      "abstract": "Narrative tax shocks are dated by implementation, and the resulting series are pooled across decades. Using 2,252 UK tax measures announced between 1945 and 2019, I show that the interval between announcement and implementation has changed enough that such a series mixes two economically different objects. The share of the tax impulse announced more than 120 days before taking effect rises from 0.18 in 1945–79 to 0.70 since 2000, and the unanticipated component of the quarterly impulse falls roughly fivefold. Computing the same quantity from the century-long dataset of Cloyne et al. (2025), on their coding and their threshold, reproduces the series and extends it back to 0.02 in 1920–44. The interval is not incidental. Within the same Budget, National Insurance changes are 39 percentage points more likely than excise duties to arrive with long notice, the fiscal-year calendar produces long notice only when the Budget falls late in the year, and tax rises are four times more likely than cuts to take effect after an election. The rise dates to the early 1990s, coinciding with a reform of the Budget process justified by scrutiny and predictability and never assessed for macroeconomic consequence. Crises do not visibly shorten it."
+    },
+    {
+      "slug": "flows-engine",
+      "id": "AC-WP-2025-01",
+      "version": "1.1",
+      "version_date": "revised September 2026",
+      "cite_year": 2025,
+      "title": "Where Workers Come From: An Occupational Flow Account for the United States",
+      "title_lines": [
+        "Where Workers Come From:",
+        "An Occupational Flow Account for the United States"
+      ],
+      "keywords": "occupational mobility, labor market flows, occupation coding error, Current Population Survey, workforce policy",
+      "jel": "J62, J24, J21, C81, J08",
+      "source_repo": "paper-flows-engine",
+      "source_pdf": "paper/paper.pdf",
+      "source_tex": "paper/paper.tex",
+      "abstract": "Workforce policy in the United States acts on the training pipeline, on the understanding that an occupation short of people is an occupation short of graduates. This paper builds the full account of where an occupation's people come from and where they go, for 230 occupations, annually from 2009 to 2025 and by age band, from a single survey in which each person is counted once on each side, with standard errors from the 160 replicate weights the Census Bureau publishes. Arrivals from other occupations run four to twelve times arrivals from education, exceed all arrivals from outside employment in 99 per cent of occupations, and occur at every age: lateral arrivals aged thirty five and over, taken on their own, outnumber every arrival from education by nearly seven to one. Most of that movement cancels, so the change in occupation sizes that lateral movement produces is about a tenth of the gross flow. The account rests on a measurement result established first: two independent codings of a job the survey records as unchanged disagree in 48.1 per cent of cases at the detailed level, so occupational mobility cannot be measured in this survey by linking a person across interviews, and the within-interview design, whose two codes share an error that cancels in the difference, is the one that measures it."
+    },
+    {
+      "slug": "occupation-migration",
+      "id": "AC-WP-2026-02",
+      "version": "1.1",
+      "version_date": "revised September 2026",
+      "cite_year": 2026,
+      "title": "Where Occupations Move: Interstate Migration by Occupation in the United States, 2005 to 2024",
+      "title_lines": [
+        "Where Occupations Move:",
+        "Interstate Migration by Occupation in the United States, 2005 to 2024"
+      ],
+      "keywords": "interstate migration, occupational labor markets, gravity model, occupational licensing, American Community Survey",
+      "jel": "J61, R23, J44, J62, C23",
+      "source_repo": "paper-occupation-migration",
+      "source_pdf": null,
+      "source_tex": "paper/occupation-migration.tex",
+      "abstract": "Interstate migration in the United States has been measured for persons and rarely for occupations, although most of the rules that make moving difficult attach to the job. This paper builds bilateral interstate migration flows by occupation from nineteen vintages of American Community Survey microdata, 59.8 million person records across 51 jurisdictions and 475 harmonised occupation codes, and measures the share of each state's occupational workforce arriving from another state within the year, with design-based standard errors. That share varies close to fifteenfold across occupations, from tool and die makers to sailors, and licensure explains almost none of the ordering. The channel is a young-worker channel in every occupation measured: arrivals and leavers have the same mean age cell by cell, and both are seven years younger than the workforce they join. A Poisson pseudo-maximum-likelihood gravity model with origin-year, destination-year, occupation-year and state-pair effects puts the wage elasticity of flows at 0.114 and the distance elasticity at −0.72, so distance weighs six times as much as pay. The benchmark omits employment by state and occupation, so its residual recovers occupational concentration from the flows alone; the concentrations hold their position across two decades and track the location quotient in an independent establishment survey, while three pre-specified wage tests return precise zeros."
+    },
+    {
+      "slug": "skills-dna",
+      "id": "AC-WP-2026-04",
+      "version": "1.1",
+      "version_date": "revised September 2026",
+      "cite_year": 2026,
+      "title": "AI Exposure at Three Levels: Occupations, Tasks and Skills as One Wage Bill",
+      "title_lines": [
+        "AI Exposure at Three Levels:",
+        "Occupations, Tasks and Skills as One Wage Bill"
+      ],
+      "keywords": "artificial intelligence, AI exposure, task framework, skill prices, wage bill, O*NET",
+      "jel": "O33, J24, J23, J31, C43",
+      "source_repo": "paper-skills-dna",
+      "source_pdf": null,
+      "source_md": "paper/three-layers.md",
+      "abstract": "Measures of exposure to generative artificial intelligence are collected at three levels of the labour market, occupations, tasks and skills, and compared as though they described one object. This paper writes the labour market as one wage bill at three levels and counts what each can identify: 829 observed wages against an identity, against 17,383 task prices that no wage data can contradict, against 25 skill prices that can. Which quantities in this literature are testable therefore follows from how many statements the Occupational Information Network's analysts wrote at each level. Three findings follow. The leading capability measures are one construct under three names: carrying the Eloundou task ratings to abilities reproduces the Felten ability scores in the right order across AI applications, the Srinivasan automation score is the Eloundou construction re-run on a later release, and augmentation is explained to 77 percent by a quadratic in automation. The skill layer supports a structure of about twenty-five dimensions, which explains occupational wages at a cross-validated 0.648 in the Network's own named groups, with loadings that are usable as changes and not as levels. And on a balanced panel of 693 occupations from 2012 to 2025, nothing in realised wages or employment has moved beyond ordinary volatility since language models were released: no skill group moved by more than 1.51 times its own year-to-year variation, and every deviation from the pre-2020 path begins with the pandemic."
+    },
+    {
+      "slug": "when-to-raise-taxes",
+      "id": "AC-WP-2026-06",
+      "version": "1.0",
+      "version_date": "September 2026",
+      "cite_year": 2026,
+      "title": "When to Raise Taxes: State Dependence in the UK Tax Multiplier",
+      "title_lines": [
+        "When to Raise Taxes:",
+        "State Dependence in the UK Tax Multiplier"
+      ],
+      "keywords": "fiscal multipliers, narrative tax shocks, state dependence, local projections, household consumption",
+      "jel": "E21, E32, E62, H20, H30",
+      "source_repo": "fiscalUK",
+      "source_pdf": "paper/fiscaluk-paper2.pdf",
+      "source_tex": "paper/fiscaluk-paper2.tex",
+      "abstract": "A tax rise costs about twice as much when the economy has slack. Using UK narrative tax measures from 1918 to 2018 and quarterly household consumption from 1955, I estimate the consumption response to tax changes that were not anticipated, and split it by whether unemployment was above or below its own recent average when the change took effect. Against a tax rise worth one per cent of annual GDP, consumption falls by 7.3 per cent at its trough when there is slack and by 3.2 per cent when there is not. The difference is estimated directly, with its own standard error, and is significant at eight of seventeen horizons. Consumption is the better outcome to use: it responds more than output, on three times as many horizons, and unlike the output response it holds when the single Budget on which the published UK multiplier rests is removed. The shock series reproduces Cloyne (2013) exactly before being extended, which fixes the conventions the estimate turns on. The aggregate record cannot separate one tax from another, cannot detect whether pre-announcement blunts the effect, and cannot say whose spending falls, and the paper measures each of those limits and names the household data that the distributional question needs."
+    }
+  ]
+}
