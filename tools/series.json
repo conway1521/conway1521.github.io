@@ -9,7 +9,7 @@
       "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (first draft March 2026, adjacency terms not yet measured)",
       "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (first draft June 2026, comparison not yet run)"
     },
-    "ssrn_note": "SSRN eJournal names are proposals for the submission picker, not verified against SSRN's live catalogue, which is renamed and reorganised over time. Confirm each one when submitting and correct it here."
+    "ssrn_note": "Alert names are taken verbatim from SSRN's Economics Research Network taxonomy. SSRN calls the subscribable level an Alert rather than an eJournal. Where a paper needs a network other than ERN, it is named in also_consider, because that network's alerts were not to hand."
   },
   "papers": [
     {
@@ -27,11 +27,12 @@
       "jel": "D84, E62, E65, H20, H30",
       "ssrn": {
         "network": "Economics Research Network",
-        "ejournals": [
-          "Public Economics: Taxation, Subsidies, & Revenue",
-          "Public Economics: Fiscal Policies & Behavior of Economic Agents",
-          "Macroeconomics: Monetary & Fiscal Policies",
-          "Economic History"
+        "alerts": [
+          "Macroeconomics: Monetary & Fiscal Policies Alert",
+          "Public Economics: Taxation, Subsidies, & Revenue Alert",
+          "Public Economics: Fiscal Policies & Behavior of Economic Agents Alert",
+          "European Economics: Political Economy & Public Economics Alert",
+          "Economic History Alert"
         ]
       },
       "source_repo": "fiscalUK",
@@ -54,11 +55,11 @@
       "jel": "J62, J24, J21, C81, J08",
       "ssrn": {
         "network": "Economics Research Network",
-        "ejournals": [
-          "Labor: Supply & Demand",
-          "Labor: Human Capital",
-          "Labor: Public Policy & Regulation",
-          "Econometrics: Data Collection & Data Estimation Methodology"
+        "alerts": [
+          "Labor: Supply & Demand Alert",
+          "Labor: Human Capital Alert",
+          "Labor: Public Policy & Regulation Alert",
+          "Econometrics: Data Collection & Data Estimation Methodology Alert"
         ]
       },
       "source_repo": "paper-flows-engine",
@@ -81,11 +82,12 @@
       "jel": "J61, R23, J44, J62, C23",
       "ssrn": {
         "network": "Economics Research Network",
-        "ejournals": [
-          "Labor: Supply & Demand",
-          "Labor: Public Policy & Regulation",
-          "Urban, Rural & Regional Economics",
-          "Econometric Modeling: Microeconometrics"
+        "alerts": [
+          "Labor: Supply & Demand Alert",
+          "Labor: Public Policy & Regulation Alert",
+          "Urban Economics & Regional Studies Alert",
+          "Econometric Modeling: Microeconomics Alert",
+          "Econometrics: Data Collection & Data Estimation Methodology Alert"
         ]
       },
       "source_repo": "paper-occupation-migration",
@@ -108,11 +110,15 @@
       "jel": "O33, J24, J23, J31, C43",
       "ssrn": {
         "network": "Economics Research Network",
-        "ejournals": [
-          "Labor: Human Capital",
-          "Labor: Supply & Demand",
-          "Economics of Innovation",
-          "Artificial Intelligence"
+        "alerts": [
+          "Labor: Human Capital Alert",
+          "Labor: Supply & Demand Alert",
+          "Macroeconomics: Employment, Income & Informal Economy Alert",
+          "Economic Growth Alert"
+        ],
+        "also_consider": [
+          "Innovation Research & Policy Network",
+          "Information Systems & eBusiness Network"
         ]
       },
       "source_repo": "paper-skills-dna",
@@ -135,11 +141,13 @@
       "jel": "E21, E32, E62, H20, H30",
       "ssrn": {
         "network": "Economics Research Network",
-        "ejournals": [
-          "Macroeconomics: Monetary & Fiscal Policies",
-          "Public Economics: Taxation, Subsidies, & Revenue",
-          "Macroeconomics: Consumption, Saving, Production, Employment & Investment",
-          "Econometric Modeling: Macroeconomics"
+        "alerts": [
+          "Macroeconomics: Monetary & Fiscal Policies Alert",
+          "Macroeconomics: Consumption, Saving, & Wealth Alert",
+          "Macroeconomics: Prices, Business Fluctuations, & Cycles Alert",
+          "Public Economics: Taxation, Subsidies, & Revenue Alert",
+          "European Economics: Political Economy & Public Economics Alert",
+          "Econometric Modeling: Macroeconomics Alert"
         ]
       },
       "source_repo": "fiscalUK",
