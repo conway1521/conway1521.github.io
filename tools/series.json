@@ -9,7 +9,11 @@
       "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (first draft March 2026, adjacency terms not yet measured)",
       "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (first draft June 2026, comparison not yet run)"
     },
-    "ssrn_note": "Alert names are taken verbatim from SSRN's Economics Research Network taxonomy. SSRN calls the subscribable level an Alert rather than an eJournal. Where a paper needs a network other than ERN, it is named in also_consider, because that network's alerts were not to hand."
+    "ssrn_note": "Alert names are taken verbatim from SSRN's Economics Research Network taxonomy. SSRN calls the subscribable level an Alert rather than an eJournal. Where a paper needs a network other than ERN, it is named in also_consider, because that network's alerts were not to hand.",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "rights_line": "© Alessandro Conway 2026. Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).",
+    "code_license": "MIT"
   },
   "papers": [
     {
