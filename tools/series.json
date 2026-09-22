@@ -8,7 +8,8 @@
       "AC-WP-2026-01": "Do skills predict moves? A gravity test of skill similarity against observed occupational transitions (first draft January 2026, estimation not yet run)",
       "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (first draft March 2026, adjacency terms not yet measured)",
       "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (first draft June 2026, comparison not yet run)"
-    }
+    },
+    "ssrn_note": "SSRN eJournal names are proposals for the submission picker, not verified against SSRN's live catalogue, which is renamed and reorganised over time. Confirm each one when submitting and correct it here."
   },
   "papers": [
     {
@@ -24,6 +25,15 @@
       ],
       "keywords": "narrative tax shocks, fiscal foresight, tax policy making, announcement effects, fiscal multipliers",
       "jel": "D84, E62, E65, H20, H30",
+      "ssrn": {
+        "network": "Economics Research Network",
+        "ejournals": [
+          "Public Economics: Taxation, Subsidies, & Revenue",
+          "Public Economics: Fiscal Policies & Behavior of Economic Agents",
+          "Macroeconomics: Monetary & Fiscal Policies",
+          "Economic History"
+        ]
+      },
       "source_repo": "fiscalUK",
       "source_pdf": "paper/fiscaluk-paper1.pdf",
       "source_tex": "paper/fiscaluk-paper1.tex",
@@ -42,6 +52,15 @@
       ],
       "keywords": "occupational mobility, labor market flows, occupation coding error, Current Population Survey, workforce policy",
       "jel": "J62, J24, J21, C81, J08",
+      "ssrn": {
+        "network": "Economics Research Network",
+        "ejournals": [
+          "Labor: Supply & Demand",
+          "Labor: Human Capital",
+          "Labor: Public Policy & Regulation",
+          "Econometrics: Data Collection & Data Estimation Methodology"
+        ]
+      },
       "source_repo": "paper-flows-engine",
       "source_pdf": "paper/paper.pdf",
       "source_tex": "paper/paper.tex",
@@ -60,6 +79,15 @@
       ],
       "keywords": "interstate migration, occupational labor markets, gravity model, occupational licensing, American Community Survey",
       "jel": "J61, R23, J44, J62, C23",
+      "ssrn": {
+        "network": "Economics Research Network",
+        "ejournals": [
+          "Labor: Supply & Demand",
+          "Labor: Public Policy & Regulation",
+          "Urban, Rural & Regional Economics",
+          "Econometric Modeling: Microeconometrics"
+        ]
+      },
       "source_repo": "paper-occupation-migration",
       "source_pdf": null,
       "source_tex": "paper/occupation-migration.tex",
@@ -78,6 +106,15 @@
       ],
       "keywords": "artificial intelligence, AI exposure, task framework, skill prices, wage bill, O*NET",
       "jel": "O33, J24, J23, J31, C43",
+      "ssrn": {
+        "network": "Economics Research Network",
+        "ejournals": [
+          "Labor: Human Capital",
+          "Labor: Supply & Demand",
+          "Economics of Innovation",
+          "Artificial Intelligence"
+        ]
+      },
       "source_repo": "paper-skills-dna",
       "source_pdf": null,
       "source_md": "paper/three-layers.md",
@@ -96,6 +133,15 @@
       ],
       "keywords": "fiscal multipliers, narrative tax shocks, state dependence, local projections, household consumption",
       "jel": "E21, E32, E62, H20, H30",
+      "ssrn": {
+        "network": "Economics Research Network",
+        "ejournals": [
+          "Macroeconomics: Monetary & Fiscal Policies",
+          "Public Economics: Taxation, Subsidies, & Revenue",
+          "Macroeconomics: Consumption, Saving, Production, Employment & Investment",
+          "Econometric Modeling: Macroeconomics"
+        ]
+      },
       "source_repo": "fiscalUK",
       "source_pdf": "paper/fiscaluk-paper2.pdf",
       "source_tex": "paper/fiscaluk-paper2.tex",
