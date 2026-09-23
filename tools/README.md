@@ -1,27 +1,32 @@
 # Working paper series tooling
 
-`cover.py` puts the working paper cover page on a built paper PDF, and
-`series.json` holds the series metadata that every cover is drawn from.
+`cover.py` writes the working paper cover page, either as LaTeX for a
+paper's own source or stamped onto a built PDF, and `series.json` holds the
+series metadata that every cover is drawn from.
 
-## Why the cover is stamped rather than built
+## How the published PDFs are built
 
-Each paper lives in its own repository and is built there. None of those
-builds can run from a clean checkout, because the figures and the generated
-tables are not committed and the microdata behind them is not either: the
-occupational papers need IPUMS extracts, the fiscal papers need their own
-derived series. A rebuild here would fail on the first missing figure.
-
-So the PDF is taken as it was built, and the cover is drawn and prepended.
-Nothing inside the paper is touched, no number moves, and the stamped file
-is verifiably the published paper with one page in front of it.
-
-The same cover is also written into each paper's own source, so that the
-next real rebuild carries it without this tool:
+Each paper lives in its own repository and carries the cover in its own
+source, so a build of the paper produces the cover with it:
 
 - the four LaTeX papers hold it as a `titlepage` before `\maketitle`,
   generated with `--emit-latex`
 - `paper-skills-dna` holds it as `paper/cover.tex`, generated with
   `--emit-latex --inline-abstract --pandoc` and passed to pandoc with `-H`
+
+The PDFs in `assets/papers/` are those builds. A clean checkout cannot yet
+rebuild every paper, because the figures and generated tables of some are
+not committed and the microdata behind them is not either. For the
+September 2026 builds, a figure missing from a checkout was taken unchanged
+from the previously published PDF, so every figure is the one already
+published. In the skills-dna paper the recovered third figure is cropped to
+remove a line of body text that had been captured with it, and text from the
+surrounding page that sat invisibly inside the recovered figures is removed.
+
+Without `--emit-latex`, `cover.py` stamps the cover onto a PDF as it was
+built, which remains the route for a paper whose source cannot be built.
+Nothing inside the paper is touched in that case, and the stamped file is
+the built paper with one page in front of it.
 
 ## Running it
 
@@ -44,8 +49,8 @@ the sequence runs in order of first draft. Three numbers are reserved in
 `series.json` for papers whose estimation is not yet run, so that nothing
 renumbers when they are published.
 
-Citations carry the year in the identifier, which is the year of the first
-draft, rather than the year of the current version.
+The year in the identifier and in the suggested citation is the year of the
+first draft, and a revision keeps it.
 
 `series.json` also holds each paper's keywords and JEL codes, which the
 cover prints under the abstract and which are written into the PDF

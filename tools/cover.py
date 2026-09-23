@@ -220,6 +220,8 @@ LATEX_COVER = r"""% ------------------------------------------------------------
 \newcommand{\wpciteyear}{@CITEYEAR@}
 \newcommand{\wpkeywords}{@KEYWORDS@}
 \newcommand{\wpjel}{@JEL@}
+\AtBeginDocument{\hypersetup{pdftitle={@TITLEFLAT@}, pdfauthor={Alessandro Conway},
+  pdfsubject={Working Paper \wpid, Version \wpversion}, pdfkeywords={\wpkeywords}}}
 
 \begin{titlepage}
 \thispagestyle{empty}
