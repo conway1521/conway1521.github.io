@@ -270,7 +270,7 @@
               '<span class="lev-prov__setting">' + esc(s[1]) + '</span>' +
               '<span class="lev-prov__effect">' + esc(s[2]) + '</span></div>';
           }).join('') +
-          '<div class="lev-prov__foot">Illustrative of the mapping. Each lever draws on a curated corpus of about 1,200 findings, tagged by design and setting, null results kept.</div></div>';
+          '<div class="lev-prov__foot">Illustrative mapping. Each lever draws on a curated corpus of about 1,200 findings, tagged by study design and setting, with null results kept.</div></div>';
       Array.prototype.forEach.call(tabsEl.querySelectorAll('.lev-tab'), function (t) {
         t.addEventListener('click', function () { sel = parseInt(t.getAttribute('data-i'), 10); render(); });
       });
@@ -335,9 +335,9 @@
     ['inact', 10, 236, 150, 44, 'Eligible inactive', 'inflow', 'Experienced inactive workers with a modeled activation probability.'],
     ['stock', 250, 104, 150, 104, 'Occupation stock', 'stock', 'Cohort accounting over 501 occupations and 51 jurisdictions. Every projection must satisfy the identity.'],
     ['term', 180, 330, 140, 44, 'True exits', 'outflow', 'Terminations decomposed; transfers removed. Raw 19% becomes a true 4.29%.'],
-    ['migout', 340, 330, 140, 44, 'Migration out', 'outflow', 'Workers leaving the region, same ACS grain as inflows.'],
-    ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Exit rates are empirical and age-specific rather than a flat assumption.'],
-    ['demand', 460, 104, 140, 104, 'Demand', 'demand', 'Four layers, deliberately never averaged. Divergence between them is information.'],
+    ['migout', 340, 330, 140, 44, 'Migration out', 'outflow', 'Workers leaving the region, measured from the same ACS data as inflows.'],
+    ['retire', 500, 330, 140, 44, 'Retirements', 'outflow', 'Exit rates are empirical and vary by age.'],
+    ['demand', 460, 104, 140, 104, 'Demand', 'demand', 'Four estimates, kept separate. Where they disagree, the difference shows which one is missing something.'],
     ['req', 650, 44, 160, 40, 'Requisitions', 'L1', 'Pooled employer requisition rates and hire slopes, with confidence tiers.'],
     ['struct', 650, 96, 160, 40, 'Structural', 'L2', 'Statistical projections and wage trend; what the statistical system expects.'],
     ['fwd', 650, 148, 160, 40, 'Forward need', 'L3', 'Population-anchored scenarios with aging intensity adjustment.'],
@@ -699,15 +699,15 @@
      life, six job-family bands stacked and centred, reshaped per facility
      type. Data and geometry lifted from the study. */
   var STREAM_BASE = [
-    ['Facilities & utilities', [26, 20, 12, 10], 'Leads the build, then recedes. Construction-adjacent trades front-load.', 'Facilities techs · utilities operators · construction trades'],
+    ['Facilities & utilities', [26, 20, 12, 10], 'Largest during construction, then shrinks. Construction-related trades are hired first.', 'Facilities techs · utilities operators · construction trades'],
     ['Process & integration eng.', [20, 30, 18, 10], 'Peaks during ramp as tools are installed and qualified.', 'Process engineers · integration engineers · yield engineers'],
-    ['Equipment technician', [10, 34, 40, 30], 'Rises through ramp and holds, the backbone of a running fab.', 'Equipment techs · maintenance techs · calibration techs'],
-    ['Manufacturing operator', [4, 26, 78, 60], 'Near-absent at build, dominant at full volume. The defining block.', 'Process operators · fab technicians · material handlers'],
-    ['Quality & metrology', [6, 14, 24, 18], 'Scales with volume as yield management starts to bite.', 'Quality engineers · metrology techs · inspectors'],
+    ['Equipment technician', [10, 34, 40, 30], 'Rises through ramp and holds steady once the fab is running.', 'Equipment techs · maintenance techs · calibration techs'],
+    ['Manufacturing operator', [4, 26, 78, 60], 'Few during the build, the largest group at full volume.', 'Process operators · fab technicians · material handlers'],
+    ['Quality & metrology', [6, 14, 24, 18], 'Grows with volume as yield management becomes more important.', 'Quality engineers · metrology techs · inspectors'],
     ['Management & admin', [12, 16, 20, 16], 'Roughly flat, overhead that does not ramp with production.', 'Production managers · planners · admin & business ops']
   ];
   var FAB_TYPES = [
-    ['Leading-edge logic', [1, 1, 1, 1, 1, 1], 'The reference recipe: heavy process integration, a deep operator base at volume.'],
+    ['Leading-edge logic', [1, 1, 1, 1, 1, 1], 'The reference mix, with heavy process integration and a large operator base at volume.'],
     ['Mature-node logic', [0.9, 0.8, 1.0, 1.15, 0.9, 1.0], 'Fewer integration engineers, a proportionally larger operator base.'],
     ['Memory (DRAM / NAND)', [0.85, 0.7, 1.1, 1.3, 0.85, 0.9], 'The most operator- and equipment-heavy: high-volume, repetitive process.'],
     ['Analog / mixed-signal', [0.95, 1.1, 1.0, 0.9, 1.0, 1.0], 'Design-adjacent, a richer engineering share than volume logic.'],
@@ -914,7 +914,7 @@
     'Nursing turnover in North Carolina',
     'Supply and demand gap for equipment technicians in Arizona',
     'Which occupations are most exposed to AI, and where are wages moving?',
-    'What interventions actually reduced turnover, and by how much?'
+    'Which interventions reduced turnover, and by how much?'
   ];
   function libRoute(q) {
     var s = ' ' + q.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ') + ' ';
@@ -933,7 +933,7 @@
   function libResponseHTML(r) {
     if (!r.topic) {
       return '<div class="lib-lib"><div class="lib-lib__who">Librarian</div>' +
-        '<div class="lib-none">No concept matched the controlled vocabulary, so nothing is routed rather than guessed. The catalog answers questions about demand, supply, gaps, hiring, turnover, retention, wages, AI exposure, training, mobility, and intervention effects. Try one of those.</div></div>';
+        '<div class="lib-none">No concept matched the controlled vocabulary, so nothing is routed. The catalog answers questions about demand, supply, gaps, hiring, turnover, retention, wages, AI exposure, training, mobility, and intervention effects. Try one of those.</div></div>';
     }
     var concepts = r.concepts.map(function (c) { return '<span class="lib-chip">' + esc(c.replace(/_/g, ' ')) + '</span>'; }).join('');
     var dsRows = r.topic.datasets.map(function (d) {
@@ -946,7 +946,7 @@
       '<div class="lib-row"><span class="lib-row__k">Geography</span><span class="lib-chip lib-chip--geo">' + esc(r.geo) + '</span></div>' +
       '<div class="lib-row"><span class="lib-row__k">Routed to</span></div>' + dsRows +
       '<div class="lib-fu">' + fu + '</div>' +
-      '<div class="lib-hand">This layer only routes, and the counts come live from the catalog rather than from an analysis, since computation hands off to Eclipse, the analyst agent.</div></div>';
+      '<div class="lib-hand">This layer only routes the question, and the counts come live from the catalog. Any computation is handed to Eclipse, the analyst agent.</div></div>';
   }
   function initLibrarian() {
     var log = $('lib-log'), input = $('lib-input'), btn = $('lib-btn'), sugg = $('lib-sugg');

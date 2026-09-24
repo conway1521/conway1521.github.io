@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Illustrative &middot; synthetic data</span>
     </div>
     <h1 class="display">Employer digital twin</h1>
-    <p class="lede">An employer wants to know: is our turnover bad, what is coming, what should we do about it. The twin takes their raw HR export from upload to forecast and scenarios, and keeps every number auditable back to the raw rows.</p>
+    <p class="lede">Employers want to know whether their turnover is bad, what is coming, and what to do about it. The twin takes their raw HR export from upload to forecast and scenarios, and every number can be traced back to the raw rows.</p>
   </div>
   <div class="standfirst">Data science &middot; engineering &middot; applied econometrics &middot; product. In production on employer panels, under tenant isolation.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>An employer wants to answer questions like: is our turnover bad, what is coming, and what should we do about it. However, their HR export answers none of them: hundreds of column variants, freetext titles, termination codes that differ by system, and transfers recorded as if people had quit. In order to convince CFOs and the boardroom, answers must be both comparable to peers, integrated with other datasets, and auditable back to the raw rows.</p>
+      <p>The raw HR export is hard to use for any of this. It comes with hundreds of column variants, free-text titles, termination codes that differ by system, and transfers recorded as if people had quit. To convince a CFO or a board, the answers also have to be comparable to peers, linked to other datasets, and traceable back to the raw rows.</p>
     </div>
   </div>
 
@@ -41,12 +41,12 @@ ink_js: true
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Standardize to a canonical panel</h3>
-        <p>Titles resolve to federal occupation codes through the <a href="{{ '/portfolio/occupation-resolver' | relative_url }}">occupation resolver</a>, termination reasons and requisition statuses map to controlled vocabularies, facilities geocode. Transfers are separated from real exits, with canonical reasons attributed. Clean separations of contingent and full time employers.</p>
+        <p>Titles resolve to federal occupation codes through the <a href="{{ '/portfolio/occupation-resolver' | relative_url }}">occupation resolver</a>, termination reasons and requisition statuses map to controlled vocabularies, facilities geocode. Transfers are separated from real exits, with canonical reasons attributed. Contingent and full-time workers are kept separate.</p>
         <div class="disc">Data science &middot; economics</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">03</span>Status quo analysis</h3>
-        <p>Survival curves and cohort retention for who stays and who leaves, seasonal decomposition to separate recurring patterns from real trends. Comparison to anonymous peer benchmarks for contextualisation.</p>
+        <p>Survival curves and cohort retention for who stays and who leaves, seasonal decomposition to separate recurring patterns from real trends. Results are compared with anonymized peer benchmarks for context.</p>
         <div class="disc">Econometrics &middot; data science</div>
       </div>
       <div class="grid2__item">
@@ -125,7 +125,7 @@ ink_js: true
       <span class="plate__title">Accounting identity</span>
       <span class="plate__hint">stocks and flows</span>
     </div>
-    <p class="plate__purpose">Supply is understood as a bathtub where every projection has to satisfy the identity, so every term has to be measured.</p>
+    <p class="plate__purpose">Supply is modeled as stocks and flows. Every projection has to satisfy this identity, so every term in it has to be measured.</p>
     <div class="identity">stock<sub>t+1</sub> = stock<sub>t</sub> + entrants &minus; exits<br><span class="soft">+ inflow &minus; outflow</span></div>
     <div class="correction-row"><span style="font-size:13px; color:var(--muted);">Raw HRIS termination rate</span><span class="struck" style="font-size:15px;">19.0%</span></div>
     <div class="correction-row"><span style="font-size:13px;">True exit rate, transfers removed</span><span style="font-size:15px; font-weight:600;">4.29%</span></div>
@@ -136,7 +136,7 @@ ink_js: true
     <div class="plate__head">
       <span class="plate__title">Employment hierarchy</span>
     </div>
-    <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The digital twin can reconstruct this into levels with headcount and spans of control, so turnover can also be read by layer and the internal ladder.</p>
+    <p class="plate__purpose">Manager IDs in the raw export encode a reporting tree. The digital twin can reconstruct this into levels with headcount and spans of control, so turnover can also be read by level and along internal career paths.</p>
     <div class="hier-scroll">
       <div class="hier-canvas" id="hier-canvas"></div>
     </div>
@@ -167,7 +167,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The pipeline runs in production on employer panels: the same stages the console shows, over real headcount, requisition, hire, and termination data, behind row-level security (the run above is fully synthetic to share it). Outputs are intended to be checked against published benchmarks, such as modeled time-to-close for high-volume clinical roles matches the national benchmark for comparable positions to the day.</p>
+      <p>The pipeline runs in production on employer panels, with the same stages the console shows, on real headcount, requisition, hire and termination data behind row-level security. The run above uses synthetic data so it can be shared. Outputs are meant to be checked against published benchmarks. For example, the modeled time to close for high-volume clinical roles matches the national benchmark for comparable positions to the day.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
   </div>
