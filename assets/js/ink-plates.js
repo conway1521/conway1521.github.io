@@ -52,7 +52,7 @@
     ['Travel Nurse RN - Med/Surg - $1,976 per week in Odessa, TX', 'RN', 'Med Surg', 'staff', '', '29-1141.00', 'Registered Nurses', '29-1141', 'Registered Nurses', 'Registered Nurses', 'Healthcare Diagnosing or Treating Practitioners'],
     ['CDL Truck Driver - Residential', 'CDL Driver', 'Truck', 'staff', '', '53-3032.00', 'Heavy and Tractor-Trailer Truck Drivers', '53-3032', 'Heavy and Tractor-Trailer Truck Drivers', 'Driver/Sales Workers and Truck Drivers', 'Motor Vehicle Operators'],
     ['Upper School Mathematics Teacher', 'High School Math Teacher', 'Math', 'staff', '', '25-2031.00', 'Secondary School Teachers, Except Special and Career/Technical Education', '25-2031', 'Secondary School Teachers, Except Special and Career/Technical Education', 'Secondary School Teachers', 'Preschool, Elementary, Middle, Secondary, and Special Education Teachers'],
-    ['Surgical Technologist (FT Days / 10s) KH Soin', 'Surgical Technologist', '', 'staff', '', '29-2055.00', 'Surgical Technologists', '29-2055', 'Surgical Technologists', 'Health Practitioner Support Technologists and Technicians', 'Health Technologists and Technicians']
+    ['Surgical Technologist (FT Days / 10s)', 'Surgical Technologist', '', 'staff', '', '29-2055.00', 'Surgical Technologists', '29-2055', 'Surgical Technologists', 'Health Practitioner Support Technologists and Technicians', 'Health Technologists and Technicians']
   ];
   var TIER_NAMES = ['open-source baseline', 'fine-tuned model', 'LLM adjudication'];
 
