@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Workforce blueprints
-description: "How many workers a new facility needs, in what mix: a per-100 recipe triangulated from public sources, with a derivation where every number walks back."
+description: "How many workers a new facility needs and in which occupations, estimated per 100 workers from several public sources, with every number traceable to its source."
 permalink: /portfolio/workforce-blueprints/
 ink_js: true
 ---
@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Derived from public sources</span>
     </div>
     <h1 class="display">Workforce blueprints</h1>
-    <p class="lede">A facility is planned, and the region needs to know how many workers, in which occupations, on what schedule, before the facility exists. No single source answers this, so the blueprint is derived from filings, industry and regulatory standards, and comparable sites. The worked case is semiconductor fabs: nine facility types, each with its own recipe and ramp.</p>
+    <p class="lede">When a facility is planned, the region needs to know how many workers it will take, in which occupations and on what schedule, before the facility exists. No single source answers this, so the blueprint is built from filings, industry and regulatory standards, and comparable sites. The worked example is semiconductor fabs, with nine facility types, each with its own staffing mix and hiring ramp.</p>
   </div>
   <div class="standfirst">Economics &middot; data science. This is the fourth demand layer of the labor market twin.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>A new facility is planned and a region needs to know what it means: how many workers, in which occupations, arriving on what schedule. Often there is no facility yet and no HRIS to study, so we know what will be produced but not how it will be staffed. Industry alliances, staffing agencies, and states are left unable to prepare the local workforce, or even to know whether it is already prepared. The same question runs in reverse: what an ideal composition should be, measured against industry and regulatory standards, nurses per bed adjusted for illness and mortality, technicians per tool for a fab. No single source answers either question, because announcements give investment and a headline headcount, staffing statistics describe yesterday's industry mix and miss a leading-edge facility entirely, and filings inform scale and timing while saying nothing about composition, so the blueprint has to be built rather than looked up.</p>
+      <p>When a new facility is planned, the region needs to know how many workers it will take, in which occupations, and on what schedule. Usually the facility does not exist yet and there is no HR data to study, so we know what it will produce but not how it will be staffed. That leaves industry alliances, staffing agencies and states unable to prepare the local workforce, or even to tell whether it is ready. The same question also runs the other way, asking what the ideal staffing should be under industry and regulatory standards, such as nurses per bed adjusted for illness and mortality, or technicians per tool in a fab. No single source answers either question. Announcements give the investment and a headline headcount, staffing statistics describe the existing industry and miss a leading-edge facility entirely, and filings show scale and timing but say nothing about composition. So the blueprint has to be built from several sources.</p>
     </div>
   </div>
 
@@ -35,23 +35,23 @@ ink_js: true
     </div>
     <div class="stages">
       <div class="grid2__item">
-        <h3><span class="n">01</span>The recipe, per 100 workers</h3>
-        <p>Industry staffing patterns are decomposed into job families, then re-weighted with type-tuned block totals, an analog fab, a leading-edge logic fab, and a packaging plant are different machines with different recipes. Everything is expressed per 100 workers so it scales to any announcement.</p>
+        <h3><span class="n">01</span>The staffing mix, per 100 workers</h3>
+        <p>Industry staffing patterns are broken into job families and then reweighted with totals tuned to each facility type, because an analog fab, a leading-edge logic fab and a packaging plant are staffed very differently. Everything is expressed per 100 workers so it scales to any announcement.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
-        <h3><span class="n">02</span>Triangulated, with abstentions</h3>
-        <p>Each source covers different axes: staffing matrices see composition but not the frontier. Postings see demand but over-represent churn. Filings see scale and timing but not mix, and abstain from the composition axis by design. Disagreeing estimates reconcile into a band with a stated range.</p>
+        <h3><span class="n">02</span>Each source used where it is reliable</h3>
+        <p>Each source covers different dimensions. Staffing matrices show composition but miss the newest facilities. Postings show demand but over-represent high-turnover roles. Filings show scale and timing but not the mix, so they are left out of the composition estimate. Where estimates disagree, they are combined into a band with a stated range.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">03</span>The hiring ramp over time</h3>
-        <p>Composition is a trajectory: planned, ramp, steady state, wind-down. Technicians dominate early. Engineering share peaks during tool install. The steady-state mix is what the recipe describes. A blueprint that ignores the ramp misses the years when hiring is hardest.</p>
+        <p>Composition changes as a facility moves from planning to ramp-up, steady state and wind-down. Technicians make up most of the early hires, and the engineering share peaks while tools are being installed. The staffing mix describes the steady state, and a blueprint that ignores the ramp misses the years when hiring is hardest.</p>
         <div class="disc">Economics</div>
       </div>
       <div class="grid2__item">
-        <h3><span class="n">04</span>From recipe to region</h3>
-        <p>Blueprint times announced capacity gives forward need by occupation and quarter, the fourth demand layer in the labor market twin, and the one that exists before any requisition is posted.</p>
+        <h3><span class="n">04</span>From facility to region</h3>
+        <p>Multiplying the blueprint by announced capacity gives forward need by occupation and quarter. This is the fourth demand estimate in the labor market twin, and the only one available before any job is posted.</p>
         <div class="disc">Economics &middot; policy</div>
       </div>
     </div>
@@ -63,9 +63,9 @@ ink_js: true
       <span class="plate__title">Blueprint</span>
       <span class="plate__hint">leading-edge logic</span>
     </div>
-    <p class="plate__purpose">Ten job families make the recipe, measured from public staffing patterns and type-tuned block totals.</p>
+    <p class="plate__purpose">The staffing mix covers ten job families, measured from public staffing patterns and totals tuned to the facility type.</p>
     <div class="plate__eg">Example: semiconductor industry</div>
-    <div id="blueprint" data-default="Each bar is a job family's share of the recipe, per 100 workers. Hatched marks the block unique to the sector.">
+    <div id="blueprint" data-default="Each bar is a job family's share of the staffing mix, per 100 workers. Hatched marks the block unique to the sector.">
       <div class="bp-row" data-note="Processing &middot; 16 per 100. Semiconductor Processing Technicians 16.00 (320 in a 2,000-person fab). The block unique to the sector."><span class="bp-row__name">Processing</span><div><div class="bp-row__bar bp-row__bar--hatch" style="width:64%;"></div></div><span class="bp-row__per">16</span></div>
       <div class="bp-row" data-note="Engineering &middot; 25 per 100. Industrial 7.62 (152) &middot; Computer Hardware 6.20 (124) &middot; Electronics 4.37 (87) &middot; Electrical 2.44 (49) &middot; Mechanical 2.00 (40)."><span class="bp-row__name">Engineering</span><div><div class="bp-row__bar" style="width:100%;"></div></div><span class="bp-row__per">25</span></div>
       <div class="bp-row" data-note="Software &middot; 11 per 100. Software Developers 6.69 (134) &middot; QA Analysts 0.72 (14)."><span class="bp-row__name">Software</span><div><div class="bp-row__bar" style="width:44%;"></div></div><span class="bp-row__per">11</span></div>
@@ -77,7 +77,7 @@ ink_js: true
       <div class="bp-row" data-note="Admin &amp; logistics &middot; 5 per 100. Shipping &amp; Receiving 1.26 (25) &middot; Production Planning 0.98 (20)."><span class="bp-row__name">Admin &amp; logistics</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
       <div class="bp-row" data-note="All else &middot; 5 per 100. Sales Representatives 1.72 (34), and the long tail."><span class="bp-row__name">All else</span><div><div class="bp-row__bar" style="width:20%;"></div></div><span class="bp-row__per">5</span></div>
     </div>
-    <div class="plate__note" id="bp-note">Each bar is a job family's share of the recipe, per 100 workers. Hatched marks the block unique to the sector.</div>
+    <div class="plate__note" id="bp-note">Each bar is a job family's share of the staffing mix, per 100 workers. Hatched marks the block unique to the sector.</div>
   </div>
 
   <!-- the ramp streamgraph -->
@@ -86,14 +86,14 @@ ink_js: true
       <span class="plate__title">Ramp</span>
       <span class="plate__hint">select a type or a job</span>
     </div>
-    <p class="plate__purpose">Workforce composition of one facility as it moves through its life. Band thickness is workers per line, and the whole stack grows as the facility fills. Nine facility types were identified, each with its own recipe and its own ramp.</p>
+    <p class="plate__purpose">The workforce of one facility over its life. Band thickness is workers per line, and the total grows as the facility fills. There are nine facility types, each with its own staffing mix and ramp.</p>
     <div class="ramp-chips__label">Facility type &middot; nine identified</div>
     <div class="ramp-chips" id="ramp-chips"></div>
     <div id="ramp-stream">
       <svg id="ramp-svg" viewBox="0 0 520 300" style="width:100%; height:auto; display:block;"></svg>
     </div>
     <div class="ramp-legend" id="ramp-legend"></div>
-    <div class="plate__note" id="ramp-note" data-default="Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp.">Composition is a trajectory, and it differs by facility type. Select a facility type to reshape the ramp.</div>
+    <div class="plate__note" id="ramp-note" data-default="Composition changes over time, and differently for each facility type. Select a facility type to reshape the ramp.">Composition changes over time, and differently for each facility type. Select a facility type to reshape the ramp.</div>
   </div>
 
 
@@ -102,22 +102,22 @@ ink_js: true
     <div class="plate__head">
       <span class="plate__title">What each source can see</span>
     </div>
-    <p class="plate__purpose">No single source sees the whole blueprint, since each one covers some axes and is blind on others, so it is the union of them, with every abstention respected, that makes the recipe defensible.</p>
+    <p class="plate__purpose">No single source covers the whole blueprint. Each covers some dimensions and not others, and the staffing mix is built by combining them, using each source only where it has information.</p>
     <div class="cov-head"><span></span><span>Mix</span><span>Scale</span><span>Timing</span><span>Frontier</span><span>Place</span></div>
-    <div id="coverage" data-default="Filled covers the axis. Hatched is partial. Empty is blind. Filings carry nothing on the mix axis, by design.">
-      <div class="cov-row" data-note="Staffing matrices: the composition backbone. Deep on mix, dated on the frontier, silent on timing.">
+    <div id="coverage" data-default="Filled means the source covers that dimension, hatched means partial coverage, and empty means none. Filings say nothing about the mix.">
+      <div class="cov-row" data-note="Staffing matrices: the main source on composition. Detailed on the mix, out of date for the newest facilities, and no information on timing.">
         <span class="cov-row__name">Staffing matrices</span>
         <span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
       </div>
-      <div class="cov-row" data-note="Job postings: live demand, frontier roles, and location, but biased toward churn. Mix only partially, through the resolver.">
+      <div class="cov-row" data-note="Job postings: current demand, new roles and location, but skewed toward high-turnover jobs. Partial on the mix, through the resolver.">
         <span class="cov-row__name">Job postings</span>
         <span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span>
       </div>
-      <div class="cov-row" data-note="Financial filings: scale and timing with legal weight. They abstain from mix by design. They set how many workers rather than what share.">
+      <div class="cov-row" data-note="Financial filings: scale and timing, with legal weight. They say nothing about the mix and are used for the number of workers only.">
         <span class="cov-row__name">Financial filings</span>
         <span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span>
       </div>
-      <div class="cov-row" data-note="Trade announcements: the frontier and the calendar, site by site. Scale only as claimed.">
+      <div class="cov-row" data-note="Trade announcements: new facilities and their timelines, site by site. Scale only as the company states it.">
         <span class="cov-row__name">Trade announcements</span>
         <span class="cov-cell cov-cell--blind"></span><span class="cov-cell cov-cell--part"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span><span class="cov-cell cov-cell--full"></span>
       </div>
@@ -127,7 +127,7 @@ ink_js: true
       <span><span class="cov-cell cov-cell--part"></span> partial</span>
       <span><span class="cov-cell cov-cell--blind"></span> blind</span>
     </div>
-    <div class="plate__note" id="cov-note">Filled covers the axis. Hatched is partial. Empty is blind. Filings carry nothing on the mix axis, by design.</div>
+    <div class="plate__note" id="cov-note">Filled means the source covers that dimension, hatched means partial coverage, and empty means none. Filings say nothing about the mix.</div>
   </div>
 
   <!-- derivation table -->
@@ -136,7 +136,7 @@ ink_js: true
       <span class="plate__title">Derivation</span>
       <span class="plate__hint">the full audit trail</span>
     </div>
-    <p class="plate__purpose">The final per-100 share is not read from one source. Each source that can see composition gives its own estimate, and filings abstain by design. The three that can see are triangulated into the number the recipe uses.</p>
+    <p class="plate__purpose">The final per-100 share combines several sources. Each source with information on composition gives its own estimate, and the three estimates are combined into the number used in the staffing mix. Filings have no information on composition and are left out.</p>
     <div class="deriv-head"><span>Occupation (SOC)</span><span class="r">Staffing</span><span class="r">Postings</span><span class="r">Filings</span><span class="r">Trade</span><span class="r">Final /100</span></div>
     <div class="deriv-row"><span>Semiconductor Processing Techs <span class="rmuted">51-9141</span></span><span class="r">15.2</span><span class="r">12.8</span><span class="r rmuted">abstains</span><span class="r">17.0</span><span class="r"><strong>16.0</strong></span></div>
     <div class="deriv-row"><span>Industrial Engineers <span class="rmuted">17-2112</span></span><span class="r">7.1</span><span class="r">8.4</span><span class="r rmuted">abstains</span><span class="r">7.6</span><span class="r"><strong>7.6</strong></span></div>
@@ -146,7 +146,7 @@ ink_js: true
     <div class="deriv-row"><span>EE Technologists &amp; Technicians <span class="rmuted">17-3023</span></span><span class="r">4.0</span><span class="r">3.6</span><span class="r rmuted">abstains</span><span class="r">3.9</span><span class="r"><strong>3.9</strong></span></div>
     <div class="deriv-row"><span>Industrial Machinery Mechanics <span class="rmuted">49-9041</span></span><span class="r">4.2</span><span class="r">3.1</span><span class="r rmuted">abstains</span><span class="r">3.8</span><span class="r"><strong>3.9</strong></span></div>
     <div class="deriv-row"><span>Maintenance &amp; Repair, General <span class="rmuted">49-9071</span></span><span class="r">2.7</span><span class="r">2.2</span><span class="r rmuted">abstains</span><span class="r">2.5</span><span class="r"><strong>2.5</strong></span></div>
-    <div class="plate__caption">Each cell is that source's read on the occupation's share of the recipe. Filings carry no information about composition. Staffing, postings, and trade announcements triangulate into the final. Eight of more than forty rows are shown.</div>
+    <div class="plate__caption">Each cell is that source's estimate of the occupation's share of the staffing mix. Filings carry no information about composition. Staffing, postings and trade announcements are combined into the final share. Eight of more than forty rows are shown.</div>
   </div>
 
 
@@ -156,7 +156,7 @@ ink_js: true
       <span class="plate__title">Nine types, two that dominate</span>
       <span class="plate__hint">weight in the tracked build-out</span>
     </div>
-    <p class="plate__purpose">Each facility type carries its own recipe and its own ramp. The recipe above is the leading-edge one.</p>
+    <p class="plate__purpose">Each facility type has its own staffing mix and ramp. The mix above is for a leading-edge logic fab.</p>
     <div>
       <div class="fw-row"><span class="fw-row__name">Analog</span><div class="fw-track"><span class="fw-dot" style="left:92%;"></span></div><span class="fw-val">41.5</span></div>
       <div class="fw-row"><span class="fw-row__name" style="font-weight:600;">Leading-edge logic</span><div class="fw-track"><span class="fw-dot" style="left:90.2%;"></span></div><span class="fw-val">40.7</span></div>
@@ -175,8 +175,8 @@ ink_js: true
       <h2 class="secnum__h">Tools used</h2>
     </div>
     <div class="tools">
-      <div class="tool-row"><span class="tool-row__name">Python, pandas, numpy</span><span class="tool-row__use">Recipe construction and source triangulation.</span></div>
-      <div class="tool-row"><span class="tool-row__name">Staffing matrices, filings, postings, trade announcements</span><span class="tool-row__use">The four public sources, each covering some axes and abstaining on others.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Python, pandas, numpy</span><span class="tool-row__use">Building the staffing mix and combining the sources.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Staffing matrices, filings, postings, trade announcements</span><span class="tool-row__use">The four public sources, each used for the dimensions it covers.</span></div>
       <div class="tool-row"><span class="tool-row__name">statsmodels</span><span class="tool-row__use">The ramp and demand curves over the facility life.</span></div>
       <div class="tool-row"><span class="tool-row__name">The occupation resolver</span><span class="tool-row__use">Posting titles standardized to the federal crosswalk.</span></div>
       <div class="tool-row"><span class="tool-row__name">Supabase, Postgres</span><span class="tool-row__use">The blueprint outputs feeding the labor market twin.</span></div>
@@ -189,7 +189,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The blueprint method is built end to end from public sources, staffing matrices, filings, postings, trade announcements, and the recipe shown is a real derivation for a leading-edge logic fab. Nine facility types are identified, each with its own recipe and ramp, and while the facility scale shown here is illustrative, the shares and the discipline of abstaining where a source cannot see are the actual work.</p>
+      <p>The blueprint method is built entirely from public sources, namely staffing matrices, filings, postings and trade announcements, and the staffing mix shown is a real derivation for a leading-edge logic fab. Nine facility types are identified, each with its own staffing mix and ramp. The facility scale shown here is illustrative, but the shares, and the rule of using each source only where it has information, come from the real work.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
   </div>

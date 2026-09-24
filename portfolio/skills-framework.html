@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Task-based labor market
-description: "A calibrated production function that reads AI exposure at the task level. Every parameter sourced. Robustness across exposure measures built in."
+description: "A calibrated production function that measures AI exposure at the task level, with every parameter sourced and results checked across exposure measures."
 permalink: /portfolio/skills-framework/
 ---
 
@@ -13,7 +13,7 @@ permalink: /portfolio/skills-framework/
       <span class="eyebrow">Calibrated &middot; every parameter sourced</span>
     </div>
     <h1 class="display">Task-based labor market</h1>
-    <p class="lede">Claims about AI and jobs have outrun the ability to measure them, and the main exposure measures disagree. This is an instrument rather than another estimate, a calibrated production function in which every parameter is sourced and swappable, so you can see which assumption drives which result.</p>
+    <p class="lede">Claims about AI and jobs have gotten ahead of what anyone can measure, and the main exposure measures disagree. This is a calibrated production function in which every parameter is sourced and can be swapped out, so you can see which assumption drives which result.</p>
   </div>
   <div class="standfirst">Economics &middot; machine learning. Engine built, outputs cached at scale. The companion paper is in progress.</div>
 
@@ -23,7 +23,7 @@ permalink: /portfolio/skills-framework/
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Seven significant measures of AI exposure now exist, and they disagree: the pre-LLM measures correlate negatively with the post-LLM ones. Meanwhile claims about AI's effect on wages and employment outrun anyone's ability to measure them. What the debate needs is not another estimate but an instrument: a framework whose every parameter is disclosed, sourced, and swappable, so that when results differ you can see exactly which assumption made them differ.</p>
+      <p>There are now seven major measures of AI exposure, and they disagree. The measures built before LLMs are negatively correlated with the ones built after. Meanwhile, claims about AI's effect on wages and employment have gotten ahead of the evidence. Another estimate would not settle this. What helps is a framework where every parameter is disclosed, sourced and swappable, so that when results differ you can see which assumption made them differ.</p>
     </div>
   </div>
 
@@ -35,17 +35,17 @@ permalink: /portfolio/skills-framework/
     <div class="stages">
       <div class="grid2__item">
         <h3><span class="n">01</span>The economy as tasks</h3>
-        <p>Three nested levels: an industry combines tasks in stable expenditure shares. Each task is produced from capital and labor with a task-specific substitution elasticity. The labor input is itself a bundle of skills. Automation-resistant tasks and exposed tasks differ in one parameter rather than in kind.</p>
+        <p>The model has three nested levels. An industry combines tasks in stable expenditure shares, each task is produced from capital and labor with its own substitution elasticity, and the labor input is a bundle of skills. Tasks that resist automation and tasks that are exposed differ in a single parameter.</p>
         <div class="disc">Economics</div>
       </div>
       <div class="grid2__item">
-        <h3><span class="n">02</span>Calibrated, never estimated</h3>
-        <p>No elasticity is estimated from market data and no equilibrium is solved. Every parameter is calibrated to a published source, staffing matrices, task-importance profiles, output weights, skill proximities, and carries its provenance. Defensibility is the traceability.</p>
+        <h3><span class="n">02</span>Calibrated from published sources</h3>
+        <p>No elasticity is estimated from market data and no equilibrium is solved. Every parameter is calibrated to a published source, such as staffing matrices, task-importance profiles, output weights and skill proximities, and records where it came from. The model can be defended because every number can be traced.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">03</span>Exposure as a pluggable adapter</h3>
-        <p>The AI-exposure parameters are read from interchangeable adapters implementing one contract, several published measures wired behind the same interface. Robustness across adapters is a built-in output, converting the field's fragmentation from a liability into a feature.</p>
+        <p>The AI-exposure parameters come from interchangeable adapters that share one interface, with several published measures available. Results are reported for each measure as a standard output, so the disagreement between measures is shown directly.</p>
         <div class="disc">Machine learning &middot; engineering</div>
       </div>
       <div class="grid2__item">
@@ -83,7 +83,7 @@ permalink: /portfolio/skills-framework/
       <div class="eq-block__eq">&theta;<sub>k</sub> = &Sigma;<sub>i</sub> &beta;<sub>i</sub> (1&minus;&delta;<sub>i</sub>) &gamma;<sub>i,k</sub> &nbsp;&nbsp;&nbsp; &part;&theta;<sub>k</sub>/&part;&delta;<sub>i</sub> = &minus;&beta;<sub>i</sub> &gamma;<sub>i,k</sub></div>
       <div class="eq-block__read">&theta;<sub>k</sub> is skill k's weight in aggregate output. Its derivative is skill k's exposure to a marginal increase in task i's capital intensity. Every surface and every figure reads from these two.</div>
     </div>
-    <div class="plate__caption">Not a structural model: no elasticities estimated, no equilibrium solved, no causal claims about wages or employment. A measurement instrument with disclosed parameters.</div>
+    <div class="plate__caption">This is a measurement tool with disclosed parameters. It estimates no elasticities, solves no equilibrium and makes no causal claims about wages or employment.</div>
   </div>
 
   <!-- parameter provenance -->
@@ -99,7 +99,7 @@ permalink: /portfolio/skills-framework/
       <div><div class="spine__label">&gamma;<sub>i,k</sub> &middot; skill shares within a task</div><div class="spine__body">Task-to-skill importance matrices, with an embedding fallback where no direct mapping exists.</div></div>
       <div><div class="spine__label">&sigma;<sub>j,k</sub> &middot; skill-to-skill substitutability</div><div class="spine__body">Occupation-pair skill proximity, a monotone transform of cosine similarity over skills, knowledge, and work activities.</div></div>
     </div>
-    <div class="plate__caption">Every engine output carries its adapter and calibration vintage as columns. No number here is left without a source.</div>
+    <div class="plate__caption">Every engine output carries its adapter and calibration vintage as columns. Every number has a source.</div>
   </div>
 
   <div class="col">
@@ -122,7 +122,7 @@ permalink: /portfolio/skills-framework/
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The engine is built and its outputs are cached at scale: skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, each carrying its adapter and calibration vintage. The framework doubles as a research instrument: a <a href="{{ '/#work' | relative_url }}">companion paper</a> on measuring labor-market resilience and AI exposure is in progress. The equations above are the production system. Worked magnitudes are deliberately not shown here.</p>
+      <p>The engine is built and its outputs are cached at scale: skill exposure, role resilience, and a task atlas of several hundred thousand calibrated rows, each carrying its adapter and calibration vintage. The framework is also used for research, and a <a href="{{ '/#work' | relative_url }}">companion paper</a> on measuring labor market resilience and AI exposure is in progress. The equations above are the ones the production system uses. Worked magnitudes are not shown here.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
   </div>

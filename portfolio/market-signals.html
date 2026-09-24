@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Market signals
-description: "Forward-looking evidence on every state and occupation: fifteen signal types, tiered confidence, and two flags whose composition is spelled out."
+description: "Forward-looking evidence on every state and occupation, with fifteen signal types graded by confidence and combined into two flags whose logic is spelled out."
 permalink: /portfolio/market-signals/
 ink_js: true 
 ---
@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Live across 50 states</span>
     </div>
     <h1 class="display">Market signals</h1>
-    <p class="lede">Official statistics arrive quarters late, and decisions cannot wait. Fifteen sources of leading evidence on every state and occupation, graded by the confidence each deserves, composed into two flags whose logic anyone can read.</p>
+    <p class="lede">Official statistics come out quarters late, and decisions often have to be made before then. This system gathers fifteen kinds of early evidence on every state and occupation, grades each by how much it can be trusted, and combines them into two flags whose logic anyone can follow.</p>
   </div>
   <div class="standfirst">Economics &middot; data science. Tens of thousands of live signal observations feed every downstream surface.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>Official statistics arrive quarters late and decisions cannot wait for them, so the evidence that leads has to carry the weight instead: postings, layoff notices, wage anomalies, federal awards, even the tone of regional economic reports. All of it is noisy, uneven, and easy to over-read, which means the discipline lies not in collecting more of it but in grading how much confidence each piece deserves and composing it so that the logic stays readable to whoever has to act on it.</p>
+      <p>Official statistics come out quarters late, and decisions often have to be made before then, so earlier evidence has to fill the gap. That includes job postings, layoff notices, unusual wage moves, federal awards and even the tone of regional economic reports. All of it is noisy and uneven and easy to over-read. The work is in grading how much each piece can be trusted and combining the pieces so that whoever has to act on them can follow the logic.</p>
     </div>
   </div>
 
@@ -35,23 +35,23 @@ ink_js: true
     </div>
     <div class="stages">
       <div class="grid2__item">
-        <h3><span class="n">01</span>Fifteen evidence types, one grain</h3>
-        <p>Every signal, quantitative or qualitative, lands on the same state-by-occupation grain, so a wage anomaly, a retirement wave, and a sentiment shift can be read against each other rather than in separate reports.</p>
+        <h3><span class="n">01</span>Fifteen evidence types, one table</h3>
+        <p>Every signal, quantitative or qualitative, is recorded by state and occupation, so a wage anomaly, a wave of retirements and a change in sentiment can be read side by side.</p>
         <div class="disc">Data science &middot; engineering</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Tiered confidence</h3>
-        <p>A strong source is allowed to fire on its own. Weaker ones only count when two agree in the same direction. Unconfirmed signals are kept and labeled rather than dropped, because a flagged rumor that later confirms is itself information.</p>
+        <p>A strong source can raise a flag by itself. Weaker sources only count when two of them point the same way. Unconfirmed signals are kept and labeled, because a rumor that is later confirmed is useful to have on record.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
-        <h3><span class="n">03</span>Two flags, legible composition</h3>
-        <p>Everything rolls up to two flags, market stress and rising market, each an explicit OR over named signals. A reader can always answer "why is this flag up" by naming the signal that raised it.</p>
+        <h3><span class="n">03</span>Two flags, with readable logic</h3>
+        <p>All the signals roll up to two flags, market stress and rising market, and each is an explicit OR over named signals. A reader can always answer "why is this flag up" by naming the signal that raised it.</p>
         <div class="disc">Economics</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">04</span>Language as a data source</h3>
-        <p>Qualitative sources (regional economic commentary, trade press) are read by an LLM under a constrained extraction schema, turning prose into the same signal grain as the statistics, at negligible cost per release.</p>
+        <p>Qualitative sources such as regional economic commentary and the trade press are read by an LLM using a fixed extraction schema. That turns the text into signals by state and occupation, like the statistics, at very little cost per release.</p>
         <div class="disc">LLM systems &middot; data science</div>
       </div>
     </div>
@@ -64,19 +64,19 @@ ink_js: true
       <span class="plate__hint">ten of fifteen shown</span>
     </div>
     <p class="plate__purpose">Each type carries its source and what it is allowed to claim.</p>
-    <div id="signals" data-default="Each signal type lands on the same state-by-occupation grain. Strong sources fire on their own, while weaker ones only count when they agree with each other.">
-      <div class="sig-row" data-note="Wage anomaly &middot; pay far from the regional norm for an occupation is unmet demand showing in the price."><span class="sig-row__num">01</span><span class="sig-row__name">Wage anomaly</span><span class="sig-row__src">occupational wage statistics, location quotients</span></div>
+    <div id="signals" data-default="Each signal type is recorded by state and occupation. Strong sources can raise a flag by themselves, and weaker ones only count when they agree with each other.">
+      <div class="sig-row" data-note="Wage anomaly &middot; pay far from the regional norm for an occupation, which can signal unmet demand."><span class="sig-row__num">01</span><span class="sig-row__name">Wage anomaly</span><span class="sig-row__src">occupational wage statistics, location quotients</span></div>
       <div class="sig-row" data-note="Employment shift &middot; growth decomposed into what the sector explains and what the place adds."><span class="sig-row__num">02</span><span class="sig-row__name">Employment shift</span><span class="sig-row__src">payroll series, shift-share decomposition</span></div>
-      <div class="sig-row" data-note="Retirement pressure &middot; age structure by occupation. A wave visible years before it breaks."><span class="sig-row__num">03</span><span class="sig-row__name">Retirement pressure</span><span class="sig-row__src">census microdata age structure</span></div>
+      <div class="sig-row" data-note="Retirement pressure &middot; age structure by occupation, which shows retirements coming years ahead."><span class="sig-row__num">03</span><span class="sig-row__name">Retirement pressure</span><span class="sig-row__src">census microdata age structure</span></div>
       <div class="sig-row" data-note="Skill drift &middot; how an occupation's skill profile is changing across taxonomy vintages."><span class="sig-row__num">04</span><span class="sig-row__name">Skill drift</span><span class="sig-row__src">occupational skill profiles, across vintages</span></div>
       <div class="sig-row" data-note="AI exposure &middot; task-level substitution exposure, from the calibrated framework."><span class="sig-row__num">05</span><span class="sig-row__name">AI exposure</span><span class="sig-row__src">task-level exposure measures</span></div>
-      <div class="sig-row" data-note="Layoff notices &middot; mandated advance notices. The hardest of the leading indicators."><span class="sig-row__num">06</span><span class="sig-row__name">Layoff notices</span><span class="sig-row__src">state advance-notice filings</span></div>
+      <div class="sig-row" data-note="Layoff notices &middot; mandated advance notices. The most concrete of the leading indicators."><span class="sig-row__num">06</span><span class="sig-row__name">Layoff notices</span><span class="sig-row__src">state advance-notice filings</span></div>
       <div class="sig-row" data-note="Federal investment &middot; awards and spending flowing to a place and sector before hiring follows."><span class="sig-row__num">07</span><span class="sig-row__name">Federal investment</span><span class="sig-row__src">federal spending records</span></div>
       <div class="sig-row" data-note="Posting intensity &middot; openings pressure by occupation, standardized through the resolver."><span class="sig-row__num">08</span><span class="sig-row__name">Posting intensity</span><span class="sig-row__src">job postings, deduplicated</span></div>
       <div class="sig-row" data-note="Licensure volume &middot; new credential holders entering a regulated occupation."><span class="sig-row__num">09</span><span class="sig-row__name">Licensure volume</span><span class="sig-row__src">credential and licensure rosters</span></div>
       <div class="sig-row" data-note="Regional sentiment &middot; the tone of regional economic commentary, extracted under a constrained schema."><span class="sig-row__num">10</span><span class="sig-row__name">Regional sentiment</span><span class="sig-row__src">regional economic reports, LLM-extracted</span></div>
     </div>
-    <div class="plate__note" id="sig-note">Each signal type lands on the same state-by-occupation grain. A strong source is allowed to fire on its own. Weaker ones need agreement.</div>
+    <div class="plate__note" id="sig-note">Each signal type is recorded by state and occupation. Strong sources can raise a flag by themselves, and weaker ones only count when they agree with each other.</div>
   </div>
 
   <!-- qualitative to quantitative -->
@@ -85,7 +85,7 @@ ink_js: true
       <span class="plate__title">From prose to a signal</span>
       <span class="plate__hint">switch the source</span>
     </div>
-    <p class="plate__purpose">The hardest sources are written rather than tabulated, and they include a regional economic report, a press release and a layoff filing. An LLM reads each under a constrained extraction schema and returns structured signals on the same state-by-occupation grain as the statistics, every one carrying the sentence it came from.</p>
+    <p class="plate__purpose">The hardest sources to use are written text, such as a regional economic report, a press release or a layoff filing. An LLM reads each one using a fixed extraction schema and returns structured signals by state and occupation, like the statistics, each with the sentence it came from.</p>
     <div class="obs-tabs" id="xtract-tabs"></div>
     <div class="xtract-grid">
       <div class="xtract-prose" id="xtract-prose"></div>
@@ -115,7 +115,7 @@ ink_js: true
       <h2 class="secnum__h">Tools used</h2>
     </div>
     <div class="tools">
-      <div class="tool-row"><span class="tool-row__name">Python, pandas</span><span class="tool-row__use">The state-by-occupation signal grain and the rollup.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Python, pandas</span><span class="tool-row__use">The state-by-occupation signal table and the rollup.</span></div>
       <div class="tool-row"><span class="tool-row__name">Ollama, Qwen, Anthropic</span><span class="tool-row__use">LLM extraction of written sources under a constrained schema.</span></div>
       <div class="tool-row"><span class="tool-row__name">statsmodels</span><span class="tool-row__use">Shift-share decomposition and wage-anomaly detection.</span></div>
       <div class="tool-row"><span class="tool-row__name">requests, BeautifulSoup</span><span class="tool-row__use">Ingestion of postings, filings, and federal spending records.</span></div>
@@ -130,7 +130,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The system runs live across all fifty states, tens of thousands of signal observations over a larger base of source rows, refreshed on each source's native cadence, and feeds the opportunity index, the state dashboards, and the labor market twin. The signal types and confidence rules shown here are the production rules, though the example notes are illustrative.</p>
+      <p>The system runs live across all fifty states, with tens of thousands of signal observations drawn from a larger base of source rows, each refreshed on its source's own schedule. It feeds the opportunity index, the state dashboards and the labor market twin. The signal types and confidence rules shown here are the production rules, and the example notes are illustrative.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
   </div>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Labor market digital twin
-description: "A state's workforce as a conserved system: cohort accounting over 501 occupations, demand built four ways, and the gap as the output."
+description: "A state's workforce modeled as stocks and flows, with cohort accounting over 501 occupations, demand estimated four ways, and the gap between supply and demand as the output."
 permalink: /portfolio/labor-market-twin/
 ink_js: true
 ---
@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Illustrative &middot; magnitudes withheld</span>
     </div>
     <h1 class="display">Labor market digital twin</h1>
-    <p class="lede">A state cannot plan on statistics that lag by years and projections it cannot open. The twin does the accounting instead: five inflows, three outflows, demand built four ways, and the gap is what the model solves for.</p>
+    <p class="lede">States plan their workforce on statistics that are years out of date and projections they cannot inspect. The twin builds the accounts directly, with five inflows, three outflows and demand estimated four ways, and solves for the gap.</p>
   </div>
   <div class="standfirst">Economics &middot; policy &middot; data science &middot; engineering. First end-to-end run projects a state nursing workforce to 2033 and is informing state policy.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>States plan their workforce with statistics that lag by years and live in silos: employment here, graduations there, migration somewhere else, none of them in the same accounting frame. Projections arrive as black boxes, a number with no visible mechanics. The alternative is to model the market the way an economist would audit it: as stocks and flows that must balance, with every term measured, sourced, and carrying its uncertainty.</p>
+      <p>States plan their workforce with statistics that are years out of date and kept in separate places. Employment, graduations and migration each come from a different source, and they do not share an accounting framework. Projections come as black boxes, with a number at the end and no way to see how it was reached. The twin models the market as stocks and flows that have to balance, and every term is measured, sourced and reported with its uncertainty.</p>
     </div>
   </div>
 
@@ -36,22 +36,22 @@ ink_js: true
     <div class="stages">
       <div class="grid2__item">
         <h3><span class="n">01</span>Supply as conserved flows</h3>
-        <p>Cohort accounting over 501 occupations and 51 jurisdictions: graduates in from the training pipeline, migration in and out from nineteen vintages of census microdata, exits and retirements from empirical age-specific rates. The identity must hold, so nothing can be fudged.</p>
+        <p>Cohort accounting over 501 occupations and 51 jurisdictions: graduates in from the training pipeline, migration in and out from nineteen vintages of census microdata, exits and retirements from empirical age-specific rates. The accounting identity has to hold, so no term can be adjusted to make the numbers fit.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Demand built four ways, never averaged</h3>
-        <p>Requisition signals, structural projections, population-anchored forward need, and facility blueprints: four estimates of the same demand, kept apart on purpose. Where the four agree you can act on them, and where they diverge that divergence tells you which layer is missing something rather than indicating that one of them is broken.</p>
+        <p>Demand is estimated from requisition signals, structural projections, population-based forward need and facility blueprints, and the four estimates are kept separate. Where they agree you can act on them. Where they diverge, the difference points to the estimate that is missing something.</p>
         <div class="disc">Economics &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">03</span>Sourced terms, flagged gaps</h3>
-        <p>Transfers are removed from exits before anything is projected. Thin cells fall back to national rates and say so. Harmonizing two decades of occupational codes carries uncertainty flags rather than silent joins.</p>
+        <p>Transfers are removed from exits before anything is projected. Thin cells fall back to national rates and say so. Where two decades of occupational codes are harmonized, uncertain matches are flagged.</p>
         <div class="disc">Data science &middot; engineering</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">04</span>From projection to decision</h3>
-        <p>On top of the engine: transition pathways gated by credential requirements and wage premiums, forward-looking market signals, and evidence-graded policy levers, so a projected gap comes with the moves that could close it.</p>
+        <p>The engine also produces transition pathways limited by credential requirements and wage premiums, forward-looking market signals, and policy levers graded by the strength of their evidence, so a projected gap comes with options for closing it.</p>
         <div class="disc">Policy &middot; economics</div>
       </div>
     </div>
@@ -62,7 +62,7 @@ ink_js: true
     <div class="plate__head">
       <span class="plate__title">Model</span>
     </div>
-    <p class="plate__purpose">For one occupation in one region, five inflows feed the stock and three outflows drain it, demand is built four separate ways, and the gap between them is the output.</p>
+    <p class="plate__purpose">For one occupation in one region, five inflows add to the stock and three outflows reduce it, demand is built four separate ways, and the gap between them is the output.</p>
     <div class="flow-scroll">
       <div class="flow-canvas" id="flow-canvas"></div>
     </div>
@@ -77,12 +77,12 @@ ink_js: true
     <div class="plate__head">
       <span class="plate__title">Adjacent population</span>
     </div>
-    <p class="plate__purpose">Supply into an occupation is not only the people already in it. It is everyone one retraining step away. For a target occupation the twin spells out that reachable pool: which occupations are skill-adjacent, how large each pool is, and what bridge it takes to cross.</p>
+    <p class="plate__purpose">Supply for an occupation includes the people already in it and everyone one retraining step away. For a target occupation the twin lists that pool, showing which occupations are skill-adjacent, how many people are in each, and what training it takes to move across.</p>
     <div class="clu-scroll">
       <div class="clu-canvas" id="cluster-canvas"></div>
     </div>
     <div class="plate__note" id="cluster-note" data-default="Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted.">Each occupation around the target is one retraining step away. Near steps are drawn solid, mid dashed, far dotted.</div>
-    <div class="plate__caption">Adjacency from 798k occupation-pair similarities, tiered by retraining distance. The reachable pool is what the model feeds into the adjacent-population inflow, discounted by the credential and wage distance of each bridge.</div>
+    <div class="plate__caption">Adjacency from 798k occupation-pair similarities, tiered by retraining distance. The reachable pool is what the model feeds into the adjacent-population inflow, discounted by the credential and wage distance of each move.</div>
   </div>
 
   <!-- the divergence -->
@@ -90,7 +90,7 @@ ink_js: true
     <div class="plate__head">
       <span class="plate__title">Demand, from four angles</span>
     </div>
-    <p class="plate__purpose">Demand is estimated four separate ways, each catching a different signal at a different horizon. They are never averaged, because where the four agree that agreement is itself the confidence, and where they diverge the divergence is a read on which horizon is moving.</p>
+    <p class="plate__purpose">Demand is estimated four separate ways, each picking up a different signal over a different time horizon, and the four are not averaged. When they agree, that agreement is the reason to be confident, and when they diverge, the difference shows which horizon is changing.</p>
     <svg id="div-lines" viewBox="0 0 440 120" style="width:100%; height:auto; display:block;">
       <line x1="20" y1="110" x2="420" y2="110" stroke="#E7E7E3" stroke-width="1"></line>
       <path data-i="0" d="M20 84 C 70 66, 100 96, 150 74 C 210 48, 250 92, 310 70 C 360 54, 395 80, 420 72" fill="none" stroke="#131313" stroke-width="1.3"></path>
@@ -98,21 +98,21 @@ ink_js: true
       <path data-i="2" d="M20 98 C 120 86, 240 58, 420 28" fill="none" stroke="#131313" stroke-width="1.3" stroke-dasharray="2 4"></path>
       <path data-i="3" d="M20 97 C 120 90, 240 74, 420 54" fill="none" stroke="#131313" stroke-width="1.3" stroke-dasharray="14 4"></path>
     </svg>
-    <div id="div-legend" data-default="Four estimates of the same demand, deliberately not reconciled. Where they agree, act. Where they diverge, investigate." style="margin-top:8px;">
-      <div class="div-legend-row" data-i="0" data-note="Requisition signal &middot; open requisitions and budgeted positions, spiky and seasonal. The immediate signal of what employers are hiring now.">
+    <div id="div-legend" data-default="Four estimates of the same demand, kept separate. Where they agree you can act on them, and where they diverge it is worth finding out why." style="margin-top:8px;">
+      <div class="div-legend-row" data-i="0" data-note="Requisition signal &middot; open requisitions and budgeted positions, spiky and seasonal. The most immediate signal of what employers are hiring for now.">
         <span class="div-legend-row__swatch" style="background:#131313;"></span><span class="div-legend-row__name">Requisition signal</span>
       </div>
       <div class="div-legend-row" data-i="1" data-note="Structural growth &middot; total positions, filled headcount plus open requisitions, projected forward. The structural trend.">
         <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 7px,transparent 7px 11px);"></span><span class="div-legend-row__name">Structural growth</span>
       </div>
-      <div class="div-legend-row" data-i="2" data-note="Forward need &middot; population-anchored scenarios with aging intensity. What the region will require, steepest of all.">
+      <div class="div-legend-row" data-i="2" data-note="Forward need &middot; population-anchored scenarios with aging intensity. What the region will need, and the steepest of the four.">
         <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 2px,transparent 2px 6px);"></span><span class="div-legend-row__name">Forward need</span>
       </div>
       <div class="div-legend-row" data-i="3" data-note="Blueprint &middot; ideal composition per facility archetype and ramp state, triangulated from public sources.">
         <span class="div-legend-row__swatch" style="background:repeating-linear-gradient(90deg,#131313 0 14px,transparent 14px 18px);"></span><span class="div-legend-row__name">Blueprint</span>
       </div>
     </div>
-    <div class="plate__note" id="div-note">Four estimates of the same demand, kept apart on purpose. Where the four agree you can act on them, and where they diverge it is worth looking at which layer is missing something.</div>
+    <div class="plate__note" id="div-note">Four estimates of the same demand, kept separate. Where the four agree you can act on them, and where they diverge it is worth checking which one is missing something.</div>
     <div class="plate__caption plate__caption--soft">Short horizons are forecast from requisition dynamics with ARIMA and SARIMA, longer horizons come from structural projections and population-anchored need, and gradient boosting is in testing as a cross-check.</div>
   </div>
 
@@ -138,7 +138,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>The structure is the production system: the same flows, identities, and demand layers run over real census microdata, training-pipeline records, and employer panels. The first end-to-end run projects one state's nursing workforce through 2033 across all of its counties, and is informing state workforce policy and training investment. Where the engine can be checked against the federal system it is: employer-survey forward demand for the pilot occupation lands within 7% of the federal projection. The curves and magnitudes shown here are illustrative. The real runs carry their sources and uncertainty with them.</p>
+      <p>This is the structure of the production system, which runs the same flows, identities and demand layers over real census microdata, training-pipeline records and employer panels. The first end-to-end run projects one state's nursing workforce through 2033 across all of its counties, and is informing state workforce policy and training investment. Where the engine can be checked against the federal system, it has been, and employer-survey forward demand for the pilot occupation comes within 7% of the federal projection. The curves and magnitudes shown here are illustrative, and the real runs carry their sources and uncertainty with them.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
   </div>

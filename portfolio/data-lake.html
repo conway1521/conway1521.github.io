@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data lake
-description: "Over 200 datasets reconciled onto one federal occupational crosswalk, with standardization and anonymity engineered in."
+description: "Over 200 datasets reconciled onto one federal occupational crosswalk, with shared standards and anonymity protections built in."
 permalink: /portfolio/data-lake/
 ink_js: true
 ---
@@ -14,7 +14,7 @@ ink_js: true
       <span class="eyebrow">Counts real &middot; refreshed automatically</span>
     </div>
     <h1 class="display">Data lake</h1>
-    <p class="lede">Every question in this portfolio needs several datasets at once, and they disagree on unit, grain, vintage, and license. The lake reconciles 220 of them onto one federal crosswalk, with standardization treated as a first-class product.</p>
+    <p class="lede">Every question in this portfolio needs several datasets at once, and they differ in units, level of detail, vintage and license. The lake reconciles 220 of them onto one federal crosswalk, and treats standardization as a product in its own right.</p>
   </div>
   <div class="standfirst">Data engineering &middot; data science. 220 datasets &middot; dozens of providers &middot; over a million contributors &middot; millions of records.</div>
 
@@ -24,7 +24,7 @@ ink_js: true
       <h2 class="secnum__h">The problem</h2>
     </div>
     <div class="prose prose--lg">
-      <p>In order to connect relevant datasets across relevant sources spanning the entire labor market, a crosswalk onto the federal taxonomy is necessary. Federal statistics, commercial postings, training records, credential rosters, and employer files however do not match in unit, grain, vintage, and license, nor do they name an occupation the same way. Worse yet, the most valuable data, employers', can only join this pool if anonymity is engineered into the system.</p>
+      <p>Connecting datasets from across the labor market requires a crosswalk onto the federal taxonomy. Federal statistics, commercial postings, training records, credential rosters and employer files differ in units, level of detail, vintage and license, and they name occupations differently. The most valuable data, from employers, can only be added if the system protects their anonymity.</p>
     </div>
   </div>
 
@@ -36,22 +36,22 @@ ink_js: true
     <div class="stages">
       <div class="grid2__item">
         <h3><span class="n">01</span>Crosswalk map</h3>
-        <p>Crosswalks through a federal taxonomy bring industry, program, and skill classifications together. Controlled vocabularies and a specifically defined Canon, the naming and calculation conventions I wrote, standardize everything ambiguous (like termination reasons, employment status, facility types) so tenant data and public data match up.</p>
+        <p>Crosswalks through the federal taxonomy connect industry, program and skill classifications. Controlled vocabularies and the Canon, a set of naming and calculation conventions I wrote, standardize ambiguous fields such as termination reasons, employment status and facility types, so tenant data and public data match up.</p>
         <div class="disc">Data engineering &middot; data science</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">02</span>Registry as a product</h3>
-        <p>Every dataset carries tags for readiness, lifecycle stage, geographic and time grain, and provenance class. The catalog is queryable, versioned, and the single source of truth for what exists, at what quality, made from what. It also serves as the consistent foundation for future work.</p>
+        <p>Every dataset is tagged by readiness, lifecycle stage, geographic and time resolution, and provenance. The catalog is queryable and versioned, and it is the reference for what data exists, its quality, and how it was built. New work starts from it.</p>
         <div class="disc">Data engineering &middot; product</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">03</span>Contribution without exposure</h3>
-        <p>Employer data joins under k-anonymity floors and row-level tenant isolation, with opaque identifiers throughout. The detailed panel is the source of truth with benchmarks as aggregated views over it.</p>
+        <p>Employer data joins under k-anonymity floors and row-level tenant isolation, with opaque identifiers throughout. The detailed panel is the reference, and benchmarks are aggregated views of it.</p>
         <div class="disc">Data engineering &middot; privacy</div>
       </div>
       <div class="grid2__item">
         <h3><span class="n">04</span>Constantly checked</h3>
-        <p>Documentation drift is checked on every change through counts that regenerate daily and commit themselves. Any phantom or orphaned table gets audited automatically so that the registry cannot diverge from the database it describes.</p>
+        <p>Every change is checked against the documentation, and row counts are regenerated and committed daily. Missing or orphaned tables are flagged automatically, so the registry stays in line with the database it describes.</p>
         <div class="disc">Engineering</div>
       </div>
     </div>
@@ -63,7 +63,7 @@ ink_js: true
       <span class="plate__title">Lake</span>
       <span class="plate__hint">one dot per dataset</span>
     </div>
-    <p class="plate__purpose">220 datasets across twelve domains: the full inventory, by domain and readiness.</p>
+    <p class="plate__purpose">The full inventory of 220 datasets, by domain and readiness.</p>
     <div id="lake" data-default="One dot per dataset. Filled is live. Hollow is gated, scaffold, or planned.">
       <div class="matrix-row" data-count="73" data-filled="50" data-note="Derived products &middot; 73 datasets. Scores, similarities, signals, and engine outputs built on the layers below."><span class="matrix-row__name">Derived products</span><div class="matrix-row__dots"></div><span class="matrix-row__count">73</span></div>
       <div class="matrix-row" data-count="30" data-filled="21" data-note="Labor market &middot; 30 datasets. Employment, openings, separations, projections, postings."><span class="matrix-row__name">Labor market</span><div class="matrix-row__dots"></div><span class="matrix-row__count">30</span></div>
@@ -71,7 +71,7 @@ ink_js: true
       <div class="matrix-row" data-count="22" data-filled="15" data-note="Education and training &middot; 22 datasets. Completions, apprenticeships, outcomes, provider records."><span class="matrix-row__name">Education &amp; training</span><div class="matrix-row__dots"></div><span class="matrix-row__count">22</span></div>
       <div class="matrix-row" data-count="19" data-filled="13" data-note="Skills &middot; 19 datasets. Skill, knowledge, and activity profiles with two overlay taxonomies."><span class="matrix-row__name">Skills</span><div class="matrix-row__dots"></div><span class="matrix-row__count">19</span></div>
       <div class="matrix-row" data-count="18" data-filled="12" data-note="Demographics &middot; 18 datasets. Population structure, migration corridors, age by occupation."><span class="matrix-row__name">Demographics</span><div class="matrix-row__dots"></div><span class="matrix-row__count">18</span></div>
-      <div class="matrix-row" data-count="15" data-filled="10" data-note="Macroeconomic &middot; 15 datasets. Output, prices, income, and cost indices at state grain."><span class="matrix-row__name">Macroeconomic</span><div class="matrix-row__dots"></div><span class="matrix-row__count">15</span></div>
+      <div class="matrix-row" data-count="15" data-filled="10" data-note="Macroeconomic &middot; 15 datasets. Output, prices, income, and cost indices at the state level."><span class="matrix-row__name">Macroeconomic</span><div class="matrix-row__dots"></div><span class="matrix-row__count">15</span></div>
       <div class="matrix-row" data-count="7" data-filled="5" data-note="Interventions &middot; 7 datasets. The evidence library behind the policy levers."><span class="matrix-row__name">Interventions</span><div class="matrix-row__dots"></div><span class="matrix-row__count">7</span></div>
       <div class="matrix-row" data-count="5" data-filled="3" data-note="Sector intelligence &middot; 5 datasets. Policy, utilization, infrastructure, and financial-health indicators by sector."><span class="matrix-row__name">Sector intelligence</span><div class="matrix-row__dots"></div><span class="matrix-row__count">5</span></div>
       <div class="matrix-row" data-count="1" data-filled="1" data-note="HR standardization &middot; the canonical-title layer that lets employer data join the crosswalk."><span class="matrix-row__name">HR standardization</span><div class="matrix-row__dots"></div><span class="matrix-row__count">1</span></div>
@@ -86,10 +86,10 @@ ink_js: true
       <span class="plate__title">Canon</span>
       <span class="plate__hint">one metric, set in full</span>
     </div>
-    <p class="plate__purpose">I wrote the Canon in order to have a naming and calculation convention for the whole system to follow. This way, anything ingested is standardized to it, and a metric is only shown with its definition, and source attached.</p>
+    <p class="plate__purpose">I wrote the Canon as a naming and calculation convention for the whole system. Everything ingested is standardized to it, and a metric is only shown with its definition and source attached.</p>
     <div class="identity" style="font-size:19px; padding-bottom:24px;">vacancy rate = <span style="white-space:nowrap;">open &divide; (headcount + open)</span></div>
     <div class="spine">
-      <div><div class="spine__label">measured from</div><div class="spine__body">Employer panel, requisition lifecycle rows, monthly grain</div></div>
+      <div><div class="spine__label">measured from</div><div class="spine__body">Employer panel, requisition lifecycle rows, monthly</div></div>
       <div><div class="spine__label">standardized by</div><div class="spine__body">Title resolution to the federal crosswalk, level bands, termination decomposition</div></div>
       <div><div class="spine__label">suppressed when</div><div class="spine__body">Headcount &lt; 10 &middot; occupation cell &lt; 3 &middot; fewer than 2 employers per benchmark cell</div></div>
     </div>
@@ -101,14 +101,14 @@ ink_js: true
       <span class="plate__title">Librarian</span>
       <span class="plate__hint">ask in plain language</span>
     </div>
-    <p class="plate__purpose">This is a natural-language surface over the lake, where you ask in plain words and it extracts the concepts and geography against a controlled vocabulary, then routes to the datasets that answer, with live row counts. It is deliberately a fake RAG, with no embeddings and no generated answers, so a query can only ever point at datasets that exist, since the catalog metadata is the index and computation hands off to a separate analyst agent.</p>
+    <p class="plate__purpose">You can ask the lake a question in plain words. It picks out the concepts and geography using a controlled vocabulary, then points to the datasets that can answer it, with live row counts. It uses no embeddings and generates no answers, so a query can only point to datasets that exist. The catalog metadata serves as the index, and any computation is handed to a separate analyst agent.</p>
     <div class="lib-log" id="lib-log"></div>
     <div class="lib-sugg" id="lib-sugg"></div>
     <div class="lib-ask">
       <input id="lib-input" class="ink-input" placeholder="Ask about demand, turnover, wages, gaps, levers..." autocomplete="off">
       <button type="button" id="lib-btn" class="ink-btn">Ask</button>
     </div>
-    <div class="plate__caption">Deterministic routing over a 50-value concept vocabulary and 220 datasets, with zero model calls per query. The same routing decision is a visible concept match, so you can read why a dataset was selected rather than being handed an opaque similarity score.</div>
+    <div class="plate__caption">Deterministic routing over a 50-value concept vocabulary and 220 datasets, with no model calls per query. Each routing decision is a visible concept match, so you can see why a dataset was selected.</div>
   </div>
 
   <div class="col">
@@ -121,7 +121,7 @@ ink_js: true
       <div class="tool-row"><span class="tool-row__name">Supabase, Postgres, row-level security</span><span class="tool-row__use">Tenant isolation and the detailed panel as source of truth.</span></div>
       <div class="tool-row"><span class="tool-row__name">pgvector</span><span class="tool-row__use">Embedding search across the catalog.</span></div>
       <div class="tool-row"><span class="tool-row__name">k-anonymity floors</span><span class="tool-row__use">Suppression on benchmark cells below their floor.</span></div>
-      <div class="tool-row"><span class="tool-row__name">Controlled vocabularies, the Radius Canon</span><span class="tool-row__use">The naming and calculation conventions everything ingests to.</span></div>
+      <div class="tool-row"><span class="tool-row__name">Controlled vocabularies, the Radius Canon</span><span class="tool-row__use">The naming and calculation conventions all ingested data follows.</span></div>
       <div class="tool-row"><span class="tool-row__name">Automated checks</span><span class="tool-row__use">Daily count regeneration, documentation drift and orphan-table audits.</span></div>
     </div>
   </div>
@@ -132,7 +132,7 @@ ink_js: true
       <h2 class="secnum__h">Final state</h2>
     </div>
     <div class="prose">
-      <p>An interactive data lake made up of 220 datasets from dozens of providers, over a million contributing institutions and respondents, and millions of records. Users can explore their own data and all pertinent information related to it.</p>
+      <p>The lake holds 220 datasets from dozens of providers, covering over a million contributing institutions and respondents and millions of records. Users can explore their own data alongside everything related to it.</p>
     </div>
     <a href="{{ '/#systems' | relative_url }}" class="backlink">&larr; Back to systems and tools</a>
     <a href="{{ '/#systems' | relative_url }}" class="backlink" style="margin-left:28px;">What this makes possible: both digital twins &rarr;</a>
