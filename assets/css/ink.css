@@ -684,6 +684,8 @@ button { font-family: inherit; }
 .work__links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; margin-top: 12px; }
 
 .pubs { border-top: 1px solid var(--rule); max-width: var(--measure-list); }
+.pubs__h { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin: 22px 0 6px; }
+.subgroup__h + .pubs__h { margin-top: 4px; }
 .pub-row { display: grid; grid-template-columns: 1fr 140px 78px; gap: 18px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--rule); }
 .pub-row__t { font-size: 14px; line-height: 1.45; }
 /* series identifier and version, under the title of a numbered working paper */
@@ -710,11 +712,11 @@ button { font-family: inherit; }
 /* Inside a nest the subgroup heading hangs to the left of everything that
    belongs under it, so where one group ends and the next begins is legible
    without adding another rule. */
-.nest > .groupnote, .nest > .works, .nest > .pubs { margin-left: 20px; }
+.nest > .groupnote, .nest > .works, .nest > .pubs, .nest > .pubs__h { margin-left: 20px; }
 .nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 42px); }
 @media (max-width: 620px) {
   .nest { padding-left: 13px; }
-  .nest > .groupnote, .nest > .works, .nest > .pubs { margin-left: 10px; }
+  .nest > .groupnote, .nest > .works, .nest > .pubs, .nest > .pubs__h { margin-left: 10px; }
   .nest .works, .nest .pubs { max-width: calc(var(--measure-list) - 23px); }
 }
 

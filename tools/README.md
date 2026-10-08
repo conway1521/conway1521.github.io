@@ -52,6 +52,12 @@ renumbers when they are published.
 The year in the identifier and in the suggested citation is the year of the
 first draft, and a revision keeps it.
 
+Research notes run as a second series, `AC-RN-<year of first draft>-<sequence>`,
+on the same rules. A note makes one point (a measurement, a method, or a
+design fixed before it runs), is built from markdown in its own repository,
+and takes a stamped cover with "Research Note" in place of "Working Paper".
+The three working paper numbers once reserved for them stay unused.
+
 `series.json` also holds each paper's keywords and JEL codes, which the
 cover prints under the abstract and which are written into the PDF
 metadata, so they can be pasted straight into an SSRN or MPRA submission.

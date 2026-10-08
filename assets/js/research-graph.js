@@ -106,23 +106,23 @@
     },
 
     exposure: {
-      x: 888, y: 190, k: 'wp', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
+      x: 888, y: 190, k: 'rn', l: ['AI exposure', 'measures'], lx: 0, ly: -24, a: 'middle',
       date: 'June 2026, revised September 2026',
       title: 'Does the choice of AI-exposure measure matter?',
       plain: 'At least six serious measures score how exposed each occupation is to AI, and studies that report a share of jobs at risk usually pick one without saying why. If the measures disagree, any ranking of at-risk occupations reflects the choice of measure as well as the labor market. The usual comparison is a rank correlation, which weights an occupation of five hundred people the same as one of three million and is driven by the extremes, where all the measures agree. This note specifies a comparison of the measures by the wage dollars they classify as exposed, at a common cutoff and decile by decile, holding everything else fixed, and states in advance what each result would mean.',
       abs: 'At least six serious measures score how exposed each occupation is to artificial intelligence, and a study that reports the share of jobs at risk picks one of them, usually without saying why. If the measures agree, the choice is harmless. If they disagree, then every ranking of at-risk occupations, every regional exposure map, and every policy brief built on one of them reflects the instrument as well as the labor market, and no reader can tell by how much. This note specifies the comparison that policy needs and fixes its statistic. Rank correlations, the usual comparison, weight an occupation of five hundred people and one of three million equally, and they are dominated by the tails, where every measure agrees that telemarketers are exposed and roofers are not. Policy questions are posed on people and on dollars, and they are posed in the middle of the distribution, where the marginal occupation is classified one way or the other. The statistic is therefore the share of the wage bill on which two measures disagree about whether an occupation is exposed, at a common cut, together with the agreement rate by decile of the pooled ranking, which separates the extremes from the interior. The design holds population, occupational base, vintage, and every downstream computation fixed and varies only the measure, which is possible because the model built alongside the companion paper takes each measure as an interchangeable input. The readings that decide whether the choice matters are written down before the numbers are.',
       math: ['D\u2090\u1D66(q) = \u03A3\u2092 \u03C9\u2092 |1[o \u2208 X\u2090(q)] \u2212 1[o \u2208 X\u1D66(q)]|, the share of the wage bill one measure calls exposed and the other does not'],
-      links: [['Download the paper', '/assets/papers/exposure-measures.pdf'], ['The production system', '/portfolio/skills-framework/']]
+      links: [['Download the note', '/assets/papers/exposure-measures.pdf'], ['The production system', '/portfolio/skills-framework/']]
     },
 
     moves: {
-      x: 864, y: 344, k: 'wp', l: ['Do skills', 'predict moves'], lx: 17, ly: 2, a: 'start',
+      x: 864, y: 344, k: 'rn', l: ['Do skills', 'predict moves'], lx: 17, ly: 2, a: 'start',
       date: 'January 2026, revised September 2026',
       title: 'Do skills predict moves?',
       plain: 'A whole industry now advises workers and workforce boards with similarity scores. Two occupations whose skill profiles overlap at 98.5 percent are presented as a few months of retraining apart, and a machinist is steered toward industrial maintenance. A high score says a move is possible, but it does not show that workers make it. If the scores are wrong, the advice sends people toward jobs they will not get and public money after them. The data to check this is public, and the check is cheap. The paper sets up the test as a gravity model on the occupation changes that the CPS March supplement records within a single interview, the only design in that survey that separates real moves from coding noise. The model separates how much traffic flows between two occupations, which similarity should explain, from its direction, which the wage difference should explain, and it will compare the field’s thresholds at 0.985, 0.970 and 0.950 with where the flows drop off.',
       abs: 'A whole advisory industry now tells workers and workforce boards which occupations they can move to, and it does so with a similarity score. The score is a claim about feasibility, that a person with one profile could do the other job. Whether anyone makes the move is a different claim, and the advice depends on it, yet it has not been tested at scale, although the data to test it are public and the test costs little. This paper specifies the test and fixes its inputs. Observed flows between occupations come from the March supplement of the Current Population Survey, which records in one interview what a person does now and what they did last year. Two independent codings of a job the survey itself records as unchanged disagree 48.1 percent of the time at the detailed level, so a matrix linked across interviews measures coding disagreement. The within-interview design cancels that error, and it is the one used here. Similarity is a composite over the skills, knowledge, and work activities the Occupational Information Network records, held as 798,342 occupation pairs above a similarity of 0.5, and the tier thresholds used in workforce practice sit at 0.985, 0.970, and 0.950. The model is a gravity equation estimated by Poisson pseudo-maximum likelihood on gross flows, with origin and destination effects that absorb the size of each occupation. A flexible version of the model enters similarity in bins instead of as one elasticity, locates where observed flows break, and sets the breaks against the three thresholds in use. Licensing is read from the residuals rather than entered as a regressor: the pairs that similarity places close and that nobody is observed crossing are a map of what the score misses, and the residuals show whether that map concentrates in licensed occupations.',
       math: ['E[flow\u1D62\u2192\u2C7C] = exp(\u03B7 ln sim\u1D62\u2C7C + \u03B2 ln(w\u2C7C/w\u1D62) + \u03B1\u1D62 + \u03B4\u2C7C), with symmetric pair effects added to identify \u03B2 from direction alone'],
-      links: [['Download the paper', '/assets/papers/skills-and-moves.pdf']]
+      links: [['Download the note', '/assets/papers/skills-and-moves.pdf']]
     },
 
     migration: {
@@ -146,13 +146,13 @@
     },
 
     shortage: {
-      x: 604, y: 470, k: 'wp', l: ['Shortage', 'arithmetic'], lx: -17, ly: 2, a: 'end',
+      x: 604, y: 470, k: 'rn', l: ['Shortage', 'arithmetic'], lx: -17, ly: 2, a: 'end',
       date: 'March 2026, revised September 2026',
       title: 'Shortage arithmetic',
       plain: 'Headline shortage figures subtract the supply for an occupation from the demand for that same occupation, as if every opening had to be filled by someone newly trained for it. The occupational flow account shows that in every occupation it covers, more people arrive from other occupations than from education, by a median factor of 19. For five healthcare occupations in North Carolina, arrivals from other occupations at the observed rate equal 49 to 158 percent of the openings the state projects each year, so the channel the standard calculation leaves out is comparable in size to the openings themselves. The paper writes down the correction tier by tier of skill adjacency, with every term measured and capped by history, and infers licensing barriers from the occupation pairs that no one crosses.',
       abs: 'An occupational shortage figure is a subtraction. A projection of the positions an occupation will need to fill is set against a count of the people being trained for it, and the difference is published as the number a state is short. The subtraction assumes something that is never written down: that a position in the occupation can be filled only by a person newly trained for exactly that occupation, so that nobody arrives from anywhere else. The occupational flow account built in the companion paper (Conway, 2025) measures where an occupation’s people come from, and in every one of the 172 occupations it covers, arrivals from another occupation exceed arrivals from education, by a median factor of 19. This paper writes the correction down and measures its first term. For five healthcare occupations in North Carolina, arrivals from another occupation at the rate the national account observes come to between 49 and 158 percent of the annual openings the state projection expects. Those arrivals are gross and are matched by departures of similar size, and the projection already nets part of that movement out of its replacement figure, so the table cannot be read as a shortage half the size of its headline. The table establishes instead that movement from adjacent occupations supplies these occupations on a scale comparable to the openings themselves, and that a supply count consisting of graduates counts the smallest inflow. A raw gap is reduced, tier by tier of skill adjacency, by the workers the adjacent occupations can release into it. Licensing is a reading of the results rather than a parameter.',
       math: ['G* = G \u2212 \u03A3\u209C min( \u03A3\u2C7C\u2208\u209C m\u2C7C\u1D62 S\u2C7C , m\u0304\u209C\u1D62 E\u1D62 ), the raw gap less what each adjacency tier releases at observed transition rates, capped by history'],
-      links: [['Download the paper', '/assets/papers/shortage-arithmetic.pdf']]
+      links: [['Download the note', '/assets/papers/shortage-arithmetic.pdf']]
     },
 
     beige: {
@@ -181,7 +181,7 @@
     { l: 'Labor markets', x: 606, y: 70 }
   ];
 
-  var R = { pub: 11, wp: 9, tool: 8.5, wip: 5 };
+  var R = { pub: 11, wp: 9, rn: 6.5, tool: 8.5, wip: 5 };
   var SVGNS = 'http://www.w3.org/2000/svg';
 
   function el(n, attrs) {
@@ -380,11 +380,12 @@
 
   /* ---------- narrow screens get the same content as a list ---------- */
   var GROUPS = [
-    ['Labor markets', ['skillsdna', 'flows', 'migration', 'shortage', 'exposure', 'moves', 'beige']],
-    ['Regional development', ['p1', 'p2', 'p3', 'ned']],
-    ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'antic', 'fiscal']]
+    ['Labor markets', ['flows', 'migration', 'moves', 'shortage', 'beige']],
+    ['Macroeconomics', ['sage', 'sagetool', 'atlas', 'antic', 'fiscal']],
+    ['Economic development', ['p1', 'p2', 'p3', 'ned']],
+    ['AI', ['skillsdna', 'exposure']]
   ];
-  var GLYPH = { pub: '◉', wp: '●', tool: '◆', wip: '○' };
+  var GLYPH = { pub: '◉', wp: '●', rn: '•', tool: '◆', wip: '○' };
   var flist = document.getElementById('rg-list');
   if (flist) {
     GROUPS.forEach(function (grp) {

@@ -1,4 +1,4 @@
-"""Prepend a working paper cover page to a built paper PDF.
+"""Prepend a working paper or research note cover page to a built paper PDF.
 
 The papers themselves are built from their own repositories, each of which
 needs data that is not committed, so this tool never rebuilds a paper. It
@@ -97,6 +97,13 @@ def rule(c, y, width=MEASURE, thickness=0.5, grey=0.45):
     c.setStrokeGray(0)
 
 
+def series_label(paper, series):
+    """The series line a cover prints: Working Paper or Research Note."""
+    if paper.get("kind") == "note":
+        return series["notes"]["label"]
+    return "Working Paper"
+
+
 def build_cover(paper, series):
     """Render the cover page and return it as bytes."""
     buffer = io.BytesIO()
@@ -120,7 +127,7 @@ def build_cover(paper, series):
     rule(c, y)
 
     y -= 20
-    draw_centred(c, "Working Paper %s" % paper["id"], SERIF_BOLD, 11, y)
+    draw_centred(c, "%s %s" % (series_label(paper, series), paper["id"]), SERIF_BOLD, 11, y)
     y -= 16
     version = "Version %s (%s)" % (paper["version"], paper["version_date"])
     draw_centred(c, version, SERIF, 10.5, y)
@@ -176,12 +183,13 @@ def build_cover(paper, series):
     # The citation and the rights notice sit on the bottom margin, so their
     # position does not move with the length of the abstract.
     citation = (
-        "Suggested citation: %s, %s (%d). “%s.” Working Paper %s, Version %s."
+        "Suggested citation: %s, %s (%d). “%s.” %s %s, Version %s."
         % (
             series["author"].split()[-1],
             series["author"].split()[0],
             paper["cite_year"],
             paper["title"],
+            series_label(paper, series),
             paper["id"],
             paper["version"],
         )
@@ -289,6 +297,8 @@ def emit_latex(paper, inline_abstract=False, pandoc=False):
     include-before content after \\maketitle, so a cover passed with -B would
     land on the second page; the hook runs at \\begin{document} instead.
     """
+    if paper.get("kind") == "note":
+        raise SystemExit("%s is a research note; notes are stamped, not emitted as LaTeX" % paper["slug"])
     fields = {
         "@ID@": paper["id"],
         "@VERSION@": paper["version"],
@@ -333,7 +343,7 @@ def already_stamped(reader):
         text = reader.pages[0].extract_text() or ""
     except Exception:
         return False
-    return bool(re.search(r"Working Paper AC-WP-\d{4}-\d{2}", text))
+    return bool(re.search(r"(Working Paper AC-WP|Research Note AC-RN)-\d{4}-\d{2}", text))
 
 
 def stamp(paper, series, force=False):
@@ -361,8 +371,8 @@ def stamp(paper, series, force=False):
         {
             "/Title": paper["title"],
             "/Author": series["author"],
-            "/Subject": "Working Paper %s, Version %s"
-            % (paper["id"], paper["version"]),
+            "/Subject": "%s %s, Version %s"
+            % (series_label(paper, series), paper["id"], paper["version"]),
             "/Keywords": paper["keywords"],
         }
     )

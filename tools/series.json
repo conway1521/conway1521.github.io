@@ -5,15 +5,20 @@
     "copyright_year": 2026,
     "notice": "Not peer reviewed. Comments welcome.",
     "reserved": {
-      "AC-WP-2026-01": "Do skills predict moves? A gravity test of skill similarity against observed occupational transitions (first draft January 2026, estimation not yet run)",
-      "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (first draft March 2026, adjacency terms not yet measured)",
-      "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (first draft June 2026, comparison not yet run)"
+      "AC-WP-2026-01": "Do skills predict moves? A gravity test of skill similarity against observed occupational transitions (moved to the research note series as AC-RN-2026-01; this number is not reused)",
+      "AC-WP-2026-03": "Shortage arithmetic: the substitution margin an occupational gap leaves out (moved to the research note series as AC-RN-2026-02; this number is not reused)",
+      "AC-WP-2026-05": "Does the choice of AI-exposure measure matter? A dollar-weighted comparison, specified (moved to the research note series as AC-RN-2026-03; this number is not reused)"
     },
     "ssrn_note": "Alert names are taken verbatim from SSRN's Economics Research Network taxonomy. SSRN calls the subscribable level an Alert rather than an eJournal. Where a paper needs a network other than ERN, it is named in also_consider, because that network's alerts were not to hand.",
     "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "rights_line": "© Alessandro Conway 2026. Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).",
-    "code_license": "MIT"
+    "code_license": "MIT",
+    "notes": {
+      "prefix": "AC-RN",
+      "label": "Research Note",
+      "about": "A research note makes one point: a measurement, a method, or a design fixed before it runs. Notes are numbered AC-RN-<year of first draft>-<sequence>, in order of first draft, on the same rules as the working papers."
+    }
   },
   "papers": [
     {
@@ -158,6 +163,61 @@
       "source_pdf": "paper/fiscaluk-paper2.pdf",
       "source_tex": "paper/fiscaluk-paper2.tex",
       "abstract": "Using UK narrative tax measures from 1918 to 2018 and quarterly household consumption from 1955, I estimate the response of consumption to tax changes that were not anticipated, and split it by whether unemployment was above or below its own recent average when the change took effect. Against a tax rise worth one per cent of annual GDP, consumption falls by 7.3 per cent at its trough when there is slack and by 3.2 per cent when there is not, so the same rise costs roughly twice as much in a slack economy. The difference is estimated directly, with its own standard error, and is significant at eight of seventeen horizons. Consumption is also the better outcome to study: it responds more than output, on three times as many horizons, and unlike the output response it survives the removal of the single Budget on which the published UK multiplier depends. The shock series reproduces Cloyne (2013) exactly before it is extended, which settles the dating conventions the estimate relies on. The aggregate record is too thin to separate one tax from another or to detect whether pre-announcement weakens the effect, and whose spending falls is a question for household data, which the paper identifies."
+    },
+    {
+      "slug": "skills-and-moves",
+      "kind": "note",
+      "id": "AC-RN-2026-01",
+      "version": "1.0",
+      "version_date": "September 2026",
+      "cite_year": 2026,
+      "title": "Do Skills Predict Moves? A Gravity Test of Skill Similarity against Observed Occupational Transitions",
+      "title_lines": [
+        "Do Skills Predict Moves?",
+        "A Gravity Test of Skill Similarity against",
+        "Observed Occupational Transitions"
+      ],
+      "keywords": "occupational mobility, skill similarity, gravity model, Poisson pseudo-maximum likelihood, reskilling, O*NET",
+      "jel": "J62, J24, J08, C51",
+      "source_repo": "paper-skills-and-moves",
+      "source_pdf": "paper/skills-and-moves.pdf",
+      "abstract": "A whole advisory industry now tells workers and workforce boards which occupations they can move to, and it does so with a similarity score. The score is a claim about feasibility, that a person with one profile could do the other job. Whether anyone makes the move is a different claim, and the advice depends on it, yet it has not been tested at scale, although the data to test it are public and the test costs little. This note specifies the test and fixes its inputs. Observed flows between occupations come from the March supplement of the Current Population Survey, which records in one interview what a person does now and what they did last year. The model is a gravity equation estimated by Poisson pseudo-maximum likelihood on gross flows, with origin and destination effects that absorb the size of each occupation. With origin and destination effects, the level of traffic between a pair identifies the similarity elasticity; with pair effects added, similarity drops out and the wage differential is identified from the direction of that traffic alone. A flexible version of the model enters similarity in bins, locates where observed flows break, and sets the breaks against the tier thresholds used in workforce practice, 0.985, 0.970, and 0.950. The estimation waits on the bilateral transition matrix."
+    },
+    {
+      "slug": "shortage-arithmetic",
+      "kind": "note",
+      "id": "AC-RN-2026-02",
+      "version": "1.0",
+      "version_date": "September 2026",
+      "cite_year": 2026,
+      "title": "Shortage Arithmetic: The Substitution Margin an Occupational Gap Leaves Out",
+      "title_lines": [
+        "Shortage Arithmetic:",
+        "The Substitution Margin an Occupational Gap Leaves Out"
+      ],
+      "keywords": "labor shortages, occupational mobility, workforce projections, skill adjacency, occupational licensing",
+      "jel": "J23, J62, J44, J08",
+      "source_repo": "paper-shortage-arithmetic",
+      "source_pdf": "paper/shortage-arithmetic.pdf",
+      "abstract": "An occupational shortage figure is a subtraction. A projection of the positions an occupation will need to fill is set against a count of the people being trained for it, and the difference is published as the number a state is short. The subtraction assumes something that is never written down: that a position in the occupation can be filled only by a person newly trained for exactly that occupation, so that nobody arrives from anywhere else. This note writes the correction down and measures its first term. For five healthcare occupations in North Carolina, arrivals from another occupation at the rate the national flow account observes come to between 49 and 158 per cent of the annual openings the state projection expects. Those arrivals are gross and are matched by departures of similar size, so the figures cannot be read as a shortage half the size of its headline. They establish instead that movement from adjacent occupations supplies these occupations on a scale comparable to the openings themselves, and that a supply count consisting of graduates counts the smallest inflow. The correction reduces a raw gap, tier by tier of skill adjacency, by the workers the adjacent occupations can release into it, and every term is a measured quantity. Its adjacency terms wait on the bilateral transition matrix."
+    },
+    {
+      "slug": "exposure-measures",
+      "kind": "note",
+      "id": "AC-RN-2026-03",
+      "version": "1.0",
+      "version_date": "September 2026",
+      "cite_year": 2026,
+      "title": "Does the Choice of AI-Exposure Measure Matter? A Dollar-Weighted Comparison, Specified",
+      "title_lines": [
+        "Does the Choice of AI-Exposure Measure Matter?",
+        "A Dollar-Weighted Comparison, Specified"
+      ],
+      "keywords": "artificial intelligence, AI exposure, measurement, occupations, wage bill",
+      "jel": "J24, O33, J31, C81",
+      "source_repo": "paper-exposure-measures",
+      "source_pdf": "paper/exposure-measures.pdf",
+      "abstract": "At least six serious measures score how exposed each occupation is to artificial intelligence, and a study that reports the share of jobs at risk picks one of them, usually without saying why. If the measures agree, the choice is harmless. If they disagree, then every ranking of at-risk occupations, every regional exposure map, and every policy brief built on one of them reflects the instrument as well as the labour market, and no reader can tell by how much. This note specifies the comparison that policy needs and fixes its statistic. Rank correlations, the usual comparison, weight an occupation of five hundred people and one of three million equally, and they are dominated by the tails, where every measure agrees that telemarketers are exposed and roofers are not. Policy questions are posed on people and on dollars, and they are posed in the middle of the distribution, where the marginal occupation is classified one way or the other. The statistic is therefore the share of the wage bill on which two measures disagree about whether an occupation is exposed, at a common cut, together with the agreement rate by decile of the pooled ranking. The design holds everything but the measure fixed. The readings that decide whether the choice matters are written down before the numbers are, and the computation is not yet run."
     }
   ]
 }
