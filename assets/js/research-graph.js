@@ -90,7 +90,7 @@
       title: 'NED dashboard: California regional analysis',
       plain: 'This applies the three-pillar framework to a real place, California, which tests whether the framework can be filled with data that exists. It starts from what people in each region say decides whether a household can get ahead and stay there, and then checks which of those factors can be measured well enough to compare one region with another.',
       abs: 'An interactive assessment tool covering California’s economic regions along dimensions selected to represent households’ enablers of equitable and durable development, rather than the standard growth and employment aggregates. Indicator selection proceeds from practitioner accounts, gathered from municipal government, community colleges, workforce boards and employers, and is then constrained to what is measurable at a consistent regional grain, which makes the gap between what practitioners identify as decisive and what the statistical system currently records an explicit output of the exercise.',
-      links: [['Launch the dashboard', 'https://ned-dashboard.onrender.com']]
+      links: [['Launch the dashboard', 'https://conway1521.github.io/NEDdashboard/']]
     },
 
     /* ---------------- labor markets ---------------- */
