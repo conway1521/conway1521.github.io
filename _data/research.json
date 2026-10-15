@@ -1,0 +1,655 @@
+{
+ "areas": [
+  {
+   "key": "labor",
+   "title": "Labor markets",
+   "q": "Where do an occupation’s workers come from?",
+   "overview": "An occupation short of people can gain them in four ways. More can be trained, more can move over from another occupation, more can move in from another state, or fewer of those already there can leave. Every workforce plan bets on one of these, usually training, without knowing how large each is. Occupation is among the least reliable variables in the surveys, and the private data that can count moves cannot be checked, so I build each route as a public measure, test it against the official statistics, and then ask the question a planner would act on. The program began in 2025. Papers on leaving work and on training outcomes are in progress, and a stock-flow account for each occupation will later bring the four routes together."
+  },
+  {
+   "key": "ai",
+   "title": "AI and work",
+   "q": "What is AI doing to the work employers ask for?",
+   "overview": "Claims about AI and jobs are made at one of three levels, occupations, tasks or skills, and most do not say which. I write the labor market as one wage bill at those three levels, place each exposure measure at the level where it was collected, and ask what each can identify. The program then follows AI into what employers ask for and into the activities it could do but has not yet entered, judging every change against what ordinary years look like. The program began in 2025. Papers on measurement limits, on what employers ask for and on activities at risk are in progress."
+  },
+  {
+   "key": "dev",
+   "title": "Regional development",
+   "q": "Why do Europe’s lagging regions stay behind?",
+   "overview": "My PhD treats a European region as an ecosystem of three domains, place, people and economy, inside its national system. The first paper sets out the framework and its propositions, the second tests them across the euro crisis and the pandemic, and the third fits a model of the three domains to 210 regions from 2000 to 2023 and asks what it implies for cohesion policy."
+  },
+  {
+   "key": "macro",
+   "title": "Macroeconomics",
+   "q": "UK tax policy, and wellbeing inside a macroeconomic model.",
+   "overview": "Two papers on UK tax policy, one on how far ahead tax measures are announced and how that has changed since 1945, the other on when a tax rise costs the least. My master’s paper put a household’s social life inside a macroeconomic model, and a <a href=\"https://conway1521.github.io/sage-bewley/\" target=\"_blank\" rel=\"noopener\">notebook</a> lets anyone run it. Since 2023 I have been building it into a modular model with four dimensions of wellbeing, each sized by published evidence, and papers applying it to France and to Europe’s regions are in progress."
+  },
+  {
+   "key": "ds",
+   "title": "Data science",
+   "q": "Tools for reading occupations and the economy from text.",
+   "overview": "Since 2025 I have kept a set of smaller notes on the measurement tools the other programs rely on: coding occupations from text, a taxonomy of roles finer than the federal codes, and labor-market signals read from the Federal Reserve’s Beige Book with language models. They are in progress and appear on the graph above."
+  }
+ ],
+ "nodes": [
+  {
+   "id": "flows",
+   "area": "labor",
+   "k": "wp",
+   "s": "Where workers come from",
+   "title": "Where workers come from",
+   "kind": "Working paper",
+   "date": "Begun 2025 · working paper, November 2025, revised September 2026",
+   "ref": "AC-WP-2025-01 · Version 1.1",
+   "plain": "States fund nursing school places, teacher preparation and apprenticeships on the assumption that an occupation short of people is short of graduates, and that assumption has never been checked against a full account of where an occupation’s workers come from. Building that account shows that training is the smallest inflow. Occupations are refilled mostly by people moving in from other occupations, and people make those moves at all ages. Most of the movement also cancels out, and the change in an occupation’s size is about a tenth of the flows in and out of it. That is why raising arrivals changes its size much less than one would expect.",
+   "abs": "Workforce policy in the United States concentrates on training, on the understanding that an occupation short of people is an occupation short of graduates. This paper builds the full account of where an occupation’s people come from and where they go, for 230 occupations, annually from 2009 to 2025 and by age band. It uses a single survey in which each person is counted once on each side, with standard errors from the 160 replicate weights the Census Bureau publishes. Arrivals from other occupations run four to twelve times arrivals from education, exceed all arrivals from outside employment in 99 percent of occupations, and occur at every age: lateral arrivals aged thirty-five and over, taken on their own, outnumber every arrival from education by nearly seven to one. Most of that movement cancels, so the change in occupation sizes that lateral movement produces is about a tenth of the gross flow. The account depends on a measurement result established first. Two independent codings of a job the survey records as unchanged disagree in 48.1 percent of cases at the detailed level, so occupational mobility cannot be measured in this survey by linking a person across interviews. The within-interview design, whose two codes share an error that cancels in the difference, is the one that measures it.",
+   "math": [
+    "Workers now = held it last year + arrivals from education, other non-work and other occupations − departures to other occupations and out of work"
+   ],
+   "when": "November 2025, revised September 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/flows-engine.pdf"
+    }
+   ],
+   "download": "/assets/papers/flows-engine.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "migration",
+   "area": "labor",
+   "k": "wp",
+   "s": "Interstate migration",
+   "title": "Where occupations move",
+   "kind": "Working paper",
+   "date": "Begun 2025 · working paper, March 2026, revised September 2026",
+   "ref": "AC-WP-2026-02 · Version 1.1",
+   "plain": "Interstate migration is usually measured for people and rarely for occupations, even though most of the rules that make moving hard are tied to the job. This paper builds state-to-state flows by occupation from 59.8 million census records and measures what share of each occupation a state brings in from other states each year. The share varies about fifteenfold, from tool and die makers to sailors. Licensing, the barrier most often blamed for low mobility, explains very little of it. Physicians, who need a license in each state, are near the top of the ranking, and postal workers are near the bottom. The people who arrive are always younger than the workforce they join. Flows into a state that pays ten percent more are about one percent higher, while distance counts six times as much, so any pay premium a state is likely to offer changes its intake by only a few percent. The gravity model is given no information about how large each occupation is in each state. Where a state draws far more of an occupation than the model predicts, the flows are picking up a concentration of that occupation by themselves, and that measure agrees with an independent employer survey.",
+   "abs": "Interstate migration in the United States has been measured for persons and rarely for occupations, although most of the rules that make moving difficult attach to the job. This paper builds bilateral interstate migration flows by occupation from nineteen vintages of American Community Survey microdata, 59.8 million person records across 51 jurisdictions and 475 harmonized occupation codes, and measures the share of each state’s occupational workforce arriving from another state within the year, with design-based standard errors. That share varies close to fifteenfold across occupations, from tool and die makers to sailors, and licensure explains almost none of the ordering. Arrivals are younger than the workforce they join in every occupation measured, and arrivals and leavers have the same mean age cell by cell, both about seven years younger than the incumbents. A Poisson pseudo-maximum-likelihood gravity model with origin-year, destination-year, occupation-year, and state-pair effects puts the wage elasticity of flows at 0.114 and the distance elasticity at −0.72, some six times as large. The benchmark omits employment by state and occupation, so its residual recovers occupational concentration from the flows alone. The concentrations hold their position across two decades and agree with the location quotient in an independent establishment survey, while three pre-specified tests on wage growth return tightly estimated nulls.",
+   "math": [
+    "E[ flowₒ→d^kt ] = exp( η ln(w_dkt/w_okt) + β ln distₒd + λ contigₒd + φₒt + ψ_dt + θ_kt + μₒd )"
+   ],
+   "when": "March 2026, revised September 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/occupation-migration.pdf"
+    }
+   ],
+   "download": "/assets/papers/occupation-migration.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "leaving",
+   "area": "labor",
+   "k": "draft",
+   "s": "Leaving work",
+   "title": "Leaving work: realized and official rates of leaving the labor force by occupation",
+   "kind": "Paper in progress",
+   "date": "Begun 2025 · in progress",
+   "plain": "A hospital, a school district or a state agency that plans for an occupation has to assume how many of its people will leave work. The official rate is predicted from a model estimated on broad occupational groups, because samples for detailed occupations are small. This paper asks how far those predicted rates agree with what happens in detailed occupations, and what last year’s holders of an occupation are doing a year on.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "training",
+   "area": "labor",
+   "k": "draft",
+   "s": "Training outcomes",
+   "title": "Do publicly funded trainees work in the field they trained for?",
+   "kind": "Paper in progress",
+   "date": "Begun 2026 · in progress",
+   "plain": "The federal workforce system pays for training in a named occupation, and its public records report whether trainees found work but not whether the work is in the field they trained for. This paper builds a match measure from public records, judges it against what chance would produce, and asks whether training buys a better job. The work on how far trainees move from their previous occupation is folded into it.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "stockflow",
+   "area": "labor",
+   "k": "note",
+   "s": "Stock-flow account",
+   "title": "A stock-flow account for each occupation",
+   "kind": "Planned",
+   "date": "Planned",
+   "plain": "The four routes into an occupation come together here. Every inflow (from school, from another occupation, from another state, back into work) and every outflow is measured, and the account tests whether the flows add up to the observed change in the occupation’s size. It answers the question the program starts from: how much of an occupation’s supply comes by each route.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "moves",
+   "area": "labor",
+   "k": "note",
+   "s": "Do skills predict moves?",
+   "title": "Do skills predict moves?",
+   "kind": "Research note",
+   "date": "Begun 2025 · research note, January 2026, revised September 2026",
+   "ref": "AC-RN-2026-01 · Version 1.0",
+   "plain": "A whole industry now advises workers and workforce boards with similarity scores. Two occupations whose skill profiles overlap at 98.5 percent are presented as a few months of retraining apart, and a machinist is steered toward industrial maintenance. A high score says a move is possible, but it does not show that workers make it. If the scores are wrong, the advice sends people toward jobs they will not get and public money after them. The data to check this is public, and the check is cheap. The paper sets up the test as a gravity model on the occupation changes that the CPS March supplement records within a single interview, the only design in that survey that separates real moves from coding noise. The model separates how much traffic flows between two occupations, which similarity should explain, from its direction, which the wage difference should explain, and it will compare the field’s thresholds at 0.985, 0.970 and 0.950 with where the flows drop off.",
+   "abs": "A whole advisory industry now tells workers and workforce boards which occupations they can move to, and it does so with a similarity score. The score is a claim about feasibility, that a person with one profile could do the other job. Whether anyone makes the move is a different claim, and the advice depends on it, yet it has not been tested at scale, although the data to test it are public and the test costs little. This paper specifies the test and fixes its inputs. Observed flows between occupations come from the March supplement of the Current Population Survey, which records in one interview what a person does now and what they did last year. Two independent codings of a job the survey itself records as unchanged disagree 48.1 percent of the time at the detailed level, so a matrix linked across interviews measures coding disagreement. The within-interview design cancels that error, and it is the one used here. Similarity is a composite over the skills, knowledge, and work activities the Occupational Information Network records, held as 798,342 occupation pairs above a similarity of 0.5, and the tier thresholds used in workforce practice sit at 0.985, 0.970, and 0.950. The model is a gravity equation estimated by Poisson pseudo-maximum likelihood on gross flows, with origin and destination effects that absorb the size of each occupation. A flexible version of the model enters similarity in bins instead of as one elasticity, locates where observed flows break, and sets the breaks against the three thresholds in use. Licensing is read from the residuals rather than entered as a regressor: the pairs that similarity places close and that nobody is observed crossing are a map of what the score misses, and the residuals show whether that map concentrates in licensed occupations.",
+   "math": [
+    "E[flowᵢ→ⱼ] = exp(η ln simᵢⱼ + β ln(wⱼ/wᵢ) + αᵢ + δⱼ), with symmetric pair effects added to identify β from direction alone"
+   ],
+   "when": "January 2026, revised September 2026",
+   "links": [
+    {
+     "label": "Download the note",
+     "href": "/assets/papers/skills-and-moves.pdf"
+    }
+   ],
+   "download": "/assets/papers/skills-and-moves.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "shortage",
+   "area": "labor",
+   "k": "note",
+   "s": "Shortage arithmetic",
+   "title": "Shortage arithmetic",
+   "kind": "Research note",
+   "date": "Begun 2025 · research note, March 2026, revised September 2026",
+   "ref": "AC-RN-2026-02 · Version 1.0",
+   "plain": "Headline shortage figures subtract the supply for an occupation from the demand for that same occupation, as if every opening had to be filled by someone newly trained for it. The occupational flow account shows that in every occupation it covers, more people arrive from other occupations than from education, by a median factor of 19. For five healthcare occupations in North Carolina, arrivals from other occupations at the observed rate equal 49 to 158 percent of the openings the state projects each year, so the channel the standard calculation leaves out is comparable in size to the openings themselves. The paper writes down the correction tier by tier of skill adjacency, with every term measured and capped by history, and infers licensing barriers from the occupation pairs that no one crosses.",
+   "abs": "An occupational shortage figure is a subtraction. A projection of the positions an occupation will need to fill is set against a count of the people being trained for it, and the difference is published as the number a state is short. The subtraction assumes something that is never written down: that a position in the occupation can be filled only by a person newly trained for exactly that occupation, so that nobody arrives from anywhere else. The occupational flow account built in the companion paper (Conway, 2025) measures where an occupation’s people come from, and in every one of the 172 occupations it covers, arrivals from another occupation exceed arrivals from education, by a median factor of 19. This paper writes the correction down and measures its first term. For five healthcare occupations in North Carolina, arrivals from another occupation at the rate the national account observes come to between 49 and 158 percent of the annual openings the state projection expects. Those arrivals are gross and are matched by departures of similar size, and the projection already nets part of that movement out of its replacement figure, so the table cannot be read as a shortage half the size of its headline. The table establishes instead that movement from adjacent occupations supplies these occupations on a scale comparable to the openings themselves, and that a supply count consisting of graduates counts the smallest inflow. A raw gap is reduced, tier by tier of skill adjacency, by the workers the adjacent occupations can release into it. Licensing is a reading of the results rather than a parameter.",
+   "math": [
+    "G* = G − Σₜ min( Σⱼ∈ₜ mⱼᵢ Sⱼ , m̄ₜᵢ Eᵢ ), the raw gap less what each adjacency tier releases at observed transition rates, capped by history"
+   ],
+   "when": "March 2026, revised September 2026",
+   "links": [
+    {
+     "label": "Download the note",
+     "href": "/assets/papers/shortage-arithmetic.pdf"
+    }
+   ],
+   "download": "/assets/papers/shortage-arithmetic.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "skillsdna",
+   "area": "ai",
+   "k": "wp",
+   "s": "AI exposure at three levels",
+   "title": "AI exposure at three levels",
+   "kind": "Working paper",
+   "date": "Begun 2025 · working paper, May 2026, revised September 2026",
+   "ref": "AC-WP-2026-04 · Version 1.1",
+   "plain": "A labor market can be described three ways at once: by what each occupation is paid, by the tasks each occupation performs, and by the skills those tasks use. The three descriptions have to add up to the same wage bill, but they cannot all be tested the same way. Wages are observed once per occupation, so a description with more tasks than occupations will always fit the data, while one with fewer skills than occupations can be rejected. Each research team that has scored AI exposure scored one of these three levels. This paper places each score at the level where it was collected, and finds that the capability measures are one measure under three names. It then tests realized wages and employment through 2025. No skill group has shifted beyond its normal year-to-year variation, and every break in the series comes with the pandemic, two years before generative AI. So far generative AI has not shown up in the number of jobs or in what they pay, and the paper sets out the test on job postings that should pick it up first.",
+   "abs": "Measures of exposure to generative artificial intelligence are collected at three levels of the labor market, occupations, tasks, and skills, and compared as though they described one object. This paper writes the labor market as one wage bill at three levels and counts what each can identify: 829 observed wages against an identity, against 17,383 task prices that no wage data can contradict, and against 25 skill prices that can. Which quantities in this literature are testable therefore follows from how many statements the analysts of the Occupational Information Network wrote at each level. The leading capability measures are, on inspection, one construct under three names. Converting the Eloundou task ratings to abilities reproduces the Felten ability scores in the right order across AI applications, the Srinivasan automation score is the Eloundou construction re-run on a later release, and a quadratic in automation explains 77 percent of augmentation. The skill layer supports a structure of about twenty-five dimensions, which explains occupational wages at a cross-validated 0.648 in the Network’s own named groups, and whose loadings are informative as changes over time but uninformative as levels. On a balanced panel of 693 occupations from 2012 to 2025, nothing in realized wages or employment has moved beyond ordinary volatility since language models were released. No skill group moved by more than 1.51 times its own year-to-year variation, and every deviation from the pre-2020 path begins with the pandemic. If the technology is changing what employers want, the change should appear in job postings before it appears in employment, and the paper specifies that test on the task composition of postings.",
+   "math": [
+    "Y = Σₒ Eₒ wₒ, the wage bill as an identity over 829 occupations",
+    "wₒ = Σᵢ βₒᵢ pᵢ, an occupation’s wage as task shares times 17,383 task prices, never identified",
+    "pᵢ = Σₖ γᵢₖ πₖ, a task’s price as skill content times 25 skill prices, which can fail"
+   ],
+   "when": "May 2026, revised September 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/skills-dna.pdf"
+    },
+    {
+     "label": "The production system",
+     "href": "/portfolio/skills-framework/"
+    }
+   ],
+   "download": "/assets/papers/skills-dna.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "limits",
+   "area": "ai",
+   "k": "draft",
+   "s": "Measurement limits",
+   "title": "Measurement limits: what standard task data can identify",
+   "kind": "Paper in progress",
+   "date": "Begun 2025 · in progress",
+   "plain": "Most research on AI and work rests on the task data of the Occupational Information Network. This paper asks which quantities those data can support: which can be contradicted by wages and which cannot, and where conventional inference reports change that is not there.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "employers",
+   "area": "ai",
+   "k": "draft",
+   "s": "What employers ask for",
+   "title": "What employers ask for",
+   "kind": "Paper in progress",
+   "date": "Begun 2026 · in progress",
+   "plain": "Is AI changing what employers ask for, and does that change lead pay and jobs? A change in demand should appear in job ads before it appears in employment. This paper judges the content of ads against what ordinary years look like, separates exposure to AI from the business cycle and from the wider contraction in technology hiring, and tests whether ad content predicts pay and employment beyond ad volume.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "atrisk",
+   "area": "ai",
+   "k": "draft",
+   "s": "Activities at risk",
+   "title": "Activities at risk",
+   "kind": "Paper in progress",
+   "date": "Begun 2026 · in progress",
+   "plain": "Where could AI enter work but has not yet? This paper works at the level of activities rather than jobs or skills, maps the activities AI could do against those the usage data show it doing, and values the difference in wages. Its predictions about where AI enters next are registered before the data that test them arrive.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "exposure",
+   "area": "ai",
+   "k": "note",
+   "s": "AI exposure measures",
+   "title": "Does the choice of AI-exposure measure matter?",
+   "kind": "Research note",
+   "date": "Begun 2025 · research note, June 2026, revised September 2026",
+   "ref": "AC-RN-2026-03 · Version 1.0",
+   "plain": "At least six serious measures score how exposed each occupation is to AI, and studies that report a share of jobs at risk usually pick one without saying why. If the measures disagree, any ranking of at-risk occupations reflects the choice of measure as well as the labor market. The usual comparison is a rank correlation, which weights an occupation of five hundred people the same as one of three million and is driven by the extremes, where all the measures agree. This note specifies a comparison of the measures by the wage dollars they classify as exposed, at a common cutoff and decile by decile, holding everything else fixed, and states in advance what each result would mean.",
+   "abs": "At least six serious measures score how exposed each occupation is to artificial intelligence, and a study that reports the share of jobs at risk picks one of them, usually without saying why. If the measures agree, the choice is harmless. If they disagree, then every ranking of at-risk occupations, every regional exposure map, and every policy brief built on one of them reflects the instrument as well as the labor market, and no reader can tell by how much. This note specifies the comparison that policy needs and fixes its statistic. Rank correlations, the usual comparison, weight an occupation of five hundred people and one of three million equally, and they are dominated by the tails, where every measure agrees that telemarketers are exposed and roofers are not. Policy questions are posed on people and on dollars, and they are posed in the middle of the distribution, where the marginal occupation is classified one way or the other. The statistic is therefore the share of the wage bill on which two measures disagree about whether an occupation is exposed, at a common cut, together with the agreement rate by decile of the pooled ranking, which separates the extremes from the interior. The design holds population, occupational base, vintage, and every downstream computation fixed and varies only the measure, which is possible because the model built alongside the companion paper takes each measure as an interchangeable input. The readings that decide whether the choice matters are written down before the numbers are.",
+   "math": [
+    "Dₐᵦ(q) = Σₒ ωₒ |1[o ∈ Xₐ(q)] − 1[o ∈ Xᵦ(q)]|, the share of the wage bill one measure calls exposed and the other does not"
+   ],
+   "when": "June 2026, revised September 2026",
+   "links": [
+    {
+     "label": "Download the note",
+     "href": "/assets/papers/exposure-measures.pdf"
+    },
+    {
+     "label": "The production system",
+     "href": "/portfolio/skills-framework/"
+    }
+   ],
+   "download": "/assets/papers/exposure-measures.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "skillprices",
+   "area": "ai",
+   "k": "note",
+   "s": "Skill prices after the release",
+   "title": "Skill prices after the release",
+   "kind": "Research note",
+   "date": "Begun 2026 · in progress",
+   "plain": "If generative AI had changed what skills earn or who is employed by 2025, the official occupational wage and employment statistics should show it. A recent task-based projection expects the returns to social and manual skills to rise and the return to analytical skills to fall. This note tests that projection on realized wages and employment from 2012 to 2025, with the skill groups fixed before any outcome was examined.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "silentai",
+   "area": "ai",
+   "k": "note",
+   "s": "Silent AI",
+   "title": "Silent AI",
+   "kind": "Research note",
+   "date": "Begun 2026 · in progress",
+   "plain": "From 2022 the vendors of software many jobs already use began to build generative AI into it, so a job ad that asks for a spreadsheet program can read the same in 2021 and in 2025 while the program it asks for now carries AI. This note asks whether occupations whose software gained AI in this silent way afterwards begin to ask for AI explicitly in their ads. The test was registered before it was run.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "onettech",
+   "area": "ai",
+   "k": "note",
+   "s": "O*NET technology record",
+   "title": "The O*NET technology record",
+   "kind": "Research note",
+   "date": "Begun 2026 · in progress",
+   "plain": "O*NET’s technology lists are the main official record of the software each occupation uses. If AI software has entered work since 2022, this record is one place it could appear. This note describes how far it has, release by release.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "p1",
+   "area": "dev",
+   "k": "wp",
+   "s": "Ecosystem framework",
+   "title": "A regional development ecosystem framework: place, people and economy in European regions and their national systems",
+   "kind": "Working paper",
+   "date": "December 2024, revised October 2026",
+   "plain": "About 1.5 trillion euros of European cohesion funding has been spent since 1989, and the map of lagging regions looks much as it did. The gap between what aggregate indicators report and what people in those regions experience has also grown. People working in community organizations, community colleges and workforce boards already treat a region’s places, people and economy as connected, because in their daily work they are, but the research behind their funding mostly studies one pair at a time. This paper assembles those pairwise findings into one system of three pillars, names the six pathways between them, and derives five propositions about how a region should behave in calm years and under a shock, which the next two papers test and then fit.",
+   "abs": "In this paper I propose a framework for understanding regional economic development as an ecosystem, in which three domains, Place-based Conditions, Human and Social Capital and Economic Activity, act on one another and do not add up as separate factors. European regional disparities have persisted despite roughly 1.5 trillion euro of cohesion funding since 1989. A gap has also grown between what aggregate indicators report and what people in those regions experience. My premise is that neither is well explained by approaches that treat infrastructure, human capital and economic performance one at a time. A substantial literature already establishes that these domains interact, one pair at a time, and several measurement traditions already score regions on many dimensions side by side. However, neither models the system as a whole. The framework draws these strands together by naming the enabling, mediating and feedback mechanisms that run between the three pillars and giving each its precedent in the literature, and from them I derive five propositions about how regions should behave in calm conditions and under a shock, which the empirical companion tests on European NUTS 2 data. The framework is presented as a dynamic system, in which regions settle into stable but shiftable configurations. Its unit is the region inside its national system, since the level a region settles at is set largely by its country, and the regional part is the balance between the pillars and the speed at which an imbalance is corrected. In the companion, the euro crisis, which entered through the economy, pulled the economic pillar away from the social and territorial ones, which is the pattern the framework implies. The pandemic, by contrast, arrived through a different channel and did not separate them. This paper is the first of a sequence. It is followed by the empirical test and by a linear state-space model of the ecosystem, fitted to an annual panel of European regions from 2000 to 2023 in the form ecologists use to estimate a community matrix from time series.",
+   "when": "December 2024, revised October 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/ecosystem-framework.pdf"
+    },
+    {
+     "label": "Slides",
+     "href": "/assets/papers/three-pillars-slides.pdf"
+    }
+   ],
+   "download": "/assets/papers/ecosystem-framework.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "p2",
+   "area": "dev",
+   "k": "wp",
+   "s": "Two crises, one structure",
+   "title": "Two crises, one structure: coupling and scale in European regional ecosystems",
+   "kind": "Working paper",
+   "date": "September 2025, revised October 2026",
+   "plain": "If a region’s development were a single quantity, its parts would always move together. In calm years they almost do, and one factor fits thirty-five regional indicators better than three. The two shocks in the panel then behave differently. The euro crisis, which entered through the economy, pulled the Mediterranean economy away from its people and places and left it displaced a decade later, while the pandemic moved no bloc by much. Most of the gradient between regions is a gradient between countries, and within countries anti-establishment voting follows a region’s income level more than how long it has been stuck.",
+   "abs": "In this paper I test the ecosystem framework of the conceptual companion, which organises regional development around three interacting pillars: Place-based Conditions, Human and Social Capital and Economic Activity. I use a cross-section of thirty-five indicators for 294 NUTS 2 regions in 2017 to 2019 and an annual panel of 152 regions in 23 countries from 2008 to 2023. Development is strongly organised in space, a single general factor fits the indicators better than three, and regions sort into four stable tiers, with between two thirds and nine tenths of the gradient lying between countries. The two shocks in the panel behave differently. Between 2008 and 2013 Mediterranean regions fell 0.52 standard deviations in relative position, with the economic pillar taking almost all of the fall and still displaced a decade later, whereas in the pandemic years no bloc moved by more than 0.18 and the South gained. The regions worst hit in one episode were no more likely than chance to be worst hit in the other. The correlation between the people and economy composites has declined since 2011, a slide that began with the recovery from the euro crisis. A development-trap index built to the standard specification agrees with the two-shock account by bloc but bears no relation to the tiers. Within countries anti-establishment voting follows a region's level, chiefly its income, at the last election and more weakly at the one before, and bears no relation to its years in the trap, with both measured before each vote. A partial-correlation network over the indicators shows that, in this panel, most of the association behind the pairwise relations reported in the literature lies on one shared development dimension. The analysis is descriptive, and mechanisms are left to the modelling companion.",
+   "when": "September 2025, revised October 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/two-crises-one-structure.pdf"
+    },
+    {
+     "label": "Supplement",
+     "href": "/assets/papers/two-crises-one-structure-supplement.pdf"
+    }
+   ],
+   "download": "/assets/papers/two-crises-one-structure.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "p3",
+   "area": "dev",
+   "k": "wp",
+   "s": "Slow ecosystems",
+   "title": "Slow ecosystems: regional development, national systems and the limits of cohesion policy in Europe, 2000 to 2023",
+   "kind": "Working paper",
+   "date": "October 2026",
+   "plain": "The third paper estimates the dynamics the first two could only describe, fitting a model of the three domains to 210 regions over 24 years in the form ecologists use to estimate a community matrix. Everywhere the system has one slow mode and two fast ones. The slow mode is a region’s level, set mostly by its country, and less than half of a gap in level closes within a working life. Imbalances between the domains are corrected within a generation, faster where countries spend more on education and on people of working age. Cohesion money spread thinly, in seven-year cycles, to the regions least able to absorb it, could not have moved the regions it exists for, and the paper sets out what a policy fitting the system would look like.",
+   "abs": "Europe's regions have not converged in thirty years of cohesion policy, and the regions left behind are now where anti-system parties do best. Treating a region as an ecosystem of place, people and economy, I estimate its dynamics on 210 regions in 23 countries from 2000 to 2023 and test cohesion policy against them. Everywhere the system has one slow mode and two fast ones. The slow mode is a region's level, set mostly by the country, with a half-life of fifty-five to seventy years, and a century of regional income data agrees that less than half of a gap in level closes within a working life. The fast modes, imbalances between domains, are corrected within a generation. People lead the economy in the South, the economy leads people in the East, and in struggling regions the economy does not feed people at all. An economy hit alone, as in the euro crisis, keeps 52 per cent of its loss after twenty-five years in the South against 32 per cent in the East. Under maintained conditions about a seventh of regions stay in Europe's bottom quarter, seven of them under every assumption tried. Cohesion money, spread at an intensity that buys no relative gain, to regions that on the causal evidence absorb it least, in cycles far shorter than the decades the system takes to respond, could not have moved them. A policy fitting the system would be concentrated, sustained beyond a cycle and aimed at capacity where the economy cannot yet take the money.",
+   "when": "October 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/slow-ecosystems.pdf"
+    }
+   ],
+   "download": "/assets/papers/slow-ecosystems.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "antic",
+   "area": "macro",
+   "k": "wp",
+   "s": "Fiscal anticipation",
+   "title": "The anticipation content of fiscal policy: UK tax measures, 1945–2019",
+   "kind": "Working paper",
+   "sub": "Fiscal policy",
+   "date": "December 2021, revised September 2026",
+   "ref": "AC-WP-2021-01 · Version 2.0",
+   "plain": "A tax change is announced on one date and takes effect on another. In Britain, the share of tax changes announced more than four months ahead has roughly quadrupled since the postwar decades, so most of them have been public for months by the time they take effect. The standard way of measuring the effect of tax policy treats a change as news on the day it takes effect. That was a fair approximation when most changes arrived that way, and it no longer is. The gap also follows a pattern. It depends on which tax is changed, where the Budget falls in the calendar, and to a lesser degree on whether an election is coming. Tax rises are about four times more likely than cuts to take effect after an election.",
+   "abs": "Narrative tax shocks are dated by implementation, and the resulting series are pooled across decades. Using 2,252 UK tax measures announced between 1945 and 2019, I show that the interval between announcement and implementation has changed enough for such a series to mix two economically different objects. The share of the tax impulse announced more than 120 days before taking effect rises from 0.18 in 1945–79 to 0.70 since 2000, and the unanticipated component of the quarterly impulse falls roughly fivefold. Computing the same quantity from the century-long dataset of Cloyne et al. (2025), on their coding and their threshold, reproduces the series and extends it back to 0.02 in 1920–44. Its length is also systematic. Within the same Budget, National Insurance changes are 39 percentage points more likely than excise duties to arrive with long notice, the fiscal-year calendar produces long notice only when the Budget falls late in the year, and tax rises are four times more likely than cuts to take effect after an election. The rise dates to the early 1990s, when the Budget process was reformed in the name of scrutiny and predictability, and its macroeconomic consequences were never assessed; the crises of the period do not appear to have shortened it.",
+   "when": "December 2021, revised September 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/fiscal-anticipation.pdf"
+    }
+   ],
+   "download": "/assets/papers/fiscal-anticipation.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "fiscal",
+   "area": "macro",
+   "k": "wp",
+   "s": "When to raise taxes",
+   "title": "When to raise taxes: state dependence in the UK tax multiplier",
+   "kind": "Working paper",
+   "sub": "Fiscal policy",
+   "date": "Working paper, 2023, revised August 2026",
+   "ref": "AC-WP-2026-06 · Version 1.0",
+   "plain": "Governments choose when to raise taxes, but the research they rely on mostly reports one average number for the effect of a tax change. Using a century of UK narrative tax measures and quarterly household consumption from 1955, the paper finds that the same unanticipated tax rise costs about twice as much when the economy has slack. Consumption falls 7.3 percent at its trough, against 3.2 percent when there is no slack, and the difference is estimated directly with its own standard error. The paper uses consumption as the outcome because it responds more than output, and because the output result depends on a single 1979 Budget whose coded value changed fourfold between two versions of the same dataset. The aggregate data cannot yet show whose spending falls, and the paper names the household data that could.",
+   "abs": "Using UK narrative tax measures from 1918 to 2018 and quarterly household consumption from 1955, I estimate the response of consumption to tax changes that were not anticipated, and split it by whether unemployment was above or below its own recent average when the change took effect. Against a tax rise worth one percent of annual GDP, consumption falls by 7.3 percent at its trough when there is slack and by 3.2 percent when there is not, so the same rise costs roughly twice as much in a slack economy. The difference is estimated directly, with its own standard error, and is significant at eight of seventeen horizons. Consumption is also the better outcome to study: it responds more than output, on three times as many horizons, and unlike the output response it survives the removal of the single Budget on which the published UK multiplier depends. The shock series reproduces Cloyne (2013) exactly before it is extended, which settles the dating conventions the estimate relies on. The aggregate record is too thin to separate one tax from another or to detect whether pre-announcement weakens the effect, and whose spending falls is a question for household data, which the paper identifies.",
+   "when": "2023, revised August 2026",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/when-to-raise-taxes.pdf"
+    }
+   ],
+   "download": "/assets/papers/when-to-raise-taxes.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "sage",
+   "area": "macro",
+   "k": "pub",
+   "s": "Wellbeing and macroeconomics",
+   "title": "Wellbeing and macroeconomics: a SAGE approach",
+   "kind": "Published",
+   "sub": "Wellbeing and macroeconomics",
+   "date": "September 2020",
+   "ref": "Oxford Social Macroeconomics series, 2021",
+   "plain": "Standard macroeconomic models give a household two choices, consume or rest, and little else it can want. That is part of why they keep being surprised by how people behave in a crisis. In this model a household manages its means and its needs within an economy, a set of social relationships and a physical place, so the support people draw on when a shock hits is part of the model. That changes how a household responds to a shock and what counts as recovering from it. A recovery that restores income but leaves the household’s social ties damaged no longer counts as a full recovery.",
+   "abs": "The aim of this project is to develop an economic model that improves on existing ones in capturing wellbeing outcomes stemming from economic shocks. The premise is that personal welfare depends on more than just preference satisfaction and that the other determinants, which are affected by economic choices may not be captured by standard models. A theoretical approach for representing wellbeing more completely, the SAGE framework, is presented as the basis for this analysis and adapted to a Bewley-class model. Some parameters are derived from data while others are calibrated in an equilibrium state, and then a modest productivity shock is simulated to understand how groups in different wealth categories respond and what the wellbeing implications are. While the model needs further development, the results follow some general patterns observed in economic data and offer insights into behavior of the different wealth groups, including a decoupling of personal welfare dimensions following a productivity shock. In general, the introduction of wellbeing into the model shows promise for future development that better encompasses the motivations of groups and their responses to changes in their economic environments.",
+   "when": "September 2020",
+   "links": [
+    {
+     "label": "Download the paper",
+     "href": "/assets/papers/wellbeing-macroeconomics.pdf"
+    },
+    {
+     "label": "Oxford series",
+     "href": "https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach"
+    },
+    {
+     "label": "QuantEcon notebook",
+     "href": "https://conway1521.github.io/sage-bewley/"
+    }
+   ],
+   "download": "/assets/papers/wellbeing-macroeconomics.pdf",
+   "download_label": "Read"
+  },
+  {
+   "id": "sagetool",
+   "area": "macro",
+   "k": "note",
+   "s": "SAGE notebook",
+   "title": "Wellbeing and macroeconomics notebook",
+   "kind": "Research note",
+   "sub": "Wellbeing and macroeconomics",
+   "date": "Finished 2024, updated 2026",
+   "plain": "The paper argues that a household’s social life belongs inside the model. The notebook lets anyone test that claim by turning the social terms up and down and seeing which results change. The parameters it exposes are the ones the paper’s argument depends on.",
+   "when": "Finished 2024, updated 2026",
+   "links": [
+    {
+     "label": "Launch the notebook",
+     "href": "https://conway1521.github.io/sage-bewley/"
+    },
+    {
+     "label": "The paper",
+     "href": "/assets/papers/wellbeing-macroeconomics.pdf"
+    }
+   ],
+   "download": "/assets/papers/wellbeing-macroeconomics.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "sageroad",
+   "area": "macro",
+   "k": "note",
+   "s": "SAGE roadmap",
+   "title": "The SAGE program: a roadmap",
+   "kind": "Research note",
+   "sub": "Wellbeing and macroeconomics",
+   "date": "Begun 2023 · in progress",
+   "plain": "The 2020 paper put a household’s social life inside a macroeconomic model. The program built on it since 2023 makes the model modular, with four dimensions of wellbeing (material, social, agency and environment) that can each be switched on or off. A dimension earns its place only if switching it on changes what households do or how well off they are, by an amount taken from published estimates and then tested against data it was not fitted to. The macroeconomics has to hold throughout, from hours worked to the marginal propensity to consume and general equilibrium. The social dimension and the notebook were finished in 2024 and updated in 2026. Papers applying the model to France and to Europe’s regions are in progress.",
+   "when": "",
+   "links": [
+    {
+     "label": "The notebook",
+     "href": "https://conway1521.github.io/sage-bewley/"
+    },
+    {
+     "label": "The 2020 paper",
+     "href": "/assets/papers/wellbeing-macroeconomics.pdf"
+    }
+   ],
+   "download": "/assets/papers/wellbeing-macroeconomics.pdf",
+   "download_label": "Download"
+  },
+  {
+   "id": "roles",
+   "area": "ds",
+   "k": "note",
+   "s": "Roles not titles",
+   "title": "Roles not titles: a role taxonomy anchored to the federal occupation system",
+   "kind": "Research note",
+   "date": "Begun 2025 · in progress",
+   "plain": "Federal occupation codes are too coarse for employers and job titles are too noisy. This note asks whether a finer taxonomy of roles can be built that nests strictly inside the federal codes, including the residual “All other” categories that hold so many workers.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "coding",
+   "area": "ds",
+   "k": "note",
+   "s": "Occupation autocoding",
+   "title": "Classification beats retrieval: the ceiling for occupational autocoding",
+   "kind": "Research note",
+   "date": "Begun 2025 · in progress",
+   "plain": "Assigning a detailed occupation code to a job title or a job ad is the first step in most labor-market work with text. This note asks how accurately it can be done at the eight-digit level, and whether a trained classifier or a retrieval approach gets closer to the ceiling.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "beige",
+   "area": "ds",
+   "k": "note",
+   "s": "Beige Book signals",
+   "title": "Reading the Beige Book with LLMs",
+   "kind": "Research note",
+   "date": "Begun 2026 · in progress",
+   "plain": "Eight times a year the twelve Federal Reserve districts publish qualitative reports full of labor market detail, collected because the hard statistics arrive too late to be useful. Economists have mined them with dictionaries and hand-coding for decades. An LLM can pull structured labor sentiment out of each release for about thirteen cents, so the full forty-year archive costs a few hundred dollars to process. Once the archive is on the same district-by-quarter basis as the official series, it can be tested against them.",
+   "abs": "The Federal Reserve Beige Book carries district-level qualitative labor-market reporting eight times a year, collected because hard statistics arrive with a lag, and it has historically been analyzed with keyword dictionaries or hand-coding. This note applies structured LLM extraction across the full forty-year archive at roughly thirteen cents per release, producing labor-market sentiment on the same district-by-quarter grain as the official series, with every extracted signal carrying the sentence it came from. The evaluation tests whether the extracted series carries information beyond the hard series it should lead, with the test specified before the extraction is scored. The resulting dataset is released publicly.",
+   "when": "",
+   "links": []
+  }
+ ],
+ "edges": [
+  [
+   "flows",
+   "migration"
+  ],
+  [
+   "flows",
+   "leaving"
+  ],
+  [
+   "flows",
+   "training"
+  ],
+  [
+   "flows",
+   "shortage"
+  ],
+  [
+   "flows",
+   "stockflow"
+  ],
+  [
+   "stockflow",
+   "migration"
+  ],
+  [
+   "stockflow",
+   "leaving"
+  ],
+  [
+   "stockflow",
+   "training"
+  ],
+  [
+   "moves",
+   "migration"
+  ],
+  [
+   "moves",
+   "training"
+  ],
+  [
+   "skillsdna",
+   "limits"
+  ],
+  [
+   "skillsdna",
+   "employers"
+  ],
+  [
+   "skillsdna",
+   "atrisk"
+  ],
+  [
+   "skillsdna",
+   "exposure"
+  ],
+  [
+   "skillsdna",
+   "skillprices"
+  ],
+  [
+   "employers",
+   "atrisk"
+  ],
+  [
+   "silentai",
+   "atrisk"
+  ],
+  [
+   "silentai",
+   "onettech"
+  ],
+  [
+   "onettech",
+   "employers"
+  ],
+  [
+   "p1",
+   "p2"
+  ],
+  [
+   "p2",
+   "p3"
+  ],
+  [
+   "antic",
+   "fiscal"
+  ],
+  [
+   "sage",
+   "sagetool"
+  ],
+  [
+   "sage",
+   "sageroad"
+  ],
+  [
+   "roles",
+   "coding"
+  ],
+  [
+   "skillsdna",
+   "flows"
+  ],
+  [
+   "coding",
+   "flows"
+  ],
+  [
+   "roles",
+   "employers"
+  ],
+  [
+   "employers",
+   "training"
+  ],
+  [
+   "beige",
+   "shortage"
+  ],
+  [
+   "sage",
+   "p1"
+  ],
+  [
+   "fiscal",
+   "p3"
+  ]
+ ]
+}
