@@ -584,34 +584,36 @@ button { font-family: inherit; }
 /* applied: pipeline */
 
 /* ============================================================
-   Research graph. Four marks: a haloed disc for published work,
-   a filled disc for a working paper, a hollow diamond for a live
-   tool, a hairline ring for work still in development.
+   Research graph. A live note graph: dark discs for papers, a
+   haloed disc for published work, a ring for a paper in progress,
+   and small grey dots with thin links for research notes.
    ============================================================ */
-.rgraph { position: relative; height: 580px; transition: height 0.42s cubic-bezier(0.4, 0.1, 0.2, 1); }
-.rgraph.is-focused { height: 280px; }
-.rgraph svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.rgraph { position: relative; height: 600px; touch-action: none; }
+.rgraph svg { width: 100%; height: 100%; display: block; overflow: visible; user-select: none; -webkit-user-select: none; }
 
-.rg-node { cursor: pointer; }
+.rg-node { cursor: grab; }
+.rgraph.is-dragging, .rgraph.is-dragging .rg-node { cursor: grabbing; }
 .rg-node:focus { outline: none; }
 .rg-hit { fill: transparent; }
-.rg-dot { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; transition: opacity 0.2s; }
-.rg-dot--tool { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
-.rg-dot--wip { fill: var(--paper); stroke: var(--hair); stroke-width: 1.5; }
+.rg-dot { stroke: var(--paper); stroke-width: 1.5; transition: opacity 0.2s; }
+.rg-dot--wp, .rg-dot--pub { fill: var(--ink); }
+.rg-dot--draft { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+.rg-dot--note { fill: var(--faint); stroke-width: 1; }
 .rg-halo { fill: none; stroke: var(--ink); stroke-width: 1.1; transition: opacity 0.2s; }
 .rg-sel { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 2 3; opacity: 0; transition: opacity 0.25s; }
 .rg-node.is-selected .rg-sel { opacity: 1; }
-.rg-label { font-size: 12px; fill: var(--ink); font-weight: 600; letter-spacing: -0.005em; pointer-events: none; transition: opacity 0.2s; }
-.rg-label--wip { fill: var(--faint); font-weight: 400; }
-.rg-edge { stroke: var(--ink); fill: none; opacity: 0.45; transition: opacity 0.2s, stroke-width 0.2s; }
-.rg-edge--wip { stroke: var(--hair); stroke-dasharray: 3 3.5; opacity: 0.9; }
-.rg-cluster { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; fill: var(--faint); pointer-events: none; }
+.rg-label { font-size: 11.5px; fill: var(--ink); font-weight: 600; letter-spacing: -0.005em; pointer-events: none; transition: opacity 0.2s; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+.rg-label--draft { font-weight: 500; fill: var(--muted); }
+.rg-label--note { font-size: 10.5px; font-weight: 400; fill: var(--faint); opacity: 0.85; }
+.rg-edge { stroke: var(--ink); opacity: 0.32; stroke-width: 1.1; transition: opacity 0.2s, stroke-width 0.2s; }
+.rg-edge--note { stroke: var(--faint); stroke-width: 0.7; opacity: 0.5; }
 
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-dot,
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-halo { opacity: 0.15; }
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-label { opacity: 0.13; }
+.rgraph.is-dimmed .rg-node.is-lit .rg-label { opacity: 1; }
 .rgraph.is-dimmed .rg-edge:not(.is-lit) { opacity: 0.06; }
-.rgraph.is-dimmed .rg-edge.is-lit { opacity: 1; stroke-width: 1.8; stroke: var(--ink); }
+.rgraph.is-dimmed .rg-edge.is-lit { opacity: 1; stroke-width: 1.6; stroke: var(--ink); }
 .rg-node:focus-visible .rg-dot { stroke: var(--ink); stroke-width: 3; }
 
 /* detail panel */
@@ -646,7 +648,6 @@ button { font-family: inherit; }
   .rg-list { display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .rgraph { transition: none; }
   .rg-detail.is-open { animation: none; }
 }
 

@@ -101,11 +101,10 @@ title: null
     <h3 class="blockhead anchor" id="research">Research</h3>
 
     <div class="plate plate--page">
-      <p class="plate__purpose">My research agenda is laid out below, with lines showing interconnections I have built over time.</p>
+      <p class="plate__purpose">My papers and research notes, linked where one builds on another. Drag a node to pull its neighbours along, or select it to read about it below.</p>
 
       <div class="rgraph" id="rgraph" data-base="{{ '/' | relative_url }}">
         <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Graph of research works and the dependencies between them">
-          <g id="rg-clusters"></g>
           <g id="rg-edges"></g>
           <g id="rg-nodes"></g>
         </svg>
@@ -118,15 +117,15 @@ title: null
       <div class="plate__caption">
         <span class="glyph">&#9673;</span> published &nbsp;&middot;&nbsp;
         <span class="glyph">&#9679;</span> working paper &nbsp;&middot;&nbsp;
-        <span class="glyph">&bull;</span> research note &nbsp;&middot;&nbsp;
-        <span class="glyph">&#9670;</span> live tool &nbsp;&middot;&nbsp;
-        <span class="glyph">&#9675;</span> in progress
+        <span class="glyph">&#9675;</span> paper in progress &nbsp;&middot;&nbsp;
+        <span class="glyph">&middot;</span> research note
       </div>
     </div>
 
     <div class="nest">
-      <h4 class="subgroup__h">Selected works</h4>
+      <h4 class="subgroup__h">The programs</h4>
       <div class="pubs__h">Labor markets</div>
+      <p class="groupnote">An occupation short of people can gain them in four ways. More can be trained, more can move over from another occupation, more can move in from another state, or fewer of those already there can leave. Every workforce plan bets on one of these, usually training, without knowing how large each is. Occupation is among the least reliable variables in the surveys, and the private data that can count moves cannot be checked, so I build each route as a public measure, test it against the official statistics, and then ask the question a planner would act on. The program began in 2025. Papers on leaving work and on training outcomes are in progress, and a stock-flow account for each occupation will later bring the four routes together.</p>
       <div class="pubs">
       <div class="pub-row">
         <span class="pub-row__t">Where workers come from: an occupational flow account for the United States<span class="pub-row__id">AC-WP-2025-01 &middot; Version 1.1</span></span>
@@ -149,38 +148,8 @@ title: null
         <span class="pub-row__l"><a href="{{ '/assets/papers/shortage-arithmetic.pdf' | relative_url }}">Download</a></span>
       </div>
       </div>
-      <div class="pubs__h">Macroeconomics</div>
-      <div class="pubs">
-      <div class="pub-row">
-        <span class="pub-row__t">Wellbeing and macroeconomics: a SAGE approach</span>
-        <span class="pub-row__w">Oxford Social Macroeconomics series, 2021</span>
-        <span class="pub-row__l"><a href="https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach" target="_blank" rel="noopener">Read</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">When to raise taxes: state dependence in the UK tax multiplier<span class="pub-row__id">AC-WP-2026-06 &middot; Version 1.0</span></span>
-        <span class="pub-row__w">Working paper, September 2026</span>
-        <span class="pub-row__l"><a href="{{ '/assets/papers/when-to-raise-taxes.pdf' | relative_url }}">Download</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">The anticipation content of fiscal policy: UK tax measures, 1945&ndash;2019<span class="pub-row__id">AC-WP-2021-01 &middot; Version 2.0</span></span>
-        <span class="pub-row__w">Working paper, December 2021, revised September 2026</span>
-        <span class="pub-row__l"><a href="{{ '/assets/papers/fiscal-anticipation.pdf' | relative_url }}">Download</a></span>
-      </div>
-      </div>
-      <div class="pubs__h">Economic development</div>
-      <div class="pubs">
-      <div class="pub-row">
-        <span class="pub-row__t">A shock reveals the structure: coupling, typology, and development paths across European regional ecosystems</span>
-        <span class="pub-row__w">Working paper, September 2025</span>
-        <span class="pub-row__l"><a href="{{ '/assets/papers/shock-reveals-structure.pdf' | relative_url }}">Download</a></span>
-      </div>
-      <div class="pub-row">
-        <span class="pub-row__t">A regional economic development ecosystem framework: integrating place, people, and economy in European regions</span>
-        <span class="pub-row__w">Working paper, December 2024</span>
-        <span class="pub-row__l"><a href="{{ '/assets/papers/ecosystem-framework.pdf' | relative_url }}">Download</a></span>
-      </div>
-      </div>
-      <div class="pubs__h">AI</div>
+      <div class="pubs__h">AI and work</div>
+      <p class="groupnote">Claims about AI and jobs are made at one of three levels, occupations, tasks or skills, and most do not say which. I write the labor market as one wage bill at those three levels, place each exposure measure at the level where it was collected, and ask what each can identify. The program then follows AI into what employers ask for and into the activities it could do but has not yet entered, judging every change against what ordinary years look like. The program began in 2025. Papers on measurement limits, on what employers ask for and on activities at risk are in progress.</p>
       <div class="pubs">
       <div class="pub-row">
         <span class="pub-row__t">AI exposure at three levels: occupations, tasks and skills as one wage bill<span class="pub-row__id">AC-WP-2026-04 &middot; Version 1.1</span></span>
@@ -193,6 +162,50 @@ title: null
         <span class="pub-row__l"><a href="{{ '/assets/papers/exposure-measures.pdf' | relative_url }}">Download</a></span>
       </div>
       </div>
+      <div class="pubs__h">Regional development</div>
+      <p class="groupnote">My PhD treats a European region as an ecosystem of three domains, place, people and economy, inside its national system. The first paper sets out the framework and its propositions, the second tests them across the euro crisis and the pandemic, and the third fits a model of the three domains to 210 regions from 2000 to 2023 and asks what it implies for cohesion policy.</p>
+      <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">A regional development ecosystem framework: place, people and economy in European regions and their national systems</span>
+        <span class="pub-row__w">Working paper, December 2024, revised October 2026</span>
+        <span class="pub-row__l"><a href="{{ '/assets/papers/ecosystem-framework.pdf' | relative_url }}">Download</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Two crises, one structure: coupling and scale in European regional ecosystems</span>
+        <span class="pub-row__w">Working paper, September 2025, revised October 2026</span>
+        <span class="pub-row__l"><a href="{{ '/assets/papers/two-crises-one-structure.pdf' | relative_url }}">Download</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">Slow ecosystems: regional development, national systems and the limits of cohesion policy in Europe, 2000 to 2023</span>
+        <span class="pub-row__w">Working paper, October 2026</span>
+        <span class="pub-row__l"><a href="{{ '/assets/papers/slow-ecosystems.pdf' | relative_url }}">Download</a></span>
+      </div>
+      </div>
+      <div class="pubs__h">Fiscal policy</div>
+      <p class="groupnote">Two papers on UK tax policy, one on how far ahead tax measures are announced and how that has changed since 1945, the other on when a tax rise costs the least.</p>
+      <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">When to raise taxes: state dependence in the UK tax multiplier<span class="pub-row__id">AC-WP-2026-06 &middot; Version 1.0</span></span>
+        <span class="pub-row__w">Working paper, September 2026</span>
+        <span class="pub-row__l"><a href="{{ '/assets/papers/when-to-raise-taxes.pdf' | relative_url }}">Download</a></span>
+      </div>
+      <div class="pub-row">
+        <span class="pub-row__t">The anticipation content of fiscal policy: UK tax measures, 1945&ndash;2019<span class="pub-row__id">AC-WP-2021-01 &middot; Version 2.0</span></span>
+        <span class="pub-row__w">Working paper, December 2021, revised September 2026</span>
+        <span class="pub-row__l"><a href="{{ '/assets/papers/fiscal-anticipation.pdf' | relative_url }}">Download</a></span>
+      </div>
+      </div>
+      <div class="pubs__h">Wellbeing and macroeconomics</div>
+      <p class="groupnote">My master&rsquo;s paper put a household&rsquo;s social life inside a macroeconomic model, and a <a href="https://conway1521.github.io/sage-bewley/" target="_blank" rel="noopener">notebook</a> lets anyone run it. Since 2023 I have been building it into a modular model with four dimensions of wellbeing, each sized by published evidence, and papers applying it to France and to Europe&rsquo;s regions are in progress.</p>
+      <div class="pubs">
+      <div class="pub-row">
+        <span class="pub-row__t">Wellbeing and macroeconomics: a SAGE approach</span>
+        <span class="pub-row__w">Oxford Social Macroeconomics series, 2021</span>
+        <span class="pub-row__l"><a href="https://www.bsg.ox.ac.uk/research/publications/wellbeing-and-macroeconomics-sage-approach" target="_blank" rel="noopener">Read</a></span>
+      </div>
+      </div>
+      <div class="pubs__h">Data science notes</div>
+      <p class="groupnote">Since 2025 I have kept a set of smaller notes on the measurement tools the other programs rely on: coding occupations from text, a taxonomy of roles finer than the federal codes, and labor-market signals read from the Federal Reserve&rsquo;s Beige Book with language models. They are in progress and appear on the graph above.</p>
     </div>
 
     <!-- ---------------- built ---------------- -->
