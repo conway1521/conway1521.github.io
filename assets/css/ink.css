@@ -48,6 +48,8 @@
   --hatch: repeating-linear-gradient(45deg, #131313 0 2px, transparent 2px 5px);
   --measure-text: 660px;
   --measure-list: 820px;
+  --lift-1: 0 1px 2px rgba(19, 19, 19, 0.04), 0 3px 10px rgba(19, 19, 19, 0.05);
+  --lift-2: 0 2px 4px rgba(19, 19, 19, 0.05), 0 8px 24px rgba(19, 19, 19, 0.08);
   --space-section: 88px;
   --space-block: 56px;
   --space-tight: 26px;
@@ -610,12 +612,19 @@ button { font-family: inherit; }
 .rg-edge--note { stroke: var(--faint); stroke-width: 0.7; opacity: 0.45; }
 .rg-edge--cross { stroke-dasharray: 2 4; opacity: 0.3; }
 
-/* each research area sits under a soft outline carrying its name */
-.rg-area__shape { fill: var(--trough); fill-opacity: 0.5; stroke: var(--rule); stroke-width: 1; transition: fill-opacity 0.3s, opacity 0.3s; }
-.rg-area__title { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; fill: var(--faint); pointer-events: none; transition: opacity 0.3s; }
+/* each research area carries its name above its members */
+.rg-area__title { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; fill: var(--faint); pointer-events: none; transition: opacity 0.3s, fill 0.3s; }
 .rgraph.is-program .rg-area:not(.is-in) { opacity: 0.35; }
-.rgraph.is-program .rg-area.is-in .rg-area__shape { fill-opacity: 0.95; stroke: var(--hair); }
 .rgraph.is-program .rg-area.is-in .rg-area__title { fill: var(--ink); }
+
+/* hover: the node swells a little and a small card says what it is */
+.rg-dot, .rg-halo { transition: transform 0.15s ease-out, opacity 0.2s; }
+.rg-node:hover .rg-dot, .rg-node:focus-visible .rg-dot, .rg-node.is-selected .rg-dot { transform: scale(1.18); }
+.rg-node:hover .rg-halo, .rg-node.is-selected .rg-halo { transform: scale(1.1); }
+.rg-tip { position: absolute; z-index: 2; max-width: 260px; padding: 8px 11px 9px; background: var(--paper); border: 1px solid var(--rule); box-shadow: var(--lift-2); pointer-events: none; opacity: 0; transform: translateY(3px); transition: opacity 0.14s ease-out, transform 0.14s ease-out; }
+.rg-tip.is-on { opacity: 1; transform: none; }
+.rg-tip__k { display: block; font-size: 10.5px; letter-spacing: 0.06em; color: var(--faint); margin-bottom: 3px; }
+.rg-tip__t { display: block; font-size: 12.5px; line-height: 1.4; font-weight: 600; color: var(--ink); }
 
 /* the graph arrives settled and fades in rather than moving into place */
 .rgraph svg { opacity: 0; transition: opacity 0.45s ease-out; }
@@ -670,11 +679,13 @@ button { font-family: inherit; }
    Research programs: cards that open one program at a time.
    ============================================================ */
 .progs { margin-top: var(--space-tight, 28px); max-width: var(--measure-list); }
-.prog-panel .pub-row { grid-template-columns: 1fr 190px 78px; }
+.prog-panel .pub-row { grid-template-columns: 1fr 190px 78px; transition: background 0.15s ease-out; }
+.prog-panel .pub-row:hover { background: linear-gradient(90deg, transparent, var(--trough) 12%, var(--trough) 88%, transparent); }
 @media (max-width: 640px) { .prog-panel .pub-row { grid-template-columns: 1fr auto; } }
 .prog-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 0 0 22px; }
-.prog-card { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 14px 15px 13px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; font: inherit; transition: border-color 0.18s, background 0.18s; min-height: 44px; }
-.prog-card:hover { border-color: var(--hair); background: var(--trough); }
+.prog-card { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 14px 15px 13px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; font: inherit; transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, transform 0.15s ease-out; min-height: 44px; }
+.prog-card:hover { border-color: var(--hair); box-shadow: var(--lift-1); transform: translateY(-1px); }
+.prog-card[aria-selected="true"]:hover { box-shadow: inset 0 2px 0 var(--ink), var(--lift-1); }
 .prog-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .prog-card[aria-selected="true"] { border-color: var(--ink); box-shadow: inset 0 2px 0 var(--ink); }
 .prog-card__t { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
@@ -699,7 +710,8 @@ button { font-family: inherit; }
 @keyframes tab-in { from { transform: translateY(4px); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .rg-detail.is-open, .prog-panel, .tab-panel { animation: none; }
-  .rgraph svg { transition: none; }
+  .rgraph svg, .rg-dot, .rg-halo, .rg-tip, .prog-card { transition: none; }
+  .prog-card:hover { transform: none; }
 }
 
 /* ============================================================

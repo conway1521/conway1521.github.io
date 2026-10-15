@@ -174,7 +174,6 @@
   var world = svg.select('#rg-world');
 
   var areaSel = world.select('#rg-areas').selectAll('g').data(DATA.areas).join('g').attr('class', 'rg-area');
-  var hullSel = areaSel.append('path').attr('class', 'rg-area__shape');
   var titleSel = areaSel.append('text').attr('class', 'rg-area__title').attr('text-anchor', 'middle')
     .text(function (a) { return a.title; });
 
@@ -210,8 +209,7 @@
   }
   placeLabels(1);
 
-  /* the soft outline of an area, drawn round its members with room for their labels */
-  var outline = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.5));
+  /* the extent of an area, with room for its labels, which places its title */
   function shape(a) {
     var pts = [];
     nodes.forEach(function (n) {
@@ -248,7 +246,7 @@
       .attr('x1', function (l) { return l.source.x; }).attr('y1', function (l) { return l.source.y; })
       .attr('x2', function (l) { return l.target.x; }).attr('y2', function (l) { return l.target.y; });
     nodeSel.attr('transform', function (n) { return 'translate(' + n.x.toFixed(2) + ',' + n.y.toFixed(2) + ')'; });
-    hullSel.attr('d', function (a) { a.hull = shape(a); return a.hull ? outline(a.hull) : null; });
+    areaSel.each(function (a) { a.hull = shape(a); });
     titleSel
       .attr('x', function (a) { return a.hull ? d3.mean(a.hull, function (p) { return p[0]; }) : 0; })
       .attr('y', function (a) { return a.hull ? d3.min(a.hull, function (p) { return p[1]; }) - 8 : 0; });
@@ -294,6 +292,7 @@
       n.fx = n.x; n.fy = n.y;
       dragging = true;
       graph.classList.add('is-dragging');
+      tip(null);
       lit(n.id);
     })
     .on('drag', function (ev, n) { n.fx = ev.x; n.fy = ev.y; })
@@ -307,15 +306,37 @@
 
   nodeSel
     .on('click', function (ev, n) { ev.stopPropagation(); open(n.id); })
-    .on('mouseenter', function (ev, n) { if (!dragging) lit(n.id); })
-    .on('mouseleave', function () { if (!dragging) unlight(); })
-    .on('focus', function (ev, n) { lit(n.id); })
-    .on('blur', function () { unlight(); })
+    .on('mouseenter', function (ev, n) { if (!dragging) { lit(n.id); tip(n); } })
+    .on('mouseleave', function () { if (!dragging) unlight(); tip(null); })
+    .on('focus', function (ev, n) { lit(n.id); tip(n); })
+    .on('blur', function () { unlight(); tip(null); })
     .on('keydown', function (ev, n) {
       if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open(n.id); }
     });
 
   svg.on('click', function () { focusArea(null); });
+
+  /* a small card beside the hovered or focused node: what it is and when */
+  var tipEl = document.createElement('div');
+  tipEl.className = 'rg-tip';
+  tipEl.setAttribute('role', 'tooltip');
+  tipEl.hidden = true;
+  graph.appendChild(tipEl);
+  function tip(n) {
+    if (!n || dragging) { tipEl.hidden = true; tipEl.classList.remove('is-on'); return; }
+    tipEl.innerHTML = '<span class="rg-tip__k">' + esc(n.kind) + (n.when ? ' · ' + esc(n.when) : '') + '</span>' +
+      '<span class="rg-tip__t">' + esc(n.title) + '</span>';
+    var t = d3.zoomTransform(svg.node());
+    var box = svg.node().getBoundingClientRect(), host = graph.getBoundingClientRect();
+    var sx = box.width / W, sy = box.height / H, s = Math.min(sx, sy);
+    var ox = (box.width - W * s) / 2, oy = (box.height - H * s) / 2;
+    var px = ox + (t.applyX(n.x)) * s + (box.left - host.left);
+    var py = oy + (t.applyY(n.y)) * s + (box.top - host.top);
+    tipEl.hidden = false;
+    tipEl.style.left = Math.max(8, Math.min(host.width - 268, px + 14)) + 'px';
+    tipEl.style.top = Math.max(8, py - 18 - tipEl.offsetHeight) + 'px';
+    requestAnimationFrame(function () { tipEl.classList.add('is-on'); });
+  }
 
   lit = function (id) {
     graph.classList.add('is-dimmed');
