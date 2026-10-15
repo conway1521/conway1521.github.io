@@ -1,6 +1,6 @@
 /* ============================================================
-   Section fold. Systems and tools and Publications open closed,
-   since together they are most of the page. A link or a rail
+   Section fold. Publications starts closed and Systems and tools
+   starts open, since the tools are what most visitors come for. A link or a rail
    click that targets one opens it; the browser's own scroll
    still lands on the heading, since the heading is the summary
    and stays visible either way.

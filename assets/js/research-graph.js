@@ -162,6 +162,10 @@
     var longest = Math.max.apply(null, n.lines.map(function (l) { return l.length; }));
     /* room for the label as well as the dot */
     n.room = Math.max(n.r + 8, longest * (n.k === 'note' ? 2.75 : 3.1) + 6);
+    /* each node drifts on its own slow orbit of a pixel or two */
+    n.amp = n.k === 'note' ? 2.2 : 1.5;
+    n.w1 = 0.8 + rand() * 0.5; n.w2 = 0.8 + rand() * 0.5;
+    n.p1 = rand() * Math.PI * 2; n.p2 = rand() * Math.PI * 2;
     return n;
   });
   var links = DATA.edges.map(function (e) {
@@ -241,11 +245,17 @@
     .on('tick', draw)
     .stop();
 
+  /* where a node is drawn: its settled place plus its drift, except while held */
+  var clock = 0;
+  function dx(n) { return n.fx != null || still ? n.x : n.x + n.amp * Math.sin(clock * 0.00052 * n.w1 + n.p1); }
+  function dy(n) { return n.fy != null || still ? n.y : n.y + n.amp * Math.cos(clock * 0.00046 * n.w2 + n.p2); }
+
   function draw() {
+    nodes.forEach(function (n) { n.dx = dx(n); n.dy = dy(n); });
     edgeSel
-      .attr('x1', function (l) { return l.source.x; }).attr('y1', function (l) { return l.source.y; })
-      .attr('x2', function (l) { return l.target.x; }).attr('y2', function (l) { return l.target.y; });
-    nodeSel.attr('transform', function (n) { return 'translate(' + n.x.toFixed(2) + ',' + n.y.toFixed(2) + ')'; });
+      .attr('x1', function (l) { return l.source.dx; }).attr('y1', function (l) { return l.source.dy; })
+      .attr('x2', function (l) { return l.target.dx; }).attr('y2', function (l) { return l.target.dy; });
+    nodeSel.attr('transform', function (n) { return 'translate(' + n.dx.toFixed(2) + ',' + n.dy.toFixed(2) + ')'; });
     areaSel.each(function (a) { a.hull = shape(a); });
     titleSel
       .attr('x', function (a) { return a.hull ? d3.mean(a.hull, function (p) { return p[0]; }) : 0; })
@@ -257,6 +267,22 @@
   for (var t = 0; t < 420; t++) sim.tick();
   draw();
   graph.classList.add('is-ready');
+
+  /* the drift runs only while the graph is on screen and the page is visible */
+  var onScreen = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; }).observe(graph);
+  }
+  var last = 0;
+  function breathe(ts) {
+    if (onScreen && !document.hidden && ts - last > 33) {
+      last = ts;
+      clock = ts;
+      if (sim.alpha() < sim.alphaMin()) draw();
+    }
+    requestAnimationFrame(breathe);
+  }
+  if (!still) requestAnimationFrame(breathe);
 
   /* ---------- zoom and pan: pinch or ctrl-scroll to zoom, so the page still scrolls ---------- */
   var zoom = d3.zoom()
@@ -330,8 +356,8 @@
     var box = svg.node().getBoundingClientRect(), host = graph.getBoundingClientRect();
     var sx = box.width / W, sy = box.height / H, s = Math.min(sx, sy);
     var ox = (box.width - W * s) / 2, oy = (box.height - H * s) / 2;
-    var px = ox + (t.applyX(n.x)) * s + (box.left - host.left);
-    var py = oy + (t.applyY(n.y)) * s + (box.top - host.top);
+    var px = ox + (t.applyX(n.dx)) * s + (box.left - host.left);
+    var py = oy + (t.applyY(n.dy)) * s + (box.top - host.top);
     tipEl.hidden = false;
     tipEl.style.left = Math.max(8, Math.min(host.width - 268, px + 14)) + 'px';
     tipEl.style.top = Math.max(8, py - 18 - tipEl.offsetHeight) + 'px';

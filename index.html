@@ -29,6 +29,7 @@ title: null
       <a href="mailto:alessandro.conway@gmail.com">Email</a>
       <a href="https://scholar.google.com/citations?hl=en&user=PkytFnMAAAAJ" target="_blank" rel="noopener">Scholar</a>
       <a href="https://alessandroconway.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://conway1521.github.io/ai-index/" target="_blank" rel="noopener">AI at Work</a>
     </div>
   </header>
 
@@ -44,7 +45,9 @@ title: null
 
       <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I built two digital twins of the labor market, live models with detailed forecasting. The first shows an employer its workforce gaps and needs by occupation and facility. The second extends that detail to a whole state, so training providers, community colleges, employers and policymakers can see the pipelines, on-ramps and skills at risk, and plan around them. I also built the data layer under both, which reconciles 220 sources, and an LLM system that maps any job title to the federal taxonomy.</p>
 
-      <p>My research spans labor economics, macroeconomics, economic development and, most recently, AI and skills. It includes a paper published in Oxford&rsquo;s <i>Social Macroeconomics</i> series and a growing series of working papers. Before Radius I spent three years at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I led the work behind Verizon&rsquo;s initiative to train and place 500,000 underrepresented people in quality careers, choosing the occupations and shaping the training with a team of three, and led one of the first national studies of AI job displacement.</p>
+      <p>My research spans labor economics, macroeconomics, economic development and, most recently, AI and skills. It includes a paper published in Oxford&rsquo;s <i>Social Macroeconomics</i> series and a growing series of working papers. Before Radius I spent three years at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I led the work behind Verizon&rsquo;s initiative to train and place 500,000 underrepresented people in quality careers, choosing the occupations and shaping the training with a team of three, and led one of the first national studies of AI job displacement. I now also run <a href="https://conway1521.github.io/ai-index/" target="_blank" rel="noopener">AI at Work</a>, a public index of AI use, jobs and training that updates with each data release.</p>
+
+      <p>I work mainly in Python and SQL, with R for econometrics and Julia for macroeconomic models. I build data systems on Postgres, LLM and transformer pipelines for text, and interactive dashboards in JavaScript and D3.</p>
 
       <p>Outside work I build and play guitars, mix songs, and make olive oil.</p>
     </div>
@@ -135,13 +138,9 @@ title: null
       <div class="prog-cards" role="tablist" aria-label="Research areas">
 {%- for a in site.data.research.areas %}
         {%- assign m = site.data.research.nodes | where: "area", a.key %}
-        {%- assign n_wp = m | where: "k", "wp" %}{% assign n_pub = m | where: "k", "pub" %}
-        {%- assign n_draft = m | where: "k", "draft" %}{% assign n_note = m | where: "k", "note" %}
-        {%- assign n_papers = n_wp.size | plus: n_pub.size %}
         <button type="button" class="prog-card" role="tab" id="tab-research-{{ a.key }}" data-key="{{ a.key }}" aria-controls="research-{{ a.key }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}">
           <span class="prog-card__t">{{ a.title }}</span>
           <span class="prog-card__q">{{ a.q }}</span>
-          <span class="prog-card__n">{% if n_papers > 0 %}{{ n_papers }} paper{% if n_papers != 1 %}s{% endif %}{% endif %}{% if n_draft.size > 0 %}{% if n_papers > 0 %} &middot; {% endif %}{{ n_draft.size }} in progress{% endif %}{% if n_note.size > 0 %}{% if n_papers > 0 or n_draft.size > 0 %} &middot; {% endif %}{{ n_note.size }} note{% if n_note.size != 1 %}s{% endif %}{% endif %}</span>
         </button>
 {%- endfor %}
       </div>
@@ -170,7 +169,7 @@ title: null
 
     <!-- ---------------- built ---------------- -->
 
-    <details class="secfold">
+    <details class="secfold" open>
     <summary class="blockhead anchor" id="systems">Systems and tools</summary>
 
     <div class="nest">
@@ -262,7 +261,7 @@ title: null
           <p class="work__s">Employers name the same job a hundred ways. Until those titles are mapped to one taxonomy, there is no way to benchmark, forecast or compare across employers.</p>
         </summary>
         <div class="work__body">
-          <p>The resolver handles any title through a ten-stage pipeline with three model layers, and both digital twins depend on it.</p>
+          <p>The resolver handles any title through a ten-stage pipeline with three model layers, and both digital twins depend on it. On its first full run it took about 50,000 unique job titles from employer HR records and resolved two thirds of them, and because it keeps what it learns, a second run over the same titles resolved about four in five from memory alone.</p>
           <div class="work__links"><a href="{{ '/portfolio/occupation-resolver' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -453,6 +452,7 @@ title: null
       <a href="https://www.linkedin.com/in/alessandro-conway/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/conway1521" target="_blank" rel="noopener">GitHub</a>
       <a href="https://alessandroconway.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://conway1521.github.io/ai-index/" target="_blank" rel="noopener">AI at Work</a>
     </div>
   </section>
 
