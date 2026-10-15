@@ -584,15 +584,16 @@ button { font-family: inherit; }
 /* applied: pipeline */
 
 /* ============================================================
-   Research graph. A live note graph: dark discs for papers, a
-   haloed disc for published work, a ring for a paper in progress,
-   and small grey dots with thin links for research notes.
+   Research graph. A live note graph drawn with d3-force: dark discs
+   for papers, a haloed disc for published work, a ring for a paper
+   in progress, small grey dots and thin links for research notes.
+   Note labels appear when lit or zoomed in, as in a note graph.
    ============================================================ */
-.rgraph { position: relative; height: 600px; touch-action: none; }
-.rgraph svg { width: 100%; height: 100%; display: block; overflow: visible; user-select: none; -webkit-user-select: none; }
+.rgraph { position: relative; height: 600px; border: 1px solid var(--rule); background: var(--paper); overflow: hidden; }
+.rgraph svg { width: 100%; height: 100%; display: block; cursor: move; user-select: none; -webkit-user-select: none; }
 
 .rg-node { cursor: grab; }
-.rgraph.is-dragging, .rgraph.is-dragging .rg-node { cursor: grabbing; }
+.rgraph.is-dragging, .rgraph.is-dragging svg, .rgraph.is-dragging .rg-node { cursor: grabbing; }
 .rg-node:focus { outline: none; }
 .rg-hit { fill: transparent; }
 .rg-dot { stroke: var(--paper); stroke-width: 1.5; transition: opacity 0.2s; }
@@ -604,17 +605,32 @@ button { font-family: inherit; }
 .rg-node.is-selected .rg-sel { opacity: 1; }
 .rg-label { font-size: 11.5px; fill: var(--ink); font-weight: 600; letter-spacing: -0.005em; pointer-events: none; transition: opacity 0.2s; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
 .rg-label--draft { font-weight: 500; fill: var(--muted); }
-.rg-label--note { font-size: 10.5px; font-weight: 400; fill: var(--faint); opacity: 0.85; }
-.rg-edge { stroke: var(--ink); opacity: 0.32; stroke-width: 1.1; transition: opacity 0.2s, stroke-width 0.2s; }
-.rg-edge--note { stroke: var(--faint); stroke-width: 0.7; opacity: 0.5; }
+.rg-label--note { font-size: 10.5px; font-weight: 400; fill: var(--faint); opacity: 0; }
+.rgraph.is-near .rg-label--note,
+.rg-node--note.is-lit .rg-label--note,
+.rg-node--note:hover .rg-label--note { opacity: 1; }
+.rg-edge { stroke: var(--ink); opacity: 0.3; stroke-width: 1.1; transition: opacity 0.2s, stroke-width 0.2s; }
+.rg-edge--note { stroke: var(--faint); stroke-width: 0.7; opacity: 0.45; }
+
+/* a program chosen in the cards below: its own nodes stay, the rest recede */
+.rgraph.is-program .rg-node:not(.is-in) { opacity: 0.22; transition: opacity 0.3s; }
+.rgraph.is-program .rg-edge:not(.is-in) { opacity: 0.08; }
+.rgraph.is-program .rg-node.is-in .rg-label--note { opacity: 1; }
 
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-dot,
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-halo { opacity: 0.15; }
 .rgraph.is-dimmed .rg-node:not(.is-lit) .rg-label { opacity: 0.13; }
+.rgraph.is-dimmed .rg-node.is-lit { opacity: 1; }
 .rgraph.is-dimmed .rg-node.is-lit .rg-label { opacity: 1; }
 .rgraph.is-dimmed .rg-edge:not(.is-lit) { opacity: 0.06; }
 .rgraph.is-dimmed .rg-edge.is-lit { opacity: 1; stroke-width: 1.6; stroke: var(--ink); }
 .rg-node:focus-visible .rg-dot { stroke: var(--ink); stroke-width: 3; }
+
+.rg-zoom { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; border: 1px solid var(--rule); background: var(--paper); }
+.rg-zoom button { width: 32px; height: 32px; border: none; border-top: 1px solid var(--rule); background: none; color: var(--muted); font-size: 16px; line-height: 1; cursor: pointer; }
+.rg-zoom button:first-child { border-top: none; }
+.rg-zoom button:hover { color: var(--ink); background: var(--trough); }
+.rg-zoom button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 
 /* detail panel */
 .rg-detail { display: none; border-top: 1px solid var(--ink); margin-top: 18px; padding-top: 20px; }
@@ -622,6 +638,7 @@ button { font-family: inherit; }
 @keyframes rg-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .rg-d__top { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; }
 .rg-d__title { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.22; max-width: var(--measure-text); text-wrap: balance; }
+.rg-d__prog { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
 .rg-d__date { font-size: 12px; color: var(--faint); margin-top: 5px; }
 .rg-d__close { background: none; border: none; padding: 4px 0; font-size: 11px; color: var(--faint); cursor: pointer; letter-spacing: 0.09em; text-transform: uppercase; }
 .rg-d__close:hover { color: var(--ink); }
@@ -636,19 +653,41 @@ button { font-family: inherit; }
 .rg-pane.is-hidden { display: none; }
 .rg-d__links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; margin-top: 18px; }
 
-/* narrow screens get the list instead of the graph */
-.rg-list { display: none; }
-.rg-lgrp { margin-top: 22px; }
-.rg-lgrp__h { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
-.rg-lrow { display: flex; gap: 11px; align-items: baseline; width: 100%; padding: 11px 0; border: none; border-top: 1px solid var(--rule); background: none; text-align: left; cursor: pointer; color: var(--ink); }
-.rg-lrow .t { font-size: 13.5px; font-weight: 600; line-height: 1.45; }
-.rg-lrow.is-wip .t { font-weight: 400; color: var(--faint); }
+/* phones get the program cards without the graph */
 @media (max-width: 640px) {
   .rgraph { display: none; }
-  .rg-list { display: block; }
 }
+
+/* ============================================================
+   Research programs: cards that open one program at a time.
+   ============================================================ */
+.progs { margin-top: var(--space-tight, 28px); }
+.prog-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 22px; }
+.prog-card { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 14px 15px 13px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; font: inherit; transition: border-color 0.18s, background 0.18s; min-height: 44px; }
+.prog-card:hover { border-color: var(--hair); background: var(--trough); }
+.prog-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.prog-card[aria-selected="true"] { border-color: var(--ink); box-shadow: inset 0 2px 0 var(--ink); }
+.prog-card__t { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
+.prog-card__q { font-size: 12.5px; line-height: 1.45; color: var(--muted); }
+.prog-card__n { font-size: 11px; letter-spacing: 0.04em; color: var(--faint); margin-top: auto; padding-top: 4px; }
+.prog-panel { max-width: var(--measure-list); animation: tab-in 0.24s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.prog-panel .groupnote { margin-bottom: 14px; }
+.pub-row__open { background: none; border: none; padding: 0; font: inherit; color: var(--ink); text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 3px; }
+.pub-row__open:hover { text-decoration-color: var(--ink); }
+.pub-row--draft .pub-row__open, .pub-row--note .pub-row__open { color: var(--muted); }
+@media (max-width: 860px) { .prog-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .prog-cards { grid-template-columns: 1fr; } }
+
+/* plain tabs, for Systems and tools */
+.tabs { display: flex; flex-wrap: wrap; gap: 4px 22px; border-bottom: 1px solid var(--rule); margin: 4px 0 18px; }
+.tab { background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 10px 0 9px; min-height: 44px; font: inherit; font-size: 13.5px; color: var(--muted); cursor: pointer; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); font-weight: 600; }
+.tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.tab-panel { animation: tab-in 0.24s cubic-bezier(0.2, 0.7, 0.2, 1); }
+@keyframes tab-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .rg-detail.is-open { animation: none; }
+  .rg-detail.is-open, .prog-panel, .tab-panel { animation: none; }
 }
 
 /* ============================================================
