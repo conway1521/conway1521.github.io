@@ -461,28 +461,43 @@
    "download_label": "Download"
   },
   {
-   "id": "sageroad",
+   "id": "fabric",
    "area": "macro",
-   "k": "note",
-   "s": "SAGE roadmap",
-   "title": "The SAGE program: a roadmap",
-   "kind": "Research note",
+   "k": "draft",
+   "s": "Social fabric",
+   "title": "Wellbeing and the social fabric in a heterogeneous-agent economy",
+   "kind": "Paper in progress",
    "sub": "Wellbeing and macroeconomics",
-   "date": "Begun 2023 · in progress",
-   "plain": "The 2020 paper put a household’s social life inside a macroeconomic model. The program built on it since 2023 makes the model modular, with four dimensions of wellbeing (material, social, agency and environment) that can each be switched on or off. A dimension earns its place only if switching it on changes what households do or how well off they are, by an amount taken from published estimates and then tested against data it was not fitted to. The macroeconomics has to hold throughout, from hours worked to the marginal propensity to consume and general equilibrium. The social dimension and the notebook were finished in 2024 and updated in 2026. Papers applying the model to France and to Europe’s regions are in progress.",
+   "date": "Begun 2024 · in progress",
+   "plain": "The SAGE paper put a household’s social life inside a macroeconomic model. This paper disciplines that model with French data and asks what economic policy does to the social side of wellbeing as well as the material side, and whether policy can pull the two apart.",
    "when": "",
-   "links": [
-    {
-     "label": "The notebook",
-     "href": "https://conway1521.github.io/sage-bewley/"
-    },
-    {
-     "label": "The 2020 paper",
-     "href": "/assets/papers/wellbeing-macroeconomics.pdf"
-    }
-   ],
-   "download": "/assets/papers/wellbeing-macroeconomics.pdf",
-   "download_label": "Download"
+   "links": []
+  },
+  {
+   "id": "partgrad",
+   "area": "macro",
+   "k": "draft",
+   "s": "Participation gradients",
+   "title": "Participation gradients and coordination traps: agency, social cohesion and activation policy",
+   "kind": "Paper in progress",
+   "sub": "Wellbeing and macroeconomics",
+   "date": "Begun 2025 · in progress",
+   "plain": "Are left-behind communities caught in coordination traps, where people stay out of economic and civic life because others do? This paper asks what the observed differences in participation between groups can tell us about whether such traps exist at all.",
+   "when": "",
+   "links": []
+  },
+  {
+   "id": "basins",
+   "area": "macro",
+   "k": "draft",
+   "s": "Regional basins",
+   "title": "Regional basins and the social fabric: fragility, national regimes and development",
+   "kind": "Paper in progress",
+   "sub": "Wellbeing and macroeconomics",
+   "date": "Begun 2026 · in progress",
+   "plain": "Why do some regions stay fragile while others recover, and how much of that is set by the national regime they sit in? This paper takes the SAGE model to regions, where it meets the regional ecosystem work of the PhD.",
+   "when": "",
+   "links": []
   },
   {
    "id": "roles",
@@ -616,10 +631,6 @@
    "sagetool"
   ],
   [
-   "sage",
-   "sageroad"
-  ],
-  [
    "roles",
    "coding"
   ],
@@ -642,6 +653,18 @@
   [
    "sage",
    "p1"
+  ],
+  [
+   "sage",
+   "fabric"
+  ],
+  [
+   "fabric",
+   "partgrad"
+  ],
+  [
+   "fabric",
+   "basins"
   ]
  ]
 }
