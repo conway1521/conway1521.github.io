@@ -617,8 +617,21 @@ button { font-family: inherit; }
 .rgraph.is-program .rg-area:not(.is-in) { opacity: 0.35; }
 .rgraph.is-program .rg-area.is-in .rg-area__title { fill: var(--ink); }
 
+/* a slow float on the compositor, so dots and text move smoothly between pixels */
+.rg-float { animation: rg-float var(--fd, 11s) ease-in-out var(--fdl, 0s) infinite alternate; will-change: transform; }
+@keyframes rg-float {
+  from { transform: translate(calc(var(--fx, 1px) * -1), calc(var(--fy, 1px) * -1)); }
+  to   { transform: translate(var(--fx, 1px), var(--fy, 1px)); }
+}
+.rgraph.is-dragging .rg-float, .rgraph.is-away .rg-float { animation-play-state: paused; }
+
+/* a soft shadow under each dot, a little deeper when it is the one in hand */
+.rg-dot--wp, .rg-dot--pub, .rg-dot--draft { filter: drop-shadow(0 1px 1.5px rgba(19, 19, 19, 0.16)); }
+.rg-dot--note { filter: drop-shadow(0 0.5px 1px rgba(19, 19, 19, 0.12)); }
+.rg-node:hover .rg-dot, .rg-node.is-selected .rg-dot { filter: drop-shadow(0 2px 4px rgba(19, 19, 19, 0.22)); }
+
 /* hover: the node swells a little and a small card says what it is */
-.rg-dot, .rg-halo { transition: transform 0.15s ease-out, opacity 0.2s; }
+.rg-dot, .rg-halo { transition: transform 0.18s ease-out, filter 0.18s ease-out, opacity 0.2s; }
 .rg-node:hover .rg-dot, .rg-node:focus-visible .rg-dot, .rg-node.is-selected .rg-dot { transform: scale(1.18); }
 .rg-node:hover .rg-halo, .rg-node.is-selected .rg-halo { transform: scale(1.1); }
 .rg-tip { position: absolute; z-index: 2; max-width: 260px; padding: 8px 11px 9px; background: var(--paper); border: 1px solid var(--rule); box-shadow: var(--lift-2); pointer-events: none; opacity: 0; transform: translateY(3px); transition: opacity 0.14s ease-out, transform 0.14s ease-out; }
@@ -711,6 +724,7 @@ button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .rg-detail.is-open, .prog-panel, .tab-panel { animation: none; }
   .rgraph svg, .rg-dot, .rg-halo, .rg-tip, .prog-card { transition: none; }
+  .rg-float { animation: none; }
   .prog-card:hover { transform: none; }
 }
 

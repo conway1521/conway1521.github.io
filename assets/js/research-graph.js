@@ -126,11 +126,11 @@
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Each area's home on the canvas: development and macroeconomics on the left,
-     data science between, AI and labor markets on the right, where most links run. */
+     labor markets in the middle, where most links run, AI and data science on the right. */
   var W = 960, H = 620;
   var HOME = {
-    dev: [190, 165], macro: [200, 465], ds: [470, 315],
-    ai: [735, 170], labor: [735, 460]
+    dev: [180, 165], macro: [190, 470], labor: [475, 405],
+    ai: [760, 165], ds: [790, 480]
   };
 
   /* a few pieces have a natural order: the thesis reads from framework to fitted model */
@@ -162,10 +162,10 @@
     var longest = Math.max.apply(null, n.lines.map(function (l) { return l.length; }));
     /* room for the label as well as the dot */
     n.room = Math.max(n.r + 8, longest * (n.k === 'note' ? 2.75 : 3.1) + 6);
-    /* each node drifts on its own slow orbit of a pixel or two */
-    n.amp = n.k === 'note' ? 2.2 : 1.5;
-    n.w1 = 0.8 + rand() * 0.5; n.w2 = 0.8 + rand() * 0.5;
-    n.p1 = rand() * Math.PI * 2; n.p2 = rand() * Math.PI * 2;
+    /* each node floats on its own slow cycle, run by the browser's compositor */
+    n.float = '--fd:' + (9 + rand() * 6).toFixed(1) + 's;--fdl:-' + (rand() * 12).toFixed(1) + 's;' +
+      '--fx:' + ((rand() - 0.5) * (n.k === 'note' ? 2.4 : 3.2)).toFixed(2) + 'px;' +
+      '--fy:' + ((rand() * 0.6 + 0.7) * (n.k === 'note' ? 1.2 : 1.6)).toFixed(2) + 'px';
     return n;
   });
   var links = DATA.edges.map(function (e) {
@@ -193,12 +193,13 @@
     .attr('data-node', function (n) { return n.id; })
     .attr('aria-label', function (n) { return n.title + ', ' + n.kind; });
 
-  nodeSel.append('circle').attr('class', 'rg-sel').attr('r', function (n) { return n.r + 6; });
-  nodeSel.filter(function (n) { return n.k === 'pub'; })
+  var floatSel = nodeSel.append('g').attr('class', 'rg-float').attr('style', function (n) { return n.float; });
+  floatSel.append('circle').attr('class', 'rg-sel').attr('r', function (n) { return n.r + 6; });
+  floatSel.filter(function (n) { return n.k === 'pub'; })
     .append('circle').attr('class', 'rg-halo').attr('r', function (n) { return n.r + 4; });
-  nodeSel.append('circle').attr('class', function (n) { return 'rg-dot rg-dot--' + n.k; })
+  floatSel.append('circle').attr('class', function (n) { return 'rg-dot rg-dot--' + n.k; })
     .attr('r', function (n) { return n.r; });
-  var labelSel = nodeSel.append('text')
+  var labelSel = floatSel.append('text')
     .attr('class', function (n) { return 'rg-label rg-label--' + n.k; })
     .attr('text-anchor', 'middle');
   labelSel.selectAll('tspan').data(function (n) { return n.lines; }).join('tspan')
@@ -231,31 +232,25 @@
 
   var sim = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(function (n) { return n.id; })
-      .distance(function (l) { return l.cross ? 240 : (l.note ? 78 : 92); })
+      .distance(function (l) { return l.cross ? 250 : (l.note ? 84 : 108); })
       .strength(function (l) { return l.cross ? 0.012 : 0.55; }))
     .force('charge', d3.forceManyBody()
-      .strength(function (n) { return n.k === 'note' ? -110 : -230; })
-      .distanceMax(260))
+      .strength(function (n) { return n.k === 'note' ? -130 : -300; })
+      .distanceMax(280))
     .force('x', d3.forceX(homeX).strength(0.085))
     .force('y', d3.forceY(homeY).strength(0.11))
-    .force('collide', d3.forceCollide(function (n) { return n.room * 0.92; })
+    .force('collide', d3.forceCollide(function (n) { return n.room * 1.0; })
       .strength(0.9).iterations(2))
     .velocityDecay(0.5)
     .alphaDecay(0.03)
     .on('tick', draw)
     .stop();
 
-  /* where a node is drawn: its settled place plus its drift, except while held */
-  var clock = 0;
-  function dx(n) { return n.fx != null || still ? n.x : n.x + n.amp * Math.sin(clock * 0.00052 * n.w1 + n.p1); }
-  function dy(n) { return n.fy != null || still ? n.y : n.y + n.amp * Math.cos(clock * 0.00046 * n.w2 + n.p2); }
-
   function draw() {
-    nodes.forEach(function (n) { n.dx = dx(n); n.dy = dy(n); });
     edgeSel
-      .attr('x1', function (l) { return l.source.dx; }).attr('y1', function (l) { return l.source.dy; })
-      .attr('x2', function (l) { return l.target.dx; }).attr('y2', function (l) { return l.target.dy; });
-    nodeSel.attr('transform', function (n) { return 'translate(' + n.dx.toFixed(2) + ',' + n.dy.toFixed(2) + ')'; });
+      .attr('x1', function (l) { return l.source.x; }).attr('y1', function (l) { return l.source.y; })
+      .attr('x2', function (l) { return l.target.x; }).attr('y2', function (l) { return l.target.y; });
+    nodeSel.attr('transform', function (n) { return 'translate(' + n.x.toFixed(2) + ',' + n.y.toFixed(2) + ')'; });
     areaSel.each(function (a) { a.hull = shape(a); });
     titleSel
       .attr('x', function (a) { return a.hull ? d3.mean(a.hull, function (p) { return p[0]; }) : 0; })
@@ -268,21 +263,12 @@
   draw();
   graph.classList.add('is-ready');
 
-  /* the drift runs only while the graph is on screen and the page is visible */
-  var onScreen = true;
+  /* the float pauses while the graph is off screen */
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; }).observe(graph);
+    new IntersectionObserver(function (es) {
+      graph.classList.toggle('is-away', !es[0].isIntersecting);
+    }).observe(graph);
   }
-  var last = 0;
-  function breathe(ts) {
-    if (onScreen && !document.hidden && ts - last > 33) {
-      last = ts;
-      clock = ts;
-      if (sim.alpha() < sim.alphaMin()) draw();
-    }
-    requestAnimationFrame(breathe);
-  }
-  if (!still) requestAnimationFrame(breathe);
 
   /* ---------- zoom and pan: pinch or ctrl-scroll to zoom, so the page still scrolls ---------- */
   var zoom = d3.zoom()
@@ -342,6 +328,14 @@
 
   svg.on('click', function () { focusArea(null); });
 
+  /* a double-click on empty space returns to the full view */
+  svg.on('dblclick', function (ev) {
+    if (ev.target.closest && ev.target.closest('.rg-node')) return;
+    focusArea(null);
+    if (selected) close();
+    (still ? svg : svg.transition().duration(380).ease(d3.easeCubicOut)).call(zoom.transform, d3.zoomIdentity);
+  });
+
   /* a small card beside the hovered or focused node: what it is and when */
   var tipEl = document.createElement('div');
   tipEl.className = 'rg-tip';
@@ -356,8 +350,8 @@
     var box = svg.node().getBoundingClientRect(), host = graph.getBoundingClientRect();
     var sx = box.width / W, sy = box.height / H, s = Math.min(sx, sy);
     var ox = (box.width - W * s) / 2, oy = (box.height - H * s) / 2;
-    var px = ox + (t.applyX(n.dx)) * s + (box.left - host.left);
-    var py = oy + (t.applyY(n.dy)) * s + (box.top - host.top);
+    var px = ox + (t.applyX(n.x)) * s + (box.left - host.left);
+    var py = oy + (t.applyY(n.y)) * s + (box.top - host.top);
     tipEl.hidden = false;
     tipEl.style.left = Math.max(8, Math.min(host.width - 268, px + 14)) + 'px';
     tipEl.style.top = Math.max(8, py - 18 - tipEl.offsetHeight) + 'px';
