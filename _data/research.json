@@ -10,7 +10,7 @@
    "key": "ai",
    "title": "AI and work",
    "q": "What is AI doing to the work employers ask for?",
-   "overview": "Claims about AI and jobs are made at one of three levels, occupations, tasks or skills, and most do not say which. I write the labor market as one wage bill at those three levels, place each exposure measure at the level where it was collected, and ask what each can identify. The program then follows AI into what employers ask for and into the activities it could do but has not yet entered, judging every change against what ordinary years look like. The program began in 2025. Papers on measurement limits, on what employers ask for and on activities at risk are in progress."
+   "overview": "Claims about AI and jobs are made at one of three levels, occupations, tasks or skills, and most do not say which. I write the labor market as one wage bill at those three levels, place each exposure measure at the level where it was collected, and ask what each can identify. The program then follows AI into what employers ask for and into the activities it could do but has not yet entered, judging every change against what ordinary years look like. The program began in 2025. Papers on measurement limits, on what employers ask for and on activities at risk are in progress. The measures also feed <a href=\"https://conway1521.github.io/ai-index/\" target=\"_blank\" rel=\"noopener\">AI at Work</a>, a public index of AI use, jobs and training that updates with each data release."
   },
   {
    "key": "dev",

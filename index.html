@@ -44,7 +44,7 @@ title: null
 
       <p>At <a href="https://ri-labs.com" target="_blank" rel="noopener">Radius Intelligence</a> I built two digital twins of the labor market, live models with detailed forecasting. The first shows an employer its workforce gaps and needs by occupation and facility. The second extends that detail to a whole state, so training providers, community colleges, employers and policymakers can see the pipelines, on-ramps and skills at risk, and plan around them. I also built the data layer under both, which reconciles 220 sources, and an LLM system that maps any job title to the federal taxonomy.</p>
 
-      <p>My research spans labor economics, macroeconomics, economic development and, most recently, AI and skills. It includes a paper published in Oxford&rsquo;s <i>Social Macroeconomics</i> series and a growing series of working papers. Before Radius I spent three years at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I led Verizon&rsquo;s initiative to place 500,000 underrepresented people into quality careers and one of the first national studies of AI job displacement.</p>
+      <p>My research spans labor economics, macroeconomics, economic development and, most recently, AI and skills. It includes a paper published in Oxford&rsquo;s <i>Social Macroeconomics</i> series and a growing series of working papers. Before Radius I spent three years at <a href="https://www.jff.org" target="_blank" rel="noopener">Jobs for the Future</a>, where I led the work behind Verizon&rsquo;s initiative to train and place 500,000 underrepresented people in quality careers, choosing the occupations and shaping the training with a team of three, and led one of the first national studies of AI job displacement.</p>
 
       <p>Outside work I build and play guitars, mix songs, and make olive oil.</p>
     </div>
@@ -186,11 +186,22 @@ title: null
 
       <details class="work">
         <summary>
+          <div class="work__head"><span class="work__t">AI at Work</span><span class="work__tag">Economics, AI, live</span></div>
+          <p class="work__s">Is AI changing American work yet? No single dataset can say, so AI at Work reads public sources side by side in three indices, on use, jobs and training, which update as new releases come out.</p>
+        </summary>
+        <div class="work__body">
+          <p>Use measures how much of the country&rsquo;s paid work involves tasks people already bring to AI, from the Anthropic Economic Index and OpenAI Signals set against BLS wages. Jobs asks whether pay, the mix of jobs and what job ads ask for have changed more than in ordinary years. Training follows what students choose to study and whether young workers still get the jobs most exposed to AI. In the latest build, tasks people use Claude for make up 23 percent of US wages, pay has not moved more than usual, and job ads turned away from tasks AI can do between 2020 and 2022, before ChatGPT, with no further drop at its release.</p>
+          <div class="work__links"><a href="https://conway1521.github.io/ai-index/" target="_blank" rel="noopener">Open AI at Work</a></div>
+        </div>
+      </details>
+
+      <details class="work">
+        <summary>
           <div class="work__head"><span class="work__t">Open Inequality Atlas</span><span class="work__tag">Open data, live</span></div>
           <p class="work__s">Inequality is usually quoted as a single number, the income Gini, largely because the World Bank publishes it most often. It measures what people are paid, but whether a family can buy a house or get through a lost job depends more on what they own.</p>
         </summary>
         <div class="work__body">
-          <p>The Atlas puts wealth next to income, and the two rankings often disagree. A country can have one of the most even income distributions in the world and a more uneven wealth distribution than Britain. Wealth data is harder to put together. The series combines the World Inequality Database, the ECB household survey, the Luxembourg Wealth Study, the US Survey of Consumer Finances and the Federal Reserve&rsquo;s Distributional Financial Accounts, and each row is tagged by source priority and comparability tier so readers can judge my reconciliation for themselves. The Atlas also covers income, life expectancy, life satisfaction and poverty, and a US layer goes down to the commuting zone.</p>
+          <p>The Atlas puts wealth next to income, and the two rankings often disagree. A country can have one of the most even income distributions in the world and a more uneven wealth distribution than Britain. Wealth data is harder to put together. The series combines the World Inequality Database, the ECB household survey, the Luxembourg Wealth Study, the US Survey of Consumer Finances and the Federal Reserve&rsquo;s Distributional Financial Accounts, and each row is tagged by source priority and comparability tier. The Atlas also covers income, life expectancy, life satisfaction and poverty, and a US layer goes down to the commuting zone.</p>
           <div class="work__links"><a href="https://conway1521.github.io/open-inequality-atlas/" target="_blank" rel="noopener">Launch the Atlas</a></div>
         </div>
       </details>
@@ -220,16 +231,16 @@ title: null
     </div>
     </section>
     <section class="tab-panel" role="tabpanel" id="systems-platform" aria-labelledby="tab-systems-platform" hidden>
-    <p class="groupnote">The employer digital twin and the labor market digital twin are the main products I built, with the rest being smaller problems I had to solve to get those two running. Both run on 220 datasets, more than eight million observations, reconciled across every US occupation and geography. The code and the underlying data are private, so each page describes the problem, the approach and the result, with figures rebuilt from synthetic data.</p>
+    <p class="groupnote">I built these at Radius Intelligence, a workforce planning startup, in 2025 and 2026. The two digital twins are the products and the rest are the pieces they need, all running on a data lake of 220 sources and more than eight million observations. Their supply and demand models were the basis of two annual healthcare workforce analyses Radius produced for a state client. The code and data are private, so each page describes the approach with figures rebuilt from synthetic data.</p>
     <div class="works">
 
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">Employer digital twin</span><span class="work__tag">Data science, econometrics, product</span></div>
-          <p class="work__s">An employer wants to know whether their turnover is bad, what is coming, and what to do about it. Their raw HR export does not answer those questions.</p>
+          <p class="work__s">A hospital or care provider wants to know whether its turnover is unusual, what is coming, and what to do about it, and its HR export does not say.</p>
         </summary>
         <div class="work__body">
-          <p>The twin takes that export from upload to forecast and scenarios, and every number can be traced back to the raw rows, so whoever presents it can defend it.</p>
+          <p>I built it on anonymized HR records from hundreds of healthcare employers. It takes an employer&rsquo;s export through to a forecast of turnover and hiring by occupation and facility, and lets the employer test scenarios against that forecast.</p>
           <div class="work__links"><a href="{{ '/portfolio/employer-twin' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -237,10 +248,10 @@ title: null
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">Labor market digital twin</span><span class="work__tag">Economics, policy, data science</span></div>
-          <p class="work__s">States plan their workforce with statistics that are years out of date and projections that come as black boxes, and when a number turns out wrong there is no way to check why.</p>
+          <p class="work__s">A state planning its healthcare workforce needs to know, occupation by occupation, how many people it will need and where they will come from, and the official projections are years old by the time they arrive.</p>
         </summary>
         <div class="work__body">
-          <p>The twin models the market as stocks and flows that have to balance. It tracks who enters and who leaves, estimates demand four separate ways, and reports the gap left once those four estimates are reconciled.</p>
+          <p>It covers 17 core healthcare occupations and the training providers for them across the US, joined from IPEDS, RAPIDS, CareerOneStop and state licensing boards. Each occupation is modeled as stocks and flows that have to balance, demand is estimated four ways, and the twin reports the gap between supply and demand. Its models were the basis of two annual healthcare workforce analyses for a state client.</p>
           <div class="work__links"><a href="{{ '/portfolio/labor-market-twin' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -262,7 +273,7 @@ title: null
           <p class="work__s">Connecting labor market datasets means mapping each one to the federal taxonomy, and the sources differ in units, level of detail, vintage and license.</p>
         </summary>
         <div class="work__body">
-          <p>The lake reconciles 220 of them so any one can be joined to any other. A shared set of definitions settles the differences in one place, and a librarian layer answers questions about what the lake holds.</p>
+          <p>The lake reconciles 220 of them, more than eight million observations, to one occupational and geographic taxonomy, so any source joins to any other. A shared set of definitions settles the differences in one place, and a librarian layer answers questions about what the lake holds.</p>
           <div class="work__links"><a href="{{ '/portfolio/data-lake' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -284,7 +295,7 @@ title: null
           <p class="work__s">A workforce board mostly wants to know which occupations to invest in and what would help them grow.</p>
         </summary>
         <div class="work__body">
-          <p>It scores every occupation on five published pillars and suggests levers only where the evidence supports them. Every estimate comes with a confidence band, because a single number handed to a board quickly becomes a target.</p>
+          <p>It scores every occupation on five published pillars, gives each estimate a confidence band, and suggests levers only where the evidence supports them.</p>
           <div class="work__links"><a href="{{ '/portfolio/opportunity-levers' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -295,7 +306,7 @@ title: null
           <p class="work__s">The main measures of AI exposure disagree with each other, and claims about AI&rsquo;s effect on jobs have gotten ahead of what anyone can measure.</p>
         </summary>
         <div class="work__body">
-          <p>This is a calibrated production function where every parameter is published, sourced and can be swapped out, so users can test their own assumptions. A research paper on it is in progress.</p>
+          <p>It is a calibrated production function in which every parameter is sourced and can be changed. A research paper on it is in progress.</p>
           <div class="work__links"><a href="{{ '/portfolio/skills-framework' | relative_url }}">How it works</a> <a href="{{ '/assets/papers/skills-dna.pdf' | relative_url }}">The paper</a></div>
         </div>
       </details>
@@ -306,7 +317,7 @@ title: null
           <p class="work__s">Official statistics come out quarters late, and decisions often have to be made before then.</p>
         </summary>
         <div class="work__body">
-          <p>It grades fifteen kinds of early evidence, including job postings, layoff notices and unusual wage moves, by how much each can be trusted, and combines them into two flags whose reasoning the user can follow.</p>
+          <p>It grades fifteen kinds of early evidence, including job postings, layoff notices and unusual wage moves, by how much each can be trusted, and combines them into two flags, each listing the evidence behind it.</p>
           <div class="work__links"><a href="{{ '/portfolio/market-signals' | relative_url }}">How it works</a></div>
         </div>
       </details>
@@ -321,10 +332,10 @@ title: null
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">CREST, green workforce readiness dashboard</span><span class="work__tag">Jobs for the Future</span></div>
-          <p class="work__s">A national dashboard ranking every US county by climate risk and economic resilience into risk-and-readiness tiers, each with targeted recommendations.</p>
+          <p class="work__s">A national dashboard of green workforce opportunity and need for every US county, which I designed and built from scratch.</p>
         </summary>
         <div class="work__body">
-          <p>It anchored a high-profile climate initiative and was featured in a national press release, and more people have used it than anything else I have built.</p>
+          <p>It groups counties by their mix of climate risk and economic resilience and identifies the strategies that have worked for each mix. It became the flagship product of a large national climate initiative, was used by workforce boards and mayors across the country, and was cited in a national press release.</p>
           <div class="work__links"><a href="https://info.jff.org/assessing-regional-readiness-for-action" target="_blank" rel="noopener">Dashboard</a> <a href="https://info.jff.org/regional-solutions-for-growing-quality-green-jobs" target="_blank" rel="noopener">Report</a></div>
         </div>
       </details>
@@ -332,10 +343,10 @@ title: null
       <details class="work">
         <summary>
           <div class="work__head"><span class="work__t">Tech careers workforce development program</span><span class="work__tag">Jobs for the Future</span></div>
-          <p class="work__s">The sectoral and occupational analysis behind a major telecommunications firm's initiative to train 500,000 under-represented individuals.</p>
+          <p class="work__s">I led the work behind Verizon&rsquo;s initiative to train and place 500,000 underrepresented people in quality careers, managing a team of three.</p>
         </summary>
         <div class="work__body">
-          <p>Demand mapping and job-quality scoring identified six target occupations, which are now the basis for national enrollment and placement.</p>
+          <p>I chose the six target occupations the 500,000 would train for, using demand mapping and job-quality scoring, and then helped design the training curricula around them. Those six occupations are the basis for the initiative&rsquo;s national enrollment and placement.</p>
           <div class="work__links"><a href="https://www.jff.org/idea/verizon-case-study/" target="_blank" rel="noopener">Case study</a></div>
         </div>
       </details>
