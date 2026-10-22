@@ -35,6 +35,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - tools
 
 # Collections (if you want blog posts later)
 # collections:

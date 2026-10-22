@@ -3,8 +3,8 @@
   {
    "key": "labor",
    "title": "Labor markets",
-   "q": "Where do an occupation’s workers come from?",
-   "overview": "At Radius I needed to know, for a named occupation, where its workers would come from, and no published source could say. So I built the measures from public data, one for each route into an occupation: changing occupation, leaving work, training and moving between states. Each is checked against the official statistics, and the next step joins the four into one stock-flow account per occupation."
+   "q": "What do public data say about each occupation, below the official figures?",
+   "overview": "At Radius I kept being asked about particular occupations: how many people leave them, where their workers come from, what training into them leads to. The official statistics could answer only for broad groups, so I started building the answers myself from public data, the same way for every detailed occupation and, where I could, every state. Each paper below is one of those estimates, checked against the official figures and put to work on a question someone actually asked me. The research and the writing are my own, not Radius&rsquo;s."
   },
   {
    "key": "ai",
@@ -35,50 +35,26 @@
   {
    "id": "flows",
    "area": "labor",
-   "k": "wp",
-   "s": "Where workers come from",
-   "title": "Where workers come from",
-   "kind": "Working paper",
-   "date": "Begun 2025 · working paper, November 2025, revised September 2026 · version 1.2 in revision",
-   "ref": "AC-WP-2025-01 · Version 1.1",
-   "plain": "States fund nursing school places, teacher preparation and apprenticeships on the assumption that an occupation short of people is short of graduates, and that assumption has never been checked against a full account of where an occupation’s workers come from. Building that account shows that training is the smallest inflow. Occupations are refilled mostly by people moving in from other occupations, and people make those moves at all ages. Most of the movement also cancels out, and the change in an occupation’s size is about a tenth of the flows in and out of it. That is why raising arrivals changes its size much less than one would expect.",
-   "abs": "Workforce policy in the United States concentrates on training, on the understanding that an occupation short of people is an occupation short of graduates. This paper builds the full account of where an occupation’s people come from and where they go, for 230 occupations, annually from 2009 to 2025 and by age band. It uses a single survey in which each person is counted once on each side, with standard errors from the 160 replicate weights the Census Bureau publishes. Arrivals from other occupations run four to twelve times arrivals from education, exceed all arrivals from outside employment in 99 percent of occupations, and occur at every age: lateral arrivals aged thirty-five and over, taken on their own, outnumber every arrival from education by nearly seven to one. Most of that movement cancels, so the change in occupation sizes that lateral movement produces is about a tenth of the gross flow. The account depends on a measurement result established first. Two independent codings of a job the survey records as unchanged disagree in 48.1 percent of cases at the detailed level, so occupational mobility cannot be measured in this survey by linking a person across interviews. The within-interview design, whose two codes share an error that cancels in the difference, is the one that measures it.",
-   "math": [
-    "Workers now = held it last year + arrivals from education, other non-work and other occupations − departures to other occupations and out of work"
-   ],
-   "when": "November 2025, revised September 2026, version 1.2 in revision",
-   "links": [
-    {
-     "label": "Download the paper",
-     "href": "/assets/papers/flows-engine.pdf"
-    }
-   ],
-   "download": "/assets/papers/flows-engine.pdf",
-   "download_label": "Download"
+   "k": "draft",
+   "s": "Occupational flows",
+   "title": "An occupational flow account for the United States, 2009 to 2025",
+   "kind": "Paper in progress",
+   "date": "Begun 2025 · in progress, replaces the 2025 working paper",
+   "plain": "How often do people really change occupation? The standard survey is a shaky guide, as a growing share of its answers are filled in from other people. I rebuild the count on the people who actually answered, for every occupation, along with where its workers come from and where they go.",
+   "when": "",
+   "links": []
   },
   {
    "id": "migration",
    "area": "labor",
-   "k": "wp",
-   "s": "Interstate migration",
-   "title": "Where occupations move",
-   "kind": "Working paper",
-   "date": "Begun 2025 · working paper, March 2026, revised September 2026 · version 1.5 in revision",
-   "ref": "AC-WP-2026-02 · Version 1.1",
-   "plain": "Interstate migration is usually measured for people and rarely for occupations, even though most of the rules that make moving hard are tied to the job. This paper builds state-to-state flows by occupation from 59.8 million census records and measures what share of each occupation a state brings in from other states each year. The share varies about fifteenfold, from tool and die makers to sailors. Licensing, the barrier most often blamed for low mobility, explains very little of it. Physicians, who need a license in each state, are near the top of the ranking, and postal workers are near the bottom. The people who arrive are always younger than the workforce they join. Flows into a state that pays ten percent more are about one percent higher, while distance counts six times as much, so any pay premium a state is likely to offer changes its intake by only a few percent. The gravity model is given no information about how large each occupation is in each state. Where a state draws far more of an occupation than the model predicts, the flows are picking up a concentration of that occupation by themselves, and that measure agrees with an independent employer survey.",
-   "abs": "Interstate migration in the United States has been measured for persons and rarely for occupations, although most of the rules that make moving difficult attach to the job. This paper builds bilateral interstate migration flows by occupation from nineteen vintages of American Community Survey microdata, 59.8 million person records across 51 jurisdictions and 475 harmonized occupation codes, and measures the share of each state’s occupational workforce arriving from another state within the year, with design-based standard errors. That share varies close to fifteenfold across occupations, from tool and die makers to sailors, and licensure explains almost none of the ordering. Arrivals are younger than the workforce they join in every occupation measured, and arrivals and leavers have the same mean age cell by cell, both about seven years younger than the incumbents. A Poisson pseudo-maximum-likelihood gravity model with origin-year, destination-year, occupation-year, and state-pair effects puts the wage elasticity of flows at 0.114 and the distance elasticity at −0.72, some six times as large. The benchmark omits employment by state and occupation, so its residual recovers occupational concentration from the flows alone. The concentrations hold their position across two decades and agree with the location quotient in an independent establishment survey, while three pre-specified tests on wage growth return tightly estimated nulls.",
-   "math": [
-    "E[ flowₒ→d^kt ] = exp( η ln(w_dkt/w_okt) + β ln distₒd + λ contigₒd + φₒt + ψ_dt + θ_kt + μₒd )"
-   ],
-   "when": "March 2026, revised September 2026, version 1.5 in revision",
-   "links": [
-    {
-     "label": "Download the paper",
-     "href": "/assets/papers/occupation-migration.pdf"
-    }
-   ],
-   "download": "/assets/papers/occupation-migration.pdf",
-   "download_label": "Download"
+   "k": "draft",
+   "s": "Distance and occupation",
+   "title": "Distance and occupation in interstate migration: a gravity measure for 209 occupations",
+   "kind": "Paper in progress",
+   "date": "Begun 2025 · in progress, replaces the 2026 working paper",
+   "plain": "How far does an employer have to look for a welder, a nurse or a software developer? I measure how quickly interstate moves into each occupation fall off with distance, and use it to show where out-of-state hires are likely to come from.",
+   "when": "",
+   "links": []
   },
   {
    "id": "leaving",
@@ -88,7 +64,7 @@
    "title": "Realized exits from the labor force by detailed occupation",
    "kind": "Paper in progress",
    "date": "Begun 2025 · in progress",
-   "plain": "A workforce plan has to assume how many of an occupation’s people will leave work each year. The usual figure comes from the Bureau of Labor Statistics, a model fitted on broad groups and applied to each occupation’s demographics, and no published figure gives the realized rate for a detailed occupation or divides it by reason. This paper builds that measure from the monthly Current Population Survey on the Bureau’s own rule, records the reason for each exit, and uses it to test the official rate and projections based on age.",
+   "plain": "Workforce plans assume how many people will leave an occupation each year, usually with a rate modeled on broad groups. From the monthly labor force survey, I measure the realized rate and the reasons for leaving for each detailed occupation.",
    "when": "",
    "links": []
   },
@@ -100,69 +76,21 @@
    "title": "Outcomes after publicly funded training: new measures from public WIOA records",
    "kind": "Paper in progress",
    "date": "Begun 2026 · in progress",
-   "plain": "Official statistics on publicly funded training report employment and earnings after exit, and say little about the kind of job a trainee reaches, whether it is in the field trained for, or how outcomes differ by training occupation. This paper builds those measures from the public records of the Workforce Innovation and Opportunity Act, from work in the field against a chance rate to a ladder of job quality, and applies them to the questions a funder asks of training.",
+   "plain": "Public training statistics say whether trainees find work, but not what kind. From the public records of the federal training program, I measure whether trainees end up in the field they trained for, how good their jobs are, and how outcomes differ by the occupation trained for.",
    "when": "",
    "links": []
   },
   {
-   "id": "stockflow",
+   "id": "realpay",
    "area": "labor",
-   "k": "note",
-   "s": "Stock-flow account",
-   "title": "A stock-flow account for each occupation",
-   "kind": "Planned",
-   "date": "Planned",
-   "plain": "The four routes into an occupation come together here. Every inflow (from school, from another occupation, from another state, back into work) and every outflow is measured, and the account tests whether the flows add up to the observed change in the occupation’s size. It answers the question the program starts from: how much of an occupation’s supply comes by each route.",
+   "k": "draft",
+   "s": "Real pay",
+   "title": "Real pay by occupation across the United States",
+   "kind": "Paper in progress",
+   "date": "Begun 2026 · in progress",
+   "plain": "A salary goes further in some states than in others. I combine pay for every occupation with state prices, weighted by what workers’ households actually spend, to show where each job pays best once the cost of living is counted.",
    "when": "",
    "links": []
-  },
-  {
-   "id": "moves",
-   "area": "labor",
-   "k": "note",
-   "s": "Do skills predict moves?",
-   "title": "Do skills predict moves?",
-   "kind": "Research note",
-   "date": "Begun 2025 · research note, January 2026, revised September 2026",
-   "ref": "AC-RN-2026-01 · Version 1.0",
-   "plain": "A whole industry now advises workers and workforce boards with similarity scores. Two occupations whose skill profiles overlap at 98.5 percent are presented as a few months of retraining apart, and a machinist is steered toward industrial maintenance. A high score says a move is possible, but it does not show that workers make it. If the scores are wrong, the advice sends people toward jobs they will not get and public money after them. The data to check this is public, and the check is cheap. The paper sets up the test as a gravity model on the occupation changes that the CPS March supplement records within a single interview, the only design in that survey that separates real moves from coding noise. The model separates how much traffic flows between two occupations, which similarity should explain, from its direction, which the wage difference should explain, and it will compare the field’s thresholds at 0.985, 0.970 and 0.950 with where the flows drop off.",
-   "abs": "A whole advisory industry now tells workers and workforce boards which occupations they can move to, and it does so with a similarity score. The score is a claim about feasibility, that a person with one profile could do the other job. Whether anyone makes the move is a different claim, and the advice depends on it, yet it has not been tested at scale, although the data to test it are public and the test costs little. This paper specifies the test and fixes its inputs. Observed flows between occupations come from the March supplement of the Current Population Survey, which records in one interview what a person does now and what they did last year. Two independent codings of a job the survey itself records as unchanged disagree 48.1 percent of the time at the detailed level, so a matrix linked across interviews measures coding disagreement. The within-interview design cancels that error, and it is the one used here. Similarity is a composite over the skills, knowledge, and work activities the Occupational Information Network records, held as 798,342 occupation pairs above a similarity of 0.5, and the tier thresholds used in workforce practice sit at 0.985, 0.970, and 0.950. The model is a gravity equation estimated by Poisson pseudo-maximum likelihood on gross flows, with origin and destination effects that absorb the size of each occupation. A flexible version of the model enters similarity in bins instead of as one elasticity, locates where observed flows break, and sets the breaks against the three thresholds in use. Licensing is read from the residuals rather than entered as a regressor: the pairs that similarity places close and that nobody is observed crossing are a map of what the score misses, and the residuals show whether that map concentrates in licensed occupations.",
-   "math": [
-    "E[flowᵢ→ⱼ] = exp(η ln simᵢⱼ + β ln(wⱼ/wᵢ) + αᵢ + δⱼ), with symmetric pair effects added to identify β from direction alone"
-   ],
-   "when": "January 2026, revised September 2026",
-   "links": [
-    {
-     "label": "Download the note",
-     "href": "/assets/papers/skills-and-moves.pdf"
-    }
-   ],
-   "download": "/assets/papers/skills-and-moves.pdf",
-   "download_label": "Download"
-  },
-  {
-   "id": "shortage",
-   "area": "labor",
-   "k": "note",
-   "s": "Shortage arithmetic",
-   "title": "Shortage arithmetic",
-   "kind": "Research note",
-   "date": "Begun 2025 · research note, March 2026, revised September 2026",
-   "ref": "AC-RN-2026-02 · Version 1.0",
-   "plain": "Headline shortage figures subtract the supply for an occupation from the demand for that same occupation, as if every opening had to be filled by someone newly trained for it. The occupational flow account shows that in every occupation it covers, more people arrive from other occupations than from education, by a median factor of 19. For five healthcare occupations in North Carolina, arrivals from other occupations at the observed rate equal 49 to 158 percent of the openings the state projects each year, so the channel the standard calculation leaves out is comparable in size to the openings themselves. The paper writes down the correction tier by tier of skill adjacency, with every term measured and capped by history, and infers licensing barriers from the occupation pairs that no one crosses.",
-   "abs": "An occupational shortage figure is a subtraction. A projection of the positions an occupation will need to fill is set against a count of the people being trained for it, and the difference is published as the number a state is short. The subtraction assumes something that is never written down: that a position in the occupation can be filled only by a person newly trained for exactly that occupation, so that nobody arrives from anywhere else. The occupational flow account built in the companion paper (Conway, 2025) measures where an occupation’s people come from, and in every one of the 172 occupations it covers, arrivals from another occupation exceed arrivals from education, by a median factor of 19. This paper writes the correction down and measures its first term. For five healthcare occupations in North Carolina, arrivals from another occupation at the rate the national account observes come to between 49 and 158 percent of the annual openings the state projection expects. Those arrivals are gross and are matched by departures of similar size, and the projection already nets part of that movement out of its replacement figure, so the table cannot be read as a shortage half the size of its headline. The table establishes instead that movement from adjacent occupations supplies these occupations on a scale comparable to the openings themselves, and that a supply count consisting of graduates counts the smallest inflow. A raw gap is reduced, tier by tier of skill adjacency, by the workers the adjacent occupations can release into it. Licensing is a reading of the results rather than a parameter.",
-   "math": [
-    "G* = G − Σₜ min( Σⱼ∈ₜ mⱼᵢ Sⱼ , m̄ₜᵢ Eᵢ ), the raw gap less what each adjacency tier releases at observed transition rates, capped by history"
-   ],
-   "when": "March 2026, revised September 2026",
-   "links": [
-    {
-     "label": "Download the note",
-     "href": "/assets/papers/shortage-arithmetic.pdf"
-    }
-   ],
-   "download": "/assets/papers/shortage-arithmetic.pdf",
-   "download_label": "Download"
   },
   {
    "id": "skillsdna",
@@ -551,34 +479,6 @@
    "training"
   ],
   [
-   "flows",
-   "shortage"
-  ],
-  [
-   "flows",
-   "stockflow"
-  ],
-  [
-   "stockflow",
-   "migration"
-  ],
-  [
-   "stockflow",
-   "leaving"
-  ],
-  [
-   "stockflow",
-   "training"
-  ],
-  [
-   "moves",
-   "migration"
-  ],
-  [
-   "moves",
-   "training"
-  ],
-  [
    "skillsdna",
    "limits"
   ],
@@ -665,6 +565,10 @@
   [
    "sage",
    "basins"
+  ],
+  [
+   "migration",
+   "realpay"
   ]
  ]
 }
